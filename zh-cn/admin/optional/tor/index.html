@@ -636,22 +636,22 @@ server {
      previousLink.remove();
      pageTurnSpacer.remove();
      nextLink.href = nextHref;
-     nextLink.innerHTML += nextName;
+     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
    } else if (nextHref == "remove") {
      previousLink.href = prevHref;
-     previousLink.innerHTML += prevName;
+     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
      nextLink.remove();
    } else {
      previousLink.href = prevHref;
-     previousLink.innerHTML += prevName;
+     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
      nextLink.href = nextHref;
-     nextLink.innerHTML += nextName;
+     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
    }
  }
 </script>
 
     <p style="color: #687590;">
-      最后更新于 December 15, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/optional/tor.md' style="color: #687590;">改进此页面</a>
+      最后更新于 January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/optional/tor.md' style="color: #687590;">改进此页面</a>
 
       
         <br />

@@ -1972,22 +1972,22 @@ data: {&#34;id&#34;:&#34;819516&#34;,&#34;unread&#34;:true,&#34;accounts&#34;:[{
      previousLink.remove();
      pageTurnSpacer.remove();
      nextLink.href = nextHref;
-     nextLink.innerHTML += nextName;
+     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
    } else if (nextHref == "remove") {
      previousLink.href = prevHref;
-     previousLink.innerHTML += prevName;
+     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
      nextLink.remove();
    } else {
      previousLink.href = prevHref;
-     previousLink.innerHTML += prevName;
+     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
      nextLink.href = nextHref;
-     nextLink.innerHTML += nextName;
+     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
    }
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated December 14, 2022 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/streaming.md' style="color: #687590;">Improve this page</a>
+      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/streaming.md' style="color: #687590;">Improve this page</a>
 
       
     </p>

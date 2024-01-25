@@ -612,9 +612,9 @@ default_pool_size = 20
           
             
             <div style="margin: 30px 0px">            
-              <a id="previousLink" href="PREV_LINK" style="font-size: 12pt">Previous - </a>            
+              <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">Previous - Page</a>
               <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
-              <a id="nextLink" href="NEXT_LINK" style="font-size: 12pt">Next - </a>                       
+              <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">Next - Page</a>
             </div>
             
             <div id="useJS" style="display: none">1</div>
@@ -733,22 +733,22 @@ default_pool_size = 20
      previousLink.remove();
      pageTurnSpacer.remove();
      nextLink.href = nextHref;
-     nextLink.innerHTML += nextName;
+     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
    } else if (nextHref == "remove") {
      previousLink.href = prevHref;
-     previousLink.innerHTML += prevName;
+     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
      nextLink.remove();
    } else {
      previousLink.href = prevHref;
-     previousLink.innerHTML += prevName;
+     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
      nextLink.href = nextHref;
-     nextLink.innerHTML += nextName;
+     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
    }
  }
 </script>
 
     <p style="color: #687590;">
-      最后更新于 December 10, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/scaling.md' style="color: #687590;">改进此页面</a>
+      最后更新于 January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/scaling.md' style="color: #687590;">改进此页面</a>
 
       
         <br />

@@ -1605,22 +1605,22 @@
      previousLink.remove();
      pageTurnSpacer.remove();
      nextLink.href = nextHref;
-     nextLink.innerHTML += nextName;
+     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
    } else if (nextHref == "remove") {
      previousLink.href = prevHref;
-     previousLink.innerHTML += prevName;
+     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
      nextLink.remove();
    } else {
      previousLink.href = prevHref;
-     previousLink.innerHTML += prevName;
+     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
      nextLink.href = nextHref;
-     nextLink.innerHTML += nextName;
+     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
    }
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated December 14, 2022 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/admin/dimensions.md' style="color: #687590;">Improve this page</a>
+      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/admin/dimensions.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
