@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>RelationshipSeveranceEvent - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/entities/RelationshipSeveranceEvent/">
+
+  
+    <meta name="description" content="Summary of a moderation or block event that caused follow relationships to be severed.">
+    <meta property="og:description" content="Summary of a moderation or block event that caused follow relationships to be severed.">
+    <meta name="twitter:description" content="Summary of a moderation or block event that caused follow relationships to be severed.">
+  
+
+  <meta name="twitter:title" content="RelationshipSeveranceEvent">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/entities/RelationshipSeveranceEvent/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/" class="">What is Mastodon?</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Using Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/user/signup/" class="">Signing up for an account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/profile/" class="">Setting up your profile</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/posting/" class="">Posting to your profile</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/network/" class="">Using the network features</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/moderating/" class="">Dealing with unwanted content</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/discoverability/" class="">Promoting yourself and others</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/preferences/" class="">Set your preferences</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/contacts/" class="">More settings</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/external/" class="">Using Mastodon externally</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/moving/" class="">Moving or leaving accounts</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/run-your-own/" class="">Running your own server</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Running Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/admin/prerequisites/" class="">Preparing your machine</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/install/" class="">Installing from source</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/config/" class="">Configuring your environment</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/elasticsearch/" class="">Configuring full-text search</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/optional/" class="">Installing optional features</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/sso/" class="">Single Sign On</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/admin/setup/" class="">Setting up your new instance</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/tootctl/" class="">Using the admin CLI</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/upgrading/" class="">Upgrading to a new release</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/backups/" class="">Backing up your server</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/migrating/" class="">Migrating to a new machine</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/scaling/" class="">Scaling up your server</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/moderation/" class="">Moderation actions</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/troubleshooting/" class="">Troubleshooting errors</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/admin/troubleshooting/index-corruption/" class="">Database index corruption</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/admin/roles/" class="">Roles</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Developing Mastodon apps</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/client/intro/" class="">Getting started with the API</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/public/" class="">Playing with public data</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/token/" class="">Obtaining client app access</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/authorized/" class="">Logging in with an account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/libraries/" class="">Libraries and implementations</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Contributing to Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/dev/overview/" class="">Technical overview</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/setup/" class="">Setting up a dev environment</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/code/" class="">Code structure</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/routes/" class="">Routes</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/disclosure/" class="">Bug bounties and responsible disclosure</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Spec compliance</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/spec/activitypub/" class="">ActivityPub</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/webfinger/" class="">WebFinger</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/security/" class="">Security</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/microformats/" class="">Microformats</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/oauth/" class="">OAuth</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/bearcaps/" class="">Bearcaps</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/api/guidelines/" class="">Guidelines and best practices</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/api/oauth-scopes/" class="">OAuth Scopes</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/api/rate-limits/" class="">Rate limits</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Methods</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/methods/apps/" class="">apps</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/oauth/" class="">oauth</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/emails/" class="">emails</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/accounts/" class="">accounts</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/bookmarks/" class="">bookmarks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/favourites/" class="">favourites</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/mutes/" class="">mutes</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/blocks/" class="">blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/domain_blocks/" class="">domain_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/filters/" class="">filters</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/reports/" class="">reports</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/follow_requests/" class="">follow_requests</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/endorsements/" class="">endorsements</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/featured_tags/" class="">featured_tags</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/preferences/" class="">preferences</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/followed_tags/" class="">followed_tags</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/suggestions/" class="">suggestions</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/tags/" class="">tags</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/profile/" class="">profile</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/methods/statuses/" class="">statuses</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/media/" class="">media</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/polls/" class="">polls</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/scheduled_statuses/" class="">scheduled_statuses</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/timelines/" class="">timelines</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/conversations/" class="">conversations</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/lists/" class="">lists</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/markers/" class="">markers</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/streaming/" class="">streaming</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/notifications/" class="">notifications</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/push/" class="">push</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/search/" class="">search</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/methods/instance/" class="">instance</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/trends/" class="">trends</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/directory/" class="">directory</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/custom_emojis/" class="">custom_emojis</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/announcements/" class="">announcements</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/admin/" class="">admin</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/admin/accounts/" class="">accounts</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/canonical_email_blocks/" class="">canonical_email_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/dimensions/" class="">dimensions</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/domain_allows/" class="">domain_allows</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/domain_blocks/" class="">domain_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/email_domain_blocks/" class="">email_domain_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/ip_blocks/" class="">ip_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/measures/" class="">measures</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/reports/" class="">reports</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/retention/" class="">retention</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/trends/" class="">trends</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/proofs/" class="">proofs</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/methods/oembed/" class="">oembed</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Entities</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/entities/Account/" class="">Account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Account/" class="">Admin::Account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_CanonicalEmailBlock/" class="">Admin::CanonicalEmailBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Cohort/" class="">Admin::Cohort</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Dimension/" class="">Admin::Dimension</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_DomainAllow/" class="">Admin::DomainAllow</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_DomainBlock/" class="">Admin::DomainBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_EmailDomainBlock/" class="">Admin::EmailDomainBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Ip/" class="">Admin::Ip</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_IpBlock/" class="">Admin::IpBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Measure/" class="">Admin::Measure</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Report/" class="">Admin::Report</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Announcement/" class="">Announcement</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Application/" class="">Application</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Context/" class="">Context</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Conversation/" class="">Conversation</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/CustomEmoji/" class="">CustomEmoji</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/DomainBlock/" class="">DomainBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Error/" class="">Error</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/ExtendedDescription/" class="">ExtendedDescription</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FamiliarFollowers/" class="">FamiliarFollowers</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FeaturedTag/" class="">FeaturedTag</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Filter/" class="">Filter</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FilterKeyword/" class="">FilterKeyword</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FilterResult/" class="">FilterResult</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FilterStatus/" class="">FilterStatus</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/IdentityProof/" class="">IdentityProof</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Instance/" class="">Instance</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/List/" class="">List</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Marker/" class="">Marker</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/MediaAttachment/" class="">MediaAttachment</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Notification/" class="">Notification</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Poll/" class="">Poll</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Preferences/" class="">Preferences</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/PreviewCard/" class="">PreviewCard</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Reaction/" class="">Reaction</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Relationship/" class="">Relationship</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/RelationshipSeveranceEvent/" class="active">RelationshipSeveranceEvent</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Report/" class="">Report</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Role/" class="">Role</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Rule/" class="">Rule</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/ScheduledStatus/" class="">ScheduledStatus</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Search/" class="">Search</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Status/" class="">Status</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/StatusEdit/" class="">StatusEdit</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/StatusSource/" class="">StatusSource</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Suggestion/" class="">Suggestion</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Tag/" class="">Tag</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Token/" class="">Token</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Translation/" class="">Translation</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/V1_Filter/" class="">V1::Filter</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/V1_Instance/" class="">V1::Instance</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/WebPushSubscription/" class="">WebPushSubscription</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>RelationshipSeveranceEvent</h1>  
+  
+    <p>Summary of a moderation or block event that caused follow relationships to be severed.</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#attributes">Attributes</a>
+          <ul>
+            <li><a href="#id"><code>id</code></a></li>
+            <li><a href="#type"><code>type</code></a></li>
+            <li><a href="#purged"><code>purged</code></a></li>
+            <li><a href="#target_name"><code>target_name</code></a></li>
+            <li><a href="#relationships_count"><code>relationships_count</code> <span class="api-method-parameter-required">optional</span></a></li>
+            <li><a href="#created_at"><code>created_at</code></a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="attributes">Attributes</h2>
+<h3 id="id"><code>id</code></h3>
+<p><strong>Description:</strong> The ID of the relationship severance event in the database.<br>
+<strong>Type:</strong> String (cast from integer)<br>
+<strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h3 id="type"><code>type</code></h3>
+<p><strong>Description:</strong> Type of event.<br>
+<strong>Type:</strong> String (Enumerable oneOf)<br>
+<code>domain_block</code> = A moderator suspended a whole domain<br>
+<code>user_domain_block</code> = The user blocked a whole domain<br>
+<code>account_suspension</code> = A moderator suspended a specific account<br>
+<strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h3 id="purged"><code>purged</code></h3>
+<p><strong>Description:</strong> Whether the list of severed relationships is unavailable because the underlying issue has been purged.<br>
+<strong>Type:</strong> Boolean<br>
+<strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h3 id="target_name"><code>target_name</code></h3>
+<p><strong>Description:</strong> Name of the target of the moderation/block event. This is either a domain name or a user handle, depending on the event type.<br>
+<strong>Type:</strong> String<br>
+<strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h3 id="relationships_count"><code>relationships_count</code> <span class="api-method-parameter-required">optional</span></h3>
+<p><strong>Description:</strong> Number of follow relationships (in either direction) that were severed.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h3 id="created_at"><code>created_at</code></h3>
+<p><strong>Description:</strong> When the event took place.<br>
+<strong>Type:</strong> String (ISO 8601 Datetime)<br>
+<strong>Version history:</strong><br>
+4.3.0 - added</p>
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                        
+            <div style="margin: 30px 0px">      
+            
+              <a id="previousLink" href="/entities/Relationship/" style="font-size: 12pt">Previous - Relationship</a>            
+            
+            <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              
+              <a id="nextLink" href="/entities/Report/" style="font-size: 12pt">Next - Report</a>                       
+              
+            </div> 
+            
+            <div id="useJS" style="display: none">0</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      Last updated January 13, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/RelationshipSeveranceEvent.md' style="color: #687590;">Improve this page</a>
+
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/RelationshipSeveranceEvent.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+</footer>
+
+</body>
+
+</html>

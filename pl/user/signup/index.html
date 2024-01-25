@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>Zarejestruj konto - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/pl/user/signup/">
+
+  
+    <meta name="description" content="Znajdź idealną społeczność dla siebie.">
+    <meta property="og:description" content="Znajdź idealną społeczność dla siebie.">
+    <meta name="twitter:description" content="Znajdź idealną społeczność dla siebie.">
+  
+
+  <meta name="twitter:title" content="Zarejestruj konto">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/pl/user/signup/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/pl/" class="">Czym jest Mastodon?</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Korzystaj z Mastodona</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/pl/user/signup/" class="active">Zarejestruj konto</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/profile/" class="">Dostosuj swój profil</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/posting/" class="">Utwórz wpisy</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/network/" class="">Korzystaj z funkcjonalności sieci</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/moderating/" class="">Radzenie sobie z niechcianą treścią</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/discoverability/" class="">Promuj siebie i innych</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/preferences/" class="">Zmień swoje ustawienia</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/contacts/" class="">Więcej ustawień</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/external/" class="">Korzystaj z Mastodona zewnętrznie</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/moving/" class="">Przenieś lub opuść konto</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/run-your-own/" class="">Prowadź swój własny serwer</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Uruchamianie Mastodona</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Twórz aplikacje dla Mastodona</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Współtwórz Mastodona</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Zgodność ze specyfikacją</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Metody API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Jednostki API</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>Zarejestruj konto</h1>  
+  
+    <p>Znajdź idealną społeczność dla siebie.</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#picker">Wybór serwera</a>
+          <ul>
+            <li><a href="#tos">Rozumienie zasad strony</a></li>
+            <li><a href="#signup">Tryby rejestracji</a></li>
+          </ul>
+        </li>
+        <li><a href="#address">Twoja nazwa użytkownika i domena</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="picker">Wybór serwera</h2>
+<p>Musisz wybrać stronę, na której zarejestrujesz się, tak jakbyś wybierał(-a) dostawcę poczty e-mail lub realm w World of Warcraft dla swojej nowej postaci. Ta strona będzie Twoim dostawcą usługi, hostem dla Twojego konta, Twoim profilem i Twoją stroną główną.</p>
+<div class="hint hint-info">
+  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
+
+  Możesz <a href="https://joinmastodon.org/#getting-started">przeglądać listę wybranych serwerów według kategorii i języków na joinmastodon.org</a>.
+</div>
+
+<h3 id="tos">Rozumienie zasad strony</h3>
+<p>Zanim zarejestrujesz się, ważnym jest zapoznanie się z zasadami i regulaminem. Serwer Mastodona ma zwykle wypisane je na stronie <code>/about/more</code>, którą możesz znaleźć, klikając na „dowiedz się więcej” na stronie, którą widzisz, gdy nie jesteś zalogowany(-a).</p>
+<h3 id="signup">Tryby rejestracji</h3>
+<p>Mastodon pozwala administratorom serwerów wybrać trzy tryby rejestracji: rejestracja otwarta, wymagająca zaproszenia lub wymagająca zatwierdzenia.</p>
+<h4 id="open">Otwarta rejestracja</h4>
+<p>Na niektórych serwerach możesz zarejestrować się natychmiastowo – po prostu wypełnij formularz rejestracyjny swoją nazwą użytkownika, adresem e-mail i hasłem i już możesz rozpocząć korzystanie ze swojego konta.</p>
+<h4 id="invite">Zaproszenia na serwer</h4>
+<p>Niektóre strony wyłączają formularz rejestracji i zamiast tego wymagają wygenerowania odnośników z zaproszeniem i wysyłania ich osobom, które mogą się zarejestrować.</p>
+<h4 id="approval">Rejestracja wymagająca zatwierdzeń</h4>
+<p>Niektóre strony pozwalają na wypełnienie formularza rejestracyjnego, ale z dodatkowym polem, w którym należy wpisać, dlaczego chcesz się zarejestrować na tym serwerze. Po wypełnieniu tego formularza moderator musi zatwierdzić Twoje konto, zanim zaczniesz go używać.</p>
+<h2 id="address">Twoja nazwa użytkownika i domena</h2>
+<p>Nazwy użytkownika na Mastodonie składają się właściwie z dwóch części:</p>
+<ul>
+<li>Lokalna nazwa użytkownika, np. <code>alicja</code></li>
+<li>Domena strony, np. <code>example.com</code></li>
+</ul>
+<p>Tak jak przy adresie e-mail. Dla wygody Mastodon pozwala na pominięcie drugiej części, jeżeli oznaczasz osoby z serwera, z którego korzystasz, ale musisz pamiętać, że jeżeli dzielisz się swoją nazwą z innymi, musisz uwzględnić domenę, aby mogli Cię łatwo znaleźć.</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Nazywam się @alicja na Mastodonie!</td>
+<td align="left">Źle</td>
+</tr>
+<tr>
+<td align="left">Nazywam się @alicja@example.com na Mastodonie!</td>
+<td align="left">Prawidłowo</td>
+</tr>
+<tr>
+<td align="left">Nazywam się <a href="https://example.com/@alicja">https://example.com/@alicja</a> na Mastodonie!</td>
+<td align="left">Prawidłowo</td>
+</tr>
+</tbody>
+</table>
+<p>Formularz wyszukiwania na Mastodonie pozwala na znalezienie osób zgodnie z oboma powyższymi formatami, więc możesz wybrać ten, który wolisz.</p>
+<p>Ta sama nazwa użytkownika <em>może</em> być zarejestrowana na różnych serwerach – nie istnieje sposób na zajęcie ich wszystkich z góry. Tak jak w przypadku adresu e-mail, nie możesz oczekiwać, że <code>alicja@outlook.com</code> będzie tą samą osobą co <code>alicja@gmail.com</code>, czy <code>alicja@yahoo.com</code>.</p>
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+          
+            
+            <div style="margin: 30px 0px">            
+              <a id="previousLink" href="PREV_LINK" style="font-size: 12pt">Previous - </a>            
+              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              <a id="nextLink" href="NEXT_LINK" style="font-size: 12pt">Next - </a>                       
+            </div>
+            
+            <div id="useJS" style="display: none">1</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      Ostatnio aktualizowano January 20, 2021 · <a href='https://github.com/mastodon/documentation/tree/main/content/pl/user/signup.md' style="color: #687590;">Popraw tę stronę</a>
+
+      
+        <br />
+
+        Dostępne również w języku:
+
+        
+          <a href="/user/signup/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/zh-cn/user/signup/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+          <a href="/ja/user/signup/" style="color: #687590;" hreflang="ja">日本語</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsorzy
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Dołącz do Mastodona</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/pl/user/signup.md'>Zobacz źródła</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+</footer>
+
+</body>
+
+</html>

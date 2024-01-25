@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>创建一个帐户 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/zh-cn/user/signup/">
+
+  
+    <meta name="description" content="找寻属于你的完美社区。">
+    <meta property="og:description" content="找寻属于你的完美社区。">
+    <meta name="twitter:description" content="找寻属于你的完美社区。">
+  
+
+  <meta name="twitter:title" content="创建一个帐户">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/zh-cn/user/signup/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/zh-cn/" class="">什么是Mastodon？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">使用Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/user/signup/" class="active">创建一个帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/profile/" class="">设置个人资料</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/posting/" class="">发布嘟文</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/network/" class="">使用社交功能</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moderating/" class="">处理不想要的内容</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/discoverability/" class="">推广自己和他人</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/preferences/" class="">设置你的首选项</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/contacts/" class="">更多设置</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/external/" class="">站外使用Mastodon</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moving/" class="">迁移或删除帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/run-your-own/" class="">运行自己的服务器</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">运营Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/admin/prerequisites/" class="">准备你的机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/install/" class="">从源中安装</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/config/" class="">设置你的环境</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/optional/" class="">安装可选特色功能</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/elasticsearch/" class="">全文搜索</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/tor/" class="">匿名服务</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/sso/" class="">单点登录（SSO）</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/setup/" class="">配置你的新实例</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/tootctl/" class="">使用管理命令行</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/upgrading/" class="">升级到新版本</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/backups/" class="">备份你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/migrating/" class="">迁移到新机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/scaling/" class="">伸缩你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/moderation/" class="">运营操作</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/troubleshooting/" class="">故障分析</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">开发Mastodon应用</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">向Mastodon项目做贡献</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">遵循的标准</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 方法</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 实体</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>创建一个帐户</h1>  
+  
+    <p>找寻属于你的完美社区。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#picker">选择一个站点</a>
+          <ul>
+            <li><a href="#tos">了解站点的政策</a></li>
+            <li><a href="#signup">站点注册模式</a></li>
+          </ul>
+        </li>
+        <li><a href="#address">你的用户名和域名</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="picker">选择一个站点</h2>
+<p>你必须选择一个Mastodon站点进行注册，就好比你需要选择一个电子邮件提供商，或者像是为你的魔兽世界新角色选择一个地区（服务器）一样。该站点将是你的服务提供方，托管你的帐户、个人资料及个人主页信息流。</p>
+<div class="hint hint-info">
+  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
+
+  你可以 <a href="https://joinmastodon.org/#getting-started">在 joinmastodon.org 上按类别和语言浏览Mastodon站点列表</a>.
+</div>
+
+<h3 id="tos">了解站点的政策</h3>
+<p>在你注册之前，了解该Mastodon站点的政策和使用条款是很重要的。Mastodon站点通常会在<code>/about/more</code>页面上列出它的政策。你可以在未登录的状态下，点击登录页面上的“了解更多”链接来找到政策和使用条款信息。</p>
+<h3 id="signup">站点注册模式</h3>
+<p>Mastodon软件允许站点管理员从三种站点注册模式中选择一种：开放注册、邀请制和审核制。</p>
+<h4 id="open">开放注册</h4>
+<p>有些站点可能允许你立即注册。只需使用你的用户名、电子邮件地址和密码填写注册信息，就可以开始使用你的帐户了。</p>
+<h4 id="invite">邀请制</h4>
+<p>有些站点禁用注册表单，而是要求生成并分享邀请链接以允许人们注册。</p>
+<h4 id="approval">审核制</h4>
+<p>有些站点允许你填写注册表单，但是会有一个附加的表单条目来说明你为什么想要加入那个站点。提交了表单之后，你的帐户必须得到管理员的批准才能开始使用。</p>
+<h2 id="address">你的用户名和域名</h2>
+<p>Mastodon的用户名由两部分组成：</p>
+<ul>
+<li>本站用户名，比如 <code>alice</code></li>
+<li>Mastodon站点的域名，比如 <code>example.com</code></li>
+</ul>
+<p>就像电子邮件地址一样，为了方便起见，Mastodon允许你在向与你相同的服务器上的人发送地址时跳过第二部分，但是你必须记住：在与他人分享你的用户名时，应当包含站点的域名，否则他人将不能轻松的找到你。</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">我是Mastodon上的 @alice ！</td>
+<td align="left">错误的表述</td>
+</tr>
+<tr>
+<td align="left">我是Mastodon上的 @alice@example.com ！</td>
+<td align="left">正确的表述</td>
+</tr>
+<tr>
+<td align="left">我是Mastodon上的 <a href="https://example.com/@alice">https://example.com/@alice</a> ！</td>
+<td align="left">正确的表述</td>
+</tr>
+</tbody>
+</table>
+<p>上述两种地址形式（完整用户名、用户主页链接）都可以在Mastodon搜索栏中查找相应的用户，所以你可以根据你的喜好分享。</p>
+<p>相同的用户名<em>可以</em>在不同的服务器上注册——无法提前声明所有的域名后缀。就像电子邮件一样，你不应期待 <code>alice@outlook.com</code> 与 <code>alice@gmail.com</code> 或 <code>alice@yahoo.com</code> 是同一个人。</p>
+<figure>
+    <p>
+        <strong>翻译状态：</strong>
+        本文是英文页面 <a href="/user/signup/">Signing up for an account</a> 的翻译，最后翻译时间：，点击<a href="https://github.com/mastodon/documentation/compare/ad1ef20f171c9f61439f32168987b0b4f9abd74b...master">这里</a>可以查看翻译后页面的改动。
+    </p>
+</figure>
+
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+          
+            
+            <div style="margin: 30px 0px">            
+              <a id="previousLink" href="PREV_LINK" style="font-size: 12pt">Previous - </a>            
+              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              <a id="nextLink" href="NEXT_LINK" style="font-size: 12pt">Next - </a>                       
+            </div>
+            
+            <div id="useJS" style="display: none">1</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      最后更新于 May 21, 2020 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/signup.md' style="color: #687590;">改进此页面</a>
+
+      
+        <br />
+
+        也可在此找到：
+
+        
+          <a href="/user/signup/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/ja/user/signup/" style="color: #687590;" hreflang="ja">日本語</a>
+        
+          <a href="/pl/user/signup/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>加入Mastodon</a> · <a href='https://blog.joinmastodon.org'>博客</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/signup.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
+</footer>
+
+</body>
+
+</html>

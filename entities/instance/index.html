@@ -1,0 +1,2128 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>Instance - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/entities/Instance/">
+
+  
+    <meta name="description" content="Represents the software instance of Mastodon running on this domain.">
+    <meta property="og:description" content="Represents the software instance of Mastodon running on this domain.">
+    <meta name="twitter:description" content="Represents the software instance of Mastodon running on this domain.">
+  
+
+  <meta name="twitter:title" content="Instance">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/entities/Instance/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/" class="">What is Mastodon?</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Using Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/user/signup/" class="">Signing up for an account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/profile/" class="">Setting up your profile</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/posting/" class="">Posting to your profile</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/network/" class="">Using the network features</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/moderating/" class="">Dealing with unwanted content</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/discoverability/" class="">Promoting yourself and others</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/preferences/" class="">Set your preferences</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/contacts/" class="">More settings</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/external/" class="">Using Mastodon externally</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/moving/" class="">Moving or leaving accounts</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/run-your-own/" class="">Running your own server</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Running Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/admin/prerequisites/" class="">Preparing your machine</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/install/" class="">Installing from source</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/config/" class="">Configuring your environment</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/elasticsearch/" class="">Configuring full-text search</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/optional/" class="">Installing optional features</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/sso/" class="">Single Sign On</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/admin/setup/" class="">Setting up your new instance</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/tootctl/" class="">Using the admin CLI</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/upgrading/" class="">Upgrading to a new release</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/backups/" class="">Backing up your server</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/migrating/" class="">Migrating to a new machine</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/scaling/" class="">Scaling up your server</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/moderation/" class="">Moderation actions</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/troubleshooting/" class="">Troubleshooting errors</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/admin/troubleshooting/index-corruption/" class="">Database index corruption</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/admin/roles/" class="">Roles</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Developing Mastodon apps</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/client/intro/" class="">Getting started with the API</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/public/" class="">Playing with public data</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/token/" class="">Obtaining client app access</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/authorized/" class="">Logging in with an account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/libraries/" class="">Libraries and implementations</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Contributing to Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/dev/overview/" class="">Technical overview</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/setup/" class="">Setting up a dev environment</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/code/" class="">Code structure</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/routes/" class="">Routes</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/disclosure/" class="">Bug bounties and responsible disclosure</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Spec compliance</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/spec/activitypub/" class="">ActivityPub</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/webfinger/" class="">WebFinger</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/security/" class="">Security</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/microformats/" class="">Microformats</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/oauth/" class="">OAuth</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/bearcaps/" class="">Bearcaps</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/api/guidelines/" class="">Guidelines and best practices</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/api/oauth-scopes/" class="">OAuth Scopes</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/api/rate-limits/" class="">Rate limits</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Methods</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/methods/apps/" class="">apps</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/oauth/" class="">oauth</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/emails/" class="">emails</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/accounts/" class="">accounts</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/bookmarks/" class="">bookmarks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/favourites/" class="">favourites</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/mutes/" class="">mutes</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/blocks/" class="">blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/domain_blocks/" class="">domain_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/filters/" class="">filters</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/reports/" class="">reports</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/follow_requests/" class="">follow_requests</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/endorsements/" class="">endorsements</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/featured_tags/" class="">featured_tags</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/preferences/" class="">preferences</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/followed_tags/" class="">followed_tags</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/suggestions/" class="">suggestions</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/tags/" class="">tags</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/profile/" class="">profile</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/methods/statuses/" class="">statuses</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/media/" class="">media</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/polls/" class="">polls</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/scheduled_statuses/" class="">scheduled_statuses</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/timelines/" class="">timelines</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/conversations/" class="">conversations</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/lists/" class="">lists</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/markers/" class="">markers</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/streaming/" class="">streaming</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/notifications/" class="">notifications</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/push/" class="">push</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/search/" class="">search</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/methods/instance/" class="">instance</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/trends/" class="">trends</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/directory/" class="">directory</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/custom_emojis/" class="">custom_emojis</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/announcements/" class="">announcements</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/admin/" class="">admin</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/admin/accounts/" class="">accounts</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/canonical_email_blocks/" class="">canonical_email_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/dimensions/" class="">dimensions</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/domain_allows/" class="">domain_allows</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/domain_blocks/" class="">domain_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/email_domain_blocks/" class="">email_domain_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/ip_blocks/" class="">ip_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/measures/" class="">measures</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/reports/" class="">reports</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/retention/" class="">retention</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/trends/" class="">trends</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/proofs/" class="">proofs</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/methods/oembed/" class="">oembed</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Entities</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/entities/Account/" class="">Account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Account/" class="">Admin::Account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_CanonicalEmailBlock/" class="">Admin::CanonicalEmailBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Cohort/" class="">Admin::Cohort</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Dimension/" class="">Admin::Dimension</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_DomainAllow/" class="">Admin::DomainAllow</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_DomainBlock/" class="">Admin::DomainBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_EmailDomainBlock/" class="">Admin::EmailDomainBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Ip/" class="">Admin::Ip</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_IpBlock/" class="">Admin::IpBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Measure/" class="">Admin::Measure</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Report/" class="">Admin::Report</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Announcement/" class="">Announcement</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Application/" class="">Application</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Context/" class="">Context</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Conversation/" class="">Conversation</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/CustomEmoji/" class="">CustomEmoji</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/DomainBlock/" class="">DomainBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Error/" class="">Error</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/ExtendedDescription/" class="">ExtendedDescription</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FamiliarFollowers/" class="">FamiliarFollowers</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FeaturedTag/" class="">FeaturedTag</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Filter/" class="">Filter</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FilterKeyword/" class="">FilterKeyword</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FilterResult/" class="">FilterResult</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FilterStatus/" class="">FilterStatus</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/IdentityProof/" class="">IdentityProof</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Instance/" class="active">Instance</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/List/" class="">List</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Marker/" class="">Marker</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/MediaAttachment/" class="">MediaAttachment</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Notification/" class="">Notification</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Poll/" class="">Poll</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Preferences/" class="">Preferences</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/PreviewCard/" class="">PreviewCard</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Reaction/" class="">Reaction</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Relationship/" class="">Relationship</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/RelationshipSeveranceEvent/" class="">RelationshipSeveranceEvent</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Report/" class="">Report</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Role/" class="">Role</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Rule/" class="">Rule</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/ScheduledStatus/" class="">ScheduledStatus</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Search/" class="">Search</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Status/" class="">Status</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/StatusEdit/" class="">StatusEdit</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/StatusSource/" class="">StatusSource</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Suggestion/" class="">Suggestion</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Tag/" class="">Tag</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Token/" class="">Token</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Translation/" class="">Translation</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/V1_Filter/" class="">V1::Filter</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/V1_Instance/" class="">V1::Instance</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/WebPushSubscription/" class="">WebPushSubscription</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>Instance</h1>  
+  
+    <p>Represents the software instance of Mastodon running on this domain.</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#example">Example</a></li>
+        <li><a href="#attributes">Attributes</a>
+          <ul>
+            <li><a href="#domain"><code>domain</code></a></li>
+            <li><a href="#title"><code>title</code></a></li>
+            <li><a href="#version"><code>version</code></a></li>
+            <li><a href="#source_url"><code>source_url</code></a></li>
+            <li><a href="#description"><code>description</code></a></li>
+            <li><a href="#usage"><code>usage</code></a></li>
+            <li><a href="#thumbnail"><code>thumbnail</code></a></li>
+            <li><a href="#languages"><code>languages</code></a></li>
+            <li><a href="#configuration"><code>configuration</code></a></li>
+            <li><a href="#vapid_public_key"><code>configuration[vapid][public_key]</code></a></li>
+            <li><a href="#registrations"><code>registrations</code></a></li>
+            <li><a href="#contact"><code>contact</code></a></li>
+            <li><a href="#rules"><code>rules</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#see-also">See also</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="example">Example</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;domain&#34;</span>: <span style="color:#f1fa8c">&#34;mastodon.social&#34;</span>,
+  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Mastodon&#34;</span>,
+  <span style="color:#ff79c6">&#34;version&#34;</span>: <span style="color:#f1fa8c">&#34;4.0.0rc1&#34;</span>,
+  <span style="color:#ff79c6">&#34;source_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://github.com/mastodon/mastodon&#34;</span>,
+  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;The original server operated by the Mastodon gGmbH non-profit&#34;</span>,
+  <span style="color:#ff79c6">&#34;usage&#34;</span>: {
+    <span style="color:#ff79c6">&#34;users&#34;</span>: {
+      <span style="color:#ff79c6">&#34;active_month&#34;</span>: <span style="color:#bd93f9">123122</span>
+    }
+  },
+  <span style="color:#ff79c6">&#34;thumbnail&#34;</span>: {
+    <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&#34;</span>,
+    <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UeKUpFxuo~R%0nW;WCnhF6RjaJt757oJodS$&#34;</span>,
+    <span style="color:#ff79c6">&#34;versions&#34;</span>: {
+      <span style="color:#ff79c6">&#34;@1x&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&#34;</span>,
+      <span style="color:#ff79c6">&#34;@2x&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/site_uploads/files/000/000/001/@2x/57c12f441d083cde.png&#34;</span>
+    }
+  },
+  <span style="color:#ff79c6">&#34;languages&#34;</span>: [
+    <span style="color:#f1fa8c">&#34;en&#34;</span>
+  ],
+  <span style="color:#ff79c6">&#34;configuration&#34;</span>: {
+    <span style="color:#ff79c6">&#34;urls&#34;</span>: {
+      <span style="color:#ff79c6">&#34;streaming&#34;</span>: <span style="color:#f1fa8c">&#34;wss://mastodon.social&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;vapid&#34;</span>: {
+      <span style="color:#ff79c6">&#34;public_key&#34;</span>: <span style="color:#f1fa8c">&#34;BCkMmVdKDnKYwzVCDC99Iuc9GvId-x7-kKtuHnLgfF98ENiZp_aj-UNthbCdI70DqN1zUVis-x0Wrot2sBagkMc=&#34;</span>
+    },
+    <span style="color:#ff79c6">&#34;accounts&#34;</span>: {
+      <span style="color:#ff79c6">&#34;max_featured_tags&#34;</span>: <span style="color:#bd93f9">10</span>
+    },
+    <span style="color:#ff79c6">&#34;statuses&#34;</span>: {
+      <span style="color:#ff79c6">&#34;max_characters&#34;</span>: <span style="color:#bd93f9">500</span>,
+      <span style="color:#ff79c6">&#34;max_media_attachments&#34;</span>: <span style="color:#bd93f9">4</span>,
+      <span style="color:#ff79c6">&#34;characters_reserved_per_url&#34;</span>: <span style="color:#bd93f9">23</span>
+    },
+    <span style="color:#ff79c6">&#34;media_attachments&#34;</span>: {
+      <span style="color:#ff79c6">&#34;supported_mime_types&#34;</span>: [
+        <span style="color:#f1fa8c">&#34;image/jpeg&#34;</span>,
+        <span style="color:#f1fa8c">&#34;image/png&#34;</span>,
+        <span style="color:#f1fa8c">&#34;image/gif&#34;</span>,
+        <span style="color:#f1fa8c">&#34;image/heic&#34;</span>,
+        <span style="color:#f1fa8c">&#34;image/heif&#34;</span>,
+        <span style="color:#f1fa8c">&#34;image/webp&#34;</span>,
+        <span style="color:#f1fa8c">&#34;video/webm&#34;</span>,
+        <span style="color:#f1fa8c">&#34;video/mp4&#34;</span>,
+        <span style="color:#f1fa8c">&#34;video/quicktime&#34;</span>,
+        <span style="color:#f1fa8c">&#34;video/ogg&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/wave&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/wav&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/x-wav&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/x-pn-wave&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/vnd.wave&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/ogg&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/vorbis&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/mpeg&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/mp3&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/webm&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/flac&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/aac&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/m4a&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/x-m4a&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/mp4&#34;</span>,
+        <span style="color:#f1fa8c">&#34;audio/3gpp&#34;</span>,
+        <span style="color:#f1fa8c">&#34;video/x-ms-asf&#34;</span>
+      ],
+      <span style="color:#ff79c6">&#34;image_size_limit&#34;</span>: <span style="color:#bd93f9">10485760</span>,
+      <span style="color:#ff79c6">&#34;image_matrix_limit&#34;</span>: <span style="color:#bd93f9">16777216</span>,
+      <span style="color:#ff79c6">&#34;video_size_limit&#34;</span>: <span style="color:#bd93f9">41943040</span>,
+      <span style="color:#ff79c6">&#34;video_frame_rate_limit&#34;</span>: <span style="color:#bd93f9">60</span>,
+      <span style="color:#ff79c6">&#34;video_matrix_limit&#34;</span>: <span style="color:#bd93f9">2304000</span>
+    },
+    <span style="color:#ff79c6">&#34;polls&#34;</span>: {
+      <span style="color:#ff79c6">&#34;max_options&#34;</span>: <span style="color:#bd93f9">4</span>,
+      <span style="color:#ff79c6">&#34;max_characters_per_option&#34;</span>: <span style="color:#bd93f9">50</span>,
+      <span style="color:#ff79c6">&#34;min_expiration&#34;</span>: <span style="color:#bd93f9">300</span>,
+      <span style="color:#ff79c6">&#34;max_expiration&#34;</span>: <span style="color:#bd93f9">2629746</span>
+    },
+    <span style="color:#ff79c6">&#34;translation&#34;</span>: {
+      <span style="color:#ff79c6">&#34;enabled&#34;</span>: <span style="color:#ff79c6">true</span>
+    }
+  },
+  <span style="color:#ff79c6">&#34;registrations&#34;</span>: {
+    <span style="color:#ff79c6">&#34;enabled&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;approval_required&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;message&#34;</span>: <span style="color:#ff79c6">null</span>
+  },
+  <span style="color:#ff79c6">&#34;contact&#34;</span>: {
+    <span style="color:#ff79c6">&#34;email&#34;</span>: <span style="color:#f1fa8c">&#34;staff@mastodon.social&#34;</span>,
+    <span style="color:#ff79c6">&#34;account&#34;</span>: {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
+      <span style="color:#ff79c6">&#34;username&#34;</span>: <span style="color:#f1fa8c">&#34;Gargron&#34;</span>,
+      <span style="color:#ff79c6">&#34;acct&#34;</span>: <span style="color:#f1fa8c">&#34;Gargron&#34;</span>,
+      <span style="color:#ff79c6">&#34;display_name&#34;</span>: <span style="color:#f1fa8c">&#34;Eugen 💀&#34;</span>,
+      <span style="color:#ff79c6">&#34;locked&#34;</span>: <span style="color:#ff79c6">false</span>,
+      <span style="color:#ff79c6">&#34;bot&#34;</span>: <span style="color:#ff79c6">false</span>,
+      <span style="color:#ff79c6">&#34;discoverable&#34;</span>: <span style="color:#ff79c6">true</span>,
+      <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#ff79c6">false</span>,
+      <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2016-03-16T00:00:00.000Z&#34;</span>,
+      <span style="color:#ff79c6">&#34;note&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;p&gt;Founder, CEO and lead developer &lt;span class=\&#34;h-card\&#34;&gt;&lt;a href=\&#34;https://mastodon.social/@Mastodon\&#34; class=\&#34;u-url mention\&#34;&gt;@&lt;span&gt;Mastodon&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;, Germany.&lt;/p&gt;&#34;</span>,
+      <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/@Gargron&#34;</span>,
+      <span style="color:#ff79c6">&#34;avatar&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/avatars/000/000/001/original/dc4286ceb8fab734.jpg&#34;</span>,
+      <span style="color:#ff79c6">&#34;avatar_static&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/avatars/000/000/001/original/dc4286ceb8fab734.jpg&#34;</span>,
+      <span style="color:#ff79c6">&#34;header&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/headers/000/000/001/original/3b91c9965d00888b.jpeg&#34;</span>,
+      <span style="color:#ff79c6">&#34;header_static&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/headers/000/000/001/original/3b91c9965d00888b.jpeg&#34;</span>,
+      <span style="color:#ff79c6">&#34;followers_count&#34;</span>: <span style="color:#bd93f9">133026</span>,
+      <span style="color:#ff79c6">&#34;following_count&#34;</span>: <span style="color:#bd93f9">311</span>,
+      <span style="color:#ff79c6">&#34;statuses_count&#34;</span>: <span style="color:#bd93f9">72605</span>,
+      <span style="color:#ff79c6">&#34;last_status_at&#34;</span>: <span style="color:#f1fa8c">&#34;2022-10-31&#34;</span>,
+      <span style="color:#ff79c6">&#34;noindex&#34;</span>: <span style="color:#ff79c6">false</span>,
+      <span style="color:#ff79c6">&#34;emojis&#34;</span>: [],
+      <span style="color:#ff79c6">&#34;fields&#34;</span>: [
+        {
+          <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;Patreon&#34;</span>,
+          <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;a href=\&#34;https://www.patreon.com/mastodon\&#34; target=\&#34;_blank\&#34; rel=\&#34;nofollow noopener noreferrer me\&#34;&gt;&lt;span class=\&#34;invisible\&#34;&gt;https://www.&lt;/span&gt;&lt;span class=\&#34;\&#34;&gt;patreon.com/mastodon&lt;/span&gt;&lt;span class=\&#34;invisible\&#34;&gt;&lt;/span&gt;&lt;/a&gt;&#34;</span>,
+          <span style="color:#ff79c6">&#34;verified_at&#34;</span>: <span style="color:#ff79c6">null</span>
+        }
+      ]
+    }
+  },
+  <span style="color:#ff79c6">&#34;rules&#34;</span>: [
+    {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
+      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Sexually explicit or violent media must be marked as sensitive when posting&#34;</span>
+    },
+    {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;2&#34;</span>,
+      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No racism, sexism, homophobia, transphobia, xenophobia, or casteism&#34;</span>
+    },
+    {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;3&#34;</span>,
+      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No incitement of violence or promotion of violent ideologies&#34;</span>
+    },
+    {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;4&#34;</span>,
+      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No harassment, dogpiling or doxxing of other users&#34;</span>
+    },
+    {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;5&#34;</span>,
+      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No content illegal in Germany&#34;</span>
+    },
+    {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>,
+      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Do not share intentionally false or misleading information&#34;</span>
+    }
+  ]
+}
+</code></pre></div><h2 id="attributes">Attributes</h2>
+<h3 id="domain"><code>domain</code></h3>
+<p><strong>Description:</strong> The domain name of the instance.<br>
+<strong>Type:</strong> String<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="title"><code>title</code></h3>
+<p><strong>Description:</strong> The title of the website.<br>
+<strong>Type:</strong> String<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="version"><code>version</code></h3>
+<p><strong>Description:</strong> The version of Mastodon installed on the instance.<br>
+<strong>Type:</strong> String<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="source_url"><code>source_url</code></h3>
+<p><strong>Description:</strong> The URL for the source code of the software running on this instance, in keeping with AGPL license requirements.<br>
+<strong>Type:</strong> String (URL)<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="description"><code>description</code></h3>
+<p><strong>Description:</strong> A short, plain-text description defined by the admin.<br>
+<strong>Type:</strong> String<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="usage"><code>usage</code></h3>
+<p><strong>Description:</strong> Usage data for this instance.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="users"><code>usage[users]</code></h4>
+<p><strong>Description:</strong> Usage data related to users on this instance.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="active_month"><code>usage[users][active_month]</code></h5>
+<p><strong>Description:</strong> The number of active users in the past 4 weeks.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="thumbnail"><code>thumbnail</code></h3>
+<p><strong>Description:</strong> An image used to represent this instance.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="thumbnail-url"><code>thumbnail[url]</code></h4>
+<p><strong>Description:</strong> The URL for the thumbnail image.<br>
+<strong>Type:</strong> String (URL)<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="blurhash"><code>thumbnail[blurhash]</code> <span class="api-method-parameter-required">optional</span></h4>
+<p><strong>Description:</strong> A hash computed by <a href="https://github.com/woltapp/blurhash">the BlurHash algorithm</a>, for generating colorful preview thumbnails when media has not been downloaded yet.<br>
+<strong>Type:</strong> String (Blurhash)<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="thumbnail-versions"><code>thumbnail[versions]</code> <span class="api-method-parameter-required">optional</span></h4>
+<p><strong>Description:</strong> Links to scaled resolution images, for high DPI screens.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="1x"><code>thumbnail[versions][@1x]</code> <span class="api-method-parameter-required">optional</span></h5>
+<p><strong>Description:</strong> The URL for the thumbnail image at 1x resolution.<br>
+<strong>Type:</strong> String (URL)<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="2x"><code>thumbnail[versions][@2x]</code> <span class="api-method-parameter-required">optional</span></h5>
+<p><strong>Description:</strong> The URL for the thumbnail image at 2x resolution.<br>
+<strong>Type:</strong> String (URL)<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="languages"><code>languages</code></h3>
+<p><strong>Description:</strong> Primary languages of the website and its staff.<br>
+<strong>Type:</strong> Array of String (ISO 639-1 two-letter code)<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="configuration"><code>configuration</code></h3>
+<p><strong>Description:</strong> Configured values and limits for this website.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="urls"><code>configuration[urls]</code></h4>
+<p><strong>Description:</strong> URLs of interest for clients apps.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="streaming_api"><code>configuration[urls][streaming_api]</code></h5>
+<p><strong>Description:</strong> The Websockets URL for connecting to the streaming API.<br>
+<strong>Type:</strong> String (URL)<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="vapid_public_key"><code>configuration[vapid][public_key]</code></h3>
+<p><strong>Description:</strong> The instances VAPID public key, used for push notifications, the same as <a href="/entities/WebPushSubscription/#server_key">WebPushSubscription#server_key</a>.<br>
+<strong>Type:</strong> String<br>
+<strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h4 id="accounts"><code>configuration[accounts]</code></h4>
+<p><strong>Description:</strong> Limits related to accounts.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="max_featured_tags"><code>configuration[accounts][max_featured_tags]</code></h5>
+<p><strong>Description:</strong> The maximum number of featured tags allowed for each account.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="statuses"><code>configuration[statuses]</code></h4>
+<p><strong>Description:</strong> Limits related to authoring statuses.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="max_characters"><code>configuration[statuses][max_characters]</code></h5>
+<p><strong>Description:</strong> The maximum number of allowed characters per status.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="max_media_attachments"><code>configuration[statuses][max_media_attachments]</code></h5>
+<p><strong>Description:</strong> The maximum number of media attachments that can be added to a status.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="characters_reserved_per_url"><code>configuration[statuses][characters_reserved_per_url]</code></h5>
+<p><strong>Description:</strong> Each URL in a status will be assumed to be exactly this many characters.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="media_attachments"><code>configuration[media_attachments]</code></h4>
+<p><strong>Description:</strong> Hints for which attachments will be accepted.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="supported_mime_types"><code>configuration[media_attachments][supported_mime_types]</code></h5>
+<p><strong>Description:</strong> Contains MIME types that can be uploaded.<br>
+<strong>Type:</strong> Array of String<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="image_size_limit"><code>configuration[media_attachments][image_size_limit]</code></h5>
+<p><strong>Description:</strong> The maximum size of any uploaded image, in bytes.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="image_matrix_limit"><code>configuration[media_attachments][image_matrix_limit]</code></h5>
+<p><strong>Description:</strong> The maximum number of pixels (width times height) for image uploads.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="video_size_limit"><code>configuration[media_attachments][video_size_limit]</code></h5>
+<p><strong>Description:</strong> The maximum size of any uploaded video, in bytes.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="video_frame_rate_limit"><code>configuration[media_attachments][video_frame_rate_limit]</code></h5>
+<p><strong>Description:</strong> The maximum frame rate for any uploaded video.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="video_matrix_limit"><code>configuration[media_attachments][video_matrix_limit]</code></h5>
+<p><strong>Description:</strong> The maximum number of pixels (width times height) for video uploads.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="polls"><code>configuration[polls]</code></h4>
+<p><strong>Description:</strong> Limits related to polls.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="max_options"><code>configuration[polls][max_options]</code></h5>
+<p><strong>Description:</strong> Each poll is allowed to have up to this many options.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="max_characters_per_option"><code>configuration[polls][max_characters_per_option]</code></h5>
+<p><strong>Description:</strong> Each poll option is allowed to have this many characters.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="min_expiration"><code>configuration[polls][min_expiration]</code></h5>
+<p><strong>Description:</strong> The shortest allowed poll duration, in seconds.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="max_expiration"><code>configuration[polls][max_expiration]</code></h5>
+<p><strong>Description:</strong> The longest allowed poll duration, in seconds.<br>
+<strong>Type:</strong> Integer<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="translation"><code>configuration[translation]</code></h4>
+<p><strong>Description:</strong> Hints related to translation.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h5 id="translation-enabled"><code>configuration[translation][enabled]</code></h5>
+<p><strong>Description:</strong> Whether the Translations API is available on this instance.<br>
+<strong>Type:</strong> Boolean<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="registrations"><code>registrations</code></h3>
+<p><strong>Description:</strong> Information about registering for this website.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="registrations-enabled"><code>registrations[enabled]</code></h4>
+<p><strong>Description:</strong> Whether registrations are enabled.<br>
+<strong>Type:</strong> Boolean<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="approval_required"><code>registrations[approval_required]</code></h4>
+<p><strong>Description:</strong> Whether registrations require moderator approval.<br>
+<strong>Type:</strong> Boolean<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="registrations-message"><code>registrations[message]</code></h4>
+<p><strong>Description:</strong> A custom message to be shown when registrations are closed.<br>
+<strong>Type:</strong> <span class="api-method-parameter-required">nullable</span> String (HTML) or null<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="contact"><code>contact</code></h3>
+<p><strong>Description:</strong> Hints related to contacting a representative of the website.<br>
+<strong>Type:</strong> Hash<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="contact-email"><code>contact[email]</code></h4>
+<p><strong>Description:</strong> An email address that can be messaged regarding inquiries or issues.<br>
+<strong>Type:</strong> String (Email)<br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="contact-account"><code>contact[account]</code></h4>
+<p><strong>Description:</strong> An account that can be contacted natively over the network regarding inquiries or issues.<br>
+<strong>Type:</strong> <a href="/entities/Account/">Account</a><br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h3 id="rules"><code>rules</code></h3>
+<p><strong>Description:</strong> An itemized list of rules for this website.<br>
+<strong>Type:</strong> Array of <a href="/entities/Rule/">Rule</a><br>
+<strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h2 id="see-also">See also</h2>
+<a href="/methods/instance/#v2" class="page-ref">
+  <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
+  GET /api/v2/instance
+</a>
+<a href="https://github.com/mastodon/mastodon/blob/main/app/serializers/rest/instance_serializer.rb" class="page-ref">
+  <div class="page-ref-icon"><i class="fa fa-external-link-square-alt"></i></div>
+  app/serializers/rest/instance_serializer.rb
+</a>
+
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                        
+            <div style="margin: 30px 0px">      
+            
+              <a id="previousLink" href="/entities/IdentityProof/" style="font-size: 12pt">Previous - IdentityProof</a>            
+            
+            <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              
+              <a id="nextLink" href="/entities/List/" style="font-size: 12pt">Next - List</a>                       
+              
+            </div> 
+            
+            <div id="useJS" style="display: none">0</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      Last updated December 19, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/Instance.md' style="color: #687590;">Improve this page</a>
+
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/Instance.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+</footer>
+
+</body>
+
+</html>

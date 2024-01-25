@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>站外使用Mastodon - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/zh-cn/user/external/">
+
+  
+    <meta name="description" content="你可以通过外部应用程序或网站来浏览Mastodon或与Mastodon进行交互。">
+    <meta property="og:description" content="你可以通过外部应用程序或网站来浏览Mastodon或与Mastodon进行交互。">
+    <meta name="twitter:description" content="你可以通过外部应用程序或网站来浏览Mastodon或与Mastodon进行交互。">
+  
+
+  <meta name="twitter:title" content="站外使用Mastodon">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/zh-cn/user/external/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/zh-cn/" class="">什么是Mastodon？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">使用Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/user/signup/" class="">创建一个帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/profile/" class="">设置个人资料</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/posting/" class="">发布嘟文</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/network/" class="">使用社交功能</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moderating/" class="">处理不想要的内容</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/discoverability/" class="">推广自己和他人</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/preferences/" class="">设置你的首选项</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/contacts/" class="">更多设置</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/external/" class="active">站外使用Mastodon</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moving/" class="">迁移或删除帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/run-your-own/" class="">运行自己的服务器</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">运营Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/admin/prerequisites/" class="">准备你的机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/install/" class="">从源中安装</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/config/" class="">设置你的环境</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/optional/" class="">安装可选特色功能</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/elasticsearch/" class="">全文搜索</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/tor/" class="">匿名服务</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/sso/" class="">单点登录（SSO）</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/setup/" class="">配置你的新实例</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/tootctl/" class="">使用管理命令行</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/upgrading/" class="">升级到新版本</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/backups/" class="">备份你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/migrating/" class="">迁移到新机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/scaling/" class="">伸缩你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/moderation/" class="">运营操作</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/troubleshooting/" class="">故障分析</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">开发Mastodon应用</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">向Mastodon项目做贡献</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">遵循的标准</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 方法</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 实体</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>站外使用Mastodon</h1>  
+  
+    <p>你可以通过外部应用程序或网站来浏览Mastodon或与Mastodon进行交互。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#interact">与另一个Mastodon站点的远程互动</a></li>
+        <li><a href="#apps">登录到一个客户端应用程序</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="interact">与另一个Mastodon站点的远程互动</h2>
+<figure><img src="/assets/image%20%2863%29.png"
+         alt="Mastodon网站上的一个嘟文的永久链接"/><figcaption>
+            <p>Mastodon网站上的一个嘟文的永久链接</p>
+        </figcaption>
+</figure>
+
+<p>当你在跨站浏览其他由Mastodon驱动的远程站点时，点击任何一个交互按钮都会加载一个对话框，将你重定向到你的本地站点。</p>
+<figure><img src="/assets/image%20%288%29.png"
+         alt="跨站嘟文回复对话框"/><figcaption>
+            <p>跨站嘟文回复对话框</p>
+        </figcaption>
+</figure>
+
+<h2 id="apps">登录到一个客户端应用程序</h2>
+<p>你可以使用你的Mastodon帐户登录到任何可以实现Mastodon API的应用程序。这些应用程序的列表可以在 <a href="https://joinmastodon.org/apps">https://joinmastodon.org/apps</a> 中找到。</p>
+<figure>
+    <p>
+        <strong>翻译状态：</strong>
+        本文是英文页面 <a href="/user/external/">Using Mastodon externally</a> 的翻译，最后翻译时间：，点击<a href="https://github.com/mastodon/documentation/compare/ad1ef20f171c9f61439f32168987b0b4f9abd74b...master">这里</a>可以查看翻译后页面的改动。
+    </p>
+</figure>
+
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+          
+            
+            <div style="margin: 30px 0px">            
+              <a id="previousLink" href="PREV_LINK" style="font-size: 12pt">Previous - </a>            
+              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              <a id="nextLink" href="NEXT_LINK" style="font-size: 12pt">Next - </a>                       
+            </div>
+            
+            <div id="useJS" style="display: none">1</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      最后更新于 December 21, 2022 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/external.md' style="color: #687590;">改进此页面</a>
+
+      
+        <br />
+
+        也可在此找到：
+
+        
+          <a href="/user/external/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/ja/user/external/" style="color: #687590;" hreflang="ja">日本語</a>
+        
+          <a href="/pl/user/external/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>加入Mastodon</a> · <a href='https://blog.joinmastodon.org'>博客</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/external.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
+</footer>
+
+</body>
+
+</html>

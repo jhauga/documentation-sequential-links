@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>admin API methods on Mastodon documentation</title>
+    <link>https://docs.joinmastodon.org/methods/admin/</link>
+    <description>Recent content in admin API methods on Mastodon documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.joinmastodon.org/methods/admin/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>admin/accounts API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/accounts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/accounts/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View accounts (v1) GET /api/v1/admin/accounts HTTP/1.1 View all accounts, optionally matching certain criteria for filtering, up to 100 at a time. Pagination may be done with the HTTP Link header in the response. See Paginating through API responses for more information.
+Returns: Array of Admin::Account
+OAuth: User token + admin:read:accounts
+Permissions: Manage Users
+Version history:
+2.9.1 - added
+3.3.0 - added sensitized</description>
+    </item>
+    
+    <item>
+      <title>admin/domain_blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/domain_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/domain_blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all blocked domains GET /api/v1/admin/domain_blocks HTTP/1.1 Show information about all blocked domains.
+Returns: Array of Admin::DomainBlock
+OAuth: User token + admin:read:domain_blocks
+Permissions: Manage Federation
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>admin/reports API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/reports/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/reports/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View all reports GET /api/v1/admin/reports HTTP/1.1 View information about all reports.
+Returns: Array of Admin::Report
+OAuth: User token + admin:read:reports
+Permissions: Manage Reports
+Version history:
+2.9.1 - added
+4.0.0 - support custom roles and permissions
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  resolved Boolean. Filter for resolved reports?</description>
+    </item>
+    
+    <item>
+      <title>admin/trends API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/trends/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/trends/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View trending links GET /api/v1/admin/trends/links HTTP/1.1 Links that have been shared more than others, including unapproved and unreviewed links.
+Returns: Array of Trends::Link
+OAuth: User token + admin:read
+Permissions: Manage Taxonomies
+Version history:
+3.5.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Response 200: OK [ { &amp;#34;url&amp;#34;: &amp;#34;https://twitter.</description>
+    </item>
+    
+    <item>
+      <title>canonical_email_blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/canonical_email_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/canonical_email_blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all canonical email blocks GET /api/v1/admin/canonical_email_blocks HTTP/1.1 Returns: Array of Admin::CanonicalEmailBlock
+OAuth: User token + admin:read:canonical_email_blocks
+Permissions: Manage Blocks
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination. since_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>dimensions API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/dimensions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/dimensions/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Get dimensional data POST /api/v1/admin/dimensions HTTP/1.1 Obtain information about popularity of certain accounts, servers, languages, etc.
+Returns: Array of Admin::Dimension
+OAuth: User token + admin:read
+Permissions: View Dashboard
+Version history:
+3.5.0 - added
+4.0.0 - support custom roles and permissions
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Form data parameters  keys[] required Array of String.</description>
+    </item>
+    
+    <item>
+      <title>domain_allows API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/domain_allows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/domain_allows/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all allowed domains GET /api/v1/admin/domain_allows HTTP/1.1 Show information about all allowed domains.
+Returns: Array of Admin::DomainAllow
+OAuth: User token + admin:read:domain_allows
+Permissions: Manage Federation
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>email_domain_blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/email_domain_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/email_domain_blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all blocked email domains GET /api/v1/admin/email_domain_blocks HTTP/1.1 Show information about all email domains blocked from signing up.
+Returns: Array of Admin::EmailDomainBlock
+OAuth: User token + admin:read:email_domain_blocks
+Permissions: Manage Blocks
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>ip_blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/ip_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/ip_blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all IP blocks GET /api/v1/admin/ip_blocks HTTP/1.1 Show information about all blocked IP ranges.
+Returns: Array of Admin::IpBlock
+OAuth: User token + admin:read:ip_blocks
+Permissions: Manage Blocks
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>measures API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/measures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/measures/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Get measurable data POST /api/v1/admin/measures HTTP/1.1 Obtain statistical measures for your server.
+Returns: Array of Admin::Measure
+OAuth: User token + admin:read
+Permissions: View Dashboard
+Version history:
+3.5.0 - added
+4.0.0 - support custom roles and permissions
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Form data parameters  keys[] required Array of String.</description>
+    </item>
+    
+    <item>
+      <title>retention API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/retention/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/retention/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Calculate retention data POST /api/v1/admin/retention HTTP/1.1 Generate a retention data report for a given time period and bucket.
+Returns: Array of Admin::Cohort
+OAuth: User token + admin:read
+Permissions: View Dashboard
+Version history:
+3.5.0 - added
+4.0.0 - support custom roles and permissions
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Form data parameters  start_at required String (ISO 8601 Datetime).</description>
+    </item>
+    
+  </channel>
+</rss>

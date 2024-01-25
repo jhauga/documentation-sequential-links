@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>見たくないコンテンツへの対処 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/ja/user/moderating/">
+
+  
+    <meta name="description" content="ソーシャルメディアをより快適に体験するため、見るものを制御しよう。">
+    <meta property="og:description" content="ソーシャルメディアをより快適に体験するため、見るものを制御しよう。">
+    <meta name="twitter:description" content="ソーシャルメディアをより快適に体験するため、見るものを制御しよう。">
+  
+
+  <meta name="twitter:title" content="見たくないコンテンツへの対処">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/ja/user/moderating/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/ja/" class="">Mastodon（マストドン）とは？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを使う</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/ja/user/signup/" class="">アカウントの登録</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/profile/" class="">プロフィールの設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/posting/" class="">トゥートの投稿</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/network/" class="">ネットワーク機能の使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moderating/" class="active">見たくないコンテンツへの対処</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/discoverability/" class="">自分や他のユーザーの宣伝</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/preferences/" class="">環境の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/contacts/" class="">その他の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/external/" class="">外部からのMasotodonの使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moving/" class="">アカウントの引っ越しや削除</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/run-your-own/" class="">自分のサーバーを動かすこと</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを動かす</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonアプリを開発する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonの開発に貢献する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">準拠している仕様</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Methods</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Entities</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>見たくないコンテンツへの対処</h1>  
+  
+    <p>ソーシャルメディアをより快適に体験するため、見るものを制御しよう。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#filters">投稿のフィルター</a>
+          <ul>
+            <li><a href="#filter-phrase">キーワードまたはフレーズ</a></li>
+            <li><a href="#filter-expire">有効期限</a></li>
+            <li><a href="#filter-context">除外対象</a></li>
+            <li><a href="#filter-drop">隠すのではなく除外する</a></li>
+            <li><a href="#filter-whole">単語全体にマッチ</a></li>
+          </ul>
+        </li>
+        <li><a href="#blocking-and-muting">ユーザーレベルで実行できること</a>
+          <ul>
+            <li><a href="#hide-boosts">ブーストを非表示</a></li>
+            <li><a href="#mute">ミュート</a></li>
+            <li><a href="#block">ブロック</a></li>
+            <li><a href="#hide-domain">サーバー全体をブロック</a></li>
+          </ul>
+        </li>
+        <li><a href="#report">問題のあるコンテンツをモデレーターに通報する</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="filters">投稿のフィルター</h2>
+<p>特定のキーワードやフレーズがあるステータスをフィルターすることが可能です。フィルターすることで、それらは自動的に見えなくなります。</p>
+<figure><img src="/assets/image%20%2848%29.png"
+         alt="異なる場所で、さまざまなキーワードをフィルターしている例"/><figcaption>
+            <p>異なる場所で、さまざまなキーワードをフィルターしている例</p>
+        </figcaption>
+</figure>
+
+<p>フィルターを作成または管理するには、設定から「フィルター」を選択します。「新規フィルターを追加」ボタンを押して新しいフィルターを作成できますし、すでに登録しているフィルターを編集したり削除できたりします。登録済みのフィルターは表にまとめられます。</p>
+<figure><img src="/assets/image%20%2814%29.png"
+         alt="フィルターは、有効期限、除外対象、サーバーからの配信削除、および指定した単語全体での一致を指定できる"/><figcaption>
+            <p>フィルターは、有効期限、除外対象、サーバーからの配信削除、および指定した単語全体での一致を指定できる</p>
+        </figcaption>
+</figure>
+
+<p>フィルターには次の設定があります。</p>
+<h3 id="filter-phrase">キーワードまたはフレーズ</h3>
+<p>これは一致させたい文字列です。キーワードはCW、メディアの説明、投票の選択肢を含め、どんなステータスの中身でも検索されるでしょう。</p>
+<h3 id="filter-expire">有効期限</h3>
+<p>必要に応じて、有効時間を定めてフィルターを適用できます。期限切れのフィルターは自動的に削除されません。新しい有効期限を設定することで（または有効期限を「無期限」に戻すことで）再度有効にできます。</p>
+<h3 id="filter-context">除外対象</h3>
+<p>フィルターが適用される場所を選択できます。</p>
+<ul>
+<li>ホームタイムライン ＝ 一致するステータスはホームフィードから削除されます。</li>
+<li>通知 ＝ 一致する通知は表示されなくなります。</li>
+<li>公開タイムライン ＝ 一致するステータスはローカルタイムライン／連合タイムラインに現れなくなります。</li>
+<li>会話 = 一致するステータスはスレッドと詳細表示で隠されます。</li>
+</ul>
+<h3 id="filter-drop">隠すのではなく除外する</h3>
+<p>フィルターの実行は普段クライアント側で行われます。そのためフィルターを無効にすることで、フィルターされたステータスを再び表示できます。しかし「隠すのではなく除外する」を有効にすると、一致するステータスが完全に消えさり、ホームや通知に配信されなくなります。</p>
+<h3 id="filter-whole">単語全体にマッチ</h3>
+<p>フィルターは通常、単語の途中にあるかどうかに関係なく、該当の文字を含んでいるすべてのステータスに適用されます。「単語全体にマッチ」を有効にすると、スペースまたは英数字以外の文字の間にキーワードがある場合にのみフィルターが適用されます。</p>
+<h2 id="blocking-and-muting">ユーザーレベルで実行できること</h2>
+<figure><img src="/assets/image%20%2824%29.png"
+         alt="ユーザープロフィールにあるドロップダウンメニューでは、さまざまなことを設定できる"/><figcaption>
+            <p>ユーザープロフィールにあるドロップダウンメニューでは、さまざまなことを設定できる</p>
+        </figcaption>
+</figure>
+
+<h3 id="hide-boosts">ブーストを非表示</h3>
+<p>誰かのブーストを隠したい場合、ホームフィードでそのブーストを見えなくできます。この選択肢は、現在フォローしているユーザープロフィール上でのみ表示されます。</p>
+<h3 id="mute">ミュート</h3>
+<figure><img src="/assets/image%20%2852%29.png"
+         alt="ミュートされたアカウントの例"/><figcaption>
+            <p>ミュートされたアカウントの例</p>
+        </figcaption>
+</figure>
+
+<p>ミュートするときは、通知をミュートするかどうかを選択できます。通知をミュートしないミュートは、次の場面でそのユーザーを隠します。</p>
+<ul>
+<li>ホームフィードで、そのユーザーが見えなくなります。</li>
+<li>そのユーザーの投稿を他の人がブーストしても見えなくなります。</li>
+<li>そのユーザーに他の人がメンションしている投稿は見えなくなります。</li>
+<li>公開タイムラインでそのユーザーが見えなくなります。</li>
+</ul>
+<p>そのユーザーからの通知もミュートすることを選択した場合、上記に加えてそのユーザーからの通知を見えなくなります。</p>
+<p>ミュートされたユーザーはミュートされていることを知る方法を持ちあわせていません。</p>
+<h3 id="block">ブロック</h3>
+<figure><img src="/assets/image%20%2836%29.png"
+         alt="ブロックされたアカウントの例"/><figcaption>
+            <p>ブロックされたアカウントの例</p>
+        </figcaption>
+</figure>
+
+<p>ブロックは、次の場面でユーザーを隠します。</p>
+<ul>
+<li>ホームフィードでそのユーザーが見えなくなります。</li>
+<li>そのユーザーの投稿を他の人がブーストしても見えなくなります。</li>
+<li>そのユーザーに他の人がメンションしている投稿は見えなくなります。</li>
+<li>公開タイムラインでそのユーザーが見えなくなります。</li>
+<li>そのユーザーからの通知が見えなくなります。</li>
+</ul>
+<p>これに加えて、ブロックされたユーザー側では：</p>
+<ul>
+<li>そのユーザーは、あなたのフォローが強制的に解除されます。</li>
+<li>そのユーザーは、あなたをフォローできなくります。</li>
+<li>そのユーザーは、あなたの投稿が誰かにブーストされても見えなくなります。</li>
+<li>そのユーザーは、公開タイムラインであなたを見つけられなくなります。</li>
+</ul>
+<p>もしあなたとブロックされたユーザーが同じサーバーにいる場合、ブロックされたユーザーがログインしている間、あなたのプロフィール上であなたの投稿を見られなくなるでしょう。</p>
+<h3 id="hide-domain">サーバー全体をブロック</h3>
+<p>![]({{ relUrl &ldquo;/assets/image%20%2861%29.png&rdquo; }})</p>
+<p>サーバー全体をブロックする場合：</p>
+<ul>
+<li>公開タイムライン上で、そのサーバーからの投稿が見えなくなります。</li>
+<li>あなたのホームフィードで、そのサーバーにいる人の投稿のブーストは見えなくなります。</li>
+<li>そのサーバーからの通知は見えなくなります。</li>
+<li>そのサーバーにいるフォロワーと思われる人すべてをなくします。</li>
+</ul>
+<h2 id="report">問題のあるコンテンツをモデレーターに通報する</h2>
+<figure><img src="/assets/image%20%283%29.png"
+         alt="通報のモーダル画面では、具体的なステータスの選択、コメントの追加、レポートの転送ができる"/><figcaption>
+            <p>通報のモーダル画面では、具体的なステータスの選択、コメントの追加、レポートの転送ができる</p>
+        </figcaption>
+</figure>
+
+<p>あなたのウェブサイトのルールに違反しているステータスまたはユーザーを見つけた場合、あなたのサイトのモデレーターにそのユーザーを通報できます。ユーザープロフィールのドロップダウンメニューまたはステータのスドロップダウンメニューから「通報」の選択肢をクリックすると、通報のモーダル画面が開きます。ここでは、このアカウントを通報する理由についてのコメントを追加できます（追加するべきです）。アカウントを通報する理由について追加の文脈を示すために、はっきりと問題のあるステータスを指定できます。また、その行為がリモートのウェブサイトのルールに違反している場合、そのサイトのモデレーターに通報を転送することもできます。</p>
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+          
+            
+            <div style="margin: 30px 0px">            
+              <a id="previousLink" href="PREV_LINK" style="font-size: 12pt">Previous - </a>            
+              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              <a id="nextLink" href="NEXT_LINK" style="font-size: 12pt">Next - </a>                       
+            </div>
+            
+            <div id="useJS" style="display: none">1</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      最終更新 December 21, 2022 · <a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/moderating.md' style="color: #687590;">このページを改善する</a>
+
+      
+        <br />
+
+        他の言語も利用可能：
+
+        
+          <a href="/user/moderating/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/zh-cn/user/moderating/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+          <a href="/pl/user/moderating/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Mastodonに参加する</a> · <a href='https://blog.joinmastodon.org'>ブログ</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/moderating.md'>ソースコードを見る</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>インプリメント</a></p>
+</footer>
+
+</body>
+
+</html>

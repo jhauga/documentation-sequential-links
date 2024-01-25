@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>备份你的服务器 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/zh-cn/admin/backups/">
+
+  
+    <meta name="description" content="设置日常备份（可选，但并非如此）">
+    <meta property="og:description" content="设置日常备份（可选，但并非如此）">
+    <meta name="twitter:description" content="设置日常备份（可选，但并非如此）">
+  
+
+  <meta name="twitter:title" content="备份你的服务器">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/zh-cn/admin/backups/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/zh-cn/" class="">什么是Mastodon？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">使用Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/user/signup/" class="">创建一个帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/profile/" class="">设置个人资料</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/posting/" class="">发布嘟文</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/network/" class="">使用社交功能</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moderating/" class="">处理不想要的内容</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/discoverability/" class="">推广自己和他人</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/preferences/" class="">设置你的首选项</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/contacts/" class="">更多设置</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/external/" class="">站外使用Mastodon</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moving/" class="">迁移或删除帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/run-your-own/" class="">运行自己的服务器</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">运营Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/admin/prerequisites/" class="">准备你的机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/install/" class="">从源中安装</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/config/" class="">设置你的环境</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/optional/" class="">安装可选特色功能</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/elasticsearch/" class="">全文搜索</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/tor/" class="">匿名服务</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/sso/" class="">单点登录（SSO）</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/setup/" class="">配置你的新实例</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/tootctl/" class="">使用管理命令行</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/upgrading/" class="">升级到新版本</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/backups/" class="active">备份你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/migrating/" class="">迁移到新机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/scaling/" class="">伸缩你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/moderation/" class="">运营操作</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/troubleshooting/" class="">故障分析</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">开发Mastodon应用</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">向Mastodon项目做贡献</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">遵循的标准</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 方法</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 实体</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>备份你的服务器</h1>  
+  
+    <p>设置日常备份（可选，但并非如此）</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#overview">概览</a></li>
+        <li><a href="#failure">故障模式</a></li>
+        <li><a href="#env">备份应用密钥</a></li>
+        <li><a href="#postgresql">备份 PostgreSQL</a></li>
+        <li><a href="#media">备份用户上传的文件</a></li>
+        <li><a href="#redis">备份 Redis</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <p>对于任何真实世界用途来说，你都应该保证日常备份Mastodon服务器。</p>
+<h2 id="overview">概览</h2>
+<p>你所需要备份的东西，按重要程度排序：</p>
+<ol>
+<li>PostgreSQL 数据库</li>
+<li><code>.env.production</code> 文件或等效文件中的应用密钥</li>
+<li>用户上传的文件</li>
+<li>Redis 数据库</li>
+</ol>
+<h2 id="failure">故障模式</h2>
+<p>人们通常要应对两种类型故障：硬件故障，诸如磁盘上数据损坏；以及人为软件故障，诸如误删特定文件。本文档中，仅考虑前一种类型。</p>
+<p>丢失PostgreSQL数据库，那一切都完了。Mastodon将所有重要数据存储于PostgreSQL数据库中。如果数据库消失，那你服务器上所有的帐户、所有的嘟文、所有关注者都将随之消失。</p>
+<p>如果你丢失了应用密钥，对你的用户而言，Mastodon的某些功能将停止工作。你服务器上的用户将被登出，双因子认证（2FA）将不可用，Web Push API订阅将停止工作。</p>
+<p>如果你丢失了用户上传的文件，你将丢失头像、横幅、媒体附件，但Mastodon<em>仍会</em>继续工作。</p>
+<p>丢失Redis数据库几乎是无害的：唯一不可逆的数据是Sidekiq队列及之前失败任务的重试计划。主页与列表时间流虽然存储于Redis，但它们可以使用tootctl再生成。</p>
+<p>最好的备份是所谓的异地备份，即与Mastodon自身不在同一台计算机上存储的备份。如果你托管的服务器起火了，硬盘爆炸了，存储于同一硬件备份将不可用。</p>
+<h2 id="env">备份应用密钥</h2>
+<p>应用密钥是最容易备份的，因为它们是不变的。你只需要将 <code>.env.production</code> 存储在安全的地方就可以了。</p>
+<h2 id="postgresql">备份 PostgreSQL</h2>
+<p>突然断电、硬盘故障、错误迁移数库库schema都会致使数据损坏。由于以上原因，推荐偶尔使用 <code>pg_dump</code> 或 <code>pg_dumpall</code> 备份数据库。</p>
+<p>如果要求高可用性，可以使用热流拷贝（hot streaming replication）使第二台PostgreSQL服务器始终具有最新数据，并做好另一台服务器出现故障切换至此的准备。</p>
+<h2 id="media">备份用户上传的文件</h2>
+<p>如果你使用外部对象存储，诸如Amazon S3、Google Cloud 或 Wasabi，你无需为怎么备份它们而担心。各自的公司将负责处理硬件故障。</p>
+<p>如果你使用本地文件存储，复制体积巨大的 <code>public/system</code> 目录（默认存储上传文件的地方）。</p>
+<h2 id="redis">备份 Redis</h2>
+<p>备份Redis是很容易的。Redis会定期将数据写入<code>/var/lib/redis/dump.rdb</code>文件，你只需要复制这个文件就可以了。</p>
+<figure>
+    <p>
+        <strong>翻译状态：</strong>
+        本文是英文页面 <a href="/admin/backups/">Backing up your server</a> 的翻译，最后翻译时间：，点击<a href="https://github.com/mastodon/documentation/compare/ad1ef20f171c9f61439f32168987b0b4f9abd74b...master">这里</a>可以查看翻译后页面的改动。
+    </p>
+</figure>
+
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+          
+            
+            <div style="margin: 30px 0px">            
+              <a id="previousLink" href="PREV_LINK" style="font-size: 12pt">Previous - </a>            
+              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              <a id="nextLink" href="NEXT_LINK" style="font-size: 12pt">Next - </a>                       
+            </div>
+            
+            <div id="useJS" style="display: none">1</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      最后更新于 May 21, 2020 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/backups.md' style="color: #687590;">改进此页面</a>
+
+      
+        <br />
+
+        也可在此找到：
+
+        
+          <a href="/admin/backups/" style="color: #687590;" hreflang="en">English</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>加入Mastodon</a> · <a href='https://blog.joinmastodon.org'>博客</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/backups.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
+</footer>
+
+</body>
+
+</html>

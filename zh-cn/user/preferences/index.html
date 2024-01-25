@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>设置你的首选项 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/zh-cn/user/preferences/">
+
+  
+    <meta name="description" content="以你喜欢的方式自定义Mastodon。">
+    <meta property="og:description" content="以你喜欢的方式自定义Mastodon。">
+    <meta name="twitter:description" content="以你喜欢的方式自定义Mastodon。">
+  
+
+  <meta name="twitter:title" content="设置你的首选项">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/zh-cn/user/preferences/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/zh-cn/" class="">什么是Mastodon？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">使用Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/user/signup/" class="">创建一个帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/profile/" class="">设置个人资料</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/posting/" class="">发布嘟文</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/network/" class="">使用社交功能</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moderating/" class="">处理不想要的内容</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/discoverability/" class="">推广自己和他人</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/preferences/" class="active">设置你的首选项</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/contacts/" class="">更多设置</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/external/" class="">站外使用Mastodon</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moving/" class="">迁移或删除帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/run-your-own/" class="">运行自己的服务器</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">运营Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/admin/prerequisites/" class="">准备你的机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/install/" class="">从源中安装</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/config/" class="">设置你的环境</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/optional/" class="">安装可选特色功能</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/elasticsearch/" class="">全文搜索</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/tor/" class="">匿名服务</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/sso/" class="">单点登录（SSO）</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/setup/" class="">配置你的新实例</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/tootctl/" class="">使用管理命令行</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/upgrading/" class="">升级到新版本</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/backups/" class="">备份你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/migrating/" class="">迁移到新机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/scaling/" class="">伸缩你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/moderation/" class="">运营操作</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/troubleshooting/" class="">故障分析</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">开发Mastodon应用</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">向Mastodon项目做贡献</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">遵循的标准</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 方法</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 实体</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>设置你的首选项</h1>  
+  
+    <p>以你喜欢的方式自定义Mastodon。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#interface">自定义用户界面外观</a>
+          <ul>
+            <li><a href="#theme">选择一个站点主题</a></li>
+            <li><a href="#layout">选择你的布局</a></li>
+            <li><a href="#confirm">确认对话框</a></li>
+            <li><a href="#sensitive">敏感内容</a></li>
+          </ul>
+        </li>
+        <li><a href="#notifications">控制你的通知</a>
+          <ul>
+            <li><a href="#email">发送电子邮件</a></li>
+            <li><a href="#hide-notifications">隐藏特定通知</a></li>
+          </ul>
+        </li>
+        <li><a href="#misc">杂项选项</a>
+          <ul>
+            <li><a href="#posting">发布默认值</a></li>
+            <li><a href="#languages">公共时间轴的语言过滤</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="interface">自定义用户界面外观</h2>
+<h3 id="theme">选择一个站点主题</h3>
+<p>Mastodon默认为深色主题，但可以选择浅色或高对比度主题。</p>
+<figure><img src="/assets/image%20%2834%29.png"
+         alt="Mastodon浅色主题"/><figcaption>
+            <p>Mastodon浅色主题</p>
+        </figcaption>
+</figure>
+
+<h3 id="layout">选择你的布局</h3>
+<p>Mastodon默认为简单的单列布局，左侧有一个撰写框，右侧有一个列切换器。你可以选择启用高级网页界面，该界面允许你同时查看和固定多个列。</p>
+<figure><img src="/assets/image%20%2832%29.png"
+         alt="高级 web 界面"/><figcaption>
+            <p>高级 web 界面</p>
+        </figcaption>
+</figure>
+
+<p>在这两个界面中，当有新的嘟文时，更新会自动加载。你可以启用“慢速模式”在栏目顶部显示一个横幅，显示新嘟文数量，只有当你点击横幅时，时间轴才会在点击后更新。</p>
+<p>出于无障碍性的原因，GIF动画的自动播放默认是禁用的。如果你想看动图，可以启用自动播放 GIF 动画。你也可以在整个界面中减少动画的运动。</p>
+<p>趋势标签在高级web界面中的“开始使用”栏下面，或者简单web界面中的列切换器下面（只有当有足够的空间显示它们时才会显示）。</p>
+<h3 id="confirm">确认对话框</h3>
+<p>你可以选择在执行某些操作前要求确认。目前，可在执行以下操作前设置确认：</p>
+<ul>
+<li>取消关注</li>
+<li>转嘟</li>
+<li>删除</li>
+</ul>
+<h3 id="sensitive">敏感内容</h3>
+<p>默认情况下，任何标记为敏感的媒体都会被隐藏在可点击的覆盖层后。你也可以选择始终显示/隐藏在此覆盖层后面的媒体，无论其是否被标记为敏感媒体。</p>
+<p>隐藏和未加载的媒体使用由BlurHash算法提供的彩色渐变，它使用图像的颜色，但模糊了细节。这些渐变可以被禁用。</p>
+<figure><img src="/assets/image%20%286%29.png"
+         alt="Blurhash缩略图示例"/><figcaption>
+            <p>Blurhash缩略图示例</p>
+        </figcaption>
+</figure>
+
+<p>带有内容警告的嘟文默认是折叠的，但你可以选择总是展开警告嘟文，以便显示完整的嘟文。</p>
+<h2 id="notifications">控制你的通知</h2>
+<h3 id="email">发送电子邮件</h3>
+<p>你可以根据你在Mastodon中收到的通知类型选择接收电子邮件通知。以下的通知类型可以启用。</p>
+<ul>
+<li>关注</li>
+<li>关注请求</li>
+<li>转嘟</li>
+<li>喜欢</li>
+<li>提及</li>
+</ul>
+<p>你还可以启用摘要邮件，这将为你提供长期不活动期间收到的通知概览。</p>
+<h3 id="hide-notifications">隐藏特定通知</h3>
+<p>你可以选择不接收来自你不关注的人，或者不关注你的人的通知。这将导致回复、收藏、喜欢、转嘟和其他互动不会显示给你。</p>
+<p>你也可以选择不接收来自你不关注的人的私信消息。</p>
+<h2 id="misc">杂项选项</h2>
+<p>如果你选择<code>禁止搜索引擎建立索引</code>，你的公开资料和嘟文页面上将会被添加 <code>noindex</code> 标签。</p>
+<p>你可以选择<code>隐藏你的社交网络</code>，这将使你关注的人和关注你的人仅你自己可见。</p>
+<figure><img src="/assets/image%20%284%29.png"
+         alt="选择隐藏社交网络后的个人资料"/><figcaption>
+            <p>选择隐藏社交网络后的个人资料</p>
+        </figcaption>
+</figure>
+
+<p>如果你想看到被多次转嘟的嘟文重新插入到你时间流的最上方，你可以禁用<code>在时间轴中合并转嘟</code>。</p>
+<h3 id="posting">发布默认值</h3>
+<p>嘟文默认可见范围为公开。你可以将新嘟文的默认可见范围改为不列出或仅关注者。关于嘟文可见范围的解释，请参阅 <a href="../posting#privacy">发布嘟文 &gt; 嘟文可见范围</a>。</p>
+<p>默认情况下，你的嘟文的语言会被自动检测，但这种检测可能不准确。如果你主要或专门用某种语言发帖，最好在<code>发布语言</code>设置该语言。</p>
+<p>如果你经常发布敏感媒体，你可以选择<code>总是将我发送的媒体文件标记为敏感内容</code>。</p>
+<h3 id="languages">公共时间轴的语言过滤</h3>
+<p>你可以选择在浏览公共时间轴时只显示特定语言的嘟文。但是，请注意，语言检测可能非常不精确，因此你可能仍然会看到一些使用被禁用语言的嘟文，或者错过一些使用已启用语言的嘟文。</p>
+<figure>
+    <p>
+        <strong>翻译状态：</strong>
+        本文是英文页面 <a href="/user/preferences/">Set your preferences</a> 的翻译，最后翻译时间：，点击<a href="https://github.com/mastodon/documentation/compare/ad1ef20f171c9f61439f32168987b0b4f9abd74b...master">这里</a>可以查看翻译后页面的改动。
+    </p>
+</figure>
+
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+          
+            
+            <div style="margin: 30px 0px">            
+              <a id="previousLink" href="PREV_LINK" style="font-size: 12pt">Previous - </a>            
+              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              <a id="nextLink" href="NEXT_LINK" style="font-size: 12pt">Next - </a>                       
+            </div>
+            
+            <div id="useJS" style="display: none">1</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      最后更新于 December 21, 2022 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/preferences.md' style="color: #687590;">改进此页面</a>
+
+      
+        <br />
+
+        也可在此找到：
+
+        
+          <a href="/user/preferences/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/ja/user/preferences/" style="color: #687590;" hreflang="ja">日本語</a>
+        
+          <a href="/pl/user/preferences/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>加入Mastodon</a> · <a href='https://blog.joinmastodon.org'>博客</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/preferences.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
+</footer>
+
+</body>
+
+</html>

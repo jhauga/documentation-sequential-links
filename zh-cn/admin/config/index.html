@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>设置你的环境 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/zh-cn/admin/config/">
+
+  
+    <meta name="description" content="为你安装的Mastodon设置环境变量。">
+    <meta property="og:description" content="为你安装的Mastodon设置环境变量。">
+    <meta name="twitter:description" content="为你安装的Mastodon设置环境变量。">
+  
+
+  <meta name="twitter:title" content="设置你的环境">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/zh-cn/admin/config/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/zh-cn/" class="">什么是Mastodon？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">使用Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/user/signup/" class="">创建一个帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/profile/" class="">设置个人资料</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/posting/" class="">发布嘟文</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/network/" class="">使用社交功能</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moderating/" class="">处理不想要的内容</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/discoverability/" class="">推广自己和他人</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/preferences/" class="">设置你的首选项</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/contacts/" class="">更多设置</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/external/" class="">站外使用Mastodon</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moving/" class="">迁移或删除帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/run-your-own/" class="">运行自己的服务器</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">运营Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/admin/prerequisites/" class="">准备你的机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/install/" class="">从源中安装</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/config/" class="active">设置你的环境</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/optional/" class="">安装可选特色功能</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/elasticsearch/" class="">全文搜索</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/tor/" class="">匿名服务</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/sso/" class="">单点登录（SSO）</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/setup/" class="">配置你的新实例</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/tootctl/" class="">使用管理命令行</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/upgrading/" class="">升级到新版本</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/backups/" class="">备份你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/migrating/" class="">迁移到新机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/scaling/" class="">伸缩你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/moderation/" class="">运营操作</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/troubleshooting/" class="">故障分析</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">开发Mastodon应用</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">向Mastodon项目做贡献</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">遵循的标准</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 方法</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 实体</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>设置你的环境</h1>  
+  
+    <p>为你安装的Mastodon设置环境变量。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#basic">基本参数</a>
+          <ul>
+            <li><a href="#federation">站点互联</a></li>
+            <li><a href="#secrets">密钥</a></li>
+            <li><a href="#deployment">部署</a></li>
+            <li><a href="#scaling">缩放选项</a></li>
+          </ul>
+        </li>
+        <li><a href="#connections">数据库连接</a>
+          <ul>
+            <li><a href="#postgresql">PostgreSQL</a></li>
+            <li><a href="#redis">Redis</a></li>
+            <li><a href="#elasticsearch">Elasticsearch</a></li>
+            <li><a href="#statsd">StatsD</a></li>
+          </ul>
+        </li>
+        <li><a href="#limits">限制</a></li>
+        <li><a href="#email">电子邮件</a></li>
+        <li><a href="#cdn">文件存储</a>
+          <ul>
+            <li><a href="#paperclip">本地文件存储</a></li>
+            <li><a href="#s3">Amazon S3 及其兼容存储</a></li>
+            <li><a href="#swift">Swift</a></li>
+          </ul>
+        </li>
+        <li><a href="#external-authentication">外部认证</a>
+          <ul>
+            <li><a href="#ldap">LDAP</a></li>
+            <li><a href="#pam">PAM</a></li>
+            <li><a href="#cas">CAS</a></li>
+            <li><a href="#saml">SAML</a></li>
+          </ul>
+        </li>
+        <li><a href="#hidden-services">隐藏服务</a></li>
+        <li><a href="#other">其它</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  本页面仍在建设中。
+</div>
+
+<p>Mastodon使用环境变量作为其的配置。</p>
+<p>为了方便起见，Mastodon从Mastodon目录中的 <code>.env.production</code> 文件读取环境变量，但是始终可以用特定方式覆盖它们。例如：在 systemd service 文件中可以使用 <code>EnvironmentFile</code> 从特定文件中读取环境变量或使用 <code>Environment</code> 定义环境变量，因此你可以为不同服务指定不同的环境变量。也可以在从命令行调用运行Mastodon时指定环境变量。</p>
+<h2 id="basic">基本参数</h2>
+<h3 id="federation">站点互联</h3>
+<ul>
+<li><code>LOCAL_DOMAIN</code></li>
+<li><code>WEB_DOMAIN</code></li>
+<li><code>ALTERNATE_DOMAINS</code></li>
+</ul>
+<h4 id="authorized_fetch"><code>AUTHORIZED_FETCH</code></h4>
+<p>当设置为 <code>true</code> 时，Mastodon将停止内联签名活动，并要求远程服务器在拉取公开（public）和不公开（unlisted）的嘟文时进行身份验证。</p>
+<p>这可以阻止被屏蔽的域名拉取你的公开嘟文，但代价是可能增加计算量，并与不支持附带签名的拉取请求的软件不兼容（如低于3.0版本的Mastodon）。</p>
+<p>请注意：这个模式并不能保证你的公开嘟文（public、unlisted）不被恶意操作者获取，这仅仅是增加了一点难度。</p>
+<h4 id="whitelist_mode"><code>WHITELIST_MODE</code></h4>
+<p>当设置为 <code>true</code> 时，Mastodon将仅与白名单内的服务器互联，同时关闭公开页面和一些客户端API。
+白名单模式会启用 authorized fetch 模式。</p>
+<p>当一个现存实例站点切换至白名单模式，以下命令可以被用来移除非白名单站点的数据：</p>
+<pre><code>tootctl domain purge --whitelist-mode
+</code></pre><p>请注意：虽然Mastodon 3.0 版本便引入了白名单模式 <code>WHITELIST_MODE</code>，但在Mastodon 3.0和3.0.1版中并没有正确实现。</p>
+<h3 id="secrets">密钥</h3>
+<ul>
+<li><code>SECRET_KEY_BASE</code></li>
+<li><code>OTP_SECRET</code></li>
+<li><code>VAPID_PRIVATE_KEY</code></li>
+<li><code>VAPID_PUBLIC_KEY</code></li>
+</ul>
+<h3 id="deployment">部署</h3>
+<ul>
+<li><code>RAILS_ENV</code></li>
+<li><code>RAILS_SERVE_STATIC_FILES</code></li>
+<li><code>RAILS_LOG_LEVEL</code></li>
+<li><code>TRUSTED_PROXY_IP</code></li>
+<li><code>SOCKET</code></li>
+<li><code>PORT</code></li>
+<li><code>NODE_ENV</code></li>
+<li><code>BIND</code></li>
+</ul>
+<h3 id="scaling">缩放选项</h3>
+<ul>
+<li><code>WEB_CONCURRENCY</code></li>
+<li><code>MAX_THREADS</code></li>
+<li><code>PREPARED_STATEMENTS</code></li>
+<li><code>STREAMING_API_BASE_URL</code></li>
+<li><code>STREAMING_CLUSTER_NUM</code></li>
+</ul>
+<h2 id="connections">数据库连接</h2>
+<h3 id="postgresql">PostgreSQL</h3>
+<ul>
+<li><code>DB_HOST</code></li>
+<li><code>DB_USER</code></li>
+<li><code>DB_NAME</code></li>
+<li><code>DB_PASS</code></li>
+<li><code>DB_PORT</code></li>
+<li><code>DB_SSLMODE</code></li>
+<li><code>DATABASE_URL</code></li>
+</ul>
+<h3 id="redis">Redis</h3>
+<ul>
+<li><code>REDIS_HOST</code></li>
+<li><code>REDIS_PORT</code></li>
+<li><code>REDIS_URL</code></li>
+<li><code>REDIS_NAMESPACE</code></li>
+<li><code>CACHE_REDIS_HOST</code></li>
+<li><code>CACHE_REDIS_PORT</code></li>
+<li><code>CACHE_REDIS_URL</code></li>
+<li><code>CACHE_REDIS_NAMESPACE</code></li>
+</ul>
+<h3 id="elasticsearch">Elasticsearch</h3>
+<ul>
+<li><code>ES_ENABLED</code></li>
+<li><code>ES_HOST</code></li>
+<li><code>ES_PORT</code></li>
+<li><code>ES_PREFIX</code></li>
+</ul>
+<h3 id="statsd">StatsD</h3>
+<ul>
+<li><code>STATSD_ADDR</code></li>
+<li><code>STATSD_NAMESPACE</code></li>
+</ul>
+<h2 id="limits">限制</h2>
+<ul>
+<li><code>SINGLE_USER_MODE</code></li>
+<li><code>EMAIL_DOMAIN_WHITELIST</code></li>
+<li><code>DEFAULT_LOCALE</code></li>
+<li><code>MAX_SESSION_ACTIVATIONS</code></li>
+<li><code>USER_ACTIVE_DAYS</code></li>
+</ul>
+<h2 id="email">电子邮件</h2>
+<ul>
+<li><code>SMTP_SERVER</code></li>
+<li><code>SMTP_PORT</code></li>
+<li><code>SMTP_LOGIN</code></li>
+<li><code>SMTP_PASSWORD</code></li>
+<li><code>SMTP_FROM_ADDRESS</code></li>
+<li><code>SMTP_DOMAIN</code></li>
+<li><code>SMTP_DELIVERY_METHOD</code></li>
+<li><code>SMTP_AUTH_METHOD</code></li>
+<li><code>SMTP_CA_FILE</code></li>
+<li><code>SMTP_OPENSSL_VERIFY_MODE</code></li>
+<li><code>SMTP_ENABLE_STARTTLS_AUTO</code></li>
+<li><code>SMTP_TLS</code></li>
+</ul>
+<h2 id="cdn">文件存储</h2>
+<ul>
+<li><code>CDN_HOST</code></li>
+<li><code>S3_ALIAS_HOST</code></li>
+</ul>
+<h3 id="paperclip">本地文件存储</h3>
+<ul>
+<li><code>PAPERCLIP_ROOT_PATH</code></li>
+<li><code>PAPERCLIP_ROOT_URL</code></li>
+</ul>
+<h3 id="s3">Amazon S3 及其兼容存储</h3>
+<ul>
+<li><code>S3_ENABLED</code></li>
+<li><code>S3_BUCKET</code></li>
+<li><code>AWS_ACCESS_KEY_ID</code></li>
+<li><code>AWS_SECRET_ACCESS_KEY</code></li>
+<li><code>S3_REGION</code></li>
+<li><code>S3_PROTOCOL</code></li>
+<li><code>S3_HOSTNAME</code></li>
+<li><code>S3_ENDPOINT</code></li>
+<li><code>S3_SIGNATURE_VERSION</code></li>
+<li><code>S3_BATCH_DELETE_LIMIT</code></li>
+<li><code>S3_BATCH_DELETE_RETRY</code></li>
+</ul>
+<h3 id="swift">Swift</h3>
+<ul>
+<li><code>SWIFT_ENABLED</code></li>
+<li><code>SWIFT_USERNAME</code></li>
+<li><code>SWIFT_TENANT</code></li>
+<li><code>SWIFT_PASSWORD</code></li>
+<li><code>SWIFT_PROJECT_ID</code></li>
+<li><code>SWIFT_AUTH_URL</code></li>
+<li><code>SWIFT_CONTAINER</code></li>
+<li><code>SWIFT_OBJECT_URL</code></li>
+<li><code>SWIFT_REGION</code></li>
+<li><code>SWIFT_DOMAIN_NAME</code></li>
+<li><code>SWIFT_CACHE_TTL</code></li>
+</ul>
+<h2 id="external-authentication">外部认证</h2>
+<ul>
+<li><code>OAUTH_REDIRECT_AT_SIGN_IN</code></li>
+</ul>
+<h3 id="ldap">LDAP</h3>
+<ul>
+<li><code>LDAP_ENABLED</code></li>
+<li><code>LDAP_HOST</code></li>
+<li><code>LDAP_PORT</code></li>
+<li><code>LDAP_METHOD</code></li>
+<li><code>LDAP_BASE</code></li>
+<li><code>LDAP_BIND_DN</code></li>
+<li><code>LDAP_PASSWORD</code></li>
+<li><code>LDAP_UID</code></li>
+<li><code>LDAP_SEARCH_FILTER</code></li>
+</ul>
+<h3 id="pam">PAM</h3>
+<ul>
+<li><code>PAM_ENABLED</code></li>
+<li><code>PAM_EMAIL_DOMAIN</code></li>
+<li><code>PAM_DEFAULT_SERVICE</code></li>
+<li><code>PAM_CONTROLLED_SERVICE</code></li>
+</ul>
+<h3 id="cas">CAS</h3>
+<ul>
+<li><code>CAS_ENABLED</code></li>
+<li><code>CAS_URL</code></li>
+<li><code>CAS_HOST</code></li>
+<li><code>CAS_PORT</code></li>
+<li><code>CAS_SSL</code></li>
+<li><code>CAS_VALIDATE_URL</code></li>
+<li><code>CAS_CALLBACK_URL</code></li>
+<li><code>CAS_LOGOUT_URL</code></li>
+<li><code>CAS_LOGIN_URL</code></li>
+<li><code>CAS_UID_FIELD</code></li>
+<li><code>CAS_CA_PATH</code></li>
+<li><code>CAS_DISABLE_SSL_VERIFICATION</code></li>
+<li><code>CAS_UID_KEY</code></li>
+<li><code>CAS_NAME_KEY</code></li>
+<li><code>CAS_EMAIL_KEY</code></li>
+<li><code>CAS_NICKNAME_KEY</code></li>
+<li><code>CAS_FIRST_NAME_KEY</code></li>
+<li><code>CAS_LAST_NAME_KEY</code></li>
+<li><code>CAS_LOCATION_KEY</code></li>
+<li><code>CAS_IMAGE_KEY</code></li>
+<li><code>CAS_PHONE_KEY</code></li>
+</ul>
+<h3 id="saml">SAML</h3>
+<ul>
+<li><code>SAML_ENABLED</code></li>
+<li><code>SAML_ACS_URL</code></li>
+<li><code>SAML_ISSUER</code></li>
+<li><code>SAML_IDP_SSO_TARGET_URL</code></li>
+<li><code>SAML_IDP_CERT</code></li>
+<li><code>SAML_IDP_CERT_FINGERPRINT</code></li>
+<li><code>SAML_NAME_IDENTIFIER_FORMAT</code></li>
+<li><code>SAML_CERT</code></li>
+<li><code>SAML_PRIVATE_KEY</code></li>
+<li><code>SAML_SECURITY_WANT_ASSERTION_SIGNED</code></li>
+<li><code>SAML_SECURITY_WANT_ASSERTION_ENCRYPTED</code></li>
+<li><code>SAML_SECURITY_ASSUME_EMAIL_IS_VERIFIED</code></li>
+<li><code>SAML_ATTRIBUTES_STATEMENTS_UID</code></li>
+<li><code>SAML_ATTRIBUTES_STATEMENTS_EMAIL</code></li>
+<li><code>SAML_ATTRIBUTES_STATEMENTS_FULL_NAME</code></li>
+<li><code>SAML_ATTRIBUTES_STATEMENTS_FIRST_NAME</code></li>
+<li><code>SAML_ATTRIBUTES_STATEMENTS_LAST_NAME</code></li>
+<li><code>SAML_UID_ATTRIBUTE</code></li>
+<li><code>SAML_ATTRIBUTES_STATEMENTS_VERIFIED</code></li>
+<li><code>SAML_ATTRIBUTES_STATEMENTS_VERIFIED_EMAIL</code></li>
+</ul>
+<h2 id="hidden-services">隐藏服务</h2>
+<ul>
+<li><code>http_proxy</code></li>
+<li><code>ALLOW_ACCESS_TO_HIDDEN_SERVICE</code></li>
+</ul>
+<h2 id="other">其它</h2>
+<ul>
+<li><code>SKIP_POST_DEPLOYMENT_MIGRATIONS</code></li>
+</ul>
+<figure>
+    <p>
+        <strong>翻译状态：</strong>
+        本文是英文页面 <a href="/admin/config/">Configuring your environment</a> 的翻译，最后翻译时间：，点击<a href="https://github.com/mastodon/documentation/compare/ad1ef20f171c9f61439f32168987b0b4f9abd74b...master">这里</a>可以查看翻译后页面的改动。
+    </p>
+</figure>
+
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+            
+    
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+          
+            
+            <div style="margin: 30px 0px">            
+              <a id="previousLink" href="PREV_LINK" style="font-size: 12pt">Previous - </a>            
+              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              <a id="nextLink" href="NEXT_LINK" style="font-size: 12pt">Next - </a>                       
+            </div>
+            
+            <div id="useJS" style="display: none">1</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      最后更新于 December 10, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/config.md' style="color: #687590;">改进此页面</a>
+
+      
+        <br />
+
+        也可在此找到：
+
+        
+          <a href="/admin/config/" style="color: #687590;" hreflang="en">English</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>加入Mastodon</a> · <a href='https://blog.joinmastodon.org'>博客</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/config.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>自分や他のユーザーの宣伝 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/ja/user/discoverability/">
+
+  
+    <meta name="description" content="ハッシュタグ、プロフィール、投稿を目立たせられます。">
+    <meta property="og:description" content="ハッシュタグ、プロフィール、投稿を目立たせられます。">
+    <meta name="twitter:description" content="ハッシュタグ、プロフィール、投稿を目立たせられます。">
+  
+
+  <meta name="twitter:title" content="自分や他のユーザーの宣伝">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/ja/user/discoverability/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/ja/" class="">Mastodon（マストドン）とは？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを使う</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/ja/user/signup/" class="">アカウントの登録</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/profile/" class="">プロフィールの設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/posting/" class="">トゥートの投稿</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/network/" class="">ネットワーク機能の使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moderating/" class="">見たくないコンテンツへの対処</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/discoverability/" class="active">自分や他のユーザーの宣伝</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/preferences/" class="">環境の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/contacts/" class="">その他の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/external/" class="">外部からのMasotodonの使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moving/" class="">アカウントの引っ越しや削除</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/run-your-own/" class="">自分のサーバーを動かすこと</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを動かす</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonアプリを開発する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonの開発に貢献する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">準拠している仕様</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Methods</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Entities</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>自分や他のユーザーの宣伝</h1>  
+  
+    <p>ハッシュタグ、プロフィール、投稿を目立たせられます。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#featured">プロフィールにある、注目を集められるリンク</a>
+          <ul>
+            <li><a href="#featured-tags">注目のハッシュタグ</a></li>
+            <li><a href="#featured-profiles">おすすめプロフィール</a></li>
+          </ul>
+        </li>
+        <li><a href="#pinned">固定された投稿</a></li>
+        <li><a href="#directory">ディレクトリ</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="featured">プロフィールにある、注目を集められるリンク</h2>
+<h3 id="featured-tags">注目のハッシュタグ</h3>
+<figure><img src="/assets/image%20%2858%29.png"
+         alt="注目のハッシュタグでは、最終更新日時と使用数も表示される"/><figcaption>
+            <p>注目のハッシュタグでは、最終更新日時と使用数も表示される</p>
+        </figcaption>
+</figure>
+
+<p>あなたがよく使う特定のハッシュタグを目立たさせられます。いまの時点でどんなハッシュタグを目立たせたいかを管理するためには、設定から「プロフィール」-「注目のハッシュタグ」に移動してください。そうして目立たせると、そのハッシュタグへのリンクが、最後に使った更新日時とどの程度使われたかを示す使用数とともに、あなたのプロフィールに表示されるでしょう。</p>
+<h3 id="featured-profiles">おすすめプロフィール</h3>
+<figure><img src="/assets/image%20%2833%29.png"
+         alt="ランダムに選択される、4つのおすすめプロフィール"/><figcaption>
+            <p>ランダムに選択される、4つのおすすめプロフィール</p>
+        </figcaption>
+</figure>
+
+<p>フォローしているユーザーのプロフィールを目立たせられます。そのユーザーのプロフィールに移動して、ドロップダウンメニューにある「プロフィールで紹介する」をクリックします。プロフィールを目立たせると、自分のプロフィールにある「あなたのおすすめ」という見出しの下の領域に、そのプロフィールへのリンクが表示されるでしょう。4つまでのプロフィールが一度に表示されます。これらのプロフィールは、ページが読み込まれる度に、あなたがおすすめするプロフィールの中からランダムに選択されます。</p>
+<h2 id="pinned">固定された投稿</h2>
+<figure><img src="/assets/image%20%2837%29.png"
+         alt="mastodon.social/@gargronにおける固定されたトゥート"/><figcaption>
+            <p>mastodon.social/@gargronにおける固定されたトゥート</p>
+        </figcaption>
+</figure>
+
+<p>プロフィールの上部に、自分の公開投稿を5つまで目立たせられます。該当ステータスのドロップダウンメニューから「プロフィールに固定表示（＝ピン留め）」をクリックします。トゥートを固定すると、すべての時系列ステータスの更新の前、つまりトゥート欄の上部に、固定したトゥートが表示されます。</p>
+<h2 id="directory">ディレクトリ</h2>
+<figure><img src="/assets/image%20%2831%29.png"
+         alt="mastodon.socialにおけるディレクトリ"/><figcaption>
+            <p>mastodon.socialにおけるディレクトリ</p>
+        </figcaption>
+</figure>
+
+<p>ディレクトリ（＝プロフィールディレクトリ）では、ディレクトリに表示することを選択したすべてのアカウントが表示されます。これを使うことで、フォローを検討できそうなプロフィールを簡単に見つけるのに役立ちます。</p>
+<p>ディレクトリは、最近の活動順（新しく掲載されたステータス順）、または新着順（新しく作られたアカウント順）のいずれかに並び変えられます。また、あなたのいるサーバーに所属しているアカウントのみ、またはあなたのいるサーバーが把握している既知の連合でフィルターすることもできます。</p>
+<p>各プロフィールは、そのユーザーの表示名やアドレス、プロフィール文、そして公開投稿数やフォロワー数、最後の活動（現在から最終更新日時までの時間）といった簡単な統計を含めたカードとして表示されます。</p>
+
+    
+
+
+
+
+
+
+  
+  
+    
+        
+          
+  
+  
+  
+    
+    
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+          
+            
+            <div style="margin: 30px 0px">            
+              <a id="previousLink" href="PREV_LINK" style="font-size: 12pt">Previous - </a>            
+              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
+              <a id="nextLink" href="NEXT_LINK" style="font-size: 12pt">Next - </a>                       
+            </div>
+            
+            <div id="useJS" style="display: none">1</div>
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+                    
+        
+          
+                      
+        
+            
+    
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+  
+  
+    
+        
+          
+  
+
+                  
+<script>
+ 
+ var previousLink = document.getElementById("previousLink");
+ var nextLink = document.getElementById("nextLink");
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer");
+ var useJS = document.getElementById("useJS");
+ 
+ 
+ if (useJS.innerHTML == "1") {
+   
+   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+   
+   var selectNavs = document.getElementsByTagName("nav");
+   var selectSidebar;
+   for (i = 0; i < selectNavs.length; i++) {
+     if (selectNavs[i].className == "sidebar") {
+       selectSidebar = selectNavs[i]; 
+     }
+   }
+
+   
+   
+   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+   
+   var indexActive, indexPrev, indexNext; 
+   for (i = 0; i < selectSubMenus.length; i++) {
+     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
+     
+     for (j = 0; j < curNavSection.length; j++) {
+       if (curNavSection[j].className == "active") {
+        if (j == 0) { 
+          prevHref = "remove";    
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        } else if (j == curNavSection.length - 1) { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = "remove";
+          whatIsActive = i;   
+        } else { 
+          prevHref = curNavSection[j-1].href;
+          prevName = curNavSection[j-1].innerText;
+          nextHref = curNavSection[j+1].href;
+          nextName = curNavSection[j+1].innerText;
+          whatIsActive = i;
+        }
+         break;
+       }
+     }
+     if (whatIsActive != -1) { break; } 
+   }
+   
+   if (prevHref == "remove") {
+     previousLink.remove();
+     pageTurnSpacer.remove();
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   } else if (nextHref == "remove") {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.remove();
+   } else {
+     previousLink.href = prevHref;
+     previousLink.innerHTML += prevName;
+     nextLink.href = nextHref;
+     nextLink.innerHTML += nextName;
+   }
+ }
+</script>
+
+    <p style="color: #687590;">
+      最終更新 December 21, 2022 · <a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/discoverability.md' style="color: #687590;">このページを改善する</a>
+
+      
+        <br />
+
+        他の言語も利用可能：
+
+        
+          <a href="/user/discoverability/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/zh-cn/user/discoverability/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+          <a href="/pl/user/discoverability/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Mastodonに参加する</a> · <a href='https://blog.joinmastodon.org'>ブログ</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/discoverability.md'>ソースコードを見る</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>インプリメント</a></p>
+</footer>
+
+</body>
+
+</html>
