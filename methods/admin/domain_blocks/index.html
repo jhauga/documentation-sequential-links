@@ -177,11 +177,15 @@
                 <ul class="sub-menu">
                   
                     <li>
-                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                      <a href="/admin/optional/object-storage/" class="">Object storage</a>
                     </li>
                   
                     <li>
                       <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
                     </li>
                   
                     <li>
@@ -1090,6 +1094,7 @@
   {
     <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
     <span style="color:#ff79c6">&#34;domain&#34;</span>: <span style="color:#f1fa8c">&#34;example.com&#34;</span>,
+    <span style="color:#ff79c6">&#34;digest&#34;</span>: <span style="color:#f1fa8c">&#34;a379a6f6eeafb9a55e378c118034e2751e682fab9f2d30ab13d2125586ce1947&#34;</span>,
     <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2022-11-16T08:15:34.238Z&#34;</span>,
     <span style="color:#ff79c6">&#34;severity&#34;</span>: <span style="color:#f1fa8c">&#34;noop&#34;</span>,
     <span style="color:#ff79c6">&#34;reject_media&#34;</span>: <span style="color:#ff79c6">false</span>,
@@ -1131,6 +1136,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
   <span style="color:#ff79c6">&#34;domain&#34;</span>: <span style="color:#f1fa8c">&#34;example.com&#34;</span>,
+  <span style="color:#ff79c6">&#34;digest&#34;</span>: <span style="color:#f1fa8c">&#34;a379a6f6eeafb9a55e378c118034e2751e682fab9f2d30ab13d2125586ce1947&#34;</span>,
   <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2022-11-16T08:15:34.238Z&#34;</span>,
   <span style="color:#ff79c6">&#34;severity&#34;</span>: <span style="color:#f1fa8c">&#34;noop&#34;</span>,
   <span style="color:#ff79c6">&#34;reject_media&#34;</span>: <span style="color:#ff79c6">false</span>,
@@ -1147,7 +1153,7 @@
 </code></pre></div><h5 id="404-not-found">404: Not found</h5>
 <p>DomainBlock with the given ID does not exist</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;Record not found&#34;</span>
+  <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;Record not found&#34;</span>
 }
 </code></pre></div><hr>
 <h2 id="create">Block a domain from federating</h2>
@@ -1187,6 +1193,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
   <span style="color:#ff79c6">&#34;domain&#34;</span>: <span style="color:#f1fa8c">&#34;example.com&#34;</span>,
+  <span style="color:#ff79c6">&#34;digest&#34;</span>: <span style="color:#f1fa8c">&#34;a379a6f6eeafb9a55e378c118034e2751e682fab9f2d30ab13d2125586ce1947&#34;</span>,
   <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2022-11-16T08:15:34.238Z&#34;</span>,
   <span style="color:#ff79c6">&#34;severity&#34;</span>: <span style="color:#f1fa8c">&#34;noop&#34;</span>,
   <span style="color:#ff79c6">&#34;reject_media&#34;</span>: <span style="color:#ff79c6">false</span>,
@@ -1200,10 +1207,27 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;This action is not allowed&#34;</span>
 }
-</code></pre></div><h5 id="422-unprocessable-entity">422: Unprocessable entity</h5>
+</code></pre></div><h5 id="422-unprocessable-entity---missing-parameter">422: Unprocessable entity - Missing Parameter</h5>
 <p>The domain parameter was not provided</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;Validation failed: Domain can&#39;t be blank&#34;</span>
+  <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;Validation failed: Domain can&#39;t be blank&#34;</span>
+}
+</code></pre></div><h5 id="422-unprocessable-entity---existing-domain-block">422: Unprocessable entity - Existing Domain Block</h5>
+<p>The domain parameter already is covered by an existing domain block.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;You have already imposed stricter limits on example.com.&#34;</span>
+  <span style="color:#f1fa8c">&#34;existing_domain_block&#34;</span>: {
+    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
+    <span style="color:#ff79c6">&#34;domain&#34;</span>: <span style="color:#f1fa8c">&#34;example.com&#34;</span>,
+    <span style="color:#ff79c6">&#34;digest&#34;</span>: <span style="color:#f1fa8c">&#34;a379a6f6eeafb9a55e378c118034e2751e682fab9f2d30ab13d2125586ce1947&#34;</span>,
+    <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2022-11-16T08:15:34.238Z&#34;</span>,
+    <span style="color:#ff79c6">&#34;severity&#34;</span>: <span style="color:#f1fa8c">&#34;noop&#34;</span>,
+    <span style="color:#ff79c6">&#34;reject_media&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;reject_reports&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;private_comment&#34;</span>: <span style="color:#ff79c6">null</span>,
+    <span style="color:#ff79c6">&#34;public_comment&#34;</span>: <span style="color:#ff79c6">null</span>,
+    <span style="color:#ff79c6">&#34;obfuscate&#34;</span>: <span style="color:#ff79c6">false</span>
+  }
 }
 </code></pre></div><hr>
 <h2 id="update">Update a domain block</h2>
@@ -1246,6 +1270,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
   <span style="color:#ff79c6">&#34;domain&#34;</span>: <span style="color:#f1fa8c">&#34;example.com&#34;</span>,
+  <span style="color:#ff79c6">&#34;digest&#34;</span>: <span style="color:#f1fa8c">&#34;a379a6f6eeafb9a55e378c118034e2751e682fab9f2d30ab13d2125586ce1947&#34;</span>,
   <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2022-11-16T08:15:34.238Z&#34;</span>,
   <span style="color:#ff79c6">&#34;severity&#34;</span>: <span style="color:#f1fa8c">&#34;noop&#34;</span>,
   <span style="color:#ff79c6">&#34;reject_media&#34;</span>: <span style="color:#ff79c6">false</span>,
@@ -1294,7 +1319,7 @@
 </code></pre></div><h5 id="404-not-found-1">404: Not found</h5>
 <p>DomainBlock with the given ID does not exist</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;Record not found&#34;</span>
+  <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;Record not found&#34;</span>
 }
 </code></pre></div><hr>
 <h2 id="see-also">See also</h2>
@@ -1313,350 +1338,1018 @@
 
   
   
+  
+  
     
+    
+    
+      
         
           
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
+            
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
+      
+        
+          
             
-    
             
-    
+          
             
+            
+          
+        
+      
     
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+              
+              
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
 
-                  
+
 <script>
  
  var previousLink = document.getElementById("previousLink");
  var nextLink = document.getElementById("nextLink");
  var pageTurnSpacer = document.getElementById("pageTurnSpacer");
- var useJS = document.getElementById("useJS");
  
  
- if (useJS.innerHTML == "1") {
-   
-   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
 
+ 
+ var selectNavs = document.getElementsByTagName("nav");
+ var selectSidebar;
+ for (i = 0; i < selectNavs.length; i++) {
+   if (selectNavs[i].className == "sidebar") {
+     selectSidebar = selectNavs[i]; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+ 
+ var indexActive, indexPrev, indexNext; 
+ for (i = 0; i < selectSubMenus.length; i++) {
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a");
    
-   var selectNavs = document.getElementsByTagName("nav");
-   var selectSidebar;
-   for (i = 0; i < selectNavs.length; i++) {
-     if (selectNavs[i].className == "sidebar") {
-       selectSidebar = selectNavs[i]; 
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == "active") {
+      if (j == 0) { 
+        prevHref = "remove";    
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      } else if (j == curNavSection.length - 1) { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = "remove";
+        whatIsActive = i;   
+      } else { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      }
+       break;
      }
    }
-
-   
-   
-   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
-   
-   var indexActive, indexPrev, indexNext; 
-   for (i = 0; i < selectSubMenus.length; i++) {
-     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
-     
-     for (j = 0; j < curNavSection.length; j++) {
-       if (curNavSection[j].className == "active") {
-        if (j == 0) { 
-          prevHref = "remove";    
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        } else if (j == curNavSection.length - 1) { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = "remove";
-          whatIsActive = i;   
-        } else { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        }
-         break;
-       }
-     }
-     if (whatIsActive != -1) { break; } 
-   }
-   
-   if (prevHref == "remove") {
-     previousLink.remove();
-     pageTurnSpacer.remove();
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   } else if (nextHref == "remove") {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.remove();
-   } else {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   }
+   if (whatIsActive != -1) { break; } 
+ }
+ 
+ if (prevHref == "remove") {
+   previousLink.remove();
+   pageTurnSpacer.remove();
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
+ } else if (nextHref == "remove") {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.remove();
+ } else {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/admin/domain_blocks.md' style="color: #687590;">Improve this page</a>
+      Last updated May 7, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/admin/domain_blocks.md' style="color: #687590;">Improve this page</a>
 
       
     </p>

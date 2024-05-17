@@ -177,11 +177,15 @@
                 <ul class="sub-menu">
                   
                     <li>
-                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                      <a href="/admin/optional/object-storage/" class="">Object storage</a>
                     </li>
                   
                     <li>
                       <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
                     </li>
                   
                     <li>
@@ -1066,7 +1070,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update
 apt install -y <span style="color:#f1fa8c">\
 </span><span style="color:#f1fa8c"></span>  imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>  g++ libprotobuf-dev protobuf-compiler pkg-config nodejs gcc autoconf <span style="color:#f1fa8c">\
+</span><span style="color:#f1fa8c"></span>  g++ libprotobuf-dev protobuf-compiler pkg-config gcc autoconf <span style="color:#f1fa8c">\
 </span><span style="color:#f1fa8c"></span>  bison build-essential libssl-dev libyaml-dev libreadline6-dev <span style="color:#f1fa8c">\
 </span><span style="color:#f1fa8c"></span>  zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev <span style="color:#f1fa8c">\
 </span><span style="color:#f1fa8c"></span>  nginx nodejs redis-server redis-tools postgresql postgresql-contrib <span style="color:#f1fa8c">\
@@ -1086,8 +1090,8 @@ yarn <span style="color:#8be9fd;font-style:italic">set</span> version classic
 <span style="color:#8be9fd;font-style:italic">exec</span> bash
 git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 </code></pre></div><p>Once this is done, we can install the correct Ruby version:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RUBY_CONFIGURE_OPTS</span><span style="color:#ff79c6">=</span>--with-jemalloc rbenv install 3.2.2
-rbenv global 3.2.2
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RUBY_CONFIGURE_OPTS</span><span style="color:#ff79c6">=</span>--with-jemalloc rbenv install 3.2.3
+rbenv global 3.2.3
 </code></pre></div><p>We’ll also need to install the bundler:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gem install bundler --no-document
 </code></pre></div><p>Return to the root user:</p>
@@ -1183,429 +1187,1047 @@ systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now mast
 
   
   
+  
+  
     
+    
+    
+      
         
           
-  
-  
-  
+                  
+        
+      
     
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
         
           
           
             
-            <div style="margin: 30px 0px">            
-              <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">Previous - Page</a>
-              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
-              <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">Next - Page</a>
-            </div>
             
-            <div id="useJS" style="display: none">1</div>
-                      
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
-    
-                    
+        
         
           
-                      
-        
             
+          
+            
+          
+            
+          
+            
+          
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
+        
+        
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
 
-                  
+
 <script>
  
  var previousLink = document.getElementById("previousLink");
  var nextLink = document.getElementById("nextLink");
  var pageTurnSpacer = document.getElementById("pageTurnSpacer");
- var useJS = document.getElementById("useJS");
  
  
- if (useJS.innerHTML == "1") {
-   
-   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
 
+ 
+ var selectNavs = document.getElementsByTagName("nav");
+ var selectSidebar;
+ for (i = 0; i < selectNavs.length; i++) {
+   if (selectNavs[i].className == "sidebar") {
+     selectSidebar = selectNavs[i]; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+ 
+ var indexActive, indexPrev, indexNext; 
+ for (i = 0; i < selectSubMenus.length; i++) {
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a");
    
-   var selectNavs = document.getElementsByTagName("nav");
-   var selectSidebar;
-   for (i = 0; i < selectNavs.length; i++) {
-     if (selectNavs[i].className == "sidebar") {
-       selectSidebar = selectNavs[i]; 
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == "active") {
+      if (j == 0) { 
+        prevHref = "remove";    
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      } else if (j == curNavSection.length - 1) { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = "remove";
+        whatIsActive = i;   
+      } else { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      }
+       break;
      }
    }
-
-   
-   
-   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
-   
-   var indexActive, indexPrev, indexNext; 
-   for (i = 0; i < selectSubMenus.length; i++) {
-     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
-     
-     for (j = 0; j < curNavSection.length; j++) {
-       if (curNavSection[j].className == "active") {
-        if (j == 0) { 
-          prevHref = "remove";    
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        } else if (j == curNavSection.length - 1) { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = "remove";
-          whatIsActive = i;   
-        } else { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        }
-         break;
-       }
-     }
-     if (whatIsActive != -1) { break; } 
-   }
-   
-   if (prevHref == "remove") {
-     previousLink.remove();
-     pageTurnSpacer.remove();
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   } else if (nextHref == "remove") {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.remove();
-   } else {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   }
+   if (whatIsActive != -1) { break; } 
+ }
+ 
+ if (prevHref == "remove") {
+   previousLink.remove();
+   pageTurnSpacer.remove();
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
+ } else if (nextHref == "remove") {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.remove();
+ } else {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/install.md' style="color: #687590;">Improve this page</a>
+      Last updated March 27, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/install.md' style="color: #687590;">Improve this page</a>
 
       
         <br />

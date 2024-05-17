@@ -4,6 +4,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/</loc>
+    <lastmod>2023-12-15T21:23:18+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -66,6 +67,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -90,6 +92,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/</loc>
+    <lastmod>2023-12-08T23:27:50+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -114,6 +117,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/install/</loc>
+    <lastmod>2023-12-12T01:18:08+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -128,6 +132,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/scaling/</loc>
+    <lastmod>2023-12-10T12:40:20-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -142,6 +147,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/network/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -166,6 +172,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/tootctl/</loc>
+    <lastmod>2023-08-21T10:35:14-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -180,10 +187,12 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/optional/elasticsearch/</loc>
+    <lastmod>2023-04-07T08:01:51+01:00</lastmod>
   </url>
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/prerequisites/</loc>
+    <lastmod>2020-05-21T02:54:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -198,6 +207,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/signup/</loc>
+    <lastmod>2020-05-21T02:54:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -222,6 +232,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/optional/tor/</loc>
+    <lastmod>2023-12-15T21:23:18+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -236,6 +247,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/upgrading/</loc>
+    <lastmod>2023-03-08T17:40:02+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -250,6 +262,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/optional/sso/</loc>
+    <lastmod>2020-05-21T02:54:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -264,6 +277,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/posting/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -288,6 +302,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/moderating/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -312,6 +327,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/backups/</loc>
+    <lastmod>2020-05-21T02:54:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -326,6 +342,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/optional/</loc>
+    <lastmod>2020-05-21T02:54:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -340,6 +357,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/discoverability/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -364,6 +382,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/troubleshooting/</loc>
+    <lastmod>2020-05-21T02:54:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -378,6 +397,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/contacts/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -402,6 +422,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/external/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -426,6 +447,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/profile/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -450,6 +472,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/config/</loc>
+    <lastmod>2023-12-10T12:07:04-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -464,6 +487,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/preferences/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -488,6 +512,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/migrating/</loc>
+    <lastmod>2023-12-10T12:40:20-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -502,6 +527,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/moving/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -526,6 +552,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/moderation/</loc>
+    <lastmod>2020-05-21T02:54:12+08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -540,6 +567,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/user/run-your-own/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -564,6 +592,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/zh-cn/admin/setup/</loc>
+    <lastmod>2022-11-05T22:59:41+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

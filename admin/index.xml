@@ -22,6 +22,16 @@ Overview Things that need to be backed up in order of importance:
     </item>
     
     <item>
+      <title>Captcha</title>
+      <link>https://docs.joinmastodon.org/admin/optional/captcha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/captcha/</guid>
+      <description>As of Mastodon 4.2, using CAPTCHA technology is supported to help mitigate against bots signing up for new accounts. With CAPTCHA enabled, new registrations will be required to complete a challenge response as part of the e-mail verification process.
+ For some people, the use of a central CAPTCHA service may be a security and privacy concern. In addition, CAPTCHA can make the registration process significantly less accessible, particularly for individuals with visual impairments, such as those who are blind or have low vision.</description>
+    </item>
+    
+    <item>
       <title>Configuring full-text search</title>
       <link>https://docs.joinmastodon.org/admin/elasticsearch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -31,17 +41,6 @@ Overview Things that need to be backed up in order of importance:
 Mastodon’s full-text search allows logged-in users to find results from:
  public statuses from accounts that opted into appearing in search results their own statuses their mentions their favourites their bookmarks accounts (display name, usernames and bios)  It deliberately does not allow searching for arbitrary strings in the entire database.
 Installing Elasticsearch  Mastodon is tested with Elasticsearch version 7.</description>
-    </item>
-    
-    <item>
-      <title>Configuring object storage</title>
-      <link>https://docs.joinmastodon.org/admin/optional/object-storage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/optional/object-storage/</guid>
-      <description>User-uploaded files can be stored on the main server&amp;rsquo;s file system, or using an external object storage server, which can be required for scaling.
-Using the filesystem The simplest way to store user uploads is by using the server&amp;rsquo;s file system. This is how it works by default and is suitable for small servers.
-By default, Mastodon will store file uploads under public/system in its installation directory, but that can be overridden using the PAPERCLIP_ROOT_PATH environment variable.</description>
     </item>
     
     <item>
@@ -91,7 +90,7 @@ System repositories Make sure curl, wget, gnupg, apt-transport-https, lsb-releas
       
       <guid>https://docs.joinmastodon.org/admin/migrating/</guid>
       <description>Sometimes, for various reasons, you may want to migrate your Mastodon instance from one server to another. Fortunately, this is not too difficult of a process, although it may result in some downtime.
- This guide was written with Ubuntu Server in mind; your mileage may vary for other setups.  Basic steps  Set up a new Mastodon server using the Production Guide (however, don’t run mastodon:setup). Stop Mastodon on the old server (e.</description>
+ This guide was written with Ubuntu Server in mind; your mileage may vary for other setups.  Basic steps  Set up a new Mastodon server using the Production Guide (however, don’t run mastodon:setup and only leave the PostgreSQL service running).</description>
     </item>
     
     <item>
@@ -102,6 +101,17 @@ System repositories Make sure curl, wget, gnupg, apt-transport-https, lsb-releas
       <guid>https://docs.joinmastodon.org/admin/moderation/</guid>
       <description>Moderating individual users Moderation in Mastodon is always applied locally, i.e. as seen from the particular server. An admin or moderator on one server cannot affect a user on another server, they can only affect the local copy on their own server.
 As of v3.5.0, all default user moderation decisions will notify the affected user by email. The user can access an appeal page, where they can submit one appeal within 20 days of the decision.</description>
+    </item>
+    
+    <item>
+      <title>Object storage</title>
+      <link>https://docs.joinmastodon.org/admin/optional/object-storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/object-storage/</guid>
+      <description>User-uploaded files can be stored on the main server&amp;rsquo;s file system, or using an external object storage server, which can be required for scaling.
+Using the filesystem The simplest way to store user uploads is by using the server&amp;rsquo;s file system. This is how it works by default and is suitable for small servers.
+By default, Mastodon will store file uploads under public/system in its installation directory, but that can be overridden using the PAPERCLIP_ROOT_PATH environment variable.</description>
     </item>
     
     <item>

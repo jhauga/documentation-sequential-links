@@ -28,6 +28,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -52,6 +53,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/profile/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -76,6 +78,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/network/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -100,6 +103,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/external/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -124,6 +128,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/discoverability/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -148,6 +153,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/run-your-own/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -172,6 +178,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/moving/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -196,6 +203,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/moderating/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -244,6 +252,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -268,6 +277,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/posting/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -292,6 +302,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/contacts/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -316,6 +327,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/signup/</loc>
+    <lastmod>2021-01-20T01:19:19+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -340,6 +352,7 @@
   
   <url>
     <loc>https://docs.joinmastodon.org/pl/user/preferences/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"

@@ -177,11 +177,15 @@
                 <ul class="sub-menu">
                   
                     <li>
-                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                      <a href="/admin/optional/object-storage/" class="">Object storage</a>
                     </li>
                   
                     <li>
                       <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
                     </li>
                   
                     <li>
@@ -1067,11 +1071,6 @@
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h5 id="query-parameters">Query parameters</h5>
-<dl>
-<dt>with_dismissed</dt>
-<dd>Boolean. If true, response will include announcements dismissed by the user. Defaults to false.</dd>
-</dl>
 <h4 id="response">Response</h4>
 <h5 id="200-ok">200: OK</h5>
 <p>Currently active announcements</p>
@@ -1254,405 +1253,1021 @@
 
   
   
+  
+  
     
+    
+    
+      
         
           
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-                    
+                  
+        
+      
+    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+              
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
+          
+            
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
 
-                  
+
 <script>
  
  var previousLink = document.getElementById("previousLink");
  var nextLink = document.getElementById("nextLink");
  var pageTurnSpacer = document.getElementById("pageTurnSpacer");
- var useJS = document.getElementById("useJS");
  
  
- if (useJS.innerHTML == "1") {
-   
-   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
 
+ 
+ var selectNavs = document.getElementsByTagName("nav");
+ var selectSidebar;
+ for (i = 0; i < selectNavs.length; i++) {
+   if (selectNavs[i].className == "sidebar") {
+     selectSidebar = selectNavs[i]; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+ 
+ var indexActive, indexPrev, indexNext; 
+ for (i = 0; i < selectSubMenus.length; i++) {
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a");
    
-   var selectNavs = document.getElementsByTagName("nav");
-   var selectSidebar;
-   for (i = 0; i < selectNavs.length; i++) {
-     if (selectNavs[i].className == "sidebar") {
-       selectSidebar = selectNavs[i]; 
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == "active") {
+      if (j == 0) { 
+        prevHref = "remove";    
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      } else if (j == curNavSection.length - 1) { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = "remove";
+        whatIsActive = i;   
+      } else { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      }
+       break;
      }
    }
-
-   
-   
-   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
-   
-   var indexActive, indexPrev, indexNext; 
-   for (i = 0; i < selectSubMenus.length; i++) {
-     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
-     
-     for (j = 0; j < curNavSection.length; j++) {
-       if (curNavSection[j].className == "active") {
-        if (j == 0) { 
-          prevHref = "remove";    
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        } else if (j == curNavSection.length - 1) { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = "remove";
-          whatIsActive = i;   
-        } else { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        }
-         break;
-       }
-     }
-     if (whatIsActive != -1) { break; } 
-   }
-   
-   if (prevHref == "remove") {
-     previousLink.remove();
-     pageTurnSpacer.remove();
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   } else if (nextHref == "remove") {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.remove();
-   } else {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   }
+   if (whatIsActive != -1) { break; } 
+ }
+ 
+ if (prevHref == "remove") {
+   previousLink.remove();
+   pageTurnSpacer.remove();
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
+ } else if (nextHref == "remove") {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.remove();
+ } else {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/announcements.md' style="color: #687590;">Improve this page</a>
+      Last updated March 29, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/announcements.md' style="color: #687590;">Improve this page</a>
 
       
     </p>

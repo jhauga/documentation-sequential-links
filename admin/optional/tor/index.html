@@ -177,11 +177,15 @@
                 <ul class="sub-menu">
                   
                     <li>
-                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                      <a href="/admin/optional/object-storage/" class="">Object storage</a>
                     </li>
                   
                     <li>
                       <a href="/admin/optional/tor/" class="active">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
                     </li>
                   
                     <li>
@@ -1055,8 +1059,9 @@ HiddenServicePort 80 127.0.0.1:80
 </code></pre></div><p>You can now find your Tor hostname in <code>/var/lib/tor/hidden_service/hostname</code>.</p>
 <h2 id="nginx">Move your Mastodon configuration</h2>
 <p>We will need to tell Nginx about your Mastodon configuration twice. To keep things <a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself">&ldquo;DRY&rdquo;</a> we need to move the Mastodon configuration into its own file that can we can refer to later.</p>
-<p>Create a new file at <code>/etc/nginx/snippets/mastodon.conf</code>. Copy every Mastodon configuration parameter, apart from the <code>listen</code>, <code>server_name</code>, <code>include</code> directives, as well as all of the SSL options. Your new file should look somewhat like this:</p>
+<p>Create a new file at <code>/etc/nginx/snippets/mastodon.conf</code>. Copy every Mastodon configuration parameter, apart from the <code>listen</code>, <code>server_name</code>, <code>include</code> directives, as well as all the SSL options. Include an <code>Onion-Location</code> header to let supporting browsers know that this service is also accessible from Tor. Your new file should look somewhat like this:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-nginx" data-lang="nginx"><span style="color:#ff79c6">add_header</span> <span style="color:#f1fa8c">Referrer-Policy</span> <span style="color:#f1fa8c">&#34;same-origin&#34;</span>;
+<span style="color:#ff79c6">add_header</span> <span style="color:#f1fa8c">Onion-Location</span> <span style="color:#f1fa8c">mastodon.qKnFwnNH2oH4QhQ7CoRf7HYj8wCwpDwsa8ohJmcPG9JodMZvVA6psKq7qKnFwnNH2oH4QhQ7CoRf7HYj8wCwpDwsa8ohJmcPG9JodMZvVA6psKq7.onion</span><span style="color:#8be9fd;font-style:italic">$request_uri</span>;
 
 <span style="color:#ff79c6">keepalive_timeout</span>    <span style="color:#bd93f9">70</span>;
 <span style="color:#ff79c6">sendfile</span>             on;
@@ -1122,7 +1127,7 @@ HiddenServicePort 80 127.0.0.1:80
   <span style="color:#ff79c6">ssl_certificate</span> <span style="color:#f1fa8c">/etc/letsencrypt/live/mastodon.example.com/fullchain.pem</span>;
   <span style="color:#ff79c6">ssl_certificate_key</span> <span style="color:#f1fa8c">/etc/letsencrypt/live/mastodon.example.com/privkey.pem</span>;
 }
-</code></pre></div><p>Replace the long hash provided here with your Tor domain located in the file at <code>/var/lib/tor/hidden_service/hostname</code>.</p>
+</code></pre></div><p>Replace the long hash provided here with your Tor domain located in the file at <code>/var/lib/tor/hidden_service/hostname</code>. This should also be reflected in the <code>Onion-Location</code> header in the snippets file.</p>
 <p>Note that the onion hostname has been prefixed with “mastodon.”. Your Tor address acts as a wildcard domain. All subdomains will be routed through, and you can configure Nginx to respond to any subdomain you wish. If you do not wish to host any other services on your tor address you can omit the subdomain, or choose a different subdomain.</p>
 <p>Here you can see the payoff of moving your mastodon configurations to a different file. Without this, all of your configurations would have to be copied to both places. Any change to your configuration would have to be made in both places.</p>
 <p>Restart your web server.</p>
@@ -1143,420 +1148,1046 @@ HiddenServicePort 80 127.0.0.1:80
 
   
   
+  
+  
     
+    
+    
+      
         
           
-  
-  
-  
+                  
+        
+      
     
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
+          
+            
+              
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+            
+          
+            
+          
+            
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+          
+            
+          
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
+            
+          
+            
+            
+          
+        
+      
     
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
 
-                  
+
 <script>
  
  var previousLink = document.getElementById("previousLink");
  var nextLink = document.getElementById("nextLink");
  var pageTurnSpacer = document.getElementById("pageTurnSpacer");
- var useJS = document.getElementById("useJS");
  
  
- if (useJS.innerHTML == "1") {
-   
-   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
 
+ 
+ var selectNavs = document.getElementsByTagName("nav");
+ var selectSidebar;
+ for (i = 0; i < selectNavs.length; i++) {
+   if (selectNavs[i].className == "sidebar") {
+     selectSidebar = selectNavs[i]; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+ 
+ var indexActive, indexPrev, indexNext; 
+ for (i = 0; i < selectSubMenus.length; i++) {
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a");
    
-   var selectNavs = document.getElementsByTagName("nav");
-   var selectSidebar;
-   for (i = 0; i < selectNavs.length; i++) {
-     if (selectNavs[i].className == "sidebar") {
-       selectSidebar = selectNavs[i]; 
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == "active") {
+      if (j == 0) { 
+        prevHref = "remove";    
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      } else if (j == curNavSection.length - 1) { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = "remove";
+        whatIsActive = i;   
+      } else { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      }
+       break;
      }
    }
-
-   
-   
-   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
-   
-   var indexActive, indexPrev, indexNext; 
-   for (i = 0; i < selectSubMenus.length; i++) {
-     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
-     
-     for (j = 0; j < curNavSection.length; j++) {
-       if (curNavSection[j].className == "active") {
-        if (j == 0) { 
-          prevHref = "remove";    
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        } else if (j == curNavSection.length - 1) { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = "remove";
-          whatIsActive = i;   
-        } else { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        }
-         break;
-       }
-     }
-     if (whatIsActive != -1) { break; } 
-   }
-   
-   if (prevHref == "remove") {
-     previousLink.remove();
-     pageTurnSpacer.remove();
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   } else if (nextHref == "remove") {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.remove();
-   } else {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   }
+   if (whatIsActive != -1) { break; } 
+ }
+ 
+ if (prevHref == "remove") {
+   previousLink.remove();
+   pageTurnSpacer.remove();
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
+ } else if (nextHref == "remove") {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.remove();
+ } else {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/optional/tor.md' style="color: #687590;">Improve this page</a>
+      Last updated January 25, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/optional/tor.md' style="color: #687590;">Improve this page</a>
 
       
         <br />

@@ -177,11 +177,15 @@
                 <ul class="sub-menu">
                   
                     <li>
-                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                      <a href="/admin/optional/object-storage/" class="">Object storage</a>
                     </li>
                   
                     <li>
                       <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
                     </li>
                   
                     <li>
@@ -1028,11 +1032,28 @@
         <li><a href="#attributes">Attributes</a>
           <ul>
             <li><a href="#content"><code>content</code></a></li>
-            <li><a href="#spoiler_warning"><code>spoiler_warning</code></a></li>
-            <li><a href="#poll"><code>poll</code></a></li>
+            <li><a href="#spoiler_text"><code>spoiler_text</code></a></li>
+            <li><a href="#poll"><code>poll</code> <span class="api-method-parameter-required">optional</span></a></li>
             <li><a href="#media_attachments"><code>media_attachments</code></a></li>
             <li><a href="#detected_source_language"><code>detected_source_language</code></a></li>
             <li><a href="#provider"><code>provider</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#Poll">Translation::Poll attributes</a>
+          <ul>
+            <li><a href="#Poll-id"><code>id</code></a></li>
+            <li><a href="#Poll-options"><code>options</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#Option">Translation::Poll::Option attributes</a>
+          <ul>
+            <li><a href="#Option-title"><code>title</code></a></li>
+          </ul>
+        </li>
+        <li><a href="#Attachment">Translation::Attachment attributes</a>
+          <ul>
+            <li><a href="#Attachment-id"><code>id</code></a></li>
+            <li><a href="#Attachment-description"><code>description</code></a></li>
           </ul>
         </li>
         <li><a href="#see-also">See also</a></li>
@@ -1049,7 +1070,7 @@
   <span style="color:#ff79c6">&#34;spoiler_text&#34;</span>: <span style="color:#f1fa8c">&#34;Greatings ahead&#34;</span>,
   <span style="color:#ff79c6">&#34;media_attachments&#34;</span>: [
     {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#bd93f9">22345792</span>,
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;22345792&#34;</span>,
       <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;Status author waving at the camera&#34;</span>
     }
   ],
@@ -1062,19 +1083,17 @@
   <span style="color:#ff79c6">&#34;content&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;p&gt;Should I stay or should I go?&lt;/p&gt;&#34;</span>,
   <span style="color:#ff79c6">&#34;spoiler_text&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
   <span style="color:#ff79c6">&#34;media_attachments&#34;</span>: [],
-  <span style="color:#ff79c6">&#34;poll&#34;</span>: [
-    {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#bd93f9">34858</span>,
-      <span style="color:#ff79c6">&#34;options&#34;</span>: [
-        {
-          <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Stay&#34;</span> 
-        },
-        {
-          <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Go&#34;</span>
-        }
-      ]
-    }
-  ],
+  <span style="color:#ff79c6">&#34;poll&#34;</span>: {
+    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;34858&#34;</span>,
+    <span style="color:#ff79c6">&#34;options&#34;</span>: [
+      {
+        <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Stay&#34;</span> 
+      },
+      {
+        <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Go&#34;</span>
+      }
+    ]
+  },
   <span style="color:#ff79c6">&#34;detected_source_language&#34;</span>: <span style="color:#f1fa8c">&#34;ja&#34;</span>,
   <span style="color:#ff79c6">&#34;provider&#34;</span>: <span style="color:#f1fa8c">&#34;DeepL.com&#34;</span>
 }
@@ -1084,19 +1103,19 @@
 <strong>Type:</strong> String (HTML)<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="spoiler_warning"><code>spoiler_warning</code></h3>
+<h3 id="spoiler_text"><code>spoiler_text</code></h3>
 <p><strong>Description:</strong> The translated spoiler warning of the status.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 4.2.0 - added</p>
-<h3 id="poll"><code>poll</code></h3>
-<p><strong>Description:</strong> The translated poll options of the status.<br>
-<strong>Type:</strong> Array<br>
+<h3 id="poll"><code>poll</code> <span class="api-method-parameter-required">optional</span></h3>
+<p><strong>Description:</strong> The translated poll of the status.<br>
+<strong>Type:</strong> <a href="#Poll">Translation::Poll</a><br>
 <strong>Version history:</strong><br>
 4.2.0 - added</p>
 <h3 id="media_attachments"><code>media_attachments</code></h3>
 <p><strong>Description:</strong> The translated media descriptions of the status.<br>
-<strong>Type:</strong> Array<br>
+<strong>Type:</strong> Array of <a href="#Attachment">Translation::Attachment</a><br>
 <strong>Version history:</strong><br>
 4.2.0 - added</p>
 <h3 id="detected_source_language"><code>detected_source_language</code></h3>
@@ -1109,6 +1128,34 @@
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
+<h2 id="Poll">Translation::Poll attributes</h2>
+<h3 id="Poll-id"><code>id</code></h3>
+<p><strong>Description:</strong> The ID of the poll.<br>
+<strong>Type:</strong> String (cast from an integer, but not guaranteed to be a number)<br>
+<strong>Version history:</strong><br>
+4.2.0 - added</p>
+<h3 id="Poll-options"><code>options</code></h3>
+<p><strong>Description:</strong> The translated poll options.<br>
+<strong>Type:</strong> Array of <a href="#Option">Translation::Poll::Option</a><br>
+<strong>Version history:</strong><br>
+4.2.0 - added</p>
+<h2 id="Option">Translation::Poll::Option attributes</h2>
+<h3 id="Option-title"><code>title</code></h3>
+<p><strong>Description:</strong> The translated title of the poll option.<br>
+<strong>Type:</strong> String<br>
+<strong>Version history:</strong><br>
+4.2.0 - added</p>
+<h2 id="Attachment">Translation::Attachment attributes</h2>
+<h3 id="Attachment-id"><code>id</code></h3>
+<p><strong>Description:</strong> The id of the attachment.<br>
+<strong>Type:</strong> String (cast from an integer, but not guaranteed to be a number)<br>
+<strong>Version history:</strong><br>
+4.2.0 - added</p>
+<h3 id="Attachment-description"><code>description</code></h3>
+<p><strong>Description:</strong> The translated description of the attachment.<br>
+<strong>Type:</strong> String<br>
+<strong>Version history:</strong><br>
+4.2.0 - added</p>
 <h2 id="see-also">See also</h2>
 <a href="/methods/statuses/#translate" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
@@ -1129,627 +1176,1123 @@
 
   
   
+  
+  
     
+    
+    
+      
         
           
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
+            
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
+      
+        
+          
             
-    
             
-    
+          
             
+            
+          
+        
+      
     
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                        
-            <div style="margin: 30px 0px">      
+          
             
-              <a id="previousLink" href="/entities/Token/" style="font-size: 12pt">Previous - Token</a>            
-            
-            <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
-              
-              <a id="nextLink" href="/entities/V1_Filter/" style="font-size: 12pt">Next - V1::Filter</a>                       
-              
-            </div> 
-            
-            <div id="useJS" style="display: none">0</div>
-                      
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
+        
+        
+      
     
-                    
+      
         
           
-                      
+          
         
-            
-    
+        
+        
+      
+      
   
 
-                  
+
 <script>
  
  var previousLink = document.getElementById("previousLink");
  var nextLink = document.getElementById("nextLink");
  var pageTurnSpacer = document.getElementById("pageTurnSpacer");
- var useJS = document.getElementById("useJS");
  
  
- if (useJS.innerHTML == "1") {
-   
-   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
 
+ 
+ var selectNavs = document.getElementsByTagName("nav");
+ var selectSidebar;
+ for (i = 0; i < selectNavs.length; i++) {
+   if (selectNavs[i].className == "sidebar") {
+     selectSidebar = selectNavs[i]; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+ 
+ var indexActive, indexPrev, indexNext; 
+ for (i = 0; i < selectSubMenus.length; i++) {
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a");
    
-   var selectNavs = document.getElementsByTagName("nav");
-   var selectSidebar;
-   for (i = 0; i < selectNavs.length; i++) {
-     if (selectNavs[i].className == "sidebar") {
-       selectSidebar = selectNavs[i]; 
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == "active") {
+      if (j == 0) { 
+        prevHref = "remove";    
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      } else if (j == curNavSection.length - 1) { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = "remove";
+        whatIsActive = i;   
+      } else { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      }
+       break;
      }
    }
-
-   
-   
-   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
-   
-   var indexActive, indexPrev, indexNext; 
-   for (i = 0; i < selectSubMenus.length; i++) {
-     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
-     
-     for (j = 0; j < curNavSection.length; j++) {
-       if (curNavSection[j].className == "active") {
-        if (j == 0) { 
-          prevHref = "remove";    
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        } else if (j == curNavSection.length - 1) { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = "remove";
-          whatIsActive = i;   
-        } else { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        }
-         break;
-       }
-     }
-     if (whatIsActive != -1) { break; } 
-   }
-   
-   if (prevHref == "remove") {
-     previousLink.remove();
-     pageTurnSpacer.remove();
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   } else if (nextHref == "remove") {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.remove();
-   } else {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   }
+   if (whatIsActive != -1) { break; } 
+ }
+ 
+ if (prevHref == "remove") {
+   previousLink.remove();
+   pageTurnSpacer.remove();
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
+ } else if (nextHref == "remove") {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.remove();
+ } else {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/Translation.md' style="color: #687590;">Improve this page</a>
+      Last updated April 2, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/Translation.md' style="color: #687590;">Improve this page</a>
 
       
     </p>

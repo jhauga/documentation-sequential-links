@@ -177,11 +177,15 @@
                 <ul class="sub-menu">
                   
                     <li>
-                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                      <a href="/admin/optional/object-storage/" class="">Object storage</a>
                     </li>
                   
                     <li>
                       <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
                     </li>
                   
                     <li>
@@ -1049,7 +1053,7 @@
           <ul>
             <li><a href="#cdn">CDN</a></li>
             <li><a href="#paperclip">Local file storage</a></li>
-            <li><a href="#s3">Amazon S3 and compatible</a></li>
+            <li><a href="#s3">AWS S3 and compatible</a></li>
             <li><a href="#swift">Swift</a></li>
             <li><a href="#http-cache-buster">HTTP Cache Buster</a></li>
           </ul>
@@ -1070,6 +1074,7 @@
         </li>
         <li><a href="#limits">Limits</a>
           <ul>
+            <li><a href="#anti-spam--abuse">Anti Spam / Abuse</a></li>
             <li><a href="#email-domains">Email domains</a></li>
             <li><a href="#sessions">Sessions</a></li>
             <li><a href="#home-feeds">Home feeds</a></li>
@@ -1078,6 +1083,7 @@
         <li><a href="#other">Other</a>
           <ul>
             <li><a href="#migrations">DB migrations</a></li>
+            <li><a href="#db-encryption-support">DB Encryption support</a></li>
             <li><a href="#uncategorized-or-unsorted">Uncategorized or unsorted</a></li>
           </ul>
         </li>
@@ -1145,6 +1151,11 @@
 <p>As of Mastodon v4.0.0, the web app is now used to render all requests, even for logged-out viewers. To make these views work, the web app makes public API requests to fetch accounts and statuses. If you would like to disallow this, then set this variable to <code>true</code>. Note that disallowing unauthenticated API access will cause profile and post permalinks to return an error to logged-out users, essentially making it so that the only way to view content is to either log in locally or fetch it via ActivityPub.</p>
 <h4 id="single_user_mode"><code>SINGLE_USER_MODE</code></h4>
 <p>If set to <code>true</code>, the front page of your Mastodon server will always redirect to the first profile in the database and registrations will be disabled.</p>
+<h4 id="disable_automatic_switching_to_approved_registrations"><code>DISABLE_AUTOMATIC_SWITCHING_TO_APPROVED_REGISTRATIONS</code></h4>
+<p>In order to prevent abandoned Mastodon servers from being used for spam, harassment and other malicious activity, Mastodon will automatically switch new user registrations to require moderator approval whenever they are left open and no activity (including non-moderation actions from apps) from any logged-in user with permission to access moderation reports has been detected in a full week. When this happens, users with the permission to change server settings will receive an email notification.</p>
+<p>Setting <code>DISABLE_AUTOMATIC_SWITCHING_TO_APPROVED_REGISTRATIONS=true</code> disables this behavior.</p>
+<p><strong>Version history:</strong><br>
+4.2.8 - added</p>
 <h4 id="default_locale"><code>DEFAULT_LOCALE</code></h4>
 <p>By default, Mastodon will automatically detect the visitor&rsquo;s language from browser headers and display the Mastodon interface in that language (if it&rsquo;s supported). If you are running a language-specific or regional server, that behavior may mislead visitors who do not speak your language into signing up on your server. For this reason, you may want to set this variable to a specific language.</p>
 <p>Example value: <code>de</code></p>
@@ -1413,6 +1424,10 @@
 <p>If set, all StatsD keys will be prefixed with this. Defaults to <code>Mastodon.production</code> when <code>RAILS_ENV</code> is <code>production</code>, <code>Mastodon.development</code> when it&rsquo;s <code>development</code>, etc.</p>
 <h4 id="statsd_sidekiq"><code>STATSD_SIDEKIQ</code></h4>
 <p>If set to <code>true</code>, Mastodon will log some Sidekiq metrics into StatsD. Defaults to <code>false</code>.</p>
+<h4 id="es_ca_file"><code>ES_CA_FILE</code></h4>
+<p>Override Certificate Authority bundle file to use. Useful when using self-signed certificates.</p>
+<p><strong>Version history:</strong><br>
+4.3.0 - added</p>
 <h3 id="smtp">SMTP email delivery</h3>
 <h4 id="smtp_server"><code>SMTP_SERVER</code></h4>
 <h4 id="smtp_port"><code>SMTP_PORT</code></h4>
@@ -1467,47 +1482,35 @@
   You must serve the files with CORS headers, otherwise some functions of Mastodon&rsquo;s web UI will not work. For example, <code>Access-Control-Allow-Origin: *</code>
 </div>
 
-<h4 id="s3_alias_host"><code>S3_ALIAS_HOST</code></h4>
-<p>Similar to <code>CDN_HOST</code>, you may serve <em>user-uploaded</em> files from a separate host. If you are using external storage like Amazon S3, Minio or Google Cloud, you will by default be serving files from those services&rsquo; URLs.</p>
-<p>It is <em>extremely recommended</em> to use your own host instead, for a few reasons:</p>
-<ol>
-<li>Bandwidth on external storage providers is metered and expensive</li>
-<li>You may want to switch to a different provider later without breaking old links</li>
-</ol>
-<p>Example value: <code>files.example.com</code></p>
-<a href="/admin/optional/object-storage-proxy/" class="page-ref">
-  <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
-  Proxying object storage through nginx
-</a>
-<div class="hint hint-info">
-  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
-
-  You must serve the files with CORS headers, otherwise some functions of Mastodon&rsquo;s web UI will not work. For example, <code>Access-Control-Allow-Origin: *</code>
-</div>
-
 <h3 id="paperclip">Local file storage</h3>
 <h4 id="paperclip_root_path"><code>PAPERCLIP_ROOT_PATH</code></h4>
 <h4 id="paperclip_root_url"><code>PAPERCLIP_ROOT_URL</code></h4>
-<h3 id="s3">Amazon S3 and compatible</h3>
+<h3 id="s3">AWS S3 and compatible</h3>
+<a href="/admin/optional/object-storage/" class="page-ref">
+  <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
+  Object storage
+</a>
+<p>The bucket must support access control lists (ACLs). For AWS S3, this means setting the &ldquo;Object Ownership&rdquo; setting to &ldquo;ACLs enabled&rdquo;. For Google Cloud Storage, this means setting the &ldquo;Access control&rdquo; setting to &ldquo;Fine-grained&rdquo;.</p>
 <h4 id="s3_enabled"><code>S3_ENABLED</code></h4>
+<h4 id="s3_region"><code>S3_REGION</code></h4>
+<h4 id="s3_endpoint"><code>S3_ENDPOINT</code></h4>
 <h4 id="s3_bucket"><code>S3_BUCKET</code></h4>
 <h4 id="aws_access_key_id"><code>AWS_ACCESS_KEY_ID</code></h4>
 <h4 id="aws_secret_access_key"><code>AWS_SECRET_ACCESS_KEY</code></h4>
-<h4 id="s3_region"><code>S3_REGION</code></h4>
-<h4 id="s3_protocol"><code>S3_PROTOCOL</code></h4>
-<h4 id="s3_hostname"><code>S3_HOSTNAME</code></h4>
-<h4 id="s3_endpoint"><code>S3_ENDPOINT</code></h4>
 <h4 id="s3_signature_version"><code>S3_SIGNATURE_VERSION</code></h4>
 <h4 id="s3_override_path_style"><code>S3_OVERRIDE_PATH_STYLE</code></h4>
+<h4 id="s3_protocol"><code>S3_PROTOCOL</code></h4>
+<h4 id="s3_hostname"><code>S3_HOSTNAME</code></h4>
+<h4 id="s3_alias_host"><code>S3_ALIAS_HOST</code></h4>
 <h4 id="s3_open_timeout"><code>S3_OPEN_TIMEOUT</code></h4>
 <h4 id="s3_read_timeout"><code>S3_READ_TIMEOUT</code></h4>
 <h4 id="s3_force_single_request"><code>S3_FORCE_SINGLE_REQUEST</code></h4>
+<h4 id="s3_enable_checksum_mode"><code>S3_ENABLE_CHECKSUM_MODE</code></h4>
+<h4 id="s3_storage_class"><code>S3_STORAGE_CLASS</code></h4>
+<h4 id="s3_multipart_threshold"><code>S3_MULTIPART_THRESHOLD</code></h4>
 <h4 id="s3_permission"><code>S3_PERMISSION</code></h4>
-<p>Defines the S3 object ACL when uploading new files. Default is <code>public-read</code>. Use caution when using <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">S3 Block Public Access</a> and turning on the <code>BlockPublicAcls</code> option, as uploading objects with ACL <code>public-read</code> will fail (403). In that case, set <code>S3_PERMISSION</code> to <code>private</code>.</p>
 <h4 id="s3_batch_delete_limit"><code>S3_BATCH_DELETE_LIMIT</code></h4>
-<p>The official <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html">Amazon S3 API</a> can handle deleting 1,000 objects in one batch job, but some providers may have issues handling this many in one request, or offer lower limits. Defaults to <code>1000</code>.</p>
 <h4 id="s3_batch_delete_retry"><code>S3_BATCH_DELETE_RETRY</code></h4>
-<p>During batch delete operations, S3 providers may perodically fail or timeout while processing deletion requests. Mastodon will backoff and retry the request up to the maximum number of times. Defaults to <code>3</code>.</p>
 <h3 id="swift">Swift</h3>
 <h4 id="swift_enabled"><code>SWIFT_ENABLED</code></h4>
 <h4 id="swift_username"><code>SWIFT_USERNAME</code></h4>
@@ -1540,6 +1543,10 @@
 <p>Value of the <code>CACHE_BUSTER_SECRET_HEADER</code> header configured above.</p>
 <h2 id="external-authentication">External authentication</h2>
 <h3 id="omniauth">OmniAuth</h3>
+<h4 id="allow_unsafe_auth_provider_reattach"><code>ALLOW_UNSAFE_AUTH_PROVIDER_REATTACH</code></h4>
+<p>Allow existing users to log in using external authentication providers they have not previously used, provided they use the same e-mail address. This can be useful if you want to offer users the ability to migrate from one external provider to another, but this is a potential security risk, as this allows attackers to hijack an account if they manage to create a new identity with their target&rsquo;s e-mail address on any of your configured providers.</p>
+<p><strong>Version history:</strong><br>
+4.2.6 - added</p>
 <h4 id="omniauth_only"><code>OMNIAUTH_ONLY</code></h4>
 <h4 id="one_click_sso_login"><code>ONE_CLICK_SSO_LOGIN</code></h4>
 <p>Enables the <code>Login or Register</code> button.
@@ -1580,6 +1587,8 @@ before Mastodon starts.</p>
 <h4 id="cas_ca_path"><code>CAS_CA_PATH</code></h4>
 <h4 id="cas_disable_ssl_verification"><code>CAS_DISABLE_SSL_VERIFICATION</code></h4>
 <h4 id="cas_uid_key"><code>CAS_UID_KEY</code></h4>
+<p>The key to the username to use for the account.
+The created account will be <code>@uid@domain.tld</code>.</p>
 <h4 id="cas_name_key"><code>CAS_NAME_KEY</code></h4>
 <h4 id="cas_email_key"><code>CAS_EMAIL_KEY</code></h4>
 <h4 id="cas_nickname_key"><code>CAS_NICKNAME_KEY</code></h4>
@@ -1587,6 +1596,9 @@ before Mastodon starts.</p>
 <h4 id="cas_last_name_key"><code>CAS_LAST_NAME_KEY</code></h4>
 <h4 id="cas_location_key"><code>CAS_LOCATION_KEY</code></h4>
 <h4 id="cas_image_key"><code>CAS_IMAGE_KEY</code></h4>
+<p>The key to the image to use as account avatar.
+The value in this key must be a URL to the image file.
+It is important to use a supported file format (JPEG or PNG, not SVG).</p>
 <h4 id="cas_phone_key"><code>CAS_PHONE_KEY</code></h4>
 <h4 id="cas_security_assume_email_is_verified"><code>CAS_SECURITY_ASSUME_EMAIL_IS_VERIFIED</code></h4>
 <h3 id="saml">SAML</h3>
@@ -1620,6 +1632,10 @@ before Mastodon starts.</p>
 <h4 id="http_hidden_proxy"><code>http_hidden_proxy</code></h4>
 <h4 id="allow_access_to_hidden_service"><code>ALLOW_ACCESS_TO_HIDDEN_SERVICE</code></h4>
 <h2 id="limits">Limits</h2>
+<h3 id="anti-spam--abuse">Anti Spam / Abuse</h3>
+<h4 id="hcaptcha_site_key"><code>HCAPTCHA_SITE_KEY</code></h4>
+<h4 id="hcaptcha_secret_key"><code>HCAPTCHA_SECRET_KEY</code></h4>
+<p>If set, registrations confirm page will display a captcha, see <a href="https://docs.joinmastodon.org/admin/optional/captcha/">Captcha</a></p>
 <h3 id="email-domains">Email domains</h3>
 <h4 id="email_domain_allowlist"><code>EMAIL_DOMAIN_ALLOWLIST</code></h4>
 <p>If set, registrations will not be possible with any e-mails <strong>except</strong> those from the specified domains. Pipe-separated values, e.g.: <code>foo.com|bar.com</code></p>
@@ -1648,10 +1664,26 @@ before Mastodon starts.</p>
 <h3 id="migrations">DB migrations</h3>
 <h4 id="skip_post_deployment_migrations"><code>SKIP_POST_DEPLOYMENT_MIGRATIONS</code></h4>
 <p>This variable only has any effect when running <code>rake db:migrate</code> and it is extremely specific to the Mastodon upgrade process. There are two types of database migrations, those that run before new code is deployed and running, and those that run after. By default, both types of migrations are executed. If you shut down all Mastodon processes before running migrations, then there is no difference. The variable makes sense for zero-downtime upgrades. You will see in the upgrade instructions of a specific Mastodon version if you need to use it or not.</p>
+<h3 id="db-encryption-support">DB Encryption support</h3>
+<p>These three environment variables must be set to enable the Active Record
+Encryption feature within Rails that Mastodon uses to encrypt and decrypt some
+database attributes.</p>
+<ul>
+<li><code>ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY</code></li>
+<li><code>ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY</code></li>
+<li><code>ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT</code></li>
+</ul>
+<p><strong>Version history:</strong><br>
+4.3.0 - added</p>
 <h3 id="uncategorized-or-unsorted">Uncategorized or unsorted</h3>
 <h4 id="bundle_gemfile"><code>BUNDLE_GEMFILE</code></h4>
 <h4 id="deepl_api_key"><code>DEEPL_API_KEY</code></h4>
 <h4 id="deepl_plan"><code>DEEPL_PLAN</code></h4>
+<h4 id="enable_sidekiq_unique_jobs_ui"><code>ENABLE_SIDEKIQ_UNIQUE_JOBS_UI</code></h4>
+<p>Enable <code>sidekiq-unique-jobs</code>'s web interface. This can be used to review and clear the locks managed by this gem, but is rarely useful in practice and has had critical security vulnerabilities in the past.
+If you only need to clear all locks, you can now use the newly-added <code>bundle exec rake sidekiq_unique_jobs:delete_all_locks</code>.</p>
+<p><strong>Version history:</strong><br>
+4.2.6 - added</p>
 <h4 id="libre_translate_endpoint"><code>LIBRE_TRANSLATE_ENDPOINT</code></h4>
 <h4 id="libre_translate_api_key"><code>LIBRE_TRANSLATE_API_KEY</code></h4>
 <h4 id="github_repository"><code>GITHUB_REPOSITORY</code></h4>
@@ -1659,8 +1691,6 @@ before Mastodon starts.</p>
 <h4 id="source_base_url"><code>SOURCE_BASE_URL</code></h4>
 <p>Defaults to <code>https://github.com/$GITHUB_REPOSITORY</code></p>
 <h4 id="ffmpeg_binary"><code>FFMPEG_BINARY</code></h4>
-<h4 id="hcaptcha_site_key"><code>HCAPTCHA_SITE_KEY</code></h4>
-<p>Set this to your hCaptcha site key to enable captchas on the account confirmation page using hCaptcha.</p>
 <p>Defaults to empty value (not enabled)</p>
 <h4 id="local_https"><code>LOCAL_HTTPS</code></h4>
 <h4 id="path"><code>PATH</code></h4>
@@ -1691,429 +1721,1047 @@ before Mastodon starts.</p>
 
   
   
+  
+  
     
+    
+    
+      
         
           
-  
-  
-  
+                  
+        
+      
     
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-          
-            
-            <div style="margin: 30px 0px">            
-              <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">Previous - Page</a>
-              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
-              <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">Next - Page</a>
-            </div>
-            
-            <div id="useJS" style="display: none">1</div>
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
+      
+        
+          
+          
             
-    
             
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+          
             
+          
+            
+          
+            
+          
+            
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+          
+            
+          
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
+            
+          
+            
+            
+          
+        
+      
     
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
 
-                  
+
 <script>
  
  var previousLink = document.getElementById("previousLink");
  var nextLink = document.getElementById("nextLink");
  var pageTurnSpacer = document.getElementById("pageTurnSpacer");
- var useJS = document.getElementById("useJS");
  
  
- if (useJS.innerHTML == "1") {
-   
-   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
 
+ 
+ var selectNavs = document.getElementsByTagName("nav");
+ var selectSidebar;
+ for (i = 0; i < selectNavs.length; i++) {
+   if (selectNavs[i].className == "sidebar") {
+     selectSidebar = selectNavs[i]; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+ 
+ var indexActive, indexPrev, indexNext; 
+ for (i = 0; i < selectSubMenus.length; i++) {
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a");
    
-   var selectNavs = document.getElementsByTagName("nav");
-   var selectSidebar;
-   for (i = 0; i < selectNavs.length; i++) {
-     if (selectNavs[i].className == "sidebar") {
-       selectSidebar = selectNavs[i]; 
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == "active") {
+      if (j == 0) { 
+        prevHref = "remove";    
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      } else if (j == curNavSection.length - 1) { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = "remove";
+        whatIsActive = i;   
+      } else { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      }
+       break;
      }
    }
-
-   
-   
-   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
-   
-   var indexActive, indexPrev, indexNext; 
-   for (i = 0; i < selectSubMenus.length; i++) {
-     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
-     
-     for (j = 0; j < curNavSection.length; j++) {
-       if (curNavSection[j].className == "active") {
-        if (j == 0) { 
-          prevHref = "remove";    
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        } else if (j == curNavSection.length - 1) { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = "remove";
-          whatIsActive = i;   
-        } else { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        }
-         break;
-       }
-     }
-     if (whatIsActive != -1) { break; } 
-   }
-   
-   if (prevHref == "remove") {
-     previousLink.remove();
-     pageTurnSpacer.remove();
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   } else if (nextHref == "remove") {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.remove();
-   } else {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   }
+   if (whatIsActive != -1) { break; } 
+ }
+ 
+ if (prevHref == "remove") {
+   previousLink.remove();
+   pageTurnSpacer.remove();
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
+ } else if (nextHref == "remove") {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.remove();
+ } else {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/config.md' style="color: #687590;">Improve this page</a>
+      Last updated April 17, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/config.md' style="color: #687590;">Improve this page</a>
 
       
         <br />

@@ -34,7 +34,8 @@ Returns: Array of Announcement
 OAuth: User token
 Version history:
 3.1.0 - added
-Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  with_dismissed Boolean. If true, response will include announcements dismissed by the user. Defaults to false.</description>
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Response 200: OK Currently active announcements
+[ { &amp;#34;id&amp;#34;: &amp;#34;8&amp;#34;, &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Looks like there was an issue processing audio attachments without embedded art since yesterday due to an experimental new feature.</description>
     </item>
     
     <item>
@@ -424,7 +425,8 @@ Version history:
 2.3.0 - add forward parameter
 3.5.0 - add category and rule_ids parameters
 4.0.0 - category is now optional if rule_ids is provided
-Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Form data parameters  account_id required String.</description>
+4.2.0 - add legal category
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.</description>
     </item>
     
     <item>

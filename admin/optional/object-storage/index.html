@@ -16,7 +16,7 @@
 <script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
 
 
-  <title>Configuring object storage - Mastodon documentation</title>
+  <title>Object storage - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://docs.joinmastodon.org/admin/optional/object-storage/">
@@ -27,7 +27,7 @@
     <meta name="twitter:description" content="Serving user-uploaded files in Mastodon using external object storage">
   
 
-  <meta name="twitter:title" content="Configuring object storage">
+  <meta name="twitter:title" content="Object storage">
   <meta name="twitter:site" content="@joinmastodon">
 
   <link rel="canonical" href="https://docs.joinmastodon.org/admin/optional/object-storage/">
@@ -177,11 +177,15 @@
                 <ul class="sub-menu">
                   
                     <li>
-                      <a href="/admin/optional/object-storage/" class="active">Configuring object storage</a>
+                      <a href="/admin/optional/object-storage/" class="active">Object storage</a>
                     </li>
                   
                     <li>
                       <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
                     </li>
                   
                     <li>
@@ -1015,7 +1019,7 @@
 </ul>
 </nav>
     <main>
-  <h1>Configuring object storage</h1>  
+  <h1>Object storage</h1>  
   
     <p>Serving user-uploaded files in Mastodon using external object storage</p>
   
@@ -1027,6 +1031,9 @@
         <li><a href="#FS">Using the filesystem</a></li>
         <li><a href="#S3">S3-compatible object storage backends</a>
           <ul>
+            <li><a href="#environment-variables-for-s3-api-access">Environment variables for S3 API access</a></li>
+            <li><a href="#environment-variables-for-client-access-to-media-objects">Environment variables for client access to media objects</a></li>
+            <li><a href="#optional-environment-variables">Optional environment variables</a></li>
             <li><a href="#minio">MinIO</a></li>
             <li><a href="#wasabi-object-storage">Wasabi Object Storage</a></li>
             <li><a href="#digitalocean-spaces">DigitalOcean Spaces</a></li>
@@ -1060,17 +1067,76 @@
 
 <h2 id="S3">S3-compatible object storage backends</h2>
 <p>Mastodon can use S3-compatible object storage backends. ACL support is recommended as it allows Mastodon to quickly make the content of temporarily suspended users unavailable, or marginally improve the security of private data.</p>
-<p>On Mastodon&rsquo;s end, you need to configure the following environment variables:</p>
+<p>Mastodon uses the S3 API (<code>S3_REGION</code>, <code>S3_ENDPOINT</code>, <code>S3_BUCKET</code>,
+<code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>S3_SIGNATURE_VERSION</code>,
+<code>S3_OVERRIDE_PATH_STYLE</code>) for all write, delete, and
+permissions-modification operations. This includes media uploads (from
+the web interface, from Mastodon API clients, and from ActivityPub
+servers), media deletion (when a post is edited or deleted), and
+blocking access to media (when an account is suspended).</p>
+<p>Mastodon sends URLs to the web interface, Mastodon API clients, and
+ActivityPub servers for all &lsquo;read&rsquo; operations. As a result those
+operations are anonymous (no authentication or authorization needed)
+and use plain HTTP GET methods, which means they can be routed through
+reverse proxies and CDNs, and can be cached. It also means that those
+URLs can contain host/domain names which are entirely different from
+those used by the S3 storage provider itself, if desired. See the
+detailed documentation below which describes how those URLs are
+constructed and which environment variables are involved.</p>
+<p>To enable S3 storage, set the <code>S3_ENABLED</code> environment variable to <code>true</code>.</p>
+<h3 id="environment-variables-for-s3-api-access">Environment variables for S3 API access</h3>
 <ul>
-<li><code>S3_ENABLED=true</code></li>
-<li><code>S3_BUCKET=mastodata</code> (replacing <code>mastodata</code> with the name of your bucket)</li>
-<li><code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code> need to be set to your credentials</li>
-<li><code>S3_ALIAS_HOST</code> is optional but highly recommended in order to set up a caching proxy and not lock you to a specific provider</li>
-<li><code>S3_REGION</code></li>
-<li><code>S3_HOSTNAME</code> (optional if you use Amazon AWS)</li>
-<li><code>S3_PERMISSION</code> (optional, if you use a provider that does not support ACLs or want to use custom ACLs)</li>
-<li><code>S3_FORCE_SINGLE_REQUEST=true</code> (optional, if you run into trouble processing large files)</li>
+<li><code>S3_REGION</code> (defaults to &lsquo;us-east-1&rsquo;, required if using AWS S3, may
+not be required with other storage providers)</li>
+<li><code>S3_ENDPOINT</code> (defaults to &lsquo;s3.&lt;S3_REGION&gt;.amazonaws.com&rsquo;, required
+if not using AWS S3)</li>
+<li><code>S3_BUCKET=mastodata</code> (replacing <code>mastodata</code> with the name of your
+bucket)</li>
+<li><code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code> need to be set to
+your credentials</li>
+<li><code>S3_SIGNATURE_VERSION</code> (defaults to &lsquo;v4&rsquo;, should be compatible with
+most storage providers)</li>
+<li><code>S3_OVERRIDE_PATH_STYLE</code> (only used if <code>S3_ENDPOINT</code> is configured,
+set this to <code>true</code> if the storage provider requires API operations
+to be sent to &lsquo;&lt;S3_BUCKET&gt;.&lt;S3_ENDPOINT&gt;` (domain-style))</li>
 </ul>
+<h3 id="environment-variables-for-client-access-to-media-objects">Environment variables for client access to media objects</h3>
+<ul>
+<li><code>S3_PROTOCOL</code> (defaults to <code>https</code>)</li>
+<li><code>S3_HOSTNAME</code> (defaults to &lsquo;s3-&lt;S3_REGION&gt;.amazonaws.com&rsquo;, required
+if not using AWS S3 and <code>S3_ALIAS_HOST</code> is not set)</li>
+<li><code>S3_ALIAS_HOST</code> (can be used instead of <code>S3_HOSTNAME</code> if you do not
+want <code>S3_BUCKET</code> to be included in the media URLs, and requires that
+you have provisioned a reverse proxy or CDN in front of the storage
+provider)</li>
+</ul>
+<p>As noted above, Mastodon will send URLs to clients when they need to
+access media objects from the storage provider. The URLs are
+constructed as follows:</p>
+<ul>
+<li>
+<p>If <code>S3_ALIAS_HOST</code> is not set, then the URL will be
+&lsquo;&lt;S3_PROTOCOL&gt;://&lt;S3_HOSTNAME&gt;/&lt;S3_BUCKET&gt;/&lt;object path&gt;&rsquo;</p>
+</li>
+<li>
+<p>If <code>S3_ALIAS_HOST</code> is set, then the URL will be
+&lsquo;&lt;S3_PROTOCOL&gt;://&lt;S3_ALIAS_HOST&gt;/&lt;object path&gt;&rsquo;</p>
+</li>
+</ul>
+<p>It is important to note that when <code>S3_ALIAS_HOST</code> is set, the bucket
+name is <strong>not</strong> included in the generated URL; this means the bucket
+name must be included in <code>S3_ALIAS_HOST</code> (referred to as
+&lsquo;domain-style&rsquo; object access), or that <code>S3_ALIAS_HOST</code> must point to a
+reverse proxy or CDN which can include the bucket name in the URL it
+uses to send the request onward to the storage provider. This type of
+configuration allows you to &lsquo;hide&rsquo; the usage of the storage provider
+from the instance&rsquo;s clients, which means you can change storage
+providers without changing the resulting URLs.</p>
+<p>In addition to hiding the usage of the storage provider, this can also
+allow you to cache the media after retrieval from the storage
+provider, reducing egress bandwidth costs from the storage
+provider. This can be done in your own reverse proxy, or by using a
+CDN.</p>
 <a href="/admin/optional/object-storage-proxy/" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Proxying object storage through nginx
@@ -1081,12 +1147,65 @@
   You must serve the files with CORS headers, otherwise some functions of Mastodon&rsquo;s web UI will not work. For example, <code>Access-Control-Allow-Origin: *</code>
 </div>
 
+<h3 id="optional-environment-variables">Optional environment variables</h3>
+<h4 id="s3_open_timeout"><code>S3_OPEN_TIMEOUT</code></h4>
+<p>Default: 5 (seconds)</p>
+<p>The number of seconds before the HTTP handler should timeout while trying to open a new HTTP session.</p>
+<h4 id="s3_read_timeout"><code>S3_READ_TIMEOUT</code></h4>
+<p>Default: 5 (seconds)</p>
+<p>The number of seconds before the HTTP handler should timeout while waiting for an HTTP response.</p>
+<h4 id="s3_force_single_request"><code>S3_FORCE_SINGLE_REQUEST</code></h4>
+<p>Default: false</p>
+<p>Set this to <code>true</code> if you run into trouble processing large files.</p>
+<h4 id="s3_enable_checksum_mode"><code>S3_ENABLE_CHECKSUM_MODE</code></h4>
+<p>Default: false</p>
+<p>Enables verification of object checksums when Mastodon is retrieving
+an object from the storage provider. This feature is available in AWS
+S3 but may not be available in other S3-compatible implementations.</p>
+<h4 id="s3_storage_class"><code>S3_STORAGE_CLASS</code></h4>
+<p>Default: none</p>
+<p>When using AWS S3, this variable can be set to one of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">storage
+class</a>
+options which influence the storage selected for uploaded objects (and
+thus their access times and costs). If no storage class is specified
+then AWS S3 will use the <code>STANDARD</code> class, but options include
+<code>REDUCED_REDUNDANCY</code>, <code>GLACIER</code>, and others.</p>
+<h4 id="s3_multipart_threshold"><code>S3_MULTIPART_THRESHOLD</code></h4>
+<p>Default: 15 (megabytes)</p>
+<p>Objects of this size and smaller will be uploaded in a single
+operation, but larger objects will be uploaded using the multipart
+chunking mechanism, which can improve transfer speeds and reliability.</p>
+<h4 id="s3_permission"><code>S3_PERMISSION</code></h4>
+<p>Default: <code>public-read</code></p>
+<p>Defines the S3 object ACL when uploading new files. Use caution when
+using <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">S3 Block Public
+Access</a>
+and turning on the <code>BlockPublicAcls</code> option, as uploading objects with
+ACL <code>public-read</code> will fail (403). In that case, set <code>S3_PERMISSION</code>
+to <code>private</code>.</p>
 <div class="hint hint-danger">
   <div class="hint-icon"><i class="fa fa-exclamation-triangle"></i></div>
 
-  Regardless of the ACL configuration, your S3 bucket must be set up to ensure that all objects are publicly readable but not writable or listable. At the same time, Mastodon itself should have write access to the bucket. This configuration is generally consistent across all S3 providers, and common ones are highlighted below.
+  Regardless of the ACL configuration, your
+S3 bucket must be set up to ensure that all objects are publicly
+readable but not writable or listable. At the same time, Mastodon
+itself should have write access to the bucket. This configuration is
+generally consistent across all S3 providers, and common ones are
+highlighted below.
 </div>
 
+<h4 id="s3_batch_delete_limit"><code>S3_BATCH_DELETE_LIMIT</code></h4>
+<p>Default: <code>1000</code></p>
+<p>The official <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html">Amazon S3
+API</a>
+can handle deleting 1,000 objects in one batch job, but some providers
+may have issues handling this many in one request, or offer lower
+limits.</p>
+<h4 id="s3_batch_delete_retry"><code>S3_BATCH_DELETE_RETRY</code></h4>
+<p>Default: 3</p>
+<p>During batch delete operations, S3 providers may perodically fail or
+timeout while processing deletion requests. Mastodon will back off and
+retry the request up to this maximum number of times.</p>
 <h3 id="minio">MinIO</h3>
 <p>MinIO is an open-source implementation of an S3 object provider. This section does not cover how to install it, but how to configure a bucket for use in Mastodon.</p>
 <p>You need to set a policy for anonymous access that allows read-only access to objects contained by the bucket without allowing listing them.</p>
@@ -1229,420 +1348,1046 @@
 
   
   
+  
+  
     
+    
+    
+      
         
           
-  
-  
-  
+                  
+        
+      
     
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
-        
-          
-                      
-        
-            
-    
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
-            
+      
+        
+          
+          
+        
+        
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
+              
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+            
+          
+            
+          
+            
+          
+            
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+          
+            
+          
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
+      
+        
+          
+                  
+        
+      
+      
   
   
   
     
     
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
+            
+          
+            
+            
+          
+        
+      
     
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
 
-                  
+
 <script>
  
  var previousLink = document.getElementById("previousLink");
  var nextLink = document.getElementById("nextLink");
  var pageTurnSpacer = document.getElementById("pageTurnSpacer");
- var useJS = document.getElementById("useJS");
  
  
- if (useJS.innerHTML == "1") {
-   
-   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
 
+ 
+ var selectNavs = document.getElementsByTagName("nav");
+ var selectSidebar;
+ for (i = 0; i < selectNavs.length; i++) {
+   if (selectNavs[i].className == "sidebar") {
+     selectSidebar = selectNavs[i]; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+ 
+ var indexActive, indexPrev, indexNext; 
+ for (i = 0; i < selectSubMenus.length; i++) {
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a");
    
-   var selectNavs = document.getElementsByTagName("nav");
-   var selectSidebar;
-   for (i = 0; i < selectNavs.length; i++) {
-     if (selectNavs[i].className == "sidebar") {
-       selectSidebar = selectNavs[i]; 
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == "active") {
+      if (j == 0) { 
+        prevHref = "remove";    
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      } else if (j == curNavSection.length - 1) { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = "remove";
+        whatIsActive = i;   
+      } else { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      }
+       break;
      }
    }
-
-   
-   
-   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
-   
-   var indexActive, indexPrev, indexNext; 
-   for (i = 0; i < selectSubMenus.length; i++) {
-     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
-     
-     for (j = 0; j < curNavSection.length; j++) {
-       if (curNavSection[j].className == "active") {
-        if (j == 0) { 
-          prevHref = "remove";    
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        } else if (j == curNavSection.length - 1) { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = "remove";
-          whatIsActive = i;   
-        } else { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        }
-         break;
-       }
-     }
-     if (whatIsActive != -1) { break; } 
-   }
-   
-   if (prevHref == "remove") {
-     previousLink.remove();
-     pageTurnSpacer.remove();
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   } else if (nextHref == "remove") {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.remove();
-   } else {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   }
+   if (whatIsActive != -1) { break; } 
+ }
+ 
+ if (prevHref == "remove") {
+   previousLink.remove();
+   pageTurnSpacer.remove();
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
+ } else if (nextHref == "remove") {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.remove();
+ } else {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/optional/object-storage.md' style="color: #687590;">Improve this page</a>
+      Last updated February 20, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/optional/object-storage.md' style="color: #687590;">Improve this page</a>
 
       
     </p>

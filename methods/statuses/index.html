@@ -177,11 +177,15 @@
                 <ul class="sub-menu">
                   
                     <li>
-                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                      <a href="/admin/optional/object-storage/" class="">Object storage</a>
                     </li>
                   
                     <li>
                       <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
                     </li>
                   
                     <li>
@@ -1034,6 +1038,11 @@
             <li></li>
           </ul>
         </li>
+        <li><a href="#index">View multiple statuses</a>
+          <ul>
+            <li></li>
+          </ul>
+        </li>
         <li><a href="#delete">Delete a status</a>
           <ul>
             <li></li>
@@ -1318,6 +1327,96 @@
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;Record not found&#34;</span>
 }
 </code></pre></div><hr>
+<h2 id="index">View multiple statuses</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> /api/v1/statuses <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+</code></pre></div><p>Obtain information about multiple statuses.</p>
+<p><strong>Returns:</strong> Array of <a href="/entities/Status/">Status</a><br>
+<strong>OAuth:</strong> Public for public statuses, user token + <code>read:statuses</code> for private statuses<br>
+<strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h4 id="request-2">Request</h4>
+<h5 id="query-parameters">Query parameters</h5>
+<dl>
+<dt>id[]</dt>
+<dd>Array of String. The IDs of the Statuses in the database.</dd>
+</dl>
+<h5 id="headers-2">Headers</h5>
+<dl>
+<dt>Authorization</dt>
+<dd>Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
+</dl>
+<h4 id="response-2">Response</h4>
+<h5 id="200-ok-2">200: OK</h5>
+<p><a href="/entities/Status/">Status</a> records for the requested statuses will be returned. There can be fewer records than requested if the requested statuses do not exist or cannot be accessed given the current credentials.
+Sample call with <code>id[]=1&amp;id[]=2</code> when no status with <code>id=2</code> exists:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
+  {
+    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
+    <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2016-03-16T14:44:31.580Z&#34;</span>,
+    <span style="color:#ff79c6">&#34;in_reply_to_id&#34;</span>: <span style="color:#ff79c6">null</span>,
+    <span style="color:#ff79c6">&#34;in_reply_to_account_id&#34;</span>: <span style="color:#ff79c6">null</span>,
+    <span style="color:#ff79c6">&#34;sensitive&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;spoiler_text&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+    <span style="color:#ff79c6">&#34;visibility&#34;</span>: <span style="color:#f1fa8c">&#34;public&#34;</span>,
+    <span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
+    <span style="color:#ff79c6">&#34;uri&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/users/Gargron/statuses/1&#34;</span>,
+    <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/@Gargron/1&#34;</span>,
+    <span style="color:#ff79c6">&#34;replies_count&#34;</span>: <span style="color:#bd93f9">7</span>,
+    <span style="color:#ff79c6">&#34;reblogs_count&#34;</span>: <span style="color:#bd93f9">98</span>,
+    <span style="color:#ff79c6">&#34;favourites_count&#34;</span>: <span style="color:#bd93f9">112</span>,
+    <span style="color:#ff79c6">&#34;favourited&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;reblogged&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;muted&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;bookmarked&#34;</span>: <span style="color:#ff79c6">false</span>,
+    <span style="color:#ff79c6">&#34;content&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;p&gt;Hello world&lt;/p&gt;&#34;</span>,
+    <span style="color:#ff79c6">&#34;reblog&#34;</span>: <span style="color:#ff79c6">null</span>,
+    <span style="color:#ff79c6">&#34;application&#34;</span>: <span style="color:#ff79c6">null</span>,
+    <span style="color:#ff79c6">&#34;account&#34;</span>: {
+      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
+      <span style="color:#ff79c6">&#34;username&#34;</span>: <span style="color:#f1fa8c">&#34;Gargron&#34;</span>,
+      <span style="color:#ff79c6">&#34;acct&#34;</span>: <span style="color:#f1fa8c">&#34;Gargron&#34;</span>,
+      <span style="color:#ff79c6">&#34;display_name&#34;</span>: <span style="color:#f1fa8c">&#34;Eugen&#34;</span>,
+      <span style="color:#ff79c6">&#34;locked&#34;</span>: <span style="color:#ff79c6">false</span>,
+      <span style="color:#ff79c6">&#34;bot&#34;</span>: <span style="color:#ff79c6">false</span>,
+      <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2016-03-16T14:34:26.392Z&#34;</span>,
+      <span style="color:#ff79c6">&#34;note&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;p&gt;Developer of Mastodon and administrator of mastodon.social. I post service announcements, development updates, and personal stuff.&lt;/p&gt;&#34;</span>,
+      <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/@Gargron&#34;</span>,
+      <span style="color:#ff79c6">&#34;avatar&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg&#34;</span>,
+      <span style="color:#ff79c6">&#34;avatar_static&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/avatars/000/000/001/original/d96d39a0abb45b92.jpg&#34;</span>,
+      <span style="color:#ff79c6">&#34;header&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/headers/000/000/001/original/c91b871f294ea63e.png&#34;</span>,
+      <span style="color:#ff79c6">&#34;header_static&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/headers/000/000/001/original/c91b871f294ea63e.png&#34;</span>,
+      <span style="color:#ff79c6">&#34;followers_count&#34;</span>: <span style="color:#bd93f9">320472</span>,
+      <span style="color:#ff79c6">&#34;following_count&#34;</span>: <span style="color:#bd93f9">453</span>,
+      <span style="color:#ff79c6">&#34;statuses_count&#34;</span>: <span style="color:#bd93f9">61163</span>,
+      <span style="color:#ff79c6">&#34;last_status_at&#34;</span>: <span style="color:#f1fa8c">&#34;2019-12-05T03:03:02.595Z&#34;</span>,
+      <span style="color:#ff79c6">&#34;emojis&#34;</span>: [],
+      <span style="color:#ff79c6">&#34;fields&#34;</span>: [
+        {
+          <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;Patreon&#34;</span>,
+          <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;a href=\&#34;https://www.patreon.com/mastodon\&#34; rel=\&#34;me nofollow noopener noreferrer\&#34; target=\&#34;_blank\&#34;&gt;&lt;span class=\&#34;invisible\&#34;&gt;https://www.&lt;/span&gt;&lt;span class=\&#34;\&#34;&gt;patreon.com/mastodon&lt;/span&gt;&lt;span class=\&#34;invisible\&#34;&gt;&lt;/span&gt;&lt;/a&gt;&#34;</span>,
+          <span style="color:#ff79c6">&#34;verified_at&#34;</span>: <span style="color:#ff79c6">null</span>
+        },
+        {
+          <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;Homepage&#34;</span>,
+          <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;a href=\&#34;https://zeonfederated.com\&#34; rel=\&#34;me nofollow noopener noreferrer\&#34; target=\&#34;_blank\&#34;&gt;&lt;span class=\&#34;invisible\&#34;&gt;https://&lt;/span&gt;&lt;span class=\&#34;\&#34;&gt;zeonfederated.com&lt;/span&gt;&lt;span class=\&#34;invisible\&#34;&gt;&lt;/span&gt;&lt;/a&gt;&#34;</span>,
+          <span style="color:#ff79c6">&#34;verified_at&#34;</span>: <span style="color:#f1fa8c">&#34;2019-07-15T18:29:57.191+00:00&#34;</span>
+        }
+      ]
+    },
+    <span style="color:#ff79c6">&#34;media_attachments&#34;</span>: [],
+    <span style="color:#ff79c6">&#34;mentions&#34;</span>: [],
+    <span style="color:#ff79c6">&#34;tags&#34;</span>: [],
+    <span style="color:#ff79c6">&#34;emojis&#34;</span>: [],
+    <span style="color:#ff79c6">&#34;card&#34;</span>: <span style="color:#ff79c6">null</span>,
+    <span style="color:#ff79c6">&#34;poll&#34;</span>: <span style="color:#ff79c6">null</span>
+  }
+]
+</code></pre></div><h5 id="401-unauthorized-2">401: Unauthorized</h5>
+<p>Instance is in authorized-fetch mode.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;This API requires an authenticated user&#34;</span>
+}
+</code></pre></div><hr>
 <h2 id="delete">Delete a status</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">DELETE</span> /api/v1/statuses/:id <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
 </code></pre></div><p>Delete one of your own statuses.</p>
@@ -1326,19 +1425,19 @@
 <strong>Version history:</strong><br>
 0.0.0 - added<br>
 2.9.0 - return source properties, for use with delete and redraft</p>
-<h4 id="request-2">Request</h4>
+<h4 id="request-3">Request</h4>
 <h5 id="path-parameters-1">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-2">Headers</h5>
+<h5 id="headers-3">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-2">Response</h4>
-<h5 id="200-ok-2">200: OK</h5>
+<h4 id="response-3">Response</h4>
+<h5 id="200-ok-3">200: OK</h5>
 <p>Note the special properties <code>text</code> and <code>poll</code> or <code>media_attachments</code> which may be used to repost the status, e.g. in case of delete-and-redraft functionality. With <a href="#create">POST /api/v1/statuses</a>, use <code>text</code> as the value for <code>status</code> parameter, <code>media_attachments[n][&quot;id&quot;]</code> for the <code>media_ids</code> array parameter, and <code>poll</code> properties with the corresponding parameters (e.g. <code>poll[multiple]</code> and <code>poll[options]</code>, with a new <code>poll[expires_in]</code> and <code>poll[hide_totals]</code> per user input.</p>
 <p>Example of deleting a media post:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
@@ -1469,7 +1568,7 @@
     <span style="color:#ff79c6">&#34;emojis&#34;</span>: []
   }
 }
-</code></pre></div><h5 id="401-unauthorized-2">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-3">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -1488,19 +1587,19 @@
 <strong>Version history:</strong><br>
 0.0.0 - added
 4.0.0 - limit unauthenticated requests</p>
-<h4 id="request-3">Request</h4>
+<h4 id="request-4">Request</h4>
 <h5 id="path-parameters-2">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-3">Headers</h5>
+<h5 id="headers-4">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd>Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-3">Response</h4>
-<h5 id="200-ok-3">200: OK</h5>
+<h4 id="response-4">Response</h4>
+<h5 id="200-ok-4">200: OK</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;ancestors&#34;</span>: [
     {
@@ -1548,7 +1647,7 @@
 <strong>OAuth:</strong> App token + <code>read:statuses</code><br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="request-4">Request</h4>
+<h4 id="request-5">Request</h4>
 <h5 id="path-parameters-3">Path parameters</h5>
 <dl>
 <dt>:id</dt>
@@ -1559,13 +1658,13 @@
 <dt>lang</dt>
 <dd>String (ISO 639 language code). The status content will be translated into this language. Defaults to the user&rsquo;s current locale.</dd>
 </dl>
-<h5 id="headers-4">Headers</h5>
+<h5 id="headers-5">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-4">Response</h4>
-<h5 id="200-ok-4">200: OK</h5>
+<h4 id="response-5">Response</h4>
+<h5 id="200-ok-5">200: OK</h5>
 <p>Translating a status in Spanish with content warning and media into English</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;content&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;p&gt;Hello world&lt;/p&gt;&#34;</span>,
@@ -1619,18 +1718,18 @@
 <strong>OAuth:</strong> Public for public statuses. User token + <code>read:statuses</code> for private statuses.
 <strong>Version history:</strong><br>
 0.0.0 - added</p>
-<h4 id="request-5">Request</h4>
+<h4 id="request-6">Request</h4>
 <h5 id="path-parameters-4">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-5">Headers</h5>
+<h5 id="headers-6">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd>Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h5 id="query-parameters">Query parameters</h5>
+<h5 id="query-parameters-1">Query parameters</h5>
 <dl>
 <dt>max_id</dt>
 <dd><strong>Internal parameter.</strong> Use HTTP <code>Link</code> header for pagination.</dd>
@@ -1639,8 +1738,8 @@
 <dt>limit</dt>
 <dd>Integer. Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.</dd>
 </dl>
-<h4 id="response-5">Response</h4>
-<h5 id="200-ok-5">200: OK</h5>
+<h4 id="response-6">Response</h4>
+<h5 id="200-ok-6">200: OK</h5>
 <p>A list of accounts that boosted the status</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
   {
@@ -1666,18 +1765,18 @@
 <strong>OAuth:</strong> Public for public statuses. User token + <code>read:statuses</code> for private statuses.<br>
 <strong>Version history:</strong><br>
 0.0.0 - added</p>
-<h4 id="request-6">Request</h4>
+<h4 id="request-7">Request</h4>
 <h5 id="path-parameters-5">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-6">Headers</h5>
+<h5 id="headers-7">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd>Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h5 id="query-parameters-1">Query parameters</h5>
+<h5 id="query-parameters-2">Query parameters</h5>
 <dl>
 <dt>max_id</dt>
 <dd><strong>Internal parameter.</strong> Use HTTP <code>Link</code> header for pagination.</dd>
@@ -1686,8 +1785,8 @@
 <dt>limit</dt>
 <dd>Integer. Maximum number of results to return. Defaults to 40 accounts. Max 80 accounts.</dd>
 </dl>
-<h4 id="response-6">Response</h4>
-<h5 id="200-ok-6">200: OK</h5>
+<h4 id="response-7">Response</h4>
+<h5 id="200-ok-7">200: OK</h5>
 <p>A list of accounts who favourited the status</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
   {
@@ -1713,19 +1812,19 @@
 <strong>OAuth:</strong> User token + <code>write:favourites</code><br>
 <strong>Version history:</strong><br>
 0.0.0 - added</p>
-<h4 id="request-7">Request</h4>
+<h4 id="request-8">Request</h4>
 <h5 id="path-parameters-6">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-7">Headers</h5>
+<h5 id="headers-8">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-7">Response</h4>
-<h5 id="200-ok-7">200: OK</h5>
+<h4 id="response-8">Response</h4>
+<h5 id="200-ok-8">200: OK</h5>
 <p>Status favourited or was already favourited</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;99734435964706331&#34;</span>,
@@ -1738,7 +1837,7 @@
   <span style="color:#ff79c6">&#34;pinned&#34;</span>: <span style="color:#ff79c6">false</span>,
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-3">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-4">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -1756,19 +1855,19 @@
 <strong>OAuth:</strong> User token + <code>write:favourites</code><br>
 <strong>Version history:</strong><br>
 0.0.0 - added</p>
-<h4 id="request-8">Request</h4>
+<h4 id="request-9">Request</h4>
 <h5 id="path-parameters-7">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-8">Headers</h5>
+<h5 id="headers-9">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-8">Response</h4>
-<h5 id="200-ok-8">200: OK</h5>
+<h4 id="response-9">Response</h4>
+<h5 id="200-ok-9">200: OK</h5>
 <p>Status unfavourited or was already not favourited</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;99734435964706331&#34;</span>,
@@ -1781,7 +1880,7 @@
   <span style="color:#ff79c6">&#34;pinned&#34;</span>: <span style="color:#ff79c6">false</span>,
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-4">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-5">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -1800,13 +1899,13 @@
 <strong>Version history:</strong><br>
 0.0.0 - added<br>
 2.8.0 - add <code>visibility</code> parameter</p>
-<h4 id="request-9">Request</h4>
+<h4 id="request-10">Request</h4>
 <h5 id="path-parameters-8">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-9">Headers</h5>
+<h5 id="headers-10">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
@@ -1816,8 +1915,8 @@
 <dt>visibility</dt>
 <dd>String. Any visibility except <code>limited</code> or <code>direct</code> (i.e. <code>public</code>, <code>unlisted</code>, <code>private</code>). Defaults to public. Currently unused in UI.</dd>
 </dl>
-<h4 id="response-9">Response</h4>
-<h5 id="200-ok-9">200: OK</h5>
+<h4 id="response-10">Response</h4>
+<h5 id="200-ok-10">200: OK</h5>
 <p>Status has been reblogged. Note that the top-level id has changed. The id of the boosted status is now inside the <code>reblog</code> property. The top-level id is the id of the reblog itself. Also note that reblogs cannot be pinned.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;103254401326800919&#34;</span>,
@@ -1841,7 +1940,7 @@
   },
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-5">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-6">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -1859,19 +1958,19 @@
 <strong>OAuth:</strong> User token + <code>write:statuses</code><br>
 <strong>Version history:</strong><br>
 0.0.0 - added</p>
-<h4 id="request-10">Request</h4>
+<h4 id="request-11">Request</h4>
 <h5 id="path-parameters-9">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-10">Headers</h5>
+<h5 id="headers-11">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-10">Response</h4>
-<h5 id="200-ok-10">200: OK</h5>
+<h4 id="response-11">Response</h4>
+<h5 id="200-ok-11">200: OK</h5>
 <p>Status unboosted or was already not boosted</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;99734435964706331&#34;</span>,
@@ -1884,7 +1983,7 @@
   <span style="color:#ff79c6">&#34;pinned&#34;</span>: <span style="color:#ff79c6">false</span>,
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-6">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-7">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -1902,19 +2001,19 @@
 <strong>OAuth:</strong> User token + <code>write:bookmarks</code><br>
 <strong>Version history:</strong><br>
 3.1.0 - added</p>
-<h4 id="request-11">Request</h4>
+<h4 id="request-12">Request</h4>
 <h5 id="path-parameters-10">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-11">Headers</h5>
+<h5 id="headers-12">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-11">Response</h4>
-<h5 id="200-ok-11">200: OK</h5>
+<h4 id="response-12">Response</h4>
+<h5 id="200-ok-12">200: OK</h5>
 <p>Status bookmarked or was already bookmarked</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;99734435964706331&#34;</span>,
@@ -1927,7 +2026,7 @@
   <span style="color:#ff79c6">&#34;pinned&#34;</span>: <span style="color:#ff79c6">false</span>,
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-7">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-8">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -1940,19 +2039,19 @@
 <strong>OAuth:</strong> User token + <code>write:bookmarks</code><br>
 <strong>Version history:</strong><br>
 3.1.0 - added</p>
-<h4 id="request-12">Request</h4>
+<h4 id="request-13">Request</h4>
 <h5 id="path-parameters-11">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-12">Headers</h5>
+<h5 id="headers-13">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-12">Response</h4>
-<h5 id="200-ok-12">200: OK</h5>
+<h4 id="response-13">Response</h4>
+<h5 id="200-ok-13">200: OK</h5>
 <p>Status was unbookmarked or was already not bookmarked</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;99734435964706331&#34;</span>,
@@ -1965,7 +2064,7 @@
   <span style="color:#ff79c6">&#34;pinned&#34;</span>: <span style="color:#ff79c6">false</span>,
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-8">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-9">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -1983,19 +2082,19 @@
 <strong>OAuth:</strong> User token + <code>write:mutes</code><br>
 <strong>Version history:</strong><br>
 1.4.2 - added</p>
-<h4 id="request-13">Request</h4>
+<h4 id="request-14">Request</h4>
 <h5 id="path-parameters-12">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-13">Headers</h5>
+<h5 id="headers-14">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-13">Response</h4>
-<h5 id="200-ok-13">200: OK</h5>
+<h4 id="response-14">Response</h4>
+<h5 id="200-ok-14">200: OK</h5>
 <p>Status&rsquo;s conversation muted, or was already muted</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;99734435964706331&#34;</span>,
@@ -2008,7 +2107,7 @@
   <span style="color:#ff79c6">&#34;pinned&#34;</span>: <span style="color:#ff79c6">false</span>,
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-9">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-10">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -2026,19 +2125,19 @@
 <strong>OAuth:</strong> User token + <code>write:mutes</code><br>
 <strong>Version history:</strong><br>
 1.4.2 - added</p>
-<h4 id="request-14">Request</h4>
+<h4 id="request-15">Request</h4>
 <h5 id="path-parameters-13">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-14">Headers</h5>
+<h5 id="headers-15">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-14">Response</h4>
-<h5 id="200-ok-14">200: OK</h5>
+<h4 id="response-15">Response</h4>
+<h5 id="200-ok-15">200: OK</h5>
 <p>Status&rsquo;s conversation unmuted, or was already unmuted</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;99734435964706331&#34;</span>,
@@ -2051,7 +2150,7 @@
   <span style="color:#ff79c6">&#34;pinned&#34;</span>: <span style="color:#ff79c6">false</span>,
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-10">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-11">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -2070,19 +2169,19 @@
 <strong>Version history:</strong><br>
 1.6.0 - added<br>
 3.5.0 - you can now pin private posts</p>
-<h4 id="request-15">Request</h4>
+<h4 id="request-16">Request</h4>
 <h5 id="path-parameters-14">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The local ID of the Status in the database. The status should be authored by the authorized account.</dd>
 </dl>
-<h5 id="headers-15">Headers</h5>
+<h5 id="headers-16">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-15">Response</h4>
-<h5 id="200-ok-15">200: OK</h5>
+<h4 id="response-16">Response</h4>
+<h5 id="200-ok-16">200: OK</h5>
 <p>Status pinned. Note the status is not a reblog and its authoring account is your own.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;99734435964706331&#34;</span>,
@@ -2104,7 +2203,7 @@
   },
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-11">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-12">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -2131,19 +2230,19 @@
 <strong>OAuth:</strong> User token + <code>write:accounts</code><br>
 <strong>Version history:</strong><br>
 1.6.0 - added</p>
-<h4 id="request-16">Request</h4>
+<h4 id="request-17">Request</h4>
 <h5 id="path-parameters-15">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The local ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-16">Headers</h5>
+<h5 id="headers-17">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-16">Response</h4>
-<h5 id="200-ok-16">200: OK</h5>
+<h4 id="response-17">Response</h4>
+<h5 id="200-ok-17">200: OK</h5>
 <p>Status unpinned, or was already not pinned</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;99734435964706331&#34;</span>,
@@ -2165,7 +2264,7 @@
   },
   // ...
 }
-</code></pre></div><h5 id="401-unauthorized-12">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-13">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -2184,13 +2283,13 @@
 <strong>Version history:</strong><br>
 3.5.0 - added<br>
 4.0.0 - add <code>language</code></p>
-<h4 id="request-17">Request</h4>
+<h4 id="request-18">Request</h4>
 <h5 id="path-parameters-16">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-17">Headers</h5>
+<h5 id="headers-18">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd><span class="api-method-parameter-required">required</span> Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
@@ -2218,8 +2317,8 @@
 <dt>poll[hide_totals]</dt>
 <dd>Boolean. Hide vote counts until the poll ends? Defaults to false.</dd>
 </dl>
-<h4 id="response-17">Response</h4>
-<h5 id="200-ok-17">200: OK</h5>
+<h4 id="response-18">Response</h4>
+<h5 id="200-ok-18">200: OK</h5>
 <p>Status has been successfully edited.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;108942703571991143&#34;</span>,
@@ -2262,7 +2361,7 @@
   <span style="color:#ff79c6">&#34;card&#34;</span>: <span style="color:#ff79c6">null</span>,
   <span style="color:#ff79c6">&#34;poll&#34;</span>: <span style="color:#ff79c6">null</span>
 }
-</code></pre></div><h5 id="401-unauthorized-13">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-14">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -2284,19 +2383,19 @@
 <strong>OAuth:</strong> Public for public statuses, user token + <code>read:statuses</code> for private statuses<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h4 id="request-18">Request</h4>
+<h4 id="request-19">Request</h4>
 <h5 id="path-parameters-17">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The local ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-18">Headers</h5>
+<h5 id="headers-19">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd>Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-18">Response</h4>
-<h5 id="200-ok-18">200: OK</h5>
+<h4 id="response-19">Response</h4>
+<h5 id="200-ok-19">200: OK</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[
   {
     <span style="color:#ff79c6">&#34;content&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;p&gt;this is a status that will be edited&lt;/p&gt;&#34;</span>,
@@ -2413,25 +2512,25 @@
 <strong>OAuth:</strong> App token + <code>read:statuses</code><br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h4 id="request-19">Request</h4>
+<h4 id="request-20">Request</h4>
 <h5 id="path-parameters-18">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The local ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-19">Headers</h5>
+<h5 id="headers-20">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd>Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-19">Response</h4>
-<h5 id="200-ok-19">200: OK</h5>
+<h4 id="response-20">Response</h4>
+<h5 id="200-ok-20">200: OK</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;108942703571991143&#34;</span>,
   <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;this is a status that will be edited&#34;</span>,
   <span style="color:#ff79c6">&#34;spoiler_text&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>
 }
-</code></pre></div><h5 id="401-unauthorized-14">401: Unauthorized</h5>
+</code></pre></div><h5 id="401-unauthorized-15">401: Unauthorized</h5>
 <p>Invalid or missing Authorization header.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;error&#34;</span>: <span style="color:#f1fa8c">&#34;The access token is invalid&#34;</span>
@@ -2450,19 +2549,19 @@
 0.0.0 - added<br>
 2.6.0 - deprecated in favor of card property inlined on Status entity<br>
 3.0.0 - removed</p>
-<h4 id="request-20">Request</h4>
+<h4 id="request-21">Request</h4>
 <h5 id="path-parameters-19">Path parameters</h5>
 <dl>
 <dt>:id</dt>
 <dd><span class="api-method-parameter-required">required</span> String. The local ID of the Status in the database.</dd>
 </dl>
-<h5 id="headers-20">Headers</h5>
+<h5 id="headers-21">Headers</h5>
 <dl>
 <dt>Authorization</dt>
 <dd>Provide this header with <code>Bearer &lt;user token&gt;</code> to gain authorized access to this API method.</dd>
 </dl>
-<h4 id="response-20">Response</h4>
-<h5 id="200-ok-20">200: OK</h5>
+<h4 id="response-21">Response</h4>
+<h5 id="200-ok-21">200: OK</h5>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
   <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.youtube.com/watch?v=OMv_EPMED8Y&#34;</span>,
   <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;♪ Brand New Friend (Christmas Song!)&#34;</span>,
@@ -2545,414 +2644,1022 @@
 
   
   
+  
+  
     
+    
+    
+      
         
           
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-                    
+                  
+        
+      
+    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-          
-            
-            <div style="margin: 30px 0px">            
-              <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">Previous - Page</a>
-              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
-              <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">Next - Page</a>
-            </div>
-            
-            <div id="useJS" style="display: none">1</div>
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
+      
     
-                    
+      
         
           
-                      
+                  
         
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
+      
+      
   
   
   
     
     
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
-            
+      
+        
+          
+                  
+        
+      
     
+      
+        
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
-    
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
             
-    
             
+          
+        
+      
     
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
             
-    
             
-    
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
-    
+          
             
+          
+            
+          
+            
+          
+        
+      
     
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
   
 
-                  
+
 <script>
  
  var previousLink = document.getElementById("previousLink");
  var nextLink = document.getElementById("nextLink");
  var pageTurnSpacer = document.getElementById("pageTurnSpacer");
- var useJS = document.getElementById("useJS");
  
  
- if (useJS.innerHTML == "1") {
-   
-   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
 
+ 
+ var selectNavs = document.getElementsByTagName("nav");
+ var selectSidebar;
+ for (i = 0; i < selectNavs.length; i++) {
+   if (selectNavs[i].className == "sidebar") {
+     selectSidebar = selectNavs[i]; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+ 
+ var indexActive, indexPrev, indexNext; 
+ for (i = 0; i < selectSubMenus.length; i++) {
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a");
    
-   var selectNavs = document.getElementsByTagName("nav");
-   var selectSidebar;
-   for (i = 0; i < selectNavs.length; i++) {
-     if (selectNavs[i].className == "sidebar") {
-       selectSidebar = selectNavs[i]; 
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == "active") {
+      if (j == 0) { 
+        prevHref = "remove";    
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      } else if (j == curNavSection.length - 1) { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = "remove";
+        whatIsActive = i;   
+      } else { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      }
+       break;
      }
    }
-
-   
-   
-   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
-   
-   var indexActive, indexPrev, indexNext; 
-   for (i = 0; i < selectSubMenus.length; i++) {
-     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
-     
-     for (j = 0; j < curNavSection.length; j++) {
-       if (curNavSection[j].className == "active") {
-        if (j == 0) { 
-          prevHref = "remove";    
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        } else if (j == curNavSection.length - 1) { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = "remove";
-          whatIsActive = i;   
-        } else { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        }
-         break;
-       }
-     }
-     if (whatIsActive != -1) { break; } 
-   }
-   
-   if (prevHref == "remove") {
-     previousLink.remove();
-     pageTurnSpacer.remove();
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   } else if (nextHref == "remove") {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.remove();
-   } else {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   }
+   if (whatIsActive != -1) { break; } 
+ }
+ 
+ if (prevHref == "remove") {
+   previousLink.remove();
+   pageTurnSpacer.remove();
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
+ } else if (nextHref == "remove") {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.remove();
+ } else {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/statuses.md' style="color: #687590;">Improve this page</a>
+      Last updated May 7, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/methods/statuses.md' style="color: #687590;">Improve this page</a>
 
       
     </p>

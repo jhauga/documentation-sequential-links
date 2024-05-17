@@ -177,11 +177,15 @@
                 <ul class="sub-menu">
                   
                     <li>
-                      <a href="/admin/optional/object-storage/" class="">Configuring object storage</a>
+                      <a href="/admin/optional/object-storage/" class="">Object storage</a>
                     </li>
                   
                     <li>
                       <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
                     </li>
                   
                     <li>
@@ -1027,6 +1031,7 @@
         <li><a href="#basic-steps">Basic steps</a></li>
         <li><a href="#detailed-steps">Detailed steps</a>
           <ul>
+            <li><a href="#stop-the-mastodon-services">Stop the Mastodon services</a></li>
             <li><a href="#what-data-needs-to-be-migrated">What data needs to be migrated</a></li>
             <li><a href="#dump-and-load-postgresql">Dump and load PostgreSQL</a></li>
             <li><a href="#copy-files">Copy files</a></li>
@@ -1049,40 +1054,50 @@
 
 <h2 id="basic-steps">Basic steps</h2>
 <ol>
-<li>Set up a new Mastodon server using the <a href="/admin/install/">Production Guide</a> (however, don’t run <code>mastodon:setup</code>).</li>
+<li>Set up a new Mastodon server using the <a href="/admin/install/">Production Guide</a> (however, don’t run <code>mastodon:setup</code> and only leave the PostgreSQL service running).</li>
 <li>Stop Mastodon on the old server (e.g. <code>systemctl stop 'mastodon-*.service'</code>).</li>
 <li>Dump and load the PostgreSQL database using the instructions below.</li>
 <li>Copy the <code>system/</code> files using the instructions below. (Note: if you’re using S3, you can skip this step.)</li>
 <li>Copy the <code>.env.production</code> file.</li>
+<li>Save the Redis database, stop the Redis service, and copy the Redis database from <code>/var/lib/redis/</code> to the new server.</li>
 <li>Run <code>RAILS_ENV=production bundle exec rails assets:precompile</code> to compile Mastodon</li>
+<li>Start Mastodon and Redis on the new server.</li>
 <li>Run <code>RAILS_ENV=production ./bin/tootctl feeds build</code> to rebuild the home timelines for each user.</li>
-<li>Start Mastodon on the new server.</li>
+<li>Run <code>RAILS_ENV=production ./bin/tootctl search deploy</code> to rebuild your Elasticsearch indices (Note: if you are not using Elasticsearch, you can skip this step.)</li>
 <li>Update your DNS settings to point to the new server.</li>
 <li>Update or copy your Nginx configuration, and re-run LetsEncrypt as necessary.</li>
 <li>Enjoy your new server!</li>
 </ol>
 <h2 id="detailed-steps">Detailed steps</h2>
-<h3 id="what-data-needs-to-be-migrated">What data needs to be migrated</h3>
+<h3 id="stop-the-mastodon-services">Stop the Mastodon services</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl stop <span style="color:#f1fa8c">&#39;mastodon-*.service&#39;</span>
+</code></pre></div><h3 id="what-data-needs-to-be-migrated">What data needs to be migrated</h3>
 <p>At a high level, you’ll need to copy over the following:</p>
 <ul>
 <li>The <code>~/live/public/system</code> directory, which contains user-uploaded images and videos (if using S3, you don’t need this)</li>
 <li>The PostgreSQL database (using <a href="https://www.postgresql.org/docs/9.1/static/backup-dump.html">pg_dump</a>)</li>
 <li>The <code>~/live/.env.production</code> file, which contains server config and secrets</li>
+<li>The Redis database in the <code>/var/lib/redis/</code> directory, which contains unproccessed Sidekiq jobs.</li>
 </ul>
 <p>Less crucially, you’ll probably also want to copy the following for convenience:</p>
 <ul>
 <li>The nginx config (under <code>/etc/nginx/sites-available/mastodon</code>)</li>
+<li>The SSL certificates for your domain (under <code>/etc/letsencrypt/live/</code> if using LetsEncrypt)</li>
 <li>The systemd config files (<code>/etc/systemd/system/mastodon-*.service</code>), which may contain your server tweaks and customizations</li>
 <li>The PgBouncer configuration under <code>/etc/pgbouncer</code> (if you’re using it)</li>
 </ul>
 <h3 id="dump-and-load-postgresql">Dump and load PostgreSQL</h3>
 <p>Instead of running <code>mastodon:setup</code>, we’re going to create an empty PostgreSQL database using the <code>template0</code> database (which is useful when restoring a PostgreSQL dump, <a href="https://www.postgresql.org/docs/9.1/static/backup-dump.html#BACKUP-DUMP-RESTORE">as described in the pg_dump documentation</a>).</p>
-<p>Run this as the <code>mastodon</code> user on your old system:</p>
+<p>If you are using a password for your PostgreSQL user, you may want to configure the <code>mastodon</code> user on your new system to use the same password as your old system for convenience:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo -u postgres psql  
+ALTER USER mastodon WITH PASSWORD <span style="color:#f1fa8c">&#39;YOUR_PASSWORD&#39;</span>;  
+<span style="color:#f1fa8c">\q</span>
+</code></pre></div><p>Run this as the <code>mastodon</code> user on your old system:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pg_dump -Fc mastodon_production -f backup.dump
 </code></pre></div><p>Copy the <code>backup.dump</code> file over, using <code>rsync</code> or <code>scp</code>. Then on the new system, create an empty database as the <code>mastodon</code> user:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">createdb -T template0 mastodon_production
-</code></pre></div><p>Then import it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pg_restore -Fc -U mastodon -n public --no-owner --role<span style="color:#ff79c6">=</span>mastodon <span style="color:#f1fa8c">\
+</code></pre></div><p>Then import it (replace # in -j# with the number of CPUs in your system to improve restore performance):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pg_restore -Fc -j# -U mastodon -n public --no-owner --role<span style="color:#ff79c6">=</span>mastodon <span style="color:#f1fa8c">\
 </span><span style="color:#f1fa8c"></span>  -d mastodon_production backup.dump
 </code></pre></div><p>(Note that if the username is not <code>mastodon</code> on the new server, you should change the <code>-U</code> AND <code>--role</code> values above. It’s okay if the username is different between the two servers.)</p>
 <h3 id="copy-files">Copy files</h3>
@@ -1090,12 +1105,29 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rsync -avz ~/live/public/system/ mastodon@example.com:~/live/public/system/
 </code></pre></div><p>You’ll want to re-run this if any of the files on the old server change.</p>
 <p>You should also copy over the <code>.env.production</code> file, which contains secrets.</p>
-<p>Optionally, you may copy over the nginx, systemd, and PgBouncer config files, or rewrite them from scratch.</p>
+<p>Now copy your Redis database over (adjust the location of your Redis database as needed). On your old machine, as the <code>root</code> user, run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">redis-cli
+SAVE
+EXIT
+systemctl stop redis-server.service
+rsync -avz /var/lib/redis/ root@example.com:/var/lib/redis
+</code></pre></div><p>Optionally, you may copy over the nginx, systemd, and PgBouncer config files, or rewrite them from scratch.</p>
 <h3 id="during-migration">During migration</h3>
 <p>You can edit the <code>~/live/public/500.html</code> page on the old machine if you want to show a nice error message to let existing users know that a migration is in progress.</p>
 <p>You’ll probably also want to set the DNS TTL to something small (30-60 minutes) about a day in advance, so that DNS can propagate quickly once you point it to the new IP address.</p>
 <h3 id="after-migrating">After migrating</h3>
-<p>You can check <a href="https://whatsmydns.net/">whatsmydns.net</a> to see the progress of DNS propagation. To jumpstart the process, you can always edit your own <code>/etc/hosts</code> file to point to your new server so you can start playing around with it early.</p>
+<p>Run the following commands as your mastodon user:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production bundle <span style="color:#8be9fd;font-style:italic">exec</span> rails assets:precompile  
+</code></pre></div><p>Now run the following commands as your root user:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl daemon-reload
+systemctl start redis-server  
+systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now mastodon-web mastodon-sidekiq mastodon-streaming  
+systemctl restart nginx
+</code></pre></div><p>Once your server is back online, you can rebuild the home feeds for users (this can take a long time depending on the number of users.)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production ./bin/tootctl feeds build
+</code></pre></div><p>If you use Elasticsearch, run the following command to rebuild the indices (this can take a long time depending on the number of statuses you have.)</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production ./bin/tootctl search deploy
+</code></pre></div><p>You can check <a href="https://whatsmydns.net/">whatsmydns.net</a> to see the progress of DNS propagation. To jumpstart the process, you can always edit your own <code>/etc/hosts</code> file to point to your new server so you can start playing around with it early.</p>
 
     
 
@@ -1106,429 +1138,1047 @@
 
   
   
+  
+  
     
+    
+    
+      
         
           
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-          
-            
-            <div style="margin: 30px 0px">            
-              <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">Previous - Page</a>
-              <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>            
-              <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">Next - Page</a>
-            </div>
-            
-            <div id="useJS" style="display: none">1</div>
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-                    
-        
-          
-                      
-        
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-  
-  
-    
-    
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-            
-    
-  
-
                   
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+            
+            
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+          
+            
+          
+        
+      
+    
+      
+        
+          
+          
+        
+        
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+
+
 <script>
  
  var previousLink = document.getElementById("previousLink");
  var nextLink = document.getElementById("nextLink");
  var pageTurnSpacer = document.getElementById("pageTurnSpacer");
- var useJS = document.getElementById("useJS");
  
  
- if (useJS.innerHTML == "1") {
-   
-   var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
 
+ 
+ var selectNavs = document.getElementsByTagName("nav");
+ var selectSidebar;
+ for (i = 0; i < selectNavs.length; i++) {
+   if (selectNavs[i].className == "sidebar") {
+     selectSidebar = selectNavs[i]; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
+ 
+ var indexActive, indexPrev, indexNext; 
+ for (i = 0; i < selectSubMenus.length; i++) {
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a");
    
-   var selectNavs = document.getElementsByTagName("nav");
-   var selectSidebar;
-   for (i = 0; i < selectNavs.length; i++) {
-     if (selectNavs[i].className == "sidebar") {
-       selectSidebar = selectNavs[i]; 
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == "active") {
+      if (j == 0) { 
+        prevHref = "remove";    
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      } else if (j == curNavSection.length - 1) { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = "remove";
+        whatIsActive = i;   
+      } else { 
+        prevHref = curNavSection[j-1].href;
+        prevName = curNavSection[j-1].innerText;
+        nextHref = curNavSection[j+1].href;
+        nextName = curNavSection[j+1].innerText;
+        whatIsActive = i;
+      }
+       break;
      }
    }
-
-   
-   
-   var selectSubMenus = selectSidebar.getElementsByClassName("sub-menu");
-   
-   var indexActive, indexPrev, indexNext; 
-   for (i = 0; i < selectSubMenus.length; i++) {
-     let curNavSection = selectSubMenus[i].getElementsByTagName("a");
-     
-     for (j = 0; j < curNavSection.length; j++) {
-       if (curNavSection[j].className == "active") {
-        if (j == 0) { 
-          prevHref = "remove";    
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        } else if (j == curNavSection.length - 1) { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = "remove";
-          whatIsActive = i;   
-        } else { 
-          prevHref = curNavSection[j-1].href;
-          prevName = curNavSection[j-1].innerText;
-          nextHref = curNavSection[j+1].href;
-          nextName = curNavSection[j+1].innerText;
-          whatIsActive = i;
-        }
-         break;
-       }
-     }
-     if (whatIsActive != -1) { break; } 
-   }
-   
-   if (prevHref == "remove") {
-     previousLink.remove();
-     pageTurnSpacer.remove();
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   } else if (nextHref == "remove") {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.remove();
-   } else {
-     previousLink.href = prevHref;
-     previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
-     nextLink.href = nextHref;
-     nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
-   }
+   if (whatIsActive != -1) { break; } 
+ }
+ 
+ if (prevHref == "remove") {
+   previousLink.remove();
+   pageTurnSpacer.remove();
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
+ } else if (nextHref == "remove") {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.remove();
+ } else {
+   previousLink.href = prevHref;
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName);
+   nextLink.href = nextHref;
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);
  }
 </script>
 
     <p style="color: #687590;">
-      Last updated January 1, 0001 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/migrating.md' style="color: #687590;">Improve this page</a>
+      Last updated March 27, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/migrating.md' style="color: #687590;">Improve this page</a>
 
       
         <br />

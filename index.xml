@@ -189,7 +189,7 @@ Version history:</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.joinmastodon.org/entities/Admin_DomainBlock/</guid>
-      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;domain&amp;#34;: &amp;#34;example.com&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2022-11-16T08:15:34.238Z&amp;#34;, &amp;#34;severity&amp;#34;: &amp;#34;noop&amp;#34;, &amp;#34;reject_media&amp;#34;: false, &amp;#34;reject_reports&amp;#34;: false, &amp;#34;private_comment&amp;#34;: null, &amp;#34;public_comment&amp;#34;: null, &amp;#34;obfuscate&amp;#34;: false } Attributes id Description: The ID of the DomainBlock in the database.
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;domain&amp;#34;: &amp;#34;example.com&amp;#34;, &amp;#34;digest&amp;#34;: &amp;#34;a379a6f6eeafb9a55e378c118034e2751e682fab9f2d30ab13d2125586ce1947&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2022-11-16T08:15:34.238Z&amp;#34;, &amp;#34;severity&amp;#34;: &amp;#34;noop&amp;#34;, &amp;#34;reject_media&amp;#34;: false, &amp;#34;reject_reports&amp;#34;: false, &amp;#34;private_comment&amp;#34;: null, &amp;#34;public_comment&amp;#34;: null, &amp;#34;obfuscate&amp;#34;: false } Attributes id Description: The ID of the DomainBlock in the database.
 Type: String (cast from an integer, but not guaranteed to be a number)
 Version history:
 4.0.0 - added
@@ -197,7 +197,7 @@ domain Description: The domain that is not allowed to federate.
 Type: String
 Version history:
 4.0.0 - added
-created_at Description: When the domain was blocked from federating.</description>
+digest Description: The sha256 hex digest of the domain that is not allowed to federated.</description>
     </item>
     
     <item>
@@ -293,7 +293,8 @@ Returns: Array of Announcement
 OAuth: User token
 Version history:
 3.1.0 - added
-Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  with_dismissed Boolean. If true, response will include announcements dismissed by the user. Defaults to false.</description>
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Response 200: OK Currently active announcements
+[ { &amp;#34;id&amp;#34;: &amp;#34;8&amp;#34;, &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Looks like there was an issue processing audio attachments without embedded art since yesterday due to an experimental new feature.</description>
     </item>
     
     <item>
@@ -408,6 +409,16 @@ Request Headers  Authorization required Provide this header with Bearer &amp;lt;
     </item>
     
     <item>
+      <title>Captcha</title>
+      <link>https://docs.joinmastodon.org/admin/optional/captcha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/captcha/</guid>
+      <description>As of Mastodon 4.2, using CAPTCHA technology is supported to help mitigate against bots signing up for new accounts. With CAPTCHA enabled, new registrations will be required to complete a challenge response as part of the e-mail verification process.
+ For some people, the use of a central CAPTCHA service may be a security and privacy concern. In addition, CAPTCHA can make the registration process significantly less accessible, particularly for individuals with visual impairments, such as those who are blind or have low vision.</description>
+    </item>
+    
+    <item>
       <title>Code structure</title>
       <link>https://docs.joinmastodon.org/dev/code/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -427,17 +438,6 @@ Ruby  app/controllers Code that binds business logic to templates app/helpers Co
 Mastodon’s full-text search allows logged-in users to find results from:
  public statuses from accounts that opted into appearing in search results their own statuses their mentions their favourites their bookmarks accounts (display name, usernames and bios)  It deliberately does not allow searching for arbitrary strings in the entire database.
 Installing Elasticsearch  Mastodon is tested with Elasticsearch version 7.</description>
-    </item>
-    
-    <item>
-      <title>Configuring object storage</title>
-      <link>https://docs.joinmastodon.org/admin/optional/object-storage/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/optional/object-storage/</guid>
-      <description>User-uploaded files can be stored on the main server&amp;rsquo;s file system, or using an external object storage server, which can be required for scaling.
-Using the filesystem The simplest way to store user uploads is by using the server&amp;rsquo;s file system. This is how it works by default and is suitable for small servers.
-By default, Mastodon will store file uploads under public/system in its installation directory, but that can be overridden using the PAPERCLIP_ROOT_PATH environment variable.</description>
     </item>
     
     <item>
@@ -915,7 +915,7 @@ System repositories Make sure curl, wget, gnupg, apt-transport-https, lsb-releas
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.joinmastodon.org/entities/Instance/</guid>
-      <description>Example { &amp;#34;domain&amp;#34;: &amp;#34;mastodon.social&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;Mastodon&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;4.0.0rc1&amp;#34;, &amp;#34;source_url&amp;#34;: &amp;#34;https://github.com/mastodon/mastodon&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;The original server operated by the Mastodon gGmbH non-profit&amp;#34;, &amp;#34;usage&amp;#34;: { &amp;#34;users&amp;#34;: { &amp;#34;active_month&amp;#34;: 123122 } }, &amp;#34;thumbnail&amp;#34;: { &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&amp;#34;, &amp;#34;blurhash&amp;#34;: &amp;#34;UeKUpFxuo~R%0nW;WCnhF6RjaJt757oJodS$&amp;#34;, &amp;#34;versions&amp;#34;: { &amp;#34;@1x&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&amp;#34;, &amp;#34;@2x&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@2x/57c12f441d083cde.png&amp;#34; } }, &amp;#34;languages&amp;#34;: [ &amp;#34;en&amp;#34; ], &amp;#34;configuration&amp;#34;: { &amp;#34;urls&amp;#34;: { &amp;#34;streaming&amp;#34;: &amp;#34;wss://mastodon.social&amp;#34; }, &amp;#34;vapid&amp;#34;: { &amp;#34;public_key&amp;#34;: &amp;#34;BCkMmVdKDnKYwzVCDC99Iuc9GvId-x7-kKtuHnLgfF98ENiZp_aj-UNthbCdI70DqN1zUVis-x0Wrot2sBagkMc=&amp;#34; }, &amp;#34;accounts&amp;#34;: { &amp;#34;max_featured_tags&amp;#34;: 10 }, &amp;#34;statuses&amp;#34;: { &amp;#34;max_characters&amp;#34;: 500, &amp;#34;max_media_attachments&amp;#34;: 4, &amp;#34;characters_reserved_per_url&amp;#34;: 23 }, &amp;#34;media_attachments&amp;#34;: { &amp;#34;supported_mime_types&amp;#34;: [ &amp;#34;image/jpeg&amp;#34;, &amp;#34;image/png&amp;#34;, &amp;#34;image/gif&amp;#34;, &amp;#34;image/heic&amp;#34;, &amp;#34;image/heif&amp;#34;, &amp;#34;image/webp&amp;#34;, &amp;#34;video/webm&amp;#34;, &amp;#34;video/mp4&amp;#34;, &amp;#34;video/quicktime&amp;#34;, &amp;#34;video/ogg&amp;#34;, &amp;#34;audio/wave&amp;#34;, &amp;#34;audio/wav&amp;#34;, &amp;#34;audio/x-wav&amp;#34;, &amp;#34;audio/x-pn-wave&amp;#34;, &amp;#34;audio/vnd.</description>
+      <description>Example { &amp;#34;domain&amp;#34;: &amp;#34;mastodon.social&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;Mastodon&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;4.0.0rc1&amp;#34;, &amp;#34;source_url&amp;#34;: &amp;#34;https://github.com/mastodon/mastodon&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;The original server operated by the Mastodon gGmbH non-profit&amp;#34;, &amp;#34;usage&amp;#34;: { &amp;#34;users&amp;#34;: { &amp;#34;active_month&amp;#34;: 123122 } }, &amp;#34;thumbnail&amp;#34;: { &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&amp;#34;, &amp;#34;blurhash&amp;#34;: &amp;#34;UeKUpFxuo~R%0nW;WCnhF6RjaJt757oJodS$&amp;#34;, &amp;#34;versions&amp;#34;: { &amp;#34;@1x&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&amp;#34;, &amp;#34;@2x&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@2x/57c12f441d083cde.png&amp;#34; } }, &amp;#34;languages&amp;#34;: [ &amp;#34;en&amp;#34; ], &amp;#34;configuration&amp;#34;: { &amp;#34;urls&amp;#34;: { &amp;#34;streaming&amp;#34;: &amp;#34;wss://mastodon.social&amp;#34; }, &amp;#34;vapid&amp;#34;: { &amp;#34;public_key&amp;#34;: &amp;#34;BCkMmVdKDnKYwzVCDC99Iuc9GvId-x7-kKtuHnLgfF98ENiZp_aj-UNthbCdI70DqN1zUVis-x0Wrot2sBagkMc=&amp;#34; }, &amp;#34;accounts&amp;#34;: { &amp;#34;max_featured_tags&amp;#34;: 10, &amp;#34;max_pinned_statuses&amp;#34;: 4 }, &amp;#34;statuses&amp;#34;: { &amp;#34;max_characters&amp;#34;: 500, &amp;#34;max_media_attachments&amp;#34;: 4, &amp;#34;characters_reserved_per_url&amp;#34;: 23 }, &amp;#34;media_attachments&amp;#34;: { &amp;#34;supported_mime_types&amp;#34;: [ &amp;#34;image/jpeg&amp;#34;, &amp;#34;image/png&amp;#34;, &amp;#34;image/gif&amp;#34;, &amp;#34;image/heic&amp;#34;, &amp;#34;image/heif&amp;#34;, &amp;#34;image/webp&amp;#34;, &amp;#34;video/webm&amp;#34;, &amp;#34;video/mp4&amp;#34;, &amp;#34;video/quicktime&amp;#34;, &amp;#34;video/ogg&amp;#34;, &amp;#34;audio/wave&amp;#34;, &amp;#34;audio/wav&amp;#34;, &amp;#34;audio/x-wav&amp;#34;, &amp;#34;audio/x-pn-wave&amp;#34;, &amp;#34;audio/vnd.</description>
     </item>
     
     <item>
@@ -1089,7 +1089,7 @@ Version history:
       
       <guid>https://docs.joinmastodon.org/admin/migrating/</guid>
       <description>Sometimes, for various reasons, you may want to migrate your Mastodon instance from one server to another. Fortunately, this is not too difficult of a process, although it may result in some downtime.
- This guide was written with Ubuntu Server in mind; your mileage may vary for other setups.  Basic steps  Set up a new Mastodon server using the Production Guide (however, don’t run mastodon:setup). Stop Mastodon on the old server (e.</description>
+ This guide was written with Ubuntu Server in mind; your mileage may vary for other setups.  Basic steps  Set up a new Mastodon server using the Production Guide (however, don’t run mastodon:setup and only leave the PostgreSQL service running).</description>
     </item>
     
     <item>
@@ -1195,6 +1195,17 @@ OAuth: Public</description>
       <description>OAuth Scopes The API is divided up into access scopes. The scopes are hierarchical, i.e. if you have access to read, you automatically have access to read:accounts. It is recommended that you request as little as possible for your application.
 Multiple scopes can be requested at the same time: During app creation with the scopes param, and during the authorization phase with the scope query param (space-separate the scopes).
  Mind the scope vs scopes difference.</description>
+    </item>
+    
+    <item>
+      <title>Object storage</title>
+      <link>https://docs.joinmastodon.org/admin/optional/object-storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/object-storage/</guid>
+      <description>User-uploaded files can be stored on the main server&amp;rsquo;s file system, or using an external object storage server, which can be required for scaling.
+Using the filesystem The simplest way to store user uploads is by using the server&amp;rsquo;s file system. This is how it works by default and is suitable for small servers.
+By default, Mastodon will store file uploads under public/system in its installation directory, but that can be overridden using the PAPERCLIP_ROOT_PATH environment variable.</description>
     </item>
     
     <item>
@@ -1479,7 +1490,8 @@ Version history:
 2.3.0 - add forward parameter
 3.5.0 - add category and rule_ids parameters
 4.0.0 - category is now optional if rule_ids is provided
-Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Form data parameters  account_id required String.</description>
+4.2.0 - add legal category
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.</description>
     </item>
     
     <item>
@@ -1504,8 +1516,8 @@ Request Headers  Authorization required Provide this header with Bearer &amp;lt;
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://docs.joinmastodon.org/entities/Role/</guid>
-      <description>Example { &amp;#34;id&amp;#34;: 3, &amp;#34;name&amp;#34;: &amp;#34;Owner&amp;#34;, &amp;#34;color&amp;#34;: &amp;#34;#ff3838&amp;#34;, &amp;#34;permissions&amp;#34;: 1048575, &amp;#34;highlighted&amp;#34;: true } Attributes id Description: The ID of the Role in the database.
-Type: Integer
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;3&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Owner&amp;#34;, &amp;#34;color&amp;#34;: &amp;#34;#ff3838&amp;#34;, &amp;#34;permissions&amp;#34;: &amp;#34;1048575&amp;#34;, &amp;#34;highlighted&amp;#34;: true } Attributes id Description: The ID of the Role in the database.
+Type: String
 Version history:
 4.0.0 - added
 name Description: The name of the role.
@@ -1870,8 +1882,8 @@ created_at Description: When the token was generated.</description>
       
       <guid>https://docs.joinmastodon.org/entities/Translation/</guid>
       <description>Examples Translation of status with content warning and media
-{ &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Hello world&amp;lt;/p&amp;gt;&amp;#34;, &amp;#34;spoiler_text&amp;#34;: &amp;#34;Greatings ahead&amp;#34;, &amp;#34;media_attachments&amp;#34;: [ { &amp;#34;id&amp;#34;: 22345792, &amp;#34;description&amp;#34;: &amp;#34;Status author waving at the camera&amp;#34; } ], &amp;#34;poll&amp;#34;: null, &amp;#34;detected_source_language&amp;#34;: &amp;#34;es&amp;#34;, &amp;#34;provider&amp;#34;: &amp;#34;DeepL.com&amp;#34; } Translation of status with poll:
-{ &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Should I stay or should I go?&amp;lt;/p&amp;gt;&amp;#34;, &amp;#34;spoiler_text&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;media_attachments&amp;#34;: [], &amp;#34;poll&amp;#34;: [ { &amp;#34;id&amp;#34;: 34858, &amp;#34;options&amp;#34;: [ { &amp;#34;title&amp;#34;: &amp;#34;Stay&amp;#34; }, { &amp;#34;title&amp;#34;: &amp;#34;Go&amp;#34; } ] } ], &amp;#34;detected_source_language&amp;#34;: &amp;#34;ja&amp;#34;, &amp;#34;provider&amp;#34;: &amp;#34;DeepL.</description>
+{ &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Hello world&amp;lt;/p&amp;gt;&amp;#34;, &amp;#34;spoiler_text&amp;#34;: &amp;#34;Greatings ahead&amp;#34;, &amp;#34;media_attachments&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;22345792&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;Status author waving at the camera&amp;#34; } ], &amp;#34;poll&amp;#34;: null, &amp;#34;detected_source_language&amp;#34;: &amp;#34;es&amp;#34;, &amp;#34;provider&amp;#34;: &amp;#34;DeepL.com&amp;#34; } Translation of status with poll:
+{ &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Should I stay or should I go?&amp;lt;/p&amp;gt;&amp;#34;, &amp;#34;spoiler_text&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;media_attachments&amp;#34;: [], &amp;#34;poll&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;34858&amp;#34;, &amp;#34;options&amp;#34;: [ { &amp;#34;title&amp;#34;: &amp;#34;Stay&amp;#34; }, { &amp;#34;title&amp;#34;: &amp;#34;Go&amp;#34; } ] }, &amp;#34;detected_source_language&amp;#34;: &amp;#34;ja&amp;#34;, &amp;#34;provider&amp;#34;: &amp;#34;DeepL.</description>
     </item>
     
     <item>
