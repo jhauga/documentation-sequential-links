@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>アカウントの引っ越しや削除 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/ja/user/moving/">
+
+  
+    <meta name="description" content="自分の情報は自由に扱えます。">
+    <meta property="og:description" content="自分の情報は自由に扱えます。">
+    <meta name="twitter:description" content="自分の情報は自由に扱えます。">
+  
+
+  <meta name="twitter:title" content="アカウントの引っ越しや削除">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/ja/user/moving/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/ja/" class="">Mastodon（マストドン）とは？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを使う</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/ja/user/signup/" class="">アカウントの登録</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/profile/" class="">プロフィールの設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/posting/" class="">トゥートの投稿</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/network/" class="">ネットワーク機能の使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moderating/" class="">見たくないコンテンツへの対処</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/discoverability/" class="">自分や他のユーザーの宣伝</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/preferences/" class="">環境の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/contacts/" class="">その他の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/external/" class="">外部からのMasotodonの使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moving/" class="active">アカウントの引っ越しや削除</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/run-your-own/" class="">自分のサーバーを動かすこと</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを動かす</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonアプリを開発する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonの開発に貢献する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">準拠している仕様</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Methods</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Entities</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>アカウントの引っ越しや削除</h1>
+
+  
+    <p>自分の情報は自由に扱えます。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#export">自分の情報のエクスポート</a></li>
+        <li><a href="#migration">プロフィールのリダイレクトまたは引っ越し</a>
+          <ul>
+            <li><a href="#redirect">プロフィールのリダイレクト</a></li>
+            <li><a href="#move">プロフィールの引っ越し</a></li>
+            <li><a href="#aliases">アカウントエイリアス</a></li>
+          </ul>
+        </li>
+        <li><a href="#delete">アカウントの削除</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="export">自分の情報のエクスポート</h2>
+<figure><img src="/assets/image%20%2835%29.png"
+         alt="設定における「データのエクスポート」ページ"/><figcaption>
+            <p>設定における「データのエクスポート」ページ</p>
+        </figcaption>
+</figure>
+
+<p>設定から「データのエクスポート」に移動して、現在フォローしているアカウント、現在作成しているリスト、現在ブロックしているアカウント、現在ミュートしているアカウント、および現在ブロックしているドメインを、CSVファイルとしていつでもダウンロードできます。フォロー、ブロック、ミュート、ドメインブロックの一覧は、設定から「データのインポート」で追加できます。この追加は、結合または上書きのいずれかで実行できます。</p>
+<p>トゥートとメディアのアーカイブについてのリクエストは7日に1回行うことができ、ActivityPub JSON形式でダウンロードできます。Mastodonは現在、技術的な制限により、トゥートやメディアの追加に対応していません。しかし、ActivityPubドキュメントを解釈できるソフトウェアを使うことでアーカイブを見ることができます。</p>
+<h2 id="migration">プロフィールのリダイレクトまたは引っ越し</h2>
+<p>設定の「アカウント」の下部に、アカウントのリダイレクトまたは引っ越しに関連する項目を見つけられます。</p>
+<h3 id="redirect">プロフィールのリダイレクト</h3>
+<figure><img src="/assets/image%20%2853%29.png"
+         alt="プロフィールのリダイレクトのための設定欄"/><figcaption>
+            <p>プロフィールのリダイレクトのための設定欄</p>
+        </figcaption>
+</figure>
+
+<p>アカウントをリダイレクトすると、そのアカウントからの投稿が無効になります。そのとき、新しいアカウントを示して「引っ越ししました」という案内を表示します。あなたのプロフィールを見ている誰もがこの案内を見ることができ、新しいアカウントであなたをフォローできることに気づくでしょう。リダイレクトを設定したアカウントはフォローできません。リダイレクトはいつでもキャンセルできます。</p>
+<h3 id="move">プロフィールの引っ越し</h3>
+<figure><img src="/assets/image%20%2847%29.png"
+         alt="プロフィールを引っ越しするための設定欄"/><figcaption>
+            <p>プロフィールを引っ越しするための設定欄</p>
+        </figcaption>
+</figure>
+
+<p>アカウントを引っ越しすることは、アカウントをリダイレクトすることと同じです。ただしソフトウェアがMoveアクティビティに対応している場合、現在のあなたのアカウントをフォローしている人は、そのフォローが解除され、新しいアカウントをフォローし直すことを不可逆的に実行します。技術的な制限のためトゥートは引っ越しされません。また、再度引っ越しようとしてもできない、とても重いクールダウン期間があるため、この引っ越し機能を使う前に十分に注意してください。</p>
+<h3 id="aliases">アカウントエイリアス</h3>
+<figure><img src="/assets/image%20%2840%29.png"
+         alt="エイリアス管理画面"/><figcaption>
+            <p>エイリアス管理画面</p>
+        </figcaption>
+</figure>
+
+<p>プロフィールの引っ越しは、2つのアカウントがエイリアスを設定している場合のみに実行できます。現在、アカウントエイリアスはプロフィールの引っ越し以外に使われません。引っ越しを始める前に、新しいアカウントのエイリアスとして古いアカウントを設定する必要があります。エイリアスの設定は特に何かを起こすことはなく、そのエイリアス自体を元に戻せます。</p>
+<h2 id="delete">アカウントの削除</h2>
+<figure><img src="/assets/image%20%2816%29.png"
+         alt="アカウント削除の設定欄。"/><figcaption>
+            <p>アカウント削除の設定欄。</p>
+        </figcaption>
+</figure>
+
+<p>設定の「アカウント」の下部に、アカウントを削除するための設定欄を見つけられます。アカウントを削除すると元に戻せず、プロフィールとユーザー名の両方が永久に使えなくなります。</p>
+
+    
+
+
+
+
+
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+            
+            
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+<script>
+ 
+ 
+ 
+ 
+ 
+ 
+ var theMenuTag = "nav";           
+ var theMenuSideBar = "sidebar";   
+ var theMenuSubMenu = "sub-menu";  
+ var theMenuActivePage = "active"; 
+
+ 
+ 
+ var previousLink = document.getElementById("previousLink");     
+ var nextLink = document.getElementById("nextLink");             
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer"); 
+ 
+ 
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+ 
+ var selectNavs = document.getElementsByTagName(theMenuTag); 
+ var selectSidebar;                                          
+ for (i = 0; i < selectNavs.length; i++) {                   
+   if (selectNavs[i].className == theMenuSideBar) {          
+     selectSidebar = selectNavs[i];                          
+     break; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName(theMenuSubMenu); 
+ 
+ 
+ for (i = 0; i < selectSubMenus.length; i++) {                      
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a"); 
+   
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == theMenuActivePage) { 
+      if (j == 0) {                                
+        prevHref = "remove";                        
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      } else if (j == curNavSection.length - 1) {  
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = "remove";                        
+        whatIsActive = i; 
+      } else {                                     
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      }
+       
+       break;
+     }
+   }
+   
+   if (whatIsActive != -1) { break; }
+ }
+ 
+ if (prevHref == "remove") { 
+   previousLink.remove();                                             
+   pageTurnSpacer.remove();                                           
+   nextLink.href = nextHref;                                          
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName); 
+ } else if (nextHref == "remove") { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.remove();                                                         
+ } else { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.href = nextHref;                                                  
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);         
+ }                                                                            
+ 
+</script>
+
+    <p style="color: #687590;">
+      最終更新 August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/moving.md' style="color: #687590;">このページを改善する</a>
+
+      
+        <br />
+
+        他の言語も利用可能：
+
+        
+          <a href="/user/moving/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/zh-cn/user/moving/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+          <a href="/pl/user/moving/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Mastodonに参加する</a> · <a href='https://blog.joinmastodon.org'>ブログ</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/moving.md'>ソースコードを見る</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>インプリメント</a></p>
+</footer>
+
+</body>
+
+</html>

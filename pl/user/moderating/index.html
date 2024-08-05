@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>Radzenie sobie z niechcianą treścią - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/pl/user/moderating/">
+
+  
+    <meta name="description" content="Kontroluj co zobaczysz, dla bardziej przyjaznego doświadczenia.">
+    <meta property="og:description" content="Kontroluj co zobaczysz, dla bardziej przyjaznego doświadczenia.">
+    <meta name="twitter:description" content="Kontroluj co zobaczysz, dla bardziej przyjaznego doświadczenia.">
+  
+
+  <meta name="twitter:title" content="Radzenie sobie z niechcianą treścią">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/pl/user/moderating/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/pl/" class="">Czym jest Mastodon?</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Korzystaj z Mastodona</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/pl/user/signup/" class="">Zarejestruj konto</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/profile/" class="">Dostosuj swój profil</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/posting/" class="">Utwórz wpisy</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/network/" class="">Korzystaj z funkcjonalności sieci</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/moderating/" class="active">Radzenie sobie z niechcianą treścią</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/discoverability/" class="">Promuj siebie i innych</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/preferences/" class="">Zmień swoje ustawienia</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/contacts/" class="">Więcej ustawień</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/external/" class="">Korzystaj z Mastodona zewnętrznie</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/moving/" class="">Przenieś lub opuść konto</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/run-your-own/" class="">Prowadź swój własny serwer</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Uruchamianie Mastodona</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Twórz aplikacje dla Mastodona</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Współtwórz Mastodona</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Zgodność ze specyfikacją</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Metody API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Jednostki API</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>Radzenie sobie z niechcianą treścią</h1>
+
+  
+    <p>Kontroluj co zobaczysz, dla bardziej przyjaznego doświadczenia.</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#filters">Filtrowanie wpisów</a>
+          <ul>
+            <li><a href="#filter-phrase">Słowa kluczowe lub frazy</a></li>
+            <li><a href="#filter-expire">Wygasanie po czasie</a></li>
+            <li><a href="#filter-context">Kontekst filtrów</a></li>
+            <li><a href="#filter-drop">Usuwanie zamiast ukrywania</a></li>
+            <li><a href="#filter-whole">Pełne słowa</a></li>
+          </ul>
+        </li>
+        <li><a href="#blocking-and-muting">Działania po stronie użytkownika</a>
+          <ul>
+            <li><a href="#hide-boosts">Ukrywanie udostępnień</a></li>
+            <li><a href="#mute">Wyciszanie</a></li>
+            <li><a href="#block">Blokowanie</a></li>
+            <li><a href="#block-domain">Ukrywanie całego serwera</a></li>
+          </ul>
+        </li>
+        <li><a href="#report">Zgłaszanie nieodpowiedniej treści moderatorom</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="filters">Filtrowanie wpisów</h2>
+<p>Możliwe jest filtrowanie wpisów według określonych słów kluczowych lub fraz, aby były automatycznie ukrywane.</p>
+<figure><img src="/assets/filter-list.jpg"
+         alt="Przykład aktywnych filtrów dla różnych słów kluczowych w różnych kontekstach."/><figcaption>
+            <p>Przykład aktywnych filtrów dla różnych słów kluczowych w różnych kontekstach.</p>
+        </figcaption>
+</figure>
+
+<p>Aby utworzyć i zarządzać filtrami, odwiedź Preferencje &gt; Filtry. Przycisk „Dodaj nowy filtr” pozwoli na utworzenie nowego filtru, a istniejące filtry mogą zostać edytowane lub usunięte. Istniejące filtry są podsumowane w tabeli.</p>
+<figure><img src="/assets/filter-edit.jpg"
+         alt="Filtry mogą mieć datę wyczerpania, określone konteksty, usuwanie po stronie serwera lub używać granic słów."/><figcaption>
+            <p>Filtry mogą mieć datę wyczerpania, określone konteksty, usuwanie po stronie serwera lub używać granic słów.</p>
+        </figcaption>
+</figure>
+
+<p>Filtry mają następujące opcje:</p>
+<h3 id="filter-phrase">Słowa kluczowe lub frazy</h3>
+<p>To ciąg znaków, który jest sprawdzany. Słowo kluczowe będzie wyszukiwane w zawartości wpisu, uwzględniając CW, opisy mediów i opcje ankiet.</p>
+<h3 id="filter-expire">Wygasanie po czasie</h3>
+<p>Opcjonalnie możesz zastosować filtr tylko na określony okres. Wygasłe filtry nie są automatycznie usuwane, ale mogą być włączone ponownie, ustawiając nową datę wygaśnięcia (lub wyłączając wygasanie).</p>
+<h3 id="filter-context">Kontekst filtrów</h3>
+<p>Wybierz, gdzie zostanie zastosowany filtr:</p>
+<ul>
+<li>Strona główna i listy – spełniające kryteria wpisy zostaną usunięte ze strony głównej i list</li>
+<li>Powiadomienia – spełniające kryteria powiadomienia nie będą wyświetlane</li>
+<li>Publiczne osie czasu – spełniające kryteria wpisy nie będą pojawiać się na lokalnych/sfederowanych osiach czasu</li>
+<li>Konwersacje – spełniające kryteria wpisy będą ukrywane w wątkach i szczegółowym widoku</li>
+</ul>
+<h3 id="filter-drop">Usuwanie zamiast ukrywania</h3>
+<p>Filtrowanie zwykle odbywa się po stronie klienta, więc wyłączenie filtru sprawi, że filtrowane wpisu będą widoczne ponownie. Jeśli jednak włączysz „Usuwaj zamiast ukrywać”, pasujące wpisy będą całkowicie usuwane i nigdy nie zobaczysz ich w powiadomieniach lub na stronie głównej.</p>
+<h3 id="filter-whole">Pełne słowa</h3>
+<p>Filtry zwykle są stosowane we wpisach zawierających wskazane znaki, niezależnie czy są one w środku słowa. Włączenie opcji „Całe słowo” sprawi, że filtr będzie działał tylko, jeżeli słowo jest otoczone przez spacje lub inne znaki niealfanumeryczne.</p>
+<h2 id="blocking-and-muting">Działania po stronie użytkownika</h2>
+<figure><img src="/assets/profile-dropdown.jpg"
+         alt="Menu wyboru profilu oferuje różnorodne działania."/><figcaption>
+            <p>Menu wyboru profilu oferuje różnorodne działania.</p>
+        </figcaption>
+</figure>
+
+<h3 id="hide-boosts">Ukrywanie udostępnień</h3>
+<p>Jeżeli ukryjesz czyjeś udostępnienia, nie zobaczysz ich udostępnień na stronie głównej. Dotyczy to tylko kont użytkowników, które obecnie obserwujesz.</p>
+<h3 id="mute">Wyciszanie</h3>
+<figure><img src="/assets/muted.jpg"
+         alt="Przykład wyciszonych kont."/><figcaption>
+            <p>Przykład wyciszonych kont.</p>
+        </figcaption>
+</figure>
+
+<p>Przy wyciszeniu możesz zadecydować czy wyciszysz powiadomienia od tej osoby. Wyciszenie bez wyciszania powiadomień sprawi, że:</p>
+<ul>
+<li>Nie zobaczysz tego użytkownika na stronie głównej</li>
+<li>Nie zobaczysz innych osób, gdy udostępniają tego użytkownika</li>
+<li>Nie zobaczysz innych osób, gdy wspomniają o tym użytkowniku</li>
+<li>Nie zobaczysz tego użytkownika w publicznych osiach czasu</li>
+</ul>
+<p>Jeżeli wybierzesz, aby wyciszyć też powiadomienia od tego użytkownika, nie będziesz dostawać też od niego powiadomień.</p>
+<p>Wyciszenia mogą mieć dodatkowo czas, po którym wygasną.</p>
+<p>Użytkownik nie może się dowiedzieć, że został wyciszony.</p>
+<h3 id="block">Blokowanie</h3>
+<figure><img src="/assets/blocked.jpg"
+         alt="Przykład zablokowanych kont."/><figcaption>
+            <p>Przykład zablokowanych kont.</p>
+        </figcaption>
+</figure>
+
+<p>Blokowanie ukrywa użytkownika z Twojego widoku:</p>
+<ul>
+<li>Nie zobaczysz tego użytkownika na stronie głównej</li>
+<li>Nie zobaczysz innych osób, gdy udostępniają tego użytkownika</li>
+<li>Nie zobaczysz innych osób, gdy wspomniają o tym użytkowniku</li>
+<li>Nie zobaczysz tego użytkownika w publicznych osiach czasu</li>
+<li>Nie zobaczysz powiadomień od tego użytkownika</li>
+</ul>
+<p>Dodatkowo, ze strony zablokowanego użytkownika:</p>
+<ul>
+<li>Użytkownik przestaje Cię obserwować</li>
+<li>Użytkownik nie może Cię zaobserwować ponownie</li>
+<li>Użytkownik nie zobaczy udostępnień Twoich wpisów przez innych</li>
+<li>Użytkownik nie zobaczy Cię w publicznych osiach czasu</li>
+</ul>
+<p>Jeżeli jesteś na tym samym serwerze, na którym jest zablokowana osoba, ta osoba nie będzie mogła zobaczyć Twoich wpisów na Twoim profilu, gdy jest zalogowana.</p>
+<h3 id="block-domain">Ukrywanie całego serwera</h3>
+<p>![]({{ relUrl &ldquo;/assets/block-domain.png&rdquo; }})</p>
+<p>Jeżeli zablokujesz cały serwer:</p>
+<ul>
+<li>Nie zobaczysz wpisów z tego serwera na publicznych osiach czasu</li>
+<li>Nie zobaczysz udostępnień z tego serwera na stronie głównej</li>
+<li>Nie zobaczysz powiadomień z tego serwera</li>
+<li>Utracisz obserwujących z tego serwera</li>
+</ul>
+<h2 id="report">Zgłaszanie nieodpowiedniej treści moderatorom</h2>
+<figure><img src="/assets/report-modal.jpg"
+         alt="Okno zgłaszania pozwalające na wybór przykładowych wpisów, dodanie notatki czy przekierowanie zgłoszeń."/><figcaption>
+            <p>Okno zgłaszania pozwalające na wybór przykładowych wpisów, dodanie notatki czy przekierowanie zgłoszeń.</p>
+        </figcaption>
+</figure>
+
+<p>Jeżeli zobaczysz wpis lub użytkownika naruszającego zasady Twojego serwera, możesz zgłosić użytkownika moderatorom swojego serwera. Wybranie opcji „Zgłoś” otworzy okno zgłaszania. Tam możesz (jest to wskazane) dodać notatkę, w której napiszesz, dlaczego zgłaszasz to konto. Możesz załączyć nieodpowiednie wpisy dla dodatkowego kontekstu zgłoszenia, a jeżeli naruszają one zasady zdalnego serwera, możesz przekierować zgłoszenie również do jego moderatorów.</p>
+
+    
+
+
+
+
+
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+            
+            
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+<script>
+ 
+ 
+ 
+ 
+ 
+ 
+ var theMenuTag = "nav";           
+ var theMenuSideBar = "sidebar";   
+ var theMenuSubMenu = "sub-menu";  
+ var theMenuActivePage = "active"; 
+
+ 
+ 
+ var previousLink = document.getElementById("previousLink");     
+ var nextLink = document.getElementById("nextLink");             
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer"); 
+ 
+ 
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+ 
+ var selectNavs = document.getElementsByTagName(theMenuTag); 
+ var selectSidebar;                                          
+ for (i = 0; i < selectNavs.length; i++) {                   
+   if (selectNavs[i].className == theMenuSideBar) {          
+     selectSidebar = selectNavs[i];                          
+     break; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName(theMenuSubMenu); 
+ 
+ 
+ for (i = 0; i < selectSubMenus.length; i++) {                      
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a"); 
+   
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == theMenuActivePage) { 
+      if (j == 0) {                                
+        prevHref = "remove";                        
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      } else if (j == curNavSection.length - 1) {  
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = "remove";                        
+        whatIsActive = i; 
+      } else {                                     
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      }
+       
+       break;
+     }
+   }
+   
+   if (whatIsActive != -1) { break; }
+ }
+ 
+ if (prevHref == "remove") { 
+   previousLink.remove();                                             
+   pageTurnSpacer.remove();                                           
+   nextLink.href = nextHref;                                          
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName); 
+ } else if (nextHref == "remove") { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.remove();                                                         
+ } else { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.href = nextHref;                                                  
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);         
+ }                                                                            
+ 
+</script>
+
+    <p style="color: #687590;">
+      Ostatnio aktualizowano August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/pl/user/moderating.md' style="color: #687590;">Popraw tę stronę</a>
+
+      
+        <br />
+
+        Dostępne również w języku:
+
+        
+          <a href="/user/moderating/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/zh-cn/user/moderating/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+          <a href="/ja/user/moderating/" style="color: #687590;" hreflang="ja">日本語</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsorzy
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Dołącz do Mastodona</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/pl/user/moderating.md'>Zobacz źródła</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+</footer>
+
+</body>
+
+</html>

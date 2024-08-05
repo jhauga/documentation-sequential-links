@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta name="generator" content="Hugo 0.68.3" />
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/ja/">
+
+  
+    <meta name="description" content="Mastodonのドキュメントに、ようこそ！">
+    <meta property="og:description" content="Mastodonのドキュメントに、ようこそ！">
+    <meta name="twitter:description" content="Mastodonのドキュメントに、ようこそ！">
+  
+
+  <meta name="twitter:title" content="Mastodon（マストドン）とは？">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/ja/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/ja/" class="active">Mastodon（マストドン）とは？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを使う</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/ja/user/signup/" class="">アカウントの登録</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/profile/" class="">プロフィールの設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/posting/" class="">トゥートの投稿</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/network/" class="">ネットワーク機能の使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moderating/" class="">見たくないコンテンツへの対処</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/discoverability/" class="">自分や他のユーザーの宣伝</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/preferences/" class="">環境の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/contacts/" class="">その他の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/external/" class="">外部からのMasotodonの使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moving/" class="">アカウントの引っ越しや削除</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/run-your-own/" class="">自分のサーバーを動かすこと</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを動かす</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonアプリを開発する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonの開発に貢献する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">準拠している仕様</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Methods</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Entities</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>Mastodon（マストドン）とは？</h1>
+
+  
+    <p>Mastodonのドキュメントに、ようこそ！</p>
+  
+
+  <div class="e-content">
+    <h2 id="microblogging">マイクロブログとは？</h2>
+<p>ブログを行うことは、ウェブサイトにおいて記事を更新して掲載する行為と言えます。それと似ていて、<strong>マイクロブログ</strong>を行うことは、自分に関して刻一刻と変化する小さな情報を更新して掲載する行為と言えるでしょう。あなたはテキストの投稿を掲載できます。さらに画像や音声、動画、投票を添付することもできます。Mastodonでは、友達をフォローしたり、新しい友達を見つけたりできるでしょう。</p>
+<h2 id="federation">フェデレーションとは？</h2>
+<p><strong>フェデレーション</strong>（Federation；連合）は分権組織の一つの形です。単一の中央サービスにすべての人が参加する替わりに、フェデレーションは複数のサービスからできていて、それぞれのサービスでは何人もの人が参加できます。</p>
+<table>
+<thead>
+<tr>
+<th align="left">中央集権の度合い</th>
+<th align="left">例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">中央型</td>
+<td align="left">Twitter, Facebook, Instagram</td>
+</tr>
+<tr>
+<td align="left">連合型</td>
+<td align="left">電子メール, XMPP, 電話網, 手紙</td>
+</tr>
+<tr>
+<td align="left">分散型</td>
+<td align="left">BitTorrent, IPFS, Scuttlebutt</td>
+</tr>
+</tbody>
+</table>
+<p>Mastodonのウェブサイトは単独で運用できます。従来のウェブサイトとまるっきり同じように、人々は、Mastodonのウェブサイトの一つに登録してメッセージを投稿したり写真をアップロードしたりすることで互いにおしゃべりします。そして従来のウェブサイトとは<em>異なり</em>、Mastodonのウェブサイトは相互運用できるため、それぞれのMastodonの間でユーザーは相互に通信できます。つまり、あなたのGmailにあるアカウントからOutlookやFastmail、Protonmail、またはその他のメールプロバイダーにあるアカウントの誰かに、その宛先の電子メールアドレスを知ってさえいれば電子メールを送信できるように、<strong>そういったアドレスを使ってあなたはどのウェブサイトにいるどんなユーザーに対してもメンションやメッセージを送ることができるのです</strong>。</p>
+<figure><img src="/assets/image%20%289%29.png"
+         alt="中央型（左）、連合型（中央）、分散型（右）"/><figcaption>
+            <p>中央型（左）、連合型（中央）、分散型（右）</p>
+        </figcaption>
+</figure>
+
+<h2 id="fediverse">ActivityPubとは？</h2>
+<p>Mastodonはフェデレーションを実装するために、標準化され開かれたプロトコルを使っています。そのプロトコルを<strong>ActivityPub</strong>（アクティビティパブ）と言います。ActivityPubを介してフェデレーションを同じように実装するすべてのソフトウェアは、Mastodonのウェブサイトが互いに通信するように、Mastodonとシームレスに通信できます。</p>
+<p><strong>フェディバース</strong>（Fediverse＝federated universe；フェデレーテッド・ユニバース；連合全域）は、ActivityPubおよびインターネット（World Wide Web）を介して相互に通信できるウェブサイト全体に対する名称です。つまりフェディバースはすべてのMastodonサーバーだけでなく、他の方法で実装したサーバーも含みます。</p>
+<ul>
+<li>Pleroma：モジュラー形式のマイクロブログ・エンジン</li>
+<li>Pixelfed：メディア投稿を共有でき、その共有を楽しめる、連合型の画像共有プラットフォーム</li>
+<li>Misskey：カスタマイズ可能なウィジェットを設置しながらマイクロブログが行える</li>
+<li>PeerTube：チャンネルに動画をアップロードできる</li>
+<li>Plume：より長い体裁の記事を掲載できる</li>
+<li>他にも、上記以外のものや個人のウェブサイトなど、もっとたくさんのものを含みます！</li>
+</ul>
+<p>フェディバースはそれ自体のブランドを持っていないため、「フェディバースにいる、わたしをフォローしてください」よりも「Mastodonにいる、わたしをフォローしてください」といった声をより多く聞くかもしれません。しかし技術的には、前者のほうがより正確です。</p>
+<h2 id="implications">実際に使うときの影響</h2>
+<h3 id="choice">サービスプロバイダーとポリシーの選択</h3>
+<p>Mastodonはウェブサイトを動かすために使われる、単なるソフトウェアです。そのためMastodonを使ってみようと思ってるユーザーは、既存のMastodonのウェブサイトをサービスプロバイダーとして選択できますし、もし望むのであれば自分でMastodonのウェブサイトを作ることもできます。</p>
+<p>Mastodonプロジェクトでは、推奨するサービスプロバイダーの一覧を<a href="https://joinmastodon.org">joinmastodon.org</a>に掲載しています。その一覧はカテゴリーや言語別に並べ替えられます。一部のウェブサイトは、閲覧に注意を要する可能性のあるコンテンツに対してきちんとタグ付けすることを要求するような、推奨基準を超えるモデレーションポリシーを持っているかもしれません。また別の一部のウェブサイトは、より緩いモデレートポリシーを持っているかもしれません。しかし、joinmastodon.orgの一覧に掲載しているすべてのウェブサイトは、<a href="https://joinmastodon.org/covenant">Mastodonサーバー規約（Mastodon Server Covenant）</a>に則ることに同意しています。その規約は、ヘイトスピーチに対して積極的にモデレートすること、バックアップを毎日取ること、緊急時に対応できる管理者が少なくとも1人はいること、ウェブサイトを閉鎖する場合は少なくとも3か月前にその予定を通知することです。</p>
+<blockquote>
+<p>参加者全員が安全と感じるられるコミュニティを維持するのは簡単なものでありません。Mastodonは、それを実現するための多くの基礎的な枠組みとツールを提供することで、特定の営利団体からコミュニティー自体へ移行をもたらす力に変えます。</p>
+<p>&ndash; Eugen Rochko, 2018年7月6日, <a href="https://blog.joinmastodon.org/2018/07/cage-the-mastodon/">「Mastodonの檻」</a></p>
+</blockquote>
+<blockquote>
+<p>中央集権型のソーシャルメディアプラットフォームは階層構造を持っていて、その開発と方向性はもちろん、ルールとその施行についてもCEOによって決定されます。（中略）分権組織型のネットワークは、本質的に特定のプラットフォームによって所有されることはなく、プラットフォーム所有者による制御を故意に手放します。</p>
+<p>&ndash; Eugen Rochko, 2018年12月30日, <a href="https://blog.joinmastodon.org/2018/12/why-does-decentralization-matter/">「なぜ分権組織が重要なのか？」</a></p>
+</blockquote>
+<h3 id="monetization">資金調達と収益化</h3>
+<p>Mastodonのウェブサイトは、さまざまな人や組織によって完全に独立して運用されています。また、Mastodonはソフトウェアとして収益化戦略を実装していません。</p>
+<p>一部のサーバー運用者は有料アカウントの提供を選択します。一部のサーバー運用者は既存のインフラストラクチャを利用できる企業です。一部のサーバー運用者はPatreonやその類似のサービスを介して、そのサーバーのユーザーからのクラウドファンディングに頼ります。一部のサーバー運用者は自分達とおそらくその周りの友人に対する個人的なサーバーであるために、自費だけでまかなっています。そういうわけで、もし自分のアカウントが所属しているサーバーを応援したい場合、寄付する方法が提供されているかを確認してみてください。</p>
+<p>なお、Mastodonの開発も同じように、<a href="https://patreon.com/mastodon">Patreon</a>と<a href="https://opencollective.com/mastodon">OpenCollective</a>を介してクラウドファンディングを行っています。<strong>ベンチャーキャピタルは関与していません。</strong></p>
+<blockquote>
+<p>私の意見では「即時的に、公衆の、世界規模のメッセージ送信とそのやり取り」について、はっきりと言えば<em>開かれている</em>べきです。独立した組織や自治できる主体との間で分散されるべきですし、利益のために会話のやり取りを悪用することのないように公益事業であるべきなのです。</p>
+<p>&ndash; Eugen Rochko, 2018年3月3日, <a href="https://blog.joinmastodon.org/2018/03/twitter-is-not-a-public-utility/">「Twitterは公益事業ではない」</a></p>
+</blockquote>
+<h3 id="interoperability">異なるソフトウェア間の相互運用性</h3>
+<p>具体的に考えてみましょう。TwitterのアカウントからInstagramのユーザーをフォローし、Twitterのアカウントを離れずに、Instagramのユーザーの写真にコメントできるかを想像してみてください。もしTwitterとInstagramが同じプロトコルを使用する連合型のサービスであった場合、それは可能でしょう。逆にMastodonのアカウントを持っていれば、<strong>他の互換性のあるウェブサイトと会話のやり取りができます。</strong> <em><strong>その際、それらのウェブサイトは互換性さえあれば、Mastodonで動いていなくてもいいのです。</strong></em> 必要なことのすべては、ステータスの更新に関して作成と相互作用ができるように、そのソフトウェアがActivityPubプロトコルの同じサブセットに対応していることです。</p>
+<p>Mastodonとの相互運用に必要な技術仕様ついて、詳しくは<a href="spec/activitypub">ActivityPub</a>、<a href="spec/webfinger">WebFinger</a>、および<a href="spec/security">Security</a>を参照してください。ActivityPubで何ができるかについて、詳しくは<a href="https://blog.joinmastodon.org/2018/06/why-activitypub-is-the-future/">ActivityPubが未来である理由</a>を参照してください。</p>
+<blockquote>
+<p>これらのプラットフォームはすべて異なっており、それらは異なる要求を解決するためにあります。それでも基盤はすべて同じです。人々は、他の人からの投稿の受信して講読します。そして、それらはすべて互換性があります。</p>
+<p>&ndash; Eugen Rochko, 2018年6月27日, <a href="https://blog.joinmastodon.org/2018/06/why-activitypub-is-the-future/">「ActivityPubが未来である理由」</a></p>
+</blockquote>
+<h3 id="libre">自由で制限のないソフトウェア</h3>
+<p>独占的なサービスとは異なり、<strong>誰もがMastodonのソースコードを実行、調査、検査、複製、変更、配布、再利用できます。そして、どんな派生物もこの自由性を継承しなければならないという条件が付きます。</strong> Mastodonのユーザーがサービスプロバイダーを自由に選択できるのと同じように、誰もがMastodonに機能を提供したり、さまざまな機能を含む改造版のMastodonを公開したりできます。これら改造版はソフトウェアフォークとも呼ばれ、元のMastodonプロジェクトと同じ自由性の継承が求められます。たとえば、<a href="https://glitch-soc.github.io/docs/">glitch-soc</a>はさまざまな実験的機能を追加したソフトウェアの配布物です。この他にも多くの個別のフォークが存在し、おそらくテーマが少し異なるか、コードベースの小さな変更が含まれています。Mastodonはあなたの自由を尊重し、制限のないソフトウェアなので、このような個人的な使用は許可されるだけでなく奨励されます。</p>
+<blockquote>
+<p>究極の力は、自分の居場所やコミュニティを作成する能力と、それらが適切に形作られるようにソフトウェアを変更する能力を人々に与えることです。その際、異なるコミュニティにいる人々が互いに影響する場合でも、その能力が犠牲になってはいけません。</p>
+<p>&ndash; Eugen Rochko, 2017年2月20日, <a href="https://blog.joinmastodon.org/2017/02/the-power-to-build-communities/">「コミュニティを構築する力：Mark Zuckerbergへ返答」</a></p>
+</blockquote>
+<blockquote>
+<p>分権組織はデジタル世界におけるユーザーの多様性を表していて、健全なエコシステムの証明です。フェディバースのような分権化されたネットワークは、さまざまなユーザーインターフェースやソフトウェア、そして共存および協同するためのさまざまな統治形式を許容します。</p>
+<p>&ndash; Eugen Rochko, 2018年12月30日, <a href="https://blog.joinmastodon.org/2018/12/why-does-decentralization-matter/">「なぜ分権組織が重要なのか？」</a></p>
+</blockquote>
+<h2 id="next-steps">次に進もう</h2>
+<p>Mastodonの使い方を知る：</p>
+<a href="/ja/user/signup/" class="page-ref">
+  <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
+  アカウントの登録
+</a>
+<p>Mastodonのインストール方法を学ぶ：</p>
+
+<p>Mastodonのアプリを作り方を学ぶ：</p>
+
+<p>Mastodonのバックエンドと貢献方法について知る：</p>
+
+<div class="hint hint-info">
+  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
+
+  <strong>［翻訳状態］</strong> 日本語版は、英語版の「What is Mastodon?」（Mastodonとは？）と「Using Mastodon」（Masotodonを使う）が訳されている状態です（2020年9月27日）。他の項目や最新の情報については、<a href="../">英語版</a>を参照してください。
+</div>
+
+
+
+    <p style="color: #687590;">
+      最終更新 August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/ja/_index.md' style="color: #687590;">このページを改善する</a>
+
+
+      
+        <br />
+
+        他の言語も利用可能：
+
+        
+          <a href="/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/zh-cn/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+          <a href="/pl/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Mastodonに参加する</a> · <a href='https://blog.joinmastodon.org'>ブログ</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/ja/_index.md'>ソースコードを見る</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>インプリメント</a></p>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,2906 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>Configuring your environment - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/admin/config/">
+
+  
+    <meta name="description" content="Setting environment variables for your Mastodon installation.">
+    <meta property="og:description" content="Setting environment variables for your Mastodon installation.">
+    <meta name="twitter:description" content="Setting environment variables for your Mastodon installation.">
+  
+
+  <meta name="twitter:title" content="Configuring your environment">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/admin/config/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/" class="">What is Mastodon?</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Using Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/user/signup/" class="">Signing up for an account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/profile/" class="">Setting up your profile</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/posting/" class="">Posting to your profile</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/network/" class="">Using the network features</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/moderating/" class="">Dealing with unwanted content</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/discoverability/" class="">Promoting yourself and others</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/preferences/" class="">Set your preferences</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/contacts/" class="">More settings</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/external/" class="">Using Mastodon externally</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/moving/" class="">Moving or leaving accounts</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/user/run-your-own/" class="">Running your own server</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Running Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/admin/prerequisites/" class="">Preparing your machine</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/install/" class="">Installing from source</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/config/" class="active">Configuring your environment</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/elasticsearch/" class="">Configuring full-text search</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/optional/" class="">Installing optional features</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/admin/optional/object-storage/" class="">Object storage</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/tor/" class="">Onion services</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/captcha/" class="">Captcha</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/admin/optional/sso/" class="">Single Sign On</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/admin/setup/" class="">Setting up your new instance</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/tootctl/" class="">Using the admin CLI</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/upgrading/" class="">Upgrading to a new release</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/backups/" class="">Backing up your server</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/migrating/" class="">Migrating to a new machine</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/scaling/" class="">Scaling up your server</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/moderation/" class="">Moderation actions</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/admin/troubleshooting/" class="">Troubleshooting errors</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/admin/troubleshooting/index-corruption/" class="">Database index corruption</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/admin/roles/" class="">Roles</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Developing Mastodon apps</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/client/intro/" class="">Getting started with the API</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/public/" class="">Playing with public data</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/token/" class="">Obtaining client app access</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/authorized/" class="">Logging in with an account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/client/libraries/" class="">Libraries and implementations</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Contributing to Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/dev/overview/" class="">Technical overview</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/setup/" class="">Setting up a dev environment</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/code/" class="">Code structure</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/routes/" class="">Routes</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/dev/disclosure/" class="">Bug bounties and responsible disclosure</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Spec compliance</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/spec/activitypub/" class="">ActivityPub</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/webfinger/" class="">WebFinger</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/security/" class="">Security</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/microformats/" class="">Microformats</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/oauth/" class="">OAuth</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/spec/bearcaps/" class="">Bearcaps</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/api/guidelines/" class="">Guidelines and best practices</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/api/oauth-scopes/" class="">OAuth Scopes</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/api/rate-limits/" class="">Rate limits</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Methods</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/methods/apps/" class="">apps</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/oauth/" class="">oauth</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/emails/" class="">emails</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/accounts/" class="">accounts</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/bookmarks/" class="">bookmarks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/favourites/" class="">favourites</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/mutes/" class="">mutes</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/blocks/" class="">blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/domain_blocks/" class="">domain_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/filters/" class="">filters</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/reports/" class="">reports</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/follow_requests/" class="">follow_requests</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/endorsements/" class="">endorsements</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/featured_tags/" class="">featured_tags</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/preferences/" class="">preferences</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/followed_tags/" class="">followed_tags</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/suggestions/" class="">suggestions</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/tags/" class="">tags</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/profile/" class="">profile</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/methods/statuses/" class="">statuses</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/media/" class="">media</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/polls/" class="">polls</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/scheduled_statuses/" class="">scheduled_statuses</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/timelines/" class="">timelines</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/conversations/" class="">conversations</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/lists/" class="">lists</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/markers/" class="">markers</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/streaming/" class="">streaming</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/notifications/" class="">notifications</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/push/" class="">push</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/search/" class="">search</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/methods/instance/" class="">instance</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/trends/" class="">trends</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/directory/" class="">directory</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/custom_emojis/" class="">custom_emojis</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/announcements/" class="">announcements</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/admin/" class="">admin</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/methods/admin/accounts/" class="">accounts</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/canonical_email_blocks/" class="">canonical_email_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/dimensions/" class="">dimensions</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/domain_allows/" class="">domain_allows</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/domain_blocks/" class="">domain_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/email_domain_blocks/" class="">email_domain_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/ip_blocks/" class="">ip_blocks</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/measures/" class="">measures</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/reports/" class="">reports</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/retention/" class="">retention</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/methods/admin/trends/" class="">trends</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/methods/proofs/" class="">proofs</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/methods/oembed/" class="">oembed</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Entities</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/entities/Account/" class="">Account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/AccountWarning/" class="">AccountWarning</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Account/" class="">Admin::Account</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_CanonicalEmailBlock/" class="">Admin::CanonicalEmailBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Cohort/" class="">Admin::Cohort</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Dimension/" class="">Admin::Dimension</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_DomainAllow/" class="">Admin::DomainAllow</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_DomainBlock/" class="">Admin::DomainBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_EmailDomainBlock/" class="">Admin::EmailDomainBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Ip/" class="">Admin::Ip</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_IpBlock/" class="">Admin::IpBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Measure/" class="">Admin::Measure</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Admin_Report/" class="">Admin::Report</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Announcement/" class="">Announcement</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Appeal/" class="">Appeal</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Application/" class="">Application</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Context/" class="">Context</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Conversation/" class="">Conversation</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/CustomEmoji/" class="">CustomEmoji</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/DomainBlock/" class="">DomainBlock</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Error/" class="">Error</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/ExtendedDescription/" class="">ExtendedDescription</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FamiliarFollowers/" class="">FamiliarFollowers</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FeaturedTag/" class="">FeaturedTag</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Filter/" class="">Filter</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FilterKeyword/" class="">FilterKeyword</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FilterResult/" class="">FilterResult</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/FilterStatus/" class="">FilterStatus</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/IdentityProof/" class="">IdentityProof</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Instance/" class="">Instance</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/List/" class="">List</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Marker/" class="">Marker</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/MediaAttachment/" class="">MediaAttachment</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Notification/" class="">Notification</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/NotificationPolicy/" class="">NotificationPolicy</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/NotificationRequest/" class="">NotificationRequest</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Poll/" class="">Poll</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Preferences/" class="">Preferences</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/PreviewCard/" class="">PreviewCard</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Reaction/" class="">Reaction</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Relationship/" class="">Relationship</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/RelationshipSeveranceEvent/" class="">RelationshipSeveranceEvent</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Report/" class="">Report</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Role/" class="">Role</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Rule/" class="">Rule</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/ScheduledStatus/" class="">ScheduledStatus</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Search/" class="">Search</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Status/" class="">Status</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/StatusEdit/" class="">StatusEdit</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/StatusSource/" class="">StatusSource</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Suggestion/" class="">Suggestion</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Tag/" class="">Tag</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Token/" class="">Token</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/Translation/" class="">Translation</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/V1_Filter/" class="">V1::Filter</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/V1_Instance/" class="">V1::Instance</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/entities/WebPushSubscription/" class="">WebPushSubscription</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>Configuring your environment</h1>
+
+  
+    <p>Setting environment variables for your Mastodon installation.</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#basic">Basic</a>
+          <ul>
+            <li><a href="#federation">Federation and display</a></li>
+            <li><a href="#secrets">Secrets</a></li>
+            <li><a href="#deployment">Deployment</a></li>
+            <li><a href="#scaling">Scaling options</a></li>
+          </ul>
+        </li>
+        <li><a href="#backend">Backend</a>
+          <ul>
+            <li><a href="#postgresql">PostgreSQL</a></li>
+            <li><a href="#postgresql-replica">PostgreSQL (read-only replica)</a></li>
+            <li><a href="#redis">Redis</a></li>
+            <li><a href="#elasticsearch">Elasticsearch</a></li>
+            <li><a href="#statsd">StatsD</a></li>
+            <li><a href="#smtp">SMTP email delivery</a></li>
+            <li><a href="#basic">Basic configuration</a></li>
+            <li><a href="#smtpauthentication">Authentication for the SMTP server</a></li>
+            <li><a href="#secured-smtp">Secured SMTP</a></li>
+          </ul>
+        </li>
+        <li><a href="#files">File storage</a>
+          <ul>
+            <li><a href="#cdn">CDN</a></li>
+            <li><a href="#paperclip">Local file storage</a></li>
+            <li><a href="#s3">AWS S3 and compatible</a></li>
+            <li><a href="#swift">Swift</a></li>
+            <li><a href="#http-cache-buster">HTTP Cache Buster</a></li>
+          </ul>
+        </li>
+        <li><a href="#external-authentication">External authentication</a>
+          <ul>
+            <li><a href="#omniauth">OmniAuth</a></li>
+            <li><a href="#ldap">LDAP</a></li>
+            <li><a href="#pam">PAM</a></li>
+            <li><a href="#cas">CAS</a></li>
+            <li><a href="#saml">SAML</a></li>
+          </ul>
+        </li>
+        <li><a href="#hidden-services">Hidden services</a>
+          <ul>
+            <li><a href="#tor">TOR</a></li>
+          </ul>
+        </li>
+        <li><a href="#limits">Limits</a>
+          <ul>
+            <li><a href="#anti-spam--abuse">Anti Spam / Abuse</a></li>
+            <li><a href="#email-domains">Email domains</a></li>
+            <li><a href="#sessions">Sessions</a></li>
+            <li><a href="#home-feeds">Home feeds</a></li>
+          </ul>
+        </li>
+        <li><a href="#other">Other</a>
+          <ul>
+            <li><a href="#migrations">DB migrations</a></li>
+            <li><a href="#db-encryption-support">DB Encryption support</a></li>
+            <li><a href="#uncategorized-or-unsorted">Uncategorized or unsorted</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <p>Mastodon uses environment variables as its configuration.</p>
+<p>For convenience, it can read them from a flat file called <code>.env.production</code> in the Mastodon directory (called a &ldquo;dotenv&rdquo; file), but they can always be overridden by a specific process. For example, systemd service files can read environment variables from an <code>EnvironmentFile</code> or inline definitions with <code>Environment</code>, so you can have different configuration parameters for specific services. They can also be specified when calling Mastodon from the command line.</p>
+<h2 id="basic">Basic</h2>
+<h3 id="federation">Federation and display</h3>
+<h4 id="local_domain"><code>LOCAL_DOMAIN</code></h4>
+<p>This is the unique identifier of your server in the network. It cannot be safely changed later, as changing it will cause remote servers to confuse your existing accounts with entirely new ones. It has to be the domain name you are running the server under (without the protocol part, e.g. just <code>example.com</code>).</p>
+<h4 id="web_domain"><code>WEB_DOMAIN</code></h4>
+<p><code>WEB_DOMAIN</code> is an optional environment variable allowing the installation of Mastodon on one domain, while having the users&rsquo; handles on a different domain, e.g. addressing users as <code>@alice@example.com</code> but accessing Mastodon on <code>mastodon.example.com</code>. This may be useful if your domain name is already used for a different website but you still want to use it as a Mastodon identifier because it looks better or shorter.</p>
+<p>As with <code>LOCAL_DOMAIN</code>, <code>WEB_DOMAIN</code> cannot be safely changed once set, as this will confuse remote servers that know of your previous settings and may break communication with them or make it unreliable. As the issues lie with remote servers&rsquo; understanding of your accounts, re-installing Mastodon from scratch will not fix the issue. Therefore, please be extremely cautious when setting up <code>LOCAL_DOMAIN</code> and <code>WEB_DOMAIN</code>.</p>
+<p>To install Mastodon on <code>mastodon.example.com</code> in such a way it can serve <code>@alice@example.com</code>, set <code>LOCAL_DOMAIN</code> to <code>example.com</code> and <code>WEB_DOMAIN</code> to <code>mastodon.example.com</code>. This also requires additional configuration on the server hosting <code>example.com</code> to redirect requests from <code>https://example.com/.well-known/webfinger</code> to <code>https://mastodon.example.com/.well-known/webfinger</code>. For instance, with nginx, the configuration could look like the following:</p>
+<pre><code>location /.well-known/webfinger {
+  add_header Access-Control-Allow-Origin '*';
+  return 301 https://mastodon.example.com$request_uri;
+}
+</code></pre><h4 id="alternate_domains"><code>ALTERNATE_DOMAINS</code></h4>
+<p>If you have multiple domains pointed at your Mastodon server, this setting will allow Mastodon to recognize itself when users are addressed using those other domains. Separate the domains by commas, e.g. <code>foo.com,bar.com</code></p>
+<h4 id="allowed_private_addresses"><code>ALLOWED_PRIVATE_ADDRESSES</code></h4>
+<p>Comma-separated specific addresses/subnets are allowed in outgoing HTTP queries.</p>
+<h4 id="authorized_fetch"><code>AUTHORIZED_FETCH</code></h4>
+<p>Also called &ldquo;secure mode&rdquo;. When set to <code>true</code>, the following changes occur:</p>
+<ul>
+<li>Mastodon will stop generating linked-data signatures for public posts, which prevents them from being re-distributed efficiently but without precise control. Since a linked-data object with a signature is entirely self-contained, it can be passed around without making extra requests to the server where it originates.</li>
+<li>Mastodon will require HTTP signature authentication on ActivityPub representations of public posts and profiles, which are normally available without any authentication. Profiles will only return barebones technical information when no authentication is supplied.</li>
+<li>Prior to v4.0.0: Mastodon will require any REST/streaming API access to have a user context (i.e. having gone through an OAuth authorization screen with an active user) when normally some API endpoints are available without any authentication.</li>
+</ul>
+<p>As a result, through the authentication mechanism and avoiding re-distribution mechanisms that do not have your server in the loop, it becomes possible to enforce who can and cannot retrieve even public content from your server, e.g. servers whose domains you have blocked.</p>
+<div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  Unfortunately, secure mode is not without its drawbacks, which is why it is not enabled by default. Not all software in the fediverse can support it fully, in particular, some functionality will be broken with Mastodon servers older than 3.0; you lose some useful functionality even with up-to-date servers since linked-data signatures are used to make public conversation threads more complete; and because an authentication mechanism on public content means no caching is possible, it comes with an increased computational cost.
+</div>
+
+<div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  Secure mode does not hide HTML representations of public posts and profiles. HTML is a more lossy format compared to first-class ActivityPub representations or the REST API but it is still a potential vector for scraping content.
+</div>
+
+<h4 id="limited_federation_mode"><code>LIMITED_FEDERATION_MODE</code></h4>
+<p>When set to <code>true</code>, Mastodon will restrict federation to servers you have manually approved only, as well as disable all public pages and some REST APIs. Limited federation mode is based on secure mode (<code>AUTHORIZED_FETCH</code>).</p>
+<p>When switching an existing instance to limited federation mode, the following command should be used to remove any already existent data on non-allowed domains:</p>
+<pre><code>tootctl domain purge --limited-federation-mode
+</code></pre><div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  This mode is intended for private use only, such as in academic institutions or internal company networks, as it effectively creates a data silo, which is contrary to Mastodon&rsquo;s mission of decentralization.
+</div>
+
+<div class="hint hint-info">
+  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
+
+  This setting was known as <code>WHITELIST_MODE</code> prior to 3.1.5.
+</div>
+
+<h4 id="disallow_unauthenticated_api_access"><code>DISALLOW_UNAUTHENTICATED_API_ACCESS</code></h4>
+<p>As of Mastodon v4.0.0, the web app is now used to render all requests, even for logged-out viewers. To make these views work, the web app makes public API requests to fetch accounts and statuses. If you would like to disallow this, then set this variable to <code>true</code>. Note that disallowing unauthenticated API access will cause profile and post permalinks to return an error to logged-out users, essentially making it so that the only way to view content is to either log in locally or fetch it via ActivityPub.</p>
+<h4 id="single_user_mode"><code>SINGLE_USER_MODE</code></h4>
+<p>If set to <code>true</code>, the front page of your Mastodon server will always redirect to the first profile in the database and registrations will be disabled.</p>
+<h4 id="disable_automatic_switching_to_approved_registrations"><code>DISABLE_AUTOMATIC_SWITCHING_TO_APPROVED_REGISTRATIONS</code></h4>
+<p>In order to prevent abandoned Mastodon servers from being used for spam, harassment and other malicious activity, Mastodon will automatically switch new user registrations to require moderator approval whenever they are left open and no activity (including non-moderation actions from apps) from any logged-in user with permission to access moderation reports has been detected in a full week. When this happens, users with the permission to change server settings will receive an email notification.</p>
+<p>Setting <code>DISABLE_AUTOMATIC_SWITCHING_TO_APPROVED_REGISTRATIONS=true</code> disables this behavior.</p>
+<p><strong>Version history:</strong><br>
+4.2.8 - added</p>
+<h4 id="default_locale"><code>DEFAULT_LOCALE</code></h4>
+<p>By default, Mastodon will automatically detect the visitor&rsquo;s language from browser headers and display the Mastodon interface in that language (if it&rsquo;s supported). If you are running a language-specific or regional server, that behavior may mislead visitors who do not speak your language into signing up on your server. For this reason, you may want to set this variable to a specific language.</p>
+<p>Example value: <code>de</code></p>
+<p>Supported languages:</p>
+<ul>
+<li><code>ar</code></li>
+<li><code>ast</code></li>
+<li><code>bg</code></li>
+<li><code>bn</code></li>
+<li><code>br</code></li>
+<li><code>ca</code></li>
+<li><code>co</code></li>
+<li><code>cs</code></li>
+<li><code>cy</code></li>
+<li><code>da</code></li>
+<li><code>de</code></li>
+<li><code>el</code></li>
+<li><code>en</code></li>
+<li><code>eo</code></li>
+<li><code>es</code></li>
+<li><code>es-AR</code></li>
+<li><code>et</code></li>
+<li><code>eu</code></li>
+<li><code>fa</code></li>
+<li><code>fi</code></li>
+<li><code>fr</code></li>
+<li><code>ga</code></li>
+<li><code>gl</code></li>
+<li><code>he</code></li>
+<li><code>hi</code></li>
+<li><code>hr</code></li>
+<li><code>hu</code></li>
+<li><code>hy</code></li>
+<li><code>id</code></li>
+<li><code>io</code></li>
+<li><code>is</code></li>
+<li><code>it</code></li>
+<li><code>ja</code></li>
+<li><code>ka</code></li>
+<li><code>kab</code></li>
+<li><code>kk</code></li>
+<li><code>kn</code></li>
+<li><code>ko</code></li>
+<li><code>lt</code></li>
+<li><code>lv</code></li>
+<li><code>mk</code></li>
+<li><code>ml</code></li>
+<li><code>mr</code></li>
+<li><code>ms</code></li>
+<li><code>nl</code></li>
+<li><code>nn</code></li>
+<li><code>no</code></li>
+<li><code>oc</code></li>
+<li><code>pl</code></li>
+<li><code>pt-BR</code></li>
+<li><code>pt-PT</code></li>
+<li><code>ro</code></li>
+<li><code>ru</code></li>
+<li><code>sk</code></li>
+<li><code>sl</code></li>
+<li><code>sq</code></li>
+<li><code>sr</code></li>
+<li><code>sr-Latn</code></li>
+<li><code>sv</code></li>
+<li><code>ta</code></li>
+<li><code>te</code></li>
+<li><code>th</code></li>
+<li><code>tr</code></li>
+<li><code>uk</code></li>
+<li><code>ur</code></li>
+<li><code>vi</code></li>
+<li><code>zh-CN</code></li>
+<li><code>zh-HK</code></li>
+<li><code>zh-TW</code></li>
+</ul>
+<h3 id="secrets">Secrets</h3>
+<h4 id="secret_key_base"><code>SECRET_KEY_BASE</code></h4>
+<p>Generate with <code>rake secret</code>. Changing it will break all active browser sessions.</p>
+<h4 id="otp_secret"><code>OTP_SECRET</code></h4>
+<p>Generate with <code>rake secret</code>. Changing it will break two-factor authentication.</p>
+<h4 id="vapid_private_key"><code>VAPID_PRIVATE_KEY</code></h4>
+<p>Generate with <code>rake mastodon:webpush:generate_vapid_key</code>. Changing it will break push notifications.</p>
+<h4 id="vapid_public_key"><code>VAPID_PUBLIC_KEY</code></h4>
+<p>Generate with <code>rake mastodon:webpush:generate_vapid_key</code>. Changing it will break push notifications.</p>
+<h3 id="deployment">Deployment</h3>
+<h4 id="rails_env"><code>RAILS_ENV</code></h4>
+<p>Environment. Can be <code>production</code>, <code>development</code>, or <code>test</code>. If you are running Mastodon on your personal computer for development purposes, use <code>development</code>. That is also the default. If you are running Mastodon online, use <code>production</code>. Mastodon will load different configuration defaults based on the environment.</p>
+<div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  This variable cannot be defined in dotenv (<code>.env</code>) files as it&rsquo;s used before they are loaded.
+</div>
+
+<h4 id="rails_serve_static_files"><code>RAILS_SERVE_STATIC_FILES</code></h4>
+<p>If set to true, Mastodon will answer requests for files in its <code>public</code> directory. This may be necessary if the reverse proxy (e.g. nginx) has no file system access to the <code>public</code> directory itself, such as in a containerized environment. It is a suboptimal setting because serving static files directly from the file system will always be much faster than serving them through the Ruby on Rails process.</p>
+<h4 id="rails_log_level"><code>RAILS_LOG_LEVEL</code></h4>
+<p>Determines the amount of logs generated by Mastodon for the web and Sidekiq processes. Defaults to <code>info</code>, which generates a log entry about every request served by Mastodon and every background job processed by Mastodon. This can be useful but can get quite noisy and strain the I/O of your machine if there is a lot of traffic/activity. In that case, <code>warn</code> is recommended, which will only output information about things that are going wrong, and otherwise stay quiet. Possible values are <code>debug</code>, <code>info</code>, <code>warn</code>, <code>error</code>, <code>fatal</code> and <code>unknown</code>.</p>
+<h4 id="log_level"><code>LOG_LEVEL</code></h4>
+<p>Determines the amount of logs generated by Mastodon for the streaming processes. Defaults to <code>info</code>. Possible values are <code>silly</code> and <code>info</code>.</p>
+<h4 id="trusted_proxy_ip"><code>TRUSTED_PROXY_IP</code></h4>
+<p>Tells the Mastodon web and streaming processes which IPs act as your trusted reverse proxy (e.g. nginx, Cloudflare). It affects how Mastodon determines the source IP of each request, which is used for important rate limits and security functions. If the value is set incorrectly then Mastodon could use the IP of the reverse proxy instead of the actual source.</p>
+<p>By default, the loopback and private network address ranges are trusted. Specifically:</p>
+<ul>
+<li><code>127.0.0.1/8</code></li>
+<li><code>::1/128</code></li>
+<li><code>10.0.0.0/8</code></li>
+<li><code>172.16.0.0/12</code></li>
+<li><code>192.168.0.0/16</code></li>
+<li><code>fc00::/7</code></li>
+</ul>
+<p>If you&rsquo;re using a single reverse proxy and it runs on the same machine or is in the same private network as your Mastodon web and streaming processes then you most likely don&rsquo;t need to modify this setting and can use the default. Or if you&rsquo;re using multiple reverse proxy servers and they&rsquo;re all in the same private network as your Mastodon web and streaming processes then, again, the default should be fine. However, if you&rsquo;re using a reverse proxy server that reaches your Mastodon web and streaming servers via a public IP address (for example if you&rsquo;re using Cloudflare or a similar proxy) then you&rsquo;ll need to set this variable. It should be the IPs of all reverse proxies in use, as a comma-separated list of IPs or IP ranges using <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing#CIDR_notation">CIDR notation</a>. Note that when this variable is set the default ranges (mentioned above) will no longer be trusted, so if you have both an external reverse proxy <em>and</em> a proxy on localhost then you must include the IPs (or IP ranges) of both.</p>
+<p>Administrators and moderators can find what Mastodon sees as the source IP for each user by navigating to the Settings &gt; Moderation &gt; Accounts tab. You can use a tool like <a href="https://ipinfo.io">IPInfo</a> to gauge whether the IP is being used by an end-user ISP, or by a server hosting your proxy.</p>
+<h4 id="socket"><code>SOCKET</code></h4>
+<p>Instead of binding to an IP address like <code>127.0.0.1</code>, you may bind to a Unix socket. This variable is process-specific, e.g. you need different values for every process, and it works for both web (Puma) processes and streaming API (Node.js) processes.</p>
+<div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  This variable cannot be defined in dotenv (<code>.env</code>) files as it&rsquo;s used before they are loaded.
+</div>
+
+<h4 id="port"><code>PORT</code></h4>
+<p>If you are not using Unix sockets, this defines which port the process will listen on. This variable is process-specific, e.g. you need different values for every process, and it works for both web (Puma) processes and streaming API (Node.js) processes. By default, web listens on <code>3000</code> and streaming API on <code>4000</code>.</p>
+<div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  This variable cannot be defined in dotenv (<code>.env</code>) files as it&rsquo;s used before they are loaded.
+</div>
+
+<h4 id="node_env"><code>NODE_ENV</code></h4>
+<p>Equivalent to <code>RAILS_ENV</code>, but for the streaming API (Node.js).</p>
+<div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  This variable cannot be defined in dotenv (<code>.env</code>) files as it&rsquo;s used before they are loaded.
+</div>
+
+<h4 id="bind"><code>BIND</code></h4>
+<p>If you are not using Unix sockets, this defines the IP to which the process will bind. Multiple processes can bind to the same IP as long as they listen on different ports. Defaults to <code>127.0.0.1</code>.</p>
+<div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  This variable cannot be defined in dotenv (<code>.env</code>) files as it&rsquo;s used before they are loaded.
+</div>
+
+<h3 id="scaling">Scaling options</h3>
+<a href="/admin/scaling/" class="page-ref">
+  <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
+  Scaling up your server
+</a>
+<h4 id="sidekiq_concurrency"><code>SIDEKIQ_CONCURRENCY</code></h4>
+<p>Added in 4.1. Specific to Sidekiq, this variable determines how many different processes Sidekiq forks into. Defaults to <code>5</code>.</p>
+<h4 id="web_concurrency"><code>WEB_CONCURRENCY</code></h4>
+<p>Specific to Puma, this variable determines how many different processes Puma forks into. Defaults to <code>2</code>.</p>
+<h4 id="max_threads"><code>MAX_THREADS</code></h4>
+<p>Specific to Puma, this variable determines how many threads each Puma process maintains. Defaults to <code>5</code>.</p>
+<h4 id="persistent_timeout"><code>PERSISTENT_TIMEOUT</code></h4>
+<p>Specific to Puma, this variable determines how long Puma should wait before closing a connection. Defaults to <code>20</code>.</p>
+<h4 id="prepared_statements"><code>PREPARED_STATEMENTS</code></h4>
+<p>By default, Mastodon uses the prepared statements feature of PostgreSQL, which offers some performance advantages. This feature is not available if you are using a connection pool where connections are shared between transactions and must thus be set to <code>false</code>. When you are scaling up, the advantages of having a transaction-based connection pool outweigh those provided by prepared statements.</p>
+<h4 id="streaming_api_base_url"><code>STREAMING_API_BASE_URL</code></h4>
+<p>The streaming API can be deployed to a different domain/subdomain. This may improve the performance of the streaming API as in the default configuration long-lived streaming API requests are proxied through nginx, while serving the streaming API from a different domain/subdomain would allow one to skip nginx entirely.</p>
+<p>Example value: <code>wss://streaming.example.com</code></p>
+<h4 id="streaming_cluster_num"><code>STREAMING_CLUSTER_NUM</code> (deprecated)</h4>
+<div class="hint hint-danger">
+  <div class="hint-icon"><i class="fa fa-exclamation-triangle"></i></div>
+
+  Deprecated: The streaming server process now only uses a single node.js process, to scale it further, you&rsquo;ll need to follow the documentation in the <a href="/admin/scaling#streaming">scaling guide</a>
+</div>
+
+<p>Specific to the streaming API, this variable determines how many different processes the streaming API forks into. Defaults to the number of CPU cores minus one.</p>
+<h2 id="backend">Backend</h2>
+<h3 id="postgresql">PostgreSQL</h3>
+<h4 id="db_host"><code>DB_HOST</code></h4>
+<p>Defaults to <code>localhost</code>.</p>
+<h4 id="db_user"><code>DB_USER</code></h4>
+<p>Defaults to <code>mastodon</code>.</p>
+<h4 id="db_name"><code>DB_NAME</code></h4>
+<p>Defaults to <code>mastodon_production</code>.</p>
+<h4 id="db_pass"><code>DB_PASS</code></h4>
+<p>No default.</p>
+<h4 id="db_port"><code>DB_PORT</code></h4>
+<p>Defaults to <code>5432</code>.</p>
+<h4 id="db_pool"><code>DB_POOL</code></h4>
+<p>Defines how many database connections to pool in the process. This value should cover every thread in the process, for this reason, it defaults to the value of <code>MAX_THREADS</code>.</p>
+<h4 id="db_sslmode"><code>DB_SSLMODE</code></h4>
+<p>PostgreSQL <a href="https://www.postgresql.org/docs/10/libpq-ssl.html">SSL mode</a>. Defaults to <code>prefer</code>.</p>
+<h4 id="database_url"><code>DATABASE_URL</code></h4>
+<p>If provided, takes precedence over <code>DB_HOST</code>, <code>DB_USER</code>, <code>DB_NAME</code>, <code>DB_PASS</code> and <code>DB_PORT</code>.</p>
+<p>Example value: <code>postgresql://user:password@localhost:5432</code></p>
+<h3 id="postgresql-replica">PostgreSQL (read-only replica)</h3>
+<div class="hint hint-info">
+  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
+
+  If you want to use a read-only database replica, you can have more details <a href="../scaling/#read-replicas">on this page</a>
+</div>
+
+<h4 id="replica_db_host"><code>REPLICA_DB_HOST</code></h4>
+<p>No default.</p>
+<h4 id="replica_db_port"><code>REPLICA_DB_PORT</code></h4>
+<p>No default.</p>
+<h4 id="replica_db_name"><code>REPLICA_DB_NAME</code></h4>
+<p>No default.</p>
+<h4 id="replica_db_user"><code>REPLICA_DB_USER</code></h4>
+<p>No default.</p>
+<h4 id="replica_db_pass"><code>REPLICA_DB_PASS</code></h4>
+<p>No default.</p>
+<h4 id="replica_database_url"><code>REPLICA_DATABASE_URL</code></h4>
+<p>If provided, takes precedence over <code>REPLICA_DB_HOST</code>, <code>REPLICA_DB_PORT</code>, <code>REPLICA_DB_NAME</code>, <code>REPLICA_DB_USER</code> and <code>REPLICA_DB_PASS</code></p>
+<p>No default.</p>
+<h3 id="redis">Redis</h3>
+<div class="hint hint-info">
+  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
+
+  It is possible to use a separate Redis server for volatile cache. You may wish to do so if your Redis server starts getting overwhelmed.
+</div>
+
+<h4 id="redis_host"><code>REDIS_HOST</code></h4>
+<p>Defaults to <code>localhost</code>.</p>
+<h4 id="redis_port"><code>REDIS_PORT</code></h4>
+<p>Defaults to <code>6379</code>.</p>
+<h4 id="redis_url"><code>REDIS_URL</code></h4>
+<p>If provided, takes precedence over <code>REDIS_HOST</code> and <code>REDIS_PORT</code>.</p>
+<p>Example value: <code>redis://user:password@localhost:6379</code></p>
+<p>If you need to use TLS to connect to your Redis server, you must use <code>REDIS_URL</code> with the protocol scheme <code>rediss://</code> and set <code>REDIS_DRIVER</code> as described below.</p>
+<h4 id="redis_driver"><code>REDIS_DRIVER</code></h4>
+<p>If provided, the driver for Redis connections is changed from using the Mastodon default hiredis driver to the standard Ruby driver. Using the Ruby driver is required to connect to Redis using TLS. Note that use of the Ruby driver may have an impact on Redis performance in some environments.</p>
+<p>Defaults to <code>hiredis</code>, accepted values are <code>hiredis</code> or <code>ruby</code>.</p>
+<p><strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h4 id="redis_namespace"><code>REDIS_NAMESPACE</code></h4>
+<p>If provided, namespaces all Redis keys. This allows the sharing of the same Redis database between different projects or Mastodon servers.</p>
+<h4 id="cache_redis_host"><code>CACHE_REDIS_HOST</code></h4>
+<p>Defaults to the value of <code>REDIS_HOST</code>.</p>
+<h4 id="cache_redis_port"><code>CACHE_REDIS_PORT</code></h4>
+<p>Defaults to the value of <code>REDIS_PORT</code>.</p>
+<h4 id="cache_redis_url"><code>CACHE_REDIS_URL</code></h4>
+<p>If provided, takes precedence over <code>CACHE_REDIS_HOST</code> and <code>CACHE_REDIS_PORT</code>. Defaults to the value of <code>REDIS_URL</code>.</p>
+<h4 id="cache_redis_namespace"><code>CACHE_REDIS_NAMESPACE</code></h4>
+<p>Defaults to the value of <code>REDIS_NAMESPACE</code>.</p>
+<h4 id="sidekiq_redis_url"><code>SIDEKIQ_REDIS_URL</code></h4>
+<h3 id="elasticsearch">Elasticsearch</h3>
+<a href="/admin/elasticsearch/" class="page-ref">
+  <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
+  Configuring full-text search
+</a>
+<h4 id="es_enabled"><code>ES_ENABLED</code></h4>
+<p>If set to <code>true</code>, Mastodon will use Elasticsearch for its search functions.</p>
+<h4 id="es_preset"><code>ES_PRESET</code></h4>
+<p>It controls the Elasticsearch indices configuration (number of shards and replica).</p>
+<p>Possible values are:</p>
+<ul>
+<li><code>single_node_cluster</code> (default)</li>
+<li><code>small_cluster</code></li>
+<li><code>large_cluster</code></li>
+</ul>
+<p>See the <a href="../elasticsearch#choosing-the-correct-preset">Elasticsearch setup page for details on each setting</a>.</p>
+<h4 id="es_host"><code>ES_HOST</code></h4>
+<p>Host of the Elasticsearch server. Defaults to <code>localhost</code>. If using TLS, prepend the hostname with <code>https://</code>. For example: <code>https://elastic.example.com</code>.</p>
+<h4 id="es_port"><code>ES_PORT</code></h4>
+<p>Port of the Elasticsearch server. Defaults to <code>9200</code></p>
+<h4 id="es_user"><code>ES_USER</code></h4>
+<p>Used for optionally authenticating with Elasticsearch</p>
+<h4 id="es_pass"><code>ES_PASS</code></h4>
+<p>Used for optionally authenticating with Elasticsearch</p>
+<h4 id="es_prefix"><code>ES_PREFIX</code></h4>
+<p>Useful if the Elasticsearch server is shared between multiple projects or different Mastodon servers. Defaults to the value of <code>REDIS_NAMESPACE</code>.</p>
+<h3 id="statsd">StatsD</h3>
+<h4 id="statsd_addr"><code>STATSD_ADDR</code></h4>
+<p>If set, Mastodon will log some events and metrics into a StatsD instance identified by its hostname and port.</p>
+<p>Example value: <code>localhost:8125</code></p>
+<h4 id="statsd_namespace"><code>STATSD_NAMESPACE</code></h4>
+<p>If set, all StatsD keys will be prefixed with this. Defaults to <code>Mastodon.production</code> when <code>RAILS_ENV</code> is <code>production</code>, <code>Mastodon.development</code> when it&rsquo;s <code>development</code>, etc.</p>
+<h4 id="statsd_sidekiq"><code>STATSD_SIDEKIQ</code></h4>
+<p>If set to <code>true</code>, Mastodon will log some Sidekiq metrics into StatsD. Defaults to <code>false</code>.</p>
+<h4 id="es_ca_file"><code>ES_CA_FILE</code></h4>
+<p>Override Certificate Authority bundle file to use. Useful when using self-signed certificates.</p>
+<p><strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h3 id="smtp">SMTP email delivery</h3>
+<h4 id="smtp_server"><code>SMTP_SERVER</code></h4>
+<h4 id="smtp_port"><code>SMTP_PORT</code></h4>
+<h4 id="smtp_login"><code>SMTP_LOGIN</code></h4>
+<h4 id="smtp_password"><code>SMTP_PASSWORD</code></h4>
+<h4 id="smtp_from_address"><code>SMTP_FROM_ADDRESS</code></h4>
+<h4 id="smtp_domain"><code>SMTP_DOMAIN</code></h4>
+<h4 id="smtp_delivery_method"><code>SMTP_DELIVERY_METHOD</code></h4>
+<h4 id="smtp_auth_method"><code>SMTP_AUTH_METHOD</code></h4>
+<h4 id="smtp_ca_file"><code>SMTP_CA_FILE</code></h4>
+<h4 id="smtp_openssl_verify_mode"><code>SMTP_OPENSSL_VERIFY_MODE</code></h4>
+<h4 id="smtp_enable_starttls_auto"><code>SMTP_ENABLE_STARTTLS_AUTO</code></h4>
+<h4 id="smtp_enable_starttls"><code>SMTP_ENABLE_STARTTLS</code></h4>
+<p>Set to <code>auto</code> (default), <code>always</code>, or <code>never</code>.</p>
+<p><strong>Version history:</strong><br>
+4.0.0 - added</p>
+<h4 id="smtp_tls"><code>SMTP_TLS</code></h4>
+<h4 id="smtp_ssl"><code>SMTP_SSL</code></h4>
+<p>E-mail configuration is based on the <em>action_mailer</em> component of the <em>Ruby on Rails</em> framework that Mastodon is built on. Complete documentation on action_mailer is available <a href="https://guides.rubyonrails.org/action_mailer_basics.html#action-mailer-configuration">here</a>. The client uses SMTP or derivatives: StartTLS + SMTP or SMTPS (SMTP over TLS).</p>
+<h3 id="basic">Basic configuration</h3>
+<ul>
+<li><code>SMTP_SERVER</code>: Specify the server to use. For example <code>sub.domain.tld</code>.</li>
+<li><code>SMTP_PORT</code>: By default, the value is <code>25</code> (the usual port for SMTP). If StartTLS is detected, it may be switched to port 587.</li>
+<li><code>SMTP_DOMAIN</code>: Only required if a HELO domain is needed. Will be set to the <code>SMTP_SERVER</code> domain by default.</li>
+<li><code>SMTP_FROM_ADDRESS</code>: Specify a sender address.</li>
+<li><code>SMTP_DELIVERY_METHOD</code>: By default, the value is <code>smtp</code> (can also be <code>sendmail</code>).</li>
+</ul>
+<h3 id="smtpauthentication">Authentication for the SMTP server</h3>
+<ul>
+<li><code>SMTP_LOGIN</code>: Login for the SMTP user.</li>
+<li><code>SMTP_PASSWORD</code>:  Password for the SMTP user.</li>
+<li><code>SMTP_AUTH_METHOD</code>: Either <code>plain</code> (default; the password is transmitted in the clear), <code>login</code> (password will be base64 encoded) or <code>cram_md5</code>.</li>
+</ul>
+<h3 id="secured-smtp">Secured SMTP</h3>
+<p>By default, a StartTLS connection will be attempted to the specified SMTP server.</p>
+<ul>
+<li><code>SMTP_ENABLE_STARTTLS_AUTO</code>: Default <code>true</code>.</li>
+<li><code>SMTP_CA_FILE</code>: A value may be specified, but on many Linux distros (e.g. Debian-based) this will be <code>/etc/ssl/certs/ca-certificates.crt</code>.</li>
+<li><code>SMTP_OPENSSL_VERIFY_MODE</code>: <code>none</code> or <code>peer</code>. When using TLS, it may be useful to accept connections with a self-signed certificate.</li>
+<li><code>SMTP_TLS</code>: <code>true</code> or <code>false</code> (default <code>false</code>)</li>
+<li><code>SMTP_SSL</code>: <code>true</code> or <code>false</code> (default <code>false</code>)</li>
+</ul>
+<p>Note that <code>TLSv1.3</code> and <code>TLSv1.2</code> are the only SSL/TLS protocols currently considered to be secure.</p>
+<h2 id="files">File storage</h2>
+<h3 id="cdn">CDN</h3>
+<h4 id="cdn_host"><code>CDN_HOST</code></h4>
+<p>You can serve static assets (logos, emojis, CSS, JS, etc) from a separate host, like a CDN (Content Delivery Network) as it can decrease loading times for your users.</p>
+<p>Example value: <code>https://assets.example.com</code></p>
+<div class="hint hint-info">
+  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
+
+  You must serve the files with CORS headers, otherwise some functions of Mastodon&rsquo;s web UI will not work. For example, <code>Access-Control-Allow-Origin: *</code>
+</div>
+
+<h3 id="paperclip">Local file storage</h3>
+<h4 id="paperclip_root_path"><code>PAPERCLIP_ROOT_PATH</code></h4>
+<h4 id="paperclip_root_url"><code>PAPERCLIP_ROOT_URL</code></h4>
+<h3 id="s3">AWS S3 and compatible</h3>
+<a href="/admin/optional/object-storage/" class="page-ref">
+  <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
+  Object storage
+</a>
+<p>The bucket must support access control lists (ACLs). For AWS S3, this means setting the &ldquo;Object Ownership&rdquo; setting to &ldquo;ACLs enabled&rdquo;. For Google Cloud Storage, this means setting the &ldquo;Access control&rdquo; setting to &ldquo;Fine-grained&rdquo;.</p>
+<h4 id="s3_enabled"><code>S3_ENABLED</code></h4>
+<h4 id="s3_region"><code>S3_REGION</code></h4>
+<h4 id="s3_endpoint"><code>S3_ENDPOINT</code></h4>
+<h4 id="s3_bucket"><code>S3_BUCKET</code></h4>
+<h4 id="aws_access_key_id"><code>AWS_ACCESS_KEY_ID</code></h4>
+<h4 id="aws_secret_access_key"><code>AWS_SECRET_ACCESS_KEY</code></h4>
+<h4 id="s3_signature_version"><code>S3_SIGNATURE_VERSION</code></h4>
+<h4 id="s3_override_path_style"><code>S3_OVERRIDE_PATH_STYLE</code></h4>
+<h4 id="s3_protocol"><code>S3_PROTOCOL</code></h4>
+<h4 id="s3_hostname"><code>S3_HOSTNAME</code></h4>
+<h4 id="s3_alias_host"><code>S3_ALIAS_HOST</code></h4>
+<h4 id="s3_open_timeout"><code>S3_OPEN_TIMEOUT</code></h4>
+<h4 id="s3_read_timeout"><code>S3_READ_TIMEOUT</code></h4>
+<h4 id="s3_force_single_request"><code>S3_FORCE_SINGLE_REQUEST</code></h4>
+<h4 id="s3_enable_checksum_mode"><code>S3_ENABLE_CHECKSUM_MODE</code></h4>
+<h4 id="s3_storage_class"><code>S3_STORAGE_CLASS</code></h4>
+<h4 id="s3_multipart_threshold"><code>S3_MULTIPART_THRESHOLD</code></h4>
+<h4 id="s3_permission"><code>S3_PERMISSION</code></h4>
+<h4 id="s3_batch_delete_limit"><code>S3_BATCH_DELETE_LIMIT</code></h4>
+<h4 id="s3_batch_delete_retry"><code>S3_BATCH_DELETE_RETRY</code></h4>
+<h3 id="swift">Swift</h3>
+<h4 id="swift_enabled"><code>SWIFT_ENABLED</code></h4>
+<h4 id="swift_username"><code>SWIFT_USERNAME</code></h4>
+<h4 id="swift_tenant"><code>SWIFT_TENANT</code></h4>
+<h4 id="swift_password"><code>SWIFT_PASSWORD</code></h4>
+<h4 id="swift_project_id"><code>SWIFT_PROJECT_ID</code></h4>
+<h4 id="swift_auth_url"><code>SWIFT_AUTH_URL</code></h4>
+<h4 id="swift_container"><code>SWIFT_CONTAINER</code></h4>
+<h4 id="swift_object_url"><code>SWIFT_OBJECT_URL</code></h4>
+<h4 id="swift_region"><code>SWIFT_REGION</code></h4>
+<h4 id="swift_domain_name"><code>SWIFT_DOMAIN_NAME</code></h4>
+<h4 id="swift_cache_ttl"><code>SWIFT_CACHE_TTL</code></h4>
+<h3 id="http-cache-buster">HTTP Cache Buster</h3>
+<p>If configured, the Cache Buster feature will send a request to invalidate the cache for media files when they are deleted or made unavailable from your origin. This allows you to ensure that your caching layer / CDN is purged from any content that is removed from Mastodon.</p>
+<div class="hint hint-info">
+  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
+
+  The way to achieve this is very dependent of your proxy/CDN provider and will require configuration. If you are using nginx for HTTP caching, you will want to look at the <code>proxy_cache_purge</code> configuration directive.
+</div>
+
+<h4 id="cache_buster_enabled"><code>CACHE_BUSTER_ENABLED</code></h4>
+<p>If set to <code>true</code>, then Mastodon will send a cache-busting request to the media URL when deleting the file so the file can be purged from the cache.</p>
+<p>Defaults to <code>false</code></p>
+<h4 id="cache_buster_http_method"><code>CACHE_BUSTER_HTTP_METHOD</code></h4>
+<p>Defaults to <code>GET</code></p>
+<h4 id="cache_buster_secret_header"><code>CACHE_BUSTER_SECRET_HEADER</code></h4>
+<p>Name of the header containing the secret defined in <code>CACHE_BUSTER_SECRET</code>.</p>
+<p>Defaults to an empty value, meaning no header will be added</p>
+<h4 id="cache_buster_secret"><code>CACHE_BUSTER_SECRET</code></h4>
+<p>Value of the <code>CACHE_BUSTER_SECRET_HEADER</code> header configured above.</p>
+<h2 id="external-authentication">External authentication</h2>
+<h3 id="omniauth">OmniAuth</h3>
+<h4 id="allow_unsafe_auth_provider_reattach"><code>ALLOW_UNSAFE_AUTH_PROVIDER_REATTACH</code></h4>
+<p>Allow existing users to log in using external authentication providers they have not previously used, provided they use the same e-mail address. This can be useful if you want to offer users the ability to migrate from one external provider to another, but this is a potential security risk, as this allows attackers to hijack an account if they manage to create a new identity with their target&rsquo;s e-mail address on any of your configured providers.</p>
+<p><strong>Version history:</strong><br>
+4.2.6 - added</p>
+<h4 id="omniauth_only"><code>OMNIAUTH_ONLY</code></h4>
+<h4 id="one_click_sso_login"><code>ONE_CLICK_SSO_LOGIN</code></h4>
+<p>Enables the <code>Login or Register</code> button.
+Useful for instances where all authentication takes place using a single
+external provider (CAS, SAML or OIDC).</p>
+<p>Enabling this will prevent caching for anonymous sessions.
+And, when using OIDC discovery, the identity provider has to be available
+before Mastodon starts.</p>
+<h3 id="ldap">LDAP</h3>
+<h4 id="ldap_enabled"><code>LDAP_ENABLED</code></h4>
+<h4 id="ldap_host"><code>LDAP_HOST</code></h4>
+<h4 id="ldap_port"><code>LDAP_PORT</code></h4>
+<h4 id="ldap_method"><code>LDAP_METHOD</code></h4>
+<h4 id="ldap_base"><code>LDAP_BASE</code></h4>
+<h4 id="ldap_bind_dn"><code>LDAP_BIND_DN</code></h4>
+<h4 id="ldap_password"><code>LDAP_PASSWORD</code></h4>
+<h4 id="ldap_uid"><code>LDAP_UID</code></h4>
+<h4 id="ldap_search_filter"><code>LDAP_SEARCH_FILTER</code></h4>
+<h4 id="ldap_mail"><code>LDAP_MAIL</code></h4>
+<h4 id="ldap_uid_conversion_enabled"><code>LDAP_UID_CONVERSION_ENABLED</code></h4>
+<h3 id="pam">PAM</h3>
+<h4 id="pam_enabled"><code>PAM_ENABLED</code></h4>
+<h4 id="pam_email_domain"><code>PAM_EMAIL_DOMAIN</code></h4>
+<h4 id="pam_default_service"><code>PAM_DEFAULT_SERVICE</code></h4>
+<h4 id="pam_controlled_service"><code>PAM_CONTROLLED_SERVICE</code></h4>
+<h3 id="cas">CAS</h3>
+<h4 id="cas_enabled"><code>CAS_ENABLED</code></h4>
+<h4 id="cas_display_name"><code>CAS_DISPLAY_NAME</code></h4>
+<h4 id="cas_url"><code>CAS_URL</code></h4>
+<h4 id="cas_host"><code>CAS_HOST</code></h4>
+<h4 id="cas_port"><code>CAS_PORT</code></h4>
+<h4 id="cas_ssl"><code>CAS_SSL</code></h4>
+<h4 id="cas_validate_url"><code>CAS_VALIDATE_URL</code></h4>
+<h4 id="cas_callback_url"><code>CAS_CALLBACK_URL</code></h4>
+<h4 id="cas_logout_url"><code>CAS_LOGOUT_URL</code></h4>
+<h4 id="cas_login_url"><code>CAS_LOGIN_URL</code></h4>
+<h4 id="cas_uid_field"><code>CAS_UID_FIELD</code></h4>
+<h4 id="cas_ca_path"><code>CAS_CA_PATH</code></h4>
+<h4 id="cas_disable_ssl_verification"><code>CAS_DISABLE_SSL_VERIFICATION</code></h4>
+<h4 id="cas_uid_key"><code>CAS_UID_KEY</code></h4>
+<p>The key to the username to use for the account.
+The created account will be <code>@uid@domain.tld</code>.</p>
+<h4 id="cas_name_key"><code>CAS_NAME_KEY</code></h4>
+<h4 id="cas_email_key"><code>CAS_EMAIL_KEY</code></h4>
+<h4 id="cas_nickname_key"><code>CAS_NICKNAME_KEY</code></h4>
+<h4 id="cas_first_name_key"><code>CAS_FIRST_NAME_KEY</code></h4>
+<h4 id="cas_last_name_key"><code>CAS_LAST_NAME_KEY</code></h4>
+<h4 id="cas_location_key"><code>CAS_LOCATION_KEY</code></h4>
+<h4 id="cas_image_key"><code>CAS_IMAGE_KEY</code></h4>
+<p>The key to the image to use as account avatar.
+The value in this key must be a URL to the image file.
+It is important to use a supported file format (JPEG or PNG, not SVG).</p>
+<h4 id="cas_phone_key"><code>CAS_PHONE_KEY</code></h4>
+<h4 id="cas_security_assume_email_is_verified"><code>CAS_SECURITY_ASSUME_EMAIL_IS_VERIFIED</code></h4>
+<h3 id="saml">SAML</h3>
+<h4 id="saml_enabled"><code>SAML_ENABLED</code></h4>
+<h4 id="saml_acs_url"><code>SAML_ACS_URL</code></h4>
+<h4 id="saml_issuer"><code>SAML_ISSUER</code></h4>
+<h4 id="saml_idp_sso_target_url"><code>SAML_IDP_SSO_TARGET_URL</code></h4>
+<h4 id="saml_idp_cert"><code>SAML_IDP_CERT</code></h4>
+<h4 id="saml_idp_cert_fingerprint"><code>SAML_IDP_CERT_FINGERPRINT</code></h4>
+<h4 id="saml_name_identifier_format"><code>SAML_NAME_IDENTIFIER_FORMAT</code></h4>
+<h4 id="saml_cert"><code>SAML_CERT</code></h4>
+<h4 id="saml_private_key"><code>SAML_PRIVATE_KEY</code></h4>
+<h4 id="saml_security_want_assertion_signed"><code>SAML_SECURITY_WANT_ASSERTION_SIGNED</code></h4>
+<h4 id="saml_security_want_assertion_encrypted"><code>SAML_SECURITY_WANT_ASSERTION_ENCRYPTED</code></h4>
+<h4 id="saml_security_assume_email_is_verified"><code>SAML_SECURITY_ASSUME_EMAIL_IS_VERIFIED</code></h4>
+<h4 id="saml_attributes_statements_uid"><code>SAML_ATTRIBUTES_STATEMENTS_UID</code></h4>
+<h4 id="saml_attributes_statements_email"><code>SAML_ATTRIBUTES_STATEMENTS_EMAIL</code></h4>
+<h4 id="saml_attributes_statements_full_name"><code>SAML_ATTRIBUTES_STATEMENTS_FULL_NAME</code></h4>
+<h4 id="saml_attributes_statements_first_name"><code>SAML_ATTRIBUTES_STATEMENTS_FIRST_NAME</code></h4>
+<h4 id="saml_attributes_statements_last_name"><code>SAML_ATTRIBUTES_STATEMENTS_LAST_NAME</code></h4>
+<h4 id="saml_uid_attribute"><code>SAML_UID_ATTRIBUTE</code></h4>
+<h4 id="saml_attributes_statements_verified"><code>SAML_ATTRIBUTES_STATEMENTS_VERIFIED</code></h4>
+<h4 id="saml_attributes_statements_verified_email"><code>SAML_ATTRIBUTES_STATEMENTS_VERIFIED_EMAIL</code></h4>
+<h2 id="hidden-services">Hidden services</h2>
+<h3 id="tor">TOR</h3>
+<a href="/admin/optional/tor/" class="page-ref">
+  <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
+  Onion services
+</a>
+<h4 id="http_proxy"><code>http_proxy</code></h4>
+<h4 id="http_hidden_proxy"><code>http_hidden_proxy</code></h4>
+<h4 id="allow_access_to_hidden_service"><code>ALLOW_ACCESS_TO_HIDDEN_SERVICE</code></h4>
+<h2 id="limits">Limits</h2>
+<h3 id="anti-spam--abuse">Anti Spam / Abuse</h3>
+<h4 id="hcaptcha_site_key"><code>HCAPTCHA_SITE_KEY</code></h4>
+<h4 id="hcaptcha_secret_key"><code>HCAPTCHA_SECRET_KEY</code></h4>
+<p>If set, registrations confirm page will display a captcha, see <a href="https://docs.joinmastodon.org/admin/optional/captcha/">Captcha</a></p>
+<h3 id="email-domains">Email domains</h3>
+<h4 id="email_domain_allowlist"><code>EMAIL_DOMAIN_ALLOWLIST</code></h4>
+<p>If set, registrations will not be possible with any e-mails <strong>except</strong> those from the specified domains. Pipe-separated values, e.g.: <code>foo.com|bar.com</code></p>
+<h4 id="email_domain_denylist"><code>EMAIL_DOMAIN_DENYLIST</code></h4>
+<p>If set, registrations will not be possible with any e-mails from the specified domains. Pipe-separated values, e.g.: <code>foo.com|bar.com</code></p>
+<div class="hint hint-warning">
+  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+
+  This option is deprecated. You can dynamically block e-mail domains from the admin interface or the <code>tootctl</code> command-line interface.
+</div>
+
+<h3 id="sessions">Sessions</h3>
+<h4 id="max_session_activations"><code>MAX_SESSION_ACTIVATIONS</code></h4>
+<p>Defines the maximum number of browser sessions allowed per user, which defaults to 10. If a new browser session is created and the limit is exceeded, the oldest session is deleted, resulting in the user being logged out of that session.</p>
+<h3 id="home-feeds">Home feeds</h3>
+<h4 id="user_active_days"><code>USER_ACTIVE_DAYS</code></h4>
+<p>Mastodon stores home feeds in RAM (specifically, in the Redis database). This makes them very fast to access and update, but it also means that you don&rsquo;t want to keep them there if they&rsquo;re not used, and you don&rsquo;t want to spend resources on inserting new items into home feeds that will not be accessed. For this reason, Mastodon periodically clears out home feeds of users who haven&rsquo;t been online in a while, and if they re-appear, it regenerates those home feeds from database data. By default, users are considered active if they have been online in the past <code>7</code> days.</p>
+<p>Regeneration of home feeds is computationally expensive, if your Sidekiq is constantly doing it because your users come online every 3 days but your <code>USER_ACTIVE_DAYS</code> is set to 2, then consider adjusting it up.</p>
+<div class="hint hint-info">
+  <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
+
+  This setting has no relation to which users are considered active for the purposes of statistics, such as the Monthly Active Users number.
+</div>
+
+<h2 id="other">Other</h2>
+<h3 id="migrations">DB migrations</h3>
+<h4 id="skip_post_deployment_migrations"><code>SKIP_POST_DEPLOYMENT_MIGRATIONS</code></h4>
+<p>This variable only has any effect when running <code>rake db:migrate</code> and it is extremely specific to the Mastodon upgrade process. There are two types of database migrations, those that run before new code is deployed and running, and those that run after. By default, both types of migrations are executed. If you shut down all Mastodon processes before running migrations, then there is no difference. The variable makes sense for zero-downtime upgrades. You will see in the upgrade instructions of a specific Mastodon version if you need to use it or not.</p>
+<h3 id="db-encryption-support">DB Encryption support</h3>
+<p>These three environment variables must be set to enable the Active Record
+Encryption feature within Rails that Mastodon uses to encrypt and decrypt some
+database attributes.</p>
+<ul>
+<li><code>ACTIVE_RECORD_ENCRYPTION_PRIMARY_KEY</code></li>
+<li><code>ACTIVE_RECORD_ENCRYPTION_DETERMINISTIC_KEY</code></li>
+<li><code>ACTIVE_RECORD_ENCRYPTION_KEY_DERIVATION_SALT</code></li>
+</ul>
+<p><strong>Version history:</strong><br>
+4.3.0 - added</p>
+<h3 id="uncategorized-or-unsorted">Uncategorized or unsorted</h3>
+<h4 id="bundle_gemfile"><code>BUNDLE_GEMFILE</code></h4>
+<h4 id="deepl_api_key"><code>DEEPL_API_KEY</code></h4>
+<h4 id="deepl_plan"><code>DEEPL_PLAN</code></h4>
+<h4 id="enable_sidekiq_unique_jobs_ui"><code>ENABLE_SIDEKIQ_UNIQUE_JOBS_UI</code></h4>
+<p>Enable <code>sidekiq-unique-jobs</code>'s web interface. This can be used to review and clear the locks managed by this gem, but is rarely useful in practice and has had critical security vulnerabilities in the past.
+If you only need to clear all locks, you can now use the newly-added <code>bundle exec rake sidekiq_unique_jobs:delete_all_locks</code>.</p>
+<p><strong>Version history:</strong><br>
+4.2.6 - added</p>
+<h4 id="libre_translate_endpoint"><code>LIBRE_TRANSLATE_ENDPOINT</code></h4>
+<h4 id="libre_translate_api_key"><code>LIBRE_TRANSLATE_API_KEY</code></h4>
+<h4 id="github_repository"><code>GITHUB_REPOSITORY</code></h4>
+<p>Defaults to <code>mastodon/mastodon</code></p>
+<h4 id="source_base_url"><code>SOURCE_BASE_URL</code></h4>
+<p>Defaults to <code>https://github.com/$GITHUB_REPOSITORY</code></p>
+<h4 id="ffmpeg_binary"><code>FFMPEG_BINARY</code></h4>
+<p>Defaults to empty value (not enabled)</p>
+<h4 id="local_https"><code>LOCAL_HTTPS</code></h4>
+<h4 id="path"><code>PATH</code></h4>
+<h4 id="max_follows_threshold"><code>MAX_FOLLOWS_THRESHOLD</code></h4>
+<p>Defaults to <code>7500</code></p>
+<h4 id="max_follows_ratio"><code>MAX_FOLLOWS_RATIO</code></h4>
+<p>Defaults to <code>1.1</code></p>
+<h4 id="ip_retention_period"><code>IP_RETENTION_PERIOD</code></h4>
+<p>Defaults to <code>31536000</code> (1 year)</p>
+<h4 id="session_retention_period"><code>SESSION_RETENTION_PERIOD</code></h4>
+<p>Defaults to <code>31536000</code> (1 year)</p>
+<h4 id="backtrace"><code>BACKTRACE</code></h4>
+<p>Set to <code>1</code> to allow backtracing to Rails framework code.</p>
+<h4 id="disable_simplecov"><code>DISABLE_SIMPLECOV</code></h4>
+<h4 id="email_domain_lists_apply_after_confirmation"><code>EMAIL_DOMAIN_LISTS_APPLY_AFTER_CONFIRMATION</code></h4>
+<h4 id="disable_followers_synchronization"><code>DISABLE_FOLLOWERS_SYNCHRONIZATION</code></h4>
+<h4 id="max_request_pool_size"><code>MAX_REQUEST_POOL_SIZE</code></h4>
+<p>Defaults to <code>512</code>.</p>
+<h4 id="github_api_token"><code>GITHUB_API_TOKEN</code></h4>
+<p>Used in a rake task for generating AUTHORS.md from GitHub commit history.</p>
+
+    
+
+
+
+
+
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+            
+            
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+          
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+          
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+      
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+
+
+<script>
+ 
+ 
+ 
+ 
+ 
+ 
+ var theMenuTag = "nav";           
+ var theMenuSideBar = "sidebar";   
+ var theMenuSubMenu = "sub-menu";  
+ var theMenuActivePage = "active"; 
+
+ 
+ 
+ var previousLink = document.getElementById("previousLink");     
+ var nextLink = document.getElementById("nextLink");             
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer"); 
+ 
+ 
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+ 
+ var selectNavs = document.getElementsByTagName(theMenuTag); 
+ var selectSidebar;                                          
+ for (i = 0; i < selectNavs.length; i++) {                   
+   if (selectNavs[i].className == theMenuSideBar) {          
+     selectSidebar = selectNavs[i];                          
+     break; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName(theMenuSubMenu); 
+ 
+ 
+ for (i = 0; i < selectSubMenus.length; i++) {                      
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a"); 
+   
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == theMenuActivePage) { 
+      if (j == 0) {                                
+        prevHref = "remove";                        
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      } else if (j == curNavSection.length - 1) {  
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = "remove";                        
+        whatIsActive = i; 
+      } else {                                     
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      }
+       
+       break;
+     }
+   }
+   
+   if (whatIsActive != -1) { break; }
+ }
+ 
+ if (prevHref == "remove") { 
+   previousLink.remove();                                             
+   pageTurnSpacer.remove();                                           
+   nextLink.href = nextHref;                                          
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName); 
+ } else if (nextHref == "remove") { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.remove();                                                         
+ } else { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.href = nextHref;                                                  
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);         
+ }                                                                            
+ 
+</script>
+
+    <p style="color: #687590;">
+      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/config.md' style="color: #687590;">Improve this page</a>
+
+      
+        <br />
+
+        Also available in:
+
+        
+          <a href="/zh-cn/admin/config/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/config.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+</footer>
+
+</body>
+
+</html>

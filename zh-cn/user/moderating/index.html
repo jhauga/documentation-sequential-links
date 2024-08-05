@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>处理不想要的内容 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/zh-cn/user/moderating/">
+
+  
+    <meta name="description" content="控制你看到的内容，以获得更舒适的社交媒体体验。">
+    <meta property="og:description" content="控制你看到的内容，以获得更舒适的社交媒体体验。">
+    <meta name="twitter:description" content="控制你看到的内容，以获得更舒适的社交媒体体验。">
+  
+
+  <meta name="twitter:title" content="处理不想要的内容">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/zh-cn/user/moderating/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/zh-cn/" class="">什么是Mastodon？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">使用Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/user/signup/" class="">创建一个帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/profile/" class="">设置个人资料</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/posting/" class="">发布嘟文</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/network/" class="">使用社交功能</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moderating/" class="active">处理不想要的内容</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/discoverability/" class="">推广自己和他人</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/preferences/" class="">设置你的首选项</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/contacts/" class="">更多设置</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/external/" class="">站外使用Mastodon</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/moving/" class="">迁移或删除帐户</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/user/run-your-own/" class="">运行自己的服务器</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">运营Mastodon</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/zh-cn/admin/prerequisites/" class="">准备你的机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/install/" class="">从源中安装</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/config/" class="">设置你的环境</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/optional/" class="">安装可选特色功能</a>
+
+              
+                <ul class="sub-menu">
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/elasticsearch/" class="">全文搜索</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/tor/" class="">匿名服务</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/zh-cn/admin/optional/sso/" class="">单点登录（SSO）</a>
+                    </li>
+                  
+                </ul>
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/setup/" class="">配置你的新实例</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/tootctl/" class="">使用管理命令行</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/upgrading/" class="">升级到新版本</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/backups/" class="">备份你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/migrating/" class="">迁移到新机器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/scaling/" class="">伸缩你的服务器</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/moderation/" class="">运营操作</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/zh-cn/admin/troubleshooting/" class="">故障分析</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">开发Mastodon应用</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">向Mastodon项目做贡献</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">遵循的标准</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 方法</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API 实体</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>处理不想要的内容</h1>
+
+  
+    <p>控制你看到的内容，以获得更舒适的社交媒体体验。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#filters">过滤嘟文</a>
+          <ul>
+            <li><a href="#filter-phrase">关键词</a></li>
+            <li><a href="#filter-expire">失效时间</a></li>
+            <li><a href="#filter-context">过滤器场景</a></li>
+            <li><a href="#filter-drop">丢弃而非隐藏</a></li>
+            <li><a href="#filter-whole">整个词条</a></li>
+          </ul>
+        </li>
+        <li><a href="#blocking-and-muting">用户级操作</a>
+          <ul>
+            <li><a href="#hide-boosts">隐藏转嘟</a></li>
+            <li><a href="#mute">隐藏</a></li>
+            <li><a href="#block">屏蔽</a></li>
+            <li><a href="#hide-domain">屏蔽整个域名</a></li>
+          </ul>
+        </li>
+        <li><a href="#report">向管理员报告有问题的内容</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="filters">过滤嘟文</h2>
+<p>你可以过滤特定关键字和短语的嘟文，自动隐藏它们。</p>
+<figure><img src="/assets/image%20%2848%29.png"
+         alt="含有不同内容不同关键词的已激活的过滤器"/><figcaption>
+            <p>含有不同内容不同关键词的已激活的过滤器</p>
+        </figcaption>
+</figure>
+
+<p>要创建或管理过滤器，请转到设置 &gt; 过滤器。点击“添加新的过滤器”按钮，你可以创建、编辑或删除过滤器。你现有的过滤器将汇总在一个表格中。</p>
+<figure><img src="/assets/image%20%2814%29.png"
+         alt="可以为筛选器设置到期日期、过滤位置、是否服务器端删除而非隐藏、是否过滤整个词条"/><figcaption>
+            <p>可以为筛选器设置到期日期、过滤位置、是否服务器端删除而非隐藏、是否过滤整个词条</p>
+        </figcaption>
+</figure>
+
+<p>过滤器有以下设置：</p>
+<h3 id="filter-phrase">关键词</h3>
+<p>这是将被匹配的字符串，用于在嘟文的任意内容（包括CW，媒体描述和投票选项）中搜索该关键字。</p>
+<h3 id="filter-expire">失效时间</h3>
+<p>（可选）仅在有限的时间内应用过滤器。过期的过滤器不会自动删除，但可以通过设置新的过期日期（或将其更改回“永不过期”）来重新激活。</p>
+<h3 id="filter-context">过滤器场景</h3>
+<p>选择应用过滤器的场景：</p>
+<ul>
+<li>主页时间轴 = 含有关键词的嘟文将从你的主页时间轴中删除</li>
+<li>通知 = 不会显示含有关键词的通知</li>
+<li>公共时间轴 = 含有关键词嘟文不会显示在本站/跨站公共时间轴中</li>
+<li>对话 = 含有关键词的嘟文将不会显示在对话、嘟文详情页</li>
+</ul>
+<h3 id="filter-drop">丢弃而非隐藏</h3>
+<p>过滤通常是在客户端进行的，因此禁用过滤器将使过滤后的嘟文再次可见。但是，如果启用“丢弃而不是隐藏”，则任何匹配嘟文将完全消失，并且永远不会出现在你的主页时间轴或通知中。</p>
+<h3 id="filter-whole">整个词条</h3>
+<p>过滤器通常会匹配任何状态下的关键词字符，无论它们是否位于单词中间。当启用“整个词条”后，只有当关键字前后是空格或其他非字母数字字符时，该关键词才会被过滤。</p>
+<h2 id="blocking-and-muting">用户级操作</h2>
+<figure><img src="/assets/image%20%2824%29.png"
+         alt="用户下拉菜单提供了多种操作"/><figcaption>
+            <p>用户下拉菜单提供了多种操作</p>
+        </figcaption>
+</figure>
+
+<h3 id="hide-boosts">隐藏转嘟</h3>
+<p>如果你隐藏了某人的转嘟，你将不会在你的主页上看到他们的转嘟。这个选项只出现在你当前关注的用户身上。</p>
+<h3 id="mute">隐藏</h3>
+<figure><img src="/assets/image%20%2852%29.png"
+         alt="图为被隐藏的帐户"/><figcaption>
+            <p>图为被隐藏的帐户</p>
+        </figcaption>
+</figure>
+
+<p>隐藏某一账号时，你可以选择是否将其通知一并隐藏。隐藏用户，而不隐藏通知时，会将该账号从用户界面中隐藏：</p>
+<ul>
+<li>你不会在你的主页中看到该账号。</li>
+<li>你不会看到其他人转嘟的该账号的嘟文。</li>
+<li>你不会看到其他人提及这个账号。</li>
+<li>你不会在公共时间轴中看到该账号。</li>
+</ul>
+<p>如果你选择了同时隐藏通知，你还将不会收到来自该账号的通知。</p>
+<p>用户不会知道他们已经被其他用户隐藏。</p>
+<h3 id="block">屏蔽</h3>
+<figure><img src="/assets/image%20%2836%29.png"
+         alt="图为被屏蔽的帐户"/><figcaption>
+            <p>图为被屏蔽的帐户</p>
+        </figcaption>
+</figure>
+
+<p>屏蔽会将账号从用户界面中隐藏。</p>
+<ul>
+<li>你不会在你的主页中看到该账号。</li>
+<li>你不会看到其他人转嘟的该账号的嘟文。</li>
+<li>你不会看到其他人提及这个账号。</li>
+<li>你不会在公共时间轴中看到该账号。</li>
+<li>你不会收到来自该账号的通知。</li>
+</ul>
+<p>此外，在被屏蔽的账号一方，</p>
+<ul>
+<li>被屏蔽账号会被强制取消对你的关注。</li>
+<li>被屏蔽账号不能关注你。</li>
+<li>被屏蔽账号不能看到别人对你的转嘟。</li>
+<li>被屏蔽账号不能在公共时间轴中看到你。</li>
+</ul>
+<p>如果你和被屏蔽的账号在同一服务器上，被屏蔽的用户将无法在登录时查看你的个人资料页。</p>
+<h3 id="hide-domain">屏蔽整个域名</h3>
+<p>![]({{ relUrl &ldquo;/assets/image%20%2861%29.png&rdquo; }})</p>
+<p>如果你屏蔽了整个域名：</p>
+<ul>
+<li>你将无法在公共时间轴上看到来自该域名的嘟文。</li>
+<li>你将不会在主页看到其他人转发来自该域名的嘟文。</li>
+<li>你将不会收到来自该域名的通知。</li>
+<li>你将失去该域名上的所有关注者。</li>
+</ul>
+<h2 id="report">向管理员报告有问题的内容</h2>
+<figure><img src="/assets/image%20%283%29.png"
+         alt="报告模块允许选择被报告嘟文、添加注释和是否转发报告"/><figcaption>
+            <p>报告模块允许选择被报告嘟文、添加注释和是否转发报告</p>
+        </figcaption>
+</figure>
+
+<p>如果你看到有违反站点规则的嘟文或用户，你可以向站点管理员报告该用户。点击用户下拉菜单或嘟文的下拉菜单上的“举报”选项将打开报告模块。在这里，你可以（并且应该）添加一个关于你为什么要举报这个帐号的注释。你可以附加某些有问题的嘟文，以了解你为什么要报告该账号，如果他们的行为违反了他们所在Mastodon站点的规则，你还可以选择将报告转发至他们所在Mastodon站点的管理员。</p>
+<figure>
+    <p>
+        <strong>翻译状态：</strong>
+        本文是英文页面 <a href="/user/moderating/">Dealing with unwanted content</a> 的翻译，最后翻译时间：，点击<a href="https://github.com/mastodon/documentation/compare/ad1ef20f171c9f61439f32168987b0b4f9abd74b...master">这里</a>可以查看翻译后页面的改动。
+    </p>
+</figure>
+
+
+    
+
+
+
+
+
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+            
+            
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+      
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+    
+      
+        
+          
+                  
+        
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+<script>
+ 
+ 
+ 
+ 
+ 
+ 
+ var theMenuTag = "nav";           
+ var theMenuSideBar = "sidebar";   
+ var theMenuSubMenu = "sub-menu";  
+ var theMenuActivePage = "active"; 
+
+ 
+ 
+ var previousLink = document.getElementById("previousLink");     
+ var nextLink = document.getElementById("nextLink");             
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer"); 
+ 
+ 
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+ 
+ var selectNavs = document.getElementsByTagName(theMenuTag); 
+ var selectSidebar;                                          
+ for (i = 0; i < selectNavs.length; i++) {                   
+   if (selectNavs[i].className == theMenuSideBar) {          
+     selectSidebar = selectNavs[i];                          
+     break; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName(theMenuSubMenu); 
+ 
+ 
+ for (i = 0; i < selectSubMenus.length; i++) {                      
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a"); 
+   
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == theMenuActivePage) { 
+      if (j == 0) {                                
+        prevHref = "remove";                        
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      } else if (j == curNavSection.length - 1) {  
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = "remove";                        
+        whatIsActive = i; 
+      } else {                                     
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      }
+       
+       break;
+     }
+   }
+   
+   if (whatIsActive != -1) { break; }
+ }
+ 
+ if (prevHref == "remove") { 
+   previousLink.remove();                                             
+   pageTurnSpacer.remove();                                           
+   nextLink.href = nextHref;                                          
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName); 
+ } else if (nextHref == "remove") { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.remove();                                                         
+ } else { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.href = nextHref;                                                  
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);         
+ }                                                                            
+ 
+</script>
+
+    <p style="color: #687590;">
+      最后更新于 August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/moderating.md' style="color: #687590;">改进此页面</a>
+
+      
+        <br />
+
+        也可在此找到：
+
+        
+          <a href="/user/moderating/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/ja/user/moderating/" style="color: #687590;" hreflang="ja">日本語</a>
+        
+          <a href="/pl/user/moderating/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>加入Mastodon</a> · <a href='https://blog.joinmastodon.org'>博客</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/moderating.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
+</footer>
+
+</body>
+
+</html>

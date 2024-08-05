@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>環境の設定 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/ja/user/preferences/">
+
+  
+    <meta name="description" content="あなたの好きなようにカスタマイズできます。">
+    <meta property="og:description" content="あなたの好きなようにカスタマイズできます。">
+    <meta name="twitter:description" content="あなたの好きなようにカスタマイズできます。">
+  
+
+  <meta name="twitter:title" content="環境の設定">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/ja/user/preferences/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/ja/" class="">Mastodon（マストドン）とは？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを使う</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/ja/user/signup/" class="">アカウントの登録</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/profile/" class="">プロフィールの設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/posting/" class="">トゥートの投稿</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/network/" class="">ネットワーク機能の使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moderating/" class="">見たくないコンテンツへの対処</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/discoverability/" class="">自分や他のユーザーの宣伝</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/preferences/" class="active">環境の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/contacts/" class="">その他の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/external/" class="">外部からのMasotodonの使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moving/" class="">アカウントの引っ越しや削除</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/run-your-own/" class="">自分のサーバーを動かすこと</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを動かす</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonアプリを開発する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonの開発に貢献する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">準拠している仕様</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Methods</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Entities</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>環境の設定</h1>
+
+  
+    <p>あなたの好きなようにカスタマイズできます。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#interface">ユーザーインターフェースのカスタマイズ</a>
+          <ul>
+            <li><a href="#theme">テーマの選択</a></li>
+            <li><a href="#layout">レイアウトの選択</a></li>
+            <li><a href="#confirm">確認ダイアログ</a></li>
+            <li><a href="#sensitive">閲覧注意コンテンツ</a></li>
+          </ul>
+        </li>
+        <li><a href="#notifications">通知の制御</a>
+          <ul>
+            <li><a href="#email">メールの送信</a></li>
+            <li><a href="#hide-notifications">特定の通知のブロック</a></li>
+          </ul>
+        </li>
+        <li><a href="#misc">その他、選択できること</a>
+          <ul>
+            <li><a href="#posting">初期設定での投稿</a></li>
+            <li><a href="#languages">言語による公開タイムラインのフィルター</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="interface">ユーザーインターフェースのカスタマイズ</h2>
+<h3 id="theme">テーマの選択</h3>
+<p>Mastodonのデフォルトはダークテーマですが、ライトまたはハイコントラストのテーマも選択できます。</p>
+<figure><img src="/assets/image%20%2834%29.png"
+         alt="Mastodonのライトテーマ"/><figcaption>
+            <p>Mastodonのライトテーマ</p>
+        </figcaption>
+</figure>
+
+<h3 id="layout">レイアウトの選択</h3>
+<p>Mastodonは初期設定で、単純なシングルカラム（＝1つの縦列）レイアウトになっています。その左側がトゥートするための領域であり、右側がカラム内容を変更するための切り替えメニューを持っています。</p>
+<p>上級者向けウェブインターフェース（＝上級者向けUI）を有効にすることも選択できます。これを有効にすると、複数のカラムを同時に固定して表示できます。</p>
+<figure><img src="/assets/image%20%2832%29.png"
+         alt="上級者向けウェブインターフェース"/><figcaption>
+            <p>上級者向けウェブインターフェース</p>
+        </figcaption>
+</figure>
+
+<p>どちらのインターフェースでも、新しい投稿がされると、その更新が自動的に読み込まれます。新着件数をカラムの一番上にバナー状のボタンとして表示する、手動更新モード（＝スローモード；Slow Mode）を有効にすることもできます。このときは、そのバナーをクリックしたときのみ読み込まれるでしょう。</p>
+<p>アクセシビリティ上の理由から、アニメーションGIFの自動再生は初期設定で無効にしています。もしアニメーションを見たいなら、アニメーションGIFを有効にできます。また、UIにおけるアニメーションの動きを減らすこともできます。</p>
+<p>トレンドタグは、上級者向けUIではスタートのカラムの下に、簡易UIではカラム切り替えメニューの下に表示されるか、または隠されています（表示するのに十分な余白領域がある場合にのみ表示されます）。</p>
+<h3 id="confirm">確認ダイアログ</h3>
+<p>特定の操作を実行する前に、その確認を行うことを選択できます。現在、次の操作を実行する前に確認を行うことを設定できます。</p>
+<ul>
+<li>フォローの解除</li>
+<li>ブースト</li>
+<li>削除</li>
+</ul>
+<h3 id="sensitive">閲覧注意コンテンツ</h3>
+<p>初期設定において、閲覧注意（＝センシティブ）としてマークが付けられたメディアは、クリックするまで覆われてしまい、その後ろに隠れてしまいます。閲覧注意のマークが付けられているかどうかに関係なく、この覆われた後ろにあるメディアを常に表示または非表示にすることも選択できます。</p>
+<p>隠されたメディアや読み込むことができなかったメディアに、BlurHashアルゴリズムによって処理された色付きの階調を使います。画像の色を使っていますが、詳細をぼかすわけです。この階調を使うことを無効にもできます。</p>
+<figure><img src="/assets/image%20%286%29.png"
+         alt="ぼかしたサムネイルの例"/><figcaption>
+            <p>ぼかしたサムネイルの例</p>
+        </figcaption>
+</figure>
+
+<p>コンテンツ警告を伴う投稿は初期設定で折りたたまれますが、その警告を常に展開して完全な投稿を表示することも選択できます。</p>
+<h2 id="notifications">通知の制御</h2>
+<h3 id="email">メールの送信</h3>
+<p>マストドン内で受け取る通知の種類に応じて、メールで通知することを選択できます。次の通知の種類で有効にできます。</p>
+<ul>
+<li>フォロー</li>
+<li>フォローリクエスト</li>
+<li>ブースト</li>
+<li>お気に入り</li>
+<li>メンション</li>
+</ul>
+<p>ダイジェストメールを有効にすることもできます。これにより、長期間使っていないときに受信した通知の概要が分かります。</p>
+<h3 id="hide-notifications">特定の通知のブロック</h3>
+<p>フォローしていない人やフォロワー以外の人からの通知を受信しないように選択できます。これにより、返信、お気に入り、ブースト、その他のやり取りが表示されなくなります。</p>
+<p>フォローしていない人からダイレクトメッセージを受信したときに通知を受信しないように選択することもできます。</p>
+<h2 id="misc">その他、選択できること</h2>
+<p>検索エンジンによるインデックスを拒否すると、<code>noindex</code>フラグが公開プロフィールと各ステータスページに追加されます。</p>
+<p>繋がり（＝あなたのネットワーク）を隠すと、フォローリストとフォロワーリストが非公開になります。</p>
+<figure><img src="/assets/image%20%284%29.png"
+         alt="繋がりを非表示にすることを選択したプロフィール"/><figcaption>
+            <p>繋がりを非表示にすることを選択したプロフィール</p>
+        </figcaption>
+</figure>
+
+<p>複数回ブーストされた投稿をフィードの上部に再度表示したい場合は、タイムラインにおける「ブーストをまとめる」を無効にすることで可能になります。</p>
+<h3 id="posting">初期設定での投稿</h3>
+<p>投稿のプライバシーは初期設定で「公開」になっています。その代わりに、新しい投稿を未収載またはフォロワー限定にする初期設定を選択できます。投稿のプライバシーレベルの説明については、<a href="../posting#privacy">「トゥートの投稿」における「公開範囲」の項</a>を参照してください。</p>
+<p>初期設定では、投稿する際の言語は自動的に検出されます。しかしこの検出は不正確であり、間違っている可能性があります。
+特定の言語で主にまたは必ず投稿する場合は、その言語を設定することをおすすめします。</p>
+<p>閲覧注意のメディアを頻繁に投稿する場合は、メディアを常に閲覧注意としてマークを付ける選択もできます。</p>
+<h3 id="languages">言語による公開タイムラインのフィルター</h3>
+<p>公開タイムラインを閲覧しているときに、特定の言語で検出した投稿のみを表示するように選択できます。しかしながら、その言語の検出は非常に不正確であるため、無効にしたはずの言語の投稿が表示されたり、検出した言語の投稿を見逃したりする可能性があることに注意してください。</p>
+
+    
+
+
+
+
+
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+            
+            
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+<script>
+ 
+ 
+ 
+ 
+ 
+ 
+ var theMenuTag = "nav";           
+ var theMenuSideBar = "sidebar";   
+ var theMenuSubMenu = "sub-menu";  
+ var theMenuActivePage = "active"; 
+
+ 
+ 
+ var previousLink = document.getElementById("previousLink");     
+ var nextLink = document.getElementById("nextLink");             
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer"); 
+ 
+ 
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+ 
+ var selectNavs = document.getElementsByTagName(theMenuTag); 
+ var selectSidebar;                                          
+ for (i = 0; i < selectNavs.length; i++) {                   
+   if (selectNavs[i].className == theMenuSideBar) {          
+     selectSidebar = selectNavs[i];                          
+     break; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName(theMenuSubMenu); 
+ 
+ 
+ for (i = 0; i < selectSubMenus.length; i++) {                      
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a"); 
+   
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == theMenuActivePage) { 
+      if (j == 0) {                                
+        prevHref = "remove";                        
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      } else if (j == curNavSection.length - 1) {  
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = "remove";                        
+        whatIsActive = i; 
+      } else {                                     
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      }
+       
+       break;
+     }
+   }
+   
+   if (whatIsActive != -1) { break; }
+ }
+ 
+ if (prevHref == "remove") { 
+   previousLink.remove();                                             
+   pageTurnSpacer.remove();                                           
+   nextLink.href = nextHref;                                          
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName); 
+ } else if (nextHref == "remove") { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.remove();                                                         
+ } else { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.href = nextHref;                                                  
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);         
+ }                                                                            
+ 
+</script>
+
+    <p style="color: #687590;">
+      最終更新 August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/preferences.md' style="color: #687590;">このページを改善する</a>
+
+      
+        <br />
+
+        他の言語も利用可能：
+
+        
+          <a href="/user/preferences/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/zh-cn/user/preferences/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+          <a href="/pl/user/preferences/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Mastodonに参加する</a> · <a href='https://blog.joinmastodon.org'>ブログ</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/preferences.md'>ソースコードを見る</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>インプリメント</a></p>
+</footer>
+
+</body>
+
+</html>

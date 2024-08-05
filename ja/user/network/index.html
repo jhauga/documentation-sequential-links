@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>ネットワーク機能の使用 - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/ja/user/network/">
+
+  
+    <meta name="description" content="どんなサーバーにいる人に対してもフォローしたり、おしゃべりできます。">
+    <meta property="og:description" content="どんなサーバーにいる人に対してもフォローしたり、おしゃべりできます。">
+    <meta name="twitter:description" content="どんなサーバーにいる人に対してもフォローしたり、おしゃべりできます。">
+  
+
+  <meta name="twitter:title" content="ネットワーク機能の使用">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/ja/user/network/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/ja/" class="">Mastodon（マストドン）とは？</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを使う</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/ja/user/signup/" class="">アカウントの登録</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/profile/" class="">プロフィールの設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/posting/" class="">トゥートの投稿</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/network/" class="active">ネットワーク機能の使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moderating/" class="">見たくないコンテンツへの対処</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/discoverability/" class="">自分や他のユーザーの宣伝</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/preferences/" class="">環境の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/contacts/" class="">その他の設定</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/external/" class="">外部からのMasotodonの使用</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/moving/" class="">アカウントの引っ越しや削除</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/ja/user/run-your-own/" class="">自分のサーバーを動かすこと</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonを動かす</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonアプリを開発する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Mastodonの開発に貢献する</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">準拠している仕様</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Methods</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">API Entities</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>ネットワーク機能の使用</h1>
+
+  
+    <p>どんなサーバーにいる人に対してもフォローしたり、おしゃべりできます。</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#timelines">公開タイムラインに流れるコン​​テンツの閲覧</a></li>
+        <li><a href="#actions">投稿への関わり</a></li>
+        <li><a href="#notifications">通知</a></li>
+        <li><a href="#follow">プロフィールのフォロー</a></li>
+        <li><a href="#search">検索</a></li>
+        <li><a href="#direct">直接かわされる会話のやり取り</a></li>
+        <li><a href="#lists">リストタイムライン</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="timelines">公開タイムラインに流れるコン​​テンツの閲覧</h2>
+<figure><img src="/assets/image%20%2830%29.png"
+         alt="公開タイムラインを流れる投稿"/><figcaption>
+            <p>公開タイムラインを流れる投稿</p>
+        </figcaption>
+</figure>
+
+<p>興味のありそうなコンテンツを発見できるように、Mastodonはすべての公開投稿を見る手段を提供しています。とはいっても、全部のサーバー間で包括的にステータスが共有されているわけではないため、<em>すべての</em>公開投稿を見る方法はありません。<strong>連合タイムライン</strong>を閲覧すると、あなたのいるサーバーが認識しているすべての公開投稿を表示できます。サーバーが投稿を認識する方法はさまざまですが、その大部分は、同じサーバー上にいる他のユーザーがフォローしている人々の投稿でしょう。</p>
+<p>あなたのいるサーバーで作成された公開投稿のみを表示するために、連合タイムラインをフィルターする手段があります。それが<strong>ローカルタイムライン</strong>です。ここでの「ローカル」とは地理的な場所ではなく、自分のいるサーバーを指します。</p>
+<h2 id="actions">投稿への関わり</h2>
+<figure><img src="/assets/image%20%2821%29.png"
+         alt="タイムラインにおける各ステータスをクリックすることで、トゥートの詳細が表示される"/><figcaption>
+            <p>タイムラインにおける各ステータスをクリックすることで、トゥートの詳細が表示される</p>
+        </figcaption>
+</figure>
+
+<p>タイムラインを流れている投稿に対して直接クイックアクションを実行できます。また投稿をクリックすることで、トゥートの詳細を表示できます。ここでは正確な投稿日時、ブーストやお気に入りの数、そしてもし返信が付いていれば連なって表示されます。投稿に対して次の操作を実行できます。</p>
+<ul>
+<li><strong>返信（＝リプライ）</strong> は、矢印のアイコンをクリックします。返信のトゥートは、返信先の投稿の下に連なって表示されます。</li>
+<li><strong>ブースト</strong>は、循環矢印のアイコンをクリックします。その投稿はあなたのプロフィール上で再共有されます。</li>
+<li><strong>お気に入り（＝フェイバリット）</strong> は、星のアイコンをクリックします。その投稿はお気に入りの一覧に追加され、お気に入りしたという通知がその著者に配信されます。</li>
+<li><strong>ブックマーク</strong>は、リボンのアイコンをクリックします。通知を配信せずに、その投稿はブックマークの一覧に非公開で追加されます。</li>
+<li>このほかに選択できる<strong>メニュー</strong>は、省略のアイコンをクリックして実行します。</li>
+</ul>
+<h2 id="notifications">通知</h2>
+<figure><img src="/assets/image%20%2850%29.png"
+         alt="通知欄"/><figcaption>
+            <p>通知欄</p>
+        </figcaption>
+</figure>
+
+<p>他の人々があなた自身やあなたの投稿に関わるとき、その関わり方の種類に応じて通知が届きます。通知欄では、そのアカウントに関わるすべての通知を表示したり、次のように特定の種類の通知をフィルターして表示できます。</p>
+<ul>
+<li><strong>メンション：</strong> ある投稿で、誰かがあなたにメンションしたときに受信します。</li>
+<li><strong>お気に入り：</strong> あなたが投稿したものから、誰かがその一つをお気に入りしたときに受信します。</li>
+<li><strong>ブースト：</strong> あなたが投稿したものから、誰かがその一つをブーストしたときに受信します。</li>
+<li><strong>投票：</strong> あなたが票を入れた投票や、あなたが作成した投票が終了したときに受信します。</li>
+<li><strong>フォロー：</strong> あなたのプロフィールを誰かがフォローしたときに受信します。</li>
+</ul>
+<h2 id="follow">プロフィールのフォロー</h2>
+<p>![]({{ relUrl &ldquo;/assets/image%20%2811%29.png&rdquo; }})</p>
+<p>あなたがいるサーバーのウェブインターフェース、またはモバイルアプリなど、そのアプリのユーザーインターフェース内で人に出会いさえすれば「フォロー」ボタンをクリックするだけです。その人があなたのサーバー上にいるかいないかについての違いには気づかないでしょう。</p>
+<p>しかしながら、他のサーバーに登録している誰かの公開プロフィールに出くわした場合に支障をきたします。そのサーバーは単に、あなたを匿名の訪問者と見なすからです。でも心配はありません！ そのプロフィールのURL、またはそのプロフィールの投稿1つのURLを単純にコピーしてください。そして検索欄で、そのURLを貼りつけましょう。</p>
+<p>別のMastodonのサイトにある公開ページを表示している場合、<a href="../external/#interact">「別のMasotodonサイト上での遠隔操作」</a>を参照してください。</p>
+<h2 id="search">検索</h2>
+<figure><img src="/assets/image%20%2819%29.png"
+         alt="検索機能はサイドバーから使える"/><figcaption>
+            <p>検索機能はサイドバーから使える</p>
+        </figcaption>
+</figure>
+
+<p>Mastodonにおける基本的な検索は、特定のハッシュタグを含むトゥートを見つけたり、URLやアドレスを知っている場合にユーザーやステータスを直接読み込んだりすることを、ログインしたユーザーに可能にさせます。ある用語を検索することで、そのユーザー名または表示名にその用語が含まれているプロフィールと、その用語に一致または含んだハッシュタグを表示します。</p>
+<figure><img src="/assets/image%20%2839%29.png"
+         alt="トゥートのURLから直接その投稿が読み込まれる例"/><figcaption>
+            <p>トゥートのURLから直接その投稿が読み込まれる例</p>
+        </figcaption>
+</figure>
+
+<figure><img src="/assets/image%20%2823%29.png"
+         alt="「cats」を検索したときに表示されるアカウントの例"/><figcaption>
+            <p>「cats」を検索したときに表示されるアカウントの例</p>
+        </figcaption>
+</figure>
+
+<figure><img src="/assets/image%20%2827%29.png"
+         alt="「cats」を検索したときに表示されるハッシュタグの例"/><figcaption>
+            <p>「cats」を検索したときに表示されるハッシュタグの例</p>
+        </figcaption>
+</figure>
+
+<p>管理者は全文検索のインストールを選択することもできます。Mastodonの全文検索は、自分の投稿、お気に入り、ブックマーク、自分宛のメンションから検索結果を返すことをログインしたユーザーに可能にさせます。データベース全体から任意の文字列を検索することは意図的にできないようにしています。これは、論争の的になる用語を検索して言い争いしている人々を見つけ、誹謗するような機会を減らすためです。</p>
+<p>次の演算子に対応しています。</p>
+<ul>
+<li><strong><code>&quot;完全一致する語句&quot;</code></strong> は、その用語を二重引用符で囲むことで検索できるようになります。たとえば、くく鳴している動物をいることをはっきり伝えたときの投稿を見つけるために<code>&quot;look at my cluckers&quot;</code>（<code>&quot;ねえ、くく鳴声の主たちを見て&quot;</code>）のように使い、直接一致するもののみを検索できるようにします。</li>
+<li><strong><code>-除外</code></strong> はマイナス記号が前についた用語を除外します。これは、猫以外の動物についての投稿を検索するために<code>animals -cats</code>（<code>動物 -猫</code>）のように使い、特定の用語を除去できるようにします。</li>
+<li><strong><code>+包含</code></strong> はプラス記号の後に用語を検索に包含します。これは、猫と犬の両方についての投稿を検索するために<code>cat +dog</code>（<code>猫 +犬</code>）のように使い、複数の用語が必ず含まれるものを検索できるようにしす。</li>
+</ul>
+<h2 id="direct">直接かわされる会話のやり取り</h2>
+<figure><img src="/assets/image%20%2812%29.png"
+         alt="ダイレクトメッセージにおける、会話のやり取りの一覧"/><figcaption>
+            <p>ダイレクトメッセージにおける、会話のやり取りの一覧</p>
+        </figcaption>
+</figure>
+
+<p>Mastodonにおけるダイレクトメッセージは、「ダイレクト」の公開範囲が選択された単なるトゥートです。公開範囲は投稿ごとに選択できるため、会話のやり取りにおいて後からプライバシーレベルを変更できます。ダイレクトメッセージの欄では現在、ダイレクトの投稿を含んだすべての会話の一覧が表示されます。会話の一つをクリックすると、関連するやり取りが読み込まれます。</p>
+<figure><img src="/assets/image%20%2857%29.png"
+         alt="あるダイレクトメッセージ。会話のやり取りが表示される"/><figcaption>
+            <p>あるダイレクトメッセージ。会話のやり取りが表示される</p>
+        </figcaption>
+</figure>
+
+<h2 id="lists">リストタイムライン</h2>
+<p>リストは、ホームタイムラインの部分集合です。リストを作って名前を付け、そのリストにフォローしているユーザーを追加できます。</p>
+<p>![]({{ relUrl &ldquo;/assets/image%20%2828%29.png&rdquo; }})</p>
+<p>特定のリストを開くと、そのリストのタイムラインが読み込まれます。リストタイムラインには、そのリストのメンバーによる投稿と、あなたまたはリストの他のメンバーへの返信のみが含まれます。</p>
+<figure><img src="/assets/image%20%285%29.png"
+         alt="リストタイムライン"/><figcaption>
+            <p>リストタイムライン</p>
+        </figcaption>
+</figure>
+
+
+    
+
+
+
+
+
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+            
+            
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+<script>
+ 
+ 
+ 
+ 
+ 
+ 
+ var theMenuTag = "nav";           
+ var theMenuSideBar = "sidebar";   
+ var theMenuSubMenu = "sub-menu";  
+ var theMenuActivePage = "active"; 
+
+ 
+ 
+ var previousLink = document.getElementById("previousLink");     
+ var nextLink = document.getElementById("nextLink");             
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer"); 
+ 
+ 
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+ 
+ var selectNavs = document.getElementsByTagName(theMenuTag); 
+ var selectSidebar;                                          
+ for (i = 0; i < selectNavs.length; i++) {                   
+   if (selectNavs[i].className == theMenuSideBar) {          
+     selectSidebar = selectNavs[i];                          
+     break; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName(theMenuSubMenu); 
+ 
+ 
+ for (i = 0; i < selectSubMenus.length; i++) {                      
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a"); 
+   
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == theMenuActivePage) { 
+      if (j == 0) {                                
+        prevHref = "remove";                        
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      } else if (j == curNavSection.length - 1) {  
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = "remove";                        
+        whatIsActive = i; 
+      } else {                                     
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      }
+       
+       break;
+     }
+   }
+   
+   if (whatIsActive != -1) { break; }
+ }
+ 
+ if (prevHref == "remove") { 
+   previousLink.remove();                                             
+   pageTurnSpacer.remove();                                           
+   nextLink.href = nextHref;                                          
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName); 
+ } else if (nextHref == "remove") { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.remove();                                                         
+ } else { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.href = nextHref;                                                  
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);         
+ }                                                                            
+ 
+</script>
+
+    <p style="color: #687590;">
+      最終更新 August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/network.md' style="color: #687590;">このページを改善する</a>
+
+      
+        <br />
+
+        他の言語も利用可能：
+
+        
+          <a href="/user/network/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/zh-cn/user/network/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+          <a href="/pl/user/network/" style="color: #687590;" hreflang="pl">Polski</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsored by
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Mastodonに参加する</a> · <a href='https://blog.joinmastodon.org'>ブログ</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/ja/user/network.md'>ソースコードを見る</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>インプリメント</a></p>
+</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Devs on Mastodon documentation</title>
+    <link>https://docs.joinmastodon.org/dev/</link>
+    <description>Recent content in Devs on Mastodon documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.joinmastodon.org/dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bug bounties and responsible disclosure</title>
+      <link>https://docs.joinmastodon.org/dev/disclosure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/disclosure/</guid>
+      <description>If you believe you&amp;rsquo;ve identified a security vulnerability in Mastodon (a bug that allows something to happen that shouldn&amp;rsquo;t be possible), you should send the report to security@joinmastodon.org. We will gladly reward such reports in proportion to the severity of the issue through our OpenCollective fund.
+You should not report such issues on GitHub or in other public spaces to give us time to publish a fix for the issue without exposing Mastodon&amp;rsquo;s users to increased risk.</description>
+    </item>
+    
+    <item>
+      <title>Code structure</title>
+      <link>https://docs.joinmastodon.org/dev/code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/code/</guid>
+      <description>Code structure The following overview should not be seen as complete or authoritative but as a rough guidance to help you find your way in the application.
+Ruby  app/controllers Code that binds business logic to templates app/helpers Code that can be used from views, i.e. common operations app/lib Code that doesn’t fit in the other categories app/models Representation of data entities and their associated methods app/policies Permission checks and other validations, before calling related methods app/serializers Code that generates JSON from models app/services Complex logical operations involving multiple models app/views Templates for generating HTML or other output app/workers Code that executes outside the request-response cycle spec Automated test suite  JavaScript  app/javascript/mastodon Code for the frontend React.</description>
+    </item>
+    
+    <item>
+      <title>Routes</title>
+      <link>https://docs.joinmastodon.org/dev/routes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/routes/</guid>
+      <description>config/routes.rb  Explanation of routes Mastodon uses Ruby on Rails, which defines its router configuration at config/routes.rb. You may view the Ruby on Rails routing guide for more detailed information, but this page will explain the basics of how Mastodon handles routing.
+How routes are constructed namespace is a prefix for routes mapped to a certain controller directory. resources are mapped to controllers within that namespace directory. scope passes to the module&#39;s controller.</description>
+    </item>
+    
+    <item>
+      <title>Setting up a dev environment</title>
+      <link>https://docs.joinmastodon.org/dev/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/setup/</guid>
+      <description>Quick start with Vagrant For convenience, the Mastodon repository includes a Vagrantfile for quickly setting up a development environment without manual configuration. To use this development environment, install Vagrant using a binary executable or through your package manager.
+Once you have Vagrant installed, for convenience, it is recommended to install a plugin to automatically update your machine&amp;rsquo;s hosts file. This will allow you to access the dev environment at http://mastodon.local without manually editing the hosts file yourself.</description>
+    </item>
+    
+    <item>
+      <title>Technical overview</title>
+      <link>https://docs.joinmastodon.org/dev/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/overview/</guid>
+      <description>Mastodon is a Ruby on Rails application with a React.js front-end. It follows standard practices of those frameworks, so if you are already familiar with Rails or React.js, you will not find any surprises here.
+The best way of working with Mastodon in a development environment is installing all the dependencies on your system, rather than using Docker or Vagrant. You need Ruby, Node.js, PostgreSQL and Redis, which is a pretty standard set of dependencies for Rails applications.</description>
+    </item>
+    
+  </channel>
+</rss>

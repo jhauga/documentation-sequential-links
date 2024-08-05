@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  
+
+<meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+<link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+
+
+<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+
+
+<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+
+
+  <title>Przenieś lub opuść konto - Mastodon documentation</title>
+
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://docs.joinmastodon.org/pl/user/moving/">
+
+  
+    <meta name="description" content="Zabierz swoje informacje i rób z nimi, co chcesz.">
+    <meta property="og:description" content="Zabierz swoje informacje i rób z nimi, co chcesz.">
+    <meta name="twitter:description" content="Zabierz swoje informacje i rób z nimi, co chcesz.">
+  
+
+  <meta name="twitter:title" content="Przenieś lub opuść konto">
+  <meta name="twitter:site" content="@joinmastodon">
+
+  <link rel="canonical" href="https://docs.joinmastodon.org/pl/user/moving/">
+</head>
+
+<body>
+  <div class="container sidebar-layout">
+    <nav class="sidebar"><a class="brand" href="/">
+  <img class="link-logo" src="/brand.svg" alt="Mastodon" />
+</a>
+
+<input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
+<label for="mobile-nav-toggle">
+    <span class="menu-open">
+        <i class="fa fa-times"></i> Close
+    </span>
+    <span class="menu-close">
+        <i class="fa fa-bars"></i> Menu
+    </span>
+</label>
+
+<ul>
+  
+  
+    <li>
+      
+        <a href="/pl/" class="">Czym jest Mastodon?</a>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Korzystaj z Mastodona</span>
+      
+
+      
+        <ul class="sub-menu">
+          
+            <li>
+              <a href="/pl/user/signup/" class="">Zarejestruj konto</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/profile/" class="">Dostosuj swój profil</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/posting/" class="">Utwórz wpisy</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/network/" class="">Korzystaj z funkcjonalności sieci</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/moderating/" class="">Radzenie sobie z niechcianą treścią</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/discoverability/" class="">Promuj siebie i innych</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/preferences/" class="">Zmień swoje ustawienia</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/contacts/" class="">Więcej ustawień</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/external/" class="">Korzystaj z Mastodona zewnętrznie</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/moving/" class="active">Przenieś lub opuść konto</a>
+
+              
+            </li>
+          
+            <li>
+              <a href="/pl/user/run-your-own/" class="">Prowadź swój własny serwer</a>
+
+              
+            </li>
+          
+        </ul>
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Uruchamianie Mastodona</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Twórz aplikacje dla Mastodona</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Współtwórz Mastodona</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Zgodność ze specyfikacją</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">REST API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Metody API</span>
+      
+
+      
+    </li>
+  
+    <li>
+      
+        <span class="sub-title">Jednostki API</span>
+      
+
+      
+    </li>
+  
+</ul>
+</nav>
+    <main>
+  <h1>Przenieś lub opuść konto</h1>
+
+  
+    <p>Zabierz swoje informacje i rób z nimi, co chcesz.</p>
+  
+  <aside>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#export">Eksportuj informacje</a></li>
+        <li><a href="#migration">Przekierowanie lub przenoszenie profilu</a>
+          <ul>
+            <li><a href="#redirect">Przekierowanie profilu</a></li>
+            <li><a href="#move">Przenoszenie profilu</a></li>
+            <li><a href="#aliases">Aliasy konta</a></li>
+          </ul>
+        </li>
+        <li><a href="#delete">Usuwanie konta</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="e-content">
+    <h2 id="export">Eksportuj informacje</h2>
+<figure><img src="/assets/export.jpg"
+         alt="Strona eksportu danych w ustawieniach"/><figcaption>
+            <p>Strona eksportu danych w ustawieniach</p>
+        </figcaption>
+</figure>
+
+<p>W każdym momencie możesz odwiedzić Preferencje &gt; Eksportowanie danych i pobrać plik CSV zawierający obecnie obserwowane konta, Twoje obecne listy, blokowanych lub wyciszonych użytkowników, zablokowane domeny. Twoja lista obserwowanych, blokowanych, wyciszonych lub zablokowanych domen może zostać zaimportowana w Preferencje &gt; Importowanie danych, gdzie mogą one zostać połączone lub nadpisane.</p>
+<p>Zażądanie archiwum wpisów lub mediów jest możliwe co 7 dni i mogą one zostać pobrane w formacie ActivityPub JSON. Mastodon obecnie nie obsługuje importowania wpisów lub mediów ze względu na ograniczenia techniczne, ale Twoje archiwum może zostać wyświetlone przez dowolne oprogramowanie, które potrafi parsować dokumenty ActivityPub.</p>
+<h2 id="migration">Przekierowanie lub przenoszenie profilu</h2>
+<p>W dolnej części Preferencje &gt; Profil możesz znaleźć opcje powiązane z przekierowaniem lub migracją konta.</p>
+<h3 id="redirect">Przekierowanie profilu</h3>
+<figure><img src="/assets/account-redirect.jpg"
+         alt="Formularz przekierowania profilu"/><figcaption>
+            <p>Formularz przekierowania profilu</p>
+        </figcaption>
+</figure>
+
+<p>Przekierowanie konta wyłączy możliwość tworzenia z niego wpisów i wyświetli komunikat „przeniesiono profil”, wskazując na Twoje nowe konto. Każdy wyświetlający Twój nowy profil zobaczy tę informację i będzie wiedział, aby zaobserwować Twoje nowe konto. Obserwowanie przekierowanych kont nie jest możliwe. Przekierowanie może być anulowane w dowolnym momencie.</p>
+<h3 id="move">Przenoszenie profilu</h3>
+<figure><img src="/assets/account-move.jpg"
+         alt="Formularz przenoszenia profilu"/><figcaption>
+            <p>Formularz przenoszenia profilu</p>
+        </figcaption>
+</figure>
+
+<p>Przenoszenie konta działa tak jak przekierowanie konta, ale również nieodwracalnie wymusi na obserwujących Twoje konto cofnięcie tej obserwacji i zaobserwowanie nowego konta, jeżeli oprogramowanie ich serwerów obsługuje aktywność Move. Twoje wpisy nie zostaną przeniesione z uwagi na ograniczenia techniczne. Istnieje też okres, w którego trakcie nie możesz ponownie migrować konta, więc uważaj, zanim użyjesz tej opcji!</p>
+<h3 id="aliases">Aliasy konta</h3>
+<figure><img src="/assets/account-aliases.jpg"
+         alt="Ekran zarządzania aliasami"/><figcaption>
+            <p>Ekran zarządzania aliasami</p>
+        </figcaption>
+</figure>
+
+<p>Przeniesienie konta jest tylko możliwe, jeżeli powstał alias między dwoma kontami. Aliasy kont nie są obecnie używane w innych sytuacjach niż przeniesienie konta, gdzie musisz ustawić stare konto jako alias dla nowego konta przed rozpoczęciem przenoszenia. Samo ustawianie aliasu nie przynosi szkód i może być odwrócone.</p>
+<h2 id="delete">Usuwanie konta</h2>
+<figure><img src="/assets/account-delete.jpg"
+         alt="Formularz usunięcia konta"/><figcaption>
+            <p>Formularz usunięcia konta</p>
+        </figcaption>
+</figure>
+
+<p>Na dole Preferencje &gt; Profil możesz znaleźć formularz usunięcia konta. Usunięcie konta jest nieodwracalne i sprawi, że zarówno Twój profil, jak i nazwa użytkownika nie będą mogły zostać później użyte.</p>
+
+    
+
+
+
+
+
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+    
+      
+        
+          
+          
+            
+            
+<div style="margin: 30px 0px">
+  <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
+    <i class="fa fa-arrow-left"></i> Page
+  </a>
+  <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
+  <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
+    Page <i class="fa fa-arrow-right"></i>
+  </a>
+</div>
+          
+        
+        
+      
+    
+      
+        
+          
+          
+        
+        
+      
+      
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+<script>
+ 
+ 
+ 
+ 
+ 
+ 
+ var theMenuTag = "nav";           
+ var theMenuSideBar = "sidebar";   
+ var theMenuSubMenu = "sub-menu";  
+ var theMenuActivePage = "active"; 
+
+ 
+ 
+ var previousLink = document.getElementById("previousLink");     
+ var nextLink = document.getElementById("nextLink");             
+ var pageTurnSpacer = document.getElementById("pageTurnSpacer"); 
+ 
+ 
+ 
+ var whatIsActive = -1, prevHref, prevName, nextHref, nextName;
+
+ 
+ var selectNavs = document.getElementsByTagName(theMenuTag); 
+ var selectSidebar;                                          
+ for (i = 0; i < selectNavs.length; i++) {                   
+   if (selectNavs[i].className == theMenuSideBar) {          
+     selectSidebar = selectNavs[i];                          
+     break; 
+   }
+ }
+
+ 
+ 
+ var selectSubMenus = selectSidebar.getElementsByClassName(theMenuSubMenu); 
+ 
+ 
+ for (i = 0; i < selectSubMenus.length; i++) {                      
+   let curNavSection = selectSubMenus[i].getElementsByTagName("a"); 
+   
+   for (j = 0; j < curNavSection.length; j++) {
+     if (curNavSection[j].className == theMenuActivePage) { 
+      if (j == 0) {                                
+        prevHref = "remove";                        
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      } else if (j == curNavSection.length - 1) {  
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = "remove";                        
+        whatIsActive = i; 
+      } else {                                     
+        prevHref = curNavSection[j-1].href;         
+        prevName = curNavSection[j-1].innerText;    
+        nextHref = curNavSection[j+1].href;         
+        nextName = curNavSection[j+1].innerText;    
+        whatIsActive = i; 
+      }
+       
+       break;
+     }
+   }
+   
+   if (whatIsActive != -1) { break; }
+ }
+ 
+ if (prevHref == "remove") { 
+   previousLink.remove();                                             
+   pageTurnSpacer.remove();                                           
+   nextLink.href = nextHref;                                          
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName); 
+ } else if (nextHref == "remove") { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.remove();                                                         
+ } else { 
+   previousLink.href = prevHref;                                              
+   previousLink.innerHTML = previousLink.innerHTML.replace("Page", prevName); 
+   nextLink.href = nextHref;                                                  
+   nextLink.innerHTML = nextLink.innerHTML.replace("Page", nextName);         
+ }                                                                            
+ 
+</script>
+
+    <p style="color: #687590;">
+      Ostatnio aktualizowano August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/pl/user/moving.md' style="color: #687590;">Popraw tę stronę</a>
+
+      
+        <br />
+
+        Dostępne również w języku:
+
+        
+          <a href="/user/moving/" style="color: #687590;" hreflang="en">English</a>
+        
+          <a href="/zh-cn/user/moving/" style="color: #687590;" hreflang="zh-cn">简体中文</a>
+        
+          <a href="/ja/user/moving/" style="color: #687590;" hreflang="ja">日本語</a>
+        
+      
+    </p>
+
+  </div>
+</main>
+  </div>
+
+  <footer class="footer container">
+  <div class="sponsorship">
+    <div class="container">
+      <h2>
+        Sponsorzy
+      </h2>
+
+      <div class="logo-grid">
+        <div>
+          <a href="https://www.dotcom-monitor.com/es/">
+            <img src="/assets/sponsors/dotcom-monitor-logo.png" alt="Dotcom-Monitor" />
+          </a>
+
+          <a href="https://www.loadview-testing.com/products/jmeter-load-testing/">
+            <img src="/assets/sponsors/LoadView-logo.png" alt="LoadView" />
+          </a>
+
+          <a href="http://www.stevetures.com/">
+            <img src="/assets/sponsors/stephen-tures.jpg" alt="Stephen Tures" />
+          </a>
+
+          <a href="https://swayable.com">
+            <img src="/assets/sponsors/swayable.jpeg" alt="Swayable" />
+          </a>
+
+          <a href="https://www.sponsormotion.com/">
+            <img src="/assets/sponsors/SponsorMotion.png" alt="SponsorMotion" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="legal legal--right">
+    <a href='https://joinmastodon.org'>Dołącz do Mastodona</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+  </p>
+
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/pl/user/moving.md'>Zobacz źródła</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+</footer>
+
+</body>
+
+</html>

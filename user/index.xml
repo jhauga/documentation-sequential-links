@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Users on Mastodon documentation</title>
+    <link>https://docs.joinmastodon.org/user/</link>
+    <description>Recent content in Users on Mastodon documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.joinmastodon.org/user/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Dealing with unwanted content</title>
+      <link>https://docs.joinmastodon.org/user/moderating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/moderating/</guid>
+      <description>Filtering posts It is possible to filter statuses for specific keywords and phrases so that they can be hidden automatically.
+ A sample of active filters for various keywords in different contexts.
+  To create or manage your filters, go to Settings &amp;gt; Filters. The &amp;ldquo;Add new filter&amp;rdquo; button will let you create a new filter, and existing filters can be edited or deleted. Your existing filters will be summarized in a table.</description>
+    </item>
+    
+    <item>
+      <title>More settings</title>
+      <link>https://docs.joinmastodon.org/user/contacts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/contacts/</guid>
+      <description>Generating invites  Invite people from your account&#39;s settings
+  Invite links can be generated and shared with other people, and some servers require invites in order to register for an account. When generating an invite link, you can set the max uses to limit how many times a certain link is used, or how long it has been active. Invite links can be deactivated at any time.
+Follows and followers  Mutuals who have not moved their account, sorted by last activity</description>
+    </item>
+    
+    <item>
+      <title>Moving or leaving accounts</title>
+      <link>https://docs.joinmastodon.org/user/moving/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/moving/</guid>
+      <description>Exporting your information  The data export page in settings
+  At any time you want, you can go to Settings &amp;gt; Export and download a CSV file for your current followed accounts, your currently created lists, your currently blocked accounts, your currently muted accounts, and your currently blocked domains. Your following, blocking, muting, and domain-blocking lists can be imported at Settings &amp;gt; Import, where they can either be merged or overwritten.</description>
+    </item>
+    
+    <item>
+      <title>Posting to your profile</title>
+      <link>https://docs.joinmastodon.org/user/posting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/posting/</guid>
+      <description>Compose form with CW enabled
+  Text The main body of each status update can be composed using the text field. The default character limit is 500 characters.
+Links  Links must start with http(s):// and are counted as 23 characters regardless of length.
+  If you include links in your post, they must begin with http:// or https://. All links are counted as 23 characters, no matter how long they actually are, so there is no need to use a link shortener to save characters.</description>
+    </item>
+    
+    <item>
+      <title>Promoting yourself and others</title>
+      <link>https://docs.joinmastodon.org/user/discoverability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/discoverability/</guid>
+      <description>Featured links on your profile Featured hashtags  A featured hashtag showing last usage date and total usage.
+  You can choose to feature certain hashtags that you use often. Go to Settings &amp;gt; Profile &amp;gt; Featured hashtags to manage which hashtags you are currently featuring. Once featured, a link to the hashtag will be shown on your profile, with the date of the last time it was used in a status, as well as the total number of statuses in which it was used.</description>
+    </item>
+    
+    <item>
+      <title>Running your own server</title>
+      <link>https://docs.joinmastodon.org/user/run-your-own/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/run-your-own/</guid>
+      <description>Why would you want to run your own Mastodon server?  Absolute control over your own voice on the web, not subject to anyone else&amp;rsquo;s rules or whims. Your server is your property, with your rules. It will exist as long as you want it to exist. You are not isolated on your own server. You can follow anyone on any other server, and they can follow you and you can exchange messages just like if you were on the same server.</description>
+    </item>
+    
+    <item>
+      <title>Set your preferences</title>
+      <link>https://docs.joinmastodon.org/user/preferences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/preferences/</guid>
+      <description>Customizing the user interface Choose a theme Mastodon defaults to a dark theme, but a light or high-contrast theme can be selected.
+ Mastodon light theme
+  Choose your layout Mastodon defaults to a simple, one-column layout with a compose box on the left and a column switcher on the right. You can choose to enable the advanced web interface, which allows you view and pin multiple columns at the same time.</description>
+    </item>
+    
+    <item>
+      <title>Setting up your profile</title>
+      <link>https://docs.joinmastodon.org/user/profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/profile/</guid>
+      <description>Your appearance  Profile cards showing display name, avatar, and header
+  You can change how your profile appears to others by navigating to Settings &amp;gt; Profile &amp;gt; Appearance.
+Display name Your display name is shown to other users before your address. You can set a display name up to 30 characters by default.
+Bio Your bio is a short description of yourself that is displayed as a note on your profile.</description>
+    </item>
+    
+    <item>
+      <title>Signing up for an account</title>
+      <link>https://docs.joinmastodon.org/user/signup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/signup/</guid>
+      <description>Choosing a website You have to choose a website to sign up on, like you would choose an e-mail provider, or a World of Warcraft realm for your new character. The website will be your service provider, hosting your account, your profile, and your home feed.
+ You can browse a list of servers by categories and languages on joinmastodon.org.  Understanding a website&amp;rsquo;s policies Before you sign up for a service, it is important to understand its policies and terms of use.</description>
+    </item>
+    
+    <item>
+      <title>Using Mastodon externally</title>
+      <link>https://docs.joinmastodon.org/user/external/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/external/</guid>
+      <description>Remote interactions on another Mastodon site  An example of a post&#39;s public permalink on a Mastodon site.
+  When you are browsing a remote site powered by Mastodon, clicking on any of the interaction buttons will load a dialog that will redirect you to your local site.
+ A remote interaction dialog for replying to a toot.
+  Signing into a client app You can use your Mastodon account to sign into any app that implements the Mastodon API.</description>
+    </item>
+    
+    <item>
+      <title>Using the network features</title>
+      <link>https://docs.joinmastodon.org/user/network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/network/</guid>
+      <description>Browsing content through public timelines  Posts within a public timeline
+  To allow you to discover potentially interesting content, Mastodon provides a way to browse all public posts. Well, there is no global shared state between all servers, so there is no way to browse all public posts. When you browse the federated timeline, you see all public posts that the server you are on knows about. There are various ways your server may discover posts, but the bulk of them will be from people that other users on your server follow.</description>
+    </item>
+    
+  </channel>
+</rss>

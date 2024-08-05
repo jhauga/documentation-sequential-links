@@ -1,0 +1,2081 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>What is Mastodon? on Mastodon documentation</title>
+    <link>https://docs.joinmastodon.org/</link>
+    <description>Recent content in What is Mastodon? on Mastodon documentation</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    
+	<atom:link href="https://docs.joinmastodon.org/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Account</title>
+      <link>https://docs.joinmastodon.org/entities/Account/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Account/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;23634&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;noiob&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;noiob@awoo.space&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;ikea shark fan account&amp;#34;, &amp;#34;locked&amp;#34;: false, &amp;#34;bot&amp;#34;: false, &amp;#34;created_at&amp;#34;: &amp;#34;2017-02-08T02:00:53.274Z&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;:ms_rainbow_flag:​ :ms_bisexual_flagweb:​ :ms_nonbinary_flag:​ &amp;lt;a href=\&amp;#34;https://awoo.space/tags/awoo\&amp;#34; class=\&amp;#34;mention hashtag\&amp;#34; rel=\&amp;#34;nofollow noopener noreferrer\&amp;#34; target=\&amp;#34;_blank\&amp;#34;&amp;gt;#&amp;lt;span&amp;gt;awoo&amp;lt;/span}.space &amp;lt;a href=\&amp;#34;https://awoo.space/tags/admin\&amp;#34; class=\&amp;#34;mention hashtag\&amp;#34; rel=\&amp;#34;nofollow noopener noreferrer\&amp;#34; target=\&amp;#34;_blank\&amp;#34;&amp;gt;#&amp;lt;span&amp;gt;admin&amp;lt;/span} ~ &amp;lt;a href=\&amp;#34;https://awoo.space/tags/bi\&amp;#34; class=\&amp;#34;mention hashtag\&amp;#34; rel=\&amp;#34;nofollow noopener noreferrer\&amp;#34; target=\&amp;#34;_blank\&amp;#34;&amp;gt;#&amp;lt;span&amp;gt;bi&amp;lt;/span} ~ &amp;lt;a href=\&amp;#34;https://awoo.space/tags/nonbinary\&amp;#34; class=\&amp;#34;mention hashtag\&amp;#34; rel=\&amp;#34;nofollow noopener noreferrer\&amp;#34; target=\&amp;#34;_blank\&amp;#34;&amp;gt;#&amp;lt;span&amp;gt;nonbinary&amp;lt;/span} ~ compsci student ~ likes video &amp;lt;a href=\&amp;#34;https://awoo.space/tags/games\&amp;#34; class=\&amp;#34;mention hashtag\&amp;#34; rel=\&amp;#34;nofollow noopener noreferrer\&amp;#34; target=\&amp;#34;_blank\&amp;#34;&amp;gt;#&amp;lt;span&amp;gt;games&amp;lt;/span} and weird/ old electronics and will post obsessively about both ~ avatar by &amp;lt;span class=\&amp;#34;h-card\&amp;#34;&amp;gt;&amp;lt;a href=\&amp;#34;https://weirder.</description>
+    </item>
+    
+    <item>
+      <title>accounts API methods</title>
+      <link>https://docs.joinmastodon.org/methods/accounts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/accounts/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Register an account POST /api/v1/accounts HTTP/1.1 Creates a user and account records. Returns an account access token for the app that initiated the request. The app should save this token for later, and should wait for the user to confirm their account by clicking a link in their email inbox.
+Returns: Token
+OAuth: App token + write:accounts
+Version history:
+2.7.0 - added</description>
+    </item>
+    
+    <item>
+      <title>AccountWarning</title>
+      <link>https://docs.joinmastodon.org/entities/AccountWarning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/AccountWarning/</guid>
+      <description>Attributes id Description: The ID of the account warning in the database.
+Type: String (cast from integer)
+Version history:
+4.3.0 - added
+action Description: Action taken against the account.
+Type: String (Enumerable oneOf)
+none = No action was taken, this is a simple warning
+disable = The account has been disabled
+mark_statuses_as_sensitive = Specific posts from the target account have been marked as sensitive
+delete_statuses = Specific statuses from the target account have been deleted</description>
+    </item>
+    
+    <item>
+      <title>ActivityPub</title>
+      <link>https://docs.joinmastodon.org/spec/activitypub/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/spec/activitypub/</guid>
+      <description>Status federation  app/lib/activitypub/activity.rb  Supported activities for statuses  Create Transformed into a status and saved into database Delete Removes a status from the database Like Transformed into a favourite on a status Announce Transformed into a boost on a status Update Refresh vote count on polls. As of Mastodon 3.5.0: edit statuses when the updated timestamp is present. Undo Undo a previous Like or Announce. Flag Transformed into a report to the moderation team.</description>
+    </item>
+    
+    <item>
+      <title>admin/accounts API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/accounts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/accounts/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View accounts (v1) GET /api/v1/admin/accounts HTTP/1.1 View all accounts, optionally matching certain criteria for filtering, up to 100 at a time. Pagination may be done with the HTTP Link header in the response. See Paginating through API responses for more information.
+Returns: Array of Admin::Account
+OAuth: User token + admin:read:accounts
+Permissions: Manage Users
+Version history:
+2.9.1 - added
+3.3.0 - added sensitized</description>
+    </item>
+    
+    <item>
+      <title>admin/domain_blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/domain_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/domain_blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all blocked domains GET /api/v1/admin/domain_blocks HTTP/1.1 Show information about all blocked domains.
+Returns: Array of Admin::DomainBlock
+OAuth: User token + admin:read:domain_blocks
+Permissions: Manage Federation
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>admin/reports API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/reports/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/reports/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View all reports GET /api/v1/admin/reports HTTP/1.1 View information about all reports.
+Returns: Array of Admin::Report
+OAuth: User token + admin:read:reports
+Permissions: Manage Reports
+Version history:
+2.9.1 - added
+4.0.0 - support custom roles and permissions
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  resolved Boolean. Filter for resolved reports?</description>
+    </item>
+    
+    <item>
+      <title>admin/trends API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/trends/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/trends/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View trending links GET /api/v1/admin/trends/links HTTP/1.1 Links that have been shared more than others, including unapproved and unreviewed links.
+Returns: Array of Trends::Link
+OAuth: User token + admin:read
+Permissions: Manage Taxonomies
+Version history:
+3.5.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Response 200: OK [ { &amp;#34;url&amp;#34;: &amp;#34;https://twitter.</description>
+    </item>
+    
+    <item>
+      <title>Admin::Account</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_Account/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_Account/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;108965278956942133&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;admin&amp;#34;, &amp;#34;domain&amp;#34;: null, &amp;#34;created_at&amp;#34;: &amp;#34;2022-09-08T23:03:26.762Z&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;admin@mastodon.local&amp;#34;, &amp;#34;ip&amp;#34;: &amp;#34;192.168.42.1&amp;#34;, &amp;#34;role&amp;#34;: { &amp;#34;id&amp;#34;: 3, &amp;#34;name&amp;#34;: &amp;#34;Owner&amp;#34;, &amp;#34;color&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;position&amp;#34;: 1000, &amp;#34;permissions&amp;#34;: 1, &amp;#34;highlighted&amp;#34;: true, &amp;#34;created_at&amp;#34;: &amp;#34;2022-09-08T22:48:07.983Z&amp;#34;, &amp;#34;updated_at&amp;#34;: &amp;#34;2022-09-08T22:48:07.983Z&amp;#34; }, &amp;#34;confirmed&amp;#34;: true, &amp;#34;suspended&amp;#34;: false, &amp;#34;silenced&amp;#34;: false, &amp;#34;disabled&amp;#34;: false, &amp;#34;approved&amp;#34;: true, &amp;#34;locale&amp;#34;: null, &amp;#34;invite_request&amp;#34;: null, &amp;#34;ips&amp;#34;: [ { &amp;#34;ip&amp;#34;: &amp;#34;192.168.42.1&amp;#34;, &amp;#34;used_at&amp;#34;: &amp;#34;2022-09-15T01:38:58.851Z&amp;#34; } ], &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;108965278956942133&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;admin&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;admin&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;locked&amp;#34;: false, &amp;#34;bot&amp;#34;: false, &amp;#34;discoverable&amp;#34;: null, &amp;#34;group&amp;#34;: false, &amp;#34;created_at&amp;#34;: &amp;#34;2022-09-08T00:00:00.</description>
+    </item>
+    
+    <item>
+      <title>Admin::CanonicalEmailBlock</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_CanonicalEmailBlock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_CanonicalEmailBlock/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;2&amp;#34;, &amp;#34;canonical_email_hash&amp;#34;: &amp;#34;b344e55d11b3fc25d0d53194e0475838bf17e9be67ce3e6469956222d9a34f9c&amp;#34; } Attributes id Description: The ID of the email block in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+4.0.0 - added
+canonical_email_hash Description: The SHA256 hash of the canonical email address.
+Type: String (SHA256)
+Version history:
+4.0.0 - added
+See also  admin/canonical_email_blocks API methods   app/serializers/rest/admin/canonical_email_block_serializer.rb  </description>
+    </item>
+    
+    <item>
+      <title>Admin::Cohort</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_Cohort/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_Cohort/</guid>
+      <description>Example Monthly retention data for the month of 2022-09, given that 2 users registered during 2022-09 and were active at least once during that month.
+{ &amp;#34;period&amp;#34;: &amp;#34;2022-09-01T00:00:00+00:00&amp;#34;, &amp;#34;frequency&amp;#34;: &amp;#34;month&amp;#34;, &amp;#34;data&amp;#34;: [ { &amp;#34;date&amp;#34;: &amp;#34;2022-09-01T00:00:00+00:00&amp;#34;, &amp;#34;rate&amp;#34;: 1.0, &amp;#34;value&amp;#34;: &amp;#34;2&amp;#34; } ] } Daily retention data for the week between 2022-09-08 and 2022-09-14, given that 2 users registered on 2022-09-08 and 1 of those users stopped being active after 2022-09-09.
+{ &amp;#34;period&amp;#34;: &amp;#34;2022-09-08T00:00:00+00:00&amp;#34;, &amp;#34;frequency&amp;#34;: &amp;#34;day&amp;#34;, &amp;#34;data&amp;#34;: [ { &amp;#34;date&amp;#34;: &amp;#34;2022-09-08T00:00:00+00:00&amp;#34;, &amp;#34;rate&amp;#34;: 1.</description>
+    </item>
+    
+    <item>
+      <title>Admin::Dimension</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_Dimension/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_Dimension/</guid>
+      <description>Attributes key Description: The unique keystring for the requested dimension.
+Type: String
+Version history:
+3.5.0 - added
+data Description: The data available for the requested dimension.
+Type: Array of Hash
+Version history:
+3.5.0 - added
+Data attributes key Description: The unique keystring for this data item.
+Type: String
+Version history:
+3.5.0 - added
+human_key Description: A human-readable key for this data item.
+Type: String
+Version history:
+3.5.0 - added
+value Description: The value for this data item.</description>
+    </item>
+    
+    <item>
+      <title>Admin::DomainAllow</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_DomainAllow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_DomainAllow/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;domain&amp;#34;: &amp;#34;mastodon.social&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2022-09-14T21:23:02.755Z&amp;#34; } Attributes id Description: The ID of the DomainAllow in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+4.0.0 - added
+domain Description: The domain that is allowed to federate.
+Type: String
+Version history:
+4.0.0 - added
+created_at Description: When the domain was allowed to federate.
+Type: String (ISO 8601 Datetime)
+Version history:</description>
+    </item>
+    
+    <item>
+      <title>Admin::DomainBlock</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_DomainBlock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_DomainBlock/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;domain&amp;#34;: &amp;#34;example.com&amp;#34;, &amp;#34;digest&amp;#34;: &amp;#34;a379a6f6eeafb9a55e378c118034e2751e682fab9f2d30ab13d2125586ce1947&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2022-11-16T08:15:34.238Z&amp;#34;, &amp;#34;severity&amp;#34;: &amp;#34;noop&amp;#34;, &amp;#34;reject_media&amp;#34;: false, &amp;#34;reject_reports&amp;#34;: false, &amp;#34;private_comment&amp;#34;: null, &amp;#34;public_comment&amp;#34;: null, &amp;#34;obfuscate&amp;#34;: false } Attributes id Description: The ID of the DomainBlock in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+4.0.0 - added
+domain Description: The domain that is not allowed to federate.
+Type: String
+Version history:
+4.0.0 - added
+digest Description: The sha256 hex digest of the domain that is not allowed to federated.</description>
+    </item>
+    
+    <item>
+      <title>Admin::EmailDomainBlock</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_EmailDomainBlock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_EmailDomainBlock/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;domain&amp;#34;: &amp;#34;foo&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2022-11-16T06:09:36.176Z&amp;#34;, &amp;#34;history&amp;#34;: [ { &amp;#34;day&amp;#34;: &amp;#34;1668556800&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;0&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1668470400&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;0&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1668384000&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;0&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1668297600&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;0&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1668211200&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;0&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1668124800&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;0&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1668038400&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;0&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;0&amp;#34; } ] } Attributes id Description: The ID of the EmailDomainBlock in the database.</description>
+    </item>
+    
+    <item>
+      <title>Admin::Ip</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_Ip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_Ip/</guid>
+      <description>Example { &amp;#34;ip&amp;#34;: &amp;#34;192.168.42.1&amp;#34;, &amp;#34;used_at&amp;#34;: &amp;#34;2022-09-15T01:38:58.851Z&amp;#34; } Attributes ip Description: The IP address.
+Type: String (IP address)
+Version history:
+3.5.0 - added
+used_at Description: The timestamp of when the IP address was last used for this account.
+Type: String (ISO 8601 Datetime)
+Version history:
+3.5.0 - added
+See also  Admin::Account (ips attribute)   app/serializers/rest/admin/ip_serializer.rb  </description>
+    </item>
+    
+    <item>
+      <title>Admin::IpBlock</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_IpBlock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_IpBlock/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;ip&amp;#34;: &amp;#34;8.8.8.8/32&amp;#34;, &amp;#34;severity&amp;#34;: &amp;#34;no_access&amp;#34;, &amp;#34;comment&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2022-11-16T07:22:00.501Z&amp;#34;, &amp;#34;expires_at&amp;#34;: null } Attributes id Description: The ID of the DomainBlock in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+4.0.0 - added
+ip Description: The IP address range that is not allowed to federate.
+Type: String (IP address and prefix)
+Version history:
+4.0.0 - added
+severity Description: The associated policy with this IP block.</description>
+    </item>
+    
+    <item>
+      <title>Admin::Measure</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_Measure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_Measure/</guid>
+      <description>Attributes key Description: The unique keystring for the requested measure.
+Type: String
+Version history:
+3.5.0 - added
+unit Description: The units associated with this data item&amp;rsquo;s value, if applicable.
+Type: nullable String or null
+Version history:
+3.5.0 - added
+total Description: The numeric total associated with the requested measure.
+Type: String (cast from integer)
+Version history:
+3.5.0 - added
+human_value optional Description: A human-readable formatted value for this data item.</description>
+    </item>
+    
+    <item>
+      <title>Admin::Report</title>
+      <link>https://docs.joinmastodon.org/entities/Admin_Report/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Admin_Report/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;action_taken&amp;#34;: false, &amp;#34;action_taken_at&amp;#34;: null, &amp;#34;category&amp;#34;: &amp;#34;spam&amp;#34;, &amp;#34;comment&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;forwarded&amp;#34;: false, &amp;#34;created_at&amp;#34;: &amp;#34;2022-09-09T21:19:23.085Z&amp;#34;, &amp;#34;updated_at&amp;#34;: &amp;#34;2022-09-09T21:19:23.085Z&amp;#34;, &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;108965218747268792&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;admin&amp;#34;, &amp;#34;domain&amp;#34;: null, &amp;#34;created_at&amp;#34;: &amp;#34;2022-09-08T22:48:07.985Z&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;admin@mastodon.local&amp;#34;, // ... &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;108965218747268792&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;admin&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;admin&amp;#34;, // ... } }, &amp;#34;target_account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;108965430868193066&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;goody&amp;#34;, &amp;#34;domain&amp;#34;: null, &amp;#34;created_at&amp;#34;: &amp;#34;2022-09-08T23:42:04.731Z&amp;#34;, &amp;#34;email&amp;#34;: &amp;#34;goody@mastodon.local&amp;#34;, // ... &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;108965430868193066&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;goody&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;goody&amp;#34;, // ... } }, &amp;#34;assigned_account&amp;#34;: null, &amp;#34;action_taken_by_account&amp;#34;: null, &amp;#34;statuses&amp;#34;: [], &amp;#34;rules&amp;#34;: [] } Attributes id Description: The ID of the report in the database.</description>
+    </item>
+    
+    <item>
+      <title>Announcement</title>
+      <link>https://docs.joinmastodon.org/entities/Announcement/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Announcement/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;8&amp;#34;, &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Looks like there was an issue processing audio attachments without embedded art since yesterday due to an experimental new feature. That issue has now been fixed, so you may see older posts with audio from other servers pop up in your feeds now as they are being finally properly processed. Sorry!&amp;lt;/p&amp;gt;&amp;#34;, &amp;#34;starts_at&amp;#34;: null, &amp;#34;ends_at&amp;#34;: null, &amp;#34;all_day&amp;#34;: false, &amp;#34;published_at&amp;#34;: &amp;#34;2020-07-03T01:27:38.726Z&amp;#34;, &amp;#34;updated_at&amp;#34;: &amp;#34;2020-07-03T01:27:38.752Z&amp;#34;, &amp;#34;read&amp;#34;: true, &amp;#34;mentions&amp;#34;: [], &amp;#34;statuses&amp;#34;: [], &amp;#34;tags&amp;#34;: [], &amp;#34;emojis&amp;#34;: [], &amp;#34;reactions&amp;#34;: [ { &amp;#34;name&amp;#34;: &amp;#34;bongoCat&amp;#34;, &amp;#34;count&amp;#34;: 9, &amp;#34;me&amp;#34;: false, &amp;#34;url&amp;#34;: &amp;#34;https://files.</description>
+    </item>
+    
+    <item>
+      <title>announcements API methods</title>
+      <link>https://docs.joinmastodon.org/methods/announcements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/announcements/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View all announcements GET /api/v1/announcements HTTP/1.1 See all currently active announcements set by admins.
+Returns: Array of Announcement
+OAuth: User token
+Version history:
+3.1.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Response 200: OK Currently active announcements
+[ { &amp;#34;id&amp;#34;: &amp;#34;8&amp;#34;, &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Looks like there was an issue processing audio attachments without embedded art since yesterday due to an experimental new feature.</description>
+    </item>
+    
+    <item>
+      <title>Appeal</title>
+      <link>https://docs.joinmastodon.org/entities/Appeal/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Appeal/</guid>
+      <description>Attributes text Description: Text of the appeal from the moderated account to the moderators.
+Type: String
+Version history:
+4.3.0 - added
+state Description: State of the appeal.
+Type: String (Enumerable oneOf)
+approved = The appeal has been approved by a moderator
+rejected = The appeal has been rejected by a moderator
+pending = The appeal has been submitted, but neither approved nor rejected yet
+Version history:
+4.3.0 - added</description>
+    </item>
+    
+    <item>
+      <title>Application</title>
+      <link>https://docs.joinmastodon.org/entities/Application/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Application/</guid>
+      <description>Example { &amp;#34;name&amp;#34;: &amp;#34;test app&amp;#34;, &amp;#34;website&amp;#34;: null, &amp;#34;vapid_key&amp;#34;: &amp;#34;BCk-QqERU0q-CfYZjcuB6lnyyOYfJ2AifKqfeGIm7Z-HiTU5T9eTG5GxVA0_OH5mMlI4UkkDTpaZwozy0TzdZ2M=&amp;#34; } Attributes name Description: The name of your application.
+Type: String
+Version history:
+0.9.9 - added
+website optional Description: The website associated with your application.
+Type: nullable String (URL)
+Version history:
+0.9.9 - added
+3.5.1 - this property is now nullable
+client_id optional Description: Client ID key, to be used for obtaining OAuth tokens
+Type: String
+Version history:
+0.9.9 - added</description>
+    </item>
+    
+    <item>
+      <title>apps API methods</title>
+      <link>https://docs.joinmastodon.org/methods/apps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/apps/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Create an application POST /api/v1/apps HTTP/1.1 Create a new application to obtain OAuth2 credentials.
+Returns: Application
+OAuth: Public
+Version history:
+0.0.0 - added
+2.7.2 - now returns vapid_key
+Request Form data parameters  client_name required String. A name for your application redirect_uris required String. Where the user should be redirected after authorization. To display the authorization code to the user instead of redirecting to a web page, use urn:ietf:wg:oauth:2.</description>
+    </item>
+    
+    <item>
+      <title>Backing up your server</title>
+      <link>https://docs.joinmastodon.org/admin/backups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/backups/</guid>
+      <description>For any real-world use, you should make sure to regularly backup your Mastodon server.
+Overview Things that need to be backed up in order of importance:
+ PostgreSQL database Application secrets from the .env.production file or equivalent User-uploaded files Redis database  Failure modes There are two failure types that people in general may guard for: The failure of the hardware, such as data corruption on the disk; and human and software error, such as wrongful deletion of a particular piece of data.</description>
+    </item>
+    
+    <item>
+      <title>Bearcaps</title>
+      <link>https://docs.joinmastodon.org/spec/bearcaps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/spec/bearcaps/</guid>
+      <description>What are bearcaps? In certain cases, resources may not be publically available and may require a token to successfully fetch them. This is typically done by using an HTTP Authorization header containing a Bearer token, like so:
+GET https://example.com/foo Authorization: Bearer &amp;lt;token&amp;gt; Bearcaps allow for a way to link to a resource with the token included, like so:
+bear:?t=&amp;lt;token&amp;gt;&amp;amp;u=https://example.com/foo&#39; To translate a bearcap to an HTTP request, make a request to the u parameter and attach the t parameter as a Bearer token in the Authorization header.</description>
+    </item>
+    
+    <item>
+      <title>blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View blocked users GET /api/v1/blocks HTTP/1.1 Returns: Array of Account
+OAuth: User token + read:blocks
+Version history:
+0.0.0 - added
+3.3.0 - both min_id and max_id can be used at the same time now
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>bookmarks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/bookmarks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/bookmarks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View bookmarked statuses GET /api/v1/bookmarks HTTP/1.1 Statuses the user has bookmarked.
+Returns: Array of Status
+OAuth: User token + read:bookmarks
+Version history:
+3.1.0 - added
+3.3.0 - both min_id and max_id can be used at the same time now
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter.</description>
+    </item>
+    
+    <item>
+      <title>Bug bounties and responsible disclosure</title>
+      <link>https://docs.joinmastodon.org/dev/disclosure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/disclosure/</guid>
+      <description>If you believe you&amp;rsquo;ve identified a security vulnerability in Mastodon (a bug that allows something to happen that shouldn&amp;rsquo;t be possible), you should send the report to security@joinmastodon.org. We will gladly reward such reports in proportion to the severity of the issue through our OpenCollective fund.
+You should not report such issues on GitHub or in other public spaces to give us time to publish a fix for the issue without exposing Mastodon&amp;rsquo;s users to increased risk.</description>
+    </item>
+    
+    <item>
+      <title>canonical_email_blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/canonical_email_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/canonical_email_blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all canonical email blocks GET /api/v1/admin/canonical_email_blocks HTTP/1.1 Returns: Array of Admin::CanonicalEmailBlock
+OAuth: User token + admin:read:canonical_email_blocks
+Permissions: Manage Blocks
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination. since_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>Captcha</title>
+      <link>https://docs.joinmastodon.org/admin/optional/captcha/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/captcha/</guid>
+      <description>As of Mastodon 4.2, using CAPTCHA technology is supported to help mitigate against bots signing up for new accounts. With CAPTCHA enabled, new registrations will be required to complete a challenge response as part of the e-mail verification process.
+ For some people, the use of a central CAPTCHA service may be a security and privacy concern. In addition, CAPTCHA can make the registration process significantly less accessible, particularly for individuals with visual impairments, such as those who are blind or have low vision.</description>
+    </item>
+    
+    <item>
+      <title>Code structure</title>
+      <link>https://docs.joinmastodon.org/dev/code/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/code/</guid>
+      <description>Code structure The following overview should not be seen as complete or authoritative but as a rough guidance to help you find your way in the application.
+Ruby  app/controllers Code that binds business logic to templates app/helpers Code that can be used from views, i.e. common operations app/lib Code that doesn’t fit in the other categories app/models Representation of data entities and their associated methods app/policies Permission checks and other validations, before calling related methods app/serializers Code that generates JSON from models app/services Complex logical operations involving multiple models app/views Templates for generating HTML or other output app/workers Code that executes outside the request-response cycle spec Automated test suite  JavaScript  app/javascript/mastodon Code for the frontend React.</description>
+    </item>
+    
+    <item>
+      <title>Configuring full-text search</title>
+      <link>https://docs.joinmastodon.org/admin/elasticsearch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/elasticsearch/</guid>
+      <description>Mastodon supports full-text search when Elasticsearch is available. It is strongly recommended to configure this feature.
+Mastodon’s full-text search allows logged-in users to find results from:
+ public statuses from accounts that opted into appearing in search results their own statuses their mentions their favourites their bookmarks accounts (display name, usernames and bios)  It deliberately does not allow searching for arbitrary strings in the entire database.
+Installing Elasticsearch  Mastodon is tested with Elasticsearch version 7.</description>
+    </item>
+    
+    <item>
+      <title>Configuring your environment</title>
+      <link>https://docs.joinmastodon.org/admin/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/config/</guid>
+      <description>Mastodon uses environment variables as its configuration.
+For convenience, it can read them from a flat file called .env.production in the Mastodon directory (called a &amp;ldquo;dotenv&amp;rdquo; file), but they can always be overridden by a specific process. For example, systemd service files can read environment variables from an EnvironmentFile or inline definitions with Environment, so you can have different configuration parameters for specific services. They can also be specified when calling Mastodon from the command line.</description>
+    </item>
+    
+    <item>
+      <title>Context</title>
+      <link>https://docs.joinmastodon.org/entities/Context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Context/</guid>
+      <description>Example { &amp;#34;ancestors&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;103188938570975982&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2019-11-23T19:44:00.124Z&amp;#34;, &amp;#34;in_reply_to_id&amp;#34;: null, // ... }, { &amp;#34;id&amp;#34;: &amp;#34;103188971072973252&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2019-11-23T19:52:23.398Z&amp;#34;, &amp;#34;in_reply_to_id&amp;#34;: &amp;#34;103188938570975982&amp;#34;, // ... }, { &amp;#34;id&amp;#34;: &amp;#34;103188982235527758&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2019-11-23T19:55:08.208Z&amp;#34;, &amp;#34;in_reply_to_id&amp;#34;: &amp;#34;103188971072973252&amp;#34;, // ... } ], &amp;#34;descendants&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;103189026958574542&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2019-11-23T20:06:36.011Z&amp;#34;, &amp;#34;in_reply_to_id&amp;#34;: &amp;#34;103189005915505698&amp;#34;, // ... } ] } Attributes ancestors Description: Parents in the thread.
+Type: Array of Status
+Version history:
+0.6.0 - added
+descendants Description: Children in the thread.</description>
+    </item>
+    
+    <item>
+      <title>Conversation</title>
+      <link>https://docs.joinmastodon.org/entities/Conversation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Conversation/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;418450&amp;#34;, &amp;#34;unread&amp;#34;: true, &amp;#34;accounts&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;482403&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;amic&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;amic@nulled.red&amp;#34;, // ... } ], &amp;#34;last_status&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;103196583826321184&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2019-11-25T04:08:24.000Z&amp;#34;, &amp;#34;in_reply_to_id&amp;#34;: &amp;#34;103196540587943467&amp;#34;, &amp;#34;in_reply_to_account_id&amp;#34;: &amp;#34;14715&amp;#34;, // ... } } Attributes id Description: The ID of the conversation in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+2.6.0 - added
+unread Description: Is the conversation currently marked as unread?</description>
+    </item>
+    
+    <item>
+      <title>conversations API methods</title>
+      <link>https://docs.joinmastodon.org/methods/conversations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/conversations/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View all conversations GET /api/v1/conversations HTTP/1.1 Returns: Array of Conversation
+OAuth: User token + read:statuses
+Version history:
+2.6.0 - added
+3.3.0 - both min_id and max_id can be used at the same time now
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>custom_emojis API methods</title>
+      <link>https://docs.joinmastodon.org/methods/custom_emojis/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/custom_emojis/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View all custom emoji GET /api/v1/custom_emojis HTTP/1.1 Returns custom emojis that are available on the server.
+Returns: Array of CustomEmoji
+OAuth: Public
+Version history:
+2.0.0 - added
+3.0.0 - optional category added to response
+Response 200: OK Sample response from mastodon.social
+[ { &amp;#34;shortcode&amp;#34;: &amp;#34;aaaa&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/custom_emojis/images/000/007/118/original/aaaa.png&amp;#34;, &amp;#34;static_url&amp;#34;: &amp;#34;https://files.mastodon.social/custom_emojis/images/000/007/118/static/aaaa.png&amp;#34;, &amp;#34;visible_in_picker&amp;#34;: true }, { &amp;#34;shortcode&amp;#34;: &amp;#34;AAAAAA&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/custom_emojis/images/000/071/387/original/AAAAAA.png&amp;#34;, &amp;#34;static_url&amp;#34;: &amp;#34;https://files.mastodon.social/custom_emojis/images/000/071/387/static/AAAAAA.png&amp;#34;, &amp;#34;visible_in_picker&amp;#34;: true }, // [.</description>
+    </item>
+    
+    <item>
+      <title>CustomEmoji</title>
+      <link>https://docs.joinmastodon.org/entities/CustomEmoji/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/CustomEmoji/</guid>
+      <description>Example { &amp;#34;shortcode&amp;#34;: &amp;#34;blobaww&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/custom_emojis/images/000/011/739/original/blobaww.png&amp;#34;, &amp;#34;static_url&amp;#34;: &amp;#34;https://files.mastodon.social/custom_emojis/images/000/011/739/static/blobaww.png&amp;#34;, &amp;#34;visible_in_picker&amp;#34;: true, &amp;#34;category&amp;#34;: &amp;#34;Blobs&amp;#34; } Attributes shortcode Description: The name of the custom emoji.
+Type: String
+Version history:
+2.0.0 - added
+url Description: A link to the custom emoji.
+Type: String (URL)
+Version history:
+2.0.0 - added
+static_url Description: A link to a static copy of the custom emoji.
+Type: String (URL)
+Version history:
+2.0.0 - added
+visible_in_picker Description: Whether this Emoji should be visible in the picker or unlisted.</description>
+    </item>
+    
+    <item>
+      <title>Database index corruption</title>
+      <link>https://docs.joinmastodon.org/admin/troubleshooting/index-corruption/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/troubleshooting/index-corruption/</guid>
+      <description>A somewhat common configuration issue can lead to index corruption throughout the database. This page attempts to explain why this may occur and how to fix it.
+Locale data and collation Textual values in the database, such as usernames, or status identifiers, are compared using so-called collation rules defining how characters are ordered and how to change their case. When setting up a database, Mastodon will use the database server&amp;rsquo;s default locale settings, including the default collation rules, which often is defined by the operating system&amp;rsquo;s settings.</description>
+    </item>
+    
+    <item>
+      <title>Dealing with unwanted content</title>
+      <link>https://docs.joinmastodon.org/user/moderating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/moderating/</guid>
+      <description>Filtering posts It is possible to filter statuses for specific keywords and phrases so that they can be hidden automatically.
+ A sample of active filters for various keywords in different contexts.
+  To create or manage your filters, go to Settings &amp;gt; Filters. The &amp;ldquo;Add new filter&amp;rdquo; button will let you create a new filter, and existing filters can be edited or deleted. Your existing filters will be summarized in a table.</description>
+    </item>
+    
+    <item>
+      <title>dimensions API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/dimensions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/dimensions/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Get dimensional data POST /api/v1/admin/dimensions HTTP/1.1 Obtain information about popularity of certain accounts, servers, languages, etc.
+Returns: Array of Admin::Dimension
+OAuth: User token + admin:read
+Permissions: View Dashboard
+Version history:
+3.5.0 - added
+4.0.0 - support custom roles and permissions
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Form data parameters  keys[] required Array of String.</description>
+    </item>
+    
+    <item>
+      <title>directory API methods</title>
+      <link>https://docs.joinmastodon.org/methods/directory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/directory/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View profile directory GET /api/v1/directory HTTP/1.1 List accounts visible in the directory.
+Returns: Array of Account
+OAuth: Public
+Version history:
+3.0.0 - added
+Request Query parameters  offset Number. Skip the first n results. limit Number. How many accounts to load. Defaults to 40 accounts. Max 80 accounts. order String. Use active to sort by most recently posted statuses (default) or new to sort by most recently created profiles.</description>
+    </item>
+    
+    <item>
+      <title>domain_allows API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/domain_allows/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/domain_allows/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all allowed domains GET /api/v1/admin/domain_allows HTTP/1.1 Show information about all allowed domains.
+Returns: Array of Admin::DomainAllow
+OAuth: User token + admin:read:domain_allows
+Permissions: Manage Federation
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>domain_blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/domain_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/domain_blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Get domain blocks GET /api/v1/domain_blocks HTTP/1.1 View domains the user has blocked.
+Returns: Array of String
+OAuth: User token + read:blocks or follow
+Version:
+1.4.0 - added
+3.3.0 - both min_id and max_id can be used at the same time now
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter.</description>
+    </item>
+    
+    <item>
+      <title>DomainBlock</title>
+      <link>https://docs.joinmastodon.org/entities/DomainBlock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/DomainBlock/</guid>
+      <description>Example { &amp;#34;domain&amp;#34;:&amp;#34;daji******.com&amp;#34;, &amp;#34;digest&amp;#34;:&amp;#34;3752f63a7079d60c2de5dceb8bd7608e86a15544eb78a494a482041c3684b37f&amp;#34;, &amp;#34;severity&amp;#34;:&amp;#34;suspend&amp;#34;, &amp;#34;comment&amp;#34;:&amp;#34;Inappropriate content&amp;#34; } Attributes domain Description: The domain which is blocked. This may be obfuscated or partially censored.
+Type: String
+Version history:
+4.0.0 - added
+digest Description: The SHA256 hash digest of the domain string.
+Type: String (SHA256)
+Version history:
+4.0.0 - added
+severity Description: The level to which the domain is blocked.
+Type: String (Enumerable, oneOf)
+silence = Users from this domain will be hidden from timelines, threads, and notifications (unless you follow the user).</description>
+    </item>
+    
+    <item>
+      <title>email_domain_blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/email_domain_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/email_domain_blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all blocked email domains GET /api/v1/admin/email_domain_blocks HTTP/1.1 Show information about all email domains blocked from signing up.
+Returns: Array of Admin::EmailDomainBlock
+OAuth: User token + admin:read:email_domain_blocks
+Permissions: Manage Blocks
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>emails API methods</title>
+      <link>https://docs.joinmastodon.org/methods/emails/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/emails/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Resend confirmation email POST /api/v1/emails/confirmations HTTP/1.1 Resend a new confirmation email. If an email is provided, updates the unconfirmed user&amp;rsquo;s email before resending the confirmation email.
+Returns: Empty
+OAuth: User token issued to the client that created the unconfirmed user
+Version history:
+3.4.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.</description>
+    </item>
+    
+    <item>
+      <title>endorsements API methods</title>
+      <link>https://docs.joinmastodon.org/methods/endorsements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/endorsements/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View currently featured profiles GET /api/v1/endorsements HTTP/1.1 Accounts that the user is currently featuring on their profile.
+Returns: Array of Account
+OAuth: User token + read:accounts
+Version history:
+2.5.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>Error</title>
+      <link>https://docs.joinmastodon.org/entities/Error/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Error/</guid>
+      <description>Example { &amp;#34;error&amp;#34;: &amp;#34;invalid_grant&amp;#34;, &amp;#34;error_description&amp;#34;: &amp;#34;The provided authorization grant is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client.&amp;#34; }  The most important part of an error response is the HTTP status code. Standard semantics are followed. The body of an error is a JSON object containing more information, if available.  Attributes error Description: The error message.</description>
+    </item>
+    
+    <item>
+      <title>ExtendedDescription</title>
+      <link>https://docs.joinmastodon.org/entities/ExtendedDescription/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/ExtendedDescription/</guid>
+      <description>Example { &amp;#34;updated_at&amp;#34;:&amp;#34;2022-11-03T04:09:07Z&amp;#34;, &amp;#34;content&amp;#34;:&amp;#34;&amp;lt;p&amp;gt;For inquiries not related specifically to the operation of this server, such as press inquiries, please contact &amp;lt;a href=\&amp;#34;mailto:press@joinmastodon.org\&amp;#34;&amp;gt;press@joinmastodon.org&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;\n\n&amp;lt;h2&amp;gt;Funding&amp;lt;/h2&amp;gt;\n\n&amp;lt;p&amp;gt;This server is crowdfunded by &amp;lt;a href=\&amp;#34;https://patreon.com/mastodon\&amp;#34;&amp;gt;Patreon donations&amp;lt;/a&amp;gt;. For a list of sponsors, see &amp;lt;a href=\&amp;#34;https://joinmastodon.org/sponsors\&amp;#34;&amp;gt;joinmastodon.org&amp;lt;/a&amp;gt;.&amp;lt;/p&amp;gt;\n\n&amp;lt;h2&amp;gt;Reporting and moderation&amp;lt;/h2&amp;gt;\n\n&amp;lt;p&amp;gt;When reporting accounts, please make sure to include at least a few posts that show rule-breaking behaviour, when applicable. If there is any additional context that might help make a decision, please also include it in the comment.</description>
+    </item>
+    
+    <item>
+      <title>FamiliarFollowers</title>
+      <link>https://docs.joinmastodon.org/entities/FamiliarFollowers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/FamiliarFollowers/</guid>
+      <description>Example [ { &amp;#34;id&amp;#34;:&amp;#34;1&amp;#34;, &amp;#34;accounts&amp;#34;:[ { &amp;#34;id&amp;#34;:&amp;#34;1087990&amp;#34;, &amp;#34;username&amp;#34;:&amp;#34;moss&amp;#34;, &amp;#34;acct&amp;#34;:&amp;#34;moss@goblin.camp&amp;#34;, // ... }, { &amp;#34;id&amp;#34;:&amp;#34;1092723&amp;#34;, &amp;#34;username&amp;#34;:&amp;#34;vivianrose&amp;#34;, &amp;#34;acct&amp;#34;:&amp;#34;vivianrose&amp;#34;, // ... }, // ... ] }, { &amp;#34;id&amp;#34;:&amp;#34;2&amp;#34;, &amp;#34;accounts&amp;#34;:[] } ] Attributes id Description: The ID of the Account in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+3.5.0 - added
+accounts Description: Accounts you follow that also follow this account.
+Type: Array of Account</description>
+    </item>
+    
+    <item>
+      <title>favourites API methods</title>
+      <link>https://docs.joinmastodon.org/methods/favourites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/favourites/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View favourited statuses GET /api/v1/favourites HTTP/1.1 Statuses the user has favourited.
+Returns: Array of Status
+OAuth: User token + read:favourites
+Version:
+0.0.0 - added
+2.6.0 - min_id added
+3.3.0 - both min_id and max_id can be used at the same time now
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter.</description>
+    </item>
+    
+    <item>
+      <title>featured_tags API methods</title>
+      <link>https://docs.joinmastodon.org/methods/featured_tags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/featured_tags/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View your featured tags GET /api/v1/featured_tags HTTP/1.1 List all hashtags featured on your profile.
+Returns: Array of FeaturedTag
+OAuth: User token + read:accounts
+Version history:
+3.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Response 200: OK [ { &amp;#34;id&amp;#34;: &amp;#34;627&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;nowplaying&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://mastodon.social/@trwnh/tagged/nowplaying&amp;#34;, &amp;#34;statuses_count&amp;#34;: 70, &amp;#34;last_status_at&amp;#34;: &amp;#34;2022-08-29T12:03:35.</description>
+    </item>
+    
+    <item>
+      <title>FeaturedTag</title>
+      <link>https://docs.joinmastodon.org/entities/FeaturedTag/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/FeaturedTag/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;627&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;nowplaying&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://mastodon.social/@trwnh/tagged/nowplaying&amp;#34;, &amp;#34;statuses_count&amp;#34;: &amp;#34;70&amp;#34;, &amp;#34;last_status_at&amp;#34;: &amp;#34;2022-08-29T12:03:35.061Z&amp;#34; } Attributes id Description: The internal ID of the featured tag in the database.
+Type: String (cast from integer but not guaranteed to be a number)
+Version history:
+3.0.0 - added
+name Description: The name of the hashtag being featured.
+Type: String
+Version history:
+3.0.0 - added
+url Description: A link to all statuses by a user that contain this hashtag.</description>
+    </item>
+    
+    <item>
+      <title>Filter</title>
+      <link>https://docs.joinmastodon.org/entities/Filter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Filter/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;19972&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;Test filter&amp;#34;, &amp;#34;context&amp;#34;: [ &amp;#34;home&amp;#34; ], &amp;#34;expires_at&amp;#34;: &amp;#34;2022-09-20T17:27:39.296Z&amp;#34;, &amp;#34;filter_action&amp;#34;: &amp;#34;warn&amp;#34;, &amp;#34;keywords&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;1197&amp;#34;, &amp;#34;keyword&amp;#34;: &amp;#34;bad word&amp;#34;, &amp;#34;whole_word&amp;#34;: false } ], &amp;#34;statuses&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;status_id&amp;#34;: &amp;#34;109031743575371913&amp;#34; } ] } Attributes id Description: The ID of the Filter in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+4.0.0 - added
+title Description: A title given by the user to name the filter.</description>
+    </item>
+    
+    <item>
+      <title>FilterKeyword</title>
+      <link>https://docs.joinmastodon.org/entities/FilterKeyword/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/FilterKeyword/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1197&amp;#34;, &amp;#34;keyword&amp;#34;: &amp;#34;bad word&amp;#34;, &amp;#34;whole_word&amp;#34;: false } Attributes id Description: The ID of the FilterKeyword in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+4.0.0 - added
+keyword Description: The phrase to be matched against.
+Type: String
+Version history:
+4.0.0 - added
+whole_word Description: Should the filter consider word boundaries? See implementation guidelines for filters.
+Type: Boolean
+Version history:</description>
+    </item>
+    
+    <item>
+      <title>FilterResult</title>
+      <link>https://docs.joinmastodon.org/entities/FilterResult/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/FilterResult/</guid>
+      <description>Example { &amp;#34;filter&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;3&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;Hide completely&amp;#34;, &amp;#34;context&amp;#34;: [ &amp;#34;home&amp;#34; ], &amp;#34;expires_at&amp;#34;: &amp;#34;2022-09-20T17:27:39.296Z&amp;#34;, &amp;#34;filter_action&amp;#34;: &amp;#34;hide&amp;#34; }, &amp;#34;keyword_matches&amp;#34;: [ &amp;#34;bad word&amp;#34; ], &amp;#34;status_matches&amp;#34;: [ &amp;#34;109031743575371913&amp;#34; ] } Attributes filter Description: The filter that was matched.
+Type: Filter
+Version history:
+4.0.0 - added
+keyword_matches Description: The keyword within the filter that was matched.
+Type: nullable Array of String, or null
+Version history:
+4.0.0 - added
+status_matches Description: The status ID within the filter that was matched.</description>
+    </item>
+    
+    <item>
+      <title>filters API methods</title>
+      <link>https://docs.joinmastodon.org/methods/filters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/filters/</guid>
+      <description>Server-side (v2) methods Since Mastodon 4.0, filters can contain multiple keywords and are matched server-side. Clients apply the filter action based on the status&amp;rsquo;s filtered attribute.
+ View all filters GET /api/v2/filters HTTP/1.1 Obtain a list of all filter groups for the current user.
+Returns: Array of Filter
+OAuth: User token + read:filters
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.</description>
+    </item>
+    
+    <item>
+      <title>FilterStatus</title>
+      <link>https://docs.joinmastodon.org/entities/FilterStatus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/FilterStatus/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;status_id&amp;#34;: &amp;#34;109031743575371913&amp;#34; } Attributes id Description: The ID of the FilterStatus in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+4.0.0 - added
+status_id Description: The ID of the Status that will be filtered.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+4.0.0 - added
+See also  Implementation guidelines for filters   /api/v2/filters methods   app/serializers/rest/filter_status_serializer.</description>
+    </item>
+    
+    <item>
+      <title>follow_requests API methods</title>
+      <link>https://docs.joinmastodon.org/methods/follow_requests/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/follow_requests/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View pending follow requests GET /api/v1/follow_requests HTTP/1.1 Returns: Array of Account
+OAuth: User token + read:follows or follow
+Version history:
+0.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination. since_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>followed_tags API methods</title>
+      <link>https://docs.joinmastodon.org/methods/followed_tags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/followed_tags/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View all followed tags GET /api/v1/followed_tags HTTP/1.1 List your followed hashtags.
+Returns: Array of Tag
+OAuth: User token + read:follows
+Version history:
+4.0.0 - added
+4.1.0 - add pagination headers
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>Getting started with the API</title>
+      <link>https://docs.joinmastodon.org/client/intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/client/intro/</guid>
+      <description>An introduction to REST Mastodon provides access to its data over a REST API. REST stands for REpresentational State Transfer, but for our purposes, just think of it as sending and receiving information about various resources based on the request. The Mastodon REST API uses HTTP for its requests and JSON for its payloads.
+Understanding HTTP requests and responses REST API endpoints can be called with certain HTTP methods, and more than one method can be used on the same endpoint.</description>
+    </item>
+    
+    <item>
+      <title>Guidelines and best practices</title>
+      <link>https://docs.joinmastodon.org/api/guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/api/guidelines/</guid>
+      <description>Login The user must be able to log in to any Mastodon server from the app. This means you must ask for the server&amp;rsquo;s domain and use the app registrations API to dynamically obtain OAuth2 credentials.
+ Logging in with an account   oauth methods   OAuth scopes  Usernames Decentralization must be transparent to the user. It should be possible to see that a given user is from another server, for example, by displaying their acct somewhere.</description>
+    </item>
+    
+    <item>
+      <title>IdentityProof</title>
+      <link>https://docs.joinmastodon.org/entities/IdentityProof/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/IdentityProof/</guid>
+      <description>Identity proofs have been deprecated in 3.5.0 and newer. Previously, the only proof provider was Keybase, but development on Keybase has stalled entirely since it was acquired by Zoom.  { &amp;#34;provider&amp;#34;: &amp;#34;Keybase&amp;#34;, &amp;#34;provider_username&amp;#34;: &amp;#34;gargron&amp;#34;, &amp;#34;updated_at&amp;#34;: &amp;#34;2019-07-21T20:14:39.596Z&amp;#34;, &amp;#34;proof_url&amp;#34;: &amp;#34;https://keybase.io/gargron/sigchain#5cfc20c7018f2beefb42a68836da59a792e55daa4d118498c9b1898de7e845690f&amp;#34;, &amp;#34;profile_url&amp;#34;: &amp;#34;https://keybase.io/gargron&amp;#34; } Attributes provider Description: The name of the identity provider.
+Type: String
+Version history:
+2.8.0 - added
+provider_username Description: The account owner&amp;rsquo;s username on the identity provider&amp;rsquo;s service.</description>
+    </item>
+    
+    <item>
+      <title>Installing from source</title>
+      <link>https://docs.joinmastodon.org/admin/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/install/</guid>
+      <description>Pre-requisites  A machine running Ubuntu 22.04 or Debian 11 that you have root access to A domain name (or a subdomain) for the Mastodon server, e.g. example.com An e-mail delivery service or other SMTP server  You will be running the commands as root. If you aren’t already root, switch to root: sudo su -
+System repositories Make sure curl, wget, gnupg, apt-transport-https, lsb-release and ca-certificates are installed first:</description>
+    </item>
+    
+    <item>
+      <title>Installing optional features</title>
+      <link>https://docs.joinmastodon.org/admin/optional/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/</guid>
+      <description>Mastodon offers a few optional features that can be used if needed.
+ Object storage Hidden services Single Sign On  </description>
+    </item>
+    
+    <item>
+      <title>Instance</title>
+      <link>https://docs.joinmastodon.org/entities/Instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Instance/</guid>
+      <description>Example { &amp;#34;domain&amp;#34;: &amp;#34;mastodon.social&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;Mastodon&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;4.0.0rc1&amp;#34;, &amp;#34;source_url&amp;#34;: &amp;#34;https://github.com/mastodon/mastodon&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;The original server operated by the Mastodon gGmbH non-profit&amp;#34;, &amp;#34;usage&amp;#34;: { &amp;#34;users&amp;#34;: { &amp;#34;active_month&amp;#34;: 123122 } }, &amp;#34;thumbnail&amp;#34;: { &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&amp;#34;, &amp;#34;blurhash&amp;#34;: &amp;#34;UeKUpFxuo~R%0nW;WCnhF6RjaJt757oJodS$&amp;#34;, &amp;#34;versions&amp;#34;: { &amp;#34;@1x&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&amp;#34;, &amp;#34;@2x&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@2x/57c12f441d083cde.png&amp;#34; } }, &amp;#34;languages&amp;#34;: [ &amp;#34;en&amp;#34; ], &amp;#34;configuration&amp;#34;: { &amp;#34;urls&amp;#34;: { &amp;#34;streaming&amp;#34;: &amp;#34;wss://mastodon.social&amp;#34; }, &amp;#34;vapid&amp;#34;: { &amp;#34;public_key&amp;#34;: &amp;#34;BCkMmVdKDnKYwzVCDC99Iuc9GvId-x7-kKtuHnLgfF98ENiZp_aj-UNthbCdI70DqN1zUVis-x0Wrot2sBagkMc=&amp;#34; }, &amp;#34;accounts&amp;#34;: { &amp;#34;max_featured_tags&amp;#34;: 10, &amp;#34;max_pinned_statuses&amp;#34;: 4 }, &amp;#34;statuses&amp;#34;: { &amp;#34;max_characters&amp;#34;: 500, &amp;#34;max_media_attachments&amp;#34;: 4, &amp;#34;characters_reserved_per_url&amp;#34;: 23 }, &amp;#34;media_attachments&amp;#34;: { &amp;#34;supported_mime_types&amp;#34;: [ &amp;#34;image/jpeg&amp;#34;, &amp;#34;image/png&amp;#34;, &amp;#34;image/gif&amp;#34;, &amp;#34;image/heic&amp;#34;, &amp;#34;image/heif&amp;#34;, &amp;#34;image/webp&amp;#34;, &amp;#34;video/webm&amp;#34;, &amp;#34;video/mp4&amp;#34;, &amp;#34;video/quicktime&amp;#34;, &amp;#34;video/ogg&amp;#34;, &amp;#34;audio/wave&amp;#34;, &amp;#34;audio/wav&amp;#34;, &amp;#34;audio/x-wav&amp;#34;, &amp;#34;audio/x-pn-wave&amp;#34;, &amp;#34;audio/vnd.</description>
+    </item>
+    
+    <item>
+      <title>instance API methods</title>
+      <link>https://docs.joinmastodon.org/methods/instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/instance/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View server information GET /api/v2/instance Obtain general information about the server.
+Returns: Instance
+OAuth: Public
+Version history:
+4.0.0 - added
+Response 200: OK { &amp;#34;domain&amp;#34;: &amp;#34;mastodon.social&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;Mastodon&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;4.0.0rc1&amp;#34;, &amp;#34;source_url&amp;#34;: &amp;#34;https://github.com/mastodon/mastodon&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;The original server operated by the Mastodon gGmbH non-profit&amp;#34;, &amp;#34;usage&amp;#34;: { &amp;#34;users&amp;#34;: { &amp;#34;active_month&amp;#34;: 123122 } }, &amp;#34;thumbnail&amp;#34;: { &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&amp;#34;, &amp;#34;blurhash&amp;#34;: &amp;#34;UeKUpFxuo~R%0nW;WCnhF6RjaJt757oJodS$&amp;#34;, &amp;#34;versions&amp;#34;: { &amp;#34;@1x&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&amp;#34;, &amp;#34;@2x&amp;#34;: &amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/@2x/57c12f441d083cde.png&amp;#34; } }, &amp;#34;languages&amp;#34;: [ &amp;#34;en&amp;#34; ], &amp;#34;configuration&amp;#34;: { &amp;#34;urls&amp;#34;: { &amp;#34;streaming&amp;#34;: &amp;#34;wss://mastodon.</description>
+    </item>
+    
+    <item>
+      <title>ip_blocks API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/ip_blocks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/ip_blocks/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  List all IP blocks GET /api/v1/admin/ip_blocks HTTP/1.1 Show information about all blocked IP ranges.
+Returns: Array of Admin::IpBlock
+OAuth: User token + admin:read:ip_blocks
+Permissions: Manage Blocks
+Version history:
+4.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>Libraries and implementations</title>
+      <link>https://docs.joinmastodon.org/client/libraries/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/client/libraries/</guid>
+      <description>Thank you to our awesome developer community, for supporting the project with a wide range of implementations of the API. If you have built a library or SDK for the Mastodon API, let us know about it, and it may be included below in a future update.
+Remember to check how recently the library was updated, and whether it includes the API features you may want to use.
+Arduino / ESP32 / IoT  lyuba  C# (.</description>
+    </item>
+    
+    <item>
+      <title>List</title>
+      <link>https://docs.joinmastodon.org/entities/List/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/List/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;12249&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;Friends&amp;#34; } Attributes id Description: The internal database ID of the list.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+2.1.0 - added
+title Description: The user-defined title of the list.
+Type: String
+Version history:
+2.1.0 - added
+replies_policy Description: Which replies should be shown in the list.
+Type: String (Enumerable oneOf)
+followed = Show replies to any followed user</description>
+    </item>
+    
+    <item>
+      <title>lists API methods</title>
+      <link>https://docs.joinmastodon.org/methods/lists/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/lists/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View your lists GET /api/v1/lists HTTP/1.1 Fetch all lists that the user owns.
+Returns: Array of List
+OAuth: User token + read:lists
+Version history:
+2.1.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Response 200: OK Use id as a parameter for related API calls.
+[ { &amp;#34;id&amp;#34;: &amp;#34;12249&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;Friends&amp;#34;, &amp;#34;replies_policy&amp;#34;: &amp;#34;followed&amp;#34;, &amp;#34;exclusive&amp;#34;: false }, { &amp;#34;id&amp;#34;: &amp;#34;13585&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;replies_policy&amp;#34;: &amp;#34;list&amp;#34;, &amp;#34;exclusive&amp;#34;: true } ] 401: Unauthorized Invalid or missing Authorization header.</description>
+    </item>
+    
+    <item>
+      <title>Logging in with an account</title>
+      <link>https://docs.joinmastodon.org/client/authorized/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/client/authorized/</guid>
+      <description>Scopes explained When we register our app and when we authorize our user, we need to define what exactly our generated token will have permission to do. This is done through the use of OAuth scopes. Each API method has an associated scope, and can only be called if the token being used for authorization has been generated with the corresponding scope.
+Scopes must be a subset. When we created our app, we specified read write push &amp;ndash; we could request all available scopes by specifying read write push, but it is a better idea to only request what your app will actually need through granular scopes.</description>
+    </item>
+    
+    <item>
+      <title>Marker</title>
+      <link>https://docs.joinmastodon.org/entities/Marker/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Marker/</guid>
+      <description>Example { &amp;#34;last_read_id&amp;#34;: &amp;#34;103194548672408537&amp;#34;, &amp;#34;version&amp;#34;: 462, &amp;#34;updated_at&amp;#34;: &amp;#34;2019-11-24T19:39:39.337Z&amp;#34; } Attributes last_read_id Description: The ID of the most recently viewed entity.
+Type: String (cast from integer but not guaranteed to be a number)
+3.0.0 - added
+version Description: An incrementing counter, used for locking to prevent write conflicts.
+Type: Integer
+Version history:
+3.0.0 - added
+updated_at Description: The timestamp of when the marker was set.
+Type: String (ISO 8601 Datetime)
+3.0.0 - added</description>
+    </item>
+    
+    <item>
+      <title>markers API methods</title>
+      <link>https://docs.joinmastodon.org/methods/markers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/markers/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Get saved timeline positions GET /api/v1/markers HTTP/1.1 Get current positions in timelines.
+Returns: Hash of timeline key and associated Marker
+OAuth: User token + read:statuses
+Version history:
+3.0.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  timeline[] Array of String. Specify the timeline(s) for which markers should be fetched.</description>
+    </item>
+    
+    <item>
+      <title>measures API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/measures/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/measures/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Get measurable data POST /api/v1/admin/measures HTTP/1.1 Obtain statistical measures for your server.
+Returns: Array of Admin::Measure
+OAuth: User token + admin:read
+Permissions: View Dashboard
+Version history:
+3.5.0 - added
+4.0.0 - support custom roles and permissions
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Form data parameters  keys[] required Array of String.</description>
+    </item>
+    
+    <item>
+      <title>media API methods</title>
+      <link>https://docs.joinmastodon.org/methods/media/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/media/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Upload media as an attachment (async) POST /api/v2/media HTTP/1.1 Creates a media attachment to be used with a new status. The full sized media will be processed asynchronously in the background for large uploads.
+Returns: MediaAttachment, but without a URL
+OAuth: User token + write:media
+Version history:
+3.1.3 - added
+3.2.0 - add thumbnail parameter
+4.0.0 - Smaller media formats (image) will be processed synchronously and return 200 instead of 202.</description>
+    </item>
+    
+    <item>
+      <title>MediaAttachment</title>
+      <link>https://docs.joinmastodon.org/entities/MediaAttachment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/MediaAttachment/</guid>
+      <description>Example Image { &amp;#34;id&amp;#34;: &amp;#34;22345792&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;image&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/media_attachments/files/022/345/792/original/57859aede991da25.jpeg&amp;#34;, &amp;#34;preview_url&amp;#34;: &amp;#34;https://files.mastodon.social/media_attachments/files/022/345/792/small/57859aede991da25.jpeg&amp;#34;, &amp;#34;remote_url&amp;#34;: null, &amp;#34;text_url&amp;#34;: &amp;#34;https://mastodon.social/media/2N4uvkuUtPVrkZGysms&amp;#34;, &amp;#34;meta&amp;#34;: { &amp;#34;original&amp;#34;: { &amp;#34;width&amp;#34;: 640, &amp;#34;height&amp;#34;: 480, &amp;#34;size&amp;#34;: &amp;#34;640x480&amp;#34;, &amp;#34;aspect&amp;#34;: 1.3333333333333333 }, &amp;#34;small&amp;#34;: { &amp;#34;width&amp;#34;: 461, &amp;#34;height&amp;#34;: 346, &amp;#34;size&amp;#34;: &amp;#34;461x346&amp;#34;, &amp;#34;aspect&amp;#34;: 1.3323699421965318 }, &amp;#34;focus&amp;#34;: { &amp;#34;x&amp;#34;: -0.27, &amp;#34;y&amp;#34;: 0.51 } }, &amp;#34;description&amp;#34;: &amp;#34;test media description&amp;#34;, &amp;#34;blurhash&amp;#34;: &amp;#34;UFBWY:8_0Jxv4mx]t8t64.%M-:IUWGWAt6M}&amp;#34; } Video { &amp;#34;id&amp;#34;: &amp;#34;22546306&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;video&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/media_attachments/files/022/546/306/original/dab9a597f68b9745.mp4&amp;#34;, &amp;#34;preview_url&amp;#34;: &amp;#34;https://files.mastodon.social/media_attachments/files/022/546/306/small/dab9a597f68b9745.png&amp;#34;, &amp;#34;remote_url&amp;#34;: null, &amp;#34;text_url&amp;#34;: &amp;#34;https://mastodon.social/media/wWd1HJIBmH1MZGDfg50&amp;#34;, &amp;#34;meta&amp;#34;: { &amp;#34;length&amp;#34;: &amp;#34;0:01:28.</description>
+    </item>
+    
+    <item>
+      <title>Microformats</title>
+      <link>https://docs.joinmastodon.org/spec/microformats/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/spec/microformats/</guid>
+      <description>As of v4.0.0, HTML permalinks for statuses and profiles have been deprecated and removed from Mastodon. As a result, Microformats are currently not used within nor generated by Mastodon.  What are microformats? Microformats 2.0 is a standard used to embed metadata directly within an HTML document. Rather than needing to use an API for read-only purposes, a web page can be parsed for certain CSS classes in order to extract information that you have already fetched just by viewing the page, rather than having to separately request that same information from an API.</description>
+    </item>
+    
+    <item>
+      <title>Migrating to a new machine</title>
+      <link>https://docs.joinmastodon.org/admin/migrating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/migrating/</guid>
+      <description>Sometimes, for various reasons, you may want to migrate your Mastodon instance from one server to another. Fortunately, this is not too difficult of a process, although it may result in some downtime.
+ This guide was written with Ubuntu Server in mind; your mileage may vary for other setups.  Basic steps  Set up a new Mastodon server using the Production Guide (however, don’t run mastodon:setup and only leave the PostgreSQL service running).</description>
+    </item>
+    
+    <item>
+      <title>Moderation actions</title>
+      <link>https://docs.joinmastodon.org/admin/moderation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/moderation/</guid>
+      <description>Moderating individual users Moderation in Mastodon is always applied locally, i.e. as seen from the particular server. An admin or moderator on one server cannot affect a user on another server, they can only affect the local copy on their own server.
+As of v3.5.0, all default user moderation decisions will notify the affected user by email. The user can access an appeal page, where they can submit one appeal within 20 days of the decision.</description>
+    </item>
+    
+    <item>
+      <title>More settings</title>
+      <link>https://docs.joinmastodon.org/user/contacts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/contacts/</guid>
+      <description>Generating invites  Invite people from your account&#39;s settings
+  Invite links can be generated and shared with other people, and some servers require invites in order to register for an account. When generating an invite link, you can set the max uses to limit how many times a certain link is used, or how long it has been active. Invite links can be deactivated at any time.
+Follows and followers  Mutuals who have not moved their account, sorted by last activity</description>
+    </item>
+    
+    <item>
+      <title>Moving or leaving accounts</title>
+      <link>https://docs.joinmastodon.org/user/moving/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/moving/</guid>
+      <description>Exporting your information  The data export page in settings
+  At any time you want, you can go to Settings &amp;gt; Export and download a CSV file for your current followed accounts, your currently created lists, your currently blocked accounts, your currently muted accounts, and your currently blocked domains. Your following, blocking, muting, and domain-blocking lists can be imported at Settings &amp;gt; Import, where they can either be merged or overwritten.</description>
+    </item>
+    
+    <item>
+      <title>mutes API methods</title>
+      <link>https://docs.joinmastodon.org/methods/mutes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/mutes/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View muted accounts GET /api/v1/mutes HTTP/1.1 Accounts the user has muted.
+Returns: Array of Account
+OAuth: User token + read:mutes or follow
+Version history:
+0.0.0 - added
+3.3.0 - added mute_expires_at
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id Internal parameter. Use HTTP Link header for pagination.</description>
+    </item>
+    
+    <item>
+      <title>Notification</title>
+      <link>https://docs.joinmastodon.org/entities/Notification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Notification/</guid>
+      <description>Attributes id Description: The id of the notification in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+0.9.9 - added
+type Description: The type of event that resulted in the notification.
+Type: String (Enumerable oneOf)
+mention = Someone mentioned you in their status
+status = Someone you enabled notifications for has posted a status
+reblog = Someone boosted one of your statuses</description>
+    </item>
+    
+    <item>
+      <title>NotificationPolicy</title>
+      <link>https://docs.joinmastodon.org/entities/NotificationPolicy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/NotificationPolicy/</guid>
+      <description>Attributes filter_not_following Description: Whether to filter notifications from accounts the user is not following.
+Type: Boolean
+Version history:
+4.3.0 - added
+filter_not_followers Description: Whether to filter notifications from accounts that are not following the user.
+Type: Boolean
+Version history:
+4.3.0 - added
+filter_new_accounts Description: Whether to filter notifications from accounts created in the past 30 days.
+Type: Boolean
+Version history:
+4.3.0 - added
+filter_private_mentions Description: Whether to filter notifications from private mentions.</description>
+    </item>
+    
+    <item>
+      <title>NotificationRequest</title>
+      <link>https://docs.joinmastodon.org/entities/NotificationRequest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/NotificationRequest/</guid>
+      <description>Attributes id Description: The id of the notification request in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+4.3.0 - added
+created_at Description: The timestamp of the notification request, i.e. when the first filtered notification from that user was created.
+Type: String (ISO 8601 Datetime)
+Version history:
+4.3.0 - added
+updated_at Description: The timestamp of when the notification request was last updated.</description>
+    </item>
+    
+    <item>
+      <title>notifications API methods</title>
+      <link>https://docs.joinmastodon.org/methods/notifications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/notifications/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Get all notifications GET /api/v1/notifications HTTP/1.1 Notifications concerning the user. This API returns Link headers containing links to the next/previous page. However, the links can also be constructed dynamically using query params and id values.
+Types to filter include:
+ mention = Someone mentioned you in their status status = Someone you enabled notifications for has posted a status reblog = Someone boosted one of your statuses follow = Someone followed you follow_request = Someone requested to follow you favourite = Someone favourited one of your statuses poll = A poll you have voted in or created has ended update = A status you boosted with has been edited admin.</description>
+    </item>
+    
+    <item>
+      <title>OAuth</title>
+      <link>https://docs.joinmastodon.org/spec/oauth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/spec/oauth/</guid>
+      <description>What is OAuth? The Mastodon API has many methods that require authentication from a client or authorization from a user. This is accomplished with OAuth 2.0, an authorization framework described in RFC 6749 that allows third-party applications to obtain limited access to an HTTP service on behalf of a resource owner, through the use of a standardized authorization flow that generates a client access token to be used with HTTP requests.</description>
+    </item>
+    
+    <item>
+      <title>oauth API methods</title>
+      <link>https://docs.joinmastodon.org/methods/oauth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/oauth/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Authorize a user GET /oauth/authorize HTTP/1.1 Displays an authorization form to the user. If approved, it will create and return an authorization code, then redirect to the desired redirect_uri, or show the authorization code if urn:ietf:wg:oauth:2.0:oob was requested. The authorization code can be used while requesting a token to obtain access to user-level methods.
+Returns: String (URL) or HTML response
+OAuth: Public</description>
+    </item>
+    
+    <item>
+      <title>OAuth Scopes</title>
+      <link>https://docs.joinmastodon.org/api/oauth-scopes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/api/oauth-scopes/</guid>
+      <description>OAuth Scopes The API is divided up into access scopes. The scopes are hierarchical, i.e. if you have access to read, you automatically have access to read:accounts. It is recommended that you request as little as possible for your application.
+Multiple scopes can be requested at the same time: During app creation with the scopes param, and during the authorization phase with the scope query param (space-separate the scopes).
+ Mind the scope vs scopes difference.</description>
+    </item>
+    
+    <item>
+      <title>Object storage</title>
+      <link>https://docs.joinmastodon.org/admin/optional/object-storage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/object-storage/</guid>
+      <description>User-uploaded files can be stored on the main server&amp;rsquo;s file system, or using an external object storage server, which can be required for scaling.
+Using the filesystem The simplest way to store user uploads is by using the server&amp;rsquo;s file system. This is how it works by default and is suitable for small servers.
+By default, Mastodon will store file uploads under public/system in its installation directory, but that can be overridden using the PAPERCLIP_ROOT_PATH environment variable.</description>
+    </item>
+    
+    <item>
+      <title>Obtaining client app access</title>
+      <link>https://docs.joinmastodon.org/client/token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/client/token/</guid>
+      <description>Authentication and authorization Up until this point, we&amp;rsquo;ve been working with publicly available information, but not all information is public. Some information requires permission before viewing it, in order to audit who is requesting that information (and to potentially revoke or deny access).
+This is where OAuth comes in. OAuth is a mechanism for generating access tokens that can be used to authenticate (verify) that a request is coming from a specific client, and ensure that the requested action is authorized (allowed) by the server&amp;rsquo;s access control policies.</description>
+    </item>
+    
+    <item>
+      <title>oembed API methods</title>
+      <link>https://docs.joinmastodon.org/methods/oembed/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/oembed/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Get OEmbed info as JSON GET /api/oembed HTTP/1.1 Returns: OEmbed metadata
+OAuth: Public
+Version history:
+1.0.0 - added
+Request Query parameters  url required String. URL of a status. maxwidth Number. Width of the iframe. Defaults to 400 maxheight Number. Height of the iframe. Defaults to null  Response 200: OK Represents OEmbed &amp;ldquo;rich&amp;rdquo; preview, with associated iframe and metadata.
+{ &amp;#34;type&amp;#34;: &amp;#34;rich&amp;#34;, &amp;#34;version&amp;#34;: &amp;#34;1.</description>
+    </item>
+    
+    <item>
+      <title>Onion services</title>
+      <link>https://docs.joinmastodon.org/admin/optional/tor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/tor/</guid>
+      <description>Mastodon can be served through Tor as an onion service. This will give you a *.onion address that can only be used while connected to the Tor network.
+Installing Tor First Tor’s Debian archive needs to be added to apt.
+deb https://deb.torproject.org/torproject.org stretch main deb-src https://deb.torproject.org/torproject.org stretch main Next add the gpg key.
+curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add - Finally install the required packages.</description>
+    </item>
+    
+    <item>
+      <title>Playing with public data</title>
+      <link>https://docs.joinmastodon.org/client/public/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/client/public/</guid>
+      <description>Now that you know how to construct HTTP requests using cURL or your favorite programming language&amp;rsquo;s HTTP utility or library, it is time to learn about endpoints and responses.
+Endpoints explained All HTTP requests are made against a target URL. When you request data to or from a website, you do so by using a specific URL. Depending on the URL, your request will be interpreted by the HTTP server and the appropriate response will be returned to you.</description>
+    </item>
+    
+    <item>
+      <title>Poll</title>
+      <link>https://docs.joinmastodon.org/entities/Poll/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Poll/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;34830&amp;#34;, &amp;#34;expires_at&amp;#34;: &amp;#34;2019-12-05T04:05:08.302Z&amp;#34;, &amp;#34;expired&amp;#34;: true, &amp;#34;multiple&amp;#34;: false, &amp;#34;votes_count&amp;#34;: 10, &amp;#34;voters_count&amp;#34;: null, &amp;#34;voted&amp;#34;: true, &amp;#34;own_votes&amp;#34;: [ 1 ], &amp;#34;options&amp;#34;: [ { &amp;#34;title&amp;#34;: &amp;#34;accept&amp;#34;, &amp;#34;votes_count&amp;#34;: 6 }, { &amp;#34;title&amp;#34;: &amp;#34;deny&amp;#34;, &amp;#34;votes_count&amp;#34;: 4 } ], &amp;#34;emojis&amp;#34;: [] } Attributes id Description: The ID of the poll in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+2.8.0 - added
+expires_at Description: When the poll ends.</description>
+    </item>
+    
+    <item>
+      <title>polls API methods</title>
+      <link>https://docs.joinmastodon.org/methods/polls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/polls/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View a poll GET /api/v1/polls/:id HTTP/1.1 View a poll attached to a status.
+Returns: Poll
+OAuth: Public if parent status is public. User token + read:statuses if parent status is private.
+Version history:
+2.8.0 - added
+Request Path parameters  :id required String. The ID of the Poll in the database.  Headers  Authorization Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.</description>
+    </item>
+    
+    <item>
+      <title>Posting to your profile</title>
+      <link>https://docs.joinmastodon.org/user/posting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/posting/</guid>
+      <description>Compose form with CW enabled
+  Text The main body of each status update can be composed using the text field. The default character limit is 500 characters.
+Links  Links must start with http(s):// and are counted as 23 characters regardless of length.
+  If you include links in your post, they must begin with http:// or https://. All links are counted as 23 characters, no matter how long they actually are, so there is no need to use a link shortener to save characters.</description>
+    </item>
+    
+    <item>
+      <title>Preferences</title>
+      <link>https://docs.joinmastodon.org/entities/Preferences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Preferences/</guid>
+      <description>Example { &amp;#34;posting:default:visibility&amp;#34;: &amp;#34;public&amp;#34;, &amp;#34;posting:default:sensitive&amp;#34;: false, &amp;#34;posting:default:language&amp;#34;: null, &amp;#34;reading:expand:media&amp;#34;: &amp;#34;default&amp;#34;, &amp;#34;reading:expand:spoilers&amp;#34;: false } Attributes posting:default:visibility Description: Default visibility for new posts. Equivalent to CredentialAccount#source[privacy].
+Type: String (Enumerable, oneOf)
+public = Public post
+unlisted = Unlisted post
+private = Followers-only post
+direct = Direct post
+Version history:
+2.8.0 - added
+posting:default:sensitive Description: Default sensitivity flag for new posts. Equivalent to CredentialAccount#source[sensitive].
+Type: Boolean
+Version history:
+2.8.0 - added
+posting:default:language Description: Default language for new posts.</description>
+    </item>
+    
+    <item>
+      <title>preferences API methods</title>
+      <link>https://docs.joinmastodon.org/methods/preferences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/preferences/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View user preferences GET /api/v1/preferences HTTP/1.1 Preferences defined by the user in their account settings.
+Returns: Preferences by key and value
+OAuth: User token + read:accounts
+Version history:
+2.8.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Response 200: OK { &amp;#34;posting:default:visibility&amp;#34;: &amp;#34;public&amp;#34;, &amp;#34;posting:default:sensitive&amp;#34;: false, &amp;#34;posting:default:language&amp;#34;: null, &amp;#34;reading:expand:media&amp;#34;: &amp;#34;default&amp;#34;, &amp;#34;reading:expand:spoilers&amp;#34;: false } 401: Unauthorized Invalid or missing Authorization header.</description>
+    </item>
+    
+    <item>
+      <title>Preparing your machine</title>
+      <link>https://docs.joinmastodon.org/admin/prerequisites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/prerequisites/</guid>
+      <description>If you are setting up a fresh machine, it is recommended that you secure it first. Assuming that you are running Ubuntu 22.04:
+Do not allow password-based SSH login (keys only) First, make sure you are actually logging in to the server using keys and not via a password, otherwise, this will lock you out. Many hosting providers support uploading a public key and automatically set up key-based root login on new machines for you.</description>
+    </item>
+    
+    <item>
+      <title>PreviewCard</title>
+      <link>https://docs.joinmastodon.org/entities/PreviewCard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/PreviewCard/</guid>
+      <description>Examples Video { &amp;#34;url&amp;#34;: &amp;#34;https://www.youtube.com/watch?v=OMv_EPMED8Y&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;♪ Brand New Friend (Christmas Song!)&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;video&amp;#34;, &amp;#34;author_name&amp;#34;: &amp;#34;YOGSCAST Lewis &amp;amp; Simon&amp;#34;, &amp;#34;author_url&amp;#34;: &amp;#34;https://www.youtube.com/user/BlueXephos&amp;#34;, &amp;#34;provider_name&amp;#34;: &amp;#34;YouTube&amp;#34;, &amp;#34;provider_url&amp;#34;: &amp;#34;https://www.youtube.com/&amp;#34;, &amp;#34;html&amp;#34;: &amp;#34;&amp;lt;iframe width=\&amp;#34;480\&amp;#34; height=\&amp;#34;270\&amp;#34; src=\&amp;#34;https://www.youtube.com/embed/OMv_EPMED8Y?feature=oembed\&amp;#34; frameborder=\&amp;#34;0\&amp;#34; allowfullscreen=\&amp;#34;\&amp;#34;&amp;gt;&amp;lt;/iframe&amp;gt;&amp;#34;, &amp;#34;width&amp;#34;: 480, &amp;#34;height&amp;#34;: 270, &amp;#34;image&amp;#34;: &amp;#34;https://files.mastodon.social/preview_cards/images/014/179/145/original/9cf4b7cf5567b569.jpeg&amp;#34;, &amp;#34;embed_url&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;blurhash&amp;#34;: &amp;#34;UvK0HNkV,:s9xBR%njog0fo2W=WBS5ozofV@&amp;#34; } Photo { &amp;#34;url&amp;#34;: &amp;#34;https://www.flickr.com/photos/tomfenskephotography/49088768431/&amp;#34;, &amp;#34;title&amp;#34;: &amp;#34;Oregon&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;type&amp;#34;: &amp;#34;photo&amp;#34;, &amp;#34;author_name&amp;#34;: &amp;#34;Tom Fenske Photography&amp;#34;, &amp;#34;author_url&amp;#34;: &amp;#34;https://www.flickr.com/photos/tomfenskephotography/&amp;#34;, &amp;#34;provider_name&amp;#34;: &amp;#34;Flickr&amp;#34;, &amp;#34;provider_url&amp;#34;: &amp;#34;https://www.flickr.com/&amp;#34;, &amp;#34;html&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;width&amp;#34;: 1024, &amp;#34;height&amp;#34;: 427, &amp;#34;image&amp;#34;: &amp;#34;https://files.</description>
+    </item>
+    
+    <item>
+      <title>profile API methods</title>
+      <link>https://docs.joinmastodon.org/methods/profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/profile/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Delete profile avatar DELETE /api/v1/profile/avatar HTTP/1.1 Returns: CredentialAccount
+OAuth: User token + write:accounts
+Version history:
+4.2.0 - added
+Deletes the avatar associated with the user&amp;rsquo;s profile.
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Path parameters Response 200: OK The avatar was successfully deleted from the user&amp;rsquo;s profile. If there were no avatar associated with the profile, the response will still indicate a successful deletion.</description>
+    </item>
+    
+    <item>
+      <title>Promoting yourself and others</title>
+      <link>https://docs.joinmastodon.org/user/discoverability/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/discoverability/</guid>
+      <description>Featured links on your profile Featured hashtags  A featured hashtag showing last usage date and total usage.
+  You can choose to feature certain hashtags that you use often. Go to Settings &amp;gt; Profile &amp;gt; Featured hashtags to manage which hashtags you are currently featuring. Once featured, a link to the hashtag will be shown on your profile, with the date of the last time it was used in a status, as well as the total number of statuses in which it was used.</description>
+    </item>
+    
+    <item>
+      <title>proofs API methods</title>
+      <link>https://docs.joinmastodon.org/methods/proofs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/proofs/</guid>
+      <description>#TableOfContents ul ul ul {display: none}   Deprecated
+Identity proofs have been deprecated in 3.5.0 and newer. Previously, the only proof provider was Keybase, but development on Keybase has stalled entirely since it was acquired by Zoom.  (REMOVED) View identity proofs GET /api/proofs HTTP/1.1 Returns: custom response defined by provider
+OAuth: Public
+Version history:
+2.8.0 - added
+Request Query parameters  provider String. The identity provider to be looked up.</description>
+    </item>
+    
+    <item>
+      <title>Proxying object storage through nginx</title>
+      <link>https://docs.joinmastodon.org/admin/optional/object-storage-proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/object-storage-proxy/</guid>
+      <description>When you are using Mastodon with an object storage provider like Amazon S3, Wasabi, Google Cloud or others, by default the URLs of the files go through the storage providers themselves. This has the following downsides:
+ Bandwidth is usually metered and very expensive URLs will be broken if you decide to switch providers later  You can choose to serve the files from your own domain, incorporating caching in the process.</description>
+    </item>
+    
+    <item>
+      <title>push API methods</title>
+      <link>https://docs.joinmastodon.org/methods/push/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/push/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  About the Web Push API Mastodon natively supports the Web Push API. You can utilize the same mechanisms for your native app. Mastodon doesn&amp;rsquo;t connect to Android’s and Apple’s proprietary notification gateways directly, so if you wish to use those you can use a proxy server that translates between the WebPush standard and those gateways. This can be implemented in such a way that the proxy server does not have access to the contents of the notifications.</description>
+    </item>
+    
+    <item>
+      <title>Rate limits</title>
+      <link>https://docs.joinmastodon.org/api/rate-limits/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/api/rate-limits/</guid>
+      <description>Headers Rate limit information is returned in the response headers:
+ X-RateLimit-Limit Number of requests permitted per time period X-RateLimit-Remaining Number of requests you can still make X-RateLimit-Reset Timestamp when your rate limit will reset   An API method can be subject to multiple overlapping rate limits. The headers return information about the one you are closest to exceeding.  Limits By default, the following limits are hardcoded:
+Per account All endpoints and methods can be called 300 times within 5 minutes.</description>
+    </item>
+    
+    <item>
+      <title>Reaction</title>
+      <link>https://docs.joinmastodon.org/entities/Reaction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Reaction/</guid>
+      <description>Example [ { &amp;#34;name&amp;#34;: &amp;#34;bongoCat&amp;#34;, &amp;#34;count&amp;#34;: 9, &amp;#34;me&amp;#34;: false, &amp;#34;url&amp;#34;: &amp;#34;https://files.mastodon.social/custom_emojis/images/000/067/715/original/fdba57dff7576d53.png&amp;#34;, &amp;#34;static_url&amp;#34;: &amp;#34;https://files.mastodon.social/custom_emojis/images/000/067/715/static/fdba57dff7576d53.png&amp;#34; }, { &amp;#34;name&amp;#34;: &amp;#34;🤔&amp;#34;, &amp;#34;count&amp;#34;: 1, &amp;#34;me&amp;#34;: true } ] Attributes name Description: The emoji used for the reaction. Either a unicode emoji, or a custom emoji&amp;rsquo;s shortcode.
+Type: String
+Version history:
+3.1.0 - added
+count Description: The total number of users who have added this reaction.
+Type: Integer
+Version history:
+3.1.0 - added
+me optional Description: If there is a currently authorized user: Have you added this reaction?</description>
+    </item>
+    
+    <item>
+      <title>Relationship</title>
+      <link>https://docs.joinmastodon.org/entities/Relationship/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Relationship/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;following&amp;#34;: true, &amp;#34;showing_reblogs&amp;#34;: true, &amp;#34;notifying&amp;#34;: false, &amp;#34;followed_by&amp;#34;: true, &amp;#34;blocking&amp;#34;: false, &amp;#34;blocked_by&amp;#34;: false, &amp;#34;muting&amp;#34;: false, &amp;#34;muting_notifications&amp;#34;: false, &amp;#34;requested&amp;#34;: false, &amp;#34;requested_by&amp;#34;: false, &amp;#34;domain_blocking&amp;#34;: false, &amp;#34;endorsed&amp;#34;: false, &amp;#34;note&amp;#34;: &amp;#34;&amp;#34; } Attributes id Description: The account ID.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+0.6.0 - added
+following Description: Are you following this user?
+Type: Boolean
+Version history:
+0.6.0 - added
+showing_reblogs Description: Are you receiving this user&amp;rsquo;s boosts in your home timeline?</description>
+    </item>
+    
+    <item>
+      <title>RelationshipSeveranceEvent</title>
+      <link>https://docs.joinmastodon.org/entities/RelationshipSeveranceEvent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/RelationshipSeveranceEvent/</guid>
+      <description>Attributes id Description: The ID of the relationship severance event in the database.
+Type: String (cast from integer)
+Version history:
+4.3.0 - added
+type Description: Type of event.
+Type: String (Enumerable oneOf)
+domain_block = A moderator suspended a whole domain
+user_domain_block = The user blocked a whole domain
+account_suspension = A moderator suspended a specific account
+Version history:
+4.3.0 - added
+purged Description: Whether the list of severed relationships is unavailable because the underlying issue has been purged.</description>
+    </item>
+    
+    <item>
+      <title>Report</title>
+      <link>https://docs.joinmastodon.org/entities/Report/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Report/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;48914&amp;#34;, &amp;#34;action_taken&amp;#34;: false, &amp;#34;action_taken_at&amp;#34;: null, &amp;#34;category&amp;#34;: &amp;#34;spam&amp;#34;, &amp;#34;comment&amp;#34;: &amp;#34;Spam account&amp;#34;, &amp;#34;forwarded&amp;#34;: false, &amp;#34;created_at&amp;#34;: &amp;#34;2022-08-25T09:56:16.763Z&amp;#34;, &amp;#34;status_ids&amp;#34;: [ &amp;#34;108882889550545820&amp;#34; ], &amp;#34;rule_ids&amp;#34;: null, &amp;#34;target_account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;108366849347798387&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;Baluke&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;Baluke&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;Baluke Dental Studios&amp;#34;, &amp;#34;locked&amp;#34;: false, &amp;#34;bot&amp;#34;: false, &amp;#34;discoverable&amp;#34;: false, &amp;#34;group&amp;#34;: false, &amp;#34;created_at&amp;#34;: &amp;#34;2022-05-26T00:00:00.000Z&amp;#34;, &amp;#34;note&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Baluke Dental Studios is a full service dental lab offering fabrication, staining, and digital services. Advanced technologies and a meticulous process ensure reduced chair time, lower costs, and better patient outcomes with beautiful smiles.</description>
+    </item>
+    
+    <item>
+      <title>reports API methods</title>
+      <link>https://docs.joinmastodon.org/methods/reports/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/reports/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  File a report POST /api/v1/reports HTTP/1.1 Returns: Report
+OAuth: User token + write:reports
+Version history:
+1.1 - added
+2.3.0 - add forward parameter
+3.5.0 - add category and rule_ids parameters
+4.0.0 - category is now optional if rule_ids is provided
+4.2.0 - add legal category
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.</description>
+    </item>
+    
+    <item>
+      <title>retention API methods</title>
+      <link>https://docs.joinmastodon.org/methods/admin/retention/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/admin/retention/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Calculate retention data POST /api/v1/admin/retention HTTP/1.1 Generate a retention data report for a given time period and bucket.
+Returns: Array of Admin::Cohort
+OAuth: User token + admin:read
+Permissions: View Dashboard
+Version history:
+3.5.0 - added
+4.0.0 - support custom roles and permissions
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Form data parameters  start_at required String (ISO 8601 Datetime).</description>
+    </item>
+    
+    <item>
+      <title>Role</title>
+      <link>https://docs.joinmastodon.org/entities/Role/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Role/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;3&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;Owner&amp;#34;, &amp;#34;color&amp;#34;: &amp;#34;#ff3838&amp;#34;, &amp;#34;permissions&amp;#34;: &amp;#34;1048575&amp;#34;, &amp;#34;highlighted&amp;#34;: true } Attributes id Description: The ID of the Role in the database.
+Type: String
+Version history:
+4.0.0 - added
+name Description: The name of the role.
+Type: String
+Version history:
+4.0.0 - added
+color Description: The hex code assigned to this role. If no hex code is assigned, the string will be empty.
+Type: String
+Version history:
+4.0.0 - added</description>
+    </item>
+    
+    <item>
+      <title>Roles</title>
+      <link>https://docs.joinmastodon.org/admin/roles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/roles/</guid>
+      <description>Roles When the database is seeded, roles are derived from the values present in ~/config/roles.yml.
+ Role  The resultant default roles are Owner, Admin, and Moderator.
+A role and its attributes can be created using Add role, present on the Roles (/admin/roles) page.
+An existing role&amp;rsquo;s attributes can be changed using the edit role feature.
+Default roles Base role (Default permissions) Affects all users, including users without an assigned role.</description>
+    </item>
+    
+    <item>
+      <title>Routes</title>
+      <link>https://docs.joinmastodon.org/dev/routes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/routes/</guid>
+      <description>config/routes.rb  Explanation of routes Mastodon uses Ruby on Rails, which defines its router configuration at config/routes.rb. You may view the Ruby on Rails routing guide for more detailed information, but this page will explain the basics of how Mastodon handles routing.
+How routes are constructed namespace is a prefix for routes mapped to a certain controller directory. resources are mapped to controllers within that namespace directory. scope passes to the module&#39;s controller.</description>
+    </item>
+    
+    <item>
+      <title>Rule</title>
+      <link>https://docs.joinmastodon.org/entities/Rule/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Rule/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;2&amp;#34;, &amp;#34;text&amp;#34;: &amp;#34;No racism, sexism, homophobia, transphobia, ableism, xenophobia, or casteism.&amp;#34;, &amp;#34;hint&amp;#34;: &amp;#34;Transphobic behavior such as intentional misgendering and deadnaming is strictly prohibited. Promotion of \&amp;#34;conversion therapy\&amp;#34; is strictly prohibited. Criticism of governments and religions is permissible unless being used as a proxy for discrimination.&amp;#34; } Attributes id Description: An identifier for the rule.
+Type: String (cast from integer, but not guaranteed to be a number)
+Version history:</description>
+    </item>
+    
+    <item>
+      <title>Running your own server</title>
+      <link>https://docs.joinmastodon.org/user/run-your-own/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/run-your-own/</guid>
+      <description>Why would you want to run your own Mastodon server?  Absolute control over your own voice on the web, not subject to anyone else&amp;rsquo;s rules or whims. Your server is your property, with your rules. It will exist as long as you want it to exist. You are not isolated on your own server. You can follow anyone on any other server, and they can follow you and you can exchange messages just like if you were on the same server.</description>
+    </item>
+    
+    <item>
+      <title>Scaling up your server</title>
+      <link>https://docs.joinmastodon.org/admin/scaling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/scaling/</guid>
+      <description>Managing concurrency Mastodon has three types of processes:
+ Web (Puma) Streaming API Background processing (Sidekiq)  Web (Puma) The web process serves short-lived HTTP requests for most of the application. The following environment variables control it:
+ WEB_CONCURRENCY controls the number of worker processes MAX_THREADS controls the number of threads per process  Threads share the memory of their parent process. Different processes allocate their own memory, though they share some memory via copy-on-write.</description>
+    </item>
+    
+    <item>
+      <title>scheduled_statuses API methods</title>
+      <link>https://docs.joinmastodon.org/methods/scheduled_statuses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/scheduled_statuses/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View scheduled statuses GET /api/v1/scheduled_statuses HTTP/1.1 Returns: Array of ScheduledStatus
+OAuth: User token + read:statuses
+Version history:
+2.7.0 - added
+3.3.0 - both min_id and max_id can be used at the same time now
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  max_id String. All results returned will be lesser than this ID.</description>
+    </item>
+    
+    <item>
+      <title>ScheduledStatus</title>
+      <link>https://docs.joinmastodon.org/entities/ScheduledStatus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/ScheduledStatus/</guid>
+      <description>Example Returned from POST /api/v1/statuses?status=test post&amp;amp;scheduled_at=2022-09-29
+{ &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;scheduled_at&amp;#34;: &amp;#34;2022-09-29T00:00:00.000Z&amp;#34;, &amp;#34;params&amp;#34;: { &amp;#34;text&amp;#34;: &amp;#34;test post&amp;#34;, &amp;#34;media_ids&amp;#34;: null, &amp;#34;sensitive&amp;#34;: null, &amp;#34;spoiler_text&amp;#34;: null, &amp;#34;visibility&amp;#34;: null, &amp;#34;language&amp;#34;: null, &amp;#34;scheduled_at&amp;#34;: null, &amp;#34;poll&amp;#34;: null, &amp;#34;idempotency&amp;#34;: null, &amp;#34;with_rate_limit&amp;#34;: false, &amp;#34;in_reply_to_id&amp;#34;: null, &amp;#34;application_id&amp;#34;: 3 }, &amp;#34;media_attachments&amp;#34;: [] } Returned from GET /api/v1/scheduled_statuses:
+{ &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;scheduled_at&amp;#34;: &amp;#34;2022-09-29T00:00:00.000Z&amp;#34;, &amp;#34;params&amp;#34;: { &amp;#34;poll&amp;#34;: null, &amp;#34;text&amp;#34;: &amp;#34;test post&amp;#34;, &amp;#34;language&amp;#34;: null, &amp;#34;media_ids&amp;#34;: null, &amp;#34;sensitive&amp;#34;: null, &amp;#34;visibility&amp;#34;: null, &amp;#34;idempotency&amp;#34;: null, &amp;#34;scheduled_at&amp;#34;: null, &amp;#34;spoiler_text&amp;#34;: null, &amp;#34;application_id&amp;#34;: 3, &amp;#34;in_reply_to_id&amp;#34;: null, &amp;#34;with_rate_limit&amp;#34;: false }, &amp;#34;media_attachments&amp;#34;: [] } Attributes id Description: ID of the scheduled status in the database.</description>
+    </item>
+    
+    <item>
+      <title>Search</title>
+      <link>https://docs.joinmastodon.org/entities/Search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Search/</guid>
+      <description>Example Truncated sample search for q=cats limit=2
+{ &amp;#34;accounts&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;180744&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;catstar&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;catstar@catgram.jp&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;catstar&amp;#34;, // ... }, { &amp;#34;id&amp;#34;: &amp;#34;214293&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;catsareweird&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;catsareweird&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;Cats Are Weird&amp;#34;, // ... } ], &amp;#34;statuses&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;103085519055545958&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2019-11-05T13:23:09.000Z&amp;#34;, // ... &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;cats&amp;lt;br&amp;gt;cats never change&amp;lt;/p&amp;gt;&amp;#34;, // ... }, { &amp;#34;id&amp;#34;: &amp;#34;101068121469614510&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2018-11-14T06:31:48.000Z&amp;#34;, // ... &amp;#34;spoiler_text&amp;#34;: &amp;#34;Cats&amp;#34;, // ... &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Cats are inherently good at self-care.</description>
+    </item>
+    
+    <item>
+      <title>search API methods</title>
+      <link>https://docs.joinmastodon.org/methods/search/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/search/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Perform a search GET /api/v2/search HTTP/1.1 Returns: Search
+OAuth: Public (without resolve or offset), or User token + read:search
+Version history:
+2.4.1 - added, limit hardcoded to 5
+2.8.0 - add type, limit, offset, min_id, max_id, account_id
+3.0.0 - add exclude_unreviewed param
+3.3.0 - min_id and max_id can be used together
+4.0.0 - no longer requires a user token. Without a valid user token, you cannot use the resolve or offset parameters.</description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>https://docs.joinmastodon.org/spec/security/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/spec/security/</guid>
+      <description>HTTP Signatures  app/lib/request.rb  HTTP Signatures is a specification for signing HTTP messages by using a Signature: header with your HTTP request. Mastodon requires the use of HTTP Signatures in order to validate that any activity received was authored by the actor generating it. When secure mode is enabled, all GET requests require HTTP signatures as well.
+For any HTTP request incoming to Mastodon, the Signature header should be attached:</description>
+    </item>
+    
+    <item>
+      <title>Set your preferences</title>
+      <link>https://docs.joinmastodon.org/user/preferences/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/preferences/</guid>
+      <description>Customizing the user interface Choose a theme Mastodon defaults to a dark theme, but a light or high-contrast theme can be selected.
+ Mastodon light theme
+  Choose your layout Mastodon defaults to a simple, one-column layout with a compose box on the left and a column switcher on the right. You can choose to enable the advanced web interface, which allows you view and pin multiple columns at the same time.</description>
+    </item>
+    
+    <item>
+      <title>Setting up a dev environment</title>
+      <link>https://docs.joinmastodon.org/dev/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/setup/</guid>
+      <description>Quick start with Vagrant For convenience, the Mastodon repository includes a Vagrantfile for quickly setting up a development environment without manual configuration. To use this development environment, install Vagrant using a binary executable or through your package manager.
+Once you have Vagrant installed, for convenience, it is recommended to install a plugin to automatically update your machine&amp;rsquo;s hosts file. This will allow you to access the dev environment at http://mastodon.local without manually editing the hosts file yourself.</description>
+    </item>
+    
+    <item>
+      <title>Setting up your new instance</title>
+      <link>https://docs.joinmastodon.org/admin/setup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/setup/</guid>
+      <description>Creating an admin account In the browser After signing up in the browser, you will need to use the command line to give your newly created account admin privileges. Assuming your username is alice:
+RAILS_ENV=production bin/tootctl accounts modify alice --role Owner  Prior to Mastodon 4.0, roles were hardcoded to be one of user, moderator, or admin. Since Mastodon 4.0, there is a customizable role system, with default roles created for Moderator, Admin, and Owner.</description>
+    </item>
+    
+    <item>
+      <title>Setting up your profile</title>
+      <link>https://docs.joinmastodon.org/user/profile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/profile/</guid>
+      <description>Your appearance  Profile cards showing display name, avatar, and header
+  You can change how your profile appears to others by navigating to Settings &amp;gt; Profile &amp;gt; Appearance.
+Display name Your display name is shown to other users before your address. You can set a display name up to 30 characters by default.
+Bio Your bio is a short description of yourself that is displayed as a note on your profile.</description>
+    </item>
+    
+    <item>
+      <title>Signing up for an account</title>
+      <link>https://docs.joinmastodon.org/user/signup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/signup/</guid>
+      <description>Choosing a website You have to choose a website to sign up on, like you would choose an e-mail provider, or a World of Warcraft realm for your new character. The website will be your service provider, hosting your account, your profile, and your home feed.
+ You can browse a list of servers by categories and languages on joinmastodon.org.  Understanding a website&amp;rsquo;s policies Before you sign up for a service, it is important to understand its policies and terms of use.</description>
+    </item>
+    
+    <item>
+      <title>Single Sign On</title>
+      <link>https://docs.joinmastodon.org/admin/optional/sso/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/optional/sso/</guid>
+      <description> This page is under construction.
+For the moment, please refer to this pull request
+ </description>
+    </item>
+    
+    <item>
+      <title>Status</title>
+      <link>https://docs.joinmastodon.org/entities/Status/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Status/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;103270115826048975&amp;#34;, &amp;#34;created_at&amp;#34;: &amp;#34;2019-12-08T03:48:33.901Z&amp;#34;, &amp;#34;in_reply_to_id&amp;#34;: null, &amp;#34;in_reply_to_account_id&amp;#34;: null, &amp;#34;sensitive&amp;#34;: false, &amp;#34;spoiler_text&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;visibility&amp;#34;: &amp;#34;public&amp;#34;, &amp;#34;language&amp;#34;: &amp;#34;en&amp;#34;, &amp;#34;uri&amp;#34;: &amp;#34;https://mastodon.social/users/Gargron/statuses/103270115826048975&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://mastodon.social/@Gargron/103270115826048975&amp;#34;, &amp;#34;replies_count&amp;#34;: 5, &amp;#34;reblogs_count&amp;#34;: 6, &amp;#34;favourites_count&amp;#34;: 11, &amp;#34;favourited&amp;#34;: false, &amp;#34;reblogged&amp;#34;: false, &amp;#34;muted&amp;#34;: false, &amp;#34;bookmarked&amp;#34;: false, &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;&amp;amp;quot;I lost my inheritance with one wrong digit on my sort code&amp;amp;quot;&amp;lt;/p&amp;gt;&amp;lt;p&amp;gt;&amp;lt;a href=\&amp;#34;https://www.theguardian.com/money/2019/dec/07/i-lost-my-193000-inheritance-with-one-wrong-digit-on-my-sort-code\&amp;#34; rel=\&amp;#34;nofollow noopener noreferrer\&amp;#34; target=\&amp;#34;_blank\&amp;#34;&amp;gt;&amp;lt;span class=\&amp;#34;invisible\&amp;#34;&amp;gt;https://www.&amp;lt;/span&amp;gt;&amp;lt;span class=\&amp;#34;ellipsis\&amp;#34;&amp;gt;theguardian.com/money/2019/dec&amp;lt;/span&amp;gt;&amp;lt;span class=\&amp;#34;invisible\&amp;#34;&amp;gt;/07/i-lost-my-193000-inheritance-with-one-wrong-digit-on-my-sort-code&amp;lt;/span}&amp;lt;/p&amp;gt;&amp;#34;, &amp;#34;reblog&amp;#34;: null, &amp;#34;application&amp;#34;: { &amp;#34;name&amp;#34;: &amp;#34;Web&amp;#34;, &amp;#34;website&amp;#34;: null }, &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;1&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;Gargron&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;Gargron&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;Eugen&amp;#34;, &amp;#34;locked&amp;#34;: false, &amp;#34;bot&amp;#34;: false, &amp;#34;discoverable&amp;#34;: true, &amp;#34;group&amp;#34;: false, &amp;#34;created_at&amp;#34;: &amp;#34;2016-03-16T14:34:26.</description>
+    </item>
+    
+    <item>
+      <title>StatusEdit</title>
+      <link>https://docs.joinmastodon.org/entities/StatusEdit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/StatusEdit/</guid>
+      <description>Example { &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;this is a status that has been edited three times. this time a poll has been added.&amp;lt;/p&amp;gt;&amp;#34;, &amp;#34;spoiler_text&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;sensitive&amp;#34;: false, &amp;#34;created_at&amp;#34;: &amp;#34;2022-09-05T00:03:32.480Z&amp;#34;, &amp;#34;poll&amp;#34;: { &amp;#34;options&amp;#34;: [ { &amp;#34;title&amp;#34;: &amp;#34;cool&amp;#34; }, { &amp;#34;title&amp;#34;: &amp;#34;uncool&amp;#34; }, { &amp;#34;title&amp;#34;: &amp;#34;spiderman (this option has been changed)&amp;#34; } ] }, &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;14715&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;trwnh&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;trwnh&amp;#34;, &amp;#34;display_name&amp;#34;: &amp;#34;infinite love ⴳ&amp;#34;, // ... }, &amp;#34;media_attachments&amp;#34;: [], &amp;#34;emojis&amp;#34;: [] } Attributes content Description: The content of the status at this revision.</description>
+    </item>
+    
+    <item>
+      <title>statuses API methods</title>
+      <link>https://docs.joinmastodon.org/methods/statuses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/statuses/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Post a new status POST /api/v1/statuses HTTP/1.1 Publish a status with the given parameters.
+Returns: Status. When scheduled_at is present, ScheduledStatus is returned instead.
+OAuth: User + write:statuses
+Version history:
+0.0.0 - added
+2.7.0 - scheduled_at added
+2.8.0 - poll added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method. Idempotency-Key Provide this header with any arbitrary string to prevent duplicate submissions of the same status.</description>
+    </item>
+    
+    <item>
+      <title>StatusSource</title>
+      <link>https://docs.joinmastodon.org/entities/StatusSource/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/StatusSource/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;108942703571991143&amp;#34;, &amp;#34;text&amp;#34;: &amp;#34;this is a status that will be edited&amp;#34;, &amp;#34;spoiler_text&amp;#34;: &amp;#34;&amp;#34; } Attributes id Description: ID of the status in the database.
+Type: String (cast from an integer but not guaranteed to be a number)
+Version history:
+3.5.0 - added
+text Description: The plain text used to compose the status.
+Type: String
+Version history:
+3.5.0 - added
+spoiler_text Description: The plain text used to compose the status&amp;rsquo;s subject or content warning.</description>
+    </item>
+    
+    <item>
+      <title>streaming API methods</title>
+      <link>https://docs.joinmastodon.org/methods/streaming/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/streaming/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  Event types and payloads  update A new Status has appeared. Payload contains a Status cast to a string. Available since v1.0.0 delete A status has been deleted. Payload contains the String ID of the deleted Status. Available since v1.0.0 notification A new notification has appeared. Payload contains a Notification cast to a string. Available since v1.4.2 filters_changed Keyword filters have been changed.</description>
+    </item>
+    
+    <item>
+      <title>Suggestion</title>
+      <link>https://docs.joinmastodon.org/entities/Suggestion/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Suggestion/</guid>
+      <description>Example { &amp;#34;source&amp;#34;: &amp;#34;staff&amp;#34;, &amp;#34;account&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;109031732217496096&amp;#34;, &amp;#34;username&amp;#34;: &amp;#34;alice&amp;#34;, &amp;#34;acct&amp;#34;: &amp;#34;alice&amp;#34;, // ... } } Attributes source Description: The reason this account is being suggested.
+Type: String (Enumerable oneOf)
+staff = This account was manually recommended by your administration team
+past_interactions = You have interacted with this account previously
+global = This account has many reblogs, favourites, and active local followers within the last 30 days
+Version history:
+3.4.0 - added</description>
+    </item>
+    
+    <item>
+      <title>suggestions API methods</title>
+      <link>https://docs.joinmastodon.org/methods/suggestions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/suggestions/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View follow suggestions (v2) GET /api/v2/suggestions HTTP/1.1 Accounts that are promoted by staff, or that the user has had past positive interactions with, but is not yet following.
+Returns: Array of Suggestion
+OAuth: User token + read
+Version history:
+3.4.0 - added
+Request Headers  Authorization required Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Query parameters  limit Integer.</description>
+    </item>
+    
+    <item>
+      <title>Tag</title>
+      <link>https://docs.joinmastodon.org/entities/Tag/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Tag/</guid>
+      <description>Example { &amp;#34;name&amp;#34;: &amp;#34;nowplaying&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;https://mastodon.social/tags/nowplaying&amp;#34;, &amp;#34;history&amp;#34;: [ { &amp;#34;day&amp;#34;: &amp;#34;1574553600&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;200&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;31&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1574467200&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;272&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;39&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1574380800&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;345&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;40&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1574294400&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;366&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;46&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1574208000&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;226&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;32&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1574121600&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;217&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;42&amp;#34; }, { &amp;#34;day&amp;#34;: &amp;#34;1574035200&amp;#34;, &amp;#34;uses&amp;#34;: &amp;#34;214&amp;#34;, &amp;#34;accounts&amp;#34;: &amp;#34;34&amp;#34; } ], &amp;#34;following&amp;#34;: false } Attributes name Description: The value of the hashtag after the # sign.</description>
+    </item>
+    
+    <item>
+      <title>tags API methods</title>
+      <link>https://docs.joinmastodon.org/methods/tags/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/tags/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View information about a single tag GET /api/v1/tags/:id HTTP/1.1 Show a hashtag and its associated information
+Returns: Tag
+OAuth: Public, or User token
+Version history:
+4.0.0 - added
+Request Path parameters  :id required String. The name of the hashtag.  Headers  Authorization Provide this header with Bearer &amp;lt;user token&amp;gt; to gain authorized access to this API method.  Response 200: OK { &amp;#34;name&amp;#34;: &amp;#34;Test&amp;#34;, &amp;#34;url&amp;#34;: &amp;#34;http://mastodon.</description>
+    </item>
+    
+    <item>
+      <title>Technical overview</title>
+      <link>https://docs.joinmastodon.org/dev/overview/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/dev/overview/</guid>
+      <description>Mastodon is a Ruby on Rails application with a React.js front-end. It follows standard practices of those frameworks, so if you are already familiar with Rails or React.js, you will not find any surprises here.
+The best way of working with Mastodon in a development environment is installing all the dependencies on your system, rather than using Docker or Vagrant. You need Ruby, Node.js, PostgreSQL and Redis, which is a pretty standard set of dependencies for Rails applications.</description>
+    </item>
+    
+    <item>
+      <title>timelines API methods</title>
+      <link>https://docs.joinmastodon.org/methods/timelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/timelines/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View public timeline GET /api/v1/timelines/public HTTP/1.1 View public statuses.
+Returns: Array of Status
+OAuth: Public. Requires app token + read:statuses if the instance has disabled public preview.
+Version history:
+0.0.0 - added
+2.3.0 - added only_media
+2.6.0 - add min_id
+3.0.0 - auth is required if public preview is disabled
+3.1.4 - added remote
+3.3.0 - both min_id and max_id can be used at the same time now</description>
+    </item>
+    
+    <item>
+      <title>Token</title>
+      <link>https://docs.joinmastodon.org/entities/Token/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Token/</guid>
+      <description>Example { &amp;#34;access_token&amp;#34;: &amp;#34;ZA-Yj3aBD8U8Cm7lKUp-lm9O9BmDgdhHzDeqsY8tlL0&amp;#34;, &amp;#34;token_type&amp;#34;: &amp;#34;Bearer&amp;#34;, &amp;#34;scope&amp;#34;: &amp;#34;read write follow push&amp;#34;, &amp;#34;created_at&amp;#34;: 1573979017 } Attributes access_token Description: An OAuth token to be used for authorization.
+Type: String
+Version history:
+0.1.0 - added
+token_type Description: The OAuth token type. Mastodon uses Bearer tokens.
+Type: String
+Version history:
+0.1.0 - added
+scope Description: The OAuth scopes granted by this token, space-separated.
+Type: String
+Version history:
+0.1.0 - added
+created_at Description: When the token was generated.</description>
+    </item>
+    
+    <item>
+      <title>Translation</title>
+      <link>https://docs.joinmastodon.org/entities/Translation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/Translation/</guid>
+      <description>Examples Translation of status with content warning and media
+{ &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Hello world&amp;lt;/p&amp;gt;&amp;#34;, &amp;#34;spoiler_text&amp;#34;: &amp;#34;Greatings ahead&amp;#34;, &amp;#34;media_attachments&amp;#34;: [ { &amp;#34;id&amp;#34;: &amp;#34;22345792&amp;#34;, &amp;#34;description&amp;#34;: &amp;#34;Status author waving at the camera&amp;#34; } ], &amp;#34;poll&amp;#34;: null, &amp;#34;detected_source_language&amp;#34;: &amp;#34;es&amp;#34;, &amp;#34;provider&amp;#34;: &amp;#34;DeepL.com&amp;#34; } Translation of status with poll:
+{ &amp;#34;content&amp;#34;: &amp;#34;&amp;lt;p&amp;gt;Should I stay or should I go?&amp;lt;/p&amp;gt;&amp;#34;, &amp;#34;spoiler_text&amp;#34;: &amp;#34;&amp;#34;, &amp;#34;media_attachments&amp;#34;: [], &amp;#34;poll&amp;#34;: { &amp;#34;id&amp;#34;: &amp;#34;34858&amp;#34;, &amp;#34;options&amp;#34;: [ { &amp;#34;title&amp;#34;: &amp;#34;Stay&amp;#34; }, { &amp;#34;title&amp;#34;: &amp;#34;Go&amp;#34; } ] }, &amp;#34;detected_source_language&amp;#34;: &amp;#34;ja&amp;#34;, &amp;#34;provider&amp;#34;: &amp;#34;DeepL.</description>
+    </item>
+    
+    <item>
+      <title>trends API methods</title>
+      <link>https://docs.joinmastodon.org/methods/trends/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/methods/trends/</guid>
+      <description>#TableOfContents ul ul ul {display: none}  View trending tags GET /api/v1/trends/tags HTTP/1.1 Tags that are being used more frequently within the past week.
+Returns: Array of Tag
+OAuth: Public
+Version history:
+3.0.0 - added
+3.5.0 - method signature changed from GET /api/v1/trends to GET /api/v1/trends/tags. The former is a deprecated alias that may be removed in the future.
+Request Query parameters  limit Integer. Maximum number of results to return.</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting errors</title>
+      <link>https://docs.joinmastodon.org/admin/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/troubleshooting/</guid>
+      <description>I see an error page that says something went wrong. How do I find out what’s wrong? All error messages with stack traces are written to the system log. When using systemd, the logs of each systemd service can be browsed with journalctl -u mastodon-web (substitute with the correct service name). When using Docker, it’s similar: docker logs mastodon_web_1 (substitute with the correct container name).
+Specific details of server-side errors are never displayed to the public, as they can reveal what your setup looks like internally and give attackers clues on how to get in, or how to abuse the system more efficiently.</description>
+    </item>
+    
+    <item>
+      <title>Upgrading to a new release</title>
+      <link>https://docs.joinmastodon.org/admin/upgrading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/upgrading/</guid>
+      <description>When a new version of Mastodon comes out, it appears on the GitHub releases page. Please mind that running unreleased code from the main branch, while possible, is not recommended.  Automatic update verification Since v4.2.0, Mastodon will automatically check for available updates and notify the users of your server that have the DevOps permission.
+This happens by fetching https://api.joinmastodon.org/update-check?version=&amp;lt;current_version&amp;gt; in the background every 30 minutes. current_version omits the build metadata (everything after the first +, if there is one, in the version string).</description>
+    </item>
+    
+    <item>
+      <title>Using Mastodon externally</title>
+      <link>https://docs.joinmastodon.org/user/external/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/external/</guid>
+      <description>Remote interactions on another Mastodon site  An example of a post&#39;s public permalink on a Mastodon site.
+  When you are browsing a remote site powered by Mastodon, clicking on any of the interaction buttons will load a dialog that will redirect you to your local site.
+ A remote interaction dialog for replying to a toot.
+  Signing into a client app You can use your Mastodon account to sign into any app that implements the Mastodon API.</description>
+    </item>
+    
+    <item>
+      <title>Using the admin CLI</title>
+      <link>https://docs.joinmastodon.org/admin/tootctl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/admin/tootctl/</guid>
+      <description>The command-line interface of Mastodon is an executable file called tootctl residing in the bin directory within the Mastodon root directory. You must specify which environment you intend to use whenever you execute it by specifying the RAILS_ENV environment variable. Unless you are a developer working on a local machine, you need to use RAILS_ENV=production. If you are sure that you will never need another environment (for development, testing, or staging), you can add it to your .</description>
+    </item>
+    
+    <item>
+      <title>Using the network features</title>
+      <link>https://docs.joinmastodon.org/user/network/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/user/network/</guid>
+      <description>Browsing content through public timelines  Posts within a public timeline
+  To allow you to discover potentially interesting content, Mastodon provides a way to browse all public posts. Well, there is no global shared state between all servers, so there is no way to browse all public posts. When you browse the federated timeline, you see all public posts that the server you are on knows about. There are various ways your server may discover posts, but the bulk of them will be from people that other users on your server follow.</description>
+    </item>
+    
+    <item>
+      <title>V1::Filter</title>
+      <link>https://docs.joinmastodon.org/entities/V1_Filter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/V1_Filter/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: &amp;#34;8449&amp;#34;, &amp;#34;phrase&amp;#34;: &amp;#34;test&amp;#34;, &amp;#34;context&amp;#34;: [ &amp;#34;home&amp;#34;, &amp;#34;notifications&amp;#34;, &amp;#34;public&amp;#34;, &amp;#34;thread&amp;#34; ], &amp;#34;whole_word&amp;#34;: false, &amp;#34;expires_at&amp;#34;: &amp;#34;2019-11-26T09:08:06.254Z&amp;#34;, &amp;#34;irreversible&amp;#34;: true } Attributes id Description: The ID of the filter in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+2.4.3 - added
+phrase Description: The text to be filtered.
+Type: String
+Version history:
+2.4.3 - added
+context Description: The contexts in which the filter should be applied.</description>
+    </item>
+    
+    <item>
+      <title>V1::Instance</title>
+      <link>https://docs.joinmastodon.org/entities/V1_Instance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/V1_Instance/</guid>
+      <description>Example { &amp;#34;uri&amp;#34;:&amp;#34;mastodon.social&amp;#34;, &amp;#34;title&amp;#34;:&amp;#34;Mastodon&amp;#34;, &amp;#34;short_description&amp;#34;:&amp;#34;The original server operated by the Mastodon gGmbH non-profit&amp;#34;, &amp;#34;description&amp;#34;:&amp;#34;&amp;#34;, &amp;#34;email&amp;#34;:&amp;#34;staff@mastodon.social&amp;#34;, &amp;#34;version&amp;#34;:&amp;#34;3.5.3&amp;#34;, &amp;#34;urls&amp;#34;:{ &amp;#34;streaming_api&amp;#34;:&amp;#34;wss://mastodon.social&amp;#34; }, &amp;#34;stats&amp;#34;:{ &amp;#34;user_count&amp;#34;:812303, &amp;#34;status_count&amp;#34;:38151616, &amp;#34;domain_count&amp;#34;:25255 }, &amp;#34;thumbnail&amp;#34;:&amp;#34;https://files.mastodon.social/site_uploads/files/000/000/001/original/vlcsnap-2018-08-27-16h43m11s127.png&amp;#34;, &amp;#34;languages&amp;#34;:[ &amp;#34;en&amp;#34; ], &amp;#34;registrations&amp;#34;:false, &amp;#34;approval_required&amp;#34;:false, &amp;#34;invites_enabled&amp;#34;:true, &amp;#34;configuration&amp;#34;:{ &amp;#34;statuses&amp;#34;:{ &amp;#34;max_characters&amp;#34;:500, &amp;#34;max_media_attachments&amp;#34;:4, &amp;#34;characters_reserved_per_url&amp;#34;:23 }, &amp;#34;media_attachments&amp;#34;:{ &amp;#34;supported_mime_types&amp;#34;:[ &amp;#34;image/jpeg&amp;#34;, &amp;#34;image/png&amp;#34;, &amp;#34;image/gif&amp;#34;, &amp;#34;image/webp&amp;#34;, &amp;#34;video/webm&amp;#34;, &amp;#34;video/mp4&amp;#34;, &amp;#34;video/quicktime&amp;#34;, &amp;#34;video/ogg&amp;#34;, &amp;#34;audio/wave&amp;#34;, &amp;#34;audio/wav&amp;#34;, &amp;#34;audio/x-wav&amp;#34;, &amp;#34;audio/x-pn-wave&amp;#34;, &amp;#34;audio/vnd.wave&amp;#34;, &amp;#34;audio/ogg&amp;#34;, &amp;#34;audio/vorbis&amp;#34;, &amp;#34;audio/mpeg&amp;#34;, &amp;#34;audio/mp3&amp;#34;, &amp;#34;audio/webm&amp;#34;, &amp;#34;audio/flac&amp;#34;, &amp;#34;audio/aac&amp;#34;, &amp;#34;audio/m4a&amp;#34;, &amp;#34;audio/x-m4a&amp;#34;, &amp;#34;audio/mp4&amp;#34;, &amp;#34;audio/3gpp&amp;#34;, &amp;#34;video/x-ms-asf&amp;#34; ], &amp;#34;image_size_limit&amp;#34;:10485760, &amp;#34;image_matrix_limit&amp;#34;:16777216, &amp;#34;video_size_limit&amp;#34;:41943040, &amp;#34;video_frame_rate_limit&amp;#34;:60, &amp;#34;video_matrix_limit&amp;#34;:2304000 }, &amp;#34;polls&amp;#34;:{ &amp;#34;max_options&amp;#34;:4, &amp;#34;max_characters_per_option&amp;#34;:50, &amp;#34;min_expiration&amp;#34;:300, &amp;#34;max_expiration&amp;#34;:2629746 } }, &amp;#34;contact_account&amp;#34;:{ &amp;#34;id&amp;#34;:&amp;#34;1&amp;#34;, &amp;#34;username&amp;#34;:&amp;#34;Gargron&amp;#34;, &amp;#34;acct&amp;#34;:&amp;#34;Gargron&amp;#34;, &amp;#34;display_name&amp;#34;:&amp;#34;Eugen&amp;#34;, &amp;#34;locked&amp;#34;:false, &amp;#34;bot&amp;#34;:false, &amp;#34;discoverable&amp;#34;:true, &amp;#34;group&amp;#34;:false, &amp;#34;created_at&amp;#34;:&amp;#34;2016-03-16T00:00:00.</description>
+    </item>
+    
+    <item>
+      <title>WebFinger</title>
+      <link>https://docs.joinmastodon.org/spec/webfinger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/spec/webfinger/</guid>
+      <description>What is WebFinger, and why is it used? On Mastodon, user profiles can be hosted either locally on the same website as yours, or remotely on a completely different website. The same username may be used on a different domain. Therefore, a Mastodon user&amp;rsquo;s full mention consists of both the username and the domain, in the form @username@domain. In practical terms, @user@example.com is not the same as @user@example.org. If the domain is not included, Mastodon will try to find a local user named @username.</description>
+    </item>
+    
+    <item>
+      <title>WebPushSubscription</title>
+      <link>https://docs.joinmastodon.org/entities/WebPushSubscription/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://docs.joinmastodon.org/entities/WebPushSubscription/</guid>
+      <description>Example { &amp;#34;id&amp;#34;: 328183, &amp;#34;endpoint&amp;#34;: &amp;#34;https://yourdomain.example/listener&amp;#34;, &amp;#34;alerts&amp;#34;: { &amp;#34;follow&amp;#34;: false, &amp;#34;favourite&amp;#34;: false, &amp;#34;reblog&amp;#34;: false, &amp;#34;mention&amp;#34;: true, &amp;#34;poll&amp;#34;: false }, &amp;#34;server_key&amp;#34;: &amp;#34;BCk-QqERU0q-CfYZjcuB6lnyyOYfJ2AifKqfeGIm7Z-HiTU5T9eTG5GxVA0_OH5mMlI4UkkDTpaZwozy0TzdZ2M=&amp;#34; } Attributes id Description: The ID of the Web Push subscription in the database.
+Type: String (cast from an integer, but not guaranteed to be a number)
+Version history:
+2.4.0 - added
+endpoint Description: Where push alerts will be sent to.
+Type: String (URL)
+Version history:
+2.4.0 - added</description>
+    </item>
+    
+  </channel>
+</rss>
