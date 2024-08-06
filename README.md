@@ -5,6 +5,10 @@ For [Mastodon Documentation](https://github.com/mastodon/documentation) pull req
 This repo is meant to serve as a working example, and show test results.
 All test files are in the `/_test_*` folders.
 
+_Ctrl + Click_ Below for Demo Video (_hosted outside gitHub_):
+
+[![Example Video](https://practicing.xyz/gitHub/Process/ExampleVideos/documentation-sequential-links/videoImg.jpg)](https://practicing.xyz/gitHub/Process/ExampleVideos/documentation-sequential-links/Example.webm)
+
 ## INSTRUCTIONS - To Preview Pull Request Results
 To get a preview of the site built with 
 https://github.com/mastodon/documentation/pull/1395 
