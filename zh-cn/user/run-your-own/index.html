@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-cn">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,23 +10,23 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>运行自己的服务器 - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/zh-cn/user/run-your-own/">
+  <meta property="og:url" content="http://localhost:1313/zh-cn/user/run-your-own/">
 
   
 
   <meta name="twitter:title" content="运行自己的服务器">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/zh-cn/user/run-your-own/">
+  <link rel="canonical" href="http://localhost:1313/zh-cn/user/run-your-own/">
 </head>
 
 <body>
@@ -301,8 +301,25 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="为什么你要运行自己的mastodon服务器">为什么你要运行自己的Mastodon服务器？</h2>
-<ul>
+    <h2 class="heading" id="为什么你要运行自己的mastodon服务器">
+	<span class="heading__text">为什么你要运行自己的Mastodon服务器？</span>
+	<a class="heading__anchor-link" href="#%e4%b8%ba%e4%bb%80%e4%b9%88%e4%bd%a0%e8%a6%81%e8%bf%90%e8%a1%8c%e8%87%aa%e5%b7%b1%e7%9a%84mastodon%e6%9c%8d%e5%8a%a1%e5%99%a8">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><ul>
 <li>绝对控制自己在网络上的声音，不受制于任何其他人的管理与左右。你的服务器是你的财产，受你的管理。只要你想让它存在，它就会一直存在。</li>
 <li>你在你自己的服务器上并<em>不是</em>孤立的。你可以关注其他任意服务器上任何人，他们也可以关注你，你可以像在同一服务器上一样交换信息。</li>
 <li>你可以限制注册人数，成为服务器上唯一的一个人，然后像个人（微）博客一样运行；也可以为家人或朋友维护一个邀请制的社区；或者运行一个任何人都可以注册的服务器。这都由你自己决定！</li>
@@ -313,8 +330,25 @@
   请注意，提供公共互联网服务涉及到审核工作和社区管理，而且这些工作会随着服务器的扩大而变得更加复杂。
 </div>
 
-<h2 id="如果你想要运行自己的mastodon服务器">如果你想要运行自己的Mastodon服务器……</h2>
-<p>你需要这些：</p>
+<h2 class="heading" id="如果你想要运行自己的mastodon服务器">
+	<span class="heading__text">如果你想要运行自己的Mastodon服务器……</span>
+	<a class="heading__anchor-link" href="#%e5%a6%82%e6%9e%9c%e4%bd%a0%e6%83%b3%e8%a6%81%e8%bf%90%e8%a1%8c%e8%87%aa%e5%b7%b1%e7%9a%84mastodon%e6%9c%8d%e5%8a%a1%e5%99%a8">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>你需要这些：</p>
 <ul>
 <li>
 <p>一个<strong>域名</strong>。这是你和其他人访问你的服务器的方式，也是你和你的用户在网络上的身份标识。</p>
@@ -686,7 +720,7 @@
 </script>
 
     <p style="color: #687590;">
-      最后更新于 August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/run-your-own.md' style="color: #687590;">改进此页面</a>
+      最后更新于 November 20, 2022 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user%5crun-your-own.md' style="color: #687590;">改进此页面</a>
 
       
         <br />
@@ -744,7 +778,7 @@
     <a href='https://joinmastodon.org'>加入Mastodon</a> · <a href='https://blog.joinmastodon.org'>博客</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user/run-your-own.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/user%5crun-your-own.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
 </footer>
 
 </body>

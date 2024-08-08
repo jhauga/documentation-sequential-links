@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>PreviewCard - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/entities/PreviewCard/">
+  <meta property="og:url" content="http://localhost:1313/entities/PreviewCard/">
 
   
     <meta name="description" content="Represents a rich preview card that is generated using OpenGraph tags from a URL.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="PreviewCard">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/entities/PreviewCard/">
+  <link rel="canonical" href="http://localhost:1313/entities/PreviewCard/">
 </head>
 
 <body>
@@ -1090,76 +1090,229 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="examples">Examples</h2>
-<h3 id="video">Video</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.youtube.com/watch?v=OMv_EPMED8Y&#34;</span>,
-  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;♪ Brand New Friend (Christmas Song!)&#34;</span>,
-  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;video&#34;</span>,
-  <span style="color:#ff79c6">&#34;author_name&#34;</span>: <span style="color:#f1fa8c">&#34;YOGSCAST Lewis &amp; Simon&#34;</span>,
-  <span style="color:#ff79c6">&#34;author_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.youtube.com/user/BlueXephos&#34;</span>,
-  <span style="color:#ff79c6">&#34;provider_name&#34;</span>: <span style="color:#f1fa8c">&#34;YouTube&#34;</span>,
-  <span style="color:#ff79c6">&#34;provider_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.youtube.com/&#34;</span>,
-  <span style="color:#ff79c6">&#34;html&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;iframe width=\&#34;480\&#34; height=\&#34;270\&#34; src=\&#34;https://www.youtube.com/embed/OMv_EPMED8Y?feature=oembed\&#34; frameborder=\&#34;0\&#34; allowfullscreen=\&#34;\&#34;&gt;&lt;/iframe&gt;&#34;</span>,
-  <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">480</span>,
-  <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">270</span>,
-  <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/preview_cards/images/014/179/145/original/9cf4b7cf5567b569.jpeg&#34;</span>,
-  <span style="color:#ff79c6">&#34;embed_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UvK0HNkV,:s9xBR%njog0fo2W=WBS5ozofV@&#34;</span>
-}
-</code></pre></div><h3 id="photo">Photo</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.flickr.com/photos/tomfenskephotography/49088768431/&#34;</span>,
-  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Oregon&#34;</span>,
-  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;photo&#34;</span>,
-  <span style="color:#ff79c6">&#34;author_name&#34;</span>: <span style="color:#f1fa8c">&#34;Tom Fenske Photography&#34;</span>,
-  <span style="color:#ff79c6">&#34;author_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.flickr.com/photos/tomfenskephotography/&#34;</span>,
-  <span style="color:#ff79c6">&#34;provider_name&#34;</span>: <span style="color:#f1fa8c">&#34;Flickr&#34;</span>,
-  <span style="color:#ff79c6">&#34;provider_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.flickr.com/&#34;</span>,
-  <span style="color:#ff79c6">&#34;html&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">1024</span>,
-  <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">427</span>,
-  <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/preview_cards/images/014/287/139/original/651b1c6976817824.jpeg&#34;</span>,
-  <span style="color:#ff79c6">&#34;embed_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://live.staticflickr.com/65535/49088768431_6a4322b3bb_b.jpg&#34;</span>,
-  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UnE{@jt6M_oIAhjYs+ayT2WBf9ayRkkDXAj[&#34;</span>
-}
-</code></pre></div><h3 id="link">Link</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.theguardian.com/money/2019/dec/07/i-lost-my-193000-inheritance-with-one-wrong-digit-on-my-sort-code&#34;</span>,
-  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;‘I lost my £193,000 inheritance – with one wrong digit on my sort code’&#34;</span>,
-  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;When Peter Teich’s money went to another Barclays customer, the bank offered £25 as a token gesture&#34;</span>,
-  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;link&#34;</span>,
-  <span style="color:#ff79c6">&#34;author_name&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;author_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;provider_name&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;provider_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;html&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">0</span>,
-  <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">0</span>,
-  <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#ff79c6">null</span>,
-  <span style="color:#ff79c6">&#34;embed_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#ff79c6">null</span>
-}
-</code></pre></div><h2 id="attributes">Attributes</h2>
-<h3 id="url"><code>url</code></h3>
-<p><strong>Description:</strong> Location of linked resource.<br>
+    <h2 class="heading" id="examples">
+	<span class="heading__text">Examples</span>
+	<a class="heading__anchor-link" href="#examples">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="video">
+	<span class="heading__text">Video</span>
+	<a class="heading__anchor-link" href="#video">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.youtube.com/watch?v=OMv_EPMED8Y&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;♪ Brand New Friend (Christmas Song!)&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;author_name&#34;</span>: <span style="color:#f1fa8c">&#34;YOGSCAST Lewis &amp; Simon&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;author_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.youtube.com/user/BlueXephos&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;provider_name&#34;</span>: <span style="color:#f1fa8c">&#34;YouTube&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;provider_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.youtube.com/&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;html&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;iframe width=\&#34;480\&#34; height=\&#34;270\&#34; src=\&#34;https://www.youtube.com/embed/OMv_EPMED8Y?feature=oembed\&#34; frameborder=\&#34;0\&#34; allowfullscreen=\&#34;\&#34;&gt;&lt;/iframe&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">480</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">270</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/preview_cards/images/014/179/145/original/9cf4b7cf5567b569.jpeg&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;embed_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UvK0HNkV,:s9xBR%njog0fo2W=WBS5ozofV@&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="photo">
+	<span class="heading__text">Photo</span>
+	<a class="heading__anchor-link" href="#photo">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.flickr.com/photos/tomfenskephotography/49088768431/&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Oregon&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;photo&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;author_name&#34;</span>: <span style="color:#f1fa8c">&#34;Tom Fenske Photography&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;author_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.flickr.com/photos/tomfenskephotography/&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;provider_name&#34;</span>: <span style="color:#f1fa8c">&#34;Flickr&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;provider_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.flickr.com/&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;html&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">1024</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">427</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/preview_cards/images/014/287/139/original/651b1c6976817824.jpeg&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;embed_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://live.staticflickr.com/65535/49088768431_6a4322b3bb_b.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UnE{@jt6M_oIAhjYs+ayT2WBf9ayRkkDXAj[&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="link">
+	<span class="heading__text">Link</span>
+	<a class="heading__anchor-link" href="#link">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.theguardian.com/money/2019/dec/07/i-lost-my-193000-inheritance-with-one-wrong-digit-on-my-sort-code&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;‘I lost my £193,000 inheritance – with one wrong digit on my sort code’&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;When Peter Teich’s money went to another Barclays customer, the bank offered £25 as a token gesture&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;link&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;author_name&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;author_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;provider_name&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;provider_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;html&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;embed_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#ff79c6">null</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 class="heading" id="attributes">
+	<span class="heading__text">Attributes</span>
+	<a class="heading__anchor-link" href="#attributes">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="url">
+	<span class="heading__text"><code>url</code></span>
+	<a class="heading__anchor-link" href="#url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Location of linked resource.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 1.0.0 - added</p>
-<h3 id="title"><code>title</code></h3>
-<p><strong>Description:</strong> Title of linked resource.<br>
+<h3 class="heading" id="title">
+	<span class="heading__text"><code>title</code></span>
+	<a class="heading__anchor-link" href="#title">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Title of linked resource.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 1.0.0 - added</p>
-<h3 id="description"><code>description</code></h3>
-<p><strong>Description:</strong> Description of preview.<br>
+<h3 class="heading" id="description">
+	<span class="heading__text"><code>description</code></span>
+	<a class="heading__anchor-link" href="#description">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Description of preview.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 1.0.0 - added</p>
-<h3 id="type"><code>type</code></h3>
-<p><strong>Description:</strong> The type of the preview card.<br>
+<h3 class="heading" id="type">
+	<span class="heading__text"><code>type</code></span>
+	<a class="heading__anchor-link" href="#type">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The type of the preview card.<br>
 <strong>Type:</strong> String (Enumerable, oneOf)<br>
 <code>link</code> = Link OEmbed<br>
 <code>photo</code> = Photo OEmbed<br>
@@ -1167,132 +1320,404 @@
 <code>rich</code> = iframe OEmbed. Not currently accepted, so won&rsquo;t show up in practice.<br>
 <strong>Version history:</strong><br>
 1.3.0 - added</p>
-<h3 id="author_name"><code>author_name</code></h3>
-<p><strong>Description:</strong> The author of the original resource.<br>
+<h3 class="heading" id="author_name">
+	<span class="heading__text"><code>author_name</code></span>
+	<a class="heading__anchor-link" href="#author_name">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The author of the original resource.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 1.3.0 - added</p>
-<h3 id="author_url"><code>author_url</code></h3>
-<p><strong>Description:</strong> A link to the author of the original resource.<br>
+<h3 class="heading" id="author_url">
+	<span class="heading__text"><code>author_url</code></span>
+	<a class="heading__anchor-link" href="#author_url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> A link to the author of the original resource.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 1.3.0 - added</p>
-<h3 id="provider_name"><code>provider_name</code></h3>
-<p><strong>Description:</strong> The provider of the original resource.<br>
+<h3 class="heading" id="provider_name">
+	<span class="heading__text"><code>provider_name</code></span>
+	<a class="heading__anchor-link" href="#provider_name">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The provider of the original resource.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 1.3.0 - added</p>
-<h3 id="provider_url"><code>provider_url</code></h3>
-<p><strong>Description:</strong> A link to the provider of the original resource.<br>
+<h3 class="heading" id="provider_url">
+	<span class="heading__text"><code>provider_url</code></span>
+	<a class="heading__anchor-link" href="#provider_url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> A link to the provider of the original resource.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 1.3.0 - added</p>
-<h3 id="html"><code>html</code></h3>
-<p><strong>Description:</strong> HTML to be used for generating the preview card.<br>
+<h3 class="heading" id="html">
+	<span class="heading__text"><code>html</code></span>
+	<a class="heading__anchor-link" href="#html">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> HTML to be used for generating the preview card.<br>
 <strong>Type:</strong> String (HTML)<br>
 <strong>Version history:</strong><br>
 1.3.0 - added</p>
-<h3 id="height"><code>width</code></h3>
-<p><strong>Description:</strong> Width of preview, in pixels.<br>
+<h3 class="heading" id="height">
+	<span class="heading__text"><code>width</code></span>
+	<a class="heading__anchor-link" href="#height">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Width of preview, in pixels.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 1.3.0 - added</p>
-<h3 id="height"><code>height</code></h3>
-<p><strong>Description:</strong> Height of preview, in pixels.<br>
+<h3 class="heading" id="height">
+	<span class="heading__text"><code>height</code></span>
+	<a class="heading__anchor-link" href="#height">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Height of preview, in pixels.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 1.3.0 - added</p>
-<h3 id="image"><code>image</code></h3>
-<p><strong>Description:</strong> Preview thumbnail.<br>
+<h3 class="heading" id="image">
+	<span class="heading__text"><code>image</code></span>
+	<a class="heading__anchor-link" href="#image">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Preview thumbnail.<br>
 <strong>Type:</strong> <span class="api-method-parameter-required">nullable</span> String (URL)<br>
 <strong>Version history:</strong><br>
 1.0.0 - added</p>
-<h3 id="embed_url"><code>embed_url</code></h3>
-<p><strong>Description:</strong> Used for photo embeds, instead of custom <code>html</code>.<br>
+<h3 class="heading" id="embed_url">
+	<span class="heading__text"><code>embed_url</code></span>
+	<a class="heading__anchor-link" href="#embed_url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Used for photo embeds, instead of custom <code>html</code>.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 2.1.0 - added</p>
-<h3 id="blurhash"><code>blurhash</code></h3>
-<p><strong>Description:</strong> A hash computed by <a href="https://github.com/woltapp/blurhash">the BlurHash algorithm</a>, for generating colorful preview thumbnails when media has not been downloaded yet.<br>
+<h3 class="heading" id="blurhash">
+	<span class="heading__text"><code>blurhash</code></span>
+	<a class="heading__anchor-link" href="#blurhash">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> A hash computed by <a href="https://github.com/woltapp/blurhash">the BlurHash algorithm</a>, for generating colorful preview thumbnails when media has not been downloaded yet.<br>
 <strong>Type:</strong> <span class="api-method-parameter-required">nullable</span> String<br>
 <strong>Version history:</strong><br>
 3.2.0 - added</p>
-<h2 id="trends-link">Trends::Link entity attributes</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.nbcnews.com/specials/plan-your-vote-2022-elections/index.html&#34;</span>,
-  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Plan Your Vote: 2022 Elections&#34;</span>,
-  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;Everything you need to know about the voting rules where you live, including registration, mail-in voting, changes since 2020, and more.&#34;</span>,
-  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;link&#34;</span>,
-  <span style="color:#ff79c6">&#34;author_name&#34;</span>: <span style="color:#f1fa8c">&#34;NBC News&#34;</span>,
-  <span style="color:#ff79c6">&#34;author_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;provider_name&#34;</span>: <span style="color:#f1fa8c">&#34;NBC News&#34;</span>,
-  <span style="color:#ff79c6">&#34;provider_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;html&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">400</span>,
-  <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">225</span>,
-  <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/cache/preview_cards/images/045/027/478/original/0783d5e91a14fd49.jpeg&#34;</span>,
-  <span style="color:#ff79c6">&#34;embed_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
-  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UcQmF#ay~qofj[WBj[j[~qof9Fayofofayay&#34;</span>,
-  <span style="color:#ff79c6">&#34;history&#34;</span>: [
-    {
-      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661817600&#34;</span>,
-      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>,
-      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661731200&#34;</span>,
-      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;23&#34;</span>,
-      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;23&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661644800&#34;</span>,
-      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
-      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661558400&#34;</span>,
-      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
-      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661472000&#34;</span>,
-      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
-      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661385600&#34;</span>,
-      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
-      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661299200&#34;</span>,
-      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
-      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
-    }
-  ]
-}
-</code></pre></div><h3 id="history"><code>history</code></h3>
-<p><strong>Description:</strong> Usage statistics for given days (typically the past week).<br>
+<h2 class="heading" id="trends-link">
+	<span class="heading__text">Trends::Link entity attributes</span>
+	<a class="heading__anchor-link" href="#trends-link">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.nbcnews.com/specials/plan-your-vote-2022-elections/index.html&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Plan Your Vote: 2022 Elections&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;Everything you need to know about the voting rules where you live, including registration, mail-in voting, changes since 2020, and more.&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;link&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;author_name&#34;</span>: <span style="color:#f1fa8c">&#34;NBC News&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;author_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;provider_name&#34;</span>: <span style="color:#f1fa8c">&#34;NBC News&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;provider_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;html&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">400</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">225</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;image&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/cache/preview_cards/images/045/027/478/original/0783d5e91a14fd49.jpeg&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;embed_url&#34;</span>: <span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UcQmF#ay~qofj[WBj[j[~qof9Fayofofayay&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;history&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661817600&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661731200&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;23&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;23&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661644800&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661558400&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661472000&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661385600&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;day&#34;</span>: <span style="color:#f1fa8c">&#34;1661299200&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;accounts&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;uses&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="history">
+	<span class="heading__text"><code>history</code></span>
+	<a class="heading__anchor-link" href="#history">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Usage statistics for given days (typically the past week).<br>
 <strong>Type:</strong> Array of Hash<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h4 id="history-day"><code>history[][day]</code></h4>
-<p><strong>Description:</strong> UNIX timestamp on midnight of the given day.<br>
+<h4 class="heading" id="history-day">
+	<span class="heading__text"><code>history[][day]</code></span>
+	<a class="heading__anchor-link" href="#history-day">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> UNIX timestamp on midnight of the given day.<br>
 <strong>Type:</strong> String (UNIX timestamp)<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h4 id="history-accounts"><code>history[][accounts]</code></h4>
-<p><strong>Description:</strong> The counted accounts using the link within that day.<br>
+<h4 class="heading" id="history-accounts">
+	<span class="heading__text"><code>history[][accounts]</code></span>
+	<a class="heading__anchor-link" href="#history-accounts">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> The counted accounts using the link within that day.<br>
 <strong>Type:</strong> String (cast from an integer)<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h4 id="history-uses"><code>history[][uses]</code></h4>
-<p><strong>Description:</strong> The counted statuses using the link within that day.<br>
+<h4 class="heading" id="history-uses">
+	<span class="heading__text"><code>history[][uses]</code></span>
+	<a class="heading__anchor-link" href="#history-uses">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> The counted statuses using the link within that day.<br>
 <strong>Type:</strong> String (cast from an integer)<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h2 id="see-also">See also</h2>
-<a href="/entities/Status/#card" class="page-ref">
+<h2 class="heading" id="see-also">
+	<span class="heading__text">See also</span>
+	<a class="heading__anchor-link" href="#see-also">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><a href="/entities/Status/#card" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Status (<code>card</code> attribute)
 </a>
@@ -2450,7 +2875,7 @@
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/PreviewCard.md' style="color: #687590;">Improve this page</a>
+      Last updated December 14, 2022 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities%5cPreviewCard.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2496,7 +2921,7 @@
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/PreviewCard.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities%5cPreviewCard.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

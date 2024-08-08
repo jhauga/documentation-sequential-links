@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-cn">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,23 +10,23 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>准备你的机器 - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/zh-cn/admin/prerequisites/">
+  <meta property="og:url" content="http://localhost:1313/zh-cn/admin/prerequisites/">
 
   
 
   <meta name="twitter:title" content="准备你的机器">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/zh-cn/admin/prerequisites/">
+  <link rel="canonical" href="http://localhost:1313/zh-cn/admin/prerequisites/">
 </head>
 
 <body>
@@ -304,64 +304,132 @@
   </aside>
   <div class="e-content">
     <p>如果你正在设置一台全新的机器，推荐你首要完成安全设置。以下内容假定你运行 <strong>Ubuntu 18.04</strong>：</p>
-<h2 id="禁止密码登录ssh仅允许密钥登录">禁止密码登录SSH（仅允许密钥登录）</h2>
-<p>首先，请确保你实际上是通过密钥而不是通过密码登录到服务器的，否则这将使你无法登录。许多托管服务提供商支持上传公钥，并自动为新机器设置基于密钥的root登录。</p>
+<h2 class="heading" id="禁止密码登录ssh仅允许密钥登录">
+	<span class="heading__text">禁止密码登录SSH（仅允许密钥登录）</span>
+	<a class="heading__anchor-link" href="#%e7%a6%81%e6%ad%a2%e5%af%86%e7%a0%81%e7%99%bb%e5%bd%95ssh%e4%bb%85%e5%85%81%e8%ae%b8%e5%af%86%e9%92%a5%e7%99%bb%e5%bd%95">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>首先，请确保你实际上是通过密钥而不是通过密码登录到服务器的，否则这将使你无法登录。许多托管服务提供商支持上传公钥，并自动为新机器设置基于密钥的root登录。</p>
 <p>编辑 <code>/etc/ssh/sshd_config</code> 并找到 <code>PasswordAuthentication</code>。确保它已被去除注释并被设为 <code>no</code>。如果你做了任何改动，请重启 sshd。</p>
-<h2 id="更新系统">更新系统</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update <span style="color:#ff79c6">&amp;&amp;</span> apt upgrade -y
-</code></pre></div><h2 id="安装-fail2ban-以阻止重复登录尝试">安装 fail2ban 以阻止重复登录尝试</h2>
-<p>编辑 <code>/etc/fail2ban/jail.local</code> 并添加以下内容：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[DEFAULT]
-destemail = your@email.here
-sendername = Fail2Ban
-
-[sshd]
-enabled = true
-port = 22
-
-[sshd-ddos]
-enabled = true
-port = 22
-</code></pre></div><p>最后重启fail2ban：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl restart fail2ban
-</code></pre></div><h2 id="安装防火墙并只暴露sshhttphttps端口">安装防火墙并只暴露SSH、HTTP、HTTPS端口</h2>
-<p>首先，安装 iptables-persistent。在安装期间，它将询问你是否保留现有规则。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install -y iptables-persistent
-</code></pre></div><p>编辑 <code>/etc/iptables/rules.v4</code> 并添加如下内容：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">*filter
-
-#  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn&#39;t use lo0
--A INPUT -i lo -j ACCEPT
--A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
-
-#  Accept all established inbound connections
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-
-#  Allow all outbound traffic - you can modify this to only allow certain traffic
--A OUTPUT -j ACCEPT
-
-#  Allow HTTP and HTTPS connections from anywhere (the normal ports for websites and SSL).
--A INPUT -p tcp --dport 80 -j ACCEPT
--A INPUT -p tcp --dport 443 -j ACCEPT
-
-#  Allow SSH connections
-#  The -dport number should be the same port number you set in sshd_config
--A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
-
-#  Allow ping
--A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
-
-#  Log iptables denied calls
--A INPUT -m limit --limit 5/min -j LOG --log-prefix &#34;iptables denied: &#34; --log-level 7
-
-#  Reject all other inbound - default deny unless explicitly allowed policy
--A INPUT -j REJECT
--A FORWARD -j REJECT
-
-COMMIT
-</code></pre></div><p>iptables-persistent 将在机器启动时自动加载配置。但是由于我们现在不会立刻重启，我们需要第一次手动加载它：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-restore &lt; /etc/iptables/rules.v4
-</code></pre></div><figure>
+<h2 class="heading" id="更新系统">
+	<span class="heading__text">更新系统</span>
+	<a class="heading__anchor-link" href="#%e6%9b%b4%e6%96%b0%e7%b3%bb%e7%bb%9f">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update <span style="color:#ff79c6">&amp;&amp;</span> apt upgrade -y
+</span></span></code></pre></div><h2 class="heading" id="安装-fail2ban-以阻止重复登录尝试">
+	<span class="heading__text">安装 fail2ban 以阻止重复登录尝试</span>
+	<a class="heading__anchor-link" href="#%e5%ae%89%e8%a3%85-fail2ban-%e4%bb%a5%e9%98%bb%e6%ad%a2%e9%87%8d%e5%a4%8d%e7%99%bb%e5%bd%95%e5%b0%9d%e8%af%95">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>编辑 <code>/etc/fail2ban/jail.local</code> 并添加以下内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[DEFAULT]
+</span></span><span style="display:flex;"><span>destemail = your@email.here
+</span></span><span style="display:flex;"><span>sendername = Fail2Ban
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[sshd]
+</span></span><span style="display:flex;"><span>enabled = true
+</span></span><span style="display:flex;"><span>port = 22
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[sshd-ddos]
+</span></span><span style="display:flex;"><span>enabled = true
+</span></span><span style="display:flex;"><span>port = 22
+</span></span></code></pre></div><p>最后重启fail2ban：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl restart fail2ban
+</span></span></code></pre></div><h2 class="heading" id="安装防火墙并只暴露sshhttphttps端口">
+	<span class="heading__text">安装防火墙并只暴露SSH、HTTP、HTTPS端口</span>
+	<a class="heading__anchor-link" href="#%e5%ae%89%e8%a3%85%e9%98%b2%e7%81%ab%e5%a2%99%e5%b9%b6%e5%8f%aa%e6%9a%b4%e9%9c%b2sshhttphttps%e7%ab%af%e5%8f%a3">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>首先，安装 iptables-persistent。在安装期间，它将询问你是否保留现有规则。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install -y iptables-persistent
+</span></span></code></pre></div><p>编辑 <code>/etc/iptables/rules.v4</code> 并添加如下内容：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>*filter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn&#39;t use lo0
+</span></span><span style="display:flex;"><span>-A INPUT -i lo -j ACCEPT
+</span></span><span style="display:flex;"><span>-A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Accept all established inbound connections
+</span></span><span style="display:flex;"><span>-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow all outbound traffic - you can modify this to only allow certain traffic
+</span></span><span style="display:flex;"><span>-A OUTPUT -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow HTTP and HTTPS connections from anywhere (the normal ports for websites and SSL).
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp --dport 80 -j ACCEPT
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp --dport 443 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow SSH connections
+</span></span><span style="display:flex;"><span>#  The -dport number should be the same port number you set in sshd_config
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow ping
+</span></span><span style="display:flex;"><span>-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Log iptables denied calls
+</span></span><span style="display:flex;"><span>-A INPUT -m limit --limit 5/min -j LOG --log-prefix &#34;iptables denied: &#34; --log-level 7
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Reject all other inbound - default deny unless explicitly allowed policy
+</span></span><span style="display:flex;"><span>-A INPUT -j REJECT
+</span></span><span style="display:flex;"><span>-A FORWARD -j REJECT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>COMMIT
+</span></span></code></pre></div><p>iptables-persistent 将在机器启动时自动加载配置。但是由于我们现在不会立刻重启，我们需要第一次手动加载它：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>iptables-restore &lt; /etc/iptables/rules.v4
+</span></span></code></pre></div><figure>
     <p>
         <strong>翻译状态：</strong>
         本文是英文页面 <a href="/admin/prerequisites/">Preparing your machine</a> 的翻译，最后翻译时间：，点击<a href="https://github.com/mastodon/documentation/compare/ad1ef20f171c9f61439f32168987b0b4f9abd74b...master">这里</a>可以查看翻译后页面的改动。
@@ -689,7 +757,7 @@ COMMIT
 </script>
 
     <p style="color: #687590;">
-      最后更新于 August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/prerequisites.md' style="color: #687590;">改进此页面</a>
+      最后更新于 May 21, 2020 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin%5cprerequisites.md' style="color: #687590;">改进此页面</a>
 
       
         <br />
@@ -743,7 +811,7 @@ COMMIT
     <a href='https://joinmastodon.org'>加入Mastodon</a> · <a href='https://blog.joinmastodon.org'>博客</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/prerequisites.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin%5cprerequisites.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
 </footer>
 
 </body>

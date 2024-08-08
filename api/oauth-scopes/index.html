@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>OAuth Scopes - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/api/oauth-scopes/">
+  <meta property="og:url" content="http://localhost:1313/api/oauth-scopes/">
 
   
     <meta name="description" content="Defining what you have permission to do with the API">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="OAuth Scopes">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/api/oauth-scopes/">
+  <link rel="canonical" href="http://localhost:1313/api/oauth-scopes/">
 </head>
 
 <body>
@@ -1074,8 +1074,25 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="oauth-scopes">OAuth Scopes</h2>
-<p>The API is divided up into access scopes. The scopes are hierarchical, i.e. if you have access to <code>read</code>, you automatically have access to <code>read:accounts</code>. <strong>It is recommended that you request as little as possible for your application.</strong></p>
+    <h2 class="heading" id="oauth-scopes">
+	<span class="heading__text">OAuth Scopes</span>
+	<a class="heading__anchor-link" href="#oauth-scopes">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>The API is divided up into access scopes. The scopes are hierarchical, i.e. if you have access to <code>read</code>, you automatically have access to <code>read:accounts</code>. <strong>It is recommended that you request as little as possible for your application.</strong></p>
 <p>Multiple scopes can be requested at the same time: During app creation with the <code>scopes</code> param, and during the authorization phase with the <code>scope</code> query param (space-separate the scopes).</p>
 <div class="hint hint-info">
   <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
@@ -1085,8 +1102,25 @@
 
 <p>If you do not specify a <code>scope</code> in your authorization request, or a <code>scopes</code> in your app creation request, the resulting access token/app will default to <code>read</code> access.</p>
 <p>The set of scopes saved during app creation must include all the scopes that you will request in the authorization request, otherwise, authorization will fail.</p>
-<h3 id="versions">Version history</h3>
-<ul>
+<h3 class="heading" id="versions">
+	<span class="heading__text">Version history</span>
+	<a class="heading__anchor-link" href="#versions">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li>0.9.0 - read, write, follow</li>
 <li>2.4.0 - push</li>
 <li>2.4.3 - granular scopes <a href="https://github.com/mastodon/mastodon/pull/7929">#7929</a></li>
@@ -1096,9 +1130,43 @@
 <li>3.1.0 - Bookmark scopes added <a href="https://github.com/mastodon/mastodon/pull/7107">#7107</a></li>
 <li>4.1.0 - Added admin scopes for blocks and allows <a href="https://github.com/mastodon/mastodon/pull/20918">#20918</a></li>
 </ul>
-<h2 id="list-of-scopes">List of scopes</h2>
-<h3 id="read"><code>read</code></h3>
-<p>Grants access to read data. Requesting <code>read</code> will also grant child scopes shown in the left column of the table below.</p>
+<h2 class="heading" id="list-of-scopes">
+	<span class="heading__text">List of scopes</span>
+	<a class="heading__anchor-link" href="#list-of-scopes">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="read">
+	<span class="heading__text"><code>read</code></span>
+	<a class="heading__anchor-link" href="#read">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Grants access to read data. Requesting <code>read</code> will also grant child scopes shown in the left column of the table below.</p>
 <ul>
 <li><code>read</code>
 <ul>
@@ -1116,8 +1184,25 @@
 </ul>
 </li>
 </ul>
-<h3 id="write"><code>write</code></h3>
-<p>Grants access to write data. Requesting <code>write</code> will also grant child scopes shown in the right column of the table below.</p>
+<h3 class="heading" id="write">
+	<span class="heading__text"><code>write</code></span>
+	<a class="heading__anchor-link" href="#write">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Grants access to write data. Requesting <code>write</code> will also grant child scopes shown in the right column of the table below.</p>
 <ul>
 <li><code>write</code>
 <ul>
@@ -1137,8 +1222,25 @@
 </ul>
 </li>
 </ul>
-<h3 id="follow"><code>follow</code></h3>
-<div class="hint hint-danger">
+<h3 class="heading" id="follow">
+	<span class="heading__text"><code>follow</code></span>
+	<a class="heading__anchor-link" href="#follow">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="hint hint-danger">
   <div class="hint-icon"><i class="fa fa-exclamation-triangle"></i></div>
 
   <strong>Deprecated</strong><br>
@@ -1151,10 +1253,44 @@ This scope has been deprecated in 3.5.0 and newer. You should instead request th
 <li><code>read:follows</code>, <code>write:follows</code></li>
 <li><code>read:mutes</code>, <code>write:mutes</code></li>
 </ul>
-<h3 id="push"><code>push</code></h3>
-<p>Grants access to <a href="/methods/push/">Web Push API subscriptions.</a> Added in Mastodon 2.4.0.</p>
-<h3 id="admin">Admin scopes</h3>
-<p>Used for moderation API. Added in Mastodon 2.9.1. The following granular scopes are available (note that there is no singular <code>admin</code> scope):</p>
+<h3 class="heading" id="push">
+	<span class="heading__text"><code>push</code></span>
+	<a class="heading__anchor-link" href="#push">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Grants access to <a href="/methods/push/">Web Push API subscriptions.</a> Added in Mastodon 2.4.0.</p>
+<h3 class="heading" id="admin">
+	<span class="heading__text">Admin scopes</span>
+	<a class="heading__anchor-link" href="#admin">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Used for moderation API. Added in Mastodon 2.9.1. The following granular scopes are available (note that there is no singular <code>admin</code> scope):</p>
 <ul>
 <li><code>admin:read</code>
 <ul>
@@ -1179,108 +1315,125 @@ This scope has been deprecated in 3.5.0 and newer. You should instead request th
 </ul>
 </li>
 </ul>
-<h2 id="granular">Granular scopes</h2>
-<table>
+<h2 class="heading" id="granular">
+	<span class="heading__text">Granular scopes</span>
+	<a class="heading__anchor-link" href="#granular">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><table>
 <thead>
 <tr>
-<th align="left">read</th>
-<th align="left">write</th>
+<th style="text-align:left">read</th>
+<th style="text-align:left">write</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">read:accounts</td>
-<td align="left">write:accounts</td>
+<td style="text-align:left">read:accounts</td>
+<td style="text-align:left">write:accounts</td>
 </tr>
 <tr>
-<td align="left"><strong>read:blocks</strong></td>
-<td align="left"><strong>write:blocks</strong></td>
+<td style="text-align:left"><strong>read:blocks</strong></td>
+<td style="text-align:left"><strong>write:blocks</strong></td>
 </tr>
 <tr>
-<td align="left">read:bookmarks</td>
-<td align="left">write:bookmarks</td>
+<td style="text-align:left">read:bookmarks</td>
+<td style="text-align:left">write:bookmarks</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">write:conversations</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">write:conversations</td>
 </tr>
 <tr>
-<td align="left">read:favourites</td>
-<td align="left">write:favourites</td>
+<td style="text-align:left">read:favourites</td>
+<td style="text-align:left">write:favourites</td>
 </tr>
 <tr>
-<td align="left">read:filters</td>
-<td align="left">write:filters</td>
+<td style="text-align:left">read:filters</td>
+<td style="text-align:left">write:filters</td>
 </tr>
 <tr>
-<td align="left"><strong>read:follows</strong></td>
-<td align="left"><strong>write:follows</strong></td>
+<td style="text-align:left"><strong>read:follows</strong></td>
+<td style="text-align:left"><strong>write:follows</strong></td>
 </tr>
 <tr>
-<td align="left">read:lists</td>
-<td align="left">write:lists</td>
+<td style="text-align:left">read:lists</td>
+<td style="text-align:left">write:lists</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">write:media</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">write:media</td>
 </tr>
 <tr>
-<td align="left"><strong>read:mutes</strong></td>
-<td align="left"><strong>write:mutes</strong></td>
+<td style="text-align:left"><strong>read:mutes</strong></td>
+<td style="text-align:left"><strong>write:mutes</strong></td>
 </tr>
 <tr>
-<td align="left">read:notifications</td>
-<td align="left">write:notifications</td>
+<td style="text-align:left">read:notifications</td>
+<td style="text-align:left">write:notifications</td>
 </tr>
 <tr>
-<td align="left"></td>
-<td align="left">write:reports</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">write:reports</td>
 </tr>
 <tr>
-<td align="left">read:search</td>
-<td align="left"></td>
+<td style="text-align:left">read:search</td>
+<td style="text-align:left"></td>
 </tr>
 <tr>
-<td align="left">read:statuses</td>
-<td align="left">write:statuses</td>
+<td style="text-align:left">read:statuses</td>
+<td style="text-align:left">write:statuses</td>
 </tr>
 </tbody>
 </table>
 <table>
 <thead>
 <tr>
-<th align="left">admin:read</th>
-<th align="left">admin:write</th>
+<th style="text-align:left">admin:read</th>
+<th style="text-align:left">admin:write</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">admin:read:accounts</td>
-<td align="left">admin:write:accounts</td>
+<td style="text-align:left">admin:read:accounts</td>
+<td style="text-align:left">admin:write:accounts</td>
 </tr>
 <tr>
-<td align="left">admin:read:reports</td>
-<td align="left">admin:write:reports</td>
+<td style="text-align:left">admin:read:reports</td>
+<td style="text-align:left">admin:write:reports</td>
 </tr>
 <tr>
-<td align="left">admin:read:domain_allows</td>
-<td align="left">admin:write:domain_allows</td>
+<td style="text-align:left">admin:read:domain_allows</td>
+<td style="text-align:left">admin:write:domain_allows</td>
 </tr>
 <tr>
-<td align="left">admin:read:domain_blocks</td>
-<td align="left">admin:write:domain_blocks</td>
+<td style="text-align:left">admin:read:domain_blocks</td>
+<td style="text-align:left">admin:write:domain_blocks</td>
 </tr>
 <tr>
-<td align="left">admin:read:ip_blocks</td>
-<td align="left">admin:write:ip_blocks</td>
+<td style="text-align:left">admin:read:ip_blocks</td>
+<td style="text-align:left">admin:write:ip_blocks</td>
 </tr>
 <tr>
-<td align="left">admin:read:email_domain_blocks</td>
-<td align="left">admin:write:email_domain_blocks</td>
+<td style="text-align:left">admin:read:email_domain_blocks</td>
+<td style="text-align:left">admin:write:email_domain_blocks</td>
 </tr>
 <tr>
-<td align="left">admin:read:canonical_email_blocks</td>
-<td align="left">admin:write:canonical_email_blocks</td>
+<td style="text-align:left">admin:read:canonical_email_blocks</td>
+<td style="text-align:left">admin:write:canonical_email_blocks</td>
 </tr>
 </tbody>
 </table>
@@ -2369,7 +2522,7 @@ This scope has been deprecated in 3.5.0 and newer. You should instead request th
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/api/oauth-scopes.md' style="color: #687590;">Improve this page</a>
+      Last updated December 7, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/api%5coauth-scopes.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2415,7 +2568,7 @@ This scope has been deprecated in 3.5.0 and newer. You should instead request th
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/api/oauth-scopes.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/api%5coauth-scopes.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

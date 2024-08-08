@@ -2,223 +2,150 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Admins on Mastodon documentation</title>
-    <link>https://docs.joinmastodon.org/admin/</link>
+    <link>http://localhost:1313/admin/</link>
     <description>Recent content in Admins on Mastodon documentation</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://docs.joinmastodon.org/admin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="http://localhost:1313/admin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Backing up your server</title>
-      <link>https://docs.joinmastodon.org/admin/backups/</link>
+      <link>http://localhost:1313/admin/backups/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/backups/</guid>
-      <description>For any real-world use, you should make sure to regularly backup your Mastodon server.
-Overview Things that need to be backed up in order of importance:
- PostgreSQL database Application secrets from the .env.production file or equivalent User-uploaded files Redis database  Failure modes There are two failure types that people in general may guard for: The failure of the hardware, such as data corruption on the disk; and human and software error, such as wrongful deletion of a particular piece of data.</description>
+      <guid>http://localhost:1313/admin/backups/</guid>
+      <description>For any real-world use, you should make sure to regularly backup your Mastodon server.&#xA;Overview&#xD;Things that need to be backed up in order of importance:&#xA;PostgreSQL database Application secrets from the .env.production file or equivalent User-uploaded files Redis database Failure modes&#xD;There are two failure types that people in general may guard for: The failure of the hardware, such as data corruption on the disk; and human and software error, such as wrongful deletion of a particular piece of data.</description>
     </item>
-    
     <item>
       <title>Captcha</title>
-      <link>https://docs.joinmastodon.org/admin/optional/captcha/</link>
+      <link>http://localhost:1313/admin/optional/captcha/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/optional/captcha/</guid>
-      <description>As of Mastodon 4.2, using CAPTCHA technology is supported to help mitigate against bots signing up for new accounts. With CAPTCHA enabled, new registrations will be required to complete a challenge response as part of the e-mail verification process.
- For some people, the use of a central CAPTCHA service may be a security and privacy concern. In addition, CAPTCHA can make the registration process significantly less accessible, particularly for individuals with visual impairments, such as those who are blind or have low vision.</description>
+      <guid>http://localhost:1313/admin/optional/captcha/</guid>
+      <description>As of Mastodon 4.2, using CAPTCHA technology is supported to help mitigate against bots signing up for new accounts. With CAPTCHA enabled, new registrations will be required to complete a challenge response as part of the e-mail verification process.&#xA;For some people, the use of a central CAPTCHA service may be a security and privacy concern. In addition, CAPTCHA can make the registration process significantly less accessible, particularly for individuals with visual impairments, such as those who are blind or have low vision.</description>
     </item>
-    
     <item>
       <title>Configuring full-text search</title>
-      <link>https://docs.joinmastodon.org/admin/elasticsearch/</link>
+      <link>http://localhost:1313/admin/elasticsearch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/elasticsearch/</guid>
-      <description>Mastodon supports full-text search when Elasticsearch is available. It is strongly recommended to configure this feature.
-Mastodon’s full-text search allows logged-in users to find results from:
- public statuses from accounts that opted into appearing in search results their own statuses their mentions their favourites their bookmarks accounts (display name, usernames and bios)  It deliberately does not allow searching for arbitrary strings in the entire database.
-Installing Elasticsearch  Mastodon is tested with Elasticsearch version 7.</description>
+      <guid>http://localhost:1313/admin/elasticsearch/</guid>
+      <description>Mastodon supports full-text search when Elasticsearch is available. It is strongly recommended to configure this feature.&#xA;Mastodon’s full-text search allows logged-in users to find results from:&#xA;public statuses from accounts that opted into appearing in search results their own statuses their mentions their favourites their bookmarks accounts (display name, usernames and bios) It deliberately does not allow searching for arbitrary strings in the entire database.&#xA;Installing Elasticsearch&#xD;Mastodon is tested with Elasticsearch version 7.</description>
     </item>
-    
     <item>
       <title>Configuring your environment</title>
-      <link>https://docs.joinmastodon.org/admin/config/</link>
+      <link>http://localhost:1313/admin/config/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/config/</guid>
-      <description>Mastodon uses environment variables as its configuration.
-For convenience, it can read them from a flat file called .env.production in the Mastodon directory (called a &amp;ldquo;dotenv&amp;rdquo; file), but they can always be overridden by a specific process. For example, systemd service files can read environment variables from an EnvironmentFile or inline definitions with Environment, so you can have different configuration parameters for specific services. They can also be specified when calling Mastodon from the command line.</description>
+      <guid>http://localhost:1313/admin/config/</guid>
+      <description>Mastodon uses environment variables as its configuration.&#xA;For convenience, it can read them from a flat file called .env.production in the Mastodon directory (called a &amp;ldquo;dotenv&amp;rdquo; file), but they can always be overridden by a specific process. For example, systemd service files can read environment variables from an EnvironmentFile or inline definitions with Environment, so you can have different configuration parameters for specific services. They can also be specified when calling Mastodon from the command line.</description>
     </item>
-    
     <item>
       <title>Database index corruption</title>
-      <link>https://docs.joinmastodon.org/admin/troubleshooting/index-corruption/</link>
+      <link>http://localhost:1313/admin/troubleshooting/index-corruption/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/troubleshooting/index-corruption/</guid>
-      <description>A somewhat common configuration issue can lead to index corruption throughout the database. This page attempts to explain why this may occur and how to fix it.
-Locale data and collation Textual values in the database, such as usernames, or status identifiers, are compared using so-called collation rules defining how characters are ordered and how to change their case. When setting up a database, Mastodon will use the database server&amp;rsquo;s default locale settings, including the default collation rules, which often is defined by the operating system&amp;rsquo;s settings.</description>
+      <guid>http://localhost:1313/admin/troubleshooting/index-corruption/</guid>
+      <description>A somewhat common configuration issue can lead to index corruption throughout the database. This page attempts to explain why this may occur and how to fix it.&#xA;Locale data and collation&#xD;Textual values in the database, such as usernames, or status identifiers, are compared using so-called collation rules defining how characters are ordered and how to change their case. When setting up a database, Mastodon will use the database server&amp;rsquo;s default locale settings, including the default collation rules, which often is defined by the operating system&amp;rsquo;s settings.</description>
     </item>
-    
     <item>
       <title>Installing from source</title>
-      <link>https://docs.joinmastodon.org/admin/install/</link>
+      <link>http://localhost:1313/admin/install/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/install/</guid>
-      <description>Pre-requisites  A machine running Ubuntu 22.04 or Debian 11 that you have root access to A domain name (or a subdomain) for the Mastodon server, e.g. example.com An e-mail delivery service or other SMTP server  You will be running the commands as root. If you aren’t already root, switch to root: sudo su -
-System repositories Make sure curl, wget, gnupg, apt-transport-https, lsb-release and ca-certificates are installed first:</description>
+      <guid>http://localhost:1313/admin/install/</guid>
+      <description>Pre-requisites&#xD;A machine running Ubuntu 22.04 or Debian 11 that you have root access to A domain name (or a subdomain) for the Mastodon server, e.g. example.com An e-mail delivery service or other SMTP server You will be running the commands as root. If you aren’t already root, switch to root: sudo su -&#xA;System repositories&#xD;Make sure curl, wget, gnupg, apt-transport-https, lsb-release and ca-certificates are installed first:&#xA;apt install -y curl wget gnupg apt-transport-https lsb-release ca-certificates Node.</description>
     </item>
-    
     <item>
       <title>Installing optional features</title>
-      <link>https://docs.joinmastodon.org/admin/optional/</link>
+      <link>http://localhost:1313/admin/optional/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/optional/</guid>
-      <description>Mastodon offers a few optional features that can be used if needed.
- Object storage Hidden services Single Sign On  </description>
+      <guid>http://localhost:1313/admin/optional/</guid>
+      <description>Mastodon offers a few optional features that can be used if needed.&#xA;Object storage Hidden services Single Sign On </description>
     </item>
-    
     <item>
       <title>Migrating to a new machine</title>
-      <link>https://docs.joinmastodon.org/admin/migrating/</link>
+      <link>http://localhost:1313/admin/migrating/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/migrating/</guid>
-      <description>Sometimes, for various reasons, you may want to migrate your Mastodon instance from one server to another. Fortunately, this is not too difficult of a process, although it may result in some downtime.
- This guide was written with Ubuntu Server in mind; your mileage may vary for other setups.  Basic steps  Set up a new Mastodon server using the Production Guide (however, don’t run mastodon:setup and only leave the PostgreSQL service running).</description>
+      <guid>http://localhost:1313/admin/migrating/</guid>
+      <description>Sometimes, for various reasons, you may want to migrate your Mastodon instance from one server to another. Fortunately, this is not too difficult of a process, although it may result in some downtime.&#xA;This guide was written with Ubuntu Server in mind; your mileage may vary for other setups.&#xD;Basic steps&#xD;Set up a new Mastodon server using the Production Guide (however, don’t run mastodon:setup and only leave the PostgreSQL service running).</description>
     </item>
-    
     <item>
       <title>Moderation actions</title>
-      <link>https://docs.joinmastodon.org/admin/moderation/</link>
+      <link>http://localhost:1313/admin/moderation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/moderation/</guid>
-      <description>Moderating individual users Moderation in Mastodon is always applied locally, i.e. as seen from the particular server. An admin or moderator on one server cannot affect a user on another server, they can only affect the local copy on their own server.
-As of v3.5.0, all default user moderation decisions will notify the affected user by email. The user can access an appeal page, where they can submit one appeal within 20 days of the decision.</description>
+      <guid>http://localhost:1313/admin/moderation/</guid>
+      <description>Moderating individual users&#xD;Moderation in Mastodon is always applied locally, i.e. as seen from the particular server. An admin or moderator on one server cannot affect a user on another server, they can only affect the local copy on their own server.&#xA;As of v3.5.0, all default user moderation decisions will notify the affected user by email. The user can access an appeal page, where they can submit one appeal within 20 days of the decision.</description>
     </item>
-    
     <item>
       <title>Object storage</title>
-      <link>https://docs.joinmastodon.org/admin/optional/object-storage/</link>
+      <link>http://localhost:1313/admin/optional/object-storage/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/optional/object-storage/</guid>
-      <description>User-uploaded files can be stored on the main server&amp;rsquo;s file system, or using an external object storage server, which can be required for scaling.
-Using the filesystem The simplest way to store user uploads is by using the server&amp;rsquo;s file system. This is how it works by default and is suitable for small servers.
-By default, Mastodon will store file uploads under public/system in its installation directory, but that can be overridden using the PAPERCLIP_ROOT_PATH environment variable.</description>
+      <guid>http://localhost:1313/admin/optional/object-storage/</guid>
+      <description>User-uploaded files can be stored on the main server&amp;rsquo;s file system, or using an external object storage server, which can be required for scaling.&#xA;Using the filesystem&#xD;The simplest way to store user uploads is by using the server&amp;rsquo;s file system. This is how it works by default and is suitable for small servers.&#xA;By default, Mastodon will store file uploads under public/system in its installation directory, but that can be overridden using the PAPERCLIP_ROOT_PATH environment variable.</description>
     </item>
-    
     <item>
       <title>Onion services</title>
-      <link>https://docs.joinmastodon.org/admin/optional/tor/</link>
+      <link>http://localhost:1313/admin/optional/tor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/optional/tor/</guid>
-      <description>Mastodon can be served through Tor as an onion service. This will give you a *.onion address that can only be used while connected to the Tor network.
-Installing Tor First Tor’s Debian archive needs to be added to apt.
-deb https://deb.torproject.org/torproject.org stretch main deb-src https://deb.torproject.org/torproject.org stretch main Next add the gpg key.
-curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add - Finally install the required packages.</description>
+      <guid>http://localhost:1313/admin/optional/tor/</guid>
+      <description>Mastodon can be served through Tor as an onion service. This will give you a *.onion address that can only be used while connected to the Tor network.&#xA;Installing Tor&#xD;First Tor’s Debian archive needs to be added to apt.&#xA;deb https://deb.torproject.org/torproject.org stretch main deb-src https://deb.torproject.org/torproject.org stretch main Next add the gpg key.&#xA;curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add - Finally install the required packages.</description>
     </item>
-    
     <item>
       <title>Preparing your machine</title>
-      <link>https://docs.joinmastodon.org/admin/prerequisites/</link>
+      <link>http://localhost:1313/admin/prerequisites/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/prerequisites/</guid>
-      <description>If you are setting up a fresh machine, it is recommended that you secure it first. Assuming that you are running Ubuntu 22.04:
-Do not allow password-based SSH login (keys only) First, make sure you are actually logging in to the server using keys and not via a password, otherwise, this will lock you out. Many hosting providers support uploading a public key and automatically set up key-based root login on new machines for you.</description>
+      <guid>http://localhost:1313/admin/prerequisites/</guid>
+      <description>If you are setting up a fresh machine, it is recommended that you secure it first. Assuming that you are running Ubuntu 22.04:&#xA;Do not allow password-based SSH login (keys only)&#xD;First, make sure you are actually logging in to the server using keys and not via a password, otherwise, this will lock you out. Many hosting providers support uploading a public key and automatically set up key-based root login on new machines for you.</description>
     </item>
-    
     <item>
       <title>Proxying object storage through nginx</title>
-      <link>https://docs.joinmastodon.org/admin/optional/object-storage-proxy/</link>
+      <link>http://localhost:1313/admin/optional/object-storage-proxy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/optional/object-storage-proxy/</guid>
-      <description>When you are using Mastodon with an object storage provider like Amazon S3, Wasabi, Google Cloud or others, by default the URLs of the files go through the storage providers themselves. This has the following downsides:
- Bandwidth is usually metered and very expensive URLs will be broken if you decide to switch providers later  You can choose to serve the files from your own domain, incorporating caching in the process.</description>
+      <guid>http://localhost:1313/admin/optional/object-storage-proxy/</guid>
+      <description>When you are using Mastodon with an object storage provider like Amazon S3, Wasabi, Google Cloud or others, by default the URLs of the files go through the storage providers themselves. This has the following downsides:&#xA;Bandwidth is usually metered and very expensive URLs will be broken if you decide to switch providers later You can choose to serve the files from your own domain, incorporating caching in the process. In Mastodon, access patterns show that new files are often simultaneously accessed by many clients as they appear in new posts via the streaming API or are shared through federation; in contrast, older content is accessed less frequently.</description>
     </item>
-    
     <item>
       <title>Roles</title>
-      <link>https://docs.joinmastodon.org/admin/roles/</link>
+      <link>http://localhost:1313/admin/roles/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/roles/</guid>
-      <description>Roles When the database is seeded, roles are derived from the values present in ~/config/roles.yml.
- Role  The resultant default roles are Owner, Admin, and Moderator.
-A role and its attributes can be created using Add role, present on the Roles (/admin/roles) page.
-An existing role&amp;rsquo;s attributes can be changed using the edit role feature.
-Default roles Base role (Default permissions) Affects all users, including users without an assigned role.</description>
+      <guid>http://localhost:1313/admin/roles/</guid>
+      <description>Roles&#xD;When the database is seeded, roles are derived from the values present in ~/config/roles.yml.&#xA;Role&#xD;The resultant default roles are Owner, Admin, and Moderator.&#xA;A role and its attributes can be created using Add role, present on the Roles (/admin/roles) page.&#xA;An existing role&amp;rsquo;s attributes can be changed using the edit role feature.&#xA;Default roles&#xD;Base role (Default permissions)&#xD;Affects all users, including users without an assigned role.</description>
     </item>
-    
     <item>
       <title>Scaling up your server</title>
-      <link>https://docs.joinmastodon.org/admin/scaling/</link>
+      <link>http://localhost:1313/admin/scaling/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/scaling/</guid>
-      <description>Managing concurrency Mastodon has three types of processes:
- Web (Puma) Streaming API Background processing (Sidekiq)  Web (Puma) The web process serves short-lived HTTP requests for most of the application. The following environment variables control it:
- WEB_CONCURRENCY controls the number of worker processes MAX_THREADS controls the number of threads per process  Threads share the memory of their parent process. Different processes allocate their own memory, though they share some memory via copy-on-write.</description>
+      <guid>http://localhost:1313/admin/scaling/</guid>
+      <description>Managing concurrency&#xD;Mastodon has three types of processes:&#xA;Web (Puma) Streaming API Background processing (Sidekiq) Web (Puma)&#xD;The web process serves short-lived HTTP requests for most of the application. The following environment variables control it:&#xA;WEB_CONCURRENCY controls the number of worker processes MAX_THREADS controls the number of threads per process Threads share the memory of their parent process. Different processes allocate their own memory, though they share some memory via copy-on-write.</description>
     </item>
-    
     <item>
       <title>Setting up your new instance</title>
-      <link>https://docs.joinmastodon.org/admin/setup/</link>
+      <link>http://localhost:1313/admin/setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/setup/</guid>
-      <description>Creating an admin account In the browser After signing up in the browser, you will need to use the command line to give your newly created account admin privileges. Assuming your username is alice:
-RAILS_ENV=production bin/tootctl accounts modify alice --role Owner  Prior to Mastodon 4.0, roles were hardcoded to be one of user, moderator, or admin. Since Mastodon 4.0, there is a customizable role system, with default roles created for Moderator, Admin, and Owner.</description>
+      <guid>http://localhost:1313/admin/setup/</guid>
+      <description>Creating an admin account&#xD;In the browser&#xD;After signing up in the browser, you will need to use the command line to give your newly created account admin privileges. Assuming your username is alice:&#xA;RAILS_ENV=production bin/tootctl accounts modify alice --role Owner Prior to Mastodon 4.0, roles were hardcoded to be one of user, moderator, or admin. Since Mastodon 4.0, there is a customizable role system, with default roles created for Moderator, Admin, and Owner.</description>
     </item>
-    
     <item>
       <title>Single Sign On</title>
-      <link>https://docs.joinmastodon.org/admin/optional/sso/</link>
+      <link>http://localhost:1313/admin/optional/sso/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/optional/sso/</guid>
-      <description> This page is under construction.
-For the moment, please refer to this pull request
- </description>
+      <guid>http://localhost:1313/admin/optional/sso/</guid>
+      <description>This page is under construction.&#xA;For the moment, please refer to this pull request</description>
     </item>
-    
     <item>
       <title>Troubleshooting errors</title>
-      <link>https://docs.joinmastodon.org/admin/troubleshooting/</link>
+      <link>http://localhost:1313/admin/troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/troubleshooting/</guid>
-      <description>I see an error page that says something went wrong. How do I find out what’s wrong? All error messages with stack traces are written to the system log. When using systemd, the logs of each systemd service can be browsed with journalctl -u mastodon-web (substitute with the correct service name). When using Docker, it’s similar: docker logs mastodon_web_1 (substitute with the correct container name).
-Specific details of server-side errors are never displayed to the public, as they can reveal what your setup looks like internally and give attackers clues on how to get in, or how to abuse the system more efficiently.</description>
+      <guid>http://localhost:1313/admin/troubleshooting/</guid>
+      <description>I see an error page that says something went wrong. How do I find out what’s wrong?&#xD;All error messages with stack traces are written to the system log. When using systemd, the logs of each systemd service can be browsed with journalctl -u mastodon-web (substitute with the correct service name). When using Docker, it’s similar: docker logs mastodon_web_1 (substitute with the correct container name).&#xA;Specific details of server-side errors are never displayed to the public, as they can reveal what your setup looks like internally and give attackers clues on how to get in, or how to abuse the system more efficiently.</description>
     </item>
-    
     <item>
       <title>Upgrading to a new release</title>
-      <link>https://docs.joinmastodon.org/admin/upgrading/</link>
+      <link>http://localhost:1313/admin/upgrading/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/upgrading/</guid>
-      <description>When a new version of Mastodon comes out, it appears on the GitHub releases page. Please mind that running unreleased code from the main branch, while possible, is not recommended.  Automatic update verification Since v4.2.0, Mastodon will automatically check for available updates and notify the users of your server that have the DevOps permission.
-This happens by fetching https://api.joinmastodon.org/update-check?version=&amp;lt;current_version&amp;gt; in the background every 30 minutes. current_version omits the build metadata (everything after the first +, if there is one, in the version string).</description>
+      <guid>http://localhost:1313/admin/upgrading/</guid>
+      <description>When a new version of Mastodon comes out, it appears on the GitHub releases page. Please mind that running unreleased code from the main branch, while possible, is not recommended.&#xD;Automatic update verification&#xD;Since v4.2.0, Mastodon will automatically check for available updates and notify the users of your server that have the DevOps permission.&#xA;This happens by fetching https://api.joinmastodon.org/update-check?version=&amp;lt;current_version&amp;gt; in the background every 30 minutes. current_version omits the build metadata (everything after the first +, if there is one, in the version string).</description>
     </item>
-    
     <item>
       <title>Using the admin CLI</title>
-      <link>https://docs.joinmastodon.org/admin/tootctl/</link>
+      <link>http://localhost:1313/admin/tootctl/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/admin/tootctl/</guid>
+      <guid>http://localhost:1313/admin/tootctl/</guid>
       <description>The command-line interface of Mastodon is an executable file called tootctl residing in the bin directory within the Mastodon root directory. You must specify which environment you intend to use whenever you execute it by specifying the RAILS_ENV environment variable. Unless you are a developer working on a local machine, you need to use RAILS_ENV=production. If you are sure that you will never need another environment (for development, testing, or staging), you can add it to your .</description>
     </item>
-    
   </channel>
 </rss>

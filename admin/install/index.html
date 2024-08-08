@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Installing from source - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/install/">
+  <meta property="og:url" content="http://localhost:1313/admin/install/">
 
   
     <meta name="description" content="Instructional guide on creating your own Mastodon-powered website.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Installing from source">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/install/">
+  <link rel="canonical" href="http://localhost:1313/admin/install/">
 </head>
 
 <body>
@@ -1075,87 +1075,342 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="pre-requisites">Pre-requisites</h2>
-<ul>
+    <h2 class="heading" id="pre-requisites">
+	<span class="heading__text">Pre-requisites</span>
+	<a class="heading__anchor-link" href="#pre-requisites">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><ul>
 <li>A machine running <strong>Ubuntu 22.04</strong> or <strong>Debian 11</strong> that you have root access to</li>
 <li>A <strong>domain name</strong> (or a subdomain) for the Mastodon server, e.g. <code>example.com</code></li>
 <li>An e-mail delivery service or other <strong>SMTP server</strong></li>
 </ul>
 <p>You will be running the commands as root. If you aren’t already root, switch to root: <code>sudo su -</code></p>
-<h3 id="system-repositories">System repositories</h3>
-<p>Make sure curl, wget, gnupg, apt-transport-https, lsb-release and ca-certificates are installed first:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install -y curl wget gnupg apt-transport-https lsb-release ca-certificates
-</code></pre></div><h4 id="node-js">Node.js</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-<span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main&#34;</span> | tee /etc/apt/sources.list.d/nodesource.list
-</code></pre></div><h4 id="postgresql">PostgreSQL</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget -O /usr/share/keyrings/postgresql.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
-<span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;deb [signed-by=/usr/share/keyrings/postgresql.asc] http://apt.postgresql.org/pub/repos/apt </span><span style="color:#ff79c6">$(</span>lsb_release -cs<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">-pgdg main&#34;</span> &gt; /etc/apt/sources.list.d/postgresql.list
-</code></pre></div><h3 id="system-packages">System packages</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update
-apt install -y <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>  imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>  g++ libprotobuf-dev protobuf-compiler pkg-config gcc autoconf <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>  bison build-essential libssl-dev libyaml-dev libreadline6-dev <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>  zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>  nginx nodejs redis-server redis-tools postgresql postgresql-contrib <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>  certbot python3-certbot-nginx libidn11-dev libicu-dev libjemalloc-dev
-</code></pre></div><h4 id="yarn">Yarn</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">corepack <span style="color:#8be9fd;font-style:italic">enable</span>
-yarn <span style="color:#8be9fd;font-style:italic">set</span> version classic
-</code></pre></div><h3 id="installing-ruby">Installing Ruby</h3>
-<p>We will use rbenv to manage Ruby versions as it simplifies obtaining the correct versions and updating them when new releases are available. Since rbenv needs to be installed for an individual Linux user, we must first create the user account under which Mastodon will run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">adduser --disabled-login mastodon
-</code></pre></div><p>We can then switch to the user:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su - mastodon
-</code></pre></div><p>And proceed to install rbenv and rbenv-build:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-<span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
-<span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;eval &#34;$(rbenv init -)&#34;&#39;</span> &gt;&gt; ~/.bashrc
-<span style="color:#8be9fd;font-style:italic">exec</span> bash
-git clone https://github.com/rbenv/ruby-build.git <span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">$(</span>rbenv root<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">&#34;</span>/plugins/ruby-build
-</code></pre></div><p>Once this is done, we can install the correct Ruby version:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RUBY_CONFIGURE_OPTS</span><span style="color:#ff79c6">=</span>--with-jemalloc rbenv install 3.2.3
-rbenv global 3.2.3
-</code></pre></div><p>We’ll also need to install the bundler:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">gem install bundler --no-document
-</code></pre></div><p>Return to the root user:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">exit</span>
-</code></pre></div><h2 id="setup">Setup</h2>
-<h3 id="setting-up-postgresql">Setting up PostgreSQL</h3>
-<h4 id="performance-configuration-optional">Performance configuration (optional)</h4>
-<p>For optimal performance, you may use <a href="https://pgtune.leopard.in.ua/#/">pgTune</a> to generate an appropriate configuration and edit values in <code>/etc/postgresql/16/main/postgresql.conf</code> before restarting PostgreSQL with <code>systemctl restart postgresql</code></p>
-<h4 id="creating-a-user">Creating a user</h4>
-<p>You will need to create a PostgreSQL user that Mastodon could use. It is easiest to go with “ident” authentication in a simple setup, i.e. the PostgreSQL user does not have a separate password and can be used by the Linux user with the same username.</p>
+<h3 class="heading" id="system-repositories">
+	<span class="heading__text">System repositories</span>
+	<a class="heading__anchor-link" href="#system-repositories">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Make sure curl, wget, gnupg, apt-transport-https, lsb-release and ca-certificates are installed first:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install -y curl wget gnupg apt-transport-https lsb-release ca-certificates
+</span></span></code></pre></div><h4 class="heading" id="node-js">
+	<span class="heading__text">Node.js</span>
+	<a class="heading__anchor-link" href="#node-js">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main&#34;</span> | tee /etc/apt/sources.list.d/nodesource.list
+</span></span></code></pre></div><h4 class="heading" id="postgresql">
+	<span class="heading__text">PostgreSQL</span>
+	<a class="heading__anchor-link" href="#postgresql">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -O /usr/share/keyrings/postgresql.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;deb [signed-by=/usr/share/keyrings/postgresql.asc] http://apt.postgresql.org/pub/repos/apt </span><span style="color:#ff79c6">$(</span>lsb_release -cs<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">-pgdg main&#34;</span> &gt; /etc/apt/sources.list.d/postgresql.list
+</span></span></code></pre></div><h3 class="heading" id="system-packages">
+	<span class="heading__text">System packages</span>
+	<a class="heading__anchor-link" href="#system-packages">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>apt install -y <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  g++ libprotobuf-dev protobuf-compiler pkg-config gcc autoconf <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  bison build-essential libssl-dev libyaml-dev libreadline6-dev <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  nginx nodejs redis-server redis-tools postgresql postgresql-contrib <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  certbot python3-certbot-nginx libidn11-dev libicu-dev libjemalloc-dev
+</span></span></code></pre></div><h4 class="heading" id="yarn">
+	<span class="heading__text">Yarn</span>
+	<a class="heading__anchor-link" href="#yarn">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>corepack <span style="color:#8be9fd;font-style:italic">enable</span>
+</span></span><span style="display:flex;"><span>yarn <span style="color:#8be9fd;font-style:italic">set</span> version classic
+</span></span></code></pre></div><h3 class="heading" id="installing-ruby">
+	<span class="heading__text">Installing Ruby</span>
+	<a class="heading__anchor-link" href="#installing-ruby">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>We will use rbenv to manage Ruby versions as it simplifies obtaining the correct versions and updating them when new releases are available. Since rbenv needs to be installed for an individual Linux user, we must first create the user account under which Mastodon will run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>adduser --disabled-login mastodon
+</span></span></code></pre></div><p>We can then switch to the user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>su - mastodon
+</span></span></code></pre></div><p>And proceed to install rbenv and rbenv-build:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#39;eval &#34;$(rbenv init -)&#34;&#39;</span> &gt;&gt; ~/.bashrc
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">exec</span> bash
+</span></span><span style="display:flex;"><span>git clone https://github.com/rbenv/ruby-build.git <span style="color:#f1fa8c">&#34;</span><span style="color:#ff79c6">$(</span>rbenv root<span style="color:#ff79c6">)</span><span style="color:#f1fa8c">&#34;</span>/plugins/ruby-build
+</span></span></code></pre></div><p>Once this is done, we can install the correct Ruby version:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">RUBY_CONFIGURE_OPTS</span><span style="color:#ff79c6">=</span>--with-jemalloc rbenv install 3.2.3
+</span></span><span style="display:flex;"><span>rbenv global 3.2.3
+</span></span></code></pre></div><p>We’ll also need to install the bundler:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gem install bundler --no-document
+</span></span></code></pre></div><p>Return to the root user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">exit</span>
+</span></span></code></pre></div><h2 class="heading" id="setup">
+	<span class="heading__text">Setup</span>
+	<a class="heading__anchor-link" href="#setup">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="setting-up-postgresql">
+	<span class="heading__text">Setting up PostgreSQL</span>
+	<a class="heading__anchor-link" href="#setting-up-postgresql">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><h4 class="heading" id="performance-configuration-optional">
+	<span class="heading__text">Performance configuration (optional)</span>
+	<a class="heading__anchor-link" href="#performance-configuration-optional">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>For optimal performance, you may use <a href="https://pgtune.leopard.in.ua/#/">pgTune</a> to generate an appropriate configuration and edit values in <code>/etc/postgresql/16/main/postgresql.conf</code> before restarting PostgreSQL with <code>systemctl restart postgresql</code></p>
+<h4 class="heading" id="creating-a-user">
+	<span class="heading__text">Creating a user</span>
+	<a class="heading__anchor-link" href="#creating-a-user">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>You will need to create a PostgreSQL user that Mastodon could use. It is easiest to go with “ident” authentication in a simple setup, i.e. the PostgreSQL user does not have a separate password and can be used by the Linux user with the same username.</p>
 <p>Open the prompt:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo -u postgres psql
-</code></pre></div><p>In the prompt, execute:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">USER</span> mastodon <span style="color:#ff79c6">CREATEDB</span>;
-\q
-</code></pre></div><p>Done!</p>
-<h3 id="setting-up-mastodon">Setting up Mastodon</h3>
-<p>It is time to download the Mastodon code. Switch to the mastodon user:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su - mastodon
-</code></pre></div><h4 id="checking-out-the-code">Checking out the code</h4>
-<p>Use git to download the latest stable release of Mastodon:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git clone https://github.com/mastodon/mastodon.git live <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#8be9fd;font-style:italic">cd</span> live
-git checkout <span style="color:#ff79c6">$(</span>git tag -l | grep <span style="color:#f1fa8c">&#39;^v[0-9.]*$&#39;</span> | sort -V | tail -n 1<span style="color:#ff79c6">)</span>
-</code></pre></div><h4 id="installing-the-last-dependencies">Installing the last dependencies</h4>
-<p>Now to install Ruby and JavaScript dependencies:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">bundle config deployment <span style="color:#f1fa8c">&#39;true&#39;</span>
-bundle config without <span style="color:#f1fa8c">&#39;development test&#39;</span>
-bundle install -j<span style="color:#ff79c6">$(</span>getconf _NPROCESSORS_ONLN<span style="color:#ff79c6">)</span>
-yarn install --pure-lockfile
-</code></pre></div><div class="hint hint-info">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -u postgres psql
+</span></span></code></pre></div><p>In the prompt, execute:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> <span style="color:#ff79c6">USER</span> mastodon <span style="color:#ff79c6">CREATEDB</span>;
+</span></span><span style="display:flex;"><span>\q
+</span></span></code></pre></div><p>Done!</p>
+<h3 class="heading" id="setting-up-mastodon">
+	<span class="heading__text">Setting up Mastodon</span>
+	<a class="heading__anchor-link" href="#setting-up-mastodon">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>It is time to download the Mastodon code. Switch to the mastodon user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>su - mastodon
+</span></span></code></pre></div><h4 class="heading" id="checking-out-the-code">
+	<span class="heading__text">Checking out the code</span>
+	<a class="heading__anchor-link" href="#checking-out-the-code">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Use git to download the latest stable release of Mastodon:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/mastodon/mastodon.git live <span style="color:#ff79c6">&amp;&amp;</span> <span style="color:#8be9fd;font-style:italic">cd</span> live
+</span></span><span style="display:flex;"><span>git checkout <span style="color:#ff79c6">$(</span>git tag -l | grep <span style="color:#f1fa8c">&#39;^v[0-9.]*$&#39;</span> | sort -V | tail -n 1<span style="color:#ff79c6">)</span>
+</span></span></code></pre></div><h4 class="heading" id="installing-the-last-dependencies">
+	<span class="heading__text">Installing the last dependencies</span>
+	<a class="heading__anchor-link" href="#installing-the-last-dependencies">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Now to install Ruby and JavaScript dependencies:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bundle config deployment <span style="color:#f1fa8c">&#39;true&#39;</span>
+</span></span><span style="display:flex;"><span>bundle config without <span style="color:#f1fa8c">&#39;development test&#39;</span>
+</span></span><span style="display:flex;"><span>bundle install -j<span style="color:#ff79c6">$(</span>getconf _NPROCESSORS_ONLN<span style="color:#ff79c6">)</span>
+</span></span><span style="display:flex;"><span>yarn install --pure-lockfile
+</span></span></code></pre></div><div class="hint hint-info">
   <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
 
   The two <code>bundle config</code> commands are only needed the first time you&rsquo;re installing dependencies. If you&rsquo;re going to be updating or re-installing dependencies later, just <code>bundle install</code> will be enough.
 </div>
 
-<h4 id="generating-a-configuration">Generating a configuration</h4>
-<p>Run the interactive setup wizard:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production bundle <span style="color:#8be9fd;font-style:italic">exec</span> rake mastodon:setup
-</code></pre></div><p>This will:</p>
+<h4 class="heading" id="generating-a-configuration">
+	<span class="heading__text">Generating a configuration</span>
+	<a class="heading__anchor-link" href="#generating-a-configuration">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Run the interactive setup wizard:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production bundle <span style="color:#8be9fd;font-style:italic">exec</span> rake mastodon:setup
+</span></span></code></pre></div><p>This will:</p>
 <ul>
 <li>Create a configuration file</li>
 <li>Run asset precompilation</li>
@@ -1163,39 +1418,90 @@ yarn install --pure-lockfile
 </ul>
 <p>The configuration file is saved as <code>.env.production</code>. You can review and edit it to your liking. Refer to the <a href="/admin/config/">documentation on configuration.</a></p>
 <p>You’re done with the mastodon user for now, so switch back to root:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">exit</span>
-</code></pre></div><h3 id="acquiring-a-ssl-certificate">Acquiring an SSL certificate</h3>
-<p>We’ll use Let’s Encrypt to get a free SSL certificate:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">certbot certonly --nginx -d example.com
-</code></pre></div><p>This will obtain the certificate, and save it in the directory <code>/etc/letsencrypt/live/example.com/</code>.</p>
-<h3 id="setting-up-nginx">Setting up nginx</h3>
-<p>Copy the configuration template for nginx from the Mastodon directory:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cp /home/mastodon/live/dist/nginx.conf /etc/nginx/sites-available/mastodon
-ln -s /etc/nginx/sites-available/mastodon /etc/nginx/sites-enabled/mastodon
-rm /etc/nginx/sites-enabled/default
-</code></pre></div><p>Then edit <code>/etc/nginx/sites-available/mastodon</code> to</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">exit</span>
+</span></span></code></pre></div><h3 class="heading" id="acquiring-a-ssl-certificate">
+	<span class="heading__text">Acquiring an SSL certificate</span>
+	<a class="heading__anchor-link" href="#acquiring-a-ssl-certificate">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>We’ll use Let’s Encrypt to get a free SSL certificate:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>certbot certonly --nginx -d example.com
+</span></span></code></pre></div><p>This will obtain the certificate, and save it in the directory <code>/etc/letsencrypt/live/example.com/</code>.</p>
+<h3 class="heading" id="setting-up-nginx">
+	<span class="heading__text">Setting up nginx</span>
+	<a class="heading__anchor-link" href="#setting-up-nginx">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Copy the configuration template for nginx from the Mastodon directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp /home/mastodon/live/dist/nginx.conf /etc/nginx/sites-available/mastodon
+</span></span><span style="display:flex;"><span>ln -s /etc/nginx/sites-available/mastodon /etc/nginx/sites-enabled/mastodon
+</span></span><span style="display:flex;"><span>rm /etc/nginx/sites-enabled/default
+</span></span></code></pre></div><p>Then edit <code>/etc/nginx/sites-available/mastodon</code> to</p>
 <ol>
 <li>Replace <code>example.com</code> with your own domain name</li>
 <li>Uncomment the <code>ssl_certificate</code> and <code>ssl_certificate_key</code> lines and replace the two lines with (ignore this step if you are bringing your own certificate)</li>
 </ol>
-<pre><code>ssl_certificate     /etc/ssl/certs/ssl-cert-snakeoil.pem;
+<pre tabindex="0"><code>ssl_certificate     /etc/ssl/certs/ssl-cert-snakeoil.pem;
 ssl_certificate_key /etc/ssl/private/ssl-cert-snakeoil.key;
 </code></pre><ol start="3">
 <li>Make any other adjustments you might need.</li>
 </ol>
 <p>Un-comment the lines starting with <code>ssl_certificate</code> and <code>ssl_certificate_key</code>, updating the path with the correct domain name.</p>
 <p>Reload nginx for the changes to take effect:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl reload nginx
-</code></pre></div><p>At this point, you should be able to visit your domain in the browser and see the elephant hitting the computer screen error page. This is because we haven’t started the Mastodon process yet.</p>
-<h3 id="setting-up-systemd-services">Setting up systemd services</h3>
-<p>Copy the systemd service templates from the Mastodon directory:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cp /home/mastodon/live/dist/mastodon-*.service /etc/systemd/system/
-</code></pre></div><p>If you deviated from the defaults at any point, check that the username and paths are correct:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8be9fd;font-style:italic">$EDITOR</span> /etc/systemd/system/mastodon-*.service
-</code></pre></div><p>Finally, start and enable the new systemd services:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">systemctl daemon-reload
-systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now mastodon-web mastodon-sidekiq mastodon-streaming
-</code></pre></div><p>They will now automatically start at boot.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl reload nginx
+</span></span></code></pre></div><p>At this point, you should be able to visit your domain in the browser and see the elephant hitting the computer screen error page. This is because we haven’t started the Mastodon process yet.</p>
+<h3 class="heading" id="setting-up-systemd-services">
+	<span class="heading__text">Setting up systemd services</span>
+	<a class="heading__anchor-link" href="#setting-up-systemd-services">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Copy the systemd service templates from the Mastodon directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>cp /home/mastodon/live/dist/mastodon-*.service /etc/systemd/system/
+</span></span></code></pre></div><p>If you deviated from the defaults at any point, check that the username and paths are correct:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">$EDITOR</span> /etc/systemd/system/mastodon-*.service
+</span></span></code></pre></div><p>Finally, start and enable the new systemd services:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>systemctl daemon-reload
+</span></span><span style="display:flex;"><span>systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now mastodon-web mastodon-sidekiq mastodon-streaming
+</span></span></code></pre></div><p>They will now automatically start at boot.</p>
 <div class="hint hint-success">
   <div class="hint-icon"><i class="fa fa-check-circle"></i></div>
 
@@ -2304,7 +2610,7 @@ systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now mast
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/install.md' style="color: #687590;">Improve this page</a>
+      Last updated August 1, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cinstall.md' style="color: #687590;">Improve this page</a>
 
       
         <br />
@@ -2358,7 +2664,7 @@ systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now mast
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/install.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cinstall.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

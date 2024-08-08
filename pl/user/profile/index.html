@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="pl">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Dostosuj swój profil - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/pl/user/profile/">
+  <meta property="og:url" content="http://localhost:1313/pl/user/profile/">
 
   
     <meta name="description" content="Rozpocznij korzystanie z nowego konta.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Dostosuj swój profil">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/pl/user/profile/">
+  <link rel="canonical" href="http://localhost:1313/pl/user/profile/">
 </head>
 
 <body>
@@ -233,66 +233,253 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="appearance">Wygląd Twojego profilu</h2>
-<figure><img src="/assets/profile-cards.jpg"
+    <h2 class="heading" id="appearance">
+	<span class="heading__text">Wygląd Twojego profilu</span>
+	<a class="heading__anchor-link" href="#appearance">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><figure><img src="/assets/profile-cards.jpg"
          alt="Karta profilu składająca się z nazwy wyświetlanej, awataru i nagłówka"/><figcaption>
             <p>Karta profilu składająca się z nazwy wyświetlanej, awataru i nagłówka</p>
         </figcaption>
 </figure>
 
 <p>Możesz zmienić to, jak Twój profil wygląda u innych, kierując się do: Preferencje &gt; Profil &gt; Wygląd.</p>
-<h3 id="name">Nazwa wyświetlana</h3>
-<p>Twoja nazwa wyświetlana jest widoczna dla innych przy Twoim adresie. Domyślnie możesz ustawić nazwę zawierającą do 30 znaków.</p>
-<h3 id="bio">Biogram</h3>
-<p>Twój biogram to krótki opis Twojej osoby wyświetlana jako notatka na Twoim profilu. Domyślnie możesz ustawić biogram składający się maksymalnie z 500 znaków.</p>
-<h3 id="avatar">Awatar</h3>
-<p>Twój awatar to ikona wyświetlana po lewej od Twoich wpisów i część Twojej wizualnej tożsamości. Możesz wysłać obraz PNG, GIF lub JPG w wielkości do 2MB jako awatar. Zostanie on zmniejszony do 400x400.</p>
-<h3 id="header">Nagłówek</h3>
-<p>Twój nagłówek to baner wyświetlany na górze Twojego profilu, jak i na kartach profilu wyświetlanych w listach obserwacji czy katalogu profili. Możesz wysłać obraz PNG, GIF lub JPG w wielkości do 2MB jako nagłówek. Zostanie on zmniejszony do 1500x500.</p>
-<h2 id="flags">Flagi profilu</h2>
-<p>Możesz oflagować swoje konto, aby poinformować innych, w jaki sposób korzystasz z Mastodona.</p>
+<h3 class="heading" id="name">
+	<span class="heading__text">Nazwa wyświetlana</span>
+	<a class="heading__anchor-link" href="#name">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Twoja nazwa wyświetlana jest widoczna dla innych przy Twoim adresie. Domyślnie możesz ustawić nazwę zawierającą do 30 znaków.</p>
+<h3 class="heading" id="bio">
+	<span class="heading__text">Biogram</span>
+	<a class="heading__anchor-link" href="#bio">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Twój biogram to krótki opis Twojej osoby wyświetlana jako notatka na Twoim profilu. Domyślnie możesz ustawić biogram składający się maksymalnie z 500 znaków.</p>
+<h3 class="heading" id="avatar">
+	<span class="heading__text">Awatar</span>
+	<a class="heading__anchor-link" href="#avatar">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Twój awatar to ikona wyświetlana po lewej od Twoich wpisów i część Twojej wizualnej tożsamości. Możesz wysłać obraz PNG, GIF lub JPG w wielkości do 2MB jako awatar. Zostanie on zmniejszony do 400x400.</p>
+<h3 class="heading" id="header">
+	<span class="heading__text">Nagłówek</span>
+	<a class="heading__anchor-link" href="#header">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Twój nagłówek to baner wyświetlany na górze Twojego profilu, jak i na kartach profilu wyświetlanych w listach obserwacji czy katalogu profili. Możesz wysłać obraz PNG, GIF lub JPG w wielkości do 2MB jako nagłówek. Zostanie on zmniejszony do 1500x500.</p>
+<h2 class="heading" id="flags">
+	<span class="heading__text">Flagi profilu</span>
+	<a class="heading__anchor-link" href="#flags">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Możesz oflagować swoje konto, aby poinformować innych, w jaki sposób korzystasz z Mastodona.</p>
 <p>![]({{ relUrl &ldquo;/assets/bot-flag.jpg&rdquo; }})</p>
-<h3 id="locked">Konto zablokowane</h3>
-<p>Jeśli zablokujesz swoje konto, staną się dwie rzeczy:</p>
+<h3 class="heading" id="locked">
+	<span class="heading__text">Konto zablokowane</span>
+	<a class="heading__anchor-link" href="#locked">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Jeśli zablokujesz swoje konto, staną się dwie rzeczy:</p>
 <ul>
 <li>Nowi obserwujący nie będą automatycznie przyjmowani, będziesz musiał(a) ręcznie zatwierdzać ich.</li>
 <li>Ikona kłódki będzie widoczna dla innych, aby wiedzieli, że obserwacja nie zostanie automatycznie przyjęta.</li>
 </ul>
-<h3 id="bot">Konto bota</h3>
-<p>Włączenie tej flagi doda ikonkę bota do Twojego profilu. Dzięki temu inni dowiedzą się, że Twój profil może dokonywać zautomatyzowanych działań i może nie być nadzorowany przez człowieka. Inne oprogramowanie może traktować profile botów w inny sposób, ale obecnie Mastodon jedynie wyróżnia boty wizualnie.</p>
-<h3 id="discoverable">Katalog profilów</h3>
-<p>Udział w katalogu profilów sprawi, że Twój profil będzie mógł zostać odnaleziony przez tę funkcję, pozwalającą na przeglądanie profilów.</p>
-<h2 id="fields">Metadane profilu</h2>
-<p>Metadane profilu to możliwość dodania do profilu dodatkowych, przejrzystych informacji. Masz cztery wiersze, w których możesz wpisać nazwę i zawartość pola. Na przykład:</p>
+<h3 class="heading" id="bot">
+	<span class="heading__text">Konto bota</span>
+	<a class="heading__anchor-link" href="#bot">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Włączenie tej flagi doda ikonkę bota do Twojego profilu. Dzięki temu inni dowiedzą się, że Twój profil może dokonywać zautomatyzowanych działań i może nie być nadzorowany przez człowieka. Inne oprogramowanie może traktować profile botów w inny sposób, ale obecnie Mastodon jedynie wyróżnia boty wizualnie.</p>
+<h3 class="heading" id="discoverable">
+	<span class="heading__text">Katalog profilów</span>
+	<a class="heading__anchor-link" href="#discoverable">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Udział w katalogu profilów sprawi, że Twój profil będzie mógł zostać odnaleziony przez tę funkcję, pozwalającą na przeglądanie profilów.</p>
+<h2 class="heading" id="fields">
+	<span class="heading__text">Metadane profilu</span>
+	<a class="heading__anchor-link" href="#fields">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Metadane profilu to możliwość dodania do profilu dodatkowych, przejrzystych informacji. Masz cztery wiersze, w których możesz wpisać nazwę i zawartość pola. Na przykład:</p>
 <table>
 <thead>
 <tr>
-<th align="left">Nazwa</th>
-<th align="left">Zawartość</th>
+<th style="text-align:left">Nazwa</th>
+<th style="text-align:left">Zawartość</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">Wiek</td>
-<td align="left">25</td>
+<td style="text-align:left">Wiek</td>
+<td style="text-align:left">25</td>
 </tr>
 <tr>
-<td align="left">Kraj</td>
-<td align="left">Niemcy</td>
+<td style="text-align:left">Kraj</td>
+<td style="text-align:left">Niemcy</td>
 </tr>
 <tr>
-<td align="left">Zaimki</td>
-<td align="left">on/jego</td>
+<td style="text-align:left">Zaimki</td>
+<td style="text-align:left">on/jego</td>
 </tr>
 <tr>
-<td align="left">Strona internetowa</td>
-<td align="left"><a href="https://example.com">https://example.com</a></td>
+<td style="text-align:left">Strona internetowa</td>
+<td style="text-align:left"><a href="https://example.com">https://example.com</a></td>
 </tr>
 </tbody>
 </table>
 <p>To, co tam wpiszesz, zależy wyłącznie od Ciebie. Zawartość może zawierać wspomnienia, hashtagi, niestandardowe emoji i odnośniki.</p>
-<h3 id="verification">Weryfikacja odnośników</h3>
-<p>Weryfikacja z użyciem dokumentów potwierdzających tożsamość i niebieskie znaczki nie są możliwe bez centralnego zarządzania. Mastodon może krzyżowo powiązywać odnośniki z profilem, aby udowodnić, że jesteś ich rzeczywistym właścicielem. Jeżeli jeden z nich to link do Twojej osobistej strony internetowej, która budzi zaufanie, może to służyć jako prawie najlepsza metoda weryfikacji tożsamości.</p>
+<h3 class="heading" id="verification">
+	<span class="heading__text">Weryfikacja odnośników</span>
+	<a class="heading__anchor-link" href="#verification">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Weryfikacja z użyciem dokumentów potwierdzających tożsamość i niebieskie znaczki nie są możliwe bez centralnego zarządzania. Mastodon może krzyżowo powiązywać odnośniki z profilem, aby udowodnić, że jesteś ich rzeczywistym właścicielem. Jeżeli jeden z nich to link do Twojej osobistej strony internetowej, która budzi zaufanie, może to służyć jako prawie najlepsza metoda weryfikacji tożsamości.</p>
 <p>Jeżeli umieścisz odnośnik w metadanych swojego profilu, Mastodon sprawdzi, czy powiązana strona zawiera odnośnik do Twojego profilu na Mastodonie. Jeżeli tak, otrzymasz znak weryfikacji przy tym odnośniku, ponieważ jesteś jego potwierdzonym właścicielem.</p>
 <p>Mastodon sprawdza, czy odnośnik zawiera atrybut <code>rel=&quot;me&quot;</code>. Tak samo, Mastodon dodaje <code>rel=&quot;me&quot;</code> do odnośników w metadanych profilu.</p>
 <div class="hint hint-info">
@@ -520,7 +707,7 @@
 </script>
 
     <p style="color: #687590;">
-      Ostatnio aktualizowano August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/pl/user/profile.md' style="color: #687590;">Popraw tę stronę</a>
+      Ostatnio aktualizowano December 21, 2022 · <a href='https://github.com/mastodon/documentation/tree/main/content/pl/user%5cprofile.md' style="color: #687590;">Popraw tę stronę</a>
 
       
         <br />
@@ -578,7 +765,7 @@
     <a href='https://joinmastodon.org'>Dołącz do Mastodona</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/pl/user/profile.md'>Zobacz źródła</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/pl/user%5cprofile.md'>Zobacz źródła</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

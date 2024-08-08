@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Instance - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/entities/Instance/">
+  <meta property="og:url" content="http://localhost:1313/entities/Instance/">
 
   
     <meta name="description" content="Represents the software instance of Mastodon running on this domain.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Instance">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/entities/Instance/">
+  <link rel="canonical" href="http://localhost:1313/entities/Instance/">
 </head>
 
 <body>
@@ -1078,399 +1078,1266 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="example">Example</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;domain&#34;</span>: <span style="color:#f1fa8c">&#34;mastodon.social&#34;</span>,
-  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Mastodon&#34;</span>,
-  <span style="color:#ff79c6">&#34;version&#34;</span>: <span style="color:#f1fa8c">&#34;4.0.0rc1&#34;</span>,
-  <span style="color:#ff79c6">&#34;source_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://github.com/mastodon/mastodon&#34;</span>,
-  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;The original server operated by the Mastodon gGmbH non-profit&#34;</span>,
-  <span style="color:#ff79c6">&#34;usage&#34;</span>: {
-    <span style="color:#ff79c6">&#34;users&#34;</span>: {
-      <span style="color:#ff79c6">&#34;active_month&#34;</span>: <span style="color:#bd93f9">123122</span>
-    }
-  },
-  <span style="color:#ff79c6">&#34;thumbnail&#34;</span>: {
-    <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&#34;</span>,
-    <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UeKUpFxuo~R%0nW;WCnhF6RjaJt757oJodS$&#34;</span>,
-    <span style="color:#ff79c6">&#34;versions&#34;</span>: {
-      <span style="color:#ff79c6">&#34;@1x&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&#34;</span>,
-      <span style="color:#ff79c6">&#34;@2x&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/site_uploads/files/000/000/001/@2x/57c12f441d083cde.png&#34;</span>
-    }
-  },
-  <span style="color:#ff79c6">&#34;languages&#34;</span>: [
-    <span style="color:#f1fa8c">&#34;en&#34;</span>
-  ],
-  <span style="color:#ff79c6">&#34;configuration&#34;</span>: {
-    <span style="color:#ff79c6">&#34;urls&#34;</span>: {
-      <span style="color:#ff79c6">&#34;streaming&#34;</span>: <span style="color:#f1fa8c">&#34;wss://mastodon.social&#34;</span>
-    },
-    <span style="color:#ff79c6">&#34;vapid&#34;</span>: {
-      <span style="color:#ff79c6">&#34;public_key&#34;</span>: <span style="color:#f1fa8c">&#34;BCkMmVdKDnKYwzVCDC99Iuc9GvId-x7-kKtuHnLgfF98ENiZp_aj-UNthbCdI70DqN1zUVis-x0Wrot2sBagkMc=&#34;</span>
-    },
-    <span style="color:#ff79c6">&#34;accounts&#34;</span>: {
-      <span style="color:#ff79c6">&#34;max_featured_tags&#34;</span>: <span style="color:#bd93f9">10</span>,
-      <span style="color:#ff79c6">&#34;max_pinned_statuses&#34;</span>: <span style="color:#bd93f9">4</span>
-    },
-    <span style="color:#ff79c6">&#34;statuses&#34;</span>: {
-      <span style="color:#ff79c6">&#34;max_characters&#34;</span>: <span style="color:#bd93f9">500</span>,
-      <span style="color:#ff79c6">&#34;max_media_attachments&#34;</span>: <span style="color:#bd93f9">4</span>,
-      <span style="color:#ff79c6">&#34;characters_reserved_per_url&#34;</span>: <span style="color:#bd93f9">23</span>
-    },
-    <span style="color:#ff79c6">&#34;media_attachments&#34;</span>: {
-      <span style="color:#ff79c6">&#34;supported_mime_types&#34;</span>: [
-        <span style="color:#f1fa8c">&#34;image/jpeg&#34;</span>,
-        <span style="color:#f1fa8c">&#34;image/png&#34;</span>,
-        <span style="color:#f1fa8c">&#34;image/gif&#34;</span>,
-        <span style="color:#f1fa8c">&#34;image/heic&#34;</span>,
-        <span style="color:#f1fa8c">&#34;image/heif&#34;</span>,
-        <span style="color:#f1fa8c">&#34;image/webp&#34;</span>,
-        <span style="color:#f1fa8c">&#34;video/webm&#34;</span>,
-        <span style="color:#f1fa8c">&#34;video/mp4&#34;</span>,
-        <span style="color:#f1fa8c">&#34;video/quicktime&#34;</span>,
-        <span style="color:#f1fa8c">&#34;video/ogg&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/wave&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/wav&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/x-wav&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/x-pn-wave&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/vnd.wave&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/ogg&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/vorbis&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/mpeg&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/mp3&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/webm&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/flac&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/aac&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/m4a&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/x-m4a&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/mp4&#34;</span>,
-        <span style="color:#f1fa8c">&#34;audio/3gpp&#34;</span>,
-        <span style="color:#f1fa8c">&#34;video/x-ms-asf&#34;</span>
-      ],
-      <span style="color:#ff79c6">&#34;image_size_limit&#34;</span>: <span style="color:#bd93f9">10485760</span>,
-      <span style="color:#ff79c6">&#34;image_matrix_limit&#34;</span>: <span style="color:#bd93f9">16777216</span>,
-      <span style="color:#ff79c6">&#34;video_size_limit&#34;</span>: <span style="color:#bd93f9">41943040</span>,
-      <span style="color:#ff79c6">&#34;video_frame_rate_limit&#34;</span>: <span style="color:#bd93f9">60</span>,
-      <span style="color:#ff79c6">&#34;video_matrix_limit&#34;</span>: <span style="color:#bd93f9">2304000</span>
-    },
-    <span style="color:#ff79c6">&#34;polls&#34;</span>: {
-      <span style="color:#ff79c6">&#34;max_options&#34;</span>: <span style="color:#bd93f9">4</span>,
-      <span style="color:#ff79c6">&#34;max_characters_per_option&#34;</span>: <span style="color:#bd93f9">50</span>,
-      <span style="color:#ff79c6">&#34;min_expiration&#34;</span>: <span style="color:#bd93f9">300</span>,
-      <span style="color:#ff79c6">&#34;max_expiration&#34;</span>: <span style="color:#bd93f9">2629746</span>
-    },
-    <span style="color:#ff79c6">&#34;translation&#34;</span>: {
-      <span style="color:#ff79c6">&#34;enabled&#34;</span>: <span style="color:#ff79c6">true</span>
-    }
-  },
-  <span style="color:#ff79c6">&#34;registrations&#34;</span>: {
-    <span style="color:#ff79c6">&#34;enabled&#34;</span>: <span style="color:#ff79c6">false</span>,
-    <span style="color:#ff79c6">&#34;approval_required&#34;</span>: <span style="color:#ff79c6">false</span>,
-    <span style="color:#ff79c6">&#34;message&#34;</span>: <span style="color:#ff79c6">null</span>
-  },
-  <span style="color:#ff79c6">&#34;contact&#34;</span>: {
-    <span style="color:#ff79c6">&#34;email&#34;</span>: <span style="color:#f1fa8c">&#34;staff@mastodon.social&#34;</span>,
-    <span style="color:#ff79c6">&#34;account&#34;</span>: {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
-      <span style="color:#ff79c6">&#34;username&#34;</span>: <span style="color:#f1fa8c">&#34;Gargron&#34;</span>,
-      <span style="color:#ff79c6">&#34;acct&#34;</span>: <span style="color:#f1fa8c">&#34;Gargron&#34;</span>,
-      <span style="color:#ff79c6">&#34;display_name&#34;</span>: <span style="color:#f1fa8c">&#34;Eugen 💀&#34;</span>,
-      <span style="color:#ff79c6">&#34;locked&#34;</span>: <span style="color:#ff79c6">false</span>,
-      <span style="color:#ff79c6">&#34;bot&#34;</span>: <span style="color:#ff79c6">false</span>,
-      <span style="color:#ff79c6">&#34;discoverable&#34;</span>: <span style="color:#ff79c6">true</span>,
-      <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#ff79c6">false</span>,
-      <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2016-03-16T00:00:00.000Z&#34;</span>,
-      <span style="color:#ff79c6">&#34;note&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;p&gt;Founder, CEO and lead developer &lt;span class=\&#34;h-card\&#34;&gt;&lt;a href=\&#34;https://mastodon.social/@Mastodon\&#34; class=\&#34;u-url mention\&#34;&gt;@&lt;span&gt;Mastodon&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;, Germany.&lt;/p&gt;&#34;</span>,
-      <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/@Gargron&#34;</span>,
-      <span style="color:#ff79c6">&#34;avatar&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/avatars/000/000/001/original/dc4286ceb8fab734.jpg&#34;</span>,
-      <span style="color:#ff79c6">&#34;avatar_static&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/avatars/000/000/001/original/dc4286ceb8fab734.jpg&#34;</span>,
-      <span style="color:#ff79c6">&#34;header&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/headers/000/000/001/original/3b91c9965d00888b.jpeg&#34;</span>,
-      <span style="color:#ff79c6">&#34;header_static&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/headers/000/000/001/original/3b91c9965d00888b.jpeg&#34;</span>,
-      <span style="color:#ff79c6">&#34;followers_count&#34;</span>: <span style="color:#bd93f9">133026</span>,
-      <span style="color:#ff79c6">&#34;following_count&#34;</span>: <span style="color:#bd93f9">311</span>,
-      <span style="color:#ff79c6">&#34;statuses_count&#34;</span>: <span style="color:#bd93f9">72605</span>,
-      <span style="color:#ff79c6">&#34;last_status_at&#34;</span>: <span style="color:#f1fa8c">&#34;2022-10-31&#34;</span>,
-      <span style="color:#ff79c6">&#34;noindex&#34;</span>: <span style="color:#ff79c6">false</span>,
-      <span style="color:#ff79c6">&#34;emojis&#34;</span>: [],
-      <span style="color:#ff79c6">&#34;fields&#34;</span>: [
-        {
-          <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;Patreon&#34;</span>,
-          <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;a href=\&#34;https://www.patreon.com/mastodon\&#34; target=\&#34;_blank\&#34; rel=\&#34;nofollow noopener noreferrer me\&#34;&gt;&lt;span class=\&#34;invisible\&#34;&gt;https://www.&lt;/span&gt;&lt;span class=\&#34;\&#34;&gt;patreon.com/mastodon&lt;/span&gt;&lt;span class=\&#34;invisible\&#34;&gt;&lt;/span&gt;&lt;/a&gt;&#34;</span>,
-          <span style="color:#ff79c6">&#34;verified_at&#34;</span>: <span style="color:#ff79c6">null</span>
-        }
-      ]
-    }
-  },
-  <span style="color:#ff79c6">&#34;rules&#34;</span>: [
-    {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
-      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Sexually explicit or violent media must be marked as sensitive when posting&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;2&#34;</span>,
-      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No racism, sexism, homophobia, transphobia, xenophobia, or casteism&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;3&#34;</span>,
-      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No incitement of violence or promotion of violent ideologies&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;4&#34;</span>,
-      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No harassment, dogpiling or doxxing of other users&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;5&#34;</span>,
-      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No content illegal in Germany&#34;</span>
-    },
-    {
-      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>,
-      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Do not share intentionally false or misleading information&#34;</span>
-    }
-  ]
-}
-</code></pre></div><h2 id="attributes">Attributes</h2>
-<h3 id="domain"><code>domain</code></h3>
-<p><strong>Description:</strong> The domain name of the instance.<br>
+    <h2 class="heading" id="example">
+	<span class="heading__text">Example</span>
+	<a class="heading__anchor-link" href="#example">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;domain&#34;</span>: <span style="color:#f1fa8c">&#34;mastodon.social&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;title&#34;</span>: <span style="color:#f1fa8c">&#34;Mastodon&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;version&#34;</span>: <span style="color:#f1fa8c">&#34;4.0.0rc1&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;source_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://github.com/mastodon/mastodon&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;The original server operated by the Mastodon gGmbH non-profit&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;usage&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;users&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;active_month&#34;</span>: <span style="color:#bd93f9">123122</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;thumbnail&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UeKUpFxuo~R%0nW;WCnhF6RjaJt757oJodS$&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;versions&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;@1x&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/site_uploads/files/000/000/001/@1x/57c12f441d083cde.png&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;@2x&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/site_uploads/files/000/000/001/@2x/57c12f441d083cde.png&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;languages&#34;</span>: [
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;en&#34;</span>
+</span></span><span style="display:flex;"><span>  ],
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;configuration&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;urls&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;streaming&#34;</span>: <span style="color:#f1fa8c">&#34;wss://mastodon.social&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;vapid&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;public_key&#34;</span>: <span style="color:#f1fa8c">&#34;BCkMmVdKDnKYwzVCDC99Iuc9GvId-x7-kKtuHnLgfF98ENiZp_aj-UNthbCdI70DqN1zUVis-x0Wrot2sBagkMc=&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;accounts&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;max_featured_tags&#34;</span>: <span style="color:#bd93f9">10</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;max_pinned_statuses&#34;</span>: <span style="color:#bd93f9">4</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;statuses&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;max_characters&#34;</span>: <span style="color:#bd93f9">500</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;max_media_attachments&#34;</span>: <span style="color:#bd93f9">4</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;characters_reserved_per_url&#34;</span>: <span style="color:#bd93f9">23</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;media_attachments&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;supported_mime_types&#34;</span>: [
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;image/jpeg&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;image/png&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;image/gif&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;image/heic&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;image/heif&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;image/webp&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;video/webm&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;video/mp4&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;video/quicktime&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;video/ogg&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/wave&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/wav&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/x-wav&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/x-pn-wave&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/vnd.wave&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/ogg&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/vorbis&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/mpeg&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/mp3&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/webm&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/flac&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/aac&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/m4a&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/x-m4a&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/mp4&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;audio/3gpp&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#f1fa8c">&#34;video/x-ms-asf&#34;</span>
+</span></span><span style="display:flex;"><span>      ],
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;image_size_limit&#34;</span>: <span style="color:#bd93f9">10485760</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;image_matrix_limit&#34;</span>: <span style="color:#bd93f9">16777216</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;video_size_limit&#34;</span>: <span style="color:#bd93f9">41943040</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;video_frame_rate_limit&#34;</span>: <span style="color:#bd93f9">60</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;video_matrix_limit&#34;</span>: <span style="color:#bd93f9">2304000</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;polls&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;max_options&#34;</span>: <span style="color:#bd93f9">4</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;max_characters_per_option&#34;</span>: <span style="color:#bd93f9">50</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;min_expiration&#34;</span>: <span style="color:#bd93f9">300</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;max_expiration&#34;</span>: <span style="color:#bd93f9">2629746</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;translation&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;enabled&#34;</span>: <span style="color:#ff79c6">true</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;registrations&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;enabled&#34;</span>: <span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;approval_required&#34;</span>: <span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;message&#34;</span>: <span style="color:#ff79c6">null</span>
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;contact&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;email&#34;</span>: <span style="color:#f1fa8c">&#34;staff@mastodon.social&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;account&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;username&#34;</span>: <span style="color:#f1fa8c">&#34;Gargron&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;acct&#34;</span>: <span style="color:#f1fa8c">&#34;Gargron&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;display_name&#34;</span>: <span style="color:#f1fa8c">&#34;Eugen 💀&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;locked&#34;</span>: <span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;bot&#34;</span>: <span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;discoverable&#34;</span>: <span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;group&#34;</span>: <span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;created_at&#34;</span>: <span style="color:#f1fa8c">&#34;2016-03-16T00:00:00.000Z&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;note&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;p&gt;Founder, CEO and lead developer &lt;span class=\&#34;h-card\&#34;&gt;&lt;a href=\&#34;https://mastodon.social/@Mastodon\&#34; class=\&#34;u-url mention\&#34;&gt;@&lt;span&gt;Mastodon&lt;/span&gt;&lt;/a&gt;&lt;/span&gt;, Germany.&lt;/p&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/@Gargron&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;avatar&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/avatars/000/000/001/original/dc4286ceb8fab734.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;avatar_static&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/avatars/000/000/001/original/dc4286ceb8fab734.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;header&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/headers/000/000/001/original/3b91c9965d00888b.jpeg&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;header_static&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/accounts/headers/000/000/001/original/3b91c9965d00888b.jpeg&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;followers_count&#34;</span>: <span style="color:#bd93f9">133026</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;following_count&#34;</span>: <span style="color:#bd93f9">311</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;statuses_count&#34;</span>: <span style="color:#bd93f9">72605</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;last_status_at&#34;</span>: <span style="color:#f1fa8c">&#34;2022-10-31&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;noindex&#34;</span>: <span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;emojis&#34;</span>: [],
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;fields&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;name&#34;</span>: <span style="color:#f1fa8c">&#34;Patreon&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;&lt;a href=\&#34;https://www.patreon.com/mastodon\&#34; target=\&#34;_blank\&#34; rel=\&#34;nofollow noopener noreferrer me\&#34;&gt;&lt;span class=\&#34;invisible\&#34;&gt;https://www.&lt;/span&gt;&lt;span class=\&#34;\&#34;&gt;patreon.com/mastodon&lt;/span&gt;&lt;span class=\&#34;invisible\&#34;&gt;&lt;/span&gt;&lt;/a&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>          <span style="color:#ff79c6">&#34;verified_at&#34;</span>: <span style="color:#ff79c6">null</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;rules&#34;</span>: [
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Sexually explicit or violent media must be marked as sensitive when posting&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;2&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No racism, sexism, homophobia, transphobia, xenophobia, or casteism&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;3&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No incitement of violence or promotion of violent ideologies&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;4&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No harassment, dogpiling or doxxing of other users&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;5&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;No content illegal in Germany&#34;</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;text&#34;</span>: <span style="color:#f1fa8c">&#34;Do not share intentionally false or misleading information&#34;</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 class="heading" id="attributes">
+	<span class="heading__text">Attributes</span>
+	<a class="heading__anchor-link" href="#attributes">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="domain">
+	<span class="heading__text"><code>domain</code></span>
+	<a class="heading__anchor-link" href="#domain">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The domain name of the instance.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="title"><code>title</code></h3>
-<p><strong>Description:</strong> The title of the website.<br>
+<h3 class="heading" id="title">
+	<span class="heading__text"><code>title</code></span>
+	<a class="heading__anchor-link" href="#title">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The title of the website.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="version"><code>version</code></h3>
-<p><strong>Description:</strong> The version of Mastodon installed on the instance.<br>
+<h3 class="heading" id="version">
+	<span class="heading__text"><code>version</code></span>
+	<a class="heading__anchor-link" href="#version">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The version of Mastodon installed on the instance.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="source_url"><code>source_url</code></h3>
-<p><strong>Description:</strong> The URL for the source code of the software running on this instance, in keeping with AGPL license requirements.<br>
+<h3 class="heading" id="source_url">
+	<span class="heading__text"><code>source_url</code></span>
+	<a class="heading__anchor-link" href="#source_url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The URL for the source code of the software running on this instance, in keeping with AGPL license requirements.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="description"><code>description</code></h3>
-<p><strong>Description:</strong> A short, plain-text description defined by the admin.<br>
+<h3 class="heading" id="description">
+	<span class="heading__text"><code>description</code></span>
+	<a class="heading__anchor-link" href="#description">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> A short, plain-text description defined by the admin.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="usage"><code>usage</code></h3>
-<p><strong>Description:</strong> Usage data for this instance.<br>
+<h3 class="heading" id="usage">
+	<span class="heading__text"><code>usage</code></span>
+	<a class="heading__anchor-link" href="#usage">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Usage data for this instance.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="users"><code>usage[users]</code></h4>
-<p><strong>Description:</strong> Usage data related to users on this instance.<br>
+<h4 class="heading" id="users">
+	<span class="heading__text"><code>usage[users]</code></span>
+	<a class="heading__anchor-link" href="#users">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> Usage data related to users on this instance.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="active_month"><code>usage[users][active_month]</code></h5>
-<p><strong>Description:</strong> The number of active users in the past 4 weeks.<br>
+<h5 class="heading" id="active_month">
+	<span class="heading__text"><code>usage[users][active_month]</code></span>
+	<a class="heading__anchor-link" href="#active_month">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The number of active users in the past 4 weeks.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="thumbnail"><code>thumbnail</code></h3>
-<p><strong>Description:</strong> An image used to represent this instance.<br>
+<h3 class="heading" id="thumbnail">
+	<span class="heading__text"><code>thumbnail</code></span>
+	<a class="heading__anchor-link" href="#thumbnail">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> An image used to represent this instance.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="thumbnail-url"><code>thumbnail[url]</code></h4>
-<p><strong>Description:</strong> The URL for the thumbnail image.<br>
+<h4 class="heading" id="thumbnail-url">
+	<span class="heading__text"><code>thumbnail[url]</code></span>
+	<a class="heading__anchor-link" href="#thumbnail-url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> The URL for the thumbnail image.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="blurhash"><code>thumbnail[blurhash]</code> <span class="api-method-parameter-required">optional</span></h4>
-<p><strong>Description:</strong> A hash computed by <a href="https://github.com/woltapp/blurhash">the BlurHash algorithm</a>, for generating colorful preview thumbnails when media has not been downloaded yet.<br>
+<h4 class="heading" id="blurhash">
+	<span class="heading__text"><code>thumbnail[blurhash]</code> <span class="api-method-parameter-required">optional</span></span>
+	<a class="heading__anchor-link" href="#blurhash">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> A hash computed by <a href="https://github.com/woltapp/blurhash">the BlurHash algorithm</a>, for generating colorful preview thumbnails when media has not been downloaded yet.<br>
 <strong>Type:</strong> String (Blurhash)<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="thumbnail-versions"><code>thumbnail[versions]</code> <span class="api-method-parameter-required">optional</span></h4>
-<p><strong>Description:</strong> Links to scaled resolution images, for high DPI screens.<br>
+<h4 class="heading" id="thumbnail-versions">
+	<span class="heading__text"><code>thumbnail[versions]</code> <span class="api-method-parameter-required">optional</span></span>
+	<a class="heading__anchor-link" href="#thumbnail-versions">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> Links to scaled resolution images, for high DPI screens.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="1x"><code>thumbnail[versions][@1x]</code> <span class="api-method-parameter-required">optional</span></h5>
-<p><strong>Description:</strong> The URL for the thumbnail image at 1x resolution.<br>
+<h5 class="heading" id="1x">
+	<span class="heading__text"><code>thumbnail[versions][@1x]</code> <span class="api-method-parameter-required">optional</span></span>
+	<a class="heading__anchor-link" href="#1x">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The URL for the thumbnail image at 1x resolution.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="2x"><code>thumbnail[versions][@2x]</code> <span class="api-method-parameter-required">optional</span></h5>
-<p><strong>Description:</strong> The URL for the thumbnail image at 2x resolution.<br>
+<h5 class="heading" id="2x">
+	<span class="heading__text"><code>thumbnail[versions][@2x]</code> <span class="api-method-parameter-required">optional</span></span>
+	<a class="heading__anchor-link" href="#2x">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The URL for the thumbnail image at 2x resolution.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="languages"><code>languages</code></h3>
-<p><strong>Description:</strong> Primary languages of the website and its staff.<br>
+<h3 class="heading" id="languages">
+	<span class="heading__text"><code>languages</code></span>
+	<a class="heading__anchor-link" href="#languages">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Primary languages of the website and its staff.<br>
 <strong>Type:</strong> Array of String (ISO 639-1 two-letter code)<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="configuration"><code>configuration</code></h3>
-<p><strong>Description:</strong> Configured values and limits for this website.<br>
+<h3 class="heading" id="configuration">
+	<span class="heading__text"><code>configuration</code></span>
+	<a class="heading__anchor-link" href="#configuration">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Configured values and limits for this website.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="urls"><code>configuration[urls]</code></h4>
-<p><strong>Description:</strong> URLs of interest for clients apps.<br>
+<h4 class="heading" id="urls">
+	<span class="heading__text"><code>configuration[urls]</code></span>
+	<a class="heading__anchor-link" href="#urls">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> URLs of interest for clients apps.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="streaming"><code>configuration[urls][streaming]</code></h5>
-<p><strong>Description:</strong> The Websockets URL for connecting to the streaming API.<br>
+<h5 class="heading" id="streaming">
+	<span class="heading__text"><code>configuration[urls][streaming]</code></span>
+	<a class="heading__anchor-link" href="#streaming">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The Websockets URL for connecting to the streaming API.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="vapid_public_key"><code>configuration[vapid][public_key]</code></h3>
-<p><strong>Description:</strong> The instances VAPID public key, used for push notifications, the same as <a href="/entities/WebPushSubscription/#server_key">WebPushSubscription#server_key</a>.<br>
+<h3 class="heading" id="vapid_public_key">
+	<span class="heading__text"><code>configuration[vapid][public_key]</code></span>
+	<a class="heading__anchor-link" href="#vapid_public_key">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The instances VAPID public key, used for push notifications, the same as <a href="/entities/WebPushSubscription/#server_key">WebPushSubscription#server_key</a>.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 4.3.0 - added</p>
-<h4 id="accounts"><code>configuration[accounts]</code></h4>
-<p><strong>Description:</strong> Limits related to accounts.<br>
+<h4 class="heading" id="accounts">
+	<span class="heading__text"><code>configuration[accounts]</code></span>
+	<a class="heading__anchor-link" href="#accounts">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> Limits related to accounts.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="max_featured_tags"><code>configuration[accounts][max_featured_tags]</code></h5>
-<p><strong>Description:</strong> The maximum number of featured tags allowed for each account.<br>
+<h5 class="heading" id="max_featured_tags">
+	<span class="heading__text"><code>configuration[accounts][max_featured_tags]</code></span>
+	<a class="heading__anchor-link" href="#max_featured_tags">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The maximum number of featured tags allowed for each account.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="max_pinned_statuses"><code>configuration[accounts][max_pinned_statuses]</code></h5>
-<p><strong>Description:</strong> The maximum number of pinned statuses for each account.<br>
+<h5 class="heading" id="max_pinned_statuses">
+	<span class="heading__text"><code>configuration[accounts][max_pinned_statuses]</code></span>
+	<a class="heading__anchor-link" href="#max_pinned_statuses">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The maximum number of pinned statuses for each account.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.3.0 - added</p>
-<h4 id="statuses"><code>configuration[statuses]</code></h4>
-<p><strong>Description:</strong> Limits related to authoring statuses.<br>
+<h4 class="heading" id="statuses">
+	<span class="heading__text"><code>configuration[statuses]</code></span>
+	<a class="heading__anchor-link" href="#statuses">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> Limits related to authoring statuses.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="max_characters"><code>configuration[statuses][max_characters]</code></h5>
-<p><strong>Description:</strong> The maximum number of allowed characters per status.<br>
+<h5 class="heading" id="max_characters">
+	<span class="heading__text"><code>configuration[statuses][max_characters]</code></span>
+	<a class="heading__anchor-link" href="#max_characters">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The maximum number of allowed characters per status.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="max_media_attachments"><code>configuration[statuses][max_media_attachments]</code></h5>
-<p><strong>Description:</strong> The maximum number of media attachments that can be added to a status.<br>
+<h5 class="heading" id="max_media_attachments">
+	<span class="heading__text"><code>configuration[statuses][max_media_attachments]</code></span>
+	<a class="heading__anchor-link" href="#max_media_attachments">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The maximum number of media attachments that can be added to a status.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="characters_reserved_per_url"><code>configuration[statuses][characters_reserved_per_url]</code></h5>
-<p><strong>Description:</strong> Each URL in a status will be assumed to be exactly this many characters.<br>
+<h5 class="heading" id="characters_reserved_per_url">
+	<span class="heading__text"><code>configuration[statuses][characters_reserved_per_url]</code></span>
+	<a class="heading__anchor-link" href="#characters_reserved_per_url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> Each URL in a status will be assumed to be exactly this many characters.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="media_attachments"><code>configuration[media_attachments]</code></h4>
-<p><strong>Description:</strong> Hints for which attachments will be accepted.<br>
+<h4 class="heading" id="media_attachments">
+	<span class="heading__text"><code>configuration[media_attachments]</code></span>
+	<a class="heading__anchor-link" href="#media_attachments">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> Hints for which attachments will be accepted.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="supported_mime_types"><code>configuration[media_attachments][supported_mime_types]</code></h5>
-<p><strong>Description:</strong> Contains MIME types that can be uploaded.<br>
+<h5 class="heading" id="supported_mime_types">
+	<span class="heading__text"><code>configuration[media_attachments][supported_mime_types]</code></span>
+	<a class="heading__anchor-link" href="#supported_mime_types">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> Contains MIME types that can be uploaded.<br>
 <strong>Type:</strong> Array of String<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="image_size_limit"><code>configuration[media_attachments][image_size_limit]</code></h5>
-<p><strong>Description:</strong> The maximum size of any uploaded image, in bytes.<br>
+<h5 class="heading" id="image_size_limit">
+	<span class="heading__text"><code>configuration[media_attachments][image_size_limit]</code></span>
+	<a class="heading__anchor-link" href="#image_size_limit">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The maximum size of any uploaded image, in bytes.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="image_matrix_limit"><code>configuration[media_attachments][image_matrix_limit]</code></h5>
-<p><strong>Description:</strong> The maximum number of pixels (width times height) for image uploads.<br>
+<h5 class="heading" id="image_matrix_limit">
+	<span class="heading__text"><code>configuration[media_attachments][image_matrix_limit]</code></span>
+	<a class="heading__anchor-link" href="#image_matrix_limit">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The maximum number of pixels (width times height) for image uploads.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="video_size_limit"><code>configuration[media_attachments][video_size_limit]</code></h5>
-<p><strong>Description:</strong> The maximum size of any uploaded video, in bytes.<br>
+<h5 class="heading" id="video_size_limit">
+	<span class="heading__text"><code>configuration[media_attachments][video_size_limit]</code></span>
+	<a class="heading__anchor-link" href="#video_size_limit">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The maximum size of any uploaded video, in bytes.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="video_frame_rate_limit"><code>configuration[media_attachments][video_frame_rate_limit]</code></h5>
-<p><strong>Description:</strong> The maximum frame rate for any uploaded video.<br>
+<h5 class="heading" id="video_frame_rate_limit">
+	<span class="heading__text"><code>configuration[media_attachments][video_frame_rate_limit]</code></span>
+	<a class="heading__anchor-link" href="#video_frame_rate_limit">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The maximum frame rate for any uploaded video.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="video_matrix_limit"><code>configuration[media_attachments][video_matrix_limit]</code></h5>
-<p><strong>Description:</strong> The maximum number of pixels (width times height) for video uploads.<br>
+<h5 class="heading" id="video_matrix_limit">
+	<span class="heading__text"><code>configuration[media_attachments][video_matrix_limit]</code></span>
+	<a class="heading__anchor-link" href="#video_matrix_limit">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The maximum number of pixels (width times height) for video uploads.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="polls"><code>configuration[polls]</code></h4>
-<p><strong>Description:</strong> Limits related to polls.<br>
+<h4 class="heading" id="polls">
+	<span class="heading__text"><code>configuration[polls]</code></span>
+	<a class="heading__anchor-link" href="#polls">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> Limits related to polls.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="max_options"><code>configuration[polls][max_options]</code></h5>
-<p><strong>Description:</strong> Each poll is allowed to have up to this many options.<br>
+<h5 class="heading" id="max_options">
+	<span class="heading__text"><code>configuration[polls][max_options]</code></span>
+	<a class="heading__anchor-link" href="#max_options">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> Each poll is allowed to have up to this many options.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="max_characters_per_option"><code>configuration[polls][max_characters_per_option]</code></h5>
-<p><strong>Description:</strong> Each poll option is allowed to have this many characters.<br>
+<h5 class="heading" id="max_characters_per_option">
+	<span class="heading__text"><code>configuration[polls][max_characters_per_option]</code></span>
+	<a class="heading__anchor-link" href="#max_characters_per_option">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> Each poll option is allowed to have this many characters.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="min_expiration"><code>configuration[polls][min_expiration]</code></h5>
-<p><strong>Description:</strong> The shortest allowed poll duration, in seconds.<br>
+<h5 class="heading" id="min_expiration">
+	<span class="heading__text"><code>configuration[polls][min_expiration]</code></span>
+	<a class="heading__anchor-link" href="#min_expiration">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The shortest allowed poll duration, in seconds.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="max_expiration"><code>configuration[polls][max_expiration]</code></h5>
-<p><strong>Description:</strong> The longest allowed poll duration, in seconds.<br>
+<h5 class="heading" id="max_expiration">
+	<span class="heading__text"><code>configuration[polls][max_expiration]</code></span>
+	<a class="heading__anchor-link" href="#max_expiration">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> The longest allowed poll duration, in seconds.<br>
 <strong>Type:</strong> Integer<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="translation"><code>configuration[translation]</code></h4>
-<p><strong>Description:</strong> Hints related to translation.<br>
+<h4 class="heading" id="translation">
+	<span class="heading__text"><code>configuration[translation]</code></span>
+	<a class="heading__anchor-link" href="#translation">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> Hints related to translation.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h5 id="translation-enabled"><code>configuration[translation][enabled]</code></h5>
-<p><strong>Description:</strong> Whether the Translations API is available on this instance.<br>
+<h5 class="heading" id="translation-enabled">
+	<span class="heading__text"><code>configuration[translation][enabled]</code></span>
+	<a class="heading__anchor-link" href="#translation-enabled">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h5><p><strong>Description:</strong> Whether the Translations API is available on this instance.<br>
 <strong>Type:</strong> Boolean<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="registrations"><code>registrations</code></h3>
-<p><strong>Description:</strong> Information about registering for this website.<br>
+<h3 class="heading" id="registrations">
+	<span class="heading__text"><code>registrations</code></span>
+	<a class="heading__anchor-link" href="#registrations">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Information about registering for this website.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="registrations-enabled"><code>registrations[enabled]</code></h4>
-<p><strong>Description:</strong> Whether registrations are enabled.<br>
+<h4 class="heading" id="registrations-enabled">
+	<span class="heading__text"><code>registrations[enabled]</code></span>
+	<a class="heading__anchor-link" href="#registrations-enabled">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> Whether registrations are enabled.<br>
 <strong>Type:</strong> Boolean<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="approval_required"><code>registrations[approval_required]</code></h4>
-<p><strong>Description:</strong> Whether registrations require moderator approval.<br>
+<h4 class="heading" id="approval_required">
+	<span class="heading__text"><code>registrations[approval_required]</code></span>
+	<a class="heading__anchor-link" href="#approval_required">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> Whether registrations require moderator approval.<br>
 <strong>Type:</strong> Boolean<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="registrations-message"><code>registrations[message]</code></h4>
-<p><strong>Description:</strong> A custom message to be shown when registrations are closed.<br>
+<h4 class="heading" id="registrations-message">
+	<span class="heading__text"><code>registrations[message]</code></span>
+	<a class="heading__anchor-link" href="#registrations-message">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> A custom message to be shown when registrations are closed.<br>
 <strong>Type:</strong> <span class="api-method-parameter-required">nullable</span> String (HTML) or null<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="contact"><code>contact</code></h3>
-<p><strong>Description:</strong> Hints related to contacting a representative of the website.<br>
+<h3 class="heading" id="contact">
+	<span class="heading__text"><code>contact</code></span>
+	<a class="heading__anchor-link" href="#contact">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Hints related to contacting a representative of the website.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="contact-email"><code>contact[email]</code></h4>
-<p><strong>Description:</strong> An email address that can be messaged regarding inquiries or issues.<br>
+<h4 class="heading" id="contact-email">
+	<span class="heading__text"><code>contact[email]</code></span>
+	<a class="heading__anchor-link" href="#contact-email">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> An email address that can be messaged regarding inquiries or issues.<br>
 <strong>Type:</strong> String (Email)<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h4 id="contact-account"><code>contact[account]</code></h4>
-<p><strong>Description:</strong> An account that can be contacted natively over the network regarding inquiries or issues.<br>
+<h4 class="heading" id="contact-account">
+	<span class="heading__text"><code>contact[account]</code></span>
+	<a class="heading__anchor-link" href="#contact-account">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p><strong>Description:</strong> An account that can be contacted natively over the network regarding inquiries or issues.<br>
 <strong>Type:</strong> <span class="api-method-parameter-required">nullable</span> <a href="/entities/Account/">Account</a> or null<br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h3 id="rules"><code>rules</code></h3>
-<p><strong>Description:</strong> An itemized list of rules for this website.<br>
+<h3 class="heading" id="rules">
+	<span class="heading__text"><code>rules</code></span>
+	<a class="heading__anchor-link" href="#rules">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> An itemized list of rules for this website.<br>
 <strong>Type:</strong> Array of <a href="/entities/Rule/">Rule</a><br>
 <strong>Version history:</strong><br>
 4.0.0 - added</p>
-<h2 id="see-also">See also</h2>
-<a href="/methods/instance/#v2" class="page-ref">
+<h2 class="heading" id="see-also">
+	<span class="heading__text">See also</span>
+	<a class="heading__anchor-link" href="#see-also">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><a href="/methods/instance/#v2" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   GET /api/v2/instance
 </a>
@@ -2618,7 +3485,7 @@
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/Instance.md' style="color: #687590;">Improve this page</a>
+      Last updated April 2, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities%5cInstance.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2664,7 +3531,7 @@
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/Instance.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities%5cInstance.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>MediaAttachment - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/entities/MediaAttachment/">
+  <meta property="og:url" content="http://localhost:1313/entities/MediaAttachment/">
 
   
     <meta name="description" content="Represents a file or media attachment that can be added to a status.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="MediaAttachment">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/entities/MediaAttachment/">
+  <link rel="canonical" href="http://localhost:1313/entities/MediaAttachment/">
 </head>
 
 <body>
@@ -1085,135 +1085,271 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="example">Example</h2>
-<h3 id="image">Image</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;22345792&#34;</span>,
-  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;image&#34;</span>,
-  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/022/345/792/original/57859aede991da25.jpeg&#34;</span>,
-  <span style="color:#ff79c6">&#34;preview_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/022/345/792/small/57859aede991da25.jpeg&#34;</span>,
-  <span style="color:#ff79c6">&#34;remote_url&#34;</span>: <span style="color:#ff79c6">null</span>,
-  <span style="color:#ff79c6">&#34;text_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/media/2N4uvkuUtPVrkZGysms&#34;</span>,
-  <span style="color:#ff79c6">&#34;meta&#34;</span>: {
-    <span style="color:#ff79c6">&#34;original&#34;</span>: {
-      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">640</span>,
-      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">480</span>,
-      <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;640x480&#34;</span>,
-      <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.3333333333333333</span>
-    },
-    <span style="color:#ff79c6">&#34;small&#34;</span>: {
-      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">461</span>,
-      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">346</span>,
-      <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;461x346&#34;</span>,
-      <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.3323699421965318</span>
-    },
-    <span style="color:#ff79c6">&#34;focus&#34;</span>: {
-      <span style="color:#ff79c6">&#34;x&#34;</span>: <span style="color:#bd93f9">-0.27</span>,
-      <span style="color:#ff79c6">&#34;y&#34;</span>: <span style="color:#bd93f9">0.51</span>
-    }
-  },
-  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;test media description&#34;</span>,
-  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UFBWY:8_0Jxv4mx]t8t64.%M-:IUWGWAt6M}&#34;</span>
-}
-</code></pre></div><h3 id="video">Video</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;22546306&#34;</span>,
-  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;video&#34;</span>,
-  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/022/546/306/original/dab9a597f68b9745.mp4&#34;</span>,
-  <span style="color:#ff79c6">&#34;preview_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/022/546/306/small/dab9a597f68b9745.png&#34;</span>,
-  <span style="color:#ff79c6">&#34;remote_url&#34;</span>: <span style="color:#ff79c6">null</span>,
-  <span style="color:#ff79c6">&#34;text_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/media/wWd1HJIBmH1MZGDfg50&#34;</span>,
-  <span style="color:#ff79c6">&#34;meta&#34;</span>: {
-    <span style="color:#ff79c6">&#34;length&#34;</span>: <span style="color:#f1fa8c">&#34;0:01:28.65&#34;</span>,
-    <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">88.65</span>,
-    <span style="color:#ff79c6">&#34;fps&#34;</span>: <span style="color:#bd93f9">24</span>,
-    <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;1280x720&#34;</span>,
-    <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">1280</span>,
-    <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">720</span>,
-    <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.7777777777777777</span>,
-    <span style="color:#ff79c6">&#34;audio_encode&#34;</span>: <span style="color:#f1fa8c">&#34;aac (LC) (mp4a / 0x6134706D)&#34;</span>,
-    <span style="color:#ff79c6">&#34;audio_bitrate&#34;</span>: <span style="color:#f1fa8c">&#34;44100 Hz&#34;</span>,
-    <span style="color:#ff79c6">&#34;audio_channels&#34;</span>: <span style="color:#f1fa8c">&#34;stereo&#34;</span>,
-    <span style="color:#ff79c6">&#34;original&#34;</span>: {
-      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">1280</span>,
-      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">720</span>,
-      <span style="color:#ff79c6">&#34;frame_rate&#34;</span>: <span style="color:#f1fa8c">&#34;6159375/249269&#34;</span>,
-      <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">88.654</span>,
-      <span style="color:#ff79c6">&#34;bitrate&#34;</span>: <span style="color:#bd93f9">862056</span>
-    },
-    <span style="color:#ff79c6">&#34;small&#34;</span>: {
-      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">400</span>,
-      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">225</span>,
-      <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;400x225&#34;</span>,
-      <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.7777777777777777</span>
-    }
-  },
-  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#ff79c6">null</span>,
-  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;U58E0g8_0M.94T?bIr00?bD%NGoM?bD%oLt7&#34;</span>
-}
-</code></pre></div><h3 id="gifv">GIFV</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;21130559&#34;</span>,
-  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;gifv&#34;</span>,
-  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/021/130/559/original/bc84838f77991326.mp4&#34;</span>,
-  <span style="color:#ff79c6">&#34;preview_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/021/130/559/small/bc84838f77991326.png&#34;</span>,
-  <span style="color:#ff79c6">&#34;remote_url&#34;</span>: <span style="color:#ff79c6">null</span>,
-  <span style="color:#ff79c6">&#34;text_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/media/2ICiasGyjezmi7cQYM8&#34;</span>,
-  <span style="color:#ff79c6">&#34;meta&#34;</span>: {
-    <span style="color:#ff79c6">&#34;length&#34;</span>: <span style="color:#f1fa8c">&#34;0:00:01.11&#34;</span>,
-    <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">1.11</span>,
-    <span style="color:#ff79c6">&#34;fps&#34;</span>: <span style="color:#bd93f9">33</span>,
-    <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;600x332&#34;</span>,
-    <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">600</span>,
-    <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">332</span>,
-    <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.8072289156626506</span>,
-    <span style="color:#ff79c6">&#34;original&#34;</span>: {
-      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">600</span>,
-      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">332</span>,
-      <span style="color:#ff79c6">&#34;frame_rate&#34;</span>: <span style="color:#f1fa8c">&#34;100/3&#34;</span>,
-      <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">1.11</span>,
-      <span style="color:#ff79c6">&#34;bitrate&#34;</span>: <span style="color:#bd93f9">1627639</span>
-    },
-    <span style="color:#ff79c6">&#34;small&#34;</span>: {
-      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">400</span>,
-      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">221</span>,
-      <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;400x221&#34;</span>,
-      <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.8099547511312217</span>
-    }
-  },
-  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#ff79c6">null</span>,
-  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;URHT%Jm,2a1d%MRO%LozkrNH$*n*oMn$Rjt7&#34;</span>
-}
-</code></pre></div><h3 id="audio">Audio</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;21165404&#34;</span>,
-  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;audio&#34;</span>,
-  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/021/165/404/original/a31a4a46cd713cd2.mp3&#34;</span>,
-  <span style="color:#ff79c6">&#34;preview_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/021/165/404/small/a31a4a46cd713cd2.mp3&#34;</span>,
-  <span style="color:#ff79c6">&#34;remote_url&#34;</span>: <span style="color:#ff79c6">null</span>,
-  <span style="color:#ff79c6">&#34;text_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/media/5O4uILClVqBWx0NNgvo&#34;</span>,
-  <span style="color:#ff79c6">&#34;meta&#34;</span>: {
-    <span style="color:#ff79c6">&#34;length&#34;</span>: <span style="color:#f1fa8c">&#34;0:06:42.86&#34;</span>,
-    <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">402.86</span>,
-    <span style="color:#ff79c6">&#34;audio_encode&#34;</span>: <span style="color:#f1fa8c">&#34;mp3&#34;</span>,
-    <span style="color:#ff79c6">&#34;audio_bitrate&#34;</span>: <span style="color:#f1fa8c">&#34;44100 Hz&#34;</span>,
-    <span style="color:#ff79c6">&#34;audio_channels&#34;</span>: <span style="color:#f1fa8c">&#34;stereo&#34;</span>,
-    <span style="color:#ff79c6">&#34;original&#34;</span>: {
-      <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">402.860408</span>,
-      <span style="color:#ff79c6">&#34;bitrate&#34;</span>: <span style="color:#bd93f9">166290</span>
-    }
-  },
-  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#ff79c6">null</span>,
-  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#ff79c6">null</span>
-}
-</code></pre></div><h2 id="attributes">Attributes</h2>
-<h3 id="id"><code>id</code></h3>
-<p><strong>Description:</strong> The ID of the attachment in the database.<br>
+    <h2 class="heading" id="example">
+	<span class="heading__text">Example</span>
+	<a class="heading__anchor-link" href="#example">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="image">
+	<span class="heading__text">Image</span>
+	<a class="heading__anchor-link" href="#image">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;22345792&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;image&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/022/345/792/original/57859aede991da25.jpeg&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;preview_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/022/345/792/small/57859aede991da25.jpeg&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;remote_url&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;text_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/media/2N4uvkuUtPVrkZGysms&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;meta&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;original&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">640</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">480</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;640x480&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.3333333333333333</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;small&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">461</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">346</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;461x346&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.3323699421965318</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;focus&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;x&#34;</span>: <span style="color:#bd93f9">-0.27</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;y&#34;</span>: <span style="color:#bd93f9">0.51</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#f1fa8c">&#34;test media description&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;UFBWY:8_0Jxv4mx]t8t64.%M-:IUWGWAt6M}&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="video">
+	<span class="heading__text">Video</span>
+	<a class="heading__anchor-link" href="#video">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;22546306&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;video&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/022/546/306/original/dab9a597f68b9745.mp4&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;preview_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/022/546/306/small/dab9a597f68b9745.png&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;remote_url&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;text_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/media/wWd1HJIBmH1MZGDfg50&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;meta&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;length&#34;</span>: <span style="color:#f1fa8c">&#34;0:01:28.65&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">88.65</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;fps&#34;</span>: <span style="color:#bd93f9">24</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;1280x720&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">1280</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">720</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.7777777777777777</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;audio_encode&#34;</span>: <span style="color:#f1fa8c">&#34;aac (LC) (mp4a / 0x6134706D)&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;audio_bitrate&#34;</span>: <span style="color:#f1fa8c">&#34;44100 Hz&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;audio_channels&#34;</span>: <span style="color:#f1fa8c">&#34;stereo&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;original&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">1280</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">720</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;frame_rate&#34;</span>: <span style="color:#f1fa8c">&#34;6159375/249269&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">88.654</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;bitrate&#34;</span>: <span style="color:#bd93f9">862056</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;small&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">400</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">225</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;400x225&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.7777777777777777</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;U58E0g8_0M.94T?bIr00?bD%NGoM?bD%oLt7&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="gifv">
+	<span class="heading__text">GIFV</span>
+	<a class="heading__anchor-link" href="#gifv">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;21130559&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;gifv&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/021/130/559/original/bc84838f77991326.mp4&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;preview_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/021/130/559/small/bc84838f77991326.png&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;remote_url&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;text_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/media/2ICiasGyjezmi7cQYM8&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;meta&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;length&#34;</span>: <span style="color:#f1fa8c">&#34;0:00:01.11&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">1.11</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;fps&#34;</span>: <span style="color:#bd93f9">33</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;600x332&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">600</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">332</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.8072289156626506</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;original&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">600</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">332</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;frame_rate&#34;</span>: <span style="color:#f1fa8c">&#34;100/3&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">1.11</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;bitrate&#34;</span>: <span style="color:#bd93f9">1627639</span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;small&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;width&#34;</span>: <span style="color:#bd93f9">400</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;height&#34;</span>: <span style="color:#bd93f9">221</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;size&#34;</span>: <span style="color:#f1fa8c">&#34;400x221&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;aspect&#34;</span>: <span style="color:#bd93f9">1.8099547511312217</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#f1fa8c">&#34;URHT%Jm,2a1d%MRO%LozkrNH$*n*oMn$Rjt7&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="audio">
+	<span class="heading__text">Audio</span>
+	<a class="heading__anchor-link" href="#audio">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;21165404&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;audio&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/021/165/404/original/a31a4a46cd713cd2.mp3&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;preview_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://files.mastodon.social/media_attachments/files/021/165/404/small/a31a4a46cd713cd2.mp3&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;remote_url&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;text_url&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.social/media/5O4uILClVqBWx0NNgvo&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;meta&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;length&#34;</span>: <span style="color:#f1fa8c">&#34;0:06:42.86&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">402.86</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;audio_encode&#34;</span>: <span style="color:#f1fa8c">&#34;mp3&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;audio_bitrate&#34;</span>: <span style="color:#f1fa8c">&#34;44100 Hz&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;audio_channels&#34;</span>: <span style="color:#f1fa8c">&#34;stereo&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;original&#34;</span>: {
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;duration&#34;</span>: <span style="color:#bd93f9">402.860408</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;bitrate&#34;</span>: <span style="color:#bd93f9">166290</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;description&#34;</span>: <span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;blurhash&#34;</span>: <span style="color:#ff79c6">null</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 class="heading" id="attributes">
+	<span class="heading__text">Attributes</span>
+	<a class="heading__anchor-link" href="#attributes">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="id">
+	<span class="heading__text"><code>id</code></span>
+	<a class="heading__anchor-link" href="#id">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The ID of the attachment in the database.<br>
 <strong>Type:</strong> String (cast from an integer but not guaranteed to be a number)<br>
 <strong>Version history:</strong><br>
 0.6.0 - added</p>
-<h3 id="type"><code>type</code></h3>
-<p><strong>Description:</strong> The type of the attachment.<br>
+<h3 class="heading" id="type">
+	<span class="heading__text"><code>type</code></span>
+	<a class="heading__anchor-link" href="#type">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The type of the attachment.<br>
 <strong>Type:</strong> String (Enumerable, oneOf)<br>
 <code>unknown</code> = unsupported or unrecognized file type<br>
 <code>image</code> = Static image<br>
@@ -1223,48 +1359,201 @@
 <strong>Version history:</strong><br>
 0.6.0 - added<br>
 2.9.1 - added <code>audio</code></p>
-<h3 id="url"><code>url</code></h3>
-<p><strong>Description:</strong> The location of the original full-size attachment.<br>
+<h3 class="heading" id="url">
+	<span class="heading__text"><code>url</code></span>
+	<a class="heading__anchor-link" href="#url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The location of the original full-size attachment.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 0.6.0 - added</p>
-<h3 id="preview_url"><code>preview_url</code></h3>
-<p><strong>Description:</strong> The location of a scaled-down preview of the attachment.<br>
+<h3 class="heading" id="preview_url">
+	<span class="heading__text"><code>preview_url</code></span>
+	<a class="heading__anchor-link" href="#preview_url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The location of a scaled-down preview of the attachment.<br>
 <strong>Type:</strong> <span class="api-method-parameter-required">nullable</span> String (URL)<br>
 <strong>Version history:</strong><br>
 0.6.0 - added</p>
-<h3 id="remote_url"><code>remote_url</code></h3>
-<p><strong>Description:</strong> The location of the full-size original attachment on the remote website.<br>
+<h3 class="heading" id="remote_url">
+	<span class="heading__text"><code>remote_url</code></span>
+	<a class="heading__anchor-link" href="#remote_url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The location of the full-size original attachment on the remote website.<br>
 <strong>Type:</strong> <span class="api-method-parameter-required">nullable</span> String (URL), or null if the attachment is local<br>
 <strong>Version history:</strong><br>
 0.6.0 - added</p>
-<h3 id="meta"><code>meta</code></h3>
-<p><strong>Description:</strong> Metadata returned by Paperclip.<br>
+<h3 class="heading" id="meta">
+	<span class="heading__text"><code>meta</code></span>
+	<a class="heading__anchor-link" href="#meta">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Metadata returned by Paperclip.<br>
 <strong>Type:</strong> Hash<br>
 <strong>Version history:</strong><br>
 1.5.0 - added<br>
 2.3.0 - added <code>meta.focus</code></p>
 <p>May contain subtrees <code>small</code> and <code>original</code>, as well as various other top-level properties.</p>
 <p>More importantly, there may be another topl-level <code>focus</code> Hash object on images as of 2.3.0, with coordinates can be used for smart thumbnail cropping &ndash; see <a href="/api/guidelines/#focal-points">Focal points for cropped media thumbnails</a> for more.</p>
-<h3 id="description"><code>description</code></h3>
-<p><strong>Description:</strong> Alternate text that describes what is in the media attachment, to be used for the visually impaired or when media attachments do not load.<br>
+<h3 class="heading" id="description">
+	<span class="heading__text"><code>description</code></span>
+	<a class="heading__anchor-link" href="#description">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> Alternate text that describes what is in the media attachment, to be used for the visually impaired or when media attachments do not load.<br>
 <strong>Type:</strong> <span class="api-method-parameter-required">nullable</span> String, or null if alternate text was not provided for the media attachment<br>
 <strong>Version history:</strong><br>
 2.0.0 - added</p>
-<h3 id="blurhash"><code>blurhash</code></h3>
-<p><strong>Description:</strong> A hash computed by <a href="https://github.com/woltapp/blurhash">the BlurHash algorithm</a>, for generating colorful preview thumbnails when media has not been downloaded yet.<br>
+<h3 class="heading" id="blurhash">
+	<span class="heading__text"><code>blurhash</code></span>
+	<a class="heading__anchor-link" href="#blurhash">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> A hash computed by <a href="https://github.com/woltapp/blurhash">the BlurHash algorithm</a>, for generating colorful preview thumbnails when media has not been downloaded yet.<br>
 <strong>Type:</strong> <span class="api-method-parameter-required">nullable</span> String (Blurhash)<br>
 <strong>Version history:</strong><br>
 2.8.1 - added</p>
-<h2 id="deprecated-attributes">Deprecated attributes</h2>
-<h3 id="text_url"><code>text_url</code></h3>
-<p><strong>Description:</strong> A shorter URL for the attachment.<br>
+<h2 class="heading" id="deprecated-attributes">
+	<span class="heading__text">Deprecated attributes</span>
+	<a class="heading__anchor-link" href="#deprecated-attributes">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="text_url">
+	<span class="heading__text"><code>text_url</code></span>
+	<a class="heading__anchor-link" href="#text_url">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> A shorter URL for the attachment.<br>
 <strong>Type:</strong> String (URL)<br>
 <strong>Version history:</strong><br>
 0.6.0 - added<br>
 3.5.0 - removed</p>
-<h2 id="see-also">See also</h2>
-<a href="/entities/Status/#media_attachments" class="page-ref">
+<h2 class="heading" id="see-also">
+	<span class="heading__text">See also</span>
+	<a class="heading__anchor-link" href="#see-also">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><a href="/entities/Status/#media_attachments" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Status (<code>media_attachments</code> attribute)
 </a>
@@ -2416,7 +2705,7 @@
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/MediaAttachment.md' style="color: #687590;">Improve this page</a>
+      Last updated June 19, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities%5cMediaAttachment.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2462,7 +2751,7 @@
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/MediaAttachment.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities%5cMediaAttachment.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Getting started with the API - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/client/intro/">
+  <meta property="og:url" content="http://localhost:1313/client/intro/">
 
   
     <meta name="description" content="A primer on REST APIs, HTTP requests and responses, and parameters.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Getting started with the API">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/client/intro/">
+  <link rel="canonical" href="http://localhost:1313/client/intro/">
 </head>
 
 <body>
@@ -1077,10 +1077,44 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="rest">An introduction to REST</h2>
-<p>Mastodon provides access to its data over a REST API. REST stands for REpresentational State Transfer, but for our purposes, just think of it as sending and receiving information about various resources based on the request. The Mastodon REST API uses HTTP for its requests and JSON for its payloads.</p>
-<h2 id="http">Understanding HTTP requests and responses</h2>
-<p>REST API endpoints can be called with certain HTTP methods, and more than one method can be used on the same endpoint. The Mastodon API will generally use the following HTTP methods:</p>
+    <h2 class="heading" id="rest">
+	<span class="heading__text">An introduction to REST</span>
+	<a class="heading__anchor-link" href="#rest">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Mastodon provides access to its data over a REST API. REST stands for REpresentational State Transfer, but for our purposes, just think of it as sending and receiving information about various resources based on the request. The Mastodon REST API uses HTTP for its requests and JSON for its payloads.</p>
+<h2 class="heading" id="http">
+	<span class="heading__text">Understanding HTTP requests and responses</span>
+	<a class="heading__anchor-link" href="#http">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>REST API endpoints can be called with certain HTTP methods, and more than one method can be used on the same endpoint. The Mastodon API will generally use the following HTTP methods:</p>
 <ul>
 <li><strong>GET</strong>: Read or view a resource.</li>
 <li><strong>POST</strong>: Send information to the server.</li>
@@ -1089,72 +1123,242 @@
 </ul>
 <p>Your favorite programming language probably has a utility or library to make HTTP requests. For the purposes of this section, the cURL utility will be used for examples, which is a command-line utility included with many operating systems by default (as <code>curl</code>).</p>
 <p>With cURL, the default HTTP method is GET, but you can specify the type of request to make by using the <code>--request</code> or <code>-X</code> flag; for example, <code>curl -X POST</code> will send a POST request instead of a GET request. You may also want to use the <code>-i</code> flag to include additional HTTP headers that may be returned as part of the response where relevant.</p>
-<h2 id="parameters">Providing parameters</h2>
-<p>HTTP requests can include additional parameters in various different ways, but most notably, the Mastodon API understands query strings, form data, and JSON.</p>
+<h2 class="heading" id="parameters">
+	<span class="heading__text">Providing parameters</span>
+	<a class="heading__anchor-link" href="#parameters">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>HTTP requests can include additional parameters in various different ways, but most notably, the Mastodon API understands query strings, form data, and JSON.</p>
 <div class="hint hint-info">
   <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
 
   Query strings, form data, and JSON submitted via POST body are equally understood by the API. It is expected that query strings are used for GET requests, and form data or JSON is used for all other requests.
 </div>
 
-<h3 id="query-strings">Query strings</h3>
-<p>Request the URL, but append query strings to the end. Query strings can be appended by first typing ? and then appending them in the form of parameter=value. Multiple query strings can be appended by separating them with &amp;. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl https://mastodon.example/endpoint?q<span style="color:#ff79c6">=</span>test&amp;<span style="color:#8be9fd;font-style:italic">n</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
-</code></pre></div><h3 id="form-data">Form data</h3>
-<p>Instead of mutating the URL with query strings, you can send the data separately. With cURL, this is done by passing it with the <code>--data</code> or <code>-d</code> flag. Data may be sent together similar to query strings, or it may be sent separately as key-value pairs with multiple data flags. You may also use the <code>--form</code> or <code>-F</code> flag for key-value pairs, which also allows sending multipart data such as files. For example:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#6272a4"># send raw data as query strings</span>
-curl -X POST <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     -d <span style="color:#f1fa8c">&#39;q=test&amp;n=0&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     https://mastodon.example/endpoint
-<span style="color:#6272a4"># send raw data separately</span>
-curl -X POST <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     -d <span style="color:#f1fa8c">&#39;q=test&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     -d <span style="color:#f1fa8c">&#39;n=0&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     https://mastodon.example/endpoint
-<span style="color:#6272a4"># explicit form-encoded; allows for multipart data</span>
-curl -X POST <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     -F <span style="color:#f1fa8c">&#39;q=test&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     -F <span style="color:#f1fa8c">&#39;n=0&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     -F <span style="color:#f1fa8c">&#39;file=@filename.jpg&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     https://mastodon.example/endpoint
-</code></pre></div><h3 id="json">JSON</h3>
-<p><em>JavaScript Object Notation</em> as defined in ECMA-404. Quick one-page overview: <a href="https://www.json.org/">https://www.json.org/</a></p>
+<h3 class="heading" id="query-strings">
+	<span class="heading__text">Query strings</span>
+	<a class="heading__anchor-link" href="#query-strings">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Request the URL, but append query strings to the end. Query strings can be appended by first typing ? and then appending them in the form of parameter=value. Multiple query strings can be appended by separating them with &amp;. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl https://mastodon.example/endpoint?q<span style="color:#ff79c6">=</span>test&amp;<span style="color:#8be9fd;font-style:italic">n</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">0</span>
+</span></span></code></pre></div><h3 class="heading" id="form-data">
+	<span class="heading__text">Form data</span>
+	<a class="heading__anchor-link" href="#form-data">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Instead of mutating the URL with query strings, you can send the data separately. With cURL, this is done by passing it with the <code>--data</code> or <code>-d</code> flag. Data may be sent together similar to query strings, or it may be sent separately as key-value pairs with multiple data flags. You may also use the <code>--form</code> or <code>-F</code> flag for key-value pairs, which also allows sending multipart data such as files. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># send raw data as query strings</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     -d <span style="color:#f1fa8c">&#39;q=test&amp;n=0&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     https://mastodon.example/endpoint
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># send raw data separately</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     -d <span style="color:#f1fa8c">&#39;q=test&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     -d <span style="color:#f1fa8c">&#39;n=0&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     https://mastodon.example/endpoint
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># explicit form-encoded; allows for multipart data</span>
+</span></span><span style="display:flex;"><span>curl -X POST <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     -F <span style="color:#f1fa8c">&#39;q=test&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     -F <span style="color:#f1fa8c">&#39;n=0&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     -F <span style="color:#f1fa8c">&#39;file=@filename.jpg&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     https://mastodon.example/endpoint
+</span></span></code></pre></div><h3 class="heading" id="json">
+	<span class="heading__text">JSON</span>
+	<a class="heading__anchor-link" href="#json">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><em>JavaScript Object Notation</em> as defined in ECMA-404. Quick one-page overview: <a href="https://www.json.org/">https://www.json.org/</a></p>
 <p>Similar to sending form data, but with an additional header to specify that the data is in JSON format. To send a JSON request with cURL, specify the JSON content type with a header, then send the JSON data as form data:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -X POST <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     -H <span style="color:#f1fa8c">&#39;Content-Type: application/json&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     -d <span style="color:#f1fa8c">&#39;{&#34;parameter&#34;: &#34;value&#34;}&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>     https://mastodon.example/endpoint
-</code></pre></div><h2 id="types">Data types</h2>
-<h3 id="array">Multiple values (Array)</h3>
-<p>An array parameter must be encoded using bracket notation. For example, <code>array[]=foo&amp;array[]=bar</code> would be translated into the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">array <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">[</span>
-  <span style="color:#f1fa8c">&#39;foo&#39;</span>,
-  <span style="color:#f1fa8c">&#39;bar&#39;</span>,
-<span style="color:#ff79c6">]</span>
-</code></pre></div><p>As JSON, arrays are formatted like so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;array&#34;</span>: [<span style="color:#f1fa8c">&#34;foo&#34;</span>, <span style="color:#f1fa8c">&#34;bar&#34;</span>]
-}
-</code></pre></div><h3 id="hash">Nested parameters (Hash)</h3>
-<p>Some parameters need to be nested. For that, bracket notation must also be used. For example, <code>source[privacy]=public&amp;source[language]=en</code> would be translated into:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ruby" data-lang="ruby">source <span style="color:#ff79c6">=</span> {
-  <span style="color:#f1fa8c">privacy</span>: <span style="color:#f1fa8c">&#39;public&#39;</span>,
-  <span style="color:#f1fa8c">language</span>: <span style="color:#f1fa8c">&#39;en&#39;</span>,
-}
-</code></pre></div><p>As JSON, hashes are formatted like so:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-  <span style="color:#ff79c6">&#34;source&#34;</span>: {
-    <span style="color:#ff79c6">&#34;privacy&#34;</span>: <span style="color:#f1fa8c">&#34;public&#34;</span>,
-    <span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>
-  }
-}
-</code></pre></div><h3 id="boolean">True-or-false (Booleans)</h3>
-<p>A boolean value is considered false for the values <code>0</code>, <code>f</code>, <code>F</code>, <code>false</code>, <code>FALSE</code>, <code>off</code>, <code>OFF</code>; considered to not be provided for empty strings; and considered to be true for all other values. When using JSON data, use the literals <code>true</code>, <code>false</code>, and <code>null</code> instead.</p>
-<h3 id="file">Files</h3>
-<p>File uploads must be encoded using <code>multipart/form-data</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     -H <span style="color:#f1fa8c">&#39;Content-Type: application/json&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     -d <span style="color:#f1fa8c">&#39;{&#34;parameter&#34;: &#34;value&#34;}&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>     https://mastodon.example/endpoint
+</span></span></code></pre></div><h2 class="heading" id="types">
+	<span class="heading__text">Data types</span>
+	<a class="heading__anchor-link" href="#types">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="array">
+	<span class="heading__text">Multiple values (Array)</span>
+	<a class="heading__anchor-link" href="#array">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>An array parameter must be encoded using bracket notation. For example, <code>array[]=foo&amp;array[]=bar</code> would be translated into the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>array <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">[</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;foo&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;bar&#39;</span>,
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">]</span>
+</span></span></code></pre></div><p>As JSON, arrays are formatted like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;array&#34;</span>: [<span style="color:#f1fa8c">&#34;foo&#34;</span>, <span style="color:#f1fa8c">&#34;bar&#34;</span>]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="hash">
+	<span class="heading__text">Nested parameters (Hash)</span>
+	<a class="heading__anchor-link" href="#hash">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Some parameters need to be nested. For that, bracket notation must also be used. For example, <code>source[privacy]=public&amp;source[language]=en</code> would be translated into:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ruby" data-lang="ruby"><span style="display:flex;"><span>source <span style="color:#ff79c6">=</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">privacy</span>: <span style="color:#f1fa8c">&#39;public&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">language</span>: <span style="color:#f1fa8c">&#39;en&#39;</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As JSON, hashes are formatted like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;source&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;privacy&#34;</span>: <span style="color:#f1fa8c">&#34;public&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;language&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="boolean">
+	<span class="heading__text">True-or-false (Booleans)</span>
+	<a class="heading__anchor-link" href="#boolean">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>A boolean value is considered false for the values <code>0</code>, <code>f</code>, <code>F</code>, <code>false</code>, <code>FALSE</code>, <code>off</code>, <code>OFF</code>; considered to not be provided for empty strings; and considered to be true for all other values. When using JSON data, use the literals <code>true</code>, <code>false</code>, and <code>null</code> instead.</p>
+<h3 class="heading" id="file">
+	<span class="heading__text">Files</span>
+	<a class="heading__anchor-link" href="#file">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>File uploads must be encoded using <code>multipart/form-data</code>.</p>
 <p>This can be combined with arrays as well.</p>
-<h2 id="responses">How to use API response data</h2>
-<p>The Mastodon REST API will return JSON as the response text. It also returns HTTP headers which may be useful in handling the response, as well as an HTTP status code which should let you know how the server handled the request. The following HTTP status codes may be expected:</p>
+<h2 class="heading" id="responses">
+	<span class="heading__text">How to use API response data</span>
+	<a class="heading__anchor-link" href="#responses">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>The Mastodon REST API will return JSON as the response text. It also returns HTTP headers which may be useful in handling the response, as well as an HTTP status code which should let you know how the server handled the request. The following HTTP status codes may be expected:</p>
 <ul>
 <li>200 = OK. The request was handled successfully.</li>
 <li>4xx = Client error. Your request was not correct. Most commonly, you may see 401 Unauthorized, 404 Not Found, 410 Gone, or 422 Unprocessed.</li>
@@ -2247,7 +2451,7 @@ curl -X POST <span style="color:#f1fa8c">\
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/client/intro.md' style="color: #687590;">Improve this page</a>
+      Last updated March 27, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/client%5cintro.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2293,7 +2497,7 @@ curl -X POST <span style="color:#f1fa8c">\
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/client/intro.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/client%5cintro.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

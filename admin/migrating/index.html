@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Migrating to a new machine - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/migrating/">
+  <meta property="og:url" content="http://localhost:1313/admin/migrating/">
 
   
     <meta name="description" content="Copying your Mastodon installation to a new server without losing anything.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Migrating to a new machine">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/migrating/">
+  <link rel="canonical" href="http://localhost:1313/admin/migrating/">
 </head>
 
 <body>
@@ -1077,8 +1077,25 @@
   This guide was written with Ubuntu Server in mind; your mileage may vary for other setups.
 </div>
 
-<h2 id="basic-steps">Basic steps</h2>
-<ol>
+<h2 class="heading" id="basic-steps">
+	<span class="heading__text">Basic steps</span>
+	<a class="heading__anchor-link" href="#basic-steps">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><ol>
 <li>Set up a new Mastodon server using the <a href="/admin/install/">Production Guide</a> (however, don’t run <code>mastodon:setup</code> and only leave the PostgreSQL service running).</li>
 <li>Stop Mastodon on the old server (e.g. <code>systemctl stop 'mastodon-*.service'</code>).</li>
 <li>Dump and load the PostgreSQL database using the instructions below.</li>
@@ -1093,11 +1110,62 @@
 <li>Update or copy your Nginx configuration, and re-run LetsEncrypt as necessary.</li>
 <li>Enjoy your new server!</li>
 </ol>
-<h2 id="detailed-steps">Detailed steps</h2>
-<h3 id="stop-the-mastodon-services">Stop the Mastodon services</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl stop <span style="color:#f1fa8c">&#39;mastodon-*.service&#39;</span>
-</code></pre></div><h3 id="what-data-needs-to-be-migrated">What data needs to be migrated</h3>
-<p>At a high level, you’ll need to copy over the following:</p>
+<h2 class="heading" id="detailed-steps">
+	<span class="heading__text">Detailed steps</span>
+	<a class="heading__anchor-link" href="#detailed-steps">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="stop-the-mastodon-services">
+	<span class="heading__text">Stop the Mastodon services</span>
+	<a class="heading__anchor-link" href="#stop-the-mastodon-services">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl stop <span style="color:#f1fa8c">&#39;mastodon-*.service&#39;</span>
+</span></span></code></pre></div><h3 class="heading" id="what-data-needs-to-be-migrated">
+	<span class="heading__text">What data needs to be migrated</span>
+	<a class="heading__anchor-link" href="#what-data-needs-to-be-migrated">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>At a high level, you’ll need to copy over the following:</p>
 <ul>
 <li>The <code>~/live/public/system</code> directory, which contains user-uploaded images and videos (if using S3, you don’t need this)</li>
 <li>The PostgreSQL database (using <a href="https://www.postgresql.org/docs/9.1/static/backup-dump.html">pg_dump</a>)</li>
@@ -1111,48 +1179,116 @@
 <li>The systemd config files (<code>/etc/systemd/system/mastodon-*.service</code>), which may contain your server tweaks and customizations</li>
 <li>The PgBouncer configuration under <code>/etc/pgbouncer</code> (if you’re using it)</li>
 </ul>
-<h3 id="dump-and-load-postgresql">Dump and load PostgreSQL</h3>
-<p>Instead of running <code>mastodon:setup</code>, we’re going to create an empty PostgreSQL database using the <code>template0</code> database (which is useful when restoring a PostgreSQL dump, <a href="https://www.postgresql.org/docs/9.1/static/backup-dump.html#BACKUP-DUMP-RESTORE">as described in the pg_dump documentation</a>).</p>
+<h3 class="heading" id="dump-and-load-postgresql">
+	<span class="heading__text">Dump and load PostgreSQL</span>
+	<a class="heading__anchor-link" href="#dump-and-load-postgresql">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Instead of running <code>mastodon:setup</code>, we’re going to create an empty PostgreSQL database using the <code>template0</code> database (which is useful when restoring a PostgreSQL dump, <a href="https://www.postgresql.org/docs/9.1/static/backup-dump.html#BACKUP-DUMP-RESTORE">as described in the pg_dump documentation</a>).</p>
 <p>If you are using a password for your PostgreSQL user, you may want to configure the <code>mastodon</code> user on your new system to use the same password as your old system for convenience:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">sudo -u postgres psql  
-ALTER USER mastodon WITH PASSWORD <span style="color:#f1fa8c">&#39;YOUR_PASSWORD&#39;</span>;  
-<span style="color:#f1fa8c">\q</span>
-</code></pre></div><p>Run this as the <code>mastodon</code> user on your old system:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pg_dump -Fc mastodon_production -f backup.dump
-</code></pre></div><p>Copy the <code>backup.dump</code> file over, using <code>rsync</code> or <code>scp</code>. Then on the new system, create an empty database as the <code>mastodon</code> user:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">createdb -T template0 mastodon_production
-</code></pre></div><p>Then import it (replace # in -j# with the number of CPUs in your system to improve restore performance):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">pg_restore -Fc -j# -U mastodon -n public --no-owner --role<span style="color:#ff79c6">=</span>mastodon <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>  -d mastodon_production backup.dump
-</code></pre></div><p>(Note that if the username is not <code>mastodon</code> on the new server, you should change the <code>-U</code> AND <code>--role</code> values above. It’s okay if the username is different between the two servers.)</p>
-<h3 id="copy-files">Copy files</h3>
-<p>This will probably take some time, and you’ll want to avoid re-copying unnecessarily, so using <code>rsync</code> is recommended. On your old machine, as the <code>mastodon</code> user, run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">rsync -avz ~/live/public/system/ mastodon@example.com:~/live/public/system/
-</code></pre></div><p>You’ll want to re-run this if any of the files on the old server change.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo -u postgres psql  
+</span></span><span style="display:flex;"><span>ALTER USER mastodon WITH PASSWORD <span style="color:#f1fa8c">&#39;YOUR_PASSWORD&#39;</span>;  
+</span></span><span style="display:flex;"><span><span style="color:#f1fa8c">\q</span>
+</span></span></code></pre></div><p>Run this as the <code>mastodon</code> user on your old system:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pg_dump -Fc mastodon_production -f backup.dump
+</span></span></code></pre></div><p>Copy the <code>backup.dump</code> file over, using <code>rsync</code> or <code>scp</code>. Then on the new system, create an empty database as the <code>mastodon</code> user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>createdb -T template0 mastodon_production
+</span></span></code></pre></div><p>Then import it (replace # in -j# with the number of CPUs in your system to improve restore performance):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pg_restore -Fc -j# -U mastodon -n public --no-owner --role<span style="color:#ff79c6">=</span>mastodon <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>  -d mastodon_production backup.dump
+</span></span></code></pre></div><p>(Note that if the username is not <code>mastodon</code> on the new server, you should change the <code>-U</code> AND <code>--role</code> values above. It’s okay if the username is different between the two servers.)</p>
+<h3 class="heading" id="copy-files">
+	<span class="heading__text">Copy files</span>
+	<a class="heading__anchor-link" href="#copy-files">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>This will probably take some time, and you’ll want to avoid re-copying unnecessarily, so using <code>rsync</code> is recommended. On your old machine, as the <code>mastodon</code> user, run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rsync -avz ~/live/public/system/ mastodon@example.com:~/live/public/system/
+</span></span></code></pre></div><p>You’ll want to re-run this if any of the files on the old server change.</p>
 <p>You should also copy over the <code>.env.production</code> file, which contains secrets.</p>
 <p>Now copy your Redis database over (adjust the location of your Redis database as needed). On your old machine, as the <code>root</code> user, run:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">redis-cli
-SAVE
-EXIT
-systemctl stop redis-server.service
-rsync -avz /var/lib/redis/ root@example.com:/var/lib/redis
-</code></pre></div><p>Optionally, you may copy over the nginx, systemd, and PgBouncer config files, or rewrite them from scratch.</p>
-<h3 id="during-migration">During migration</h3>
-<p>You can edit the <code>~/live/public/500.html</code> page on the old machine if you want to show a nice error message to let existing users know that a migration is in progress.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>redis-cli
+</span></span><span style="display:flex;"><span>SAVE
+</span></span><span style="display:flex;"><span>EXIT
+</span></span><span style="display:flex;"><span>systemctl stop redis-server.service
+</span></span><span style="display:flex;"><span>rsync -avz /var/lib/redis/ root@example.com:/var/lib/redis
+</span></span></code></pre></div><p>Optionally, you may copy over the nginx, systemd, and PgBouncer config files, or rewrite them from scratch.</p>
+<h3 class="heading" id="during-migration">
+	<span class="heading__text">During migration</span>
+	<a class="heading__anchor-link" href="#during-migration">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>You can edit the <code>~/live/public/500.html</code> page on the old machine if you want to show a nice error message to let existing users know that a migration is in progress.</p>
 <p>You’ll probably also want to set the DNS TTL to something small (30-60 minutes) about a day in advance, so that DNS can propagate quickly once you point it to the new IP address.</p>
-<h3 id="after-migrating">After migrating</h3>
-<p>Run the following commands as your mastodon user:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production bundle <span style="color:#8be9fd;font-style:italic">exec</span> rails assets:precompile  
-</code></pre></div><p>Now run the following commands as your root user:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl daemon-reload
-systemctl start redis-server  
-systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now mastodon-web mastodon-sidekiq mastodon-streaming  
-systemctl restart nginx
-</code></pre></div><p>Once your server is back online, you can rebuild the home feeds for users (this can take a long time depending on the number of users.)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production ./bin/tootctl feeds build
-</code></pre></div><p>If you use Elasticsearch, run the following command to rebuild the indices (this can take a long time depending on the number of statuses you have.)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production ./bin/tootctl search deploy
-</code></pre></div><p>You can check <a href="https://whatsmydns.net/">whatsmydns.net</a> to see the progress of DNS propagation. To jumpstart the process, you can always edit your own <code>/etc/hosts</code> file to point to your new server so you can start playing around with it early.</p>
+<h3 class="heading" id="after-migrating">
+	<span class="heading__text">After migrating</span>
+	<a class="heading__anchor-link" href="#after-migrating">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Run the following commands as your mastodon user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production bundle <span style="color:#8be9fd;font-style:italic">exec</span> rails assets:precompile  
+</span></span></code></pre></div><p>Now run the following commands as your root user:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl daemon-reload
+</span></span><span style="display:flex;"><span>systemctl start redis-server  
+</span></span><span style="display:flex;"><span>systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now mastodon-web mastodon-sidekiq mastodon-streaming  
+</span></span><span style="display:flex;"><span>systemctl restart nginx
+</span></span></code></pre></div><p>Once your server is back online, you can rebuild the home feeds for users (this can take a long time depending on the number of users.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production ./bin/tootctl feeds build
+</span></span></code></pre></div><p>If you use Elasticsearch, run the following command to rebuild the indices (this can take a long time depending on the number of statuses you have.)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production ./bin/tootctl search deploy
+</span></span></code></pre></div><p>You can check <a href="https://whatsmydns.net/">whatsmydns.net</a> to see the progress of DNS propagation. To jumpstart the process, you can always edit your own <code>/etc/hosts</code> file to point to your new server so you can start playing around with it early.</p>
 
     
 
@@ -2255,7 +2391,7 @@ systemctl restart nginx
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/migrating.md' style="color: #687590;">Improve this page</a>
+      Last updated March 27, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cmigrating.md' style="color: #687590;">Improve this page</a>
 
       
         <br />
@@ -2309,7 +2445,7 @@ systemctl restart nginx
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/migrating.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cmigrating.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

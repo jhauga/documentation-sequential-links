@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Logging in with an account - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/client/authorized/">
+  <meta property="og:url" content="http://localhost:1313/client/authorized/">
 
   
     <meta name="description" content="How to obtain authorization from a user and perform actions on their behalf.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Logging in with an account">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/client/authorized/">
+  <link rel="canonical" href="http://localhost:1313/client/authorized/">
 </head>
 
 <body>
@@ -1078,37 +1078,122 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="scopes">Scopes explained</h2>
-<p>When we register our app and when we authorize our user, we need to define what exactly our generated token will have permission to do. This is done through the use of OAuth scopes. Each API method has an associated scope, and can only be called if the token being used for authorization has been generated with the corresponding scope.</p>
+    <h2 class="heading" id="scopes">
+	<span class="heading__text">Scopes explained</span>
+	<a class="heading__anchor-link" href="#scopes">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>When we register our app and when we authorize our user, we need to define what exactly our generated token will have permission to do. This is done through the use of OAuth scopes. Each API method has an associated scope, and can only be called if the token being used for authorization has been generated with the corresponding scope.</p>
 <p>Scopes must be a subset. When we created our app, we specified <code>read write push</code> &ndash; we could request all available scopes by specifying <code>read write push</code>, but it is a better idea to only request what your app will actually need through granular scopes. See <a href="/api/oauth-scopes/">OAuth Scopes</a> for a full list of scopes. Each API method&rsquo;s documentation will also specify the OAuth access level and scope required to call it.</p>
-<h2 id="flow"><strong>Example authorization code flow</strong></h2>
-<p>This is similar to the authentication flow from before, but this time, we need to obtain authorization from a user as well.</p>
-<h3 id="client">Client ID and secret</h3>
-<p>First, if you have not already registered a client application, then see <a href="/client/token/#creating-our-application">Creating our application</a> on the previous page or go directly to <a href="/methods/apps/#create">POST /api/v1/apps</a> for the full documentation of that method. We will need the <code>client_id</code> and <code>client_secret</code> for our application.</p>
-<h3 id="login">Authorize the user</h3>
-<p>To authorize a user, request <a href="/methods/oauth/#authorize">GET /oauth/authorize</a> in a browser with the following query parameters:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">https://mastodon.example/oauth/authorize
-?client_id<span style="color:#ff79c6">=</span>CLIENT_ID
-&amp;<span style="color:#8be9fd;font-style:italic">scope</span><span style="color:#ff79c6">=</span>read+write+push
-&amp;<span style="color:#8be9fd;font-style:italic">redirect_uri</span><span style="color:#ff79c6">=</span>urn:ietf:wg:oauth:2.0:oob
-&amp;<span style="color:#8be9fd;font-style:italic">response_type</span><span style="color:#ff79c6">=</span>code
-</code></pre></div><p>Note the following:</p>
+<h2 class="heading" id="flow">
+	<span class="heading__text"><strong>Example authorization code flow</strong></span>
+	<a class="heading__anchor-link" href="#flow">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>This is similar to the authentication flow from before, but this time, we need to obtain authorization from a user as well.</p>
+<h3 class="heading" id="client">
+	<span class="heading__text">Client ID and secret</span>
+	<a class="heading__anchor-link" href="#client">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>First, if you have not already registered a client application, then see <a href="/client/token/#creating-our-application">Creating our application</a> on the previous page or go directly to <a href="/methods/apps/#create">POST /api/v1/apps</a> for the full documentation of that method. We will need the <code>client_id</code> and <code>client_secret</code> for our application.</p>
+<h3 class="heading" id="login">
+	<span class="heading__text">Authorize the user</span>
+	<a class="heading__anchor-link" href="#login">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>To authorize a user, request <a href="/methods/oauth/#authorize">GET /oauth/authorize</a> in a browser with the following query parameters:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>https://mastodon.example/oauth/authorize
+</span></span><span style="display:flex;"><span>?client_id<span style="color:#ff79c6">=</span>CLIENT_ID
+</span></span><span style="display:flex;"><span>&amp;<span style="color:#8be9fd;font-style:italic">scope</span><span style="color:#ff79c6">=</span>read+write+push
+</span></span><span style="display:flex;"><span>&amp;<span style="color:#8be9fd;font-style:italic">redirect_uri</span><span style="color:#ff79c6">=</span>urn:ietf:wg:oauth:2.0:oob
+</span></span><span style="display:flex;"><span>&amp;<span style="color:#8be9fd;font-style:italic">response_type</span><span style="color:#ff79c6">=</span>code
+</span></span></code></pre></div><p>Note the following:</p>
 <ul>
 <li><code>client_id</code> was obtained when registering our application.</li>
 <li><code>scope</code> must be a subset of our app&rsquo;s registered scopes. It is a good idea to only request what you need. See <a href="/api/oauth-scopes/">OAuth Scopes</a> for more information.</li>
 <li><code>redirect_uri</code> is one of the URIs we registered with our app. We are still using &ldquo;out of band&rdquo; for this example, which means we will have to manually copy and paste the resulting code, but if you registered your application with a URI that you control, then the code will be returned as a query parameter <code>code</code> and can be logged by your request handler. See the response section of the API method documentation for more information on this.</li>
 </ul>
-<h3 id="token">Obtain the token</h3>
-<p>Now that we have an authorization <code>code</code>, let&rsquo;s obtain an access token that will authenticate our requests as the authorized user. To do so, use <a href="/methods/oauth/#token">POST /oauth/token</a> like before, but pass the authorization code we just obtained:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -X POST <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;client_id=your_client_id_here&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;client_secret=your_client_secret_here&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;redirect_uri=urn:ietf:wg:oauth:2.0:oob&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;grant_type=authorization_code&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;code=user_authzcode_here&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;scope=read write push&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>	https://mastodon.example/oauth/token
-</code></pre></div><p>Note the following:</p>
+<h3 class="heading" id="token">
+	<span class="heading__text">Obtain the token</span>
+	<a class="heading__anchor-link" href="#token">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Now that we have an authorization <code>code</code>, let&rsquo;s obtain an access token that will authenticate our requests as the authorized user. To do so, use <a href="/methods/oauth/#token">POST /oauth/token</a> like before, but pass the authorization code we just obtained:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -X POST <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;client_id=your_client_id_here&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;client_secret=your_client_secret_here&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;redirect_uri=urn:ietf:wg:oauth:2.0:oob&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;grant_type=authorization_code&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;code=user_authzcode_here&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>	-F <span style="color:#f1fa8c">&#39;scope=read write push&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>	https://mastodon.example/oauth/token
+</span></span></code></pre></div><p>Note the following:</p>
 <ul>
 <li><code>client_id</code> and <code>client_secret</code> were provided in the response text when you registered your application.</li>
 <li><code>redirect_uri</code> must be one of the URIs defined when registering the application.</li>
@@ -1116,14 +1201,48 @@
 <li>The <code>code</code> can only be used once. If you need to obtain a new token, you will need to have the user authorize again by repeating the above <a href="/client/authorized/#authorize-the-user">Authorize the user</a> step.</li>
 </ul>
 <p>The response of this method is a <a href="/entities/Token/">Token</a> entity. We will need the <code>access_token</code> value. Once you have the access token, save it in your local cache. To use it in requests, add the HTTP header <code>Authorization: Bearer ...</code> to any API call that requires OAuth (i.e., one that is not publicly accessible). Let&rsquo;s verify that our obtained credentials are working by calling <a href="/methods/accounts/#verify_credentials">GET /api/v1/accounts/verify_credentials</a>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>	-H <span style="color:#f1fa8c">&#39;Authorization: Bearer our_access_token_here&#39;</span> <span style="color:#f1fa8c">\
-</span><span style="color:#f1fa8c"></span>	https://mastodon.example/api/v1/accounts/verify_credentials
-</code></pre></div><p>If we&rsquo;ve obtained our token and formatted our request correctly, we should see our details returned to us as an <a href="/entities/Account/">Account</a> entity, with the <code>source</code> parameter included.</p>
-<h2 id="actions">Performing actions as the authorized user</h2>
-<p>With our OAuth token for the authorized user, we can now perform any action as that user that is within our token&rsquo;s scope.</p>
-<h3 id="statuses">Publish and delete statuses</h3>
-<ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>	-H <span style="color:#f1fa8c">&#39;Authorization: Bearer our_access_token_here&#39;</span> <span style="color:#f1fa8c">\
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c"></span>	https://mastodon.example/api/v1/accounts/verify_credentials
+</span></span></code></pre></div><p>If we&rsquo;ve obtained our token and formatted our request correctly, we should see our details returned to us as an <a href="/entities/Account/">Account</a> entity, with the <code>source</code> parameter included.</p>
+<h2 class="heading" id="actions">
+	<span class="heading__text">Performing actions as the authorized user</span>
+	<a class="heading__anchor-link" href="#actions">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>With our OAuth token for the authorized user, we can now perform any action as that user that is within our token&rsquo;s scope.</p>
+<h3 class="heading" id="statuses">
+	<span class="heading__text">Publish and delete statuses</span>
+	<a class="heading__anchor-link" href="#statuses">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li>See <a href="/methods/statuses/#create">POST /api/v1/statuses</a> for how to create statuses.
 <ul>
 <li>See <a href="/methods/media/">/api/v1/media</a> for creating media attachments.</li>
@@ -1131,8 +1250,25 @@
 </ul>
 </li>
 </ul>
-<h3 id="timelines">Interact with timelines</h3>
-<ul>
+<h3 class="heading" id="timelines">
+	<span class="heading__text">Interact with timelines</span>
+	<a class="heading__anchor-link" href="#timelines">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li>See <a href="/methods/timelines/">/api/v1/timelines</a> for accessing timelines.</li>
 <li>See <a href="/methods/markers/">/api/v1/markers</a> for saving and loading positions in timelines.</li>
 <li>See <a href="/methods/statuses/">/api/v1/statuses</a> for performing actions on statuses.
@@ -1145,32 +1281,117 @@
 <li>See <a href="/methods/favourites/">/api/v1/favourites</a> for listing favourites.</li>
 <li>See <a href="/methods/bookmarks/">/api/v1/bookmarks</a> for listing bookmarks.</li>
 </ul>
-<h3 id="accounts">Interact with other users</h3>
-<ul>
+<h3 class="heading" id="accounts">
+	<span class="heading__text">Interact with other users</span>
+	<a class="heading__anchor-link" href="#accounts">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li>See <a href="/methods/accounts/">/api/v1/accounts</a> for performing actions on other users.</li>
 <li>See <a href="/methods/follow_requests/">/api/v1/follow_requests</a> for handling follow requests.</li>
 <li>See <a href="/methods/mutes/">/api/v1/mutes</a> for listing mutes.</li>
 <li>See <a href="/methods/blocks/">/api/v1/blocks</a> for listing blocks.</li>
 </ul>
-<h3 id="notifications">Receive notifications</h3>
-<ul>
+<h3 class="heading" id="notifications">
+	<span class="heading__text">Receive notifications</span>
+	<a class="heading__anchor-link" href="#notifications">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li>See <a href="/methods/notifications/">/api/v1/notifications</a> for managing a user&rsquo;s notifications.</li>
 <li>See <a href="/methods/push/">/api/v1/push</a> for subscribing to push notifications.</li>
 </ul>
-<h3 id="discovery">Discovery features</h3>
-<ul>
+<h3 class="heading" id="discovery">
+	<span class="heading__text">Discovery features</span>
+	<a class="heading__anchor-link" href="#discovery">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li>See <a href="/methods/search/#v2">/api/v2/search</a> for querying resources.</li>
 <li>See <a href="/methods/suggestions/">/api/v1/suggestions</a> for suggested accounts to follow.</li>
 </ul>
-<h3 id="safety">User safety features</h3>
-<ul>
+<h3 class="heading" id="safety">
+	<span class="heading__text">User safety features</span>
+	<a class="heading__anchor-link" href="#safety">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li>See <a href="/methods/filters/">/api/v1/filters</a> for managing filtered keywords.</li>
 <li>See <a href="/methods/domain_blocks/">/api/v1/domain_blocks</a> for managing blocked domains.</li>
 <li>See <a href="/methods/reports/">/api/v1/reports</a> for creating reports.</li>
 <li>See <a href="/methods/admin/">/api/v1/admin</a> for moderator actions.</li>
 </ul>
-<h3 id="manage">Manage account info</h3>
-<ul>
+<h3 class="heading" id="manage">
+	<span class="heading__text">Manage account info</span>
+	<a class="heading__anchor-link" href="#manage">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li>See <a href="/methods/endorsements/">/api/v1/endorsements</a> for managing a user profile&rsquo;s featured accounts.</li>
 <li>See <a href="/methods/featured_tags/">/api/v1/featured_tags</a> for managing a user profile&rsquo;s featured hashtags.</li>
 <li>See <a href="/methods/preferences/">/api/v1/preferences</a> for reading user preferences.</li>
@@ -2262,7 +2483,7 @@
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/client/authorized.md' style="color: #687590;">Improve this page</a>
+      Last updated June 11, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/client%5cauthorized.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2308,7 +2529,7 @@
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/client/authorized.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/client%5cauthorized.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

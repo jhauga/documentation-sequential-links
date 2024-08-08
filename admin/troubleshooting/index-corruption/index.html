@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Database index corruption - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/troubleshooting/index-corruption/">
+  <meta property="og:url" content="http://localhost:1313/admin/troubleshooting/index-corruption/">
 
   
     <meta name="description" content="How to recover from database index corruption.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Database index corruption">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/troubleshooting/index-corruption/">
+  <link rel="canonical" href="http://localhost:1313/admin/troubleshooting/index-corruption/">
 </head>
 
 <body>
@@ -1064,14 +1064,48 @@
   </aside>
   <div class="e-content">
     <p>A somewhat common configuration issue can lead to index corruption throughout the database. This page attempts to explain why this may occur and how to fix it.</p>
-<h2 id="explanation">Locale data and collation</h2>
-<p>Textual values in the database, such as usernames, or status identifiers, are compared using so-called collation rules defining how characters are ordered and how to change their case.
+<h2 class="heading" id="explanation">
+	<span class="heading__text">Locale data and collation</span>
+	<a class="heading__anchor-link" href="#explanation">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Textual values in the database, such as usernames, or status identifiers, are compared using so-called collation rules defining how characters are ordered and how to change their case.
 When setting up a database, Mastodon will use the database server&rsquo;s default locale settings, including the default collation rules, which often is defined by the operating system&rsquo;s settings.</p>
 <p>Unfortunately, in late 2018, a <code>glibc</code> update changed the collation rules for many locales, which means databases using an affected locale would now order textual values differently.
 Since the database indexes are algorithmic structures that rely on the ordering of the values they are indexing, some of them would become inconsistent.</p>
 <p>More information: <a href="https://wiki.postgresql.org/wiki/Locale_data_changes">https://wiki.postgresql.org/wiki/Locale_data_changes</a> <a href="https://postgresql.verite.pro/blog/2018/08/27/glibc-upgrade.html">https://postgresql.verite.pro/blog/2018/08/27/glibc-upgrade.html</a></p>
-<h2 id="am-i-affected">Am I affected by this issue?</h2>
-<p>If your database is not using <code>C</code> or <code>POSIX</code> for its collation setting (which you can check with <code>SELECT datcollate FROM pg_database WHERE datname = current_database();</code>),
+<h2 class="heading" id="am-i-affected">
+	<span class="heading__text">Am I affected by this issue?</span>
+	<a class="heading__anchor-link" href="#am-i-affected">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>If your database is not using <code>C</code> or <code>POSIX</code> for its collation setting (which you can check with <code>SELECT datcollate FROM pg_database WHERE datname = current_database();</code>),
 your indexes might be inconsistent if you ever ran with a version of glibc prior to 2.28 and did not immediately reindex your databases after updating to glibc 2.28 or newer.</p>
 <div class="hint hint-info">
   <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
@@ -1080,50 +1114,67 @@ your indexes might be inconsistent if you ever ran with a version of glibc prior
 </div>
 
 <p>You can check whether your indexes are consistent using <a href="https://www.postgresql.org/docs/10/amcheck.html">PostgreSQL&rsquo;s <code>amcheck</code> module</a>: as the database server&rsquo;s super user, connect to your Mastodon database and issue the following (this may take a while):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#ff79c6">CREATE</span> EXTENSION <span style="color:#ff79c6">IF</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">EXISTS</span> amcheck;
-<span style="color:#ff79c6">SELECT</span> bt_index_check(<span style="color:#ff79c6">c</span>.oid)
-<span style="color:#ff79c6">FROM</span> pg_index i
-<span style="color:#ff79c6">JOIN</span> pg_class <span style="color:#ff79c6">c</span> <span style="color:#ff79c6">ON</span> i.indexrelid <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">c</span>.oid
-<span style="color:#ff79c6">WHERE</span> <span style="color:#ff79c6">c</span>.relname <span style="color:#ff79c6">IN</span> (<span style="color:#f1fa8c">&#39;index_account_domain_blocks_on_account_id_and_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_account_proofs_on_account_and_provider_and_username&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_accounts_on_username_and_domain_lower&#39;</span>, <span style="color:#f1fa8c">&#39;index_accounts_on_uri&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_accounts_on_url&#39;</span>, <span style="color:#f1fa8c">&#39;index_conversations_on_uri&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_custom_emoji_categories_on_name&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_custom_emojis_on_shortcode_and_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_devices_on_access_token_id&#39;</span>, <span style="color:#f1fa8c">&#39;index_domain_allows_on_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_domain_blocks_on_domain&#39;</span>, <span style="color:#f1fa8c">&#39;index_email_domain_blocks_on_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_invites_on_code&#39;</span>, <span style="color:#f1fa8c">&#39;index_markers_on_user_id_and_timeline&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_media_attachments_on_shortcode&#39;</span>, <span style="color:#f1fa8c">&#39;index_preview_cards_on_url&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_statuses_on_uri&#39;</span>, <span style="color:#f1fa8c">&#39;index_tags_on_name_lower&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_tombstones_on_uri&#39;</span>, <span style="color:#f1fa8c">&#39;index_unavailable_domains_on_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_users_on_email&#39;</span>, <span style="color:#f1fa8c">&#39;index_webauthn_credentials_on_external_id&#39;</span>
-);
-</code></pre></div><p>If this raises an error, your database is corrupted and needs fixing. If it does not, you may need to perform more involved checks to be sure.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> EXTENSION <span style="color:#ff79c6">IF</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">EXISTS</span> amcheck;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">SELECT</span> bt_index_check(<span style="color:#ff79c6">c</span>.oid)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">FROM</span> pg_index i
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">JOIN</span> pg_class <span style="color:#ff79c6">c</span> <span style="color:#ff79c6">ON</span> i.indexrelid <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">c</span>.oid
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">WHERE</span> <span style="color:#ff79c6">c</span>.relname <span style="color:#ff79c6">IN</span> (<span style="color:#f1fa8c">&#39;index_account_domain_blocks_on_account_id_and_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_account_proofs_on_account_and_provider_and_username&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_accounts_on_username_and_domain_lower&#39;</span>, <span style="color:#f1fa8c">&#39;index_accounts_on_uri&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_accounts_on_url&#39;</span>, <span style="color:#f1fa8c">&#39;index_conversations_on_uri&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_custom_emoji_categories_on_name&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_custom_emojis_on_shortcode_and_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_devices_on_access_token_id&#39;</span>, <span style="color:#f1fa8c">&#39;index_domain_allows_on_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_domain_blocks_on_domain&#39;</span>, <span style="color:#f1fa8c">&#39;index_email_domain_blocks_on_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_invites_on_code&#39;</span>, <span style="color:#f1fa8c">&#39;index_markers_on_user_id_and_timeline&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_media_attachments_on_shortcode&#39;</span>, <span style="color:#f1fa8c">&#39;index_preview_cards_on_url&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_statuses_on_uri&#39;</span>, <span style="color:#f1fa8c">&#39;index_tags_on_name_lower&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_tombstones_on_uri&#39;</span>, <span style="color:#f1fa8c">&#39;index_unavailable_domains_on_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_users_on_email&#39;</span>, <span style="color:#f1fa8c">&#39;index_webauthn_credentials_on_external_id&#39;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>If this raises an error, your database is corrupted and needs fixing. If it does not, you may need to perform more involved checks to be sure.
 Unlike the previous checks, those more involved checks will lock tables when running, thus interfering with the availability of your instance.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-SQL" data-lang="SQL"><span style="color:#ff79c6">CREATE</span> EXTENSION <span style="color:#ff79c6">IF</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">EXISTS</span> amcheck;
-<span style="color:#ff79c6">SELECT</span> bt_index_parent_check(<span style="color:#ff79c6">c</span>.oid)
-<span style="color:#ff79c6">FROM</span> pg_index i
-<span style="color:#ff79c6">JOIN</span> pg_class <span style="color:#ff79c6">c</span> <span style="color:#ff79c6">ON</span> i.indexrelid <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">c</span>.oid
-<span style="color:#ff79c6">WHERE</span> <span style="color:#ff79c6">c</span>.relname <span style="color:#ff79c6">IN</span> (<span style="color:#f1fa8c">&#39;index_account_domain_blocks_on_account_id_and_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_account_proofs_on_account_and_provider_and_username&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_accounts_on_username_and_domain_lower&#39;</span>, <span style="color:#f1fa8c">&#39;index_accounts_on_uri&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_accounts_on_url&#39;</span>, <span style="color:#f1fa8c">&#39;index_conversations_on_uri&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_custom_emoji_categories_on_name&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_custom_emojis_on_shortcode_and_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_devices_on_access_token_id&#39;</span>, <span style="color:#f1fa8c">&#39;index_domain_allows_on_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_domain_blocks_on_domain&#39;</span>, <span style="color:#f1fa8c">&#39;index_email_domain_blocks_on_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_invites_on_code&#39;</span>, <span style="color:#f1fa8c">&#39;index_markers_on_user_id_and_timeline&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_media_attachments_on_shortcode&#39;</span>, <span style="color:#f1fa8c">&#39;index_preview_cards_on_url&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_statuses_on_uri&#39;</span>, <span style="color:#f1fa8c">&#39;index_tags_on_name_lower&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_tombstones_on_uri&#39;</span>, <span style="color:#f1fa8c">&#39;index_unavailable_domains_on_domain&#39;</span>,
-  <span style="color:#f1fa8c">&#39;index_users_on_email&#39;</span>, <span style="color:#f1fa8c">&#39;index_webauthn_credentials_on_external_id&#39;</span>
-);
-</code></pre></div><p>If this succeeds, without returning an error, your database should be consistent, and you can safely disregard the warning Mastodon emits when running <code>db:migrate</code>.</p>
-<h2 id="fixing">Fixing the issue</h2>
-<p>Unless you take action, if you are affected, your database could get more and more inconsistent as time passes. Therefore, it is important to fix it as soon as possible.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-SQL" data-lang="SQL"><span style="display:flex;"><span><span style="color:#ff79c6">CREATE</span> EXTENSION <span style="color:#ff79c6">IF</span> <span style="color:#ff79c6">NOT</span> <span style="color:#ff79c6">EXISTS</span> amcheck;
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">SELECT</span> bt_index_parent_check(<span style="color:#ff79c6">c</span>.oid)
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">FROM</span> pg_index i
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">JOIN</span> pg_class <span style="color:#ff79c6">c</span> <span style="color:#ff79c6">ON</span> i.indexrelid <span style="color:#ff79c6">=</span> <span style="color:#ff79c6">c</span>.oid
+</span></span><span style="display:flex;"><span><span style="color:#ff79c6">WHERE</span> <span style="color:#ff79c6">c</span>.relname <span style="color:#ff79c6">IN</span> (<span style="color:#f1fa8c">&#39;index_account_domain_blocks_on_account_id_and_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_account_proofs_on_account_and_provider_and_username&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_accounts_on_username_and_domain_lower&#39;</span>, <span style="color:#f1fa8c">&#39;index_accounts_on_uri&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_accounts_on_url&#39;</span>, <span style="color:#f1fa8c">&#39;index_conversations_on_uri&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_custom_emoji_categories_on_name&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_custom_emojis_on_shortcode_and_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_devices_on_access_token_id&#39;</span>, <span style="color:#f1fa8c">&#39;index_domain_allows_on_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_domain_blocks_on_domain&#39;</span>, <span style="color:#f1fa8c">&#39;index_email_domain_blocks_on_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_invites_on_code&#39;</span>, <span style="color:#f1fa8c">&#39;index_markers_on_user_id_and_timeline&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_media_attachments_on_shortcode&#39;</span>, <span style="color:#f1fa8c">&#39;index_preview_cards_on_url&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_statuses_on_uri&#39;</span>, <span style="color:#f1fa8c">&#39;index_tags_on_name_lower&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_tombstones_on_uri&#39;</span>, <span style="color:#f1fa8c">&#39;index_unavailable_domains_on_domain&#39;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#39;index_users_on_email&#39;</span>, <span style="color:#f1fa8c">&#39;index_webauthn_credentials_on_external_id&#39;</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><p>If this succeeds, without returning an error, your database should be consistent, and you can safely disregard the warning Mastodon emits when running <code>db:migrate</code>.</p>
+<h2 class="heading" id="fixing">
+	<span class="heading__text">Fixing the issue</span>
+	<a class="heading__anchor-link" href="#fixing">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Unless you take action, if you are affected, your database could get more and more inconsistent as time passes. Therefore, it is important to fix it as soon as possible.</p>
 <p>Mastodon 3.2.2 and later come with a semi-interactive script to fix those corruptions as best as possible. If you&rsquo;re on an earlier version, update to 3.2.2 first. It is possible that running the database migrations to 3.2.2 will fail because of those very corruptions, but the database should then be brought to a state that the maintenance tool bundled with Mastodon 3.2.2 can then recover from.</p>
 <p>Before attempting to fix your database, <strong>stop Mastodon and make a backup of your database</strong>. Then, with <strong>Mastodon still stopped</strong>, run the maintenance script:</p>
-<pre><code>RAILS_ENV=production bin/tootctl maintenance fix-duplicates
+<pre tabindex="0"><code>RAILS_ENV=production bin/tootctl maintenance fix-duplicates
 </code></pre><p>The script will walk through the database to automatically find duplicates and fix them. In some cases, those operations are destructive. In the most destructive cases, you will be asked to choose which record to keep and which records to discard. In all cases, walking through the whole database in search of duplicates is an extremely long operation.</p>
 <div class="hint hint-warning">
   <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
@@ -1138,8 +1189,25 @@ This script is therefore semi-interactive. In all cases, walking through the who
   <strong>Because the maintenance script will temporarily remove indexes, Mastodon has to be completely stopped during the whole process to prevent additional duplicates from occurring.</strong>
 </div>
 
-<h2 id="avoiding-the-issue">Avoiding the issue</h2>
-<p>To avoid the issue, reindex your database immediately after any libc update.
+<h2 class="heading" id="avoiding-the-issue">
+	<span class="heading__text">Avoiding the issue</span>
+	<a class="heading__anchor-link" href="#avoiding-the-issue">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>To avoid the issue, reindex your database immediately after any libc update.
 The
 <a href="https://www.postgresql.org/docs/current/sql-reindex.html">SQL command <code>REINDEX</code></a>
 or the
@@ -2247,7 +2315,7 @@ may be useful for this.</p>
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/troubleshooting/index-corruption.md' style="color: #687590;">Improve this page</a>
+      Last updated December 8, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5ctroubleshooting%5cindex-corruption.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2293,7 +2361,7 @@ may be useful for this.</p>
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/troubleshooting/index-corruption.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5ctroubleshooting%5cindex-corruption.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

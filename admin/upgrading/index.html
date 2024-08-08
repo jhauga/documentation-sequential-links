@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,23 +10,23 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Upgrading to a new release - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/upgrading/">
+  <meta property="og:url" content="http://localhost:1313/admin/upgrading/">
 
   
 
   <meta name="twitter:title" content="Upgrading to a new release">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/upgrading/">
+  <link rel="canonical" href="http://localhost:1313/admin/upgrading/">
 </head>
 
 <body>
@@ -1065,20 +1065,54 @@
   When a new version of Mastodon comes out, it appears on the <a href="https://github.com/mastodon/mastodon/releases">GitHub releases page</a>. Please mind that running unreleased code from the <code>main</code> branch, while possible, is not recommended.
 </div>
 
-<h3 id="automated_checks">Automatic update verification</h3>
-<p>Since v4.2.0, Mastodon will automatically check for available updates and notify the users of your server that have the <code>DevOps</code> permission.</p>
+<h3 class="heading" id="automated_checks">
+	<span class="heading__text">Automatic update verification</span>
+	<a class="heading__anchor-link" href="#automated_checks">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Since v4.2.0, Mastodon will automatically check for available updates and notify the users of your server that have the <code>DevOps</code> permission.</p>
 <p>This happens by fetching <code>https://api.joinmastodon.org/update-check?version=&lt;current_version&gt;</code> in the background every 30 minutes. <code>current_version</code> omits the build metadata (everything after the first <code>+</code>, if there is one, in the version string). For instance, if your version is <code>4.3.0-beta2+my-fork</code>, Mastodon will query <code>https://api.joinmastodon.org/update-check?version=4.3.0-beta2</code>.</p>
 <p>You can change which URL Mastodon queries by setting the <code>UPDATE_CHECK_URL</code> environment variable. You can also completely disable this behavior by setting this environment variable to an empty string, although we strongly recommend against doing that unless you are keeping up with Mastodon updates in another way, as Mastodon occasionally releases critical security updates that must be applied in a timely fashion.</p>
-<h3 id="upgrade-steps">Upgrade steps</h3>
-<p>Mastodon releases correspond to git tags. Before attempting an upgrade, look up the desired release on the <a href="https://github.com/mastodon/mastodon/releases">GitHub releases page</a>. The page will contain a <strong>changelog</strong> describing everything you need to know about what&rsquo;s different, as well as <strong>specific upgrade instructions</strong>.</p>
+<h3 class="heading" id="upgrade-steps">
+	<span class="heading__text">Upgrade steps</span>
+	<a class="heading__anchor-link" href="#upgrade-steps">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Mastodon releases correspond to git tags. Before attempting an upgrade, look up the desired release on the <a href="https://github.com/mastodon/mastodon/releases">GitHub releases page</a>. The page will contain a <strong>changelog</strong> describing everything you need to know about what&rsquo;s different, as well as <strong>specific upgrade instructions</strong>.</p>
 <p>To begin, switch to the <code>mastodon</code> user:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su - mastodon
-</code></pre></div><p>And navigate to the Mastodon root directory:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">cd</span> /home/mastodon/live
-</code></pre></div><p>Download the release’s code, assuming that the version is called <code>v3.1.2</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git fetch --tags
-git checkout v3.1.2
-</code></pre></div><p>Now execute the upgrade instructions that are included in that version&rsquo;s release notes on GitHub. Because different releases require different instructions, we do not include any instructions on this page.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>su - mastodon
+</span></span></code></pre></div><p>And navigate to the Mastodon root directory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> /home/mastodon/live
+</span></span></code></pre></div><p>Download the release’s code, assuming that the version is called <code>v3.1.2</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git fetch --tags
+</span></span><span style="display:flex;"><span>git checkout v3.1.2
+</span></span></code></pre></div><p>Now execute the upgrade instructions that are included in that version&rsquo;s release notes on GitHub. Because different releases require different instructions, we do not include any instructions on this page.</p>
 <div class="hint hint-info">
   <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
 
@@ -1086,20 +1120,20 @@ git checkout v3.1.2
 </div>
 
 <p>After you have executed the instructions from the release notes, switch back to root:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">exit</span>
-</code></pre></div><p>Restart <strong>background workers</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl restart mastodon-sidekiq
-</code></pre></div><p>And reload the <strong>web process</strong>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl reload mastodon-web
-</code></pre></div><div class="hint hint-info">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">exit</span>
+</span></span></code></pre></div><p>Restart <strong>background workers</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl restart mastodon-sidekiq
+</span></span></code></pre></div><p>And reload the <strong>web process</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl reload mastodon-web
+</span></span></code></pre></div><div class="hint hint-info">
   <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
 
   The <code>reload</code> operation is a zero-downtime restart, also called &ldquo;phased restart&rdquo;. As such, Mastodon upgrades usually do not require any advance notice to users about planned downtime. In rare cases, you can use the <code>restart</code> operation instead, but there will be a (short) felt interruption of service for your users.
 </div>
 
 <p>The <strong>streaming API</strong> server is also updated and requires a restart, doing so will result in all connected clients being disconnected, which can increase the load on your server:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl restart mastodon-streaming
-</code></pre></div><div class="hint hint-danger">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl restart mastodon-streaming
+</span></span></code></pre></div><div class="hint hint-danger">
   <div class="hint-icon"><i class="fa fa-exclamation-triangle"></i></div>
 
   Restarting the streaming API leads to an increased load on your server as disconnected clients attempt to reconnect or poll the REST API instead, so avoid it whenever you can.
@@ -2213,7 +2247,7 @@ git checkout v3.1.2
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/upgrading.md' style="color: #687590;">Improve this page</a>
+      Last updated December 7, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cupgrading.md' style="color: #687590;">Improve this page</a>
 
       
         <br />
@@ -2267,7 +2301,7 @@ git checkout v3.1.2
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/upgrading.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cupgrading.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

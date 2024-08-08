@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Moderation actions - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/moderation/">
+  <meta property="og:url" content="http://localhost:1313/admin/moderation/">
 
   
     <meta name="description" content="Actions that can be taken against unwanted users or domains.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Moderation actions">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/moderation/">
+  <link rel="canonical" href="http://localhost:1313/admin/moderation/">
 </head>
 
 <body>
@@ -1081,57 +1081,278 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="individual-moderation">Moderating individual users</h2>
-<p>Moderation in Mastodon is always applied locally, i.e. as seen from the particular server. An admin or moderator on one server cannot affect a user on another server, they can only affect the local copy on their own server.</p>
+    <h2 class="heading" id="individual-moderation">
+	<span class="heading__text">Moderating individual users</span>
+	<a class="heading__anchor-link" href="#individual-moderation">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Moderation in Mastodon is always applied locally, i.e. as seen from the particular server. An admin or moderator on one server cannot affect a user on another server, they can only affect the local copy on their own server.</p>
 <p>As of v3.5.0, all default user moderation decisions will notify the affected user by email. The user can access an appeal page, where they can submit one appeal within 20 days of the decision. Moderators can approve or reject the appeal.</p>
-<h3 id="sensitive-user">Sensitive</h3>
-<p>When an account is marked as sensitive, all media that the user posts will be automatically <a href="https://docs.joinmastodon.org/user/posting/#cw">marked as sensitive</a>.</p>
-<h3 id="freeze-user">Freeze</h3>
-<p>A Mastodon account can be frozen. This prevents the user from doing anything with the account, but all of the content is still there untouched. This limitation is reversible; the account can be unfrozen at any time. This limitation is only available for local users on your server.</p>
+<h3 class="heading" id="sensitive-user">
+	<span class="heading__text">Sensitive</span>
+	<a class="heading__anchor-link" href="#sensitive-user">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>When an account is marked as sensitive, all media that the user posts will be automatically <a href="https://docs.joinmastodon.org/user/posting/#cw">marked as sensitive</a>.</p>
+<h3 class="heading" id="freeze-user">
+	<span class="heading__text">Freeze</span>
+	<a class="heading__anchor-link" href="#freeze-user">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>A Mastodon account can be frozen. This prevents the user from doing anything with the account, but all of the content is still there untouched. This limitation is reversible; the account can be unfrozen at any time. This limitation is only available for local users on your server.</p>
 <p>When a user&rsquo;s account is frozen, they are redirected to their <strong>Account Settings</strong> page, where the following message is displayed:</p>
 <blockquote>
 <p>You can no longer login to your account or use it in any other way, but your profile and other data remains intact.</p>
 </blockquote>
 <p>When the user&rsquo;s account is unfrozen, normal functionality resumes.</p>
-<h3 id="limit-user">Limit</h3>
-<p>Previously known as &ldquo;silencing&rdquo;. A limited account is hidden from all other users on that instance, except for its followers. All of the content is still there, and it can still be found via search, mentions, and following, but the content is invisible publicly.</p>
+<h3 class="heading" id="limit-user">
+	<span class="heading__text">Limit</span>
+	<a class="heading__anchor-link" href="#limit-user">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Previously known as &ldquo;silencing&rdquo;. A limited account is hidden from all other users on that instance, except for its followers. All of the content is still there, and it can still be found via search, mentions, and following, but the content is invisible publicly.</p>
 <p>At this moment, limit does not affect federation. A locally limited account is <em>not</em> limited automatically on other servers. Account limitations are reversible.</p>
-<h3 id="suspend-user">Suspend</h3>
-<p>A Mastodon suspension means the account is effectively deleted. The account no longer appears in search, the profile page is gone, and all of the posts, uploads, followers, and all other data are removed publicly. However, all the data is available in the admin back-end for a period of 30 days from suspension. This is to give the user an opportunity to work with instance admins to resolve any potential issues and have the account re-instated.</p>
+<h3 class="heading" id="suspend-user">
+	<span class="heading__text">Suspend</span>
+	<a class="heading__anchor-link" href="#suspend-user">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>A Mastodon suspension means the account is effectively deleted. The account no longer appears in search, the profile page is gone, and all of the posts, uploads, followers, and all other data are removed publicly. However, all the data is available in the admin back-end for a period of 30 days from suspension. This is to give the user an opportunity to work with instance admins to resolve any potential issues and have the account re-instated.</p>
 <p>If the account is reinstated within the 30-day period, all data is once again accessible publicly without any adverse effects. If the 30-day period lapses, <strong>all</strong> that user&rsquo;s data is purged from the instance. Admins also have the option to immediately delete the user&rsquo;s account data at any point during the 30 days.</p>
 <p>Once the data has been deleted, whether that is after the 30-day period, or if an admin has force deleted it, the account can still be un-suspended. However, the account will have no data (statuses, profile information, avatar or header image) associated with it.</p>
 <p>For remote accounts, suspending will make them unfollow any local account. Those relationships are not restored in case the remote account is unsuspended, even within the 30-day time window.</p>
-<h2 id="server-wide-moderation">Moderating entire websites</h2>
-<p>Because individually moderating a large volume of users from a misbehaving server can be exhausting, it is possible to pre-emptively moderate against all users from that particular server using a so-called <strong>domain block</strong>, which comes with several different levels of severity.</p>
-<h3 id="reject-media">Reject media</h3>
-<p>With this option active, no files from the server will be processed locally. That includes avatars, headers, emojis and media attachments.</p>
-<h3 id="limit-server">Limit</h3>
-<p>Equivalent to <a href="#limit-user">limiting</a> all past and future accounts from the server. Previously known as &ldquo;silencing&rdquo;.</p>
-<h3 id="suspend-server">Suspend</h3>
-<p>Equivalent to <a href="#suspend-user">suspending</a> all past and future accounts from the server. No content from the server will be stored locally except for usernames.</p>
+<h2 class="heading" id="server-wide-moderation">
+	<span class="heading__text">Moderating entire websites</span>
+	<a class="heading__anchor-link" href="#server-wide-moderation">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Because individually moderating a large volume of users from a misbehaving server can be exhausting, it is possible to pre-emptively moderate against all users from that particular server using a so-called <strong>domain block</strong>, which comes with several different levels of severity.</p>
+<h3 class="heading" id="reject-media">
+	<span class="heading__text">Reject media</span>
+	<a class="heading__anchor-link" href="#reject-media">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>With this option active, no files from the server will be processed locally. That includes avatars, headers, emojis and media attachments.</p>
+<h3 class="heading" id="limit-server">
+	<span class="heading__text">Limit</span>
+	<a class="heading__anchor-link" href="#limit-server">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Equivalent to <a href="/admin/moderation/#limit-user">limiting</a> all past and future accounts from the server. Previously known as &ldquo;silencing&rdquo;.</p>
+<h3 class="heading" id="suspend-server">
+	<span class="heading__text">Suspend</span>
+	<a class="heading__anchor-link" href="#suspend-server">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Equivalent to <a href="/admin/moderation/#suspend-user">suspending</a> all past and future accounts from the server. No content from the server will be stored locally except for usernames.</p>
 <p>Suspending a server will remove all existing follow relationships between local accounts and accounts on the suspended server. They will not be restored in case the remote server is un-suspended later.</p>
-<h2 id="spam-fighting-measures">Spam-fighting measures</h2>
-<p>There are a few baseline measures for preventing spam in Mastodon:</p>
+<h2 class="heading" id="spam-fighting-measures">
+	<span class="heading__text">Spam-fighting measures</span>
+	<a class="heading__anchor-link" href="#spam-fighting-measures">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>There are a few baseline measures for preventing spam in Mastodon:</p>
 <ul>
 <li>Signing up requires confirming an e-mail address</li>
 <li>Signing up is rate-limited by IP</li>
 </ul>
 <p>However, dedicated spammers will get through that. The other measure you can employ is <strong>e-mail domain blacklisting</strong>. During sign-up, Mastodon resolves the given e-mail address for an A or MX record, i.e. the IP address of the e-mail server, and checks that IP address against a dynamically stored blacklist.</p>
-<h3 id="blocking-by-e-mail-server">Blocking by e-mail server</h3>
-<p>Spammers will often use different e-mail domains so it looks like they are using a lot of different e-mail servers that would all be difficult to blacklist separately. However, sometimes all of those domains resolve to a single e-mail server IP. If you see a lot of spammers signing up at the same time, you can check for this, either using an online DNS lookup tool, or the Linux <code>dig</code> utility, e.g. <code>dig example.com</code> will return all DNS A records for that Domain. If you notice the IP is the same for all domains, you can add it to the e-mail domain blacklist.</p>
-<h3 id="blocking-by-ip">Blocking by IP</h3>
-<p>It is not possible to block visitors by IP address in Mastodon itself, and it is not a foolproof strategy. IPs are sometimes shared by a lot of different people and sometimes change hands. However, it is possible to block visitors by IP address in Linux using a firewall. Here is an example using <code>iptables</code> and <code>ipset</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#6272a4"># Install ipset</span>
-sudo apt install ipset
-<span style="color:#6272a4"># Create blacklist named &#34;spambots&#34;</span>
-sudo ipset create spambots nethash
-<span style="color:#6272a4"># Add 1.2.3.4 to the blacklist</span>
-sudo ipset add spambots 1.2.3.4
-<span style="color:#6272a4"># Add firewall rule based on the blacklist</span>
-sudo iptables -I INPUT <span style="color:#bd93f9">1</span> -m <span style="color:#8be9fd;font-style:italic">set</span> --match-set spambots src -j DROP
-</code></pre></div><p>Be careful not to lock yourself out of your machine.</p>
-<h3 id="report-events-webhook">Webhooks for moderation-level events</h3>
-<p>Webhooks can be created to facilitate automation through the moderation API by notifying applications about system events in real-time. This also enables integrations with chat apps like Discord, IRC and Slack, helping moderator coordination.</p>
+<h3 class="heading" id="blocking-by-e-mail-server">
+	<span class="heading__text">Blocking by e-mail server</span>
+	<a class="heading__anchor-link" href="#blocking-by-e-mail-server">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Spammers will often use different e-mail domains so it looks like they are using a lot of different e-mail servers that would all be difficult to blacklist separately. However, sometimes all of those domains resolve to a single e-mail server IP. If you see a lot of spammers signing up at the same time, you can check for this, either using an online DNS lookup tool, or the Linux <code>dig</code> utility, e.g. <code>dig example.com</code> will return all DNS A records for that Domain. If you notice the IP is the same for all domains, you can add it to the e-mail domain blacklist.</p>
+<h3 class="heading" id="blocking-by-ip">
+	<span class="heading__text">Blocking by IP</span>
+	<a class="heading__anchor-link" href="#blocking-by-ip">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>It is not possible to block visitors by IP address in Mastodon itself, and it is not a foolproof strategy. IPs are sometimes shared by a lot of different people and sometimes change hands. However, it is possible to block visitors by IP address in Linux using a firewall. Here is an example using <code>iptables</code> and <code>ipset</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># Install ipset</span>
+</span></span><span style="display:flex;"><span>sudo apt install ipset
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Create blacklist named &#34;spambots&#34;</span>
+</span></span><span style="display:flex;"><span>sudo ipset create spambots nethash
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Add 1.2.3.4 to the blacklist</span>
+</span></span><span style="display:flex;"><span>sudo ipset add spambots 1.2.3.4
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># Add firewall rule based on the blacklist</span>
+</span></span><span style="display:flex;"><span>sudo iptables -I INPUT <span style="color:#bd93f9">1</span> -m <span style="color:#8be9fd;font-style:italic">set</span> --match-set spambots src -j DROP
+</span></span></code></pre></div><p>Be careful not to lock yourself out of your machine.</p>
+<h3 class="heading" id="report-events-webhook">
+	<span class="heading__text">Webhooks for moderation-level events</span>
+	<a class="heading__anchor-link" href="#report-events-webhook">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Webhooks can be created to facilitate automation through the moderation API by notifying applications about system events in real-time. This also enables integrations with chat apps like Discord, IRC and Slack, helping moderator coordination.</p>
 <p>The X-Hub-Signature header adopted from the WebSub spec can be optionally used to verify that the payloads are authentic.</p>
 <p>Events currently supported:</p>
 <ul>
@@ -1143,211 +1364,226 @@ sudo iptables -I INPUT <span style="color:#bd93f9">1</span> -m <span style="colo
 <li>status.created</li>
 <li>status.updated</li>
 </ul>
-<h4 id="example-payload">Example payload:</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">
-{
-   <span style="color:#ff79c6">&#34;event&#34;</span>:<span style="color:#f1fa8c">&#34;report.created&#34;</span>,
-   <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T13:34:00.351Z&#34;</span>,
-   <span style="color:#ff79c6">&#34;object&#34;</span>:{
-      <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;8437&#34;</span>,
-      <span style="color:#ff79c6">&#34;action_taken&#34;</span>:<span style="color:#ff79c6">false</span>,
-      <span style="color:#ff79c6">&#34;action_taken_at&#34;</span>:<span style="color:#ff79c6">null</span>,
-      <span style="color:#ff79c6">&#34;category&#34;</span>:<span style="color:#f1fa8c">&#34;violation&#34;</span>,
-      <span style="color:#ff79c6">&#34;comment&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
-      <span style="color:#ff79c6">&#34;forwarded&#34;</span>:<span style="color:#ff79c6">true</span>,
-      <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T13:34:00.348Z&#34;</span>,
-      <span style="color:#ff79c6">&#34;updated_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T13:34:00.348Z&#34;</span>,
-      <span style="color:#ff79c6">&#34;account&#34;</span>:{
-         <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123456789&#34;</span>,
-         <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger&#34;</span>,
-         <span style="color:#ff79c6">&#34;domain&#34;</span>:<span style="color:#ff79c6">null</span>,
-         <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-07-13T04:39:22.493Z&#34;</span>,
-         <span style="color:#ff79c6">&#34;email&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger@emailservice.com&#34;</span>,
-         <span style="color:#ff79c6">&#34;ip&#34;</span>:<span style="color:#f1fa8c">&#34;12.34.56.78&#34;</span>,
-         <span style="color:#ff79c6">&#34;confirmed&#34;</span>:<span style="color:#ff79c6">true</span>,
-         <span style="color:#ff79c6">&#34;suspended&#34;</span>:<span style="color:#ff79c6">false</span>,
-         <span style="color:#ff79c6">&#34;silenced&#34;</span>:<span style="color:#ff79c6">false</span>,
-         <span style="color:#ff79c6">&#34;sensitized&#34;</span>:<span style="color:#ff79c6">false</span>,
-         <span style="color:#ff79c6">&#34;disabled&#34;</span>:<span style="color:#ff79c6">false</span>,
-         <span style="color:#ff79c6">&#34;approved&#34;</span>:<span style="color:#ff79c6">true</span>,
-         <span style="color:#ff79c6">&#34;locale&#34;</span>:<span style="color:#f1fa8c">&#34;en&#34;</span>,
-         <span style="color:#ff79c6">&#34;invite_request&#34;</span>:<span style="color:#f1fa8c">&#34;I would love to be a member of your instance!&#34;</span>,
-         <span style="color:#ff79c6">&#34;ips&#34;</span>:[
-            {
-               <span style="color:#ff79c6">&#34;ip&#34;</span>:<span style="color:#f1fa8c">&#34;12.34.56.78&#34;</span>,
-               <span style="color:#ff79c6">&#34;used_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-07-13T04:45:31.835Z&#34;</span>
-            },
-            {
-               <span style="color:#ff79c6">&#34;ip&#34;</span>:<span style="color:#f1fa8c">&#34;98.76.54.32&#34;</span>,
-               <span style="color:#ff79c6">&#34;used_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-07-13T04:39:22.722Z&#34;</span>
-            }
-         ],
-         <span style="color:#ff79c6">&#34;account&#34;</span>:{
-            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123456789&#34;</span>,
-            <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger&#34;</span>,
-            <span style="color:#ff79c6">&#34;acct&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger&#34;</span>,
-            <span style="color:#ff79c6">&#34;display_name&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger&#34;</span>,
-            <span style="color:#ff79c6">&#34;locked&#34;</span>:<span style="color:#ff79c6">false</span>,
-            <span style="color:#ff79c6">&#34;bot&#34;</span>:<span style="color:#ff79c6">false</span>,
-            <span style="color:#ff79c6">&#34;discoverable&#34;</span>:<span style="color:#ff79c6">null</span>,
-            <span style="color:#ff79c6">&#34;group&#34;</span>:<span style="color:#ff79c6">false</span>,
-            <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-07-13T00:00:00.000Z&#34;</span>,
-            <span style="color:#ff79c6">&#34;note&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
-            <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://mastodonwebsite/@bobisaburger&#34;</span>,
-            <span style="color:#ff79c6">&#34;uri&#34;</span>:<span style="color:#f1fa8c">&#34;https://mastodonwebsite/users/bobisaburger&#34;</span>,
-            <span style="color:#ff79c6">&#34;avatar&#34;</span>:<span style="color:#f1fa8c">&#34;https://locationofavatar.com/image.jpg&#34;</span>,
-            <span style="color:#ff79c6">&#34;avatar_static&#34;</span>:<span style="color:#f1fa8c">&#34;https://locationofavatar.com/image.jpg&#34;</span>,
-            <span style="color:#ff79c6">&#34;header&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
-            <span style="color:#ff79c6">&#34;header_static&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
-            <span style="color:#ff79c6">&#34;followers_count&#34;</span>:<span style="color:#bd93f9">100</span>,
-            <span style="color:#ff79c6">&#34;following_count&#34;</span>:<span style="color:#bd93f9">200</span>,
-            <span style="color:#ff79c6">&#34;statuses_count&#34;</span>:<span style="color:#bd93f9">9</span>,
-            <span style="color:#ff79c6">&#34;last_status_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-08-05&#34;</span>,
-            <span style="color:#ff79c6">&#34;noindex&#34;</span>:<span style="color:#ff79c6">true</span>,
-            <span style="color:#ff79c6">&#34;emojis&#34;</span>:[
-               
-            ],
-            <span style="color:#ff79c6">&#34;roles&#34;</span>:[
-               
-            ],
-            <span style="color:#ff79c6">&#34;fields&#34;</span>:[
-               
-            ]
-         },
-         <span style="color:#ff79c6">&#34;role&#34;</span>:{
-            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;-99&#34;</span>,
-            <span style="color:#ff79c6">&#34;name&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
-            <span style="color:#ff79c6">&#34;permissions&#34;</span>:<span style="color:#f1fa8c">&#34;65536&#34;</span>,
-            <span style="color:#ff79c6">&#34;color&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
-            <span style="color:#ff79c6">&#34;highlighted&#34;</span>:<span style="color:#ff79c6">false</span>
-         }
-      },
-      <span style="color:#ff79c6">&#34;target_account&#34;</span>:{
-         <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123454321&#34;</span>,
-         <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
-         <span style="color:#ff79c6">&#34;domain&#34;</span>:<span style="color:#f1fa8c">&#34;someothermastodonsite.com&#34;</span>,
-         <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-08-20T00:00:00.000Z&#34;</span>,
-         <span style="color:#ff79c6">&#34;email&#34;</span>:<span style="color:#ff79c6">null</span>,
-         <span style="color:#ff79c6">&#34;ip&#34;</span>:<span style="color:#ff79c6">null</span>,
-         <span style="color:#ff79c6">&#34;confirmed&#34;</span>:<span style="color:#ff79c6">null</span>,
-         <span style="color:#ff79c6">&#34;suspended&#34;</span>:<span style="color:#ff79c6">false</span>,
-         <span style="color:#ff79c6">&#34;silenced&#34;</span>:<span style="color:#ff79c6">false</span>,
-         <span style="color:#ff79c6">&#34;sensitized&#34;</span>:<span style="color:#ff79c6">false</span>,
-         <span style="color:#ff79c6">&#34;disabled&#34;</span>:<span style="color:#ff79c6">null</span>,
-         <span style="color:#ff79c6">&#34;approved&#34;</span>:<span style="color:#ff79c6">null</span>,
-         <span style="color:#ff79c6">&#34;locale&#34;</span>:<span style="color:#ff79c6">null</span>,
-         <span style="color:#ff79c6">&#34;invite_request&#34;</span>:<span style="color:#ff79c6">null</span>,
-         <span style="color:#ff79c6">&#34;ips&#34;</span>:<span style="color:#ff79c6">null</span>,
-         <span style="color:#ff79c6">&#34;account&#34;</span>:{
-            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123454321&#34;</span>,
-            <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
-            <span style="color:#ff79c6">&#34;acct&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson@someothermastodonsite.com&#34;</span>,
-            <span style="color:#ff79c6">&#34;display_name&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
-            <span style="color:#ff79c6">&#34;locked&#34;</span>:<span style="color:#ff79c6">false</span>,
-            <span style="color:#ff79c6">&#34;bot&#34;</span>:<span style="color:#ff79c6">false</span>,
-            <span style="color:#ff79c6">&#34;discoverable&#34;</span>:<span style="color:#ff79c6">false</span>,
-            <span style="color:#ff79c6">&#34;group&#34;</span>:<span style="color:#ff79c6">false</span>,
-            <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-08-20T00:00:00.000Z&#34;</span>,
-            <span style="color:#ff79c6">&#34;note&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
-            <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/@cheeseperson&#34;</span>,
-            <span style="color:#ff79c6">&#34;uri&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/users/cheeseperson&#34;</span>,
-            <span style="color:#ff79c6">&#34;avatar&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastadonsite.com/avatars/original/missing.png&#34;</span>,
-            <span style="color:#ff79c6">&#34;avatar_static&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastadonsite.com/avatars/original/missing.png&#34;</span>,
-            <span style="color:#ff79c6">&#34;header&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
-            <span style="color:#ff79c6">&#34;header_static&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
-            <span style="color:#ff79c6">&#34;followers_count&#34;</span>:<span style="color:#bd93f9">2</span>,
-            <span style="color:#ff79c6">&#34;following_count&#34;</span>:<span style="color:#bd93f9">2</span>,
-            <span style="color:#ff79c6">&#34;statuses_count&#34;</span>:<span style="color:#bd93f9">95</span>,
-            <span style="color:#ff79c6">&#34;last_status_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26&#34;</span>,
-            <span style="color:#ff79c6">&#34;emojis&#34;</span>:[
-               
-            ],
-            <span style="color:#ff79c6">&#34;fields&#34;</span>:[
-               
-            ]
-         },
-         <span style="color:#ff79c6">&#34;role&#34;</span>:<span style="color:#ff79c6">null</span>
-      },
-      <span style="color:#ff79c6">&#34;assigned_account&#34;</span>:<span style="color:#ff79c6">null</span>,
-      <span style="color:#ff79c6">&#34;action_taken_by_account&#34;</span>:<span style="color:#ff79c6">null</span>,
-      <span style="color:#ff79c6">&#34;statuses&#34;</span>:[
-         {
-            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;12345678987654321&#34;</span>,
-            <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T11:29:13.000Z&#34;</span>,
-            <span style="color:#ff79c6">&#34;in_reply_to_id&#34;</span>:<span style="color:#f1fa8c">&#34;1918282746465&#34;</span>,
-            <span style="color:#ff79c6">&#34;in_reply_to_account_id&#34;</span>:<span style="color:#f1fa8c">&#34;101010101010&#34;</span>,
-            <span style="color:#ff79c6">&#34;sensitive&#34;</span>:<span style="color:#ff79c6">false</span>,
-            <span style="color:#ff79c6">&#34;spoiler_text&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
-            <span style="color:#ff79c6">&#34;visibility&#34;</span>:<span style="color:#f1fa8c">&#34;public&#34;</span>,
-            <span style="color:#ff79c6">&#34;language&#34;</span>:<span style="color:#f1fa8c">&#34;de&#34;</span>,
-            <span style="color:#ff79c6">&#34;uri&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/users/cheeseperson/statuses/111301083360371621&#34;</span>,
-            <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/@cheeseperson/111301083360371621&#34;</span>,
-            <span style="color:#ff79c6">&#34;replies_count&#34;</span>:<span style="color:#bd93f9">0</span>,
-            <span style="color:#ff79c6">&#34;reblogs_count&#34;</span>:<span style="color:#bd93f9">0</span>,
-            <span style="color:#ff79c6">&#34;favourites_count&#34;</span>:<span style="color:#bd93f9">0</span>,
-            <span style="color:#ff79c6">&#34;edited_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T11:30:31.000Z&#34;</span>,
-            <span style="color:#ff79c6">&#34;content&#34;</span>:<span style="color:#f1fa8c">&#34;&lt;p&gt;Here is some content&lt;/p&gt;&#34;</span>,
-            <span style="color:#ff79c6">&#34;reblog&#34;</span>:<span style="color:#ff79c6">null</span>,
-            <span style="color:#ff79c6">&#34;account&#34;</span>:{
-               <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123454321&#34;</span>,
-               <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
-               <span style="color:#ff79c6">&#34;acct&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson@someothermastodonsite.com&#34;</span>,
-               <span style="color:#ff79c6">&#34;display_name&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
-               <span style="color:#ff79c6">&#34;locked&#34;</span>:<span style="color:#ff79c6">false</span>,
-               <span style="color:#ff79c6">&#34;bot&#34;</span>:<span style="color:#ff79c6">false</span>,
-               <span style="color:#ff79c6">&#34;discoverable&#34;</span>:<span style="color:#ff79c6">false</span>,
-               <span style="color:#ff79c6">&#34;group&#34;</span>:<span style="color:#ff79c6">false</span>,
-               <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-08-20T00:00:00.000Z&#34;</span>,
-               <span style="color:#ff79c6">&#34;note&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
-               <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/@cheeseperson&#34;</span>,
-               <span style="color:#ff79c6">&#34;uri&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/users/cheeseperson&#34;</span>,
-               <span style="color:#ff79c6">&#34;avatar&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastadonsite.com/avatars/original/missing.png&#34;</span>,
-               <span style="color:#ff79c6">&#34;avatar_static&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastadonsite.com/avatars/original/missing.png&#34;</span>,
-               <span style="color:#ff79c6">&#34;header&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
-               <span style="color:#ff79c6">&#34;header_static&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
-               <span style="color:#ff79c6">&#34;followers_count&#34;</span>:<span style="color:#bd93f9">2</span>,
-               <span style="color:#ff79c6">&#34;following_count&#34;</span>:<span style="color:#bd93f9">2</span>,
-               <span style="color:#ff79c6">&#34;statuses_count&#34;</span>:<span style="color:#bd93f9">95</span>,
-               <span style="color:#ff79c6">&#34;last_status_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26&#34;</span>,
-               <span style="color:#ff79c6">&#34;emojis&#34;</span>:[
-                  
-               ],
-               <span style="color:#ff79c6">&#34;fields&#34;</span>:[
-                  
-               ]
-            },
-            <span style="color:#ff79c6">&#34;media_attachments&#34;</span>:[
-               
-            ],
-            <span style="color:#ff79c6">&#34;mentions&#34;</span>:[
-               {
-                  <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;101010101010&#34;</span>,
-                  <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;thirdperson&#34;</span>,
-                  <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://thirdpersonsinstance.com/@thirdperson&#34;</span>,
-                  <span style="color:#ff79c6">&#34;acct&#34;</span>:<span style="color:#f1fa8c">&#34;thirdperson@emailwebsite.com&#34;</span>
-               }
-            ],
-            <span style="color:#ff79c6">&#34;tags&#34;</span>:[
-               
-            ],
-            <span style="color:#ff79c6">&#34;emojis&#34;</span>:[
-               
-            ],
-            <span style="color:#ff79c6">&#34;card&#34;</span>:<span style="color:#ff79c6">null</span>,
-            <span style="color:#ff79c6">&#34;poll&#34;</span>:<span style="color:#ff79c6">null</span>
-         }
-      ],
-      <span style="color:#ff79c6">&#34;rules&#34;</span>:[
-         {
-            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;2&#34;</span>,
-            <span style="color:#ff79c6">&#34;text&#34;</span>:<span style="color:#f1fa8c">&#34;Don&#39;t be a meanie!&#34;</span>
-         }
-      ]
-   }
-}
-
-
-</code></pre></div>
+<h4 class="heading" id="example-payload">
+	<span class="heading__text">Example payload:</span>
+	<a class="heading__anchor-link" href="#example-payload">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;event&#34;</span>:<span style="color:#f1fa8c">&#34;report.created&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T13:34:00.351Z&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;object&#34;</span>:{
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;8437&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;action_taken&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;action_taken_at&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;category&#34;</span>:<span style="color:#f1fa8c">&#34;violation&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;comment&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;forwarded&#34;</span>:<span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T13:34:00.348Z&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;updated_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T13:34:00.348Z&#34;</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;account&#34;</span>:{
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123456789&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;domain&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-07-13T04:39:22.493Z&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;email&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger@emailservice.com&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;ip&#34;</span>:<span style="color:#f1fa8c">&#34;12.34.56.78&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;confirmed&#34;</span>:<span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;suspended&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;silenced&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;sensitized&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;disabled&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;approved&#34;</span>:<span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;locale&#34;</span>:<span style="color:#f1fa8c">&#34;en&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;invite_request&#34;</span>:<span style="color:#f1fa8c">&#34;I would love to be a member of your instance!&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;ips&#34;</span>:[
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;ip&#34;</span>:<span style="color:#f1fa8c">&#34;12.34.56.78&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;used_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-07-13T04:45:31.835Z&#34;</span>
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;ip&#34;</span>:<span style="color:#f1fa8c">&#34;98.76.54.32&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;used_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-07-13T04:39:22.722Z&#34;</span>
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>         ],
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;account&#34;</span>:{
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123456789&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;acct&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;display_name&#34;</span>:<span style="color:#f1fa8c">&#34;bobisaburger&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;locked&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;bot&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;discoverable&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;group&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-07-13T00:00:00.000Z&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;note&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://mastodonwebsite/@bobisaburger&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;uri&#34;</span>:<span style="color:#f1fa8c">&#34;https://mastodonwebsite/users/bobisaburger&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;avatar&#34;</span>:<span style="color:#f1fa8c">&#34;https://locationofavatar.com/image.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;avatar_static&#34;</span>:<span style="color:#f1fa8c">&#34;https://locationofavatar.com/image.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;header&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;header_static&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;followers_count&#34;</span>:<span style="color:#bd93f9">100</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;following_count&#34;</span>:<span style="color:#bd93f9">200</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;statuses_count&#34;</span>:<span style="color:#bd93f9">9</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;last_status_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-08-05&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;noindex&#34;</span>:<span style="color:#ff79c6">true</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;emojis&#34;</span>:[
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;roles&#34;</span>:[
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;fields&#34;</span>:[
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>         },
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;role&#34;</span>:{
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;-99&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;name&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;permissions&#34;</span>:<span style="color:#f1fa8c">&#34;65536&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;color&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;highlighted&#34;</span>:<span style="color:#ff79c6">false</span>
+</span></span><span style="display:flex;"><span>         }
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;target_account&#34;</span>:{
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123454321&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;domain&#34;</span>:<span style="color:#f1fa8c">&#34;someothermastodonsite.com&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-08-20T00:00:00.000Z&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;email&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;ip&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;confirmed&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;suspended&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;silenced&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;sensitized&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;disabled&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;approved&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;locale&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;invite_request&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;ips&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;account&#34;</span>:{
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123454321&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;acct&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson@someothermastodonsite.com&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;display_name&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;locked&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;bot&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;discoverable&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;group&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-08-20T00:00:00.000Z&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;note&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/@cheeseperson&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;uri&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/users/cheeseperson&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;avatar&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastadonsite.com/avatars/original/missing.png&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;avatar_static&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastadonsite.com/avatars/original/missing.png&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;header&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;header_static&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;followers_count&#34;</span>:<span style="color:#bd93f9">2</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;following_count&#34;</span>:<span style="color:#bd93f9">2</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;statuses_count&#34;</span>:<span style="color:#bd93f9">95</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;last_status_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;emojis&#34;</span>:[
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;fields&#34;</span>:[
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>            ]
+</span></span><span style="display:flex;"><span>         },
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;role&#34;</span>:<span style="color:#ff79c6">null</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;assigned_account&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;action_taken_by_account&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;statuses&#34;</span>:[
+</span></span><span style="display:flex;"><span>         {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;12345678987654321&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T11:29:13.000Z&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;in_reply_to_id&#34;</span>:<span style="color:#f1fa8c">&#34;1918282746465&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;in_reply_to_account_id&#34;</span>:<span style="color:#f1fa8c">&#34;101010101010&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;sensitive&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;spoiler_text&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;visibility&#34;</span>:<span style="color:#f1fa8c">&#34;public&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;language&#34;</span>:<span style="color:#f1fa8c">&#34;de&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;uri&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/users/cheeseperson/statuses/111301083360371621&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/@cheeseperson/111301083360371621&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;replies_count&#34;</span>:<span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;reblogs_count&#34;</span>:<span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;favourites_count&#34;</span>:<span style="color:#bd93f9">0</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;edited_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26T11:30:31.000Z&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;content&#34;</span>:<span style="color:#f1fa8c">&#34;&lt;p&gt;Here is some content&lt;/p&gt;&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;reblog&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;account&#34;</span>:{
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;123454321&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;acct&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson@someothermastodonsite.com&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;display_name&#34;</span>:<span style="color:#f1fa8c">&#34;cheeseperson&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;locked&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;bot&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;discoverable&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;group&#34;</span>:<span style="color:#ff79c6">false</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;created_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-08-20T00:00:00.000Z&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;note&#34;</span>:<span style="color:#f1fa8c">&#34;&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/@cheeseperson&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;uri&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastodonsite.com/users/cheeseperson&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;avatar&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastadonsite.com/avatars/original/missing.png&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;avatar_static&#34;</span>:<span style="color:#f1fa8c">&#34;https://someothermastadonsite.com/avatars/original/missing.png&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;header&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;header_static&#34;</span>:<span style="color:#f1fa8c">&#34;locationofheader.com/image.jpg&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;followers_count&#34;</span>:<span style="color:#bd93f9">2</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;following_count&#34;</span>:<span style="color:#bd93f9">2</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;statuses_count&#34;</span>:<span style="color:#bd93f9">95</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;last_status_at&#34;</span>:<span style="color:#f1fa8c">&#34;2023-10-26&#34;</span>,
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;emojis&#34;</span>:[
+</span></span><span style="display:flex;"><span>                  
+</span></span><span style="display:flex;"><span>               ],
+</span></span><span style="display:flex;"><span>               <span style="color:#ff79c6">&#34;fields&#34;</span>:[
+</span></span><span style="display:flex;"><span>                  
+</span></span><span style="display:flex;"><span>               ]
+</span></span><span style="display:flex;"><span>            },
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;media_attachments&#34;</span>:[
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;mentions&#34;</span>:[
+</span></span><span style="display:flex;"><span>               {
+</span></span><span style="display:flex;"><span>                  <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;101010101010&#34;</span>,
+</span></span><span style="display:flex;"><span>                  <span style="color:#ff79c6">&#34;username&#34;</span>:<span style="color:#f1fa8c">&#34;thirdperson&#34;</span>,
+</span></span><span style="display:flex;"><span>                  <span style="color:#ff79c6">&#34;url&#34;</span>:<span style="color:#f1fa8c">&#34;https://thirdpersonsinstance.com/@thirdperson&#34;</span>,
+</span></span><span style="display:flex;"><span>                  <span style="color:#ff79c6">&#34;acct&#34;</span>:<span style="color:#f1fa8c">&#34;thirdperson@emailwebsite.com&#34;</span>
+</span></span><span style="display:flex;"><span>               }
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;tags&#34;</span>:[
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;emojis&#34;</span>:[
+</span></span><span style="display:flex;"><span>               
+</span></span><span style="display:flex;"><span>            ],
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;card&#34;</span>:<span style="color:#ff79c6">null</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;poll&#34;</span>:<span style="color:#ff79c6">null</span>
+</span></span><span style="display:flex;"><span>         }
+</span></span><span style="display:flex;"><span>      ],
+</span></span><span style="display:flex;"><span>      <span style="color:#ff79c6">&#34;rules&#34;</span>:[
+</span></span><span style="display:flex;"><span>         {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;id&#34;</span>:<span style="color:#f1fa8c">&#34;2&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;text&#34;</span>:<span style="color:#f1fa8c">&#34;Don&#39;t be a meanie!&#34;</span>
+</span></span><span style="display:flex;"><span>         }
+</span></span><span style="display:flex;"><span>      ]
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div>
     
 
 
@@ -2449,7 +2685,7 @@ sudo iptables -I INPUT <span style="color:#bd93f9">1</span> -m <span style="colo
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/moderation.md' style="color: #687590;">Improve this page</a>
+      Last updated December 7, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cmoderation.md' style="color: #687590;">Improve this page</a>
 
       
         <br />
@@ -2503,7 +2739,7 @@ sudo iptables -I INPUT <span style="color:#bd93f9">1</span> -m <span style="colo
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/moderation.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cmoderation.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

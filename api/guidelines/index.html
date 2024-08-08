@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Guidelines and best practices - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/api/guidelines/">
+  <meta property="og:url" content="http://localhost:1313/api/guidelines/">
 
   
     <meta name="description" content="Things to keep in mind when implementing a Mastodon app.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Guidelines and best practices">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/api/guidelines/">
+  <link rel="canonical" href="http://localhost:1313/api/guidelines/">
 </head>
 
 <body>
@@ -1076,8 +1076,25 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="login">Login</h2>
-<p><strong>The user must be able to log in to any Mastodon server from the app</strong>. This means you must ask for the server&rsquo;s domain and use the app registrations API to dynamically obtain OAuth2 credentials.</p>
+    <h2 class="heading" id="login">
+	<span class="heading__text">Login</span>
+	<a class="heading__anchor-link" href="#login">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p><strong>The user must be able to log in to any Mastodon server from the app</strong>. This means you must ask for the server&rsquo;s domain and use the app registrations API to dynamically obtain OAuth2 credentials.</p>
 <a href="/client/authorized/" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Logging in with an account
@@ -1090,17 +1107,68 @@
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   OAuth scopes
 </a>
-<h2 id="username">Usernames</h2>
-<p><strong>Decentralization must be transparent to the user</strong>. It should be possible to see that a given user is from another server, for example, by displaying their <code>acct</code> somewhere. Note that <code>acct</code> is equal to <code>username</code> for local users and equal to <code>username@domain</code> for remote users.</p>
-<h2 id="id">Handling and sorting IDs</h2>
-<p>Vanilla Mastodon entity IDs are generated as integers and cast to string. However, this does not mean that IDs <em>are</em> integers, nor should they be cast to integers! Doing so can lead to broken client apps due to integer overflow, so <strong>always treat IDs as strings.</strong></p>
+<h2 class="heading" id="username">
+	<span class="heading__text">Usernames</span>
+	<a class="heading__anchor-link" href="#username">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p><strong>Decentralization must be transparent to the user</strong>. It should be possible to see that a given user is from another server, for example, by displaying their <code>acct</code> somewhere. Note that <code>acct</code> is equal to <code>username</code> for local users and equal to <code>username@domain</code> for remote users.</p>
+<h2 class="heading" id="id">
+	<span class="heading__text">Handling and sorting IDs</span>
+	<a class="heading__anchor-link" href="#id">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Vanilla Mastodon entity IDs are generated as integers and cast to string. However, this does not mean that IDs <em>are</em> integers, nor should they be cast to integers! Doing so can lead to broken client apps due to integer overflow, so <strong>always treat IDs as strings.</strong></p>
 <p>With that said, because IDs are string representations of numbers, they can still be sorted chronologically very easily by doing the following:</p>
 <ol>
 <li>Sort by size. Newer statuses will have longer IDs.</li>
 <li>Sort lexically. Newer statuses will have at least one digit that is higher when compared positionally.</li>
 </ol>
-<h2 id="pagination">Paginating through API responses</h2>
-<p>Many API methods allow you to paginate for more information, using parameters such as <code>limit</code>, <code>max_id</code>, <code>min_id</code>, and <code>since_id</code>.</p>
+<h2 class="heading" id="pagination">
+	<span class="heading__text">Paginating through API responses</span>
+	<a class="heading__anchor-link" href="#pagination">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Many API methods allow you to paginate for more information, using parameters such as <code>limit</code>, <code>max_id</code>, <code>min_id</code>, and <code>since_id</code>.</p>
 <dl>
 <dt>limit</dt>
 <dd>The maximum number of results to return. Usually, there is a default limit and a maximum limit; these will vary according to the API method.</dd>
@@ -1119,17 +1187,17 @@
 </ul>
 <p>Some API methods operate on entity IDs that are not publicly exposed in the API response and are only known to the backend and the database. (This is usually the case for entities that reference other entities, such as Follow entities which reference Accounts, or Favourite entities which reference Statuses, etc.)</p>
 <p>To get around this, Mastodon may return links to a &ldquo;prev&rdquo; and &ldquo;next&rdquo; page. These links are made available via the HTTP <code>Link</code> header on the response. Consider the following fictitious API call:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-http" data-lang="http"><span style="color:#50fa7b">GET</span> https://mastodon.example/api/v1/endpoint <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
-Authorization<span style="color:#ff79c6">:</span> Bearer token
-
-Link: &lt;https://mastodon.example/api/v1/endpoint?max_id=7163058&gt;; rel=&#34;next&#34;, &lt;https://mastodon.example/api/v1/endpoint?min_id=7275607&gt;; rel=&#34;prev&#34;
-[
-  {
-    // some Entity
-  },
-  // more Entities in an Array
-]
-</code></pre></div><p>In this case, you may retrieve the <code>Link</code> header and parse it for links to the older or newer page. Keep in mind the following rules:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">GET</span> https://mastodon.example/api/v1/endpoint <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
+</span></span><span style="display:flex;"><span>Authorization<span style="color:#ff79c6">:</span> Bearer token
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Link: &lt;https://mastodon.example/api/v1/endpoint?max_id=7163058&gt;; rel=&#34;next&#34;, &lt;https://mastodon.example/api/v1/endpoint?min_id=7275607&gt;; rel=&#34;prev&#34;
+</span></span><span style="display:flex;"><span>[
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    // some Entity
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  // more Entities in an Array
+</span></span><span style="display:flex;"><span>]
+</span></span></code></pre></div><p>In this case, you may retrieve the <code>Link</code> header and parse it for links to the older or newer page. Keep in mind the following rules:</p>
 <ul>
 <li>The links will be returned all via one <code>Link</code> header, separated by a comma and a space (<code>, </code>)</li>
 <li>Each link consists of a URL and a link relation, separated by a semicolon and a space (<code>; </code>)</li>
@@ -1137,8 +1205,25 @@ Link: &lt;https://mastodon.example/api/v1/endpoint?max_id=7163058&gt;; rel=&#34;
 <li>The value of the link relation will be either <code>prev</code> or <code>next</code>.</li>
 </ul>
 <p>Following the <code>next</code> link should show you older results. Following the <code>prev</code> link should show you newer results.</p>
-<h2 id="formatting">Formatting</h2>
-<p>Plain text is not available for content from remote servers, and plain text syntax rules may vary wildly between Mastodon and other fediverse applications. For certain attributes, such as the content of statuses, <strong>Mastodon provides sanitized HTML</strong>. See <a href="/spec/activitypub/#sanitization">HTML Sanitization</a> for more details. You may expect these tags to appear in the content:</p>
+<h2 class="heading" id="formatting">
+	<span class="heading__text">Formatting</span>
+	<a class="heading__anchor-link" href="#formatting">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Plain text is not available for content from remote servers, and plain text syntax rules may vary wildly between Mastodon and other fediverse applications. For certain attributes, such as the content of statuses, <strong>Mastodon provides sanitized HTML</strong>. See <a href="/spec/activitypub/#sanitization">HTML Sanitization</a> for more details. You may expect these tags to appear in the content:</p>
 <ul>
 <li><code>&lt;p&gt;</code></li>
 <li><code>&lt;br&gt;</code></li>
@@ -1149,8 +1234,25 @@ Link: &lt;https://mastodon.example/api/v1/endpoint?max_id=7163058&gt;; rel=&#34;
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   ActivityPub &gt; HTML Sanitization
 </a>
-<h3 id="tags">Mentions, hashtags, and custom emoji</h3>
-<p>Mentions and hashtags are <code>&lt;a&gt;</code> tags. Custom emojis remain in their plain text shortcode form. To give those entities their semantic meaning and add special handling, such as opening a mentioned profile within your app instead of as a web page, metadata is included with the <a href="/entities/Status/">Status</a>, which can be matched to a particular tag.</p>
+<h3 class="heading" id="tags">
+	<span class="heading__text">Mentions, hashtags, and custom emoji</span>
+	<a class="heading__anchor-link" href="#tags">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Mentions and hashtags are <code>&lt;a&gt;</code> tags. Custom emojis remain in their plain text shortcode form. To give those entities their semantic meaning and add special handling, such as opening a mentioned profile within your app instead of as a web page, metadata is included with the <a href="/entities/Status/">Status</a>, which can be matched to a particular tag.</p>
 <a href="/entities/Status/" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Status entity
@@ -1167,23 +1269,91 @@ Link: &lt;https://mastodon.example/api/v1/endpoint?max_id=7163058&gt;; rel=&#34;
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Status#emojis
 </a>
-<h3 id="links">Link shortening</h3>
-<p>Links in Mastodon are not shortened using URL shorteners, and the usage of URL shorteners is heavily discouraged. URLs in text always count for 23 characters and are intended to be shortened visually. For that purpose, a link is marked up like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://example.com/page/that/is/very/long&#34;</span>&gt;
-  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;invisible&#34;</span>&gt;https://&lt;/<span style="color:#ff79c6">span</span>&gt;
-  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;ellipsis&#34;</span>&gt;example.com/page&lt;/<span style="color:#ff79c6">span</span>&gt;
-  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;invisible&#34;</span>&gt;/that/is/very/long&lt;/<span style="color:#ff79c6">span</span>&gt;
-&lt;/<span style="color:#ff79c6">a</span>&gt;
-</code></pre></div><p>The spans with the <code>invisible</code> class can be hidden. The middle span is intended to remain visible. It may have no class if the URL is not very long; otherwise, it will have an <code>ellipsis</code> class. No ellipsis (<code>…</code>) character is inserted in the markup; instead, you are expected to insert it yourself if you need it in your app.</p>
-<h2 id="filters">Filters</h2>
-<h3 id="server-filtered">Server-side filtering (v2, Mastodon 4.0 and above)</h3>
-<p>If a filter applies to a Status, a corresponding FilterResult will be included in the <code>filtered</code> attribute. Clients should check this attribute for any matches and use them to apply the intended filter action.</p>
+<h3 class="heading" id="links">
+	<span class="heading__text">Link shortening</span>
+	<a class="heading__anchor-link" href="#links">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Links in Mastodon are not shortened using URL shorteners, and the usage of URL shorteners is heavily discouraged. URLs in text always count for 23 characters and are intended to be shortened visually. For that purpose, a link is marked up like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#ff79c6">a</span> <span style="color:#50fa7b">href</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;https://example.com/page/that/is/very/long&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;invisible&#34;</span>&gt;https://&lt;/<span style="color:#ff79c6">span</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;ellipsis&#34;</span>&gt;example.com/page&lt;/<span style="color:#ff79c6">span</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#ff79c6">span</span> <span style="color:#50fa7b">class</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;invisible&#34;</span>&gt;/that/is/very/long&lt;/<span style="color:#ff79c6">span</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#ff79c6">a</span>&gt;
+</span></span></code></pre></div><p>The spans with the <code>invisible</code> class can be hidden. The middle span is intended to remain visible. It may have no class if the URL is not very long; otherwise, it will have an <code>ellipsis</code> class. No ellipsis (<code>…</code>) character is inserted in the markup; instead, you are expected to insert it yourself if you need it in your app.</p>
+<h2 class="heading" id="filters">
+	<span class="heading__text">Filters</span>
+	<a class="heading__anchor-link" href="#filters">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="server-filtered">
+	<span class="heading__text">Server-side filtering (v2, Mastodon 4.0 and above)</span>
+	<a class="heading__anchor-link" href="#server-filtered">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>If a filter applies to a Status, a corresponding FilterResult will be included in the <code>filtered</code> attribute. Clients should check this attribute for any matches and use them to apply the intended filter action.</p>
 <p>However, client implementations may still want to perform their own rule matching client-side, as this would allow retroactively applying filter changes without re-fetching posts from the server. When doing so, they should take care to not ignore <code>filtered</code> entries for which there are other attributes than <code>keyword_matches</code>, so as to handle extensions of the filtering system (e.g. <code>status_matches</code>).</p>
 <p>Matched filters need to be filtered based on context (<code>home</code>, <code>notifications</code>, <code>public</code>, <code>thread</code> or <code>profile</code>) and expiration date.</p>
 <p>When at least one active matched filter has <code>hide</code> for <code>filter_action</code>, the post should not be shown at all. Otherwise, if at least one active matched filter has <code>warn</code> for <code>filter_action</code>, the post should be hidden with a warning, and the user should be able to reveal the post after being informed of which filters matched (identified by <code>title</code> rather than the exact matched keywords).</p>
 <p>For extension purposes, unknown values for <code>filter_action</code> should be treated as <code>warn</code>.</p>
-<h3 id="client-filtered">Client-side filtering (v1, prior to Mastodon 4.0)</h3>
-<p>Clients must do their own text filtering based on filters returned from the API. The server will apply <code>irreversible</code> filters for <code>home</code> and <code>notifications</code> contexts, but <strong>anything else is still up to the client to filter</strong>! If a status is somehow not removed by an <code>irreversible</code> filter, the client should still filter it.</p>
+<h3 class="heading" id="client-filtered">
+	<span class="heading__text">Client-side filtering (v1, prior to Mastodon 4.0)</span>
+	<a class="heading__anchor-link" href="#client-filtered">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Clients must do their own text filtering based on filters returned from the API. The server will apply <code>irreversible</code> filters for <code>home</code> and <code>notifications</code> contexts, but <strong>anything else is still up to the client to filter</strong>! If a status is somehow not removed by an <code>irreversible</code> filter, the client should still filter it.</p>
 <p>Expired filters are not deleted by the server. They should no longer be applied, but they are still stored by the server, as users may update the expiry time to re-enable the filter. It is up to users to delete those filters eventually, if they wish to do so.</p>
 <p>If <code>whole_word</code> is true, the client app should do the following:</p>
 <ul>
@@ -1202,8 +1372,25 @@ Link: &lt;https://mastodon.example/api/v1/endpoint?max_id=7163058&gt;; rel=&#34;
   app/lib/feed_manager.rb
 </a>
 
-<h2 id="focal-points">Focal points for cropping media thumbnails</h2>
-<p>Server-side preview images are never cropped, to support a variety of apps and user interfaces. Therefore, the cropping must be done by those apps. To crop intelligently, focal points can be used to ensure a certain section of the image is always within the cropped viewport. See this <a href="https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point">guide on how focal points are defined</a>. In summary, floating points range from -1.0 to 1.0, left-to-right or bottom-to-top. (0,0) is the center of the image. (0.5, 0.5) would be in the center of the upper-right quadrant. (-0.5, -0.5) would be in the center of the lower-left quadrant. For reference, thumbnails in the Mastodon front end are most commonly 16:9.</p>
+<h2 class="heading" id="focal-points">
+	<span class="heading__text">Focal points for cropping media thumbnails</span>
+	<a class="heading__anchor-link" href="#focal-points">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Server-side preview images are never cropped, to support a variety of apps and user interfaces. Therefore, the cropping must be done by those apps. To crop intelligently, focal points can be used to ensure a certain section of the image is always within the cropped viewport. See this <a href="https://github.com/jonom/jquery-focuspoint#1-calculate-your-images-focus-point">guide on how focal points are defined</a>. In summary, floating points range from -1.0 to 1.0, left-to-right or bottom-to-top. (0,0) is the center of the image. (0.5, 0.5) would be in the center of the upper-right quadrant. (-0.5, -0.5) would be in the center of the lower-left quadrant. For reference, thumbnails in the Mastodon front end are most commonly 16:9.</p>
 <figure><img src="/assets/focal-points.jpg"
          alt="A demonstration of various focal points and their coordinates."/><figcaption>
             <p>A demonstration of various focal points and their coordinates.</p>
@@ -2295,7 +2482,7 @@ Link: &lt;https://mastodon.example/api/v1/endpoint?max_id=7163058&gt;; rel=&#34;
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/api/guidelines.md' style="color: #687590;">Improve this page</a>
+      Last updated December 7, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/api%5cguidelines.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2341,7 +2528,7 @@ Link: &lt;https://mastodon.example/api/v1/endpoint?max_id=7163058&gt;; rel=&#34;
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/api/guidelines.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/api%5cguidelines.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Roles - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/roles/">
+  <meta property="og:url" content="http://localhost:1313/admin/roles/">
 
   
     <meta name="description" content="Management of roles from the admin dashboard.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Roles">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/roles/">
+  <link rel="canonical" href="http://localhost:1313/admin/roles/">
 </head>
 
 <body>
@@ -1074,32 +1074,134 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h1 id="roles">Roles</h1>
-<p>When the database is seeded, roles are derived from the values present in <a href="https://github.com/mastodon/mastodon/blob/main/config/roles.yml"><code>~/config/roles.yml</code></a>.</p>
+    <h1 class="heading" id="roles">
+	<span class="heading__text">Roles</span>
+	<a class="heading__anchor-link" href="#roles">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h1><p>When the database is seeded, roles are derived from the values present in <a href="https://github.com/mastodon/mastodon/blob/main/config/roles.yml"><code>~/config/roles.yml</code></a>.</p>
 <a href="/entities/Role/" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Role
 </a>
-<p>The resultant <a href="#default-roles">default roles</a> are <code>Owner</code>, <code>Admin</code>, and <code>Moderator</code>.</p>
-<p>A role and its attributes can be created using <a href="#add-role">Add role</a>, present on the <em>Roles</em> (<code>/admin/roles</code>) page.</p>
-<p><img src="/assets/admin-roles-ui.png" alt=""></p>
-<p>An existing role&rsquo;s attributes can be changed using the <a href="#edit-role">edit role</a> feature.</p>
-<h2 id="default-roles">Default roles</h2>
-<h3 id="default-base-role">Base role (<em>Default permissions</em>)</h3>
-<p>Affects all users, including users without an assigned role.</p>
+<p>The resultant <a href="/admin/roles/#default-roles">default roles</a> are <code>Owner</code>, <code>Admin</code>, and <code>Moderator</code>.</p>
+<p>A role and its attributes can be created using <a href="/admin/roles/#add-role">Add role</a>, present on the <em>Roles</em> (<code>/admin/roles</code>) page.</p>
+<p><img src="/assets/admin-roles-ui.png"></p>
+<p>An existing role&rsquo;s attributes can be changed using the <a href="/admin/roles/#edit-role">edit role</a> feature.</p>
+<h2 class="heading" id="default-roles">
+	<span class="heading__text">Default roles</span>
+	<a class="heading__anchor-link" href="#default-roles">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="default-base-role">
+	<span class="heading__text">Base role (<em>Default permissions</em>)</span>
+	<a class="heading__anchor-link" href="#default-base-role">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Affects all users, including users without an assigned role.</p>
 <p>The only permission flag that can be altered for this role is <strong>Invite Users</strong>. Enabling this permission allows all users to send invitations.</p>
 <p>The base role has a priority of <code>0</code>, and this value cannot be altered.</p>
-<h3 id="default-owner-role">Owner</h3>
-<p>A role that is assigned the <strong>Administrator</strong> permission flag, bypassing all permissions. Users with the owner role have every <a href="/entities/Role/#permission-flags">permission flag</a> enabled.</p>
+<h3 class="heading" id="default-owner-role">
+	<span class="heading__text">Owner</span>
+	<a class="heading__anchor-link" href="#default-owner-role">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>A role that is assigned the <strong>Administrator</strong> permission flag, bypassing all permissions. Users with the owner role have every <a href="/entities/Role/#permission-flags">permission flag</a> enabled.</p>
 <p>The role&rsquo;s <em>Name</em>, <em>Badge color</em>, and <em>Display badge</em> attributes can be changed. No permissions can be edited / revoked from this role.</p>
-<p>The owner role has the highest <a href="#role-priority">priority</a> of any role (<code>1000</code>). The owner can modify any other role attributes. No role can be created which supersedes the owner role, as <a href="#role-priority">role priority</a> for new and existing roles must be &lt;= <code>999</code>.</p>
-<h3 id="default-admin-role">Admin</h3>
-<p>A role that is assigned all <strong>Moderation</strong> and <strong>Administration</strong> permission flags.</p>
+<p>The owner role has the highest <a href="/admin/roles/#role-priority">priority</a> of any role (<code>1000</code>). The owner can modify any other role attributes. No role can be created which supersedes the owner role, as <a href="/admin/roles/#role-priority">role priority</a> for new and existing roles must be &lt;= <code>999</code>.</p>
+<h3 class="heading" id="default-admin-role">
+	<span class="heading__text">Admin</span>
+	<a class="heading__anchor-link" href="#default-admin-role">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>A role that is assigned all <strong>Moderation</strong> and <strong>Administration</strong> permission flags.</p>
 <p>The <strong>DevOps</strong> permission flag for this role is disabled, but can be enabled by an <strong>Owner</strong> (or a custom role with a higher priority value).</p>
 <p>The role&rsquo;s <em>Name</em>, <em>Badge color</em>, and <em>Display badge</em> attributes can be changed.</p>
 <p>The admin role has a priority of <code>100</code>.</p>
-<h3 id="default-moderator-role">Moderator</h3>
-<p>A role that is assigned certain <strong>Moderation</strong> permission flags. These include&hellip;</p>
+<h3 class="heading" id="default-moderator-role">
+	<span class="heading__text">Moderator</span>
+	<a class="heading__anchor-link" href="#default-moderator-role">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>A role that is assigned certain <strong>Moderation</strong> permission flags. These include&hellip;</p>
 <ul>
 <li><strong>View Dashboard</strong></li>
 <li><strong>View Audit Log</strong></li>
@@ -1109,11 +1211,45 @@
 </ul>
 <p>The role&rsquo;s <em>Name</em>, <em>Badge color</em>, and <em>Display badge</em> attributes can be changed.</p>
 <p>The moderator role has a priority of <code>10</code>.</p>
-<h2 id="add-role">Add Role</h2>
-<p>The <code>admin/roles/new</code> page allows for the creation of a custom role.</p>
-<p><img src="/assets/admin-roles-new-ui.png" alt=""></p>
-<h3 id="add-role-input-fields">Input Fields</h3>
-<a href="/entities/Role/#name" class="page-ref">
+<h2 class="heading" id="add-role">
+	<span class="heading__text">Add Role</span>
+	<a class="heading__anchor-link" href="#add-role">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>The <code>admin/roles/new</code> page allows for the creation of a custom role.</p>
+<p><img src="/assets/admin-roles-new-ui.png"></p>
+<h3 class="heading" id="add-role-input-fields">
+	<span class="heading__text">Input Fields</span>
+	<a class="heading__anchor-link" href="#add-role-input-fields">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><a href="/entities/Role/#name" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Name
 </a>
@@ -1122,8 +1258,25 @@
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Badge color
 </a>
-<h3 id="role-priority">Priority</h3>
-<ul>
+<h3 class="heading" id="role-priority">
+	<span class="heading__text">Priority</span>
+	<a class="heading__anchor-link" href="#role-priority">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li>Defaults to <code>0</code>
 <ul>
 <li>Cannot be &gt; <code>999</code></li>
@@ -1143,11 +1296,28 @@
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   Permissions
 </a>
-<h2 id="edit-role">Edit role</h2>
-<p><img src="/assets/admin-roles-edit-ui.png" alt=""></p>
-<p>An existing role and its attributes can be edited using <em>Edit</em> in the role list. <a href="#add-role-input-fields">Input fields</a> can be changed and saved, just as they can when creating a new role. The role can also be deleted using this form.</p>
-<p><img src="/assets/admin-roles-edit-role-ui.png" alt=""></p>
-<p>A logged in user with permission to <strong>Manage Roles</strong> will always be able to see every role, but cannot modify roles that exceed or are equal to their assigned role&rsquo;s <a href="#role-priority">priority</a>.</p>
+<h2 class="heading" id="edit-role">
+	<span class="heading__text">Edit role</span>
+	<a class="heading__anchor-link" href="#edit-role">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p><img src="/assets/admin-roles-edit-ui.png"></p>
+<p>An existing role and its attributes can be edited using <em>Edit</em> in the role list. <a href="/admin/roles/#add-role-input-fields">Input fields</a> can be changed and saved, just as they can when creating a new role. The role can also be deleted using this form.</p>
+<p><img src="/assets/admin-roles-edit-role-ui.png"></p>
+<p>A logged in user with permission to <strong>Manage Roles</strong> will always be able to see every role, but cannot modify roles that exceed or are equal to their assigned role&rsquo;s <a href="/admin/roles/#role-priority">priority</a>.</p>
 
     
 
@@ -2250,7 +2420,7 @@
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/roles.md' style="color: #687590;">Improve this page</a>
+      Last updated December 7, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5croles.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2296,7 +2466,7 @@
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/roles.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5croles.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

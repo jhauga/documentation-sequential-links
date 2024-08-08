@@ -1,1293 +1,957 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://docs.joinmastodon.org/entities/Account/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/accounts/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/AccountWarning/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/spec/activitypub/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/accounts/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/domain_blocks/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/reports/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/trends/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_Account/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_CanonicalEmailBlock/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_Cohort/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_Dimension/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_DomainAllow/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_DomainBlock/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_EmailDomainBlock/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_Ip/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_IpBlock/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_Measure/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Admin_Report/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+    <loc>http://localhost:1313/entities/Account/</loc>
+    <lastmod>2023-10-13T10:19:13+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/accounts/</loc>
+    <lastmod>2024-05-07T11:43:48+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/AccountWarning/</loc>
+    <lastmod>2024-07-15T11:39:10+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/spec/activitypub/</loc>
+    <lastmod>2023-04-11T07:57:14-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_Account/</loc>
+    <lastmod>2023-03-08T17:40:02+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_CanonicalEmailBlock/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_Cohort/</loc>
+    <lastmod>2024-01-23T04:02:10-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_Dimension/</loc>
+    <lastmod>2023-09-20T10:32:44+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_DomainAllow/</loc>
+    <lastmod>2023-12-05T19:18:58+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_DomainBlock/</loc>
+    <lastmod>2024-05-07T19:54:14+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_EmailDomainBlock/</loc>
+    <lastmod>2023-12-05T19:18:58+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_Ip/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_IpBlock/</loc>
+    <lastmod>2023-12-05T19:18:58+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_Measure/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Admin_Report/</loc>
+    <lastmod>2023-03-08T17:40:02+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/accounts/</loc>
+    <lastmod>2023-12-07T19:58:05+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/domain_blocks/</loc>
+    <lastmod>2024-05-07T19:54:14+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/reports/</loc>
+    <lastmod>2023-12-07T19:58:05+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/trends/</loc>
+    <lastmod>2023-12-07T19:58:05+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/</loc>
+    <lastmod>2024-08-01T16:25:08+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/"
+                href="http://localhost:1313/zh-cn/admin/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/"
+                href="http://localhost:1313/admin/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Announcement/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/announcements/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/api/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Appeal/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Application/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/apps/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/backups/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Announcement/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/announcements/</loc>
+    <lastmod>2024-03-29T10:18:40+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/api/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Appeal/</loc>
+    <lastmod>2024-07-15T11:39:10+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Application/</loc>
+    <lastmod>2023-11-28T19:25:04+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/apps/</loc>
+    <lastmod>2023-12-11T04:47:29+10:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/backups/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/backups/"
+                href="http://localhost:1313/zh-cn/admin/backups/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/backups/"
+                href="http://localhost:1313/admin/backups/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/spec/bearcaps/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/blocks/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/bookmarks/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/dev/disclosure/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/canonical_email_blocks/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/optional/captcha/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/categories/</loc>
+  </url><url>
+    <loc>http://localhost:1313/spec/bearcaps/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/blocks/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/bookmarks/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/dev/disclosure/</loc>
+    <lastmod>2023-05-25T13:25:10+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/canonical_email_blocks/</loc>
+    <lastmod>2023-09-20T10:32:44+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/optional/captcha/</loc>
+    <lastmod>2024-03-27T09:53:13+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/categories/"
+                href="http://localhost:1313/zh-cn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/categories/"
+                href="http://localhost:1313/ja/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/categories/"
+                href="http://localhost:1313/pl/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/categories/"
+                href="http://localhost:1313/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/client/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/dev/code/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/elasticsearch/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/config/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/client/</loc>
+    <lastmod>2024-06-11T12:17:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/dev/code/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/elasticsearch/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/config/</loc>
+    <lastmod>2024-06-19T03:45:28-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/config/"
+                href="http://localhost:1313/zh-cn/admin/config/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/config/"
+                href="http://localhost:1313/admin/config/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Context/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Conversation/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/conversations/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/custom_emojis/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/CustomEmoji/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/troubleshooting/index-corruption/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/moderating/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Context/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Conversation/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/conversations/</loc>
+    <lastmod>2023-12-05T21:50:37+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/custom_emojis/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/CustomEmoji/</loc>
+    <lastmod>2024-04-29T08:00:54+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/troubleshooting/index-corruption/</loc>
+    <lastmod>2023-12-08T22:19:04+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/moderating/</loc>
+    <lastmod>2023-03-17T04:47:32-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/moderating/"
+                href="http://localhost:1313/zh-cn/user/moderating/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/moderating/"
+                href="http://localhost:1313/ja/user/moderating/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/moderating/"
+                href="http://localhost:1313/pl/user/moderating/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/moderating/"
+                href="http://localhost:1313/user/moderating/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/dev/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/dimensions/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/directory/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/domain_allows/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/domain_blocks/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/DomainBlock/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/email_domain_blocks/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/emails/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/endorsements/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Error/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/ExtendedDescription/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/FamiliarFollowers/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/favourites/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/featured_tags/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/FeaturedTag/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Filter/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/FilterKeyword/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/FilterResult/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/filters/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/FilterStatus/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/follow_requests/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/followed_tags/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/client/intro/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/api/guidelines/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/IdentityProof/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/install/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/dev/</loc>
+    <lastmod>2023-12-10T12:40:20-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/dimensions/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/directory/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/domain_allows/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/domain_blocks/</loc>
+    <lastmod>2023-12-05T21:50:37+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/DomainBlock/</loc>
+    <lastmod>2024-08-03T16:58:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/email_domain_blocks/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/emails/</loc>
+    <lastmod>2024-06-11T10:24:06+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/endorsements/</loc>
+    <lastmod>2023-08-21T09:40:12-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/</loc>
+    <lastmod>2024-08-03T16:58:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Error/</loc>
+    <lastmod>2023-03-08T17:40:02+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/ExtendedDescription/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/FamiliarFollowers/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/favourites/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/featured_tags/</loc>
+    <lastmod>2024-07-31T19:22:41+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/FeaturedTag/</loc>
+    <lastmod>2024-07-12T14:40:24+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Filter/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/FilterKeyword/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/FilterResult/</loc>
+    <lastmod>2023-12-08T08:50:10-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/filters/</loc>
+    <lastmod>2023-12-07T22:36:38+09:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/FilterStatus/</loc>
+    <lastmod>2023-02-06T19:14:07-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/follow_requests/</loc>
+    <lastmod>2023-08-21T09:40:12-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/followed_tags/</loc>
+    <lastmod>2024-06-11T10:18:16+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/client/intro/</loc>
+    <lastmod>2024-03-27T03:49:25-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/api/guidelines/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/IdentityProof/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/install/</loc>
+    <lastmod>2024-08-01T16:25:08+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/install/"
+                href="http://localhost:1313/zh-cn/admin/install/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/install/"
+                href="http://localhost:1313/admin/install/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/optional/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/optional/</loc>
+    <lastmod>2023-09-06T09:17:54+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/optional/"
+                href="http://localhost:1313/zh-cn/admin/optional/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/optional/"
+                href="http://localhost:1313/admin/optional/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Instance/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/instance/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/ip_blocks/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/client/libraries/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/List/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/lists/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/client/authorized/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Marker/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/markers/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/measures/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/media/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/MediaAttachment/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/spec/microformats/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/migrating/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Instance/</loc>
+    <lastmod>2024-04-02T16:28:17-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/instance/</loc>
+    <lastmod>2024-04-02T16:28:17-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/ip_blocks/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/client/libraries/</loc>
+    <lastmod>2024-05-21T11:24:39+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/List/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/lists/</loc>
+    <lastmod>2023-12-05T21:50:37+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/client/authorized/</loc>
+    <lastmod>2024-06-11T12:17:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Marker/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/markers/</loc>
+    <lastmod>2024-06-11T10:15:55+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/measures/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/media/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/MediaAttachment/</loc>
+    <lastmod>2024-06-19T01:45:48-07:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/</loc>
+    <lastmod>2024-08-02T15:36:31+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/spec/microformats/</loc>
+    <lastmod>2023-02-06T19:14:07-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/migrating/</loc>
+    <lastmod>2024-03-27T04:54:18-04:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/migrating/"
+                href="http://localhost:1313/zh-cn/admin/migrating/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/migrating/"
+                href="http://localhost:1313/admin/migrating/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/moderation/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/moderation/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/moderation/"
+                href="http://localhost:1313/zh-cn/admin/moderation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/moderation/"
+                href="http://localhost:1313/admin/moderation/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/contacts/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/contacts/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/contacts/"
+                href="http://localhost:1313/zh-cn/user/contacts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/contacts/"
+                href="http://localhost:1313/ja/user/contacts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/contacts/"
+                href="http://localhost:1313/pl/user/contacts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/contacts/"
+                href="http://localhost:1313/user/contacts/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/moving/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/moving/</loc>
+    <lastmod>2023-12-07T03:08:44-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/moving/"
+                href="http://localhost:1313/zh-cn/user/moving/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/moving/"
+                href="http://localhost:1313/ja/user/moving/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/moving/"
+                href="http://localhost:1313/pl/user/moving/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/moving/"
+                href="http://localhost:1313/user/moving/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/mutes/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Notification/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/NotificationPolicy/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/NotificationRequest/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/notifications/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/spec/oauth/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/oauth/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/api/oauth-scopes/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/optional/object-storage/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/client/token/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/oembed/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/optional/tor/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/mutes/</loc>
+    <lastmod>2023-08-21T09:40:12-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Notification/</loc>
+    <lastmod>2024-07-15T11:39:10+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/NotificationPolicy/</loc>
+    <lastmod>2024-06-13T18:01:35+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/NotificationRequest/</loc>
+    <lastmod>2024-07-12T16:26:07+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/notifications/</loc>
+    <lastmod>2024-08-02T15:36:31+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/spec/oauth/</loc>
+    <lastmod>2023-03-08T17:40:02+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/oauth/</loc>
+    <lastmod>2023-12-05T21:50:37+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/api/oauth-scopes/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/optional/object-storage/</loc>
+    <lastmod>2024-02-20T10:10:11-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/client/token/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/oembed/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/optional/tor/</loc>
+    <lastmod>2024-01-25T11:47:21-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/optional/tor/"
+                href="http://localhost:1313/zh-cn/admin/optional/tor/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/optional/tor/"
+                href="http://localhost:1313/admin/optional/tor/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/client/public/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Poll/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/polls/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/posting/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/client/public/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Poll/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/polls/</loc>
+    <lastmod>2024-07-12T14:35:05+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/posting/</loc>
+    <lastmod>2024-08-01T10:24:43-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/posting/"
+                href="http://localhost:1313/zh-cn/user/posting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/posting/"
+                href="http://localhost:1313/ja/user/posting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/posting/"
+                href="http://localhost:1313/pl/user/posting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/posting/"
+                href="http://localhost:1313/user/posting/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Preferences/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/preferences/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/prerequisites/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Preferences/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/preferences/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/prerequisites/</loc>
+    <lastmod>2024-08-01T16:25:08+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/prerequisites/"
+                href="http://localhost:1313/zh-cn/admin/prerequisites/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/prerequisites/"
+                href="http://localhost:1313/admin/prerequisites/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/PreviewCard/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/profile/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/discoverability/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/PreviewCard/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/profile/</loc>
+    <lastmod>2023-09-09T19:13:35-03:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/discoverability/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/discoverability/"
+                href="http://localhost:1313/zh-cn/user/discoverability/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/discoverability/"
+                href="http://localhost:1313/ja/user/discoverability/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/discoverability/"
+                href="http://localhost:1313/pl/user/discoverability/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/discoverability/"
+                href="http://localhost:1313/user/discoverability/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/proofs/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/optional/object-storage-proxy/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/push/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/api/rate-limits/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Reaction/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Relationship/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/RelationshipSeveranceEvent/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Report/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/reports/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/admin/retention/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Role/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/roles/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/dev/routes/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Rule/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/run-your-own/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/proofs/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/optional/object-storage-proxy/</loc>
+    <lastmod>2023-12-12T01:18:08+08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/push/</loc>
+    <lastmod>2023-12-05T21:50:37+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/api/rate-limits/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Reaction/</loc>
+    <lastmod>2023-09-20T10:32:44+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Relationship/</loc>
+    <lastmod>2024-01-07T23:22:34+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/RelationshipSeveranceEvent/</loc>
+    <lastmod>2024-01-13T23:20:13+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Report/</loc>
+    <lastmod>2023-02-06T19:14:07-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/reports/</loc>
+    <lastmod>2024-03-27T03:49:49-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/admin/retention/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Role/</loc>
+    <lastmod>2024-04-29T08:00:41+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/roles/</loc>
+    <lastmod>2023-12-07T14:47:38-05:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/dev/routes/</loc>
+    <lastmod>2023-03-08T17:40:02+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Rule/</loc>
+    <lastmod>2024-07-16T01:42:47+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/run-your-own/</loc>
+    <lastmod>2023-08-21T15:25:20+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/run-your-own/"
+                href="http://localhost:1313/zh-cn/user/run-your-own/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/run-your-own/"
+                href="http://localhost:1313/ja/user/run-your-own/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/run-your-own/"
+                href="http://localhost:1313/pl/user/run-your-own/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/run-your-own/"
+                href="http://localhost:1313/user/run-your-own/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/scaling/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/scaling/</loc>
+    <lastmod>2024-04-11T09:37:39-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/scaling/"
+                href="http://localhost:1313/zh-cn/admin/scaling/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/scaling/"
+                href="http://localhost:1313/admin/scaling/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/scheduled_statuses/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/ScheduledStatus/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Search/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/search/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/spec/security/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/preferences/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/scheduled_statuses/</loc>
+    <lastmod>2023-12-05T21:50:37+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/ScheduledStatus/</loc>
+    <lastmod>2023-02-06T19:14:07-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Search/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/search/</loc>
+    <lastmod>2024-07-23T13:07:05+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/spec/security/</loc>
+    <lastmod>2024-01-11T02:50:13-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/preferences/</loc>
+    <lastmod>2023-12-05T12:19:32-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/preferences/"
+                href="http://localhost:1313/zh-cn/user/preferences/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/preferences/"
+                href="http://localhost:1313/ja/user/preferences/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/preferences/"
+                href="http://localhost:1313/pl/user/preferences/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/preferences/"
+                href="http://localhost:1313/user/preferences/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/dev/setup/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/setup/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/dev/setup/</loc>
+    <lastmod>2023-12-10T12:40:20-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/setup/</loc>
+    <lastmod>2022-11-20T01:42:42-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/setup/"
+                href="http://localhost:1313/zh-cn/admin/setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/setup/"
+                href="http://localhost:1313/admin/setup/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/profile/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/profile/</loc>
+    <lastmod>2024-02-09T17:01:31-07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/profile/"
+                href="http://localhost:1313/zh-cn/user/profile/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/profile/"
+                href="http://localhost:1313/ja/user/profile/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/profile/"
+                href="http://localhost:1313/pl/user/profile/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/profile/"
+                href="http://localhost:1313/user/profile/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/signup/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/signup/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/signup/"
+                href="http://localhost:1313/zh-cn/user/signup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/signup/"
+                href="http://localhost:1313/ja/user/signup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/signup/"
+                href="http://localhost:1313/pl/user/signup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/signup/"
+                href="http://localhost:1313/user/signup/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/optional/sso/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/optional/sso/</loc>
+    <lastmod>2024-02-19T11:31:07-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/optional/sso/"
+                href="http://localhost:1313/zh-cn/admin/optional/sso/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/optional/sso/"
+                href="http://localhost:1313/admin/optional/sso/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/spec/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Status/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/StatusEdit/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/statuses/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/StatusSource/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/streaming/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Suggestion/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/suggestions/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Tag/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/spec/</loc>
+    <lastmod>2024-01-11T02:50:13-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Status/</loc>
+    <lastmod>2023-02-06T19:14:07-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/StatusEdit/</loc>
+    <lastmod>2023-12-08T07:40:09-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/statuses/</loc>
+    <lastmod>2024-05-07T11:43:48+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/StatusSource/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/streaming/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Suggestion/</loc>
+    <lastmod>2024-07-15T22:35:38+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/suggestions/</loc>
+    <lastmod>2023-12-05T21:50:37+03:30</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Tag/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/tags/"
+                href="http://localhost:1313/zh-cn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/tags/"
+                href="http://localhost:1313/ja/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/tags/"
+                href="http://localhost:1313/pl/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/tags/"
+                href="http://localhost:1313/tags/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/tags/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/dev/overview/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/timelines/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Token/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/Translation/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/methods/trends/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/troubleshooting/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/tags/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/dev/overview/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/timelines/</loc>
+    <lastmod>2024-07-15T22:37:01+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Token/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/Translation/</loc>
+    <lastmod>2024-04-02T13:12:15+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/methods/trends/</loc>
+    <lastmod>2022-12-14T15:55:30-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/troubleshooting/</loc>
+    <lastmod>2023-12-10T14:41:43-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/troubleshooting/"
+                href="http://localhost:1313/zh-cn/admin/troubleshooting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/troubleshooting/"
+                href="http://localhost:1313/admin/troubleshooting/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/upgrading/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/upgrading/</loc>
+    <lastmod>2023-12-07T11:46:29-08:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/upgrading/"
+                href="http://localhost:1313/zh-cn/admin/upgrading/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/upgrading/"
+                href="http://localhost:1313/admin/upgrading/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/</loc>
+    <lastmod>2024-08-01T10:24:43-05:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/"
+                href="http://localhost:1313/zh-cn/user/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/"
+                href="http://localhost:1313/ja/user/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/"
+                href="http://localhost:1313/pl/user/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/"
+                href="http://localhost:1313/user/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/external/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/external/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/external/"
+                href="http://localhost:1313/zh-cn/user/external/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/external/"
+                href="http://localhost:1313/ja/user/external/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/external/"
+                href="http://localhost:1313/pl/user/external/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/external/"
+                href="http://localhost:1313/user/external/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/admin/tootctl/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/admin/tootctl/</loc>
+    <lastmod>2024-06-11T12:25:14+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/admin/tootctl/"
+                href="http://localhost:1313/zh-cn/admin/tootctl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/admin/tootctl/"
+                href="http://localhost:1313/admin/tootctl/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/user/network/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/user/network/</loc>
+    <lastmod>2023-04-04T10:44:41+02:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/network/"
+                href="http://localhost:1313/zh-cn/user/network/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/network/"
+                href="http://localhost:1313/ja/user/network/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/network/"
+                href="http://localhost:1313/pl/user/network/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/network/"
+                href="http://localhost:1313/user/network/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/V1_Filter/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/V1_Instance/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/spec/webfinger/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/entities/WebPushSubscription/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/V1_Filter/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/V1_Instance/</loc>
+    <lastmod>2024-03-13T14:56:28+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/spec/webfinger/</loc>
+    <lastmod>2023-02-06T19:14:07-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/entities/WebPushSubscription/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2024-01-14T01:35:04+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/"
+                href="http://localhost:1313/zh-cn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/"
+                href="http://localhost:1313/ja/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/"
+                href="http://localhost:1313/pl/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/"
+                href="http://localhost:1313/"
                 />
   </url>
-  
 </urlset>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Admin::Dimension - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/entities/Admin_Dimension/">
+  <meta property="og:url" content="http://localhost:1313/entities/Admin_Dimension/">
 
   
     <meta name="description" content="Represents qualitative data about the server.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Admin::Dimension">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/entities/Admin_Dimension/">
+  <link rel="canonical" href="http://localhost:1313/entities/Admin_Dimension/">
 </head>
 
 <body>
@@ -1088,225 +1088,565 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="attributes">Attributes</h2>
-<h3 id="key"><code>key</code></h3>
-<p><strong>Description:</strong> The unique keystring for the requested dimension.<br>
+    <h2 class="heading" id="attributes">
+	<span class="heading__text">Attributes</span>
+	<a class="heading__anchor-link" href="#attributes">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="key">
+	<span class="heading__text"><code>key</code></span>
+	<a class="heading__anchor-link" href="#key">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The unique keystring for the requested dimension.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h3 id="data"><code>data</code></h3>
-<p><strong>Description:</strong> The data available for the requested dimension.<br>
+<h3 class="heading" id="data">
+	<span class="heading__text"><code>data</code></span>
+	<a class="heading__anchor-link" href="#data">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The data available for the requested dimension.<br>
 <strong>Type:</strong> Array of Hash<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h2 id="data-attributes">Data attributes</h2>
-<h3 id="data-key"><code>key</code></h3>
-<p><strong>Description:</strong> The unique keystring for this data item.<br>
+<h2 class="heading" id="data-attributes">
+	<span class="heading__text">Data attributes</span>
+	<a class="heading__anchor-link" href="#data-attributes">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="data-key">
+	<span class="heading__text"><code>key</code></span>
+	<a class="heading__anchor-link" href="#data-key">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The unique keystring for this data item.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h3 id="data-human_key"><code>human_key</code></h3>
-<p><strong>Description:</strong> A human-readable key for this data item.<br>
+<h3 class="heading" id="data-human_key">
+	<span class="heading__text"><code>human_key</code></span>
+	<a class="heading__anchor-link" href="#data-human_key">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> A human-readable key for this data item.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h3 id="data-value"><code>value</code></h3>
-<p><strong>Description:</strong> The value for this data item.<br>
+<h3 class="heading" id="data-value">
+	<span class="heading__text"><code>value</code></span>
+	<a class="heading__anchor-link" href="#data-value">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The value for this data item.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h3 id="data-unit"><code>unit</code> <span class="api-method-parameter-required">optional</span></h3>
-<p><strong>Description:</strong> The units associated with this data item&rsquo;s value, if applicable.<br>
+<h3 class="heading" id="data-unit">
+	<span class="heading__text"><code>unit</code> <span class="api-method-parameter-required">optional</span></span>
+	<a class="heading__anchor-link" href="#data-unit">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> The units associated with this data item&rsquo;s value, if applicable.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h3 id="data-human_value"><code>human_value</code> <span class="api-method-parameter-required">optional</span></h3>
-<p><strong>Description:</strong> A human-readable formatted value for this data item.<br>
+<h3 class="heading" id="data-human_value">
+	<span class="heading__text"><code>human_value</code> <span class="api-method-parameter-required">optional</span></span>
+	<a class="heading__anchor-link" href="#data-human_value">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p><strong>Description:</strong> A human-readable formatted value for this data item.<br>
 <strong>Type:</strong> String<br>
 <strong>Version history:</strong><br>
 3.5.0 - added</p>
-<h2 id="examples">Examples</h2>
-<h3 id="languages"><code>languages</code></h3>
-<p>Count how many local statuses are posted in each language, then show dimensional data about how popular each language is.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;languages&#34;</span>,
-	<span style="color:#ff79c6">&#34;data&#34;</span>: [
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;English&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;10&#34;</span>
-		},
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;es&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Spanish&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>
-		},
-		// ...
-	]
-}
-</code></pre></div><h3 id="sources"><code>sources</code></h3>
-<p>Count how many local statuses were authored by a given client, then show dimensional data about how popular each client is.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;sources&#34;</span>,
-	<span style="color:#ff79c6">&#34;data&#34;</span>: [
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;web&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Website&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;2&#34;</span>
-		},
-		// ...
-	]
-}
-</code></pre></div><h3 id="servers"><code>servers</code></h3>
-<p>Count how many statuses were posted from a given domain, then show dimensional data about the most popular remote servers.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;servers&#34;</span>,
-    <span style="color:#ff79c6">&#34;data&#34;</span>: [
-      {
-        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;botsin.space&#34;</span>,
-        <span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;botsin.space&#34;</span>,
-        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;13738&#34;</span>
-      },
-      {
-        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;mastodon.social&#34;</span>,
-        <span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;mastodon.social&#34;</span>,
-        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;8928&#34;</span>
-      },
-		// ...
-    ]
-  }
-</code></pre></div><h3 id="space_usage"><code>space_usage</code></h3>
-<p>Show dimensional data about how much space is used by each software in your server stack.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;space_usage&#34;</span>,
-	<span style="color:#ff79c6">&#34;data&#34;</span>: [
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;postgresql&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;PostgreSQL&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;14924935&#34;</span>,
-			<span style="color:#ff79c6">&#34;unit&#34;</span>: <span style="color:#f1fa8c">&#34;bytes&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;14.2 MB&#34;</span>
-		},
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;redis&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Redis&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;1972544&#34;</span>,
-			<span style="color:#ff79c6">&#34;unit&#34;</span>: <span style="color:#f1fa8c">&#34;bytes&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;1.88 MB&#34;</span>
-		},
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;media&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Media storage&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
-			<span style="color:#ff79c6">&#34;unit&#34;</span>: <span style="color:#f1fa8c">&#34;bytes&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;0 Bytes&#34;</span>
-		}
-	]
-}
-</code></pre></div><h3 id="software_versions"><code>software_versions</code></h3>
-<p>Show dimensional data about which versions of software in your server stack you are using.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;software_versions&#34;</span>,
-	<span style="color:#ff79c6">&#34;data&#34;</span>: [
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;mastodon&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Mastodon&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;3.5.3&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;3.5.3&#34;</span>
-		},
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;ruby&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Ruby&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;3.0.4p208&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;3.0.4p208&#34;</span>
-		},
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;postgresql&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;PostgreSQL&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;10.22&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;10.22&#34;</span>
-		},
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;redis&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Redis&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;4.0.9&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;4.0.9&#34;</span>
-		}
-	]
-}
-</code></pre></div><h3 id="tag_servers"><code>tag_servers</code></h3>
-<p>Count how many statuses contain the trending tag with the given <code>id</code>, then show dimensional data about the most popular servers using that trending tag.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;tag_servers&#34;</span>,
-	<span style="color:#ff79c6">&#34;data&#34;</span>: [
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;live.hatnix.net&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;live.hatnix.net&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;6&#34;</span>
-		},
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;linuxrocks.online&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;linuxrocks.online&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;4&#34;</span>
-		}
-	]
-}
-</code></pre></div><h3 id="tag_languages"><code>tag_languages</code></h3>
-<p>Count how many statuses contain the trending tag with the given <code>id</code>, then show dimensional data about the most popular languages for those statuses.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;tag_languages&#34;</span>,
-    <span style="color:#ff79c6">&#34;data&#34;</span>: [
-      {
-        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;und&#34;</span>,
-        <span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;und&#34;</span>,
-        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;8&#34;</span>
-      },
-      {
-        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
-        <span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;English&#34;</span>,
-        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>
-      },
-		// ...
-    ]
-  }
-</code></pre></div><h3 id="instance_accounts"><code>instance_accounts</code></h3>
-<p>Count how many followers each account from the given <code>domain</code> has, then show dimensional data about the most popular accounts from that remote server.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;instance_accounts&#34;</span>,
-	<span style="color:#ff79c6">&#34;data&#34;</span>: [
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;fribbledom&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;fribbledom&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;33&#34;</span>
-		},
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;ShugoWah&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;ShugoWah&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;26&#34;</span>
-		},
-		// ...
-	]
-}
-</code></pre></div><h3 id="instance_languages"><code>instance_languages</code></h3>
-<p>Count how many statuses from the given <code>domain</code> are posted in each language, then show dimensional data about how popular each language is on that remote server.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;instance_languages&#34;</span>,
-	<span style="color:#ff79c6">&#34;data&#34;</span>: [
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;English&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;5848&#34;</span>
-		},
-		{
-			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;de&#34;</span>,
-			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;German&#34;</span>,
-			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;155&#34;</span>
-		},
-		// ...
-	]
-}
-</code></pre></div><h2 id="see-also">See also</h2>
-<a href="/methods/admin/dimensions/" class="page-ref">
+<h2 class="heading" id="examples">
+	<span class="heading__text">Examples</span>
+	<a class="heading__anchor-link" href="#examples">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="languages">
+	<span class="heading__text"><code>languages</code></span>
+	<a class="heading__anchor-link" href="#languages">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Count how many local statuses are posted in each language, then show dimensional data about how popular each language is.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;languages&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;English&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;10&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;es&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Spanish&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		<span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>	]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="sources">
+	<span class="heading__text"><code>sources</code></span>
+	<a class="heading__anchor-link" href="#sources">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Count how many local statuses were authored by a given client, then show dimensional data about how popular each client is.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;sources&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;web&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Website&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		<span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>	]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="servers">
+	<span class="heading__text"><code>servers</code></span>
+	<a class="heading__anchor-link" href="#servers">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Count how many statuses were posted from a given domain, then show dimensional data about the most popular remote servers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;servers&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;botsin.space&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;botsin.space&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;13738&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;mastodon.social&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;mastodon.social&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;8928&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>		<span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    ]
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><h3 class="heading" id="space_usage">
+	<span class="heading__text"><code>space_usage</code></span>
+	<a class="heading__anchor-link" href="#space_usage">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Show dimensional data about how much space is used by each software in your server stack.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;space_usage&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;postgresql&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;PostgreSQL&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;14924935&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;unit&#34;</span>: <span style="color:#f1fa8c">&#34;bytes&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;14.2 MB&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;redis&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Redis&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;1972544&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;unit&#34;</span>: <span style="color:#f1fa8c">&#34;bytes&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;1.88 MB&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;media&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Media storage&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;0&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;unit&#34;</span>: <span style="color:#f1fa8c">&#34;bytes&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;0 Bytes&#34;</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="software_versions">
+	<span class="heading__text"><code>software_versions</code></span>
+	<a class="heading__anchor-link" href="#software_versions">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Show dimensional data about which versions of software in your server stack you are using.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;software_versions&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;mastodon&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Mastodon&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;3.5.3&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;3.5.3&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;ruby&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Ruby&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;3.0.4p208&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;3.0.4p208&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;postgresql&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;PostgreSQL&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;10.22&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;10.22&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;redis&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;Redis&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;4.0.9&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_value&#34;</span>: <span style="color:#f1fa8c">&#34;4.0.9&#34;</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="tag_servers">
+	<span class="heading__text"><code>tag_servers</code></span>
+	<a class="heading__anchor-link" href="#tag_servers">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Count how many statuses contain the trending tag with the given <code>id</code>, then show dimensional data about the most popular servers using that trending tag.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;tag_servers&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;live.hatnix.net&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;live.hatnix.net&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;6&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;linuxrocks.online&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;linuxrocks.online&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;4&#34;</span>
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="tag_languages">
+	<span class="heading__text"><code>tag_languages</code></span>
+	<a class="heading__anchor-link" href="#tag_languages">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Count how many statuses contain the trending tag with the given <code>id</code>, then show dimensional data about the most popular languages for those statuses.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;tag_languages&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;und&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;und&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;8&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;English&#34;</span>,
+</span></span><span style="display:flex;"><span>        <span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;7&#34;</span>
+</span></span><span style="display:flex;"><span>      },
+</span></span><span style="display:flex;"><span>		<span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>    ]
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><h3 class="heading" id="instance_accounts">
+	<span class="heading__text"><code>instance_accounts</code></span>
+	<a class="heading__anchor-link" href="#instance_accounts">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Count how many followers each account from the given <code>domain</code> has, then show dimensional data about the most popular accounts from that remote server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;instance_accounts&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;fribbledom&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;fribbledom&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;33&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;ShugoWah&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;ShugoWah&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;26&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		<span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>	]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 class="heading" id="instance_languages">
+	<span class="heading__text"><code>instance_languages</code></span>
+	<a class="heading__anchor-link" href="#instance_languages">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Count how many statuses from the given <code>domain</code> are posted in each language, then show dimensional data about how popular each language is on that remote server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;instance_languages&#34;</span>,
+</span></span><span style="display:flex;"><span>	<span style="color:#ff79c6">&#34;data&#34;</span>: [
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;en&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;English&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;5848&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		{
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;key&#34;</span>: <span style="color:#f1fa8c">&#34;de&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;human_key&#34;</span>: <span style="color:#f1fa8c">&#34;German&#34;</span>,
+</span></span><span style="display:flex;"><span>			<span style="color:#ff79c6">&#34;value&#34;</span>: <span style="color:#f1fa8c">&#34;155&#34;</span>
+</span></span><span style="display:flex;"><span>		},
+</span></span><span style="display:flex;"><span>		<span style="color:#6272a4">// ...
+</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>	]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 class="heading" id="see-also">
+	<span class="heading__text">See also</span>
+	<a class="heading__anchor-link" href="#see-also">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><a href="/methods/admin/dimensions/" class="page-ref">
   <div class="page-ref-icon"><i class="fa fa-arrow-right"></i></div>
   admin/dimensions API methods
 </a>
@@ -2464,7 +2804,7 @@
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/Admin_Dimension.md' style="color: #687590;">Improve this page</a>
+      Last updated September 20, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/entities%5cAdmin_Dimension.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2510,7 +2850,7 @@
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities/Admin_Dimension.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/entities%5cAdmin_Dimension.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,23 +10,23 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Preparing your machine - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/prerequisites/">
+  <meta property="og:url" content="http://localhost:1313/admin/prerequisites/">
 
   
 
   <meta name="twitter:title" content="Preparing your machine">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/prerequisites/">
+  <link rel="canonical" href="http://localhost:1313/admin/prerequisites/">
 </head>
 
 <body>
@@ -1058,105 +1058,173 @@
   </aside>
   <div class="e-content">
     <p>If you are setting up a fresh machine, it is recommended that you secure it first. Assuming that you are running <strong>Ubuntu 22.04</strong>:</p>
-<h2 id="do-not-allow-password-based-ssh-login-keys-only">Do not allow password-based SSH login (keys only)</h2>
-<p>First, make sure you are actually logging in to the server using keys and not via a password, otherwise, this will lock you out. Many hosting providers support uploading a public key and automatically set up key-based root login on new machines for you.</p>
+<h2 class="heading" id="do-not-allow-password-based-ssh-login-keys-only">
+	<span class="heading__text">Do not allow password-based SSH login (keys only)</span>
+	<a class="heading__anchor-link" href="#do-not-allow-password-based-ssh-login-keys-only">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>First, make sure you are actually logging in to the server using keys and not via a password, otherwise, this will lock you out. Many hosting providers support uploading a public key and automatically set up key-based root login on new machines for you.</p>
 <p>Edit <code>/etc/ssh/sshd_config</code> and find <code>PasswordAuthentication</code>. Make sure it’s uncommented and set to <code>no</code>. If you made any changes, restart sshd:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl restart ssh.service
-</code></pre></div><h2 id="update-system-packages">Update system packages</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update <span style="color:#ff79c6">&amp;&amp;</span> apt upgrade -y
-</code></pre></div><h2 id="install-fail2ban-so-it-blocks-repeated-login-attempts">Install fail2ban so it blocks repeated login attempts</h2>
-<p>First, install fail2ban:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install fail2ban
-</code></pre></div><p>Edit <code>/etc/fail2ban/jail.local</code> and put this inside:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">[DEFAULT]
-destemail = your@email.here
-sendername = Fail2Ban
-
-[sshd]
-enabled = true
-port = 22
-mode = aggressive
-</code></pre></div><p>Finally, restart fail2ban:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl restart fail2ban
-</code></pre></div><h2 id="install-a-firewall-and-only-allow-ssh-http-and-https-ports">Install a firewall and only allow SSH, HTTP and HTTPS ports</h2>
-<p>First, install iptables-persistent. During installation, it will ask you if you want to keep the current rules–decline.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install -y iptables-persistent
-</code></pre></div><p>Edit <code>/etc/iptables/rules.v4</code> and put this inside:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">*filter
-
-#  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn&#39;t use lo0
--A INPUT -i lo -j ACCEPT
--A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
-
-#  Accept all established inbound connections
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-
-#  Allow all outbound traffic - you can modify this to only allow certain traffic
--A OUTPUT -j ACCEPT
-
-#  Allow HTTP and HTTPS connections from anywhere (the normal ports for websites and SSL).
--A INPUT -p tcp --dport 80 -j ACCEPT
--A INPUT -p tcp --dport 443 -j ACCEPT
-#  (optional) Allow HTTP/3 connections from anywhere.
--A INPUT -p udp --dport 443 -j ACCEPT
-
-#  Allow SSH connections
-#  The -dport number should be the same port number you set in sshd_config
--A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
-
-#  Allow ping
--A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
-
-# Allow destination unreachable messages, especially code 4 (fragmentation required) is required or PMTUD breaks
--A INPUT -p icmp -m icmp --icmp-type 3 -j ACCEPT
-
-#  Log iptables denied calls
--A INPUT -m limit --limit 5/min -j LOG --log-prefix &#34;iptables denied: &#34; --log-level 7
-
-#  Reject all other inbound - default deny unless explicitly allowed policy
--A INPUT -j REJECT
--A FORWARD -j REJECT
-
-COMMIT
-</code></pre></div><p>With iptables-persistent, that configuration will be loaded at boot time. But since we are not rebooting right now, we need to load it manually for the first time:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">iptables-restore &lt; /etc/iptables/rules.v4
-</code></pre></div><p>If your server is also reachable over IPv6, edit <code>/etc/iptables/rules.v6</code> and add this inside:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">*filter
-
-#  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn&#39;t use lo0
--A INPUT -i lo -j ACCEPT
--A INPUT ! -i lo -d ::1/128 -j REJECT
-
-#  Accept all established inbound connections
--A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-
-#  Allow all outbound traffic - you can modify this to only allow certain traffic
--A OUTPUT -j ACCEPT
-
-#  Allow HTTP and HTTPS connections from anywhere (the normal ports for websites and SSL).
--A INPUT -p tcp --dport 80 -j ACCEPT
--A INPUT -p tcp --dport 443 -j ACCEPT
-#  (optional) Allow HTTP/3 connections from anywhere.
--A INPUT -p udp --dport 443 -j ACCEPT
-
-#  Allow SSH connections
-#  The -dport number should be the same port number you set in sshd_config
--A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
-
-#  Allow ping
--A INPUT -p icmpv6 -j ACCEPT
-
-#  Log iptables denied calls
--A INPUT -m limit --limit 5/min -j LOG --log-prefix &#34;iptables denied: &#34; --log-level 7
-
-#  Reject all other inbound - default deny unless explicitly allowed policy
--A INPUT -j REJECT
--A FORWARD -j REJECT
-
-COMMIT
-</code></pre></div><p>Similar to the IPv4 rules, you can load it manually like this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ip6tables-restore &lt; /etc/iptables/rules.v6
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl restart ssh.service
+</span></span></code></pre></div><h2 class="heading" id="update-system-packages">
+	<span class="heading__text">Update system packages</span>
+	<a class="heading__anchor-link" href="#update-system-packages">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update <span style="color:#ff79c6">&amp;&amp;</span> apt upgrade -y
+</span></span></code></pre></div><h2 class="heading" id="install-fail2ban-so-it-blocks-repeated-login-attempts">
+	<span class="heading__text">Install fail2ban so it blocks repeated login attempts</span>
+	<a class="heading__anchor-link" href="#install-fail2ban-so-it-blocks-repeated-login-attempts">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>First, install fail2ban:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install fail2ban
+</span></span></code></pre></div><p>Edit <code>/etc/fail2ban/jail.local</code> and put this inside:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>[DEFAULT]
+</span></span><span style="display:flex;"><span>destemail = your@email.here
+</span></span><span style="display:flex;"><span>sendername = Fail2Ban
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>[sshd]
+</span></span><span style="display:flex;"><span>enabled = true
+</span></span><span style="display:flex;"><span>port = 22
+</span></span><span style="display:flex;"><span>mode = aggressive
+</span></span></code></pre></div><p>Finally, restart fail2ban:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl restart fail2ban
+</span></span></code></pre></div><h2 class="heading" id="install-a-firewall-and-only-allow-ssh-http-and-https-ports">
+	<span class="heading__text">Install a firewall and only allow SSH, HTTP and HTTPS ports</span>
+	<a class="heading__anchor-link" href="#install-a-firewall-and-only-allow-ssh-http-and-https-ports">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>First, install iptables-persistent. During installation, it will ask you if you want to keep the current rules–decline.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install -y iptables-persistent
+</span></span></code></pre></div><p>Edit <code>/etc/iptables/rules.v4</code> and put this inside:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>*filter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn&#39;t use lo0
+</span></span><span style="display:flex;"><span>-A INPUT -i lo -j ACCEPT
+</span></span><span style="display:flex;"><span>-A INPUT ! -i lo -d 127.0.0.0/8 -j REJECT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Accept all established inbound connections
+</span></span><span style="display:flex;"><span>-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow all outbound traffic - you can modify this to only allow certain traffic
+</span></span><span style="display:flex;"><span>-A OUTPUT -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow HTTP and HTTPS connections from anywhere (the normal ports for websites and SSL).
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp --dport 80 -j ACCEPT
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp --dport 443 -j ACCEPT
+</span></span><span style="display:flex;"><span>#  (optional) Allow HTTP/3 connections from anywhere.
+</span></span><span style="display:flex;"><span>-A INPUT -p udp --dport 443 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow SSH connections
+</span></span><span style="display:flex;"><span>#  The -dport number should be the same port number you set in sshd_config
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow ping
+</span></span><span style="display:flex;"><span>-A INPUT -p icmp -m icmp --icmp-type 8 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># Allow destination unreachable messages, especially code 4 (fragmentation required) is required or PMTUD breaks
+</span></span><span style="display:flex;"><span>-A INPUT -p icmp -m icmp --icmp-type 3 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Log iptables denied calls
+</span></span><span style="display:flex;"><span>-A INPUT -m limit --limit 5/min -j LOG --log-prefix &#34;iptables denied: &#34; --log-level 7
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Reject all other inbound - default deny unless explicitly allowed policy
+</span></span><span style="display:flex;"><span>-A INPUT -j REJECT
+</span></span><span style="display:flex;"><span>-A FORWARD -j REJECT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>COMMIT
+</span></span></code></pre></div><p>With iptables-persistent, that configuration will be loaded at boot time. But since we are not rebooting right now, we need to load it manually for the first time:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>iptables-restore &lt; /etc/iptables/rules.v4
+</span></span></code></pre></div><p>If your server is also reachable over IPv6, edit <code>/etc/iptables/rules.v6</code> and add this inside:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>*filter
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn&#39;t use lo0
+</span></span><span style="display:flex;"><span>-A INPUT -i lo -j ACCEPT
+</span></span><span style="display:flex;"><span>-A INPUT ! -i lo -d ::1/128 -j REJECT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Accept all established inbound connections
+</span></span><span style="display:flex;"><span>-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow all outbound traffic - you can modify this to only allow certain traffic
+</span></span><span style="display:flex;"><span>-A OUTPUT -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow HTTP and HTTPS connections from anywhere (the normal ports for websites and SSL).
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp --dport 80 -j ACCEPT
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp --dport 443 -j ACCEPT
+</span></span><span style="display:flex;"><span>#  (optional) Allow HTTP/3 connections from anywhere.
+</span></span><span style="display:flex;"><span>-A INPUT -p udp --dport 443 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow SSH connections
+</span></span><span style="display:flex;"><span>#  The -dport number should be the same port number you set in sshd_config
+</span></span><span style="display:flex;"><span>-A INPUT -p tcp -m state --state NEW --dport 22 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Allow ping
+</span></span><span style="display:flex;"><span>-A INPUT -p icmpv6 -j ACCEPT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Log iptables denied calls
+</span></span><span style="display:flex;"><span>-A INPUT -m limit --limit 5/min -j LOG --log-prefix &#34;iptables denied: &#34; --log-level 7
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>#  Reject all other inbound - default deny unless explicitly allowed policy
+</span></span><span style="display:flex;"><span>-A INPUT -j REJECT
+</span></span><span style="display:flex;"><span>-A FORWARD -j REJECT
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>COMMIT
+</span></span></code></pre></div><p>Similar to the IPv4 rules, you can load it manually like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ip6tables-restore &lt; /etc/iptables/rules.v6
+</span></span></code></pre></div>
     
 
 
@@ -2258,7 +2326,7 @@ COMMIT
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/prerequisites.md' style="color: #687590;">Improve this page</a>
+      Last updated August 1, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cprerequisites.md' style="color: #687590;">Improve this page</a>
 
       
         <br />
@@ -2312,7 +2380,7 @@ COMMIT
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/prerequisites.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5cprerequisites.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Object storage - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/optional/object-storage/">
+  <meta property="og:url" content="http://localhost:1313/admin/optional/object-storage/">
 
   
     <meta name="description" content="Serving user-uploaded files in Mastodon using external object storage">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Object storage">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/optional/object-storage/">
+  <link rel="canonical" href="http://localhost:1313/admin/optional/object-storage/">
 </head>
 
 <body>
@@ -1074,8 +1074,25 @@
   </aside>
   <div class="e-content">
     <p>User-uploaded files can be stored on the main server&rsquo;s file system, or using an external object storage server, which can be required for scaling.</p>
-<h2 id="FS">Using the filesystem</h2>
-<p>The simplest way to store user uploads is by using the server&rsquo;s file system. This is how it works by default and is suitable for small servers.</p>
+<h2 class="heading" id="FS">
+	<span class="heading__text">Using the filesystem</span>
+	<a class="heading__anchor-link" href="#FS">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>The simplest way to store user uploads is by using the server&rsquo;s file system. This is how it works by default and is suitable for small servers.</p>
 <p>By default, Mastodon will store file uploads under <code>public/system</code> in its installation directory, but that can be overridden using the <code>PAPERCLIP_ROOT_PATH</code> environment variable.</p>
 <p>By default, the files are served at <code>https://your-domain/system</code>, which can be overridden using <code>PAPERCLIP_ROOT_URL</code> and <code>CDN_HOST</code>.</p>
 <div class="hint hint-info">
@@ -1090,8 +1107,25 @@
   The web server must be configured to serve those files but not allow listing them (that is, <code>https://your-domain/system/</code> should not return a file list). This should be the case if you use the configuration files distributed with Mastodon, but it is worth double-checking.
 </div>
 
-<h2 id="S3">S3-compatible object storage backends</h2>
-<p>Mastodon can use S3-compatible object storage backends. ACL support is recommended as it allows Mastodon to quickly make the content of temporarily suspended users unavailable, or marginally improve the security of private data.</p>
+<h2 class="heading" id="S3">
+	<span class="heading__text">S3-compatible object storage backends</span>
+	<a class="heading__anchor-link" href="#S3">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Mastodon can use S3-compatible object storage backends. ACL support is recommended as it allows Mastodon to quickly make the content of temporarily suspended users unavailable, or marginally improve the security of private data.</p>
 <p>Mastodon uses the S3 API (<code>S3_REGION</code>, <code>S3_ENDPOINT</code>, <code>S3_BUCKET</code>,
 <code>AWS_ACCESS_KEY_ID</code>, <code>AWS_SECRET_ACCESS_KEY</code>, <code>S3_SIGNATURE_VERSION</code>,
 <code>S3_OVERRIDE_PATH_STYLE</code>) for all write, delete, and
@@ -1109,8 +1143,25 @@ those used by the S3 storage provider itself, if desired. See the
 detailed documentation below which describes how those URLs are
 constructed and which environment variables are involved.</p>
 <p>To enable S3 storage, set the <code>S3_ENABLED</code> environment variable to <code>true</code>.</p>
-<h3 id="environment-variables-for-s3-api-access">Environment variables for S3 API access</h3>
-<ul>
+<h3 class="heading" id="environment-variables-for-s3-api-access">
+	<span class="heading__text">Environment variables for S3 API access</span>
+	<a class="heading__anchor-link" href="#environment-variables-for-s3-api-access">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li><code>S3_REGION</code> (defaults to &lsquo;us-east-1&rsquo;, required if using AWS S3, may
 not be required with other storage providers)</li>
 <li><code>S3_ENDPOINT</code> (defaults to &lsquo;s3.&lt;S3_REGION&gt;.amazonaws.com&rsquo;, required
@@ -1125,8 +1176,25 @@ most storage providers)</li>
 set this to <code>true</code> if the storage provider requires API operations
 to be sent to &lsquo;&lt;S3_BUCKET&gt;.&lt;S3_ENDPOINT&gt;` (domain-style))</li>
 </ul>
-<h3 id="environment-variables-for-client-access-to-media-objects">Environment variables for client access to media objects</h3>
-<ul>
+<h3 class="heading" id="environment-variables-for-client-access-to-media-objects">
+	<span class="heading__text">Environment variables for client access to media objects</span>
+	<a class="heading__anchor-link" href="#environment-variables-for-client-access-to-media-objects">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><ul>
 <li><code>S3_PROTOCOL</code> (defaults to <code>https</code>)</li>
 <li><code>S3_HOSTNAME</code> (defaults to &lsquo;s3-&lt;S3_REGION&gt;.amazonaws.com&rsquo;, required
 if not using AWS S3 and <code>S3_ALIAS_HOST</code> is not set)</li>
@@ -1172,36 +1240,172 @@ CDN.</p>
   You must serve the files with CORS headers, otherwise some functions of Mastodon&rsquo;s web UI will not work. For example, <code>Access-Control-Allow-Origin: *</code>
 </div>
 
-<h3 id="optional-environment-variables">Optional environment variables</h3>
-<h4 id="s3_open_timeout"><code>S3_OPEN_TIMEOUT</code></h4>
-<p>Default: 5 (seconds)</p>
+<h3 class="heading" id="optional-environment-variables">
+	<span class="heading__text">Optional environment variables</span>
+	<a class="heading__anchor-link" href="#optional-environment-variables">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><h4 class="heading" id="s3_open_timeout">
+	<span class="heading__text"><code>S3_OPEN_TIMEOUT</code></span>
+	<a class="heading__anchor-link" href="#s3_open_timeout">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Default: 5 (seconds)</p>
 <p>The number of seconds before the HTTP handler should timeout while trying to open a new HTTP session.</p>
-<h4 id="s3_read_timeout"><code>S3_READ_TIMEOUT</code></h4>
-<p>Default: 5 (seconds)</p>
+<h4 class="heading" id="s3_read_timeout">
+	<span class="heading__text"><code>S3_READ_TIMEOUT</code></span>
+	<a class="heading__anchor-link" href="#s3_read_timeout">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Default: 5 (seconds)</p>
 <p>The number of seconds before the HTTP handler should timeout while waiting for an HTTP response.</p>
-<h4 id="s3_force_single_request"><code>S3_FORCE_SINGLE_REQUEST</code></h4>
-<p>Default: false</p>
+<h4 class="heading" id="s3_force_single_request">
+	<span class="heading__text"><code>S3_FORCE_SINGLE_REQUEST</code></span>
+	<a class="heading__anchor-link" href="#s3_force_single_request">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Default: false</p>
 <p>Set this to <code>true</code> if you run into trouble processing large files.</p>
-<h4 id="s3_enable_checksum_mode"><code>S3_ENABLE_CHECKSUM_MODE</code></h4>
-<p>Default: false</p>
+<h4 class="heading" id="s3_enable_checksum_mode">
+	<span class="heading__text"><code>S3_ENABLE_CHECKSUM_MODE</code></span>
+	<a class="heading__anchor-link" href="#s3_enable_checksum_mode">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Default: false</p>
 <p>Enables verification of object checksums when Mastodon is retrieving
 an object from the storage provider. This feature is available in AWS
 S3 but may not be available in other S3-compatible implementations.</p>
-<h4 id="s3_storage_class"><code>S3_STORAGE_CLASS</code></h4>
-<p>Default: none</p>
+<h4 class="heading" id="s3_storage_class">
+	<span class="heading__text"><code>S3_STORAGE_CLASS</code></span>
+	<a class="heading__anchor-link" href="#s3_storage_class">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Default: none</p>
 <p>When using AWS S3, this variable can be set to one of the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-class-intro.html">storage
 class</a>
 options which influence the storage selected for uploaded objects (and
 thus their access times and costs). If no storage class is specified
 then AWS S3 will use the <code>STANDARD</code> class, but options include
 <code>REDUCED_REDUNDANCY</code>, <code>GLACIER</code>, and others.</p>
-<h4 id="s3_multipart_threshold"><code>S3_MULTIPART_THRESHOLD</code></h4>
-<p>Default: 15 (megabytes)</p>
+<h4 class="heading" id="s3_multipart_threshold">
+	<span class="heading__text"><code>S3_MULTIPART_THRESHOLD</code></span>
+	<a class="heading__anchor-link" href="#s3_multipart_threshold">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Default: 15 (megabytes)</p>
 <p>Objects of this size and smaller will be uploaded in a single
 operation, but larger objects will be uploaded using the multipart
 chunking mechanism, which can improve transfer speeds and reliability.</p>
-<h4 id="s3_permission"><code>S3_PERMISSION</code></h4>
-<p>Default: <code>public-read</code></p>
+<h4 class="heading" id="s3_permission">
+	<span class="heading__text"><code>S3_PERMISSION</code></span>
+	<a class="heading__anchor-link" href="#s3_permission">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Default: <code>public-read</code></p>
 <p>Defines the S3 object ACL when uploading new files. Use caution when
 using <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">S3 Block Public
 Access</a>
@@ -1219,52 +1423,120 @@ generally consistent across all S3 providers, and common ones are
 highlighted below.
 </div>
 
-<h4 id="s3_batch_delete_limit"><code>S3_BATCH_DELETE_LIMIT</code></h4>
-<p>Default: <code>1000</code></p>
+<h4 class="heading" id="s3_batch_delete_limit">
+	<span class="heading__text"><code>S3_BATCH_DELETE_LIMIT</code></span>
+	<a class="heading__anchor-link" href="#s3_batch_delete_limit">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Default: <code>1000</code></p>
 <p>The official <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjects.html">Amazon S3
 API</a>
 can handle deleting 1,000 objects in one batch job, but some providers
 may have issues handling this many in one request, or offer lower
 limits.</p>
-<h4 id="s3_batch_delete_retry"><code>S3_BATCH_DELETE_RETRY</code></h4>
-<p>Default: 3</p>
+<h4 class="heading" id="s3_batch_delete_retry">
+	<span class="heading__text"><code>S3_BATCH_DELETE_RETRY</code></span>
+	<a class="heading__anchor-link" href="#s3_batch_delete_retry">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Default: 3</p>
 <p>During batch delete operations, S3 providers may perodically fail or
 timeout while processing deletion requests. Mastodon will back off and
 retry the request up to this maximum number of times.</p>
-<h3 id="minio">MinIO</h3>
-<p>MinIO is an open-source implementation of an S3 object provider. This section does not cover how to install it, but how to configure a bucket for use in Mastodon.</p>
+<h3 class="heading" id="minio">
+	<span class="heading__text">MinIO</span>
+	<a class="heading__anchor-link" href="#minio">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>MinIO is an open-source implementation of an S3 object provider. This section does not cover how to install it, but how to configure a bucket for use in Mastodon.</p>
 <p>You need to set a policy for anonymous access that allows read-only access to objects contained by the bucket without allowing listing them.</p>
 <p>To do this, you need to set a custom policy (replace <code>mastodata</code> with the actual name of your S3 bucket):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-   <span style="color:#ff79c6">&#34;Version&#34;</span>: <span style="color:#f1fa8c">&#34;2012-10-17&#34;</span>,
-   <span style="color:#ff79c6">&#34;Statement&#34;</span>: [
-      {
-         <span style="color:#ff79c6">&#34;Effect&#34;</span>: <span style="color:#f1fa8c">&#34;Allow&#34;</span>,
-         <span style="color:#ff79c6">&#34;Principal&#34;</span>: {
-           <span style="color:#ff79c6">&#34;AWS&#34;</span>: <span style="color:#f1fa8c">&#34;*&#34;</span>
-         },
-         <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;s3:GetObject&#34;</span>,
-         <span style="color:#ff79c6">&#34;Resource&#34;</span>: <span style="color:#f1fa8c">&#34;arn:aws:s3:::mastodata/*&#34;</span>
-      }
-   ]
-}
-</code></pre></div><p>Mastodon itself needs to be able to write to the bucket, so either use your admin MinIO account (discouraged) or an account specific to Mastodon (recommended) with the following policy attached (replace <code>mastodata</code> with the actual name of your S3 bucket):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#ff79c6">&#34;Version&#34;</span>: <span style="color:#f1fa8c">&#34;2012-10-17&#34;</span>,
-    <span style="color:#ff79c6">&#34;Statement&#34;</span>: [
-        {
-            <span style="color:#ff79c6">&#34;Effect&#34;</span>: <span style="color:#f1fa8c">&#34;Allow&#34;</span>,
-            <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;s3:*&#34;</span>,
-            <span style="color:#ff79c6">&#34;Resource&#34;</span>: <span style="color:#f1fa8c">&#34;arn:aws:s3:::mastodata/*&#34;</span>
-        }
-    ]
-}
-</code></pre></div><p>You can set those policies from the MinIO Console (web-based user interface) or the command-line client (<code>mcli</code> / <code>mc</code>).</p>
-<h4 id="using-the-minio-console">Using the MinIO Console</h4>
-<p>Connect to the MinIO Console web interface and create a new bucket (or navigate to your existing bucket):
-<img src="/assets/object-storage/minio-bucket.png" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;Version&#34;</span>: <span style="color:#f1fa8c">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;Effect&#34;</span>: <span style="color:#f1fa8c">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;Principal&#34;</span>: {
+</span></span><span style="display:flex;"><span>           <span style="color:#ff79c6">&#34;AWS&#34;</span>: <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>         },
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;s3:GetObject&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;Resource&#34;</span>: <span style="color:#f1fa8c">&#34;arn:aws:s3:::mastodata/*&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>   ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Mastodon itself needs to be able to write to the bucket, so either use your admin MinIO account (discouraged) or an account specific to Mastodon (recommended) with the following policy attached (replace <code>mastodata</code> with the actual name of your S3 bucket):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;Version&#34;</span>: <span style="color:#f1fa8c">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;Effect&#34;</span>: <span style="color:#f1fa8c">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;s3:*&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;Resource&#34;</span>: <span style="color:#f1fa8c">&#34;arn:aws:s3:::mastodata/*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>You can set those policies from the MinIO Console (web-based user interface) or the command-line client (<code>mcli</code> / <code>mc</code>).</p>
+<h4 class="heading" id="using-the-minio-console">
+	<span class="heading__text">Using the MinIO Console</span>
+	<a class="heading__anchor-link" href="#using-the-minio-console">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>Connect to the MinIO Console web interface and create a new bucket (or navigate to your existing bucket):
+<img src="/assets/object-storage/minio-bucket.png"></p>
 <p>Then, configure the “Access Policy” to a custom one that allows read access (<code>s3:GetObject</code>) without write access or the ability to list objects (see above):
-<img src="/assets/object-storage/minio-access-policy.png" alt=""></p>
+<img src="/assets/object-storage/minio-access-policy.png"></p>
 <div class="hint hint-info">
   <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
 
@@ -1272,11 +1544,28 @@ retry the request up to this maximum number of times.</p>
 </div>
 
 <p>Create a new <code>mastodon-readwrite</code> policy (see above):
-<img src="/assets/object-storage/minio-mastodon-readwrite.png" alt=""></p>
+<img src="/assets/object-storage/minio-mastodon-readwrite.png"></p>
 <p>Finally, create a new <code>mastodon</code> user with the <code>mastodon-readwrite</code> policy:
-<img src="/assets/object-storage/minio-mastodon-user.png" alt=""></p>
-<h4 id="using-the-command-line-utility">Using the command-line utility</h4>
-<p>The same can be achieved using the <a href="https://min.io/docs/minio/linux/reference/minio-mc.html">MinIO Client</a> command-line utility (which can be called <code>mc</code> or <code>mcli</code> depending on where it is installed from).</p>
+<img src="/assets/object-storage/minio-mastodon-user.png"></p>
+<h4 class="heading" id="using-the-command-line-utility">
+	<span class="heading__text">Using the command-line utility</span>
+	<a class="heading__anchor-link" href="#using-the-command-line-utility">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h4><p>The same can be achieved using the <a href="https://min.io/docs/minio/linux/reference/minio-mc.html">MinIO Client</a> command-line utility (which can be called <code>mc</code> or <code>mcli</code> depending on where it is installed from).</p>
 <p>Create a new bucket:
 <code>mc mb myminio/mastodata</code></p>
 <p>Save the anonymous access policy from above as <code>anonymous-readonly-policy.json</code> and the Mastodon user access policy as <code>mastodon-readwrite.json</code> (make sure to replace <code>mastodata</code> with the name of your newly-created bucket).</p>
@@ -1288,68 +1577,153 @@ retry the request up to this maximum number of times.</p>
 <code>mc admin user add myminio mastodon SECRET_PASSWORD</code></p>
 <p>Apply the <code>mastodon-readwrite</code> policy to the <code>mastodon</code> user:
 <code>mc admin policy set myminio mastodon-readwrite user=mastodon</code></p>
-<h3 id="wasabi-object-storage">Wasabi Object Storage</h3>
-<p>Create a new bucket and define its policy to allow objects to be anonymously readable but not listable:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-   <span style="color:#ff79c6">&#34;Version&#34;</span>: <span style="color:#f1fa8c">&#34;2012-10-17&#34;</span>,
-   <span style="color:#ff79c6">&#34;Statement&#34;</span>: [
-      {
-         <span style="color:#ff79c6">&#34;Effect&#34;</span>: <span style="color:#f1fa8c">&#34;Allow&#34;</span>,
-         <span style="color:#ff79c6">&#34;Principal&#34;</span>: {
-           <span style="color:#ff79c6">&#34;AWS&#34;</span>: <span style="color:#f1fa8c">&#34;*&#34;</span>
-         },
-         <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;s3:GetObject&#34;</span>,
-         <span style="color:#ff79c6">&#34;Resource&#34;</span>: <span style="color:#f1fa8c">&#34;arn:aws:s3:::mastodata/*&#34;</span>
-      }
-   ]
-}
-</code></pre></div><p><img src="/assets/object-storage/wasabi-access-policy.png" alt=""></p>
+<h3 class="heading" id="wasabi-object-storage">
+	<span class="heading__text">Wasabi Object Storage</span>
+	<a class="heading__anchor-link" href="#wasabi-object-storage">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Create a new bucket and define its policy to allow objects to be anonymously readable but not listable:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;Version&#34;</span>: <span style="color:#f1fa8c">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>   <span style="color:#ff79c6">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>      {
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;Effect&#34;</span>: <span style="color:#f1fa8c">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;Principal&#34;</span>: {
+</span></span><span style="display:flex;"><span>           <span style="color:#ff79c6">&#34;AWS&#34;</span>: <span style="color:#f1fa8c">&#34;*&#34;</span>
+</span></span><span style="display:flex;"><span>         },
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;s3:GetObject&#34;</span>,
+</span></span><span style="display:flex;"><span>         <span style="color:#ff79c6">&#34;Resource&#34;</span>: <span style="color:#f1fa8c">&#34;arn:aws:s3:::mastodata/*&#34;</span>
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>   ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/assets/object-storage/wasabi-access-policy.png"></p>
 <div class="hint hint-info">
   <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
 
   <p>If you are using an old bucket, ensure you are not giving “Everyone” read access to objects through Wasabi&rsquo;s legacy Access Control settings, as that allows listing objects and take precedence over the IAM policy defined above.</p>
-<p><img src="/assets/object-storage/wasabi-access-control.png" alt=""></p>
+<p><img src="/assets/object-storage/wasabi-access-control.png"></p>
 
 </div>
 
 <p>Then, create a <code>mastodon-readwrite</code> policy to grant read and write access to your bucket:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
-    <span style="color:#ff79c6">&#34;Version&#34;</span>: <span style="color:#f1fa8c">&#34;2012-10-17&#34;</span>,
-    <span style="color:#ff79c6">&#34;Statement&#34;</span>: [
-        {
-            <span style="color:#ff79c6">&#34;Effect&#34;</span>: <span style="color:#f1fa8c">&#34;Allow&#34;</span>,
-            <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;s3:*&#34;</span>,
-            <span style="color:#ff79c6">&#34;Resource&#34;</span>: <span style="color:#f1fa8c">&#34;arn:aws:s3:::mastodata/*&#34;</span>
-        }
-    ]
-}
-</code></pre></div><p><img src="/assets/object-storage/wasabi-mastodon-readwrite.png" alt=""></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;Version&#34;</span>: <span style="color:#f1fa8c">&#34;2012-10-17&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;Statement&#34;</span>: [
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;Effect&#34;</span>: <span style="color:#f1fa8c">&#34;Allow&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;Action&#34;</span>: <span style="color:#f1fa8c">&#34;s3:*&#34;</span>,
+</span></span><span style="display:flex;"><span>            <span style="color:#ff79c6">&#34;Resource&#34;</span>: <span style="color:#f1fa8c">&#34;arn:aws:s3:::mastodata/*&#34;</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    ]
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><img src="/assets/object-storage/wasabi-mastodon-readwrite.png"></p>
 <p>Finally, create a new <code>mastodon</code> user and don&rsquo;t forget to enable the <code>mastodon-readwrite</code> policy:
-<img src="/assets/object-storage/wasabi-mastodon-user.png" alt=""></p>
+<img src="/assets/object-storage/wasabi-mastodon-user.png"></p>
 <p>On Mastodon&rsquo;s side, you need to set <code>S3_FORCE_SINGLE_REQUEST=true</code> to properly handle large uploads.</p>
-<h3 id="digitalocean-spaces">DigitalOcean Spaces</h3>
-<p>In your DigitalOcean Spaces Bucket, make sure that “File Listing” is “Restricted” to users with access keys.</p>
-<p><img src="/assets/object-storage/do-spaces.png" alt=""></p>
-<h3 id="scaleway">Scaleway</h3>
-<p>If you want to use Scaleway Object Storage, we strongly recommend you create a Scaleway project dedicated to your Mastodon instance assets and use a custom IAM policy.</p>
+<h3 class="heading" id="digitalocean-spaces">
+	<span class="heading__text">DigitalOcean Spaces</span>
+	<a class="heading__anchor-link" href="#digitalocean-spaces">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>In your DigitalOcean Spaces Bucket, make sure that “File Listing” is “Restricted” to users with access keys.</p>
+<p><img src="/assets/object-storage/do-spaces.png"></p>
+<h3 class="heading" id="scaleway">
+	<span class="heading__text">Scaleway</span>
+	<a class="heading__anchor-link" href="#scaleway">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>If you want to use Scaleway Object Storage, we strongly recommend you create a Scaleway project dedicated to your Mastodon instance assets and use a custom IAM policy.</p>
 <p>First, create a new Scaleway project, in which you create your object storage bucket. You need to set your bucket visibility to &ldquo;Private&rdquo; to not allow objects to be listed.</p>
-<p><img src="/assets/object-storage/scaleway-bucket.png" alt=""></p>
+<p><img src="/assets/object-storage/scaleway-bucket.png"></p>
 <p>Now that your bucket is created, you need to create API keys to be used in your Mastodon instance configuration.</p>
 <p>Head to the IAM settings (in your organization menu, top right of the screen), and create a new IAM policy (eg <code>mastodon-media-access</code>)</p>
-<p><img src="/assets/object-storage/scaleway-policy.jpg" alt=""></p>
+<p><img src="/assets/object-storage/scaleway-policy.jpg"></p>
 <p>This policy needs to have one rule, allowing it to read, write and delete objects in the Scaleway project you created above (the scope).</p>
-<p><img src="/assets/object-storage/scaleway-policy-rules.jpg" alt=""></p>
+<p><img src="/assets/object-storage/scaleway-policy-rules.jpg"></p>
 <p>Then head to the IAM Applications page, and create a new one (eg <code>my-mastodon-instance</code>) and select the policy you created above.</p>
 <p>Finally, click on the application you just created, then &ldquo;API Keys&rdquo;, and create a new API key to use in your instance configuration. You should use the &ldquo;Yes, set up preferred Project&rdquo; option and select the project you created above as the default project for this key.</p>
-<p><img src="/assets/object-storage/scaleway-api-key.png" alt=""></p>
+<p><img src="/assets/object-storage/scaleway-api-key.png"></p>
 <p>Copy the Access Key ID and Secret, and use them for your <code>AWS_ACCESS_KEY_ID</code> and <code>AWS_SECRET_ACCESS_KEY</code> Mastodon config variables.</p>
-<h3 id="exoscale">Exoscale</h3>
-<p>In Exoscale, your bucket should not have any read ACLs (Mastodon will set the ACLs on the object themselves as appropriate).</p>
+<h3 class="heading" id="exoscale">
+	<span class="heading__text">Exoscale</span>
+	<a class="heading__anchor-link" href="#exoscale">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>In Exoscale, your bucket should not have any read ACLs (Mastodon will set the ACLs on the object themselves as appropriate).</p>
 <p>You need to create an API Key for the Mastodon app, restricted to the Object Storage (<code>sos</code>) service, restricted to your bucket, and with unrestricted operations.</p>
-<p><img src="/assets/object-storage/exoscale.png" alt=""></p>
+<p><img src="/assets/object-storage/exoscale.png"></p>
 <p>On Mastodon&rsquo;s side, you need to set <code>S3_FORCE_SINGLE_REQUEST=true</code> to properly handle large uploads.</p>
-<h3 id="cloudflare-r2">Cloudflare R2</h3>
-<p>Cloudflare R2 does not support ACLs, so Mastodon needs to be instructed not to try setting them. To do that, set the <code>S3_PERMISSION</code> environment variable to an empty string.</p>
+<h3 class="heading" id="cloudflare-r2">
+	<span class="heading__text">Cloudflare R2</span>
+	<a class="heading__anchor-link" href="#cloudflare-r2">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>Cloudflare R2 does not support ACLs, so Mastodon needs to be instructed not to try setting them. To do that, set the <code>S3_PERMISSION</code> environment variable to an empty string.</p>
 <div class="hint hint-warning">
   <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
 
@@ -2465,7 +2839,7 @@ retry the request up to this maximum number of times.</p>
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/optional/object-storage.md' style="color: #687590;">Improve this page</a>
+      Last updated February 20, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5coptional%5cobject-storage.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2511,7 +2885,7 @@ retry the request up to this maximum number of times.</p>
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/optional/object-storage.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5coptional%5cobject-storage.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

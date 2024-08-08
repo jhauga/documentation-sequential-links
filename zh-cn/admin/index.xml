@@ -2,255 +2,115 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Admins on Mastodon documentation</title>
-    <link>https://docs.joinmastodon.org/zh-cn/admin/</link>
+    <link>http://localhost:1313/zh-cn/admin/</link>
     <description>Recent content in Admins on Mastodon documentation</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    
-	<atom:link href="https://docs.joinmastodon.org/zh-cn/admin/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>从源中安装</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/install/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/install/</guid>
-      <description>前提条件  一台你有root访问权限的运行 Ubuntu 18.04 的机器 一个用于Mastodon站点的域名（或一个子域名），例如：example.com 一个电子邮件发送服务提供商，或其他SMTP服务器  你需要使用root用户运行命令。如果你现在不是root用户，请切换至root用户：
-软件仓库 首先确保已经安装curl：
-Node.js curl -sL https://deb.nodesource.com/setup_12.x | bash - Yarn curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | tee /etc/apt/sources.list.d/yarn.list 软件包 apt update apt install -y \  imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core \  g++ libprotobuf-dev protobuf-compiler pkg-config nodejs gcc autoconf \  bison build-essential libssl-dev libyaml-dev libreadline6-dev \  zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev \  nginx redis-server redis-tools postgresql postgresql-contrib \  certbot python-certbot-nginx yarn libidn11-dev libicu-dev libjemalloc-dev 安装 Ruby 因为使用 rbenv 可以更容易的获得正确的版本并在新版本发布后进行更新，我们将使用 rbenv 来管理Ruby版本。rbenv 必须安装在单个Linux用户中，因此，我们首先需要使用以下命令创建一个Mastodon用户：</description>
-    </item>
-    
-    <item>
-      <title>伸缩你的服务器</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/scaling/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/scaling/</guid>
-      <description>并发管理 Mastodon有三种进程：
- Web (Puma) Streaming API 后台进程 (Sidekiq)  Web (Puma) web进程处理绝大多数应用的短HTTP请求。以下环境变量可以控制它：
- WEB_CONCURRENCY 控制worker进程数 MAX_THREADS 控制每进程的线程数  线程共享其父进程的内存。不同的线程被分配了专有内存，虽然他们通过copy-on-write共享了一些内存。数量较多的线程会先消耗掉你的CPU，数量较多的进程会先消耗掉你的内存。
-这些数值会影响到可以同时处理多少HTTP请求。
-在吞吐量方面，多进程比多线程要好。
-Streaming API streaming API处理长HTTP连接与WebSockets连接，通过这些连接用户可以接受到实时更新。以下环境变量可以控制它：
- STREAMING_CLUSTER_NUM 控制worker进程数 STREAMING_API_BASE_URL 控制streaming API的base URL  一个进程可以处理相当数量的连接。 如果您愿意，streaming API可以托管在其他子域上，例如：避免nginx代理连接开销。
-后台进程 (Sidekiq) Mastodon许多任务都分配给后台进程，以确保HTTP请求快速响应，并防止HTTP请求中止影响到这些任务的执行。Sidekiq是单个进程，具有可配置的线程数。
-线程数 虽然web进程数与web线程数影响Mastodon实例响应终端用户，分配给后台进程的线程数影响嘟文从作者分发至其他人的速度，电子邮件花多长时间发完等等。
-Sidekiq的线程数并不受环境变量控制，但是可通过命令行参数控制，例如：
-bundle exec sidekiq -c 15 将启一个15线程的sidekiq进程。请注意每个线程都需要能够连接数据库，这意味着数据库连接池应足够大以满足所有进程。数据库连接池的大小由DB_POOL环境变量控制，该变量必须至少与进程数同样大。
-队列 Sidekiq根据任务的重要性使用不同队列，这里的重要性是指如果队列不工作，其对本地用户体验的冲击有多大。按重要性降序排列：
-   队列 重要性     default 影响本地用户的所有任务   push 推送消息至其它服务器   mailers 分发电子邮件   pull 从其它服务器拉取信息   scheduler 完成计划任务，例如更新当下流行标签及清理日志    默认队列及其优先级存储于config/sidekiq.</description>
-    </item>
-    
-    <item>
-      <title>使用管理命令行</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/tootctl/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/tootctl/</guid>
-      <description>Mastodon的命令行界面是一个位于Mastodon根目录内bin目录中的名为tootctl的可执行文件。你必须通过RAILS_ENV环境变量指定你执行时打算使用的环境。除非你是在本地计算机上进行开发工作，否则你需要使用RAILS_ENV=production。如果你确信永不使用其它环境（开发、测试），为了方便起见，你可以把它添加到 .bashrc 文件，例如：
-echo &amp;#34;export RAILS_ENV=production&amp;#34; &amp;gt;&amp;gt; ~/.bashrc 如果这样，便无需在每次执行时指定它。否则，通常会这样调用 tootctl 命令（假定你的Mastodon代码位于/home/mastodon/live）：
-cd /home/mastodon/live RAILS_ENV=production bin/tootctl help 基础命令  lib/mastodon/cli/base.rb  tootctl self-destruct 通过向所有己知实例广播帐户删除通告，将本服务器从联邦宇宙抹除。此命令允许Mastodon服务器“干净退出（clean exit）”，即几乎不在其它服务器留下任何缓存。此命令始终是交互式的，且需要二次确认。
-实际上，不会删除任何本地数据，因为直接清空数据库或删除整个VPS更快。如果你运行此命令后，无论如何都要继续运营实例，状态不匹配可能导致与其它站点互联时出错。
- 运行此命令之前，请确保你确实知道自己正在做什么。此操作不可逆，并且可能花费很长时间。完成此命令之后，服务器将处于破碎状态（BROKEN STATE）。需要一个运行中的Sidekiq进程，所以在队列完全被清空之前不要关闭服务器。  版本历史：
- 2.8.0 - 被加入     选项 描述     --dry_run 仅打印预期结果，而不执行任何操作。    tootctl --version 展示目前运行的Mastodon实例版本。
-版本历史：
- 2.7.0 - 被加入  帐户相关命令  lib/mastodon/cli/accounts.rb  tootctl accounts rotate 生成并广播新的RSA密钥，作为安全维护的一部分。
-版本历史：
- 2.5.0 - 被加入     选项 描述     USERNAME 本地帐户用户名   --all 轮替所有本地帐户密钥，可取代 USERNAME。    tootctl accounts create 创建一个给定用户名（USERNAME）和给定电子邮件地址（&amp;ndash;email）的新帐户。</description>
-    </item>
-    
-    <item>
-      <title>全文搜索</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/optional/elasticsearch/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/optional/elasticsearch/</guid>
-      <description>当有可用Elasticsearch时，Mastodon支持全文搜索。Mastodon的全文搜索允许登录用户从他们自己的嘟文、他们喜欢的嘟文、他们的书签和他们被提及的嘟文中查找相应结果。Mastodon有意禁用了在全数据库搜索任意关键词的功能。
-安装 Elasticsearch Elasticsearch 需要 Java runtime。如果你还没有安装 Java，请立刻安装上它。以下操均假定你已经登录为root用户：
-apt install openjdk-8-jre-headless 添加Elasticsearch官方软件仓库至apt：
-wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add - echo &amp;#34;deb https://artifacts.elastic.co/packages/6.x/apt stable main&amp;#34; | tee -a /etc/apt/sources.list.d/elastic-6.x.list apt update 现在，你可以安装 Elasticsearch：
-apt install elasticsearch  安全警告： 默认情况下，Elasticsearch仅绑定于localhost，即无法从外部网络访问。你可以通过查看 /etc/elasticsearch/elasticsearch.yml 中的 network.host 来检查 Elasticsearch 绑定了哪些地址。考虑到由于缺乏认证层，任何能访问 Elasticsearch 的人都可以读取或修改里面的数据。因此，确保访问安全非常重要。如主要安装说明中所述，防火墙建议仅暴露了22、80、443端口。如果你是一个多主机配置，你必须知道如何保证内部流量安全。   安全警告: 由于近期Elasticsearch所使用的log4j库被披露出安全漏洞，使用了旧版本log4j(2.0到2.14.1)的ES可能会受到影响。如果使用了这些版本的log4j，请参阅 此 issue 来暂时缓解此问题。  启动 Elasticsearch：
-systemctl enable elasticsearch systemctl start elasticsearch 配置 Mastodon 编辑 .env.production，添加如下变量：
-ES_ENABLED=true ES_HOST=localhost ES_PORT=9200 如果你同一台机器上运行多个Mastodon服务器，你计划让它们使用同一个Elasticsearch，请确保他们都配置了互不重复的 REDIS_NAMESPACE 以分别他们的索引。如果你需要覆盖Elasticsearch索引前缀，你可以直接设置 ES_PREFIX。</description>
-    </item>
-    
-    <item>
-      <title>准备你的机器</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/prerequisites/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/prerequisites/</guid>
-      <description>如果你正在设置一台全新的机器，推荐你首要完成安全设置。以下内容假定你运行 Ubuntu 18.04：
-禁止密码登录SSH（仅允许密钥登录） 首先，请确保你实际上是通过密钥而不是通过密码登录到服务器的，否则这将使你无法登录。许多托管服务提供商支持上传公钥，并自动为新机器设置基于密钥的root登录。
-编辑 /etc/ssh/sshd_config 并找到 PasswordAuthentication。确保它已被去除注释并被设为 no。如果你做了任何改动，请重启 sshd。
-更新系统 apt update &amp;amp;&amp;amp; apt upgrade -y 安装 fail2ban 以阻止重复登录尝试 编辑 /etc/fail2ban/jail.local 并添加以下内容：
-[DEFAULT] destemail = your@email.here sendername = Fail2Ban [sshd] enabled = true port = 22 [sshd-ddos] enabled = true port = 22 最后重启fail2ban：
-systemctl restart fail2ban 安装防火墙并只暴露SSH、HTTP、HTTPS端口 首先，安装 iptables-persistent。在安装期间，它将询问你是否保留现有规则。
-apt install -y iptables-persistent 编辑 /etc/iptables/rules.v4 并添加如下内容：
-*filter # Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn&amp;#39;t use lo0 -A INPUT -i lo -j ACCEPT -A INPUT !</description>
-    </item>
-    
-    <item>
-      <title>匿名服务</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/optional/tor/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/optional/tor/</guid>
-      <description>可以通过Tor的匿名服务来访问Mastodon。这将给你一个只能通过 Tor 网络连接的 *.onion 地址。
-安装 Tor 首先，Tor的Debian软件仓库需要被添加至apt中。
-deb https://deb.torproject.org/torproject.org stretch main deb-src https://deb.torproject.org/torproject.org stretch main 接下来，添加相应gpg密钥。
-curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add - 最后，安装所需软件包。
-apt install tor deb.torproject.org-keyring 配置 Tor 编辑 /etc/tor/torrc 并添加如下设置。
-HiddenServiceDir /var/lib/tor/hidden_service/ HiddenServiceVersion 3 HiddenServicePort 80 127.0.0.1:80 重启 Tor。
-sudo service tor restart 现在，你的Tor域名可以在 /var/lib/tor/hidden_service/hostname 找到。
-移动你的Mastodon配置 我们将需要将你的Mastodon配置告诉Nginx两次。为了不自我重复（DRY），我们需要将Mastodon配置移动到一个可被引用的独立文件。
-在 /etc/nginx/snippets/mastodon.conf 创建一个新文件。放入除listen、server_name、include及所有SSL相关选项之外的所有配置参数至新文件中。你的新文件看起来可能像这样。
-add_header Referrer-Policy &amp;#34;same-origin&amp;#34;; keepalive_timeout 70; sendfile on; client_max_body_size 80m; root /home/mastodon/live/public; … error_page 500 501 502 503 504 /500.</description>
-    </item>
-    
-    <item>
-      <title>升级到新版本</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/upgrading/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/upgrading/</guid>
-      <description> 当一个新的Mastodon版本释出后，它将出现在GitHub releases页面。请注意：运行来自main分支的未释出代码，虽然可以进行，但不推荐这样做。  Mastodon版本与git tags一致。在尝试升级之前，请至GitHub releases页面查找所需版本。该页面包含了一个更新日专，其中描述你需要了解的所有差异，以及特定的升级指令。
-开始之前，切换至mastodon用户：
-su - mastodon 并转至Mastodon根目录：
-cd /home/mastodon/live 下载相应版本代码，这里假定版本为v3.1.2：
-git fetch --tags git checkout v3.1.2 现在，执行GitHub版本发布说明中的升级指令。因为不同的版本有不同的指令，所以本页面将不包括任何指令。
- 从旧版本升级时，你可以安全的跳过中间版本。你无需单独检出他们。然而，你确实需要追踪每一个版本的升级指令。大多数指令都是重叠的，你只需要确保每条至少执行一次即可。  当你执行完版本发布说明中的指令后，切换回root用户：
-exit 重启后台worker：
-systemctl restart mastodon-sidekiq 并重载web进程：
-systemctl reload mastodon-web  reload操作是零下线时间的重启（restart），也被称为“分阶段重启（phased restart）”。因此，Mastodon升级通常不需要为计划下线而提前发布公告。罕见情况下，你可以改用restart操作，但你的用户将感到（短暂的）服务中断。  罕见情况下，streaming API 服务也会被更新并需要重启：
-systemctl restart mastodon-streaming  更新streaming API服务非常罕见，在大多数版本中，不需要重启它。重启streaming API将导致服务器负载增加，因为断线的用户会尝试重连或改用REST API轮询。因此请尽量避免重启streaming API服务   就这样！ 您现在正在运行新版本的Mastodon。    翻译状态： 本文是英文页面 Upgrading to a new release 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。  </description>
-    </item>
-    
-    <item>
-      <title>单点登录（SSO）</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/optional/sso/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/optional/sso/</guid>
-      <description> 本页面仍在建设中。    翻译状态： 本文是英文页面 Single Sign On 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。  </description>
-    </item>
-    
-    <item>
-      <title>备份你的服务器</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/backups/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/backups/</guid>
-      <description>对于任何真实世界用途来说，你都应该保证日常备份Mastodon服务器。
-概览 你所需要备份的东西，按重要程度排序：
- PostgreSQL 数据库 .env.production 文件或等效文件中的应用密钥 用户上传的文件 Redis 数据库  故障模式 人们通常要应对两种类型故障：硬件故障，诸如磁盘上数据损坏；以及人为软件故障，诸如误删特定文件。本文档中，仅考虑前一种类型。
-丢失PostgreSQL数据库，那一切都完了。Mastodon将所有重要数据存储于PostgreSQL数据库中。如果数据库消失，那你服务器上所有的帐户、所有的嘟文、所有关注者都将随之消失。
-如果你丢失了应用密钥，对你的用户而言，Mastodon的某些功能将停止工作。你服务器上的用户将被登出，双因子认证（2FA）将不可用，Web Push API订阅将停止工作。
-如果你丢失了用户上传的文件，你将丢失头像、横幅、媒体附件，但Mastodon仍会继续工作。
-丢失Redis数据库几乎是无害的：唯一不可逆的数据是Sidekiq队列及之前失败任务的重试计划。主页与列表时间流虽然存储于Redis，但它们可以使用tootctl再生成。
-最好的备份是所谓的异地备份，即与Mastodon自身不在同一台计算机上存储的备份。如果你托管的服务器起火了，硬盘爆炸了，存储于同一硬件备份将不可用。
-备份应用密钥 应用密钥是最容易备份的，因为它们是不变的。你只需要将 .env.production 存储在安全的地方就可以了。
-备份 PostgreSQL 突然断电、硬盘故障、错误迁移数库库schema都会致使数据损坏。由于以上原因，推荐偶尔使用 pg_dump 或 pg_dumpall 备份数据库。
-如果要求高可用性，可以使用热流拷贝（hot streaming replication）使第二台PostgreSQL服务器始终具有最新数据，并做好另一台服务器出现故障切换至此的准备。
-备份用户上传的文件 如果你使用外部对象存储，诸如Amazon S3、Google Cloud 或 Wasabi，你无需为怎么备份它们而担心。各自的公司将负责处理硬件故障。
-如果你使用本地文件存储，复制体积巨大的 public/system 目录（默认存储上传文件的地方）。
-备份 Redis 备份Redis是很容易的。Redis会定期将数据写入/var/lib/redis/dump.rdb文件，你只需要复制这个文件就可以了。
-  翻译状态： 本文是英文页面 Backing up your server 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。  </description>
-    </item>
-    
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    <atom:link href="http://localhost:1313/zh-cn/admin/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>安装可选特色功能</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/optional/</link>
+      <link>http://localhost:1313/zh-cn/admin/optional/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/optional/</guid>
-      <description>  翻译状态： 本文是英文页面 Installing optional features 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。  </description>
+      <guid>http://localhost:1313/zh-cn/admin/optional/</guid>
+      <description>&#xD;翻译状态：&#xD;本文是英文页面 Installing optional features 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。&#xD;</description>
     </item>
-    
+    <item>
+      <title>备份你的服务器</title>
+      <link>http://localhost:1313/zh-cn/admin/backups/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/backups/</guid>
+      <description>对于任何真实世界用途来说，你都应该保证日常备份Mastodon服务器。&#xA;概览&#xD;你所需要备份的东西，按重要程度排序：&#xA;PostgreSQL 数据库 .env.production 文件或等效文件中的应用密钥 用户上传的文件 Redis 数据库 故障模式&#xD;人们通常要应对两种类型故障：硬件故障，诸如磁盘上数据损坏；以及人为软件故障，诸如误删特定文件。本文档中，仅考虑前一种类型。&#xA;丢失PostgreSQL数据库，那一切都完了。Mastodon将所有重要数据存储于PostgreSQL数据库中。如果数据库消失，那你服务器上所有的帐户、所有的嘟文、所有关注者都将随之消失。&#xA;如果你丢失了应用密钥，对你的用户而言，Mastodon的某些功能将停止工作。你服务器上的用户将被登出，双因子认证（2FA）将不可用，Web Push API订阅将停止工作。&#xA;如果你丢失了用户上传的文件，你将丢失头像、横幅、媒体附件，但Mastodon仍会继续工作。&#xA;丢失Redis数据库几乎是无害的：唯一不可逆的数据是Sidekiq队列及之前失败任务的重试计划。主页与列表时间流虽然存储于Redis，但它们可以使用tootctl再生成。&#xA;最好的备份是所谓的异地备份，即与Mastodon自身不在同一台计算机上存储的备份。如果你托管的服务器起火了，硬盘爆炸了，存储于同一硬件备份将不可用。&#xA;备份应用密钥&#xD;应用密钥是最容易备份的，因为它们是不变的。你只需要将 .env.production 存储在安全的地方就可以了。&#xA;备份 PostgreSQL&#xD;突然断电、硬盘故障、错误迁移数库库schema都会致使数据损坏。由于以上原因，推荐偶尔使用 pg_dump 或 pg_dumpall 备份数据库。&#xA;如果要求高可用性，可以使用热流拷贝（hot streaming replication）使第二台PostgreSQL服务器始终具有最新数据，并做好另一台服务器出现故障切换至此的准备。&#xA;备份用户上传的文件&#xD;如果你使用外部对象存储，诸如Amazon S3、Google Cloud 或 Wasabi，你无需为怎么备份它们而担心。各自的公司将负责处理硬件故障。&#xA;如果你使用本地文件存储，复制体积巨大的 public/system 目录（默认存储上传文件的地方）。&#xA;备份 Redis&#xD;备份Redis是很容易的。Redis会定期将数据写入/var/lib/redis/dump.rdb文件，你只需要复制这个文件就可以了。&#xA;翻译状态：&#xD;本文是英文页面 Backing up your server 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。&#xD;</description>
+    </item>
+    <item>
+      <title>从源中安装</title>
+      <link>http://localhost:1313/zh-cn/admin/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/install/</guid>
+      <description>前提条件&#xD;一台你有root访问权限的运行 Ubuntu 18.04 的机器 一个用于Mastodon站点的域名（或一个子域名），例如：example.com 一个电子邮件发送服务提供商，或其他SMTP服务器 你需要使用root用户运行命令。如果你现在不是root用户，请切换至root用户：&#xA;软件仓库&#xD;首先确保已经安装curl：&#xA;Node.js&#xD;curl -sL https://deb.nodesource.com/setup_12.x | bash - Yarn&#xD;curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - echo &amp;#34;deb https://dl.yarnpkg.com/debian/ stable main&amp;#34; | tee /etc/apt/sources.list.d/yarn.list 软件包&#xD;apt update apt install -y \ imagemagick ffmpeg libpq-dev libxml2-dev libxslt1-dev file git-core \ g++ libprotobuf-dev protobuf-compiler pkg-config nodejs gcc autoconf \ bison build-essential libssl-dev libyaml-dev libreadline6-dev \ zlib1g-dev libncurses5-dev libffi-dev libgdbm5 libgdbm-dev \ nginx redis-server redis-tools postgresql postgresql-contrib \ certbot python-certbot-nginx yarn libidn11-dev libicu-dev libjemalloc-dev 安装 Ruby&#xD;因为使用 rbenv 可以更容易的获得正确的版本并在新版本发布后进行更新，我们将使用 rbenv 来管理Ruby版本。rbenv 必须安装在单个Linux用户中，因此，我们首先需要使用以下命令创建一个Mastodon用户：</description>
+    </item>
+    <item>
+      <title>单点登录（SSO）</title>
+      <link>http://localhost:1313/zh-cn/admin/optional/sso/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/optional/sso/</guid>
+      <description>&#xD;本页面仍在建设中。&#xD;翻译状态：&#xD;本文是英文页面 Single Sign On 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。&#xD;</description>
+    </item>
     <item>
       <title>故障分析</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/troubleshooting/</link>
+      <link>http://localhost:1313/zh-cn/admin/troubleshooting/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/troubleshooting/</guid>
-      <description>我看到一个故障页说一些东西出错了。我怎么找出哪里出错了？ 所有带堆栈追踪（stack traces）的错误信息都将会被写入系统日志。当使用systemd时，可使用 journalctl -u mastodon-web（替换以相应的服务名） 来浏览每个服务的日志。当使用Docker时，与之类似：docker logs mastodon_web_1（替换以相应的容器名）。
-服务端详细错误信息将永不会公开显示，因为它们可能会暴露你的内部设置，并为攻击者提供线索，让他们了解如何更好的入侵或如何更高效的滥用。
-来自Mastodon web服务器的每一个响应都带有独一无二的请求ID（request ID），该ID也将反映在日志中。通过检查错误页的请求头，你可以在日志中轻松找到与之对应的堆栈追踪（stack traces）。
-升级新版本后，有些页面看起来很奇怪，就像它们含有未设置样式的元素一样。为什么？ 检查升级后，你是否运行 RAILS_ENV=production bin/rails assets:precompile 并重启Mastodon web 进程。因为这看起来像提供了过期的样式与脚本。这也有可能由于内存缺乏导致预编译失败，很不幸webpack会占用大量内存。如果是这个原因，请确保你已经分配了swap空间。另外，也可以在另一台机器上预编译静态文件，然后把它们复制至 public/packs 目录。
-升级新版本后，一些请求失败了，日志中的错误信息是 missing columns or tables。为什么？ 检查升级后，你是否运行 RAILS_ENV=production bin/rails db:migrate。因为这看起来Mastodon代码访问了一个更新或更旧的数据库schema。如果你使用PgBouncer，请确保此命令直接连接PostgreSQL，因为PgBouncer不支持迁移过程中的锁表操作。
-我试图运行 tootctl 或 rake/rails 命令，但我得到 uninitialized constants 错误信息。哪里出错了？ 检查你是否在命令前使用 RAILS_ENV=production 指定正确的环境。默认情况下，假定使用开发环境，因此代码尝试加载开发相关gem。然而，在生产环境中，我们避免安装这些gem。这就是错误的来源。
-  翻译状态： 本文是英文页面 Troubleshooting errors 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。  </description>
+      <guid>http://localhost:1313/zh-cn/admin/troubleshooting/</guid>
+      <description>&#xD;我看到一个故障页说一些东西出错了。我怎么找出哪里出错了？&#xD;所有带堆栈追踪（stack traces）的错误信息都将会被写入系统日志。当使用systemd时，可使用 journalctl -u mastodon-web（替换以相应的服务名） 来浏览每个服务的日志。当使用Docker时，与之类似：docker logs mastodon_web_1（替换以相应的容器名）。&#xA;服务端详细错误信息将永不会公开显示，因为它们可能会暴露你的内部设置，并为攻击者提供线索，让他们了解如何更好的入侵或如何更高效的滥用。&#xA;来自Mastodon web服务器的每一个响应都带有独一无二的请求ID（request ID），该ID也将反映在日志中。通过检查错误页的请求头，你可以在日志中轻松找到与之对应的堆栈追踪（stack traces）。&#xA;升级新版本后，有些页面看起来很奇怪，就像它们含有未设置样式的元素一样。为什么？&#xD;检查升级后，你是否运行 RAILS_ENV=production bin/rails assets:precompile 并重启Mastodon web 进程。因为这看起来像提供了过期的样式与脚本。这也有可能由于内存缺乏导致预编译失败，很不幸webpack会占用大量内存。如果是这个原因，请确保你已经分配了swap空间。另外，也可以在另一台机器上预编译静态文件，然后把它们复制至 public/packs 目录。&#xA;升级新版本后，一些请求失败了，日志中的错误信息是 missing columns or tables。为什么？&#xD;检查升级后，你是否运行 RAILS_ENV=production bin/rails db:migrate。因为这看起来Mastodon代码访问了一个更新或更旧的数据库schema。如果你使用PgBouncer，请确保此命令直接连接PostgreSQL，因为PgBouncer不支持迁移过程中的锁表操作。&#xA;我试图运行 tootctl 或 rake/rails 命令，但我得到 uninitialized constants 错误信息。哪里出错了？&#xD;检查你是否在命令前使用 RAILS_ENV=production 指定正确的环境。默认情况下，假定使用开发环境，因此代码尝试加载开发相关gem。然而，在生产环境中，我们避免安装这些gem。这就是错误的来源。&#xA;翻译状态：&#xD;本文是英文页面 Troubleshooting errors 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。&#xD;</description>
     </item>
-    
     <item>
-      <title>设置你的环境</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/config/</link>
+      <title>匿名服务</title>
+      <link>http://localhost:1313/zh-cn/admin/optional/tor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/config/</guid>
-      <description> 本页面仍在建设中。  Mastodon使用环境变量作为其的配置。
-为了方便起见，Mastodon从Mastodon目录中的 .env.production 文件读取环境变量，但是始终可以用特定方式覆盖它们。例如：在 systemd service 文件中可以使用 EnvironmentFile 从特定文件中读取环境变量或使用 Environment 定义环境变量，因此你可以为不同服务指定不同的环境变量。也可以在从命令行调用运行Mastodon时指定环境变量。
-基本参数 站点互联  LOCAL_DOMAIN WEB_DOMAIN ALTERNATE_DOMAINS  AUTHORIZED_FETCH 当设置为 true 时，Mastodon将停止内联签名活动，并要求远程服务器在拉取公开（public）和不公开（unlisted）的嘟文时进行身份验证。
-这可以阻止被屏蔽的域名拉取你的公开嘟文，但代价是可能增加计算量，并与不支持附带签名的拉取请求的软件不兼容（如低于3.0版本的Mastodon）。
-请注意：这个模式并不能保证你的公开嘟文（public、unlisted）不被恶意操作者获取，这仅仅是增加了一点难度。
-WHITELIST_MODE 当设置为 true 时，Mastodon将仅与白名单内的服务器互联，同时关闭公开页面和一些客户端API。 白名单模式会启用 authorized fetch 模式。
-当一个现存实例站点切换至白名单模式，以下命令可以被用来移除非白名单站点的数据：
-tootctl domain purge --whitelist-mode 请注意：虽然Mastodon 3.0 版本便引入了白名单模式 WHITELIST_MODE，但在Mastodon 3.0和3.0.1版中并没有正确实现。
-密钥  SECRET_KEY_BASE OTP_SECRET VAPID_PRIVATE_KEY VAPID_PUBLIC_KEY  部署  RAILS_ENV RAILS_SERVE_STATIC_FILES RAILS_LOG_LEVEL TRUSTED_PROXY_IP SOCKET PORT NODE_ENV BIND  缩放选项  WEB_CONCURRENCY MAX_THREADS PREPARED_STATEMENTS STREAMING_API_BASE_URL STREAMING_CLUSTER_NUM  数据库连接 PostgreSQL  DB_HOST DB_USER DB_NAME DB_PASS DB_PORT DB_SSLMODE DATABASE_URL  Redis  REDIS_HOST REDIS_PORT REDIS_URL REDIS_NAMESPACE CACHE_REDIS_HOST CACHE_REDIS_PORT CACHE_REDIS_URL CACHE_REDIS_NAMESPACE  Elasticsearch  ES_ENABLED ES_HOST ES_PORT ES_PREFIX  StatsD  STATSD_ADDR STATSD_NAMESPACE  限制  SINGLE_USER_MODE EMAIL_DOMAIN_WHITELIST DEFAULT_LOCALE MAX_SESSION_ACTIVATIONS USER_ACTIVE_DAYS  电子邮件  SMTP_SERVER SMTP_PORT SMTP_LOGIN SMTP_PASSWORD SMTP_FROM_ADDRESS SMTP_DOMAIN SMTP_DELIVERY_METHOD SMTP_AUTH_METHOD SMTP_CA_FILE SMTP_OPENSSL_VERIFY_MODE SMTP_ENABLE_STARTTLS_AUTO SMTP_TLS  文件存储  CDN_HOST S3_ALIAS_HOST  本地文件存储  PAPERCLIP_ROOT_PATH PAPERCLIP_ROOT_URL  Amazon S3 及其兼容存储  S3_ENABLED S3_BUCKET AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY S3_REGION S3_PROTOCOL S3_HOSTNAME S3_ENDPOINT S3_SIGNATURE_VERSION S3_BATCH_DELETE_LIMIT S3_BATCH_DELETE_RETRY  Swift  SWIFT_ENABLED SWIFT_USERNAME SWIFT_TENANT SWIFT_PASSWORD SWIFT_PROJECT_ID SWIFT_AUTH_URL SWIFT_CONTAINER SWIFT_OBJECT_URL SWIFT_REGION SWIFT_DOMAIN_NAME SWIFT_CACHE_TTL  外部认证  OAUTH_REDIRECT_AT_SIGN_IN  LDAP  LDAP_ENABLED LDAP_HOST LDAP_PORT LDAP_METHOD LDAP_BASE LDAP_BIND_DN LDAP_PASSWORD LDAP_UID LDAP_SEARCH_FILTER  PAM  PAM_ENABLED PAM_EMAIL_DOMAIN PAM_DEFAULT_SERVICE PAM_CONTROLLED_SERVICE  CAS  CAS_ENABLED CAS_URL CAS_HOST CAS_PORT CAS_SSL CAS_VALIDATE_URL CAS_CALLBACK_URL CAS_LOGOUT_URL CAS_LOGIN_URL CAS_UID_FIELD CAS_CA_PATH CAS_DISABLE_SSL_VERIFICATION CAS_UID_KEY CAS_NAME_KEY CAS_EMAIL_KEY CAS_NICKNAME_KEY CAS_FIRST_NAME_KEY CAS_LAST_NAME_KEY CAS_LOCATION_KEY CAS_IMAGE_KEY CAS_PHONE_KEY  SAML  SAML_ENABLED SAML_ACS_URL SAML_ISSUER SAML_IDP_SSO_TARGET_URL SAML_IDP_CERT SAML_IDP_CERT_FINGERPRINT SAML_NAME_IDENTIFIER_FORMAT SAML_CERT SAML_PRIVATE_KEY SAML_SECURITY_WANT_ASSERTION_SIGNED SAML_SECURITY_WANT_ASSERTION_ENCRYPTED SAML_SECURITY_ASSUME_EMAIL_IS_VERIFIED SAML_ATTRIBUTES_STATEMENTS_UID SAML_ATTRIBUTES_STATEMENTS_EMAIL SAML_ATTRIBUTES_STATEMENTS_FULL_NAME SAML_ATTRIBUTES_STATEMENTS_FIRST_NAME SAML_ATTRIBUTES_STATEMENTS_LAST_NAME SAML_UID_ATTRIBUTE SAML_ATTRIBUTES_STATEMENTS_VERIFIED SAML_ATTRIBUTES_STATEMENTS_VERIFIED_EMAIL  隐藏服务  http_proxy ALLOW_ACCESS_TO_HIDDEN_SERVICE  其它  SKIP_POST_DEPLOYMENT_MIGRATIONS    翻译状态： 本文是英文页面 Configuring your environment 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。  </description>
+      <guid>http://localhost:1313/zh-cn/admin/optional/tor/</guid>
+      <description>可以通过Tor的匿名服务来访问Mastodon。这将给你一个只能通过 Tor 网络连接的 *.onion 地址。&#xA;安装 Tor&#xD;首先，Tor的Debian软件仓库需要被添加至apt中。&#xA;deb https://deb.torproject.org/torproject.org stretch main deb-src https://deb.torproject.org/torproject.org stretch main 接下来，添加相应gpg密钥。&#xA;curl https://deb.torproject.org/torproject.org/A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89.asc | gpg --import gpg --export A3C4F0F979CAA22CDBA8F512EE8CBC9E886DDD89 | apt-key add - 最后，安装所需软件包。&#xA;apt install tor deb.torproject.org-keyring 配置 Tor&#xD;编辑 /etc/tor/torrc 并添加如下设置。&#xA;HiddenServiceDir /var/lib/tor/hidden_service/ HiddenServiceVersion 3 HiddenServicePort 80 127.0.0.1:80 重启 Tor。&#xA;sudo service tor restart 现在，你的Tor域名可以在 /var/lib/tor/hidden_service/hostname 找到。&#xA;移动你的Mastodon配置&#xD;我们将需要将你的Mastodon配置告诉Nginx两次。为了不自我重复（DRY），我们需要将Mastodon配置移动到一个可被引用的独立文件。&#xA;在 /etc/nginx/snippets/mastodon.conf 创建一个新文件。放入除listen、server_name、include及所有SSL相关选项之外的所有配置参数至新文件中。你的新文件看起来可能像这样。&#xA;add_header Referrer-Policy &amp;#34;same-origin&amp;#34;; keepalive_timeout 70; sendfile on; client_max_body_size 80m; root /home/mastodon/live/public; … error_page 500 501 502 503 504 /500.</description>
     </item>
-    
-    <item>
-      <title>迁移到新机器</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/migrating/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/migrating/</guid>
-      <description>有时，出于各种原因，你需要将你的Mastodon实例从一台服务器迁移至另一台。幸运的是，这个过程并不太困解，虽然这可能导致一段时间的下线。
- 本篇指南基于Ubuntu Server编写；根据其他设置的不同，你的过程可能会有变化。  基本步骤  依照产品指南安装新的Mastodon服务器（切记，不要运行 mastodon:setup）。 停止旧服务器上的Mastodon（systemctl stop &#39;mastodon-*.service&#39;）。 依照如下指示，导出并导入PostgreSQL数据库。 依照如下指示，复制 system/ 目录下文件。（注意：如果你使用S3存储，你可以跳过此步）。 复制 .env.production 文件。 运行 RAILS_ENV=production bundle exec rails assets:precompile 编译 Mastodon。 运行 RAILS_ENV=production ./bin/tootctl feeds build 重新构建每个用户的主页时间流。 启动新服务器上的Mastodon。 更新DNS设置，将其指向新服务器。 更新或复制你的Nginx设置，如果必要的话可重获取LetsEncrypt证书。 享受你的新服务器！  详细步骤 什么数据需要被迁移 你必须需要复制如下内容：
- ~/live/public/system目录，里面包含了用户上传的图片与视频（如果使用S3，可跳过此步） PostgreSQL数据库（使用pg_dump） ~/live/.env.production文件，里面包含了服务器配置与密钥  不太重要的部分，为了方便起见，你也可以复制如下内容：
- nginx配置文件（位于/etc/nginx/sites-available/default） systemd配置文件（/etc/systemd/system/mastodon-*.service），里面可能包括一些你服务器的调优与个性化 PgBouncer配置文件，位于 /etc/pgbouncer （如果你使用PgBouncer的话）  导出并导入PostgreSQL数据库 不要运行mastodon:setup，而是创建一个名为template0的空白PostgreSQL数据库（当导入PostgreSQL导出文件时，这是很有用的，参见pg_dump文档）。
-在你的旧系统，使用mastodon用户运行如下命令：
-pg_dump -Fc mastodon_production -f backup.dump 使用 rsync 或 scp 复制 backup.dump 文件。然后在新系统，使用mastodon帐户创建一个空数据库：
-createdb -T template0 mastodon_production 然后导入它：</description>
-    </item>
-    
-    <item>
-      <title>运营操作</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/moderation/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/moderation/</guid>
-      <description>帐户管理 Mastodon运营操作始终作用于本地，即从特定服务器查看的内容。一台服务器管理员（admin）或运营员（moderator）不能影响另一台服务器上的用户，他们只能影响另一台服务器用户的本地服务器副本。
-禁止登录（disable login） Mastodon可以被禁止登录。这样可以禁止用户对帐户进行任何操作，但是其帐户的内容仍保持不变。这个限制是可撤销的，任何时候都可以重新激活该用户。本限制仅适用于你服务器的本地用户。
-隐藏（silence） 在Mastodon，隐藏（silence）是沙箱（sandbox）的同义词。一个被隐藏的帐户不会出现在未关注该帐户的用户面前。该帐户所有内容仍存在，这些内容可以通过搜索查找到，该帐户可以被提及、被关注，但是这些内容是不可见的。
-此外，隐藏操作不会影响联邦宇宙。一个本地隐藏了的帐户不会自动在其他服务器隐藏。
-本限制是可撤销的，任何时间都可以去除该帐户的隐藏。
-封禁（suspension） 在Mastodon，封禁（suspension）是删除（deletion）的同义词。该帐户不会出现在搜索之中，其用户资料页将消失，该帐户的所有嘟文，上传，关注者以及所有其它数据都将被移除。本限制是不可逆的。当一个帐户被解除屏蔽，用户可以重新控制帐户，但旧数据已经一去不复返了。
-实例管理 由于使用帐户管理单独处理来自行为异常服务器的大量用户是让人精疲力竭的事，所以可以预清空来自特定服务器的所有用户，即所谓的域名屏蔽（domain block）。该操作有多个不同严厉程度。
-拒绝接收媒体文件（reject media） 当这个选项被激活，来自该服务器的文件将不会传递至本地。其包括头像、横幅、emoji及媒体附件。
-隐藏（silence） 对来自该服务器的所有帐户应用隐藏（silence）操作。
-屏蔽（suspend） 对来自该服务器的所有帐户应用封禁（suspension）操作。本地将不储存除用户名外的任何数据。
-反广告措施 Mastodon有以下基本措施以阻止广告内容：
- 注册时需确认电子邮件地址 基于IP的注册频率限制  然而，专业广告发送者（spammer）将绕过这些措施。你可以应用的措施是电子邮件域名屏蔽。在注册期间，Mastodon将解析所给电子邮箱地址的A纪录或MX纪录，即电子邮件服务器的IP地址，并对照动态存储的黑名单中检查该IP地址。
-屏蔽电子邮件域名 广告发送者（spammer）时常使用不同的电子邮件域名，以让他们看起来是使用许多不同的电子邮件服务器注册，而这些电子邮件域名很难被分别列入黑名单。但是，有时这些域名被解析到了同IP地址电子邮件服务器。如果你发现同一时间有大数广告发送者（spammer）注册，你可以使用在线DNS查询工具或 Linux dig 组件来检查，例如：dig example.com 将查询该域名的所有DNS A纪录。如果你注意到所有域名指向同一IP，你可以把它添加至电子邮件域名屏蔽列表中。
-封禁IP Mastodon自身不支持基于IP地址的访问者屏蔽，这不是一个万无一失的策略。IP有时会被不同的人共享，并时常会易手。但可以使用 Linux 防火墙来基于IP地址屏蔽访问者。下面的例子需要使用 iptables 和 ipset：
-# Install ipset sudo apt install ipset # Create blacklist named &amp;#34;spambots&amp;#34; sudo ipset create spambots nethash # Add 1.2.3.4 to the blacklist sudo ipset add spambots 1.</description>
-    </item>
-    
     <item>
       <title>配置你的新实例</title>
-      <link>https://docs.joinmastodon.org/zh-cn/admin/setup/</link>
+      <link>http://localhost:1313/zh-cn/admin/setup/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://docs.joinmastodon.org/zh-cn/admin/setup/</guid>
-      <description>创建一个管理员帐户 通过浏览器 在通过浏览器完成帐户注册后，你需要使用命令行给你新创建的帐户以管理员特权。假设你帐户的用户名为alice：
-RAILS_ENV=production bin/tootctl accounts modify alice --role Owner 通过命令行 你可以使用命令行创建一个全新帐户。
-RAILS_ENV=production bin/tootctl accounts create \  alice \  --email alice@example.com \  --confirmed \  --role Owner 一个随机密码将会显示在终端上。
-填写站点信息 登录后，打开网站设置页面。虽然从技术上来说无需填写这些信息，但对于操作服务器的人而言，这被认为是至关重要的。
-   设置 含意     用于联系的公开用户名 你的用户名，人们可以知道谁运营着这台服务器   用于联系的公开电子邮件地址 一个可以联系到你的电子邮件地址，可供那些帐户被锁或没有帐户的人使用   本站简介 你为什么启动这个站点？为谁运营？什么使它与众不同？   本站详细介绍 你可以在此放置各种信息，但建议放置行为准则。    填写完这些后，请点击“保存更改”。
-  翻译状态： 本文是英文页面 Setting up your new instance 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。  </description>
+      <guid>http://localhost:1313/zh-cn/admin/setup/</guid>
+      <description>&#xD;创建一个管理员帐户&#xD;通过浏览器&#xD;在通过浏览器完成帐户注册后，你需要使用命令行给你新创建的帐户以管理员特权。假设你帐户的用户名为alice：&#xA;RAILS_ENV=production bin/tootctl accounts modify alice --role Owner 通过命令行&#xD;你可以使用命令行创建一个全新帐户。&#xA;RAILS_ENV=production bin/tootctl accounts create \ alice \ --email alice@example.com \ --confirmed \ --role Owner 一个随机密码将会显示在终端上。&#xA;填写站点信息&#xD;登录后，打开网站设置页面。虽然从技术上来说无需填写这些信息，但对于操作服务器的人而言，这被认为是至关重要的。&#xA;设置 含意 用于联系的公开用户名 你的用户名，人们可以知道谁运营着这台服务器 用于联系的公开电子邮件地址 一个可以联系到你的电子邮件地址，可供那些帐户被锁或没有帐户的人使用 本站简介 你为什么启动这个站点？为谁运营？什么使它与众不同？ 本站详细介绍 你可以在此放置各种信息，但建议放置行为准则。 填写完这些后，请点击“保存更改”。&#xA;翻译状态：&#xD;本文是英文页面 Setting up your new instance 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。&#xD;</description>
     </item>
-    
+    <item>
+      <title>迁移到新机器</title>
+      <link>http://localhost:1313/zh-cn/admin/migrating/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/migrating/</guid>
+      <description>有时，出于各种原因，你需要将你的Mastodon实例从一台服务器迁移至另一台。幸运的是，这个过程并不太困解，虽然这可能导致一段时间的下线。&#xA;本篇指南基于Ubuntu Server编写；根据其他设置的不同，你的过程可能会有变化。&#xD;基本步骤&#xD;依照产品指南安装新的Mastodon服务器（切记，不要运行 mastodon:setup）。 停止旧服务器上的Mastodon（systemctl stop &#39;mastodon-*.service&#39;）。 依照如下指示，导出并导入PostgreSQL数据库。 依照如下指示，复制 system/ 目录下文件。（注意：如果你使用S3存储，你可以跳过此步）。 复制 .env.production 文件。 运行 RAILS_ENV=production bundle exec rails assets:precompile 编译 Mastodon。 运行 RAILS_ENV=production ./bin/tootctl feeds build 重新构建每个用户的主页时间流。 启动新服务器上的Mastodon。 更新DNS设置，将其指向新服务器。 更新或复制你的Nginx设置，如果必要的话可重获取LetsEncrypt证书。 享受你的新服务器！ 详细步骤&#xD;什么数据需要被迁移&#xD;你必须需要复制如下内容：&#xA;~/live/public/system目录，里面包含了用户上传的图片与视频（如果使用S3，可跳过此步） PostgreSQL数据库（使用pg_dump） ~/live/.env.production文件，里面包含了服务器配置与密钥 不太重要的部分，为了方便起见，你也可以复制如下内容：&#xA;nginx配置文件（位于/etc/nginx/sites-available/default） systemd配置文件（/etc/systemd/system/mastodon-*.service），里面可能包括一些你服务器的调优与个性化 PgBouncer配置文件，位于 /etc/pgbouncer （如果你使用PgBouncer的话） 导出并导入PostgreSQL数据库&#xD;不要运行mastodon:setup，而是创建一个名为template0的空白PostgreSQL数据库（当导入PostgreSQL导出文件时，这是很有用的，参见pg_dump文档）。&#xA;在你的旧系统，使用mastodon用户运行如下命令：&#xA;pg_dump -Fc mastodon_production -f backup.dump 使用 rsync 或 scp 复制 backup.dump 文件。然后在新系统，使用mastodon帐户创建一个空数据库：&#xA;createdb -T template0 mastodon_production 然后导入它：&#xA;pg_restore -U mastodon -n public --no-owner --role=mastodon \ -d mastodon_production backup.</description>
+    </item>
+    <item>
+      <title>全文搜索</title>
+      <link>http://localhost:1313/zh-cn/admin/optional/elasticsearch/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/optional/elasticsearch/</guid>
+      <description>当有可用Elasticsearch时，Mastodon支持全文搜索。Mastodon的全文搜索允许登录用户从他们自己的嘟文、他们喜欢的嘟文、他们的书签和他们被提及的嘟文中查找相应结果。Mastodon有意禁用了在全数据库搜索任意关键词的功能。&#xA;安装 Elasticsearch&#xD;Elasticsearch 需要 Java runtime。如果你还没有安装 Java，请立刻安装上它。以下操均假定你已经登录为root用户：&#xA;apt install openjdk-8-jre-headless 添加Elasticsearch官方软件仓库至apt：&#xA;wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add - echo &amp;#34;deb https://artifacts.elastic.co/packages/6.x/apt stable main&amp;#34; | tee -a /etc/apt/sources.list.d/elastic-6.x.list apt update 现在，你可以安装 Elasticsearch：&#xA;apt install elasticsearch 安全警告： 默认情况下，Elasticsearch仅绑定于localhost，即无法从外部网络访问。你可以通过查看 /etc/elasticsearch/elasticsearch.yml 中的 network.host 来检查 Elasticsearch 绑定了哪些地址。考虑到由于缺乏认证层，任何能访问 Elasticsearch 的人都可以读取或修改里面的数据。因此，确保访问安全非常重要。如主要安装说明中所述，防火墙建议仅暴露了22、80、443端口。如果你是一个多主机配置，你必须知道如何保证内部流量安全。&#xD;安全警告: 由于近期Elasticsearch所使用的log4j库被披露出安全漏洞，使用了旧版本log4j(2.0到2.14.1)的ES可能会受到影响。如果使用了这些版本的log4j，请参阅 此 issue 来暂时缓解此问题。&#xD;启动 Elasticsearch：&#xA;systemctl enable elasticsearch systemctl start elasticsearch 配置 Mastodon&#xD;编辑 .env.production，添加如下变量：&#xA;ES_ENABLED=true ES_HOST=localhost ES_PORT=9200 如果你同一台机器上运行多个Mastodon服务器，你计划让它们使用同一个Elasticsearch，请确保他们都配置了互不重复的 REDIS_NAMESPACE 以分别他们的索引。如果你需要覆盖Elasticsearch索引前缀，你可以直接设置 ES_PREFIX。</description>
+    </item>
+    <item>
+      <title>设置你的环境</title>
+      <link>http://localhost:1313/zh-cn/admin/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/config/</guid>
+      <description>&#xD;本页面仍在建设中。&#xD;Mastodon使用环境变量作为其的配置。&#xA;为了方便起见，Mastodon从Mastodon目录中的 .env.production 文件读取环境变量，但是始终可以用特定方式覆盖它们。例如：在 systemd service 文件中可以使用 EnvironmentFile 从特定文件中读取环境变量或使用 Environment 定义环境变量，因此你可以为不同服务指定不同的环境变量。也可以在从命令行调用运行Mastodon时指定环境变量。&#xA;基本参数&#xD;站点互联&#xD;LOCAL_DOMAIN WEB_DOMAIN ALTERNATE_DOMAINS AUTHORIZED_FETCH&#xD;当设置为 true 时，Mastodon将停止内联签名活动，并要求远程服务器在拉取公开（public）和不公开（unlisted）的嘟文时进行身份验证。&#xA;这可以阻止被屏蔽的域名拉取你的公开嘟文，但代价是可能增加计算量，并与不支持附带签名的拉取请求的软件不兼容（如低于3.0版本的Mastodon）。&#xA;请注意：这个模式并不能保证你的公开嘟文（public、unlisted）不被恶意操作者获取，这仅仅是增加了一点难度。&#xA;WHITELIST_MODE&#xD;当设置为 true 时，Mastodon将仅与白名单内的服务器互联，同时关闭公开页面和一些客户端API。 白名单模式会启用 authorized fetch 模式。&#xA;当一个现存实例站点切换至白名单模式，以下命令可以被用来移除非白名单站点的数据：&#xA;tootctl domain purge --whitelist-mode 请注意：虽然Mastodon 3.0 版本便引入了白名单模式 WHITELIST_MODE，但在Mastodon 3.0和3.0.1版中并没有正确实现。&#xA;密钥&#xD;SECRET_KEY_BASE OTP_SECRET VAPID_PRIVATE_KEY VAPID_PUBLIC_KEY 部署&#xD;RAILS_ENV RAILS_SERVE_STATIC_FILES RAILS_LOG_LEVEL TRUSTED_PROXY_IP SOCKET PORT NODE_ENV BIND 缩放选项&#xD;WEB_CONCURRENCY MAX_THREADS PREPARED_STATEMENTS STREAMING_API_BASE_URL STREAMING_CLUSTER_NUM 数据库连接&#xD;PostgreSQL&#xD;DB_HOST DB_USER DB_NAME DB_PASS DB_PORT DB_SSLMODE DATABASE_URL Redis&#xD;REDIS_HOST REDIS_PORT REDIS_URL REDIS_NAMESPACE CACHE_REDIS_HOST CACHE_REDIS_PORT CACHE_REDIS_URL CACHE_REDIS_NAMESPACE Elasticsearch&#xD;ES_ENABLED ES_HOST ES_PORT ES_PREFIX StatsD&#xD;STATSD_ADDR STATSD_NAMESPACE 限制&#xD;SINGLE_USER_MODE EMAIL_DOMAIN_WHITELIST DEFAULT_LOCALE MAX_SESSION_ACTIVATIONS USER_ACTIVE_DAYS 电子邮件&#xD;SMTP_SERVER SMTP_PORT SMTP_LOGIN SMTP_PASSWORD SMTP_FROM_ADDRESS SMTP_DOMAIN SMTP_DELIVERY_METHOD SMTP_AUTH_METHOD SMTP_CA_FILE SMTP_OPENSSL_VERIFY_MODE SMTP_ENABLE_STARTTLS_AUTO SMTP_TLS 文件存储&#xD;CDN_HOST S3_ALIAS_HOST 本地文件存储&#xD;PAPERCLIP_ROOT_PATH PAPERCLIP_ROOT_URL Amazon S3 及其兼容存储&#xD;S3_ENABLED S3_BUCKET AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY S3_REGION S3_PROTOCOL S3_HOSTNAME S3_ENDPOINT S3_SIGNATURE_VERSION S3_BATCH_DELETE_LIMIT S3_BATCH_DELETE_RETRY Swift&#xD;SWIFT_ENABLED SWIFT_USERNAME SWIFT_TENANT SWIFT_PASSWORD SWIFT_PROJECT_ID SWIFT_AUTH_URL SWIFT_CONTAINER SWIFT_OBJECT_URL SWIFT_REGION SWIFT_DOMAIN_NAME SWIFT_CACHE_TTL 外部认证&#xD;OAUTH_REDIRECT_AT_SIGN_IN LDAP&#xD;LDAP_ENABLED LDAP_HOST LDAP_PORT LDAP_METHOD LDAP_BASE LDAP_BIND_DN LDAP_PASSWORD LDAP_UID LDAP_SEARCH_FILTER PAM&#xD;PAM_ENABLED PAM_EMAIL_DOMAIN PAM_DEFAULT_SERVICE PAM_CONTROLLED_SERVICE CAS&#xD;CAS_ENABLED CAS_URL CAS_HOST CAS_PORT CAS_SSL CAS_VALIDATE_URL CAS_CALLBACK_URL CAS_LOGOUT_URL CAS_LOGIN_URL CAS_UID_FIELD CAS_CA_PATH CAS_DISABLE_SSL_VERIFICATION CAS_UID_KEY CAS_NAME_KEY CAS_EMAIL_KEY CAS_NICKNAME_KEY CAS_FIRST_NAME_KEY CAS_LAST_NAME_KEY CAS_LOCATION_KEY CAS_IMAGE_KEY CAS_PHONE_KEY SAML&#xD;SAML_ENABLED SAML_ACS_URL SAML_ISSUER SAML_IDP_SSO_TARGET_URL SAML_IDP_CERT SAML_IDP_CERT_FINGERPRINT SAML_NAME_IDENTIFIER_FORMAT SAML_CERT SAML_PRIVATE_KEY SAML_SECURITY_WANT_ASSERTION_SIGNED SAML_SECURITY_WANT_ASSERTION_ENCRYPTED SAML_SECURITY_ASSUME_EMAIL_IS_VERIFIED SAML_ATTRIBUTES_STATEMENTS_UID SAML_ATTRIBUTES_STATEMENTS_EMAIL SAML_ATTRIBUTES_STATEMENTS_FULL_NAME SAML_ATTRIBUTES_STATEMENTS_FIRST_NAME SAML_ATTRIBUTES_STATEMENTS_LAST_NAME SAML_UID_ATTRIBUTE SAML_ATTRIBUTES_STATEMENTS_VERIFIED SAML_ATTRIBUTES_STATEMENTS_VERIFIED_EMAIL 隐藏服务&#xD;http_proxy ALLOW_ACCESS_TO_HIDDEN_SERVICE 其它&#xD;SKIP_POST_DEPLOYMENT_MIGRATIONS 翻译状态：&#xD;本文是英文页面 Configuring your environment 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。&#xD;</description>
+    </item>
+    <item>
+      <title>伸缩你的服务器</title>
+      <link>http://localhost:1313/zh-cn/admin/scaling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/scaling/</guid>
+      <description>并发管理&#xD;Mastodon有三种进程：&#xA;Web (Puma) Streaming API 后台进程 (Sidekiq) Web (Puma)&#xD;web进程处理绝大多数应用的短HTTP请求。以下环境变量可以控制它：&#xA;WEB_CONCURRENCY 控制worker进程数 MAX_THREADS 控制每进程的线程数 线程共享其父进程的内存。不同的线程被分配了专有内存，虽然他们通过copy-on-write共享了一些内存。数量较多的线程会先消耗掉你的CPU，数量较多的进程会先消耗掉你的内存。&#xA;这些数值会影响到可以同时处理多少HTTP请求。&#xA;在吞吐量方面，多进程比多线程要好。&#xA;Streaming API&#xD;streaming API处理长HTTP连接与WebSockets连接，通过这些连接用户可以接受到实时更新。以下环境变量可以控制它：&#xA;STREAMING_CLUSTER_NUM 控制worker进程数 STREAMING_API_BASE_URL 控制streaming API的base URL 一个进程可以处理相当数量的连接。 如果您愿意，streaming API可以托管在其他子域上，例如：避免nginx代理连接开销。&#xA;后台进程 (Sidekiq)&#xD;Mastodon许多任务都分配给后台进程，以确保HTTP请求快速响应，并防止HTTP请求中止影响到这些任务的执行。Sidekiq是单个进程，具有可配置的线程数。&#xA;线程数&#xD;虽然web进程数与web线程数影响Mastodon实例响应终端用户，分配给后台进程的线程数影响嘟文从作者分发至其他人的速度，电子邮件花多长时间发完等等。&#xA;Sidekiq的线程数并不受环境变量控制，但是可通过命令行参数控制，例如：&#xA;bundle exec sidekiq -c 15 将启一个15线程的sidekiq进程。请注意每个线程都需要能够连接数据库，这意味着数据库连接池应足够大以满足所有进程。数据库连接池的大小由DB_POOL环境变量控制，该变量必须至少与进程数同样大。&#xA;队列&#xD;Sidekiq根据任务的重要性使用不同队列，这里的重要性是指如果队列不工作，其对本地用户体验的冲击有多大。按重要性降序排列：&#xA;队列 重要性 default 影响本地用户的所有任务 push 推送消息至其它服务器 mailers 分发电子邮件 pull 从其它服务器拉取信息 scheduler 完成计划任务，例如更新当下流行标签及清理日志 默认队列及其优先级存储于config/sidekiq.yml，但可通过调用Sidekiq命令行覆盖，例如：&#xA;bundle exec sidekiq -q default 仅运行default队列。&#xA;Sidekiq处理队列的方式是，它首先检查第一个队列中的任务，如果没有，则检查下一个队列。这意味着，如果第一个队列已满，其他队列将延后。&#xA;作为一种解决方案，可以启动为不同队列启动不同的Sidekiq进程以确保真正的并列执行，例如：使用不同Sidekiq参数创建多个systemd服务。&#xA;请确保仅有一个scheduler队列！！&#xA;使用pgBouncer事务池&#xD;你为什么要用PgBouncer&#xD;如果开始耗尽可用的Postgres连接（默认为100），那PgBouncer可能是一个好方案。本文档将介绍Mastodon的一些常见陷阱及好的默认配置。</description>
+    </item>
+    <item>
+      <title>升级到新版本</title>
+      <link>http://localhost:1313/zh-cn/admin/upgrading/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/upgrading/</guid>
+      <description>&#xD;当一个新的Mastodon版本释出后，它将出现在GitHub releases页面。请注意：运行来自main分支的未释出代码，虽然可以进行，但不推荐这样做。&#xD;Mastodon版本与git tags一致。在尝试升级之前，请至GitHub releases页面查找所需版本。该页面包含了一个更新日专，其中描述你需要了解的所有差异，以及特定的升级指令。&#xA;开始之前，切换至mastodon用户：&#xA;su - mastodon 并转至Mastodon根目录：&#xA;cd /home/mastodon/live 下载相应版本代码，这里假定版本为v3.1.2：&#xA;git fetch --tags git checkout v3.1.2 现在，执行GitHub版本发布说明中的升级指令。因为不同的版本有不同的指令，所以本页面将不包括任何指令。&#xA;从旧版本升级时，你可以安全的跳过中间版本。你无需单独检出他们。然而，你确实需要追踪每一个版本的升级指令。大多数指令都是重叠的，你只需要确保每条至少执行一次即可。&#xD;当你执行完版本发布说明中的指令后，切换回root用户：&#xA;exit 重启后台worker：&#xA;systemctl restart mastodon-sidekiq 并重载web进程：&#xA;systemctl reload mastodon-web reload操作是零下线时间的重启（restart），也被称为“分阶段重启（phased restart）”。因此，Mastodon升级通常不需要为计划下线而提前发布公告。罕见情况下，你可以改用restart操作，但你的用户将感到（短暂的）服务中断。&#xD;罕见情况下，streaming API 服务也会被更新并需要重启：&#xA;systemctl restart mastodon-streaming 更新streaming API服务非常罕见，在大多数版本中，不需要重启它。重启streaming API将导致服务器负载增加，因为断线的用户会尝试重连或改用REST API轮询。因此请尽量避免重启streaming API服务&#xD;就这样！ 您现在正在运行新版本的Mastodon。&#xD;翻译状态：&#xD;本文是英文页面 Upgrading to a new release 的翻译，最后翻译时间：，点击这里可以查看翻译后页面的改动。&#xD;</description>
+    </item>
+    <item>
+      <title>使用管理命令行</title>
+      <link>http://localhost:1313/zh-cn/admin/tootctl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/tootctl/</guid>
+      <description>Mastodon的命令行界面是一个位于Mastodon根目录内bin目录中的名为tootctl的可执行文件。你必须通过RAILS_ENV环境变量指定你执行时打算使用的环境。除非你是在本地计算机上进行开发工作，否则你需要使用RAILS_ENV=production。如果你确信永不使用其它环境（开发、测试），为了方便起见，你可以把它添加到 .bashrc 文件，例如：&#xA;echo &amp;#34;export RAILS_ENV=production&amp;#34; &amp;gt;&amp;gt; ~/.bashrc 如果这样，便无需在每次执行时指定它。否则，通常会这样调用 tootctl 命令（假定你的Mastodon代码位于/home/mastodon/live）：&#xA;cd /home/mastodon/live RAILS_ENV=production bin/tootctl help 基础命令&#xD;lib/mastodon/cli/base.rb&#xD;tootctl self-destruct&#xD;通过向所有己知实例广播帐户删除通告，将本服务器从联邦宇宙抹除。此命令允许Mastodon服务器“干净退出（clean exit）”，即几乎不在其它服务器留下任何缓存。此命令始终是交互式的，且需要二次确认。&#xA;实际上，不会删除任何本地数据，因为直接清空数据库或删除整个VPS更快。如果你运行此命令后，无论如何都要继续运营实例，状态不匹配可能导致与其它站点互联时出错。&#xA;运行此命令之前，请确保你确实知道自己正在做什么。此操作不可逆，并且可能花费很长时间。完成此命令之后，服务器将处于破碎状态（BROKEN STATE）。需要一个运行中的Sidekiq进程，所以在队列完全被清空之前不要关闭服务器。&#xD;版本历史：&#xA;2.8.0 - 被加入 选项 描述 --dry_run 仅打印预期结果，而不执行任何操作。 tootctl --version&#xD;展示目前运行的Mastodon实例版本。&#xA;版本历史：&#xA;2.7.0 - 被加入 帐户相关命令&#xD;lib/mastodon/cli/accounts.rb&#xD;tootctl accounts rotate&#xD;生成并广播新的RSA密钥，作为安全维护的一部分。&#xA;版本历史：&#xA;2.5.0 - 被加入 选项 描述 USERNAME 本地帐户用户名 --all 轮替所有本地帐户密钥，可取代 USERNAME。 tootctl accounts create&#xD;创建一个给定用户名（USERNAME）和给定电子邮件地址（&amp;ndash;email）的新帐户。&#xA;版本历史：&#xA;2.6.0 - 被加入 选项 描述 USERNAME 新帐户的本地用户名。 必须的。 --email EMAIL 要附加到用户的电子邮件地址。 必须的。 --confirmed 跳过发送确认邮件步骤并立即激活帐户。 --role ROLE 设定新用户的身份为 user, moderator 或 admin。默认为 user。 --reattach 重用已被删除帐户的旧用户名。 --force 强制删除使用此用户名（USERNAME）的现有帐户，然后重新的新帐户代替（刚刚删除的）该帐户。 --skip-sign-in-token 强制跳过该用户登录时的邮件验证码（目前这是不可逆操作）。 tootctl accounts modify&#xD;修改某帐户的身份，电子邮箱地址，激活状态，审核状态及禁用双因素认证（2FA）。</description>
+    </item>
+    <item>
+      <title>运营操作</title>
+      <link>http://localhost:1313/zh-cn/admin/moderation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/moderation/</guid>
+      <description>帐户管理&#xD;Mastodon运营操作始终作用于本地，即从特定服务器查看的内容。一台服务器管理员（admin）或运营员（moderator）不能影响另一台服务器上的用户，他们只能影响另一台服务器用户的本地服务器副本。&#xA;禁止登录（disable login）&#xD;Mastodon可以被禁止登录。这样可以禁止用户对帐户进行任何操作，但是其帐户的内容仍保持不变。这个限制是可撤销的，任何时候都可以重新激活该用户。本限制仅适用于你服务器的本地用户。&#xA;隐藏（silence）&#xD;在Mastodon，隐藏（silence）是沙箱（sandbox）的同义词。一个被隐藏的帐户不会出现在未关注该帐户的用户面前。该帐户所有内容仍存在，这些内容可以通过搜索查找到，该帐户可以被提及、被关注，但是这些内容是不可见的。&#xA;此外，隐藏操作不会影响联邦宇宙。一个本地隐藏了的帐户不会自动在其他服务器隐藏。&#xA;本限制是可撤销的，任何时间都可以去除该帐户的隐藏。&#xA;封禁（suspension）&#xD;在Mastodon，封禁（suspension）是删除（deletion）的同义词。该帐户不会出现在搜索之中，其用户资料页将消失，该帐户的所有嘟文，上传，关注者以及所有其它数据都将被移除。本限制是不可逆的。当一个帐户被解除屏蔽，用户可以重新控制帐户，但旧数据已经一去不复返了。&#xA;实例管理&#xD;由于使用帐户管理单独处理来自行为异常服务器的大量用户是让人精疲力竭的事，所以可以预清空来自特定服务器的所有用户，即所谓的域名屏蔽（domain block）。该操作有多个不同严厉程度。&#xA;拒绝接收媒体文件（reject media）&#xD;当这个选项被激活，来自该服务器的文件将不会传递至本地。其包括头像、横幅、emoji及媒体附件。&#xA;隐藏（silence）&#xD;对来自该服务器的所有帐户应用隐藏（silence）操作。&#xA;屏蔽（suspend）&#xD;对来自该服务器的所有帐户应用封禁（suspension）操作。本地将不储存除用户名外的任何数据。&#xA;反广告措施&#xD;Mastodon有以下基本措施以阻止广告内容：&#xA;注册时需确认电子邮件地址 基于IP的注册频率限制 然而，专业广告发送者（spammer）将绕过这些措施。你可以应用的措施是电子邮件域名屏蔽。在注册期间，Mastodon将解析所给电子邮箱地址的A纪录或MX纪录，即电子邮件服务器的IP地址，并对照动态存储的黑名单中检查该IP地址。&#xA;屏蔽电子邮件域名&#xD;广告发送者（spammer）时常使用不同的电子邮件域名，以让他们看起来是使用许多不同的电子邮件服务器注册，而这些电子邮件域名很难被分别列入黑名单。但是，有时这些域名被解析到了同IP地址电子邮件服务器。如果你发现同一时间有大数广告发送者（spammer）注册，你可以使用在线DNS查询工具或 Linux dig 组件来检查，例如：dig example.com 将查询该域名的所有DNS A纪录。如果你注意到所有域名指向同一IP，你可以把它添加至电子邮件域名屏蔽列表中。&#xA;封禁IP&#xD;Mastodon自身不支持基于IP地址的访问者屏蔽，这不是一个万无一失的策略。IP有时会被不同的人共享，并时常会易手。但可以使用 Linux 防火墙来基于IP地址屏蔽访问者。下面的例子需要使用 iptables 和 ipset：&#xA;# Install ipset sudo apt install ipset # Create blacklist named &amp;#34;spambots&amp;#34; sudo ipset create spambots nethash # Add 1.2.3.4 to the blacklist sudo ipset add spambots 1.2.3.4 # Add firewall rule based on the blacklist sudo iptables -I INPUT 1 -m set --match-set spambots src -j DROP 但是注意，不要把你自己封禁了。</description>
+    </item>
+    <item>
+      <title>准备你的机器</title>
+      <link>http://localhost:1313/zh-cn/admin/prerequisites/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/zh-cn/admin/prerequisites/</guid>
+      <description>如果你正在设置一台全新的机器，推荐你首要完成安全设置。以下内容假定你运行 Ubuntu 18.04：&#xA;禁止密码登录SSH（仅允许密钥登录）&#xD;首先，请确保你实际上是通过密钥而不是通过密码登录到服务器的，否则这将使你无法登录。许多托管服务提供商支持上传公钥，并自动为新机器设置基于密钥的root登录。&#xA;编辑 /etc/ssh/sshd_config 并找到 PasswordAuthentication。确保它已被去除注释并被设为 no。如果你做了任何改动，请重启 sshd。&#xA;更新系统&#xD;apt update &amp;amp;&amp;amp; apt upgrade -y 安装 fail2ban 以阻止重复登录尝试&#xD;编辑 /etc/fail2ban/jail.local 并添加以下内容：&#xA;[DEFAULT] destemail = your@email.here sendername = Fail2Ban [sshd] enabled = true port = 22 [sshd-ddos] enabled = true port = 22 最后重启fail2ban：&#xA;systemctl restart fail2ban 安装防火墙并只暴露SSH、HTTP、HTTPS端口&#xD;首先，安装 iptables-persistent。在安装期间，它将询问你是否保留现有规则。&#xA;apt install -y iptables-persistent 编辑 /etc/iptables/rules.v4 并添加如下内容：&#xA;*filter # Allow all loopback (lo0) traffic and drop all traffic to 127/8 that doesn&amp;#39;t use lo0 -A INPUT -i lo -j ACCEPT -A INPUT !</description>
+    </item>
   </channel>
 </rss>

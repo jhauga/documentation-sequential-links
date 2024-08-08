@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,16 +10,16 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Configuring full-text search - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/elasticsearch/">
+  <meta property="og:url" content="http://localhost:1313/admin/elasticsearch/">
 
   
     <meta name="description" content="Setting up Elasticsearch to search for statuses (authored, favourited, or mentioned), public indexable status, and accounts">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Configuring full-text search">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/elasticsearch/">
+  <link rel="canonical" href="http://localhost:1313/admin/elasticsearch/">
 </head>
 
 <body>
@@ -1083,49 +1083,117 @@
 <li>accounts (display name, usernames and bios)</li>
 </ul>
 <p>It deliberately does not allow searching for arbitrary strings in the entire database.</p>
-<h2 id="install">Installing Elasticsearch</h2>
-<div class="hint hint-info">
+<h2 class="heading" id="install">
+	<span class="heading__text">Installing Elasticsearch</span>
+	<a class="heading__anchor-link" href="#install">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><div class="hint hint-info">
   <div class="hint-icon"><i class="fa fa-info-circle"></i></div>
 
   Mastodon is tested with Elasticsearch version 7. It should support OpenSearch, as well as Elasticsearch versions 6 and 8, but those setups are not officially supported.
 </div>
 
 <p>Elasticsearch requires a Java runtime. If you don’t have Java already installed, do it now. Assuming you are logged in as <code>root</code>:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt install openjdk-17-jre-headless
-</code></pre></div><p>Add the official Elasticsearch repository to apt:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">wget -O /usr/share/keyrings/elasticsearch.asc https://artifacts.elastic.co/GPG-KEY-elasticsearch
-<span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;deb [signed-by=/usr/share/keyrings/elasticsearch.asc] https://artifacts.elastic.co/packages/7.x/apt stable main&#34;</span> &gt; /etc/apt/sources.list.d/elastic-7.x.list
-</code></pre></div><p>Now you can install Elasticsearch:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">apt update
-apt install elasticsearch
-</code></pre></div><div class="hint hint-warning">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt install openjdk-17-jre-headless
+</span></span></code></pre></div><p>Add the official Elasticsearch repository to apt:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wget -O /usr/share/keyrings/elasticsearch.asc https://artifacts.elastic.co/GPG-KEY-elasticsearch
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">echo</span> <span style="color:#f1fa8c">&#34;deb [signed-by=/usr/share/keyrings/elasticsearch.asc] https://artifacts.elastic.co/packages/7.x/apt stable main&#34;</span> &gt; /etc/apt/sources.list.d/elastic-7.x.list
+</span></span></code></pre></div><p>Now you can install Elasticsearch:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>apt install elasticsearch
+</span></span></code></pre></div><div class="hint hint-warning">
   <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
 
   <strong>Security warning:</strong> By default, Elasticsearch is supposed to bind to localhost only, i.e. be inaccessible from the outside network. You can check which address Elasticsearch binds to by looking at <code>network.host</code> within <code>/etc/elasticsearch/elasticsearch.yml</code>. Consider that anyone who can access Elasticsearch can access and modify any data within it, as there is no authentication layer. So it’s really important that the access is secured. Having a firewall that only exposes the 22, 80 and 443 ports is advisable, as outlined in the <a href="../../prerequisites/#install-a-firewall-and-only-whitelist-ssh-http-and-https-ports">main installation instructions</a>. If you have a multi-host setup, you must know how to secure internal traffic.
 </div>
 
 <p>To start Elasticsearch:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl daemon-reload
-systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now elasticsearch
-</code></pre></div><h2 id="config">Configuring Mastodon</h2>
-<p>Edit <code>.env.production</code> to add the following variables:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">ES_ENABLED</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">true</span>
-<span style="color:#8be9fd;font-style:italic">ES_HOST</span><span style="color:#ff79c6">=</span>localhost
-<span style="color:#8be9fd;font-style:italic">ES_PORT</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">9200</span>
-<span style="color:#8be9fd;font-style:italic">ES_PRESET</span><span style="color:#ff79c6">=</span> <span style="color:#6272a4"># single_node_cluster, small_cluster or large_cluster</span>
-<span style="color:#6272a4"># ES_USER=</span>
-<span style="color:#6272a4"># ES_PASS=</span>
-</code></pre></div><p><em>Note</em>: If using TLS, prepend the hostname with <code>https://</code>. For example: <code>https://elastic.example.com</code>.</p>
-<h3 id="choosing-the-correct-preset">Choosing the correct preset</h3>
-<p>The value for <code>ES_PRESET</code> depends on the size of your Elasticsearch and will be used to set the number of shards and replicas for your indices to the best value for your setup:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl daemon-reload
+</span></span><span style="display:flex;"><span>systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now elasticsearch
+</span></span></code></pre></div><h2 class="heading" id="config">
+	<span class="heading__text">Configuring Mastodon</span>
+	<a class="heading__anchor-link" href="#config">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Edit <code>.env.production</code> to add the following variables:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">ES_ENABLED</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">true</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">ES_HOST</span><span style="color:#ff79c6">=</span>localhost
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">ES_PORT</span><span style="color:#ff79c6">=</span><span style="color:#bd93f9">9200</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">ES_PRESET</span><span style="color:#ff79c6">=</span> <span style="color:#6272a4"># single_node_cluster, small_cluster or large_cluster</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># ES_USER=</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># ES_PASS=</span>
+</span></span></code></pre></div><p><em>Note</em>: If using TLS, prepend the hostname with <code>https://</code>. For example: <code>https://elastic.example.com</code>.</p>
+<h3 class="heading" id="choosing-the-correct-preset">
+	<span class="heading__text">Choosing the correct preset</span>
+	<a class="heading__anchor-link" href="#choosing-the-correct-preset">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>The value for <code>ES_PRESET</code> depends on the size of your Elasticsearch and will be used to set the number of shards and replicas for your indices to the best value for your setup:</p>
 <ul>
 <li><code>single_node_cluster</code> if you only have one node in your Elasticsearch cluster. Indices will be configured without any replica</li>
 <li><code>small_cluster</code> if you have less than 6 nodes in your cluster. Indices will be configured with 1 replica</li>
 <li><code>large_cluster</code> if you have 6 or more nodes in your cluster. Indices will be configured with more shards than with the <code>small_cluster</code> setting, to allow them to be distributed over more nodes</li>
 </ul>
 <p>If you have multiple Mastodon servers on the same machine, and you are planning to use the same Elasticsearch installation for all of them, make sure that all of them have unique <code>REDIS_NAMESPACE</code> in their configurations, to differentiate the indices. If you need to override the prefix of the Elasticsearch indices, you can set <code>ES_PREFIX</code> directly.</p>
-<h3 id="security">Security</h3>
-<p>By default, Elasticsearch does not handle any authentication and every request is made with full admin permission. We strongly advise you to configure Elasticsearch security features on your cluster.</p>
+<h3 class="heading" id="security">
+	<span class="heading__text">Security</span>
+	<a class="heading__anchor-link" href="#security">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>By default, Elasticsearch does not handle any authentication and every request is made with full admin permission. We strongly advise you to configure Elasticsearch security features on your cluster.</p>
 <p>To configure it, please refer <a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-minimal-setup.html">to the official documentation</a>. It will guide you through:</p>
 <ul>
 <li>Enabling the security features (<code>xpack.security.enabled: true</code>)</li>
@@ -1133,113 +1201,164 @@ systemctl <span style="color:#8be9fd;font-style:italic">enable</span> --now elas
 </ul>
 <p>Once done, you can create a custom role for Mastodon to connect.</p>
 <p>For example (please adapt this snippet to use your Elastic admin password):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -X POST -u elastic:admin_password <span style="color:#f1fa8c">&#34;localhost:9200/_security/role/mastodon_full_access?pretty&#34;</span> -H <span style="color:#f1fa8c">&#39;Content-Type: application/json&#39;</span> -d<span style="color:#f1fa8c">&#39;
-</span><span style="color:#f1fa8c">{
-</span><span style="color:#f1fa8c">  &#34;cluster&#34;: [&#34;monitor&#34;],
-</span><span style="color:#f1fa8c">  &#34;indices&#34;: [{
-</span><span style="color:#f1fa8c">    &#34;names&#34;: [&#34;*&#34;],
-</span><span style="color:#f1fa8c">    &#34;privileges&#34;: [&#34;read&#34;, &#34;monitor&#34;, &#34;write&#34;, &#34;manage&#34;]
-</span><span style="color:#f1fa8c">  }]
-</span><span style="color:#f1fa8c">}
-</span><span style="color:#f1fa8c">&#39;</span>
-</code></pre></div><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-api-put-role.html">Elasticsearch documentation for role creation</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -X POST -u elastic:admin_password <span style="color:#f1fa8c">&#34;localhost:9200/_security/role/mastodon_full_access?pretty&#34;</span> -H <span style="color:#f1fa8c">&#39;Content-Type: application/json&#39;</span> -d<span style="color:#f1fa8c">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">{
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">  &#34;cluster&#34;: [&#34;monitor&#34;],
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">  &#34;indices&#34;: [{
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">    &#34;names&#34;: [&#34;*&#34;],
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">    &#34;privileges&#34;: [&#34;read&#34;, &#34;monitor&#34;, &#34;write&#34;, &#34;manage&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">  }]
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">}
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;</span>
+</span></span></code></pre></div><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-api-put-role.html">Elasticsearch documentation for role creation</a></p>
 <p>Once the role is created, you can create a user for the Mastodon server to use, and assign it the role.</p>
 <p>For example (please adapt this snippet to use your Elastic admin password, and customize your new user <code>mastodon</code> user password):</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -X POST -u elastic:admin_password <span style="color:#f1fa8c">&#34;localhost:9200/_security/user/mastodon?pretty&#34;</span> -H <span style="color:#f1fa8c">&#39;Content-Type: application/json&#39;</span> -d<span style="color:#f1fa8c">&#39;
-</span><span style="color:#f1fa8c">{
-</span><span style="color:#f1fa8c">  &#34;password&#34; : &#34;l0ng-r4nd0m-p@ssw0rd&#34;,
-</span><span style="color:#f1fa8c">  &#34;roles&#34; : [&#34;mastodon_full_access&#34;]
-</span><span style="color:#f1fa8c">}
-</span><span style="color:#f1fa8c">&#39;</span>
-</code></pre></div><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-api-put-user.html">Elasticsearch documentation for user creation</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>curl -X POST -u elastic:admin_password <span style="color:#f1fa8c">&#34;localhost:9200/_security/user/mastodon?pretty&#34;</span> -H <span style="color:#f1fa8c">&#39;Content-Type: application/json&#39;</span> -d<span style="color:#f1fa8c">&#39;
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">{
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">  &#34;password&#34; : &#34;l0ng-r4nd0m-p@ssw0rd&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">  &#34;roles&#34; : [&#34;mastodon_full_access&#34;]
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">}
+</span></span></span><span style="display:flex;"><span><span style="color:#f1fa8c">&#39;</span>
+</span></span></code></pre></div><p><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.17/security-api-put-user.html">Elasticsearch documentation for user creation</a></p>
 <p>Once this is done, you need to configure Mastodon to use the credentials for your newly created user.</p>
 <p>In <code>.env.production</code>, adjust your configuration:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">ES_USER</span><span style="color:#ff79c6">=</span>mastodon
-<span style="color:#8be9fd;font-style:italic">ES_PASS</span><span style="color:#ff79c6">=</span>l0ng-r4nd0m-p@ssw0rd
-</code></pre></div><p>You are all set, and your Elasticsearch server should be much more secure!</p>
-<h3 id="populate-the-indices">Populate the indices</h3>
-<p>After saving the new configuration, restart Mastodon processes for it to take effect:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">systemctl restart mastodon-sidekiq
-systemctl reload mastodon-web
-</code></pre></div><p>Now it&rsquo;s time to create the Elasticsearch indices and fill them with data:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">su - mastodon
-<span style="color:#8be9fd;font-style:italic">cd</span> live
-<span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production bin/tootctl search deploy
-</code></pre></div><h2 id="search-optimization-for-other-languages">Search optimization for other languages</h2>
-<h3 id="chinese-search-optimization">Chinese search optimization</h3>
-<p>The standard analyzer is the default for Elasticsearch, but for some languages like Chinese it may not be the optimal choice. To enhance the search experience, consider installing a language-specific analyzer. Before creating indices in Elasticsearch, be sure to install the following extensions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">ES_USER</span><span style="color:#ff79c6">=</span>mastodon
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">ES_PASS</span><span style="color:#ff79c6">=</span>l0ng-r4nd0m-p@ssw0rd
+</span></span></code></pre></div><p>You are all set, and your Elasticsearch server should be much more secure!</p>
+<h3 class="heading" id="populate-the-indices">
+	<span class="heading__text">Populate the indices</span>
+	<a class="heading__anchor-link" href="#populate-the-indices">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>After saving the new configuration, restart Mastodon processes for it to take effect:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl restart mastodon-sidekiq
+</span></span><span style="display:flex;"><span>systemctl reload mastodon-web
+</span></span></code></pre></div><p>Now it&rsquo;s time to create the Elasticsearch indices and fill them with data:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>su - mastodon
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> live
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">RAILS_ENV</span><span style="color:#ff79c6">=</span>production bin/tootctl search deploy
+</span></span></code></pre></div><h2 class="heading" id="search-optimization-for-other-languages">
+	<span class="heading__text">Search optimization for other languages</span>
+	<a class="heading__anchor-link" href="#search-optimization-for-other-languages">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><h3 class="heading" id="chinese-search-optimization">
+	<span class="heading__text">Chinese search optimization</span>
+	<a class="heading__anchor-link" href="#chinese-search-optimization">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h3><p>The standard analyzer is the default for Elasticsearch, but for some languages like Chinese it may not be the optimal choice. To enhance the search experience, consider installing a language-specific analyzer. Before creating indices in Elasticsearch, be sure to install the following extensions:</p>
 <ul>
 <li><a href="https://github.com/medcl/elasticsearch-analysis-ik">elasticsearch-analysis-ik</a></li>
 <li><a href="https://github.com/medcl/elasticsearch-analysis-stconvert">elasticsearch-analysis-stconvert</a></li>
 </ul>
 <p>And then modify Mastodon&rsquo;s index definition as follows:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-diff" data-lang="diff"><span style="font-weight:bold">diff --git a/app/chewy/accounts_index.rb b/app/chewy/accounts_index.rb
-</span><span style="font-weight:bold"></span><span style="color:#8b080b">--- a/app/chewy/accounts_index.rb
-</span><span style="color:#8b080b"></span><span style="font-weight:bold">+++ b/app/chewy/accounts_index.rb
-</span><span style="font-weight:bold"></span><span style="font-weight:bold">@@ -4,7 +4,7 @@ class AccountsIndex &lt; Chewy::Index
-</span><span style="font-weight:bold"></span>   settings index: { refresh_interval: &#39;5m&#39; }, analysis: {
-     analyzer: {
-       content: {
-<span style="color:#8b080b">-        tokenizer: &#39;whitespace&#39;,
-</span><span style="color:#8b080b"></span><span style="font-weight:bold">+        tokenizer: &#39;ik_max_word&#39;,
-</span><span style="font-weight:bold"></span>         filter: %w(lowercase asciifolding cjk_width),
-       },
-
-<span style="font-weight:bold">diff --git a/app/chewy/statuses_index.rb b/app/chewy/statuses_index.rb
-</span><span style="font-weight:bold"></span><span style="color:#8b080b">--- a/app/chewy/statuses_index.rb
-</span><span style="color:#8b080b"></span><span style="font-weight:bold">+++ b/app/chewy/statuses_index.rb
-</span><span style="font-weight:bold"></span><span style="font-weight:bold">@@ -16,9 +16,17 @@ class StatusesIndex &lt; Chewy::Index
-</span><span style="font-weight:bold"></span>         language: &#39;possessive_english&#39;,
-       },
-     },
-<span style="font-weight:bold">+    char_filter: {
-</span><span style="font-weight:bold">+      tsconvert: {
-</span><span style="font-weight:bold">+        type: &#39;stconvert&#39;,
-</span><span style="font-weight:bold">+        keep_both: false,
-</span><span style="font-weight:bold">+        delimiter: &#39;#&#39;,
-</span><span style="font-weight:bold">+        convert_type: &#39;t2s&#39;,
-</span><span style="font-weight:bold">+      },
-</span><span style="font-weight:bold">+    },
-</span><span style="font-weight:bold"></span>     analyzer: {
-       content: {
-<span style="color:#8b080b">-        tokenizer: &#39;uax_url_email&#39;,
-</span><span style="color:#8b080b"></span><span style="font-weight:bold">+        tokenizer: &#39;ik_max_word&#39;,
-</span><span style="font-weight:bold"></span>         filter: %w(
-           english_possessive_stemmer
-           lowercase
-<span style="font-weight:bold">@@ -27,6 +35,7 @@ class StatusesIndex &lt; Chewy::Index
-</span><span style="font-weight:bold"></span>           english_stop
-           english_stemmer
-         ),
-<span style="font-weight:bold">+        char_filter: %w(tsconvert),
-</span><span style="font-weight:bold"></span>       },
-     },
-   }
-<span style="font-weight:bold">diff --git a/app/chewy/tags_index.rb b/app/chewy/tags_index.rb
-</span><span style="font-weight:bold"></span><span style="color:#8b080b">--- a/app/chewy/tags_index.rb
-</span><span style="color:#8b080b"></span><span style="font-weight:bold">+++ b/app/chewy/tags_index.rb
-</span><span style="font-weight:bold"></span><span style="font-weight:bold">@@ -2,10 +2,19 @@
-</span><span style="font-weight:bold"></span>
- class TagsIndex &lt; Chewy::Index
-   settings index: { refresh_interval: &#39;15m&#39; }, analysis: {
-<span style="font-weight:bold">+    char_filter: {
-</span><span style="font-weight:bold">+      tsconvert: {
-</span><span style="font-weight:bold">+        type: &#39;stconvert&#39;,
-</span><span style="font-weight:bold">+        keep_both: false,
-</span><span style="font-weight:bold">+        delimiter: &#39;#&#39;,
-</span><span style="font-weight:bold">+        convert_type: &#39;t2s&#39;,
-</span><span style="font-weight:bold">+      },
-</span><span style="font-weight:bold">+    },
-</span><span style="font-weight:bold"></span>     analyzer: {
-       content: {
-<span style="color:#8b080b">-        tokenizer: &#39;keyword&#39;,
-</span><span style="color:#8b080b"></span><span style="font-weight:bold">+        tokenizer: &#39;ik_max_word&#39;,
-</span><span style="font-weight:bold"></span>         filter: %w(lowercase asciifolding cjk_width),
-<span style="font-weight:bold">+        char_filter: %w(tsconvert),
-</span><span style="font-weight:bold"></span>       },
-
-       edge_ngram: {
-</code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-diff" data-lang="diff"><span style="display:flex;"><span><span style="font-weight:bold">diff --git a/app/chewy/accounts_index.rb b/app/chewy/accounts_index.rb
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span><span style="color:#f55">--- a/app/chewy/accounts_index.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#f55"></span><span style="color:#50fa7b;font-weight:bold">+++ b/app/chewy/accounts_index.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span><span style="font-weight:bold">@@ -4,7 +4,7 @@ class AccountsIndex &lt; Chewy::Index
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>   settings index: { refresh_interval: &#39;5m&#39; }, analysis: {
+</span></span><span style="display:flex;"><span>     analyzer: {
+</span></span><span style="display:flex;"><span>       content: {
+</span></span><span style="display:flex;"><span><span style="color:#f55">-        tokenizer: &#39;whitespace&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#f55"></span><span style="color:#50fa7b;font-weight:bold">+        tokenizer: &#39;ik_max_word&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span>         filter: %w(lowercase asciifolding cjk_width),
+</span></span><span style="display:flex;"><span>       },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">diff --git a/app/chewy/statuses_index.rb b/app/chewy/statuses_index.rb
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span><span style="color:#f55">--- a/app/chewy/statuses_index.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#f55"></span><span style="color:#50fa7b;font-weight:bold">+++ b/app/chewy/statuses_index.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span><span style="font-weight:bold">@@ -16,9 +16,17 @@ class StatusesIndex &lt; Chewy::Index
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>         language: &#39;possessive_english&#39;,
+</span></span><span style="display:flex;"><span>       },
+</span></span><span style="display:flex;"><span>     },
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+    char_filter: {
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+      tsconvert: {
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        type: &#39;stconvert&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        keep_both: false,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        delimiter: &#39;#&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        convert_type: &#39;t2s&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+      },
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+    },
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span>     analyzer: {
+</span></span><span style="display:flex;"><span>       content: {
+</span></span><span style="display:flex;"><span><span style="color:#f55">-        tokenizer: &#39;uax_url_email&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#f55"></span><span style="color:#50fa7b;font-weight:bold">+        tokenizer: &#39;ik_max_word&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span>         filter: %w(
+</span></span><span style="display:flex;"><span>           english_possessive_stemmer
+</span></span><span style="display:flex;"><span>           lowercase
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">@@ -27,6 +35,7 @@ class StatusesIndex &lt; Chewy::Index
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>           english_stop
+</span></span><span style="display:flex;"><span>           english_stemmer
+</span></span><span style="display:flex;"><span>         ),
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        char_filter: %w(tsconvert),
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span>       },
+</span></span><span style="display:flex;"><span>     },
+</span></span><span style="display:flex;"><span>   }
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">diff --git a/app/chewy/tags_index.rb b/app/chewy/tags_index.rb
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span><span style="color:#f55">--- a/app/chewy/tags_index.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#f55"></span><span style="color:#50fa7b;font-weight:bold">+++ b/app/chewy/tags_index.rb
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span><span style="font-weight:bold">@@ -2,10 +2,19 @@
+</span></span></span><span style="display:flex;"><span><span style="font-weight:bold"></span>
+</span></span><span style="display:flex;"><span> class TagsIndex &lt; Chewy::Index
+</span></span><span style="display:flex;"><span>   settings index: { refresh_interval: &#39;15m&#39; }, analysis: {
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+    char_filter: {
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+      tsconvert: {
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        type: &#39;stconvert&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        keep_both: false,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        delimiter: &#39;#&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        convert_type: &#39;t2s&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+      },
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+    },
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span>     analyzer: {
+</span></span><span style="display:flex;"><span>       content: {
+</span></span><span style="display:flex;"><span><span style="color:#f55">-        tokenizer: &#39;keyword&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#f55"></span><span style="color:#50fa7b;font-weight:bold">+        tokenizer: &#39;ik_max_word&#39;,
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span>         filter: %w(lowercase asciifolding cjk_width),
+</span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold">+        char_filter: %w(tsconvert),
+</span></span></span><span style="display:flex;"><span><span style="color:#50fa7b;font-weight:bold"></span>       },
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>       edge_ngram: {
+</span></span></code></pre></div>
     
 
 
@@ -2341,7 +2460,7 @@ systemctl reload mastodon-web
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/elasticsearch.md' style="color: #687590;">Improve this page</a>
+      Last updated December 7, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5celasticsearch.md' style="color: #687590;">Improve this page</a>
 
       
     </p>
@@ -2387,7 +2506,7 @@ systemctl reload mastodon-web
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/elasticsearch.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5celasticsearch.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>

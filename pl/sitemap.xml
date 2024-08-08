@@ -1,378 +1,348 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://docs.joinmastodon.org/pl/categories/</loc>
+    <loc>http://localhost:1313/pl/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/categories/"
+                href="http://localhost:1313/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/categories/"
+                href="http://localhost:1313/zh-cn/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/categories/"
+                href="http://localhost:1313/ja/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/categories/"
+                href="http://localhost:1313/pl/categories/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/"
+                href="http://localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/"
+                href="http://localhost:1313/zh-cn/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/"
+                href="http://localhost:1313/ja/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/"
+                href="http://localhost:1313/pl/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/profile/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/profile/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/profile/"
+                href="http://localhost:1313/user/profile/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/profile/"
+                href="http://localhost:1313/zh-cn/user/profile/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/profile/"
+                href="http://localhost:1313/ja/user/profile/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/profile/"
+                href="http://localhost:1313/pl/user/profile/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/network/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/network/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/network/"
+                href="http://localhost:1313/user/network/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/network/"
+                href="http://localhost:1313/zh-cn/user/network/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/network/"
+                href="http://localhost:1313/ja/user/network/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/network/"
+                href="http://localhost:1313/pl/user/network/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/external/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/external/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/external/"
+                href="http://localhost:1313/user/external/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/external/"
+                href="http://localhost:1313/zh-cn/user/external/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/external/"
+                href="http://localhost:1313/ja/user/external/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/external/"
+                href="http://localhost:1313/pl/user/external/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/discoverability/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/discoverability/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/discoverability/"
+                href="http://localhost:1313/user/discoverability/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/discoverability/"
+                href="http://localhost:1313/zh-cn/user/discoverability/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/discoverability/"
+                href="http://localhost:1313/ja/user/discoverability/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/discoverability/"
+                href="http://localhost:1313/pl/user/discoverability/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/run-your-own/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/run-your-own/</loc>
+    <lastmod>2022-11-20T00:34:38-06:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/run-your-own/"
+                href="http://localhost:1313/user/run-your-own/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/run-your-own/"
+                href="http://localhost:1313/zh-cn/user/run-your-own/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/run-your-own/"
+                href="http://localhost:1313/ja/user/run-your-own/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/run-your-own/"
+                href="http://localhost:1313/pl/user/run-your-own/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/moving/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/moving/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/moving/"
+                href="http://localhost:1313/user/moving/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/moving/"
+                href="http://localhost:1313/zh-cn/user/moving/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/moving/"
+                href="http://localhost:1313/ja/user/moving/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/moving/"
+                href="http://localhost:1313/pl/user/moving/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/moderating/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/moderating/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/moderating/"
+                href="http://localhost:1313/user/moderating/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/moderating/"
+                href="http://localhost:1313/zh-cn/user/moderating/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/moderating/"
+                href="http://localhost:1313/ja/user/moderating/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/moderating/"
+                href="http://localhost:1313/pl/user/moderating/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/pl/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/tags/"
+                href="http://localhost:1313/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/tags/"
+                href="http://localhost:1313/zh-cn/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/tags/"
+                href="http://localhost:1313/ja/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/tags/"
+                href="http://localhost:1313/pl/tags/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/"
+                href="http://localhost:1313/user/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/"
+                href="http://localhost:1313/zh-cn/user/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/"
+                href="http://localhost:1313/ja/user/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/"
+                href="http://localhost:1313/pl/user/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/posting/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/posting/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/posting/"
+                href="http://localhost:1313/user/posting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/posting/"
+                href="http://localhost:1313/zh-cn/user/posting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/posting/"
+                href="http://localhost:1313/ja/user/posting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/posting/"
+                href="http://localhost:1313/pl/user/posting/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/contacts/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/contacts/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/contacts/"
+                href="http://localhost:1313/user/contacts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/contacts/"
+                href="http://localhost:1313/zh-cn/user/contacts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/contacts/"
+                href="http://localhost:1313/ja/user/contacts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/contacts/"
+                href="http://localhost:1313/pl/user/contacts/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/signup/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/signup/</loc>
+    <lastmod>2021-01-20T01:19:19+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/signup/"
+                href="http://localhost:1313/user/signup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/signup/"
+                href="http://localhost:1313/zh-cn/user/signup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/signup/"
+                href="http://localhost:1313/ja/user/signup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/signup/"
+                href="http://localhost:1313/pl/user/signup/"
                 />
-  </url>
-  
-  <url>
-    <loc>https://docs.joinmastodon.org/pl/user/preferences/</loc>
-    <lastmod>2024-08-05T19:11:11-04:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/pl/user/preferences/</loc>
+    <lastmod>2022-12-21T06:26:37+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://docs.joinmastodon.org/user/preferences/"
+                href="http://localhost:1313/user/preferences/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://docs.joinmastodon.org/zh-cn/user/preferences/"
+                href="http://localhost:1313/zh-cn/user/preferences/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="ja"
-                href="https://docs.joinmastodon.org/ja/user/preferences/"
+                href="http://localhost:1313/ja/user/preferences/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="pl"
-                href="https://docs.joinmastodon.org/pl/user/preferences/"
+                href="http://localhost:1313/pl/user/preferences/"
                 />
   </url>
-  
 </urlset>

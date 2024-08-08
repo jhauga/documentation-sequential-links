@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="zh-cn">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,23 +10,23 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>故障分析 - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/zh-cn/admin/troubleshooting/">
+  <meta property="og:url" content="http://localhost:1313/zh-cn/admin/troubleshooting/">
 
   
 
   <meta name="twitter:title" content="故障分析">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/zh-cn/admin/troubleshooting/">
+  <link rel="canonical" href="http://localhost:1313/zh-cn/admin/troubleshooting/">
 </head>
 
 <body>
@@ -303,16 +303,84 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="我看到一个故障页说一些东西出错了我怎么找出哪里出错了"><strong>我看到一个故障页说一些东西出错了。我怎么找出哪里出错了？</strong></h2>
-<p>所有带堆栈追踪（stack traces）的错误信息都将会被写入系统日志。当使用systemd时，可使用 <code>journalctl -u mastodon-web</code>（替换以相应的服务名） 来浏览每个服务的日志。当使用Docker时，与之类似：<code>docker logs mastodon_web_1</code>（替换以相应的容器名）。</p>
+    <h2 class="heading" id="我看到一个故障页说一些东西出错了我怎么找出哪里出错了">
+	<span class="heading__text"><strong>我看到一个故障页说一些东西出错了。我怎么找出哪里出错了？</strong></span>
+	<a class="heading__anchor-link" href="#%e6%88%91%e7%9c%8b%e5%88%b0%e4%b8%80%e4%b8%aa%e6%95%85%e9%9a%9c%e9%a1%b5%e8%af%b4%e4%b8%80%e4%ba%9b%e4%b8%9c%e8%a5%bf%e5%87%ba%e9%94%99%e4%ba%86%e6%88%91%e6%80%8e%e4%b9%88%e6%89%be%e5%87%ba%e5%93%aa%e9%87%8c%e5%87%ba%e9%94%99%e4%ba%86">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>所有带堆栈追踪（stack traces）的错误信息都将会被写入系统日志。当使用systemd时，可使用 <code>journalctl -u mastodon-web</code>（替换以相应的服务名） 来浏览每个服务的日志。当使用Docker时，与之类似：<code>docker logs mastodon_web_1</code>（替换以相应的容器名）。</p>
 <p>服务端详细错误信息将<em>永不会</em>公开显示，因为它们可能会暴露你的内部设置，并为攻击者提供线索，让他们了解如何更好的入侵或如何更高效的滥用。</p>
 <p>来自Mastodon web服务器的每一个响应都带有独一无二的请求ID（request ID），该ID也将反映在日志中。通过检查错误页的请求头，你可以在日志中轻松找到与之对应的堆栈追踪（stack traces）。</p>
-<h2 id="升级新版本后有些页面看起来很奇怪就像它们含有未设置样式的元素一样为什么"><strong>升级新版本后，有些页面看起来很奇怪，就像它们含有未设置样式的元素一样。为什么？</strong></h2>
-<p>检查升级后，你是否运行 <code>RAILS_ENV=production bin/rails assets:precompile</code> 并重启Mastodon web 进程。因为这看起来像提供了过期的样式与脚本。这也有可能由于内存缺乏导致预编译失败，很不幸webpack会占用大量内存。如果是这个原因，请确保你已经分配了swap空间。另外，也可以在另一台机器上预编译静态文件，然后把它们复制至 <code>public/packs</code> 目录。</p>
-<h2 id="升级新版本后一些请求失败了日志中的错误信息是-missing-columns-or-tables为什么"><strong>升级新版本后，一些请求失败了，日志中的错误信息是 missing columns or tables。为什么？</strong></h2>
-<p>检查升级后，你是否运行 <code>RAILS_ENV=production bin/rails db:migrate</code>。因为这看起来Mastodon代码访问了一个更新或更旧的数据库schema。如果你使用PgBouncer，请确保此命令直接连接PostgreSQL，因为PgBouncer不支持迁移过程中的锁表操作。</p>
-<h2 id="我试图运行-tootctl-或-rakerails-命令但我得到-uninitialized-constants-错误信息哪里出错了"><strong>我试图运行 <code>tootctl</code> 或 <code>rake</code>/<code>rails</code> 命令，但我得到 uninitialized constants 错误信息。哪里出错了？</strong></h2>
-<p>检查你是否在命令前使用 <code>RAILS_ENV=production</code> 指定正确的环境。默认情况下，假定使用开发环境，因此代码尝试加载开发相关gem。然而，在生产环境中，我们避免安装这些gem。这就是错误的来源。</p>
+<h2 class="heading" id="升级新版本后有些页面看起来很奇怪就像它们含有未设置样式的元素一样为什么">
+	<span class="heading__text"><strong>升级新版本后，有些页面看起来很奇怪，就像它们含有未设置样式的元素一样。为什么？</strong></span>
+	<a class="heading__anchor-link" href="#%e5%8d%87%e7%ba%a7%e6%96%b0%e7%89%88%e6%9c%ac%e5%90%8e%e6%9c%89%e4%ba%9b%e9%a1%b5%e9%9d%a2%e7%9c%8b%e8%b5%b7%e6%9d%a5%e5%be%88%e5%a5%87%e6%80%aa%e5%b0%b1%e5%83%8f%e5%ae%83%e4%bb%ac%e5%90%ab%e6%9c%89%e6%9c%aa%e8%ae%be%e7%bd%ae%e6%a0%b7%e5%bc%8f%e7%9a%84%e5%85%83%e7%b4%a0%e4%b8%80%e6%a0%b7%e4%b8%ba%e4%bb%80%e4%b9%88">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>检查升级后，你是否运行 <code>RAILS_ENV=production bin/rails assets:precompile</code> 并重启Mastodon web 进程。因为这看起来像提供了过期的样式与脚本。这也有可能由于内存缺乏导致预编译失败，很不幸webpack会占用大量内存。如果是这个原因，请确保你已经分配了swap空间。另外，也可以在另一台机器上预编译静态文件，然后把它们复制至 <code>public/packs</code> 目录。</p>
+<h2 class="heading" id="升级新版本后一些请求失败了日志中的错误信息是-missing-columns-or-tables为什么">
+	<span class="heading__text"><strong>升级新版本后，一些请求失败了，日志中的错误信息是 missing columns or tables。为什么？</strong></span>
+	<a class="heading__anchor-link" href="#%e5%8d%87%e7%ba%a7%e6%96%b0%e7%89%88%e6%9c%ac%e5%90%8e%e4%b8%80%e4%ba%9b%e8%af%b7%e6%b1%82%e5%a4%b1%e8%b4%a5%e4%ba%86%e6%97%a5%e5%bf%97%e4%b8%ad%e7%9a%84%e9%94%99%e8%af%af%e4%bf%a1%e6%81%af%e6%98%af-missing-columns-or-tables%e4%b8%ba%e4%bb%80%e4%b9%88">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>检查升级后，你是否运行 <code>RAILS_ENV=production bin/rails db:migrate</code>。因为这看起来Mastodon代码访问了一个更新或更旧的数据库schema。如果你使用PgBouncer，请确保此命令直接连接PostgreSQL，因为PgBouncer不支持迁移过程中的锁表操作。</p>
+<h2 class="heading" id="我试图运行-tootctl-或-rakerails-命令但我得到-uninitialized-constants-错误信息哪里出错了">
+	<span class="heading__text"><strong>我试图运行 <code>tootctl</code> 或 <code>rake</code>/<code>rails</code> 命令，但我得到 uninitialized constants 错误信息。哪里出错了？</strong></span>
+	<a class="heading__anchor-link" href="#%e6%88%91%e8%af%95%e5%9b%be%e8%bf%90%e8%a1%8c-tootctl-%e6%88%96-rakerails-%e5%91%bd%e4%bb%a4%e4%bd%86%e6%88%91%e5%be%97%e5%88%b0-uninitialized-constants-%e9%94%99%e8%af%af%e4%bf%a1%e6%81%af%e5%93%aa%e9%87%8c%e5%87%ba%e9%94%99%e4%ba%86">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>检查你是否在命令前使用 <code>RAILS_ENV=production</code> 指定正确的环境。默认情况下，假定使用开发环境，因此代码尝试加载开发相关gem。然而，在生产环境中，我们避免安装这些gem。这就是错误的来源。</p>
 <figure>
     <p>
         <strong>翻译状态：</strong>
@@ -641,7 +709,7 @@
 </script>
 
     <p style="color: #687590;">
-      最后更新于 August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/troubleshooting.md' style="color: #687590;">改进此页面</a>
+      最后更新于 May 21, 2020 · <a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin%5ctroubleshooting.md' style="color: #687590;">改进此页面</a>
 
       
         <br />
@@ -695,7 +763,7 @@
     <a href='https://joinmastodon.org'>加入Mastodon</a> · <a href='https://blog.joinmastodon.org'>博客</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin/troubleshooting.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/zh-cn/admin%5ctroubleshooting.md'>查看源代码</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>版权信息</a></p>
 </footer>
 
 </body>

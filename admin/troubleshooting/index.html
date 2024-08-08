@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 
-<head>
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
   
 
 <meta charset='utf-8'>
@@ -10,23 +10,23 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.0122b8d14d9247c2ac34fa87ad975f23eb927ad958d8ae6bda2caccd9ac9eb42.css'>
+<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
 
 
-<script src='/main.min.db37c27117ff8400e5e30549f6806d2bc825668b596d81316c6148417f59bc72.js' async></script>
+<script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
 
 
   <title>Troubleshooting errors - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="https://docs.joinmastodon.org/admin/troubleshooting/">
+  <meta property="og:url" content="http://localhost:1313/admin/troubleshooting/">
 
   
 
   <meta name="twitter:title" content="Troubleshooting errors">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="https://docs.joinmastodon.org/admin/troubleshooting/">
+  <link rel="canonical" href="http://localhost:1313/admin/troubleshooting/">
 </head>
 
 <body>
@@ -1060,28 +1060,147 @@
 </nav>
   </aside>
   <div class="e-content">
-    <h2 id="i-see-an-error-page-that-says-something-went-wrong-how-do-i-find-out-whats-wrong"><strong>I see an error page that says something went wrong. How do I find out what’s wrong?</strong></h2>
-<p>All error messages with stack traces are written to the system log. When using systemd, the logs of each systemd service can be browsed with <code>journalctl -u mastodon-web</code> (substitute with the correct service name). When using Docker, it’s similar: <code>docker logs mastodon_web_1</code> (substitute with the correct container name).</p>
+    <h2 class="heading" id="i-see-an-error-page-that-says-something-went-wrong-how-do-i-find-out-whats-wrong">
+	<span class="heading__text"><strong>I see an error page that says something went wrong. How do I find out what’s wrong?</strong></span>
+	<a class="heading__anchor-link" href="#i-see-an-error-page-that-says-something-went-wrong-how-do-i-find-out-whats-wrong">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>All error messages with stack traces are written to the system log. When using systemd, the logs of each systemd service can be browsed with <code>journalctl -u mastodon-web</code> (substitute with the correct service name). When using Docker, it’s similar: <code>docker logs mastodon_web_1</code> (substitute with the correct container name).</p>
 <p>Specific details of server-side errors are <em>never</em> displayed to the public, as they can reveal what your setup looks like internally and give attackers clues on how to get in, or how to abuse the system more efficiently.</p>
 <p>Each response from Mastodon’s web server carries a header with a unique request ID, which is also reflected in the logs. By inspecting the headers of the error page, you can easily find the corresponding stack trace in the log.</p>
-<h2 id="im-not-seeing-much-in-my-logs-how-do-i-enable-additional-loggingdebugging-information"><strong>I&rsquo;m not seeing much in my logs. How do I enable additional logging/debugging information?</strong></h2>
-<p>By default your logs will show <code>info</code> level logging. To see more debugging messages, you can your <code>.env.production</code> file to increase the level, for the relevant service:</p>
+<h2 class="heading" id="im-not-seeing-much-in-my-logs-how-do-i-enable-additional-loggingdebugging-information">
+	<span class="heading__text"><strong>I&rsquo;m not seeing much in my logs. How do I enable additional logging/debugging information?</strong></span>
+	<a class="heading__anchor-link" href="#im-not-seeing-much-in-my-logs-how-do-i-enable-additional-loggingdebugging-information">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>By default your logs will show <code>info</code> level logging. To see more debugging messages, you can your <code>.env.production</code> file to increase the level, for the relevant service:</p>
 <ul>
 <li><strong>Web/Sidekiq:</strong> Set the value of <code>RAILS_LOG_LEVEL</code> to <code>debug</code> and then restart the service that you&rsquo;re attempting to troubleshoot.</li>
 <li><strong>Streaming:</strong> Set the value of <code>LOG_LEVEL</code> to <code>silly</code> and then restart the service that you&rsquo;re attempting to troubleshoot.</li>
 </ul>
 <p>More information on other logging levels for these option can be found on the <a href="https://docs.joinmastodon.org/admin/config">Configuring your environment</a> page.</p>
 <p>The <code>debug</code> or <code>silly</code> levels can be very verbose and you should take care to change the log level back to a lower level, once you have completed your troubleshooting.</p>
-<h2 id="after-an-upgrade-to-a-newer-version-some-pages-look-weird-like-they-have-unstyled-elements-why"><strong>After an upgrade to a newer version, some pages look weird, like they have unstyled elements. Why?</strong></h2>
-<p>Check that you have run <code>RAILS_ENV=production bin/rails assets:precompile</code> after the upgrade, and restarted Mastodon’s web process, because it looks like it’s serving outdated stylesheets and scripts. It’s also possible that the precompilation fails due to a lack of RAM, as webpack is unfortunately extremely memory-hungry. If that is the case, make sure you have some swap space assigned. Alternatively, it’s possible to precompile the assets on a different machine, then copy over the <code>public/packs</code> directory.</p>
-<h2 id="after-an-upgrade-to-a-newer-version-some-requests-fail-and-the-logs-show-error-messages-about-missing-columns-or-tables-why"><strong>After an upgrade to a newer version, some requests fail and the logs show error messages about missing columns or tables. Why?</strong></h2>
-<p>Check that you have run <code>RAILS_ENV=production bin/rails db:migrate</code> after the upgrade, because it looks like Mastodon’s code is accessing a newer or older database schema. If you are using PgBouncer, make sure this one command connects directly to PostgreSQL, as PgBouncer does not support the kind of table locks that are used within migrations.</p>
-<h2 id="i-am-trying-to-run-a-tootctl-or-rakerails-command-but-all-i-get-is-an-error-about-uninitialized-constants-whats-wrong"><strong>I am trying to run a <code>tootctl</code> or <code>rake</code>/<code>rails</code> command, but all I get is an error about uninitialized constants. What’s wrong?</strong></h2>
-<p>Check that you are specifying the correct environment with <code>RAILS_ENV=production</code> before the command. By default, the environment is assumed to be development, so the code tries to load development-related gems. However, in production environments, we avoid installing those gems, and that’s where the error comes from.</p>
-<h2 id="i-encountered-a-compilation-error-while-executing-rails_envproduction-bundle-exec-rails-assetsprecompile-but-no-more-information-is-given-how-to-fix-it"><strong>I encountered a compilation error while executing <code>RAILS_ENV=production bundle exec rails assets:precompile</code>, but no more information is given. How to fix it?</strong></h2>
-<p>Usually, it&rsquo;s because your server ran out of memory while compiling assets. Use a swapfile or increase the swap space to increase the memory capacity. Run <code>RAILS_ENV=production bundle exec rake tmp:cache:clear</code> to clear cache, then execute <code>RAILS_ENV=production bundle exec rails assets:precompile</code> to compile again. Make sure you clear the cache after a compilation error, or it will show &ldquo;Everything&rsquo;s OK&rdquo; but leave the assets unchanged.</p>
-<h2 id="i-am-getting-this-error-read-only-file-system--dir_s_mkdir-why"><strong>I am getting this error: <code>Read-only file system @ dir_s_mkdir</code>. Why?</strong></h2>
-<p>By default, Mastodon makes use of <a href="https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Sandboxing">systemd&rsquo;s sandboxing capabilities</a> in a way that disallows writing outside of <code>/home/mastodon</code>. If Mastodon is installed elsewhere, you may need to allow <code>mastodon-sidekiq</code> and <code>mastodon-web</code> to write to a custom directory:</p>
+<h2 class="heading" id="after-an-upgrade-to-a-newer-version-some-pages-look-weird-like-they-have-unstyled-elements-why">
+	<span class="heading__text"><strong>After an upgrade to a newer version, some pages look weird, like they have unstyled elements. Why?</strong></span>
+	<a class="heading__anchor-link" href="#after-an-upgrade-to-a-newer-version-some-pages-look-weird-like-they-have-unstyled-elements-why">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Check that you have run <code>RAILS_ENV=production bin/rails assets:precompile</code> after the upgrade, and restarted Mastodon’s web process, because it looks like it’s serving outdated stylesheets and scripts. It’s also possible that the precompilation fails due to a lack of RAM, as webpack is unfortunately extremely memory-hungry. If that is the case, make sure you have some swap space assigned. Alternatively, it’s possible to precompile the assets on a different machine, then copy over the <code>public/packs</code> directory.</p>
+<h2 class="heading" id="after-an-upgrade-to-a-newer-version-some-requests-fail-and-the-logs-show-error-messages-about-missing-columns-or-tables-why">
+	<span class="heading__text"><strong>After an upgrade to a newer version, some requests fail and the logs show error messages about missing columns or tables. Why?</strong></span>
+	<a class="heading__anchor-link" href="#after-an-upgrade-to-a-newer-version-some-requests-fail-and-the-logs-show-error-messages-about-missing-columns-or-tables-why">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Check that you have run <code>RAILS_ENV=production bin/rails db:migrate</code> after the upgrade, because it looks like Mastodon’s code is accessing a newer or older database schema. If you are using PgBouncer, make sure this one command connects directly to PostgreSQL, as PgBouncer does not support the kind of table locks that are used within migrations.</p>
+<h2 class="heading" id="i-am-trying-to-run-a-tootctl-or-rakerails-command-but-all-i-get-is-an-error-about-uninitialized-constants-whats-wrong">
+	<span class="heading__text"><strong>I am trying to run a <code>tootctl</code> or <code>rake</code>/<code>rails</code> command, but all I get is an error about uninitialized constants. What’s wrong?</strong></span>
+	<a class="heading__anchor-link" href="#i-am-trying-to-run-a-tootctl-or-rakerails-command-but-all-i-get-is-an-error-about-uninitialized-constants-whats-wrong">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Check that you are specifying the correct environment with <code>RAILS_ENV=production</code> before the command. By default, the environment is assumed to be development, so the code tries to load development-related gems. However, in production environments, we avoid installing those gems, and that’s where the error comes from.</p>
+<h2 class="heading" id="i-encountered-a-compilation-error-while-executing-rails_envproduction-bundle-exec-rails-assetsprecompile-but-no-more-information-is-given-how-to-fix-it">
+	<span class="heading__text"><strong>I encountered a compilation error while executing <code>RAILS_ENV=production bundle exec rails assets:precompile</code>, but no more information is given. How to fix it?</strong></span>
+	<a class="heading__anchor-link" href="#i-encountered-a-compilation-error-while-executing-rails_envproduction-bundle-exec-rails-assetsprecompile-but-no-more-information-is-given-how-to-fix-it">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>Usually, it&rsquo;s because your server ran out of memory while compiling assets. Use a swapfile or increase the swap space to increase the memory capacity. Run <code>RAILS_ENV=production bundle exec rake tmp:cache:clear</code> to clear cache, then execute <code>RAILS_ENV=production bundle exec rails assets:precompile</code> to compile again. Make sure you clear the cache after a compilation error, or it will show &ldquo;Everything&rsquo;s OK&rdquo; but leave the assets unchanged.</p>
+<h2 class="heading" id="i-am-getting-this-error-read-only-file-system--dir_s_mkdir-why">
+	<span class="heading__text"><strong>I am getting this error: <code>Read-only file system @ dir_s_mkdir</code>. Why?</strong></span>
+	<a class="heading__anchor-link" href="#i-am-getting-this-error-read-only-file-system--dir_s_mkdir-why">
+		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
+	 xml:space="preserve">
+	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
+		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
+		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
+		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
+		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
+		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
+		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
+		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
+		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
+		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
+</svg>
+	</a>
+</h2><p>By default, Mastodon makes use of <a href="https://www.freedesktop.org/software/systemd/man/systemd.exec.html#Sandboxing">systemd&rsquo;s sandboxing capabilities</a> in a way that disallows writing outside of <code>/home/mastodon</code>. If Mastodon is installed elsewhere, you may need to allow <code>mastodon-sidekiq</code> and <code>mastodon-web</code> to write to a custom directory:</p>
 <ol>
 <li>Add parameter <code>ReadWritePaths</code> to files <code>/etc/systemd/system/mastodon-sidekiq.service</code> and <code>/etc/systemd/system/mastodon-web.service</code>. Example - <code>ReadWritePaths=/example/mastodon/live</code>.</li>
 <li>run <code>systemctl stop mastodon-sidekiq mastodon-web</code></li>
@@ -2190,7 +2309,7 @@
 </script>
 
     <p style="color: #687590;">
-      Last updated August 5, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/troubleshooting.md' style="color: #687590;">Improve this page</a>
+      Last updated December 10, 2023 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5ctroubleshooting.md' style="color: #687590;">Improve this page</a>
 
       
         <br />
@@ -2244,7 +2363,7 @@
     <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
   </p>
 
-  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin/troubleshooting.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
+  <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/admin%5ctroubleshooting.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
 </footer>
 
 </body>
