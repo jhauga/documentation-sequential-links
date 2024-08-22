@@ -9,7 +9,7 @@ Navigated to http://localhost:1313/user/contacts/
 Navigated to http://localhost:1313/user/external/
 Navigated to http://localhost:1313/user/moving/
 Navigated to http://localhost:1313/user/run-your-own/
-**  Manual Click             ********************************************************************
+ **  Manual Click             ********************************************************************
 Navigated to http://localhost:1313/admin/prerequisites/
 Navigated to http://localhost:1313/admin/install/
 Navigated to http://localhost:1313/admin/config/
@@ -29,30 +29,30 @@ Navigated to http://localhost:1313/admin/moderation/
 Navigated to http://localhost:1313/admin/troubleshooting/
 Navigated to http://localhost:1313/admin/troubleshooting/index-corruption/
 Navigated to http://localhost:1313/admin/roles/
-**  Manual Click             ********************************************************************
+ **  Manual Click             ********************************************************************
 Navigated to http://localhost:1313/client/intro/
 Navigated to http://localhost:1313/client/public/
 Navigated to http://localhost:1313/client/token/
 Navigated to http://localhost:1313/client/authorized/
 Navigated to http://localhost:1313/client/libraries/
-**  Manual Click             ********************************************************************
+ **  Manual Click             ********************************************************************
 Navigated to http://localhost:1313/dev/overview/
 Navigated to http://localhost:1313/dev/setup/
 Navigated to http://localhost:1313/dev/code/
 Navigated to http://localhost:1313/dev/routes/
 Navigated to http://localhost:1313/dev/disclosure/
-**  Manual Click             ********************************************************************
+ **  Manual Click             ********************************************************************
 Navigated to http://localhost:1313/spec/activitypub/
 Navigated to http://localhost:1313/spec/webfinger/
 Navigated to http://localhost:1313/spec/security/
 Navigated to http://localhost:1313/spec/microformats/
 Navigated to http://localhost:1313/spec/oauth/
 Navigated to http://localhost:1313/spec/bearcaps/
-**  Manual Click             ********************************************************************
+ **  Manual Click             ********************************************************************
 Navigated to http://localhost:1313/api/guidelines/
 Navigated to http://localhost:1313/api/oauth-scopes/
 Navigated to http://localhost:1313/api/rate-limits/
-**  Manual Click             ********************************************************************
+ **  Manual Click             ********************************************************************
 Navigated to http://localhost:1313/methods/apps/
 Navigated to http://localhost:1313/methods/oauth/
 Navigated to http://localhost:1313/methods/emails/
@@ -90,12 +90,7 @@ Navigated to http://localhost:1313/methods/directory/
 Navigated to http://localhost:1313/methods/custom_emojis/
 Navigated to http://localhost:1313/methods/announcements/
 Navigated to http://localhost:1313/methods/admin/
-VM671 Mastodon-List-Test-ClickNext:1 63
-VM671 Mastodon-List-Test-ClickNext:5 Uncaught ReferenceError: nextLink is not defined
-    at VM671 Mastodon-List-Test-ClickNext:5:5
-(anonymous) @ VM671 Mastodon-List-Test-ClickNext:5
-setTimeout (async)
-(anonymous) @ VM671 Mastodon-List-Test-ClickNext:4
+ **  Manual Click             ********************************************************************
 Navigated to http://localhost:1313/methods/admin/accounts/
 Navigated to http://localhost:1313/methods/admin/canonical_email_blocks/
 Navigated to http://localhost:1313/methods/admin/dimensions/
@@ -109,8 +104,9 @@ Navigated to http://localhost:1313/methods/admin/retention/
 Navigated to http://localhost:1313/methods/admin/trends/
 Navigated to http://localhost:1313/methods/proofs/
 Navigated to http://localhost:1313/methods/oembed/
-**  Manual Click             ********************************************************************
+ **  Manual Click             ********************************************************************
 Navigated to http://localhost:1313/entities/Account/
+Navigated to http://localhost:1313/entities/AccountWarning/
 Navigated to http://localhost:1313/entities/Admin_Account/
 Navigated to http://localhost:1313/entities/Admin_CanonicalEmailBlock/
 Navigated to http://localhost:1313/entities/Admin_Cohort/
@@ -123,6 +119,7 @@ Navigated to http://localhost:1313/entities/Admin_IpBlock/
 Navigated to http://localhost:1313/entities/Admin_Measure/
 Navigated to http://localhost:1313/entities/Admin_Report/
 Navigated to http://localhost:1313/entities/Announcement/
+Navigated to http://localhost:1313/entities/Appeal/
 Navigated to http://localhost:1313/entities/Application/
 Navigated to http://localhost:1313/entities/Context/
 Navigated to http://localhost:1313/entities/Conversation/
@@ -142,6 +139,8 @@ Navigated to http://localhost:1313/entities/List/
 Navigated to http://localhost:1313/entities/Marker/
 Navigated to http://localhost:1313/entities/MediaAttachment/
 Navigated to http://localhost:1313/entities/Notification/
+Navigated to http://localhost:1313/entities/NotificationPolicy/
+Navigated to http://localhost:1313/entities/NotificationRequest/
 Navigated to http://localhost:1313/entities/Poll/
 Navigated to http://localhost:1313/entities/Preferences/
 Navigated to http://localhost:1313/entities/PreviewCard/
@@ -162,4 +161,6 @@ Navigated to http://localhost:1313/entities/Token/
 Navigated to http://localhost:1313/entities/Translation/
 Navigated to http://localhost:1313/entities/V1_Filter/
 Navigated to http://localhost:1313/entities/V1_Instance/
+Navigated to http://localhost:1313/entities/V1_NotificationPolicy/
 Navigated to http://localhost:1313/entities/WebPushSubscription/
+ **  Manual Click             ********************************************************************

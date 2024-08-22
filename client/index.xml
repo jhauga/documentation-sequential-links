@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clients on Mastodon documentation</title>
-    <link>http://localhost:1313/client/</link>
+    <link>https://docs.joinmastodon.org/client/</link>
     <description>Recent content in Clients on Mastodon documentation</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/client/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.joinmastodon.org/client/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Getting started with the API</title>
-      <link>http://localhost:1313/client/intro/</link>
+      <link>https://docs.joinmastodon.org/client/intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/client/intro/</guid>
-      <description>An introduction to REST&#xD;Mastodon provides access to its data over a REST API. REST stands for REpresentational State Transfer, but for our purposes, just think of it as sending and receiving information about various resources based on the request. The Mastodon REST API uses HTTP for its requests and JSON for its payloads.&#xA;Understanding HTTP requests and responses&#xD;REST API endpoints can be called with certain HTTP methods, and more than one method can be used on the same endpoint.</description>
+      <guid>https://docs.joinmastodon.org/client/intro/</guid>
+      <description>An introduction to REST Mastodon provides access to its data over a REST API. REST stands for REpresentational State Transfer, but for our purposes, just think of it as sending and receiving information about various resources based on the request. The Mastodon REST API uses HTTP for its requests and JSON for its payloads.&#xA;Understanding HTTP requests and responses REST API endpoints can be called with certain HTTP methods, and more than one method can be used on the same endpoint.</description>
     </item>
     <item>
       <title>Libraries and implementations</title>
-      <link>http://localhost:1313/client/libraries/</link>
+      <link>https://docs.joinmastodon.org/client/libraries/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/client/libraries/</guid>
-      <description>Thank you to our awesome developer community, for supporting the project with a wide range of implementations of the API. If you have built a library or SDK for the Mastodon API, let us know about it, and it may be included below in a future update.&#xA;Remember to check how recently the library was updated, and whether it includes the API features you may want to use.&#xA;Arduino / ESP32 / IoT&#xD;lyuba C# (.</description>
+      <guid>https://docs.joinmastodon.org/client/libraries/</guid>
+      <description>Thank you to our awesome developer community, for supporting the project with a wide range of implementations of the API. If you have built a library or SDK for the Mastodon API, let us know about it, and it may be included below in a future update.&#xA;Remember to check how recently the library was updated, and whether it includes the API features you may want to use.&#xA;Arduino / ESP32 / IoT lyuba C# (.</description>
     </item>
     <item>
       <title>Logging in with an account</title>
-      <link>http://localhost:1313/client/authorized/</link>
+      <link>https://docs.joinmastodon.org/client/authorized/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/client/authorized/</guid>
-      <description>Scopes explained&#xD;When we register our app and when we authorize our user, we need to define what exactly our generated token will have permission to do. This is done through the use of OAuth scopes. Each API method has an associated scope, and can only be called if the token being used for authorization has been generated with the corresponding scope.&#xA;Scopes must be a subset. When we created our app, we specified read write push &amp;ndash; we could request all available scopes by specifying read write push, but it is a better idea to only request what your app will actually need through granular scopes.</description>
+      <guid>https://docs.joinmastodon.org/client/authorized/</guid>
+      <description>Scopes explained When we register our app and when we authorize our user, we need to define what exactly our generated token will have permission to do. This is done through the use of OAuth scopes. Each API method has an associated scope, and can only be called if the token being used for authorization has been generated with the corresponding scope.&#xA;Scopes must be a subset. When we created our app, we specified read write push &amp;ndash; we could request all available scopes by specifying read write push, but it is a better idea to only request what your app will actually need through granular scopes.</description>
     </item>
     <item>
       <title>Obtaining client app access</title>
-      <link>http://localhost:1313/client/token/</link>
+      <link>https://docs.joinmastodon.org/client/token/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/client/token/</guid>
-      <description>Authentication and authorization&#xD;Up until this point, we&amp;rsquo;ve been working with publicly available information, but not all information is public. Some information requires permission before viewing it, in order to audit who is requesting that information (and to potentially revoke or deny access).&#xA;This is where OAuth comes in. OAuth is a mechanism for generating access tokens that can be used to authenticate (verify) that a request is coming from a specific client, and ensure that the requested action is authorized (allowed) by the server&amp;rsquo;s access control policies.</description>
+      <guid>https://docs.joinmastodon.org/client/token/</guid>
+      <description>Authentication and authorization Up until this point, we&amp;rsquo;ve been working with publicly available information, but not all information is public. Some information requires permission before viewing it, in order to audit who is requesting that information (and to potentially revoke or deny access).&#xA;This is where OAuth comes in. OAuth is a mechanism for generating access tokens that can be used to authenticate (verify) that a request is coming from a specific client, and ensure that the requested action is authorized (allowed) by the server&amp;rsquo;s access control policies.</description>
     </item>
     <item>
       <title>Playing with public data</title>
-      <link>http://localhost:1313/client/public/</link>
+      <link>https://docs.joinmastodon.org/client/public/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/client/public/</guid>
-      <description>Now that you know how to construct HTTP requests using cURL or your favorite programming language&amp;rsquo;s HTTP utility or library, it is time to learn about endpoints and responses.&#xA;Endpoints explained&#xD;All HTTP requests are made against a target URL. When you request data to or from a website, you do so by using a specific URL. Depending on the URL, your request will be interpreted by the HTTP server and the appropriate response will be returned to you.</description>
+      <guid>https://docs.joinmastodon.org/client/public/</guid>
+      <description>Now that you know how to construct HTTP requests using cURL or your favorite programming language&amp;rsquo;s HTTP utility or library, it is time to learn about endpoints and responses.&#xA;Endpoints explained All HTTP requests are made against a target URL. When you request data to or from a website, you do so by using a specific URL. Depending on the URL, your request will be interpreted by the HTTP server and the appropriate response will be returned to you.</description>
     </item>
   </channel>
 </rss>

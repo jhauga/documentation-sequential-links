@@ -1,0 +1,401 @@
+Navigated to http://localhost:1313/entities/WebPushSubscription/
+Mastodon-List-Test-ClickPrev:1 178
+Navigated to http://localhost:1313/entities/V1_NotificationPolicy/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/V1_Instance/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/V1_Filter/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Translation/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Token/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Tag/
+VM13313 Mastodon-List-Test-ClickPrev:1 1
+VM13313 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/entities/Suggestion/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/StatusSource/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/StatusEdit/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Status/
+VM13339 Mastodon-List-Test-ClickPrev:1 1
+VM13339 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/entities/Search/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/ScheduledStatus/
+VM13352 Mastodon-List-Test-ClickPrev:1 1
+VM13352 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/entities/Rule/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Role/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Report/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/RelationshipSeveranceEvent/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Relationship/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Reaction/
+VM13389 Mastodon-List-Test-ClickPrev:1 1
+VM13389 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/entities/PreviewCard/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Preferences/
+VM13402 Mastodon-List-Test-ClickPrev:1 1
+VM13402 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/entities/Poll/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/NotificationRequest/
+VM13415 Mastodon-List-Test-ClickPrev:1 62
+VM13415 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/entities/NotificationPolicy/
+VM13422 Mastodon-List-Test-ClickPrev:1 1
+VM13422 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/entities/Notification/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/MediaAttachment/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Marker/
+Mastodon-List-Test-ClickPrev:1 2
+Navigated to http://localhost:1313/entities/List/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Instance/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/IdentityProof/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/FilterStatus/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/FilterResult/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/FilterKeyword/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Filter/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/FeaturedTag/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/FamiliarFollowers/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/ExtendedDescription/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Error/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/DomainBlock/
+Mastodon-List-Test-ClickPrev:1 2
+Navigated to http://localhost:1313/entities/CustomEmoji/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Conversation/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Context/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Application/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Appeal/
+VM13543 Mastodon-List-Test-ClickPrev:1 62
+VM13543 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/entities/Announcement/
+VM13550 Mastodon-List-Test-ClickPrev:1 1
+VM13550 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/entities/Admin_Report/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Admin_Measure/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Admin_IpBlock/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Admin_Ip/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Admin_EmailDomainBlock/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Admin_DomainBlock/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Admin_DomainAllow/
+Mastodon-List-Test-ClickPrev:1 2
+Navigated to http://localhost:1313/entities/Admin_Dimension/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Admin_Cohort/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Admin_CanonicalEmailBlock/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/Admin_Account/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/entities/AccountWarning/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/entities/Account/
+VM13629 Mastodon-List-Test-ClickPrev:1 62
+VM13629 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13629 Mastodon-List-Test-ClickPrev:1 63
+VM13630 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13629 Mastodon-List-Test-ClickPrev:1 64
+VM13631 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13629 Mastodon-List-Test-ClickPrev:1 177
+VM13629 Mastodon-List-Test-ClickPrev:1 178
+VM13629 Mastodon-List-Test-ClickPrev:1 179
+VM13632 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13633 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Navigated to http://localhost:1313/methods/oembed/
+Mastodon-List-Test-ClickPrev:1 175
+Navigated to http://localhost:1313/methods/proofs/
+VM13646 Mastodon-List-Test-ClickPrev:1 62
+VM13646 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/methods/admin/trends/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/admin/retention/
+VM13659 Mastodon-List-Test-ClickPrev:1 1
+VM13659 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/methods/admin/reports/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/admin/measures/
+VM13672 Mastodon-List-Test-ClickPrev:1 1
+VM13672 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/methods/admin/ip_blocks/
+VM13679 Mastodon-List-Test-ClickPrev:1 1
+VM13679 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/methods/admin/email_domain_blocks/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/admin/domain_blocks/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/admin/domain_allows/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/admin/dimensions/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/admin/canonical_email_blocks/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/admin/accounts/
+VM13716 Mastodon-List-Test-ClickPrev:1 1
+VM13716 Mastodon-List-Test-ClickPrev:1 63
+Navigated to http://localhost:1313/methods/admin/
+VM13722 Mastodon-List-Test-ClickPrev:1 1
+VM13722 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13722 Mastodon-List-Test-ClickPrev:1 63
+VM13723 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13722 Mastodon-List-Test-ClickPrev:1 64
+VM13724 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13722 Mastodon-List-Test-ClickPrev:1 65
+Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Navigated to http://localhost:1313/methods/announcements/
+VM13731 Mastodon-List-Test-ClickPrev:1 175
+VM13731 Mastodon-List-Test-ClickPrev:1 176
+VM13731 Mastodon-List-Test-ClickPrev:1 177
+Navigated to http://localhost:1313/methods/custom_emojis/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/directory/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/trends/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/instance/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/search/
+Mastodon-List-Test-ClickPrev:1 2
+Navigated to http://localhost:1313/methods/push/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/notifications/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/streaming/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/markers/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/lists/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/conversations/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/timelines/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/scheduled_statuses/
+Mastodon-List-Test-ClickPrev:1 2
+Navigated to http://localhost:1313/methods/polls/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/media/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/statuses/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/profile/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/methods/tags/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/suggestions/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/followed_tags/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/preferences/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/featured_tags/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/endorsements/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/follow_requests/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/reports/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/filters/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/domain_blocks/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/blocks/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/mutes/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/favourites/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/bookmarks/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/accounts/
+Mastodon-List-Test-ClickPrev:1 3
+Navigated to http://localhost:1313/methods/emails/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/oauth/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/methods/apps/
+VM13943 Mastodon-List-Test-ClickPrev:1 62
+VM13943 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13943 Mastodon-List-Test-ClickPrev:1 63
+VM13944 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13943 Mastodon-List-Test-ClickPrev:1 176
+Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Navigated to http://localhost:1313/api/rate-limits/
+VM13951 Mastodon-List-Test-ClickPrev:1 175
+VM13951 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/api/oauth-scopes/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/api/guidelines/
+VM13964 Mastodon-List-Test-ClickPrev:1 62
+VM13964 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM13964 Mastodon-List-Test-ClickPrev:1 176
+Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Navigated to http://localhost:1313/spec/bearcaps/
+Mastodon-List-Test-ClickPrev:1 177
+Navigated to http://localhost:1313/spec/oauth/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/spec/microformats/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/spec/security/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/spec/webfinger/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/spec/activitypub/
+VM14001 Mastodon-List-Test-ClickPrev:1 62
+VM14001 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM14001 Mastodon-List-Test-ClickPrev:1 63
+VM14002 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM14001 Mastodon-List-Test-ClickPrev:1 177
+VM14001 Mastodon-List-Test-ClickPrev:1 178
+VM14003 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Navigated to http://localhost:1313/dev/disclosure/
+Mastodon-List-Test-ClickPrev:1 175
+Navigated to http://localhost:1313/dev/routes/
+Mastodon-List-Test-ClickPrev:1 2
+Navigated to http://localhost:1313/dev/code/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/dev/setup/
+Mastodon-List-Test-ClickPrev:1 1
+Navigated to http://localhost:1313/dev/overview/
+VM14034 Mastodon-List-Test-ClickPrev:1 62
+VM14034 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM14034 Mastodon-List-Test-ClickPrev:1 63
+Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Navigated to http://localhost:1313/client/libraries/
+VM14041 Mastodon-List-Test-ClickPrev:1 175
+VM14041 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/client/authorized/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/client/token/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/client/public/
+VM14060 Mastodon-List-Test-ClickPrev:1 62
+VM14060 Mastodon-List-Test-ClickPrev:1 175
+VM14060 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/client/intro/
+VM14068 Mastodon-List-Test-ClickPrev:1 174
+VM14068 Mastodon-List-Test-ClickPrev:1 175
+VM14068 Mastodon-List-Test-ClickPrev:1 176
+VM14068 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM14069 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Navigated to http://localhost:1313/admin/roles/
+VM14076 Mastodon-List-Test-ClickPrev:1 175
+VM14076 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/admin/troubleshooting/index-corruption/
+VM14083 Mastodon-List-Test-ClickPrev:1 174
+VM14083 Mastodon-List-Test-ClickPrev:1 175
+VM14083 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/admin/troubleshooting/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/admin/moderation/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/admin/scaling/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/admin/migrating/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/admin/backups/
+VM14115 Mastodon-List-Test-ClickPrev:1 174
+VM14115 Mastodon-List-Test-ClickPrev:1 175
+Navigated to http://localhost:1313/admin/upgrading/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/admin/tootctl/
+VM14128 Mastodon-List-Test-ClickPrev:1 62
+VM14128 Mastodon-List-Test-ClickPrev:1 175
+VM14128 Mastodon-List-Test-ClickPrev:1 176
+VM14128 Mastodon-List-Test-ClickPrev:1 177
+Navigated to http://localhost:1313/admin/setup/
+VM14137 Mastodon-List-Test-ClickPrev:1 174
+VM14137 Mastodon-List-Test-ClickPrev:1 175
+VM14137 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/admin/optional/sso/
+VM14145 Mastodon-List-Test-ClickPrev:1 62
+VM14145 Mastodon-List-Test-ClickPrev:1 175
+VM14145 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/admin/optional/captcha/
+VM14153 Mastodon-List-Test-ClickPrev:1 174
+VM14153 Mastodon-List-Test-ClickPrev:1 175
+Navigated to http://localhost:1313/admin/optional/tor/
+VM14160 Mastodon-List-Test-ClickPrev:1 62
+VM14160 Mastodon-List-Test-ClickPrev:1 175
+Navigated to http://localhost:1313/admin/optional/object-storage/
+VM14167 Mastodon-List-Test-ClickPrev:1 174
+VM14167 Mastodon-List-Test-ClickPrev:1 175
+VM14167 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/admin/optional/
+VM14175 Mastodon-List-Test-ClickPrev:1 62
+VM14175 Mastodon-List-Test-ClickPrev:1 175
+VM14175 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/admin/elasticsearch/
+Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/admin/config/
+VM14189 Mastodon-List-Test-ClickPrev:1 174
+VM14189 Mastodon-List-Test-ClickPrev:1 175
+Navigated to http://localhost:1313/admin/install/
+Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/admin/prerequisites/
+VM14202 Mastodon-List-Test-ClickPrev:1 174
+VM14202 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM14202 Mastodon-List-Test-ClickPrev:1 176
+Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+Navigated to http://localhost:1313/user/run-your-own/
+Mastodon-List-Test-ClickPrev:1 175
+Navigated to http://localhost:1313/user/moving/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/user/external/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/user/contacts/
+VM14227 Mastodon-List-Test-ClickPrev:1 62
+VM14227 Mastodon-List-Test-ClickPrev:1 175
+VM14227 Mastodon-List-Test-ClickPrev:1 176
+Navigated to http://localhost:1313/user/preferences/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/user/discoverability/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/user/moderating/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/user/network/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/user/posting/
+Mastodon-List-Test-ClickPrev:1 62
+Navigated to http://localhost:1313/user/profile/
+Mastodon-List-Test-ClickPrev:1 174
+Navigated to http://localhost:1313/user/signup/
+VM14271 Mastodon-List-Test-ClickPrev:1 62
+VM14271 Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************
+VM14271 Mastodon-List-Test-ClickPrev:1 176
+Mastodon-List-Test-ClickPrev:10 **  Manual Click             ********************************************************************

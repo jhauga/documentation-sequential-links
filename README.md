@@ -18,7 +18,7 @@ please follow these steps:
     - For example - enter or copy/paste: 
     
     ``` 
-    php -S localhost:8000 
+    php -S localhost:1313
     ```
     
  3. When GitHub prompts click link to open site.
@@ -56,12 +56,21 @@ the sequential links were correct. The procedure went as such:
 Duplicated file [/_test_snippets/Mastodon-List-Test-ClickNext.js](/_test_snippets/Mastodon-List-Test-ClickNext.js)
 
 ```
-var activePage = document.getElementsByClassName("active")[0];
+// Mastodon-List-Test-ClickPrev.js
+// Scroll "active" link into view, then click previous link.
 
-activePage.scrollIntoView();
-setTimeout(function() {
-nextLink.click();
+var activePage = document.getElementsByClassName("active")[0];
+var previousLink = document.getElementById("previousLink");
+
+// activePage.scrollIntoView();
+setTimeout(function() {  
+  if (previousLink == undefined) {   
+    console.log("**  Manual Click             ********************************************************************");
+  } else {
+    previousLink.click();
+  }
 }, 100);
+
 ```
 </details>
 
@@ -72,11 +81,19 @@ nextLink.click();
 Duplicated file [/_test_snippets/Mastodon-List-Test-ClickPrev.js](/_test_snippets/Mastodon-List-Test-ClickPrev.js)
 
 ```
-var activePage = document.getElementsByClassName("active")[0];
+// Mastodon-List-Test-ClickNext.js
+// Scroll "active" link into view, then click next link.
 
-activePage.scrollIntoView();
-setTimeout(function() {
-previousLink.click();
+var activePage = document.getElementsByClassName("active")[0];
+var nextLink = document.getElementById("nextLink");
+
+// activePage.scrollIntoView();
+setTimeout(function() {  
+  if (nextLink == undefined) {   
+    console.log("**  Manual Click             ********************************************************************");
+  } else {
+    nextLink.click();
+  }
 }, 100);
 
 ```
@@ -89,14 +106,32 @@ previousLink.click();
 Duplicated file [/_test_snippets/Mastodon-List-Test-NavLinks.js](/_test_snippets/Mastodon-List-Test-NavLinks.js)
 
 ```
-var navUL = selectSidebar.getElementsByTagName("ul")[0];
-var navULATag = navUL.getElementsByTagName("a");
-var navULATagLen = navULATag.length;
-var text = "Navigated to ";
+// Mastodon-List-Test-NavLinks.js
+// Output the href value from navbar in sequential order.
 
-for (i = 1; i < navULATagLen; i++) {
-console.log(text + navULATag[i].href);
+var text = "Navigated to ";
+var midMenuManualClick = "http://localhost:1313/methods/admin/";
+var selectSidebar = document.getElementsByTagName("nav")[0];
+var navUL = selectSidebar.getElementsByTagName("ul")[0];
+var navLI = navUL.getElementsByTagName("li");
+var navLILen = navLI.length;
+// Extract links.
+for (i = 0; i < navLILen; i++) {
+  let navLIATag = navLI[i].getElementsByTagName("a");
+  let parEl = navLI[i].parentElement;
+  if (parEl.className != "") {
+    console.log(text + navLIATag[0].href);
+    let nextLITag = navLI[i].nextElementSibling;
+    let parElPrevSibling = navLI[i].parentElement;
+    if (
+       ((nextLITag == null || nextLITag == undefined) &&
+         parElPrevSibling.previousElementSibling.className == "sub-title") || 
+         navLIATag[0].href == midMenuManualClick) {
+      console.log("**  Manual Click             ********************************************************************");
+    } 
+  }
 }
+
 ```
 </details>
 
@@ -107,14 +142,32 @@ console.log(text + navULATag[i].href);
 Duplicated file [/_test_snippets/Mastodon-List-Test-Reverse-NavLinks.js](/_test_snippets/Mastodon-List-Test-Reverse-NavLinks.js)
 
 ```
-var navUL = selectSidebar.getElementsByTagName("ul")[0];
-var navULATag = navUL.getElementsByTagName("a");
-var navULATagLen = navULATag.length;
-var text = "Navigated to ";
+// Mastodon-List-Test-Reverse-NavLinks.js
+// Output the href value from navbar in reverse sequential order.
 
-for (i = (navULATagLen-1); i >= 1; i--) {
-console.log(text + navULATag[i].href);
+var text = "Navigated to ";
+var midMenuManualClick = "http://localhost:1313/methods/admin/";
+var selectSidebar = document.getElementsByTagName("nav")[0];
+var navUL = selectSidebar.getElementsByTagName("ul")[0];
+var navLI = navUL.getElementsByTagName("li");
+var navLILen = navLI.length;
+// Extract links.
+for (i = Number(navLILen-1); i >= 0; i--) {
+  let navLIATag = navLI[i].getElementsByTagName("a");
+  let parEl = navLI[i].parentElement;
+  if (parEl.className != "") {
+    console.log(text + navLIATag[0].href);
+    let prevLITag = navLI[i].previousElementSibling;
+    let parElPrevSibling = navLI[i].parentElement;
+    if (
+       ((prevLITag == null || prevLITag == undefined) &&
+         parElPrevSibling.previousElementSibling.className == "sub-title") ||
+         navLIATag[0].href == midMenuManualClick) {
+      console.log("**  Manual Click             ********************************************************************");
+    } 
+  }
 }
+
 ```
 </details>     
 
@@ -122,9 +175,9 @@ console.log(text + navULATag[i].href);
 
 </details>
 
-<strong>NOTE</strong> - when the links reached the end of a section the `scrollTo` method 
-was sort of an alert to manually click the next\/previous section. Several manual clicks 
-had to be done.
+<strong>NOTE</strong> - when the links reached the end of a section, or a manual click
+had to be done, an alert line was logged to the console. Below is a rendering of where
+this might occur.
   
 ![example of end of section](/_test_img/screen_for_manual_click.jpg)
   
@@ -135,10 +188,11 @@ had to be done.
 
    ![save logged console](/_test_img/save_console.jpg)
    
-4. The log files were cleaned a bit using regular expressions such as 
-   `Mastodon-List-Test-ClickNext:1 [0-9]+\n` to remove unwanted ouput from the console, 
-   but examples of what the original saved files genereated are in the 
-   `/_test_logs/_EXAMPLE*.log` files. The `/_test_logs/Browser_snippet_Test-*` files 
+4. The console log files were cleaned using `/_test_logs/cleanClickTest.sh`. The log files 
+   were cleaned a bit using regular expressions such as 
+   `^Mastodon-List-Test-([A-Za-z]+):(([0-9]+)|([0-9]+ [0-9]+))` to remove unwanted ouput 
+   from the console, but examples of what the original saved files genereated are in the 
+   `/_test_logs/_ORIGINAL*.log` files. The `/_test_logs/Browser_snippet_Test-*` files 
    are the cleaned results.
    
 5. Using the command line, the files were compared with:
@@ -149,9 +203,18 @@ had to be done.
    are in the `/_test_logs` folder.
    
 ## RESULTS
-Both the ordered and reverse tests produced same results. Excluding manual clicks that had to 
-be done at the start and end of each section, and the page `/methods/admin/`; all links 
-were correct.
+One page within menu had to be manually clicked:  <br>
+
+- API METHODS - admin -\> ` http://localhost:1313/methods/admin/ `
+
+In the test scripts `Mastodon-List-Test-Reverse-NavLinks.js` and `Mastodon-List-Test-NavLinks.js`
+this was accounted for. The was nested in `content/methods/admin`, was generated with 
+`layouts/default/list.html`, which did not need to have sequential navigation. 
+
+
+After accounting for mid-menu manual click; both the ordered and reverse tests produced same 
+results. Excluding manual clicks that had to be done at the start and end of each section, 
+and the page `/methods/admin/`; all links were correct.
 
 <strong>NOTE</strong> - to view were manual clicks occurred look out for:
 

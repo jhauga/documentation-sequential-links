@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Apis on Mastodon documentation</title>
-    <link>http://localhost:1313/api/</link>
+    <link>https://docs.joinmastodon.org/api/</link>
     <description>Recent content in Apis on Mastodon documentation</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="http://localhost:1313/api/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://docs.joinmastodon.org/api/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Guidelines and best practices</title>
-      <link>http://localhost:1313/api/guidelines/</link>
+      <link>https://docs.joinmastodon.org/api/guidelines/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/api/guidelines/</guid>
-      <description>Login&#xD;The user must be able to log in to any Mastodon server from the app. This means you must ask for the server&amp;rsquo;s domain and use the app registrations API to dynamically obtain OAuth2 credentials.&#xA;Logging in with an account&#xD;oauth methods&#xD;OAuth scopes&#xD;Usernames&#xD;Decentralization must be transparent to the user. It should be possible to see that a given user is from another server, for example, by displaying their acct somewhere.</description>
+      <guid>https://docs.joinmastodon.org/api/guidelines/</guid>
+      <description>Login The user must be able to log in to any Mastodon server from the app. This means you must ask for the server&amp;rsquo;s domain and use the app registrations API to dynamically obtain OAuth2 credentials.&#xA;Logging in with an account oauth methods OAuth scopes Usernames Decentralization must be transparent to the user. It should be possible to see that a given user is from another server, for example, by displaying their acct somewhere.</description>
     </item>
     <item>
       <title>OAuth Scopes</title>
-      <link>http://localhost:1313/api/oauth-scopes/</link>
+      <link>https://docs.joinmastodon.org/api/oauth-scopes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/api/oauth-scopes/</guid>
-      <description>OAuth Scopes&#xD;The API is divided up into access scopes. The scopes are hierarchical, i.e. if you have access to read, you automatically have access to read:accounts. It is recommended that you request as little as possible for your application.&#xA;Multiple scopes can be requested at the same time: During app creation with the scopes param, and during the authorization phase with the scope query param (space-separate the scopes).</description>
+      <guid>https://docs.joinmastodon.org/api/oauth-scopes/</guid>
+      <description>OAuth Scopes The API is divided up into access scopes. The scopes are hierarchical, i.e. if you have access to read, you automatically have access to read:accounts. It is recommended that you request as little as possible for your application.&#xA;Multiple scopes can be requested at the same time: During app creation with the scopes param, and during the authorization phase with the scope query param (space-separate the scopes).</description>
     </item>
     <item>
       <title>Rate limits</title>
-      <link>http://localhost:1313/api/rate-limits/</link>
+      <link>https://docs.joinmastodon.org/api/rate-limits/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/api/rate-limits/</guid>
-      <description>Headers&#xD;Rate limit information is returned in the response headers:&#xA;X-RateLimit-Limit Number of requests permitted per time period X-RateLimit-Remaining Number of requests you can still make X-RateLimit-Reset Timestamp when your rate limit will reset An API method can be subject to multiple overlapping rate limits. The headers return information about the one you are closest to exceeding.&#xD;Limits&#xD;By default, the following limits are hardcoded:&#xA;Per account&#xD;All endpoints and methods can be called 300 times within 5 minutes.</description>
+      <guid>https://docs.joinmastodon.org/api/rate-limits/</guid>
+      <description>Headers Rate limit information is returned in the response headers:&#xA;X-RateLimit-Limit Number of requests permitted per time period X-RateLimit-Remaining Number of requests you can still make X-RateLimit-Reset Timestamp when your rate limit will reset An API method can be subject to multiple overlapping rate limits. The headers return information about the one you are closest to exceeding. Limits By default, the following limits are hardcoded:&#xA;Per account All endpoints and methods can be called 300 times within 5 minutes.</description>
     </item>
   </channel>
 </rss>

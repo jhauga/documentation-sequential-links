@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<head>
   
 
 <meta charset='utf-8'>
@@ -10,7 +10,7 @@
 <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
 
 
-<link rel='stylesheet' href='/style.min.5af88e097fb823eccd8d5128d6e13bd95cc412dcd96b8066c8ec524026c5d229.css'>
+<link rel='stylesheet' href='/style.min.fd2f306e5a7066d992709b8da6ea0f4229c5a04a81161b2422e5031ade3e1bc8.css'>
 
 
 <script src='/main.min.0b774fda2366fc06803dd619b7467da11181c73a4ef394b7610a2eb2a3cb7b5d.js' async></script>
@@ -19,7 +19,7 @@
   <title>Security - Mastodon documentation</title>
 
   <meta property="og:type" content="article">
-  <meta property="og:url" content="http://localhost:1313/spec/security/">
+  <meta property="og:url" content="https://docs.joinmastodon.org/spec/security/">
 
   
     <meta name="description" content="Public key cryptography and supported signature schemes over HTTP and JSON-LD.">
@@ -30,7 +30,7 @@
   <meta name="twitter:title" content="Security">
   <meta name="twitter:site" content="@joinmastodon">
 
-  <link rel="canonical" href="http://localhost:1313/spec/security/">
+  <link rel="canonical" href="https://docs.joinmastodon.org/spec/security/">
 </head>
 
 <body>
@@ -42,10 +42,10 @@
 <input id="mobile-nav-toggle" class="mobile-nav-toggle" type="checkbox">
 <label for="mobile-nav-toggle">
     <span class="menu-open">
-        <i class="fa fa-times"></i> Close
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6z"/></svg>
     </span>
     <span class="menu-close">
-        <i class="fa fa-bars"></i> Menu
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"/></svg>
     </span>
 </label>
 
@@ -1031,6 +1031,12 @@
             </li>
           
             <li>
+              <a href="/entities/V1_NotificationPolicy/" class="">V1::NotificationPolicy</a>
+
+              
+            </li>
+          
+            <li>
               <a href="/entities/WebPushSubscription/" class="">WebPushSubscription</a>
 
               
@@ -1074,152 +1080,100 @@
     <h2 class="heading" id="http">
 	<span class="heading__text">HTTP Signatures</span>
 	<a class="heading__anchor-link" href="#http">
-		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
-	 xml:space="preserve">
-	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
-		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
-		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
-		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
-		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
-		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
-		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
-		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
-		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
-		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
-</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10.59 13.41c.41.39.41 1.03 0 1.42c-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0a5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24a2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0a5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24a2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24a.973.973 0 0 1 0-1.42"/></svg>
 	</a>
 </h2><a href="https://github.com/mastodon/mastodon/blob/main/app/lib/request.rb" class="page-ref">
-  <div class="page-ref-icon"><i class="fa fa-external-link-square-alt"></i></div>
+  <div class="page-ref-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2zM8.7 8l2.1 2.1L7 14l2.8 2.8l3.8-3.9l2.1 2.1V8z"/></svg></div>
   app/lib/request.rb
 </a>
 
 <p><a href="https://datatracker.ietf.org/doc/html/draft-cavage-http-signatures">HTTP Signatures</a> is a specification for signing HTTP messages by using a <code>Signature:</code> header with your HTTP request. Mastodon requires the use of HTTP Signatures in order to validate that any activity received was authored by the actor generating it. When secure mode is enabled, all GET requests require HTTP signatures as well.</p>
 <p>For any HTTP request incoming to Mastodon, the Signature header should be attached:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>Signature: keyId=&#34;https://my.example.com/actor#main-key&#34;,headers=&#34;(request-target) host date&#34;,signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;
-</span></span></code></pre></div><p>The three parts of the <code>Signature:</code> header can be broken down like so:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span>Signature:
-</span></span><span style="display:flex;"><span>  keyId=&#34;https://my.example.com/actor#main-key&#34;,
-</span></span><span style="display:flex;"><span>  headers=&#34;(request-target) host date&#34;,
-</span></span><span style="display:flex;"><span>  signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;
-</span></span></code></pre></div><p>The <code>keyId</code> should correspond to the actor and the key being used to generate the <code>signature</code>, whose value is equal to all parameters in <code>headers</code> concatenated together and signed by the key, then Base64-encoded. See <a href="/spec/activitypub/#publicKey">ActivityPub &gt; Public key</a> for more information on actor keys. An example key looks like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;publicKey&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;id&#34;</span>: <span style="color:#f1fa8c">&#34;https://my.example.com/actor#main-key&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;owner&#34;</span>: <span style="color:#f1fa8c">&#34;https://my.example.com/actor&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;publicKeyPem&#34;</span>: <span style="color:#f1fa8c">&#34;-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvXc4vkECU2/CeuSo1wtn\nFoim94Ne1jBMYxTZ9wm2YTdJq1oiZKif06I2fOqDzY/4q/S9uccrE9Bkajv1dnkO\nVm31QjWlhVpSKynVxEWjVBO5Ienue8gND0xvHIuXf87o61poqjEoepvsQFElA5ym\novljWGSA/jpj7ozygUZhCXtaS2W5AD5tnBQUpcO0lhItYPYTjnmzcc4y2NbJV8hz\n2s2G8qKv8fyimE23gY1XrPJg+cRF+g4PqFXujjlJ7MihD9oqtLGxbu7o1cifTn3x\nBfIdPythWu5b4cujNsB3m3awJjVmx+MHQ9SugkSIYXV0Ina77cTNS0M2PYiH1PFR\nTwIDAQAB\n-----END PUBLIC KEY-----\n&#34;</span>
-</span></span><span style="display:flex;"><span> },
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#f85149">Signature: keyId=&#34;https://my.example.com/actor#main-key&#34;,headers=&#34;(request-target) host date&#34;,signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;
+</span></span></span></code></pre></div><p>The three parts of the <code>Signature:</code> header can be broken down like so:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#f85149">Signature:
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149">  keyId=&#34;https://my.example.com/actor#main-key&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149">  headers=&#34;(request-target) host date&#34;,
+</span></span></span><span style="display:flex;"><span><span style="color:#f85149">  signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;
+</span></span></span></code></pre></div><p>The <code>keyId</code> should correspond to the actor and the key being used to generate the <code>signature</code>, whose value is equal to all parameters in <code>headers</code> concatenated together and signed by the key, then Base64-encoded. See <a href="/spec/activitypub/#publicKey">ActivityPub &gt; Public key</a> for more information on actor keys. An example key looks like this:</p>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;publicKey&#34;</span><span style="color:#f85149">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;id&#34;</span>: <span style="color:#a5d6ff">&#34;https://my.example.com/actor#main-key&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;owner&#34;</span>: <span style="color:#a5d6ff">&#34;https://my.example.com/actor&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;publicKeyPem&#34;</span>: <span style="color:#a5d6ff">&#34;-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvXc4vkECU2/CeuSo1wtn\nFoim94Ne1jBMYxTZ9wm2YTdJq1oiZKif06I2fOqDzY/4q/S9uccrE9Bkajv1dnkO\nVm31QjWlhVpSKynVxEWjVBO5Ienue8gND0xvHIuXf87o61poqjEoepvsQFElA5ym\novljWGSA/jpj7ozygUZhCXtaS2W5AD5tnBQUpcO0lhItYPYTjnmzcc4y2NbJV8hz\n2s2G8qKv8fyimE23gY1XrPJg+cRF+g4PqFXujjlJ7MihD9oqtLGxbu7o1cifTn3x\nBfIdPythWu5b4cujNsB3m3awJjVmx+MHQ9SugkSIYXV0Ina77cTNS0M2PYiH1PFR\nTwIDAQAB\n-----END PUBLIC KEY-----\n&#34;</span>
+</span></span><span style="display:flex;"><span> }<span style="color:#f85149">,</span>
 </span></span></code></pre></div><p>See also: <a href="https://blog.joinmastodon.org/2018/07/how-to-make-friends-and-verify-requests/">https://blog.joinmastodon.org/2018/07/how-to-make-friends-and-verify-requests/</a></p>
 <h3 class="heading" id="http-sign">
 	<span class="heading__text">Creating HTTP signatures</span>
 	<a class="heading__anchor-link" href="#http-sign">
-		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
-	 xml:space="preserve">
-	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
-		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
-		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
-		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
-		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
-		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
-		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
-		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
-		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
-		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
-</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10.59 13.41c.41.39.41 1.03 0 1.42c-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0a5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24a2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0a5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24a2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24a.973.973 0 0 1 0-1.42"/></svg>
 	</a>
 </h3><p>To create an HTTP signature, you will have to define which headers are being hashed and signed. For example, consider the following GET request:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">GET</span> /users/username/outbox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
-</span></span><span style="display:flex;"><span>Host<span style="color:#ff79c6">:</span> mastodon.example
-</span></span><span style="display:flex;"><span>Date<span style="color:#ff79c6">:</span> 18 Dec 2019 10:08:46 GMT
-</span></span><span style="display:flex;"><span>Accept<span style="color:#ff79c6">:</span> application/ld+json; profile=&#34;https://www.w3.org/ns/activitystreams&#34;
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">GET</span> <span style="color:#ff7b72">/users/username/outbox</span> <span style="color:#ff7b72">HTTP</span><span style="color:#ff7b72;font-weight:bold">/</span><span style="color:#a5d6ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">mastodon.example</span>
+</span></span><span style="display:flex;"><span>Date<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">18 Dec 2019 10:08:46 GMT</span>
+</span></span><span style="display:flex;"><span>Accept<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">application/ld+json; profile=&#34;https://www.w3.org/ns/activitystreams&#34;</span>
 </span></span></code></pre></div><p>The signature string is constructed using the values of the HTTP headers defined in <code>headers</code>, joined by newlines. Typically, you will want to include the request target, as well as the host and the date. Mastodon assumes <code>Date:</code> header if none are provided. For the above GET request, to generate a <code>Signature:</code> with <code>headers=&quot;(request-target) host date&quot;</code> we would generate the following string:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(request-target): get /users/username/outbox
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-text" data-lang="text"><span style="display:flex;"><span>(request-target): get /users/username/outbox
 </span></span><span style="display:flex;"><span>host: mastodon.example
 </span></span><span style="display:flex;"><span>date: 18 Dec 2019 10:08:46 GMT
 </span></span></code></pre></div><p>Note that we don&rsquo;t care about the <code>Accept:</code> header because we won&rsquo;t be specifying it in <code>headers</code>.</p>
 <p>The signature string is then hashed with RSA-SHA256 (RSASSA-PKCS1-v1_5 with SHA-256) and signed with the actor&rsquo;s private key. The resulting value is attached as <code>signature</code> within the <code>Signature:</code> header. The final request looks like this:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">GET</span> /users/username/inbox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
-</span></span><span style="display:flex;"><span>Host<span style="color:#ff79c6">:</span> mastodon.example
-</span></span><span style="display:flex;"><span>Date<span style="color:#ff79c6">:</span> 18 Dec 2019 10:08:46 GMT
-</span></span><span style="display:flex;"><span>Accept<span style="color:#ff79c6">:</span> application/ld+json; profile=&#34;https://www.w3.org/ns/activitystreams&#34;
-</span></span><span style="display:flex;"><span>Signature<span style="color:#ff79c6">:</span> keyId=&#34;https://my.example.com/actor#main-key&#34;,headers=&#34;(request-target) host date&#34;,signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">GET</span> <span style="color:#ff7b72">/users/username/inbox</span> <span style="color:#ff7b72">HTTP</span><span style="color:#ff7b72;font-weight:bold">/</span><span style="color:#a5d6ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">mastodon.example</span>
+</span></span><span style="display:flex;"><span>Date<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">18 Dec 2019 10:08:46 GMT</span>
+</span></span><span style="display:flex;"><span>Accept<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">application/ld+json; profile=&#34;https://www.w3.org/ns/activitystreams&#34;</span>
+</span></span><span style="display:flex;"><span>Signature<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">keyId=&#34;https://my.example.com/actor#main-key&#34;,headers=&#34;(request-target) host date&#34;,signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;</span>
 </span></span></code></pre></div><p>This request is functionally equivalent to saying that <code>https://my.example.com/actor</code> is requesting <code>https://mastodon.example/users/username/inbox</code> and is proving that they sent this request by signing <code>(request-target)</code>, <code>Host:</code>, and <code>Date:</code> with their private key linked at <code>keyId</code>, resulting in the provided <code>signature</code>.</p>
 <h4 class="heading" id="digest">
 	<span class="heading__text">Signing POST requests and the Digest header</span>
 	<a class="heading__anchor-link" href="#digest">
-		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
-	 xml:space="preserve">
-	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
-		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
-		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
-		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
-		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
-		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
-		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
-		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
-		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
-		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
-</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10.59 13.41c.41.39.41 1.03 0 1.42c-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0a5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24a2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0a5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24a2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24a.973.973 0 0 1 0-1.42"/></svg>
 	</a>
 </h4><p>When making a POST request to Mastodon, you must calculate the RSA-SHA256 digest hash of your request&rsquo;s body and include this hash (in base64 encoding) within the <code>Digest:</code> header. The <code>Digest:</code> header must also be included within the <code>headers</code> parameter of the <code>Signature:</code> header. For example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">POST</span> /users/username/inbox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
-</span></span><span style="display:flex;"><span>HOST<span style="color:#ff79c6">:</span> mastodon.example
-</span></span><span style="display:flex;"><span>Date<span style="color:#ff79c6">:</span> 18 Dec 2019 10:08:46 GMT
-</span></span><span style="display:flex;"><span>Digest<span style="color:#ff79c6">:</span> sha-256=hcK0GZB1BM4R0eenYrj9clYBuyXs/lemt5iWRYmIX0A=
-</span></span><span style="display:flex;"><span>Signature<span style="color:#ff79c6">:</span> keyId=&#34;https://my.example.com/actor#main-key&#34;,headers=&#34;(request-target) host date digest&#34;,signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;
-</span></span><span style="display:flex;"><span>Content-Type<span style="color:#ff79c6">:</span> application/ld+json; profile=&#34;https://www.w3.org/ns/activitystreams&#34;
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">POST</span> <span style="color:#ff7b72">/users/username/inbox</span> <span style="color:#ff7b72">HTTP</span><span style="color:#ff7b72;font-weight:bold">/</span><span style="color:#a5d6ff">1.1</span>
+</span></span><span style="display:flex;"><span>HOST<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">mastodon.example</span>
+</span></span><span style="display:flex;"><span>Date<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">18 Dec 2019 10:08:46 GMT</span>
+</span></span><span style="display:flex;"><span>Digest<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">sha-256=hcK0GZB1BM4R0eenYrj9clYBuyXs/lemt5iWRYmIX0A=</span>
+</span></span><span style="display:flex;"><span>Signature<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">keyId=&#34;https://my.example.com/actor#main-key&#34;,headers=&#34;(request-target) host date digest&#34;,signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">application/ld+json; profile=&#34;https://www.w3.org/ns/activitystreams&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;@context&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.w3.org/ns/activitystreams&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;actor&#34;</span>: <span style="color:#f1fa8c">&#34;https://my.example.com/actor&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Create&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;object&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Note&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;content&#34;</span>: <span style="color:#f1fa8c">&#34;Hello!&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;@context&#34;</span>: <span style="color:#a5d6ff">&#34;https://www.w3.org/ns/activitystreams&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;actor&#34;</span>: <span style="color:#a5d6ff">&#34;https://my.example.com/actor&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;Create&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;object&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;Note&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;content&#34;</span>: <span style="color:#a5d6ff">&#34;Hello!&#34;</span>
 </span></span><span style="display:flex;"><span>  },
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;to&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.example/users/username&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;to&#34;</span>: <span style="color:#a5d6ff">&#34;https://mastodon.example/users/username&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 class="heading" id="http-verify">
 	<span class="heading__text">Verifying HTTP signatures</span>
 	<a class="heading__anchor-link" href="#http-verify">
-		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
-	 xml:space="preserve">
-	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
-		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
-		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
-		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
-		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
-		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
-		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
-		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
-		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
-		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
-</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10.59 13.41c.41.39.41 1.03 0 1.42c-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0a5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24a2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0a5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24a2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24a.973.973 0 0 1 0-1.42"/></svg>
 	</a>
 </h3><a href="https://github.com/mastodon/mastodon/blob/main/app/controllers/concerns/signature_verification.rb" class="page-ref">
-  <div class="page-ref-icon"><i class="fa fa-external-link-square-alt"></i></div>
+  <div class="page-ref-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2zM8.7 8l2.1 2.1L7 14l2.8 2.8l3.8-3.9l2.1 2.1V8z"/></svg></div>
   app/controllers/concerns/signature_verification.rb
 </a>
 
 <p>Consider the following request:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#50fa7b">POST</span> /users/username/inbox <span style="color:#ff79c6">HTTP</span><span style="color:#ff79c6">/</span><span style="color:#bd93f9">1.1</span>
-</span></span><span style="display:flex;"><span>Host<span style="color:#ff79c6">:</span> mastodon.example
-</span></span><span style="display:flex;"><span>Date<span style="color:#ff79c6">:</span> 18 Dec 2019 10:08:46 GMT
-</span></span><span style="display:flex;"><span>Digest<span style="color:#ff79c6">:</span> e37e179c75071a291f90a5fd4f848da87b491f1282f7bb8509ef2115b81ee0f4
-</span></span><span style="display:flex;"><span>Signature<span style="color:#ff79c6">:</span> keyId=&#34;https://my.example.com/actor#main-key&#34;,headers=&#34;(request-target) host date digest&#34;,signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;
-</span></span><span style="display:flex;"><span>Content-Type<span style="color:#ff79c6">:</span> application/ld+json; profile=&#34;https://www.w3.org/ns/activitystreams&#34;
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-http" data-lang="http"><span style="display:flex;"><span><span style="color:#d2a8ff;font-weight:bold">POST</span> <span style="color:#ff7b72">/users/username/inbox</span> <span style="color:#ff7b72">HTTP</span><span style="color:#ff7b72;font-weight:bold">/</span><span style="color:#a5d6ff">1.1</span>
+</span></span><span style="display:flex;"><span>Host<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">mastodon.example</span>
+</span></span><span style="display:flex;"><span>Date<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">18 Dec 2019 10:08:46 GMT</span>
+</span></span><span style="display:flex;"><span>Digest<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">e37e179c75071a291f90a5fd4f848da87b491f1282f7bb8509ef2115b81ee0f4</span>
+</span></span><span style="display:flex;"><span>Signature<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">keyId=&#34;https://my.example.com/actor#main-key&#34;,headers=&#34;(request-target) host date digest&#34;,signature=&#34;Y2FiYW...IxNGRiZDk4ZA==&#34;</span>
+</span></span><span style="display:flex;"><span>Content-Type<span style="color:#ff7b72;font-weight:bold">:</span> <span style="color:#a5d6ff">application/ld+json; profile=&#34;https://www.w3.org/ns/activitystreams&#34;</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;@context&#34;</span>: <span style="color:#f1fa8c">&#34;https://www.w3.org/ns/activitystreams&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;actor&#34;</span>: <span style="color:#f1fa8c">&#34;https://my.example.com/actor&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Create&#34;</span>,
-</span></span><span style="display:flex;"><span>  <span style="color:#ff79c6">&#34;object&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;Note&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;content&#34;</span>: <span style="color:#f1fa8c">&#34;Hello!&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;@context&#34;</span>: <span style="color:#a5d6ff">&#34;https://www.w3.org/ns/activitystreams&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;actor&#34;</span>: <span style="color:#a5d6ff">&#34;https://my.example.com/actor&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;Create&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#7ee787">&#34;object&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;Note&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;content&#34;</span>: <span style="color:#a5d6ff">&#34;Hello!&#34;</span>
 </span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;to&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.example/users/username&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a5d6ff">&#34;to&#34;</span>: <span style="color:#a5d6ff">&#34;https://mastodon.example/users/username&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Mastodon verifies the signature using the following algorithm:</p>
 <ul>
@@ -1232,28 +1186,15 @@
 <h2 class="heading" id="ld">
 	<span class="heading__text">Linked Data Signatures</span>
 	<a class="heading__anchor-link" href="#ld">
-		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
-	 xml:space="preserve">
-	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
-		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
-		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
-		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
-		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
-		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
-		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
-		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
-		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
-		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
-</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10.59 13.41c.41.39.41 1.03 0 1.42c-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0a5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24a2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0a5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24a2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24a.973.973 0 0 1 0-1.42"/></svg>
 	</a>
 </h2><a href="https://github.com/mastodon/mastodon/blob/main/app/lib/activitypub/linked_data_signature.rb" class="page-ref">
-  <div class="page-ref-icon"><i class="fa fa-external-link-square-alt"></i></div>
+  <div class="page-ref-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2zM8.7 8l2.1 2.1L7 14l2.8 2.8l3.8-3.9l2.1 2.1V8z"/></svg></div>
   app/lib/activitypub/linked_data_signature.rb
 </a>
 
 <div class="hint hint-warning">
-  <div class="hint-icon"><i class="fa fa-exclamation-circle"></i></div>
+  <div class="hint-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M1 21L12 2l11 19zm11-3q.425 0 .713-.288T13 17t-.288-.712T12 16t-.712.288T11 17t.288.713T12 18m-1-3h2v-5h-2z"/></svg></div>
 
   Mastodon&rsquo;s current implementation of LD Signatures is outdated due to a change in the JSON-LD <code>@context</code> between the drafting stage and finalization stage of the specification. Mastodon expects a <code>type</code> of <code>RsaSignature2017</code> while later drafts instead define <code>RsaSignature2018</code> via the namespace <code>https://w3id.org/security/v2</code>. Furthermore, the LD Signatures specification as a whole has been superseded by the <a href="https://w3c.github.io/vc-data-integrity/">Verifiable Credential Data Integrity 1.0</a> specification, which is largely incompatible with the earlier LD Signature spec. For this reason, it is not advised to implement support for LD Signatures.
 </div>
@@ -1266,45 +1207,19 @@
 <h3 class="heading" id="ld-sign">
 	<span class="heading__text">Creating LD signatures</span>
 	<a class="heading__anchor-link" href="#ld-sign">
-		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
-	 xml:space="preserve">
-	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
-		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
-		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
-		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
-		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
-		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
-		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
-		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
-		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
-		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
-</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10.59 13.41c.41.39.41 1.03 0 1.42c-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0a5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24a2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0a5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24a2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24a.973.973 0 0 1 0-1.42"/></svg>
 	</a>
 </h3><p>To create a signature, Mastodon uses the keypair attached to an actor at <code>https://mastodon.example/users/username#main-key</code>. It then creates an RSA-SHA256 hash of the document, signs it with the keypair, and Base64-strict-encodes the resulting output to derive a <code>signatureValue</code>. The following hash is merged into the JSON-LD document:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#f1fa8c">&#34;signature&#34;</span>: {
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;type&#34;</span>: <span style="color:#f1fa8c">&#34;RsaSignature2017&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;creator&#34;</span>: <span style="color:#f1fa8c">&#34;https://mastodon.example/users/username#main-key&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;created&#34;</span>: <span style="color:#f1fa8c">&#34;2019-12-08T03:48:33.901Z&#34;</span>,
-</span></span><span style="display:flex;"><span>    <span style="color:#ff79c6">&#34;signatureValue&#34;</span>: <span style="color:#f1fa8c">&#34;s69F3mfddd99dGjmvjdjjs81e12jn121Gkm1&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span><span style="color:#a5d6ff">&#34;signature&#34;</span><span style="color:#f85149">:</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;type&#34;</span>: <span style="color:#a5d6ff">&#34;RsaSignature2017&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;creator&#34;</span>: <span style="color:#a5d6ff">&#34;https://mastodon.example/users/username#main-key&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;created&#34;</span>: <span style="color:#a5d6ff">&#34;2019-12-08T03:48:33.901Z&#34;</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#7ee787">&#34;signatureValue&#34;</span>: <span style="color:#a5d6ff">&#34;s69F3mfddd99dGjmvjdjjs81e12jn121Gkm1&#34;</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><h3 class="heading" id="ld-verify">
 	<span class="heading__text">Verifying LD signatures</span>
 	<a class="heading__anchor-link" href="#ld-verify">
-		<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="1em" height="1em" alt="🔗&#xFE0E;" viewBox="0 0 457.03 457.03"
-	 xml:space="preserve">
-	<path fill="currentColor" d="M421.512,207.074l-85.795,85.767c-47.352,47.38-124.169,47.38-171.529,0c-7.46-7.439-13.296-15.821-18.421-24.465
-		l39.864-39.861c1.895-1.911,4.235-3.006,6.471-4.296c2.756,9.416,7.567,18.33,14.972,25.736c23.648,23.667,62.128,23.634,85.762,0
-		l85.768-85.765c23.666-23.664,23.666-62.135,0-85.781c-23.635-23.646-62.105-23.646-85.768,0l-30.499,30.532
-		c-24.75-9.637-51.415-12.228-77.373-8.424l64.991-64.989c47.38-47.371,124.177-47.371,171.557,0
-		C468.869,82.897,468.869,159.706,421.512,207.074z M194.708,348.104l-30.521,30.532c-23.646,23.634-62.128,23.634-85.778,0
-		c-23.648-23.667-23.648-62.138,0-85.795l85.778-85.767c23.665-23.662,62.121-23.662,85.767,0
-		c7.388,7.39,12.204,16.302,14.986,25.706c2.249-1.307,4.56-2.369,6.454-4.266l39.861-39.845
-		c-5.092-8.678-10.958-17.03-18.421-24.477c-47.348-47.371-124.172-47.371-171.543,0L35.526,249.96
-		c-47.366,47.385-47.366,124.172,0,171.553c47.371,47.356,124.177,47.356,171.547,0l65.008-65.003
-		C246.109,360.336,219.437,357.723,194.708,348.104z"/>
-</svg>
+		<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M10.59 13.41c.41.39.41 1.03 0 1.42c-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0a5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.98 2.98 0 0 0 0-4.24a2.98 2.98 0 0 0-4.24 0l-3.53 3.53a2.98 2.98 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0a5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.98 2.98 0 0 0 0 4.24a2.98 2.98 0 0 0 4.24 0l3.53-3.53a2.98 2.98 0 0 0 0-4.24a.973.973 0 0 1 0-1.42"/></svg>
 	</a>
 </h3><p>To verify a signature, Mastodon uses the following algorithm:</p>
 <ul>
@@ -1315,7 +1230,7 @@
 <li>Base64-decode the <code>signatureValue</code> and verify it against the public key in <code>signature[creator]</code>.</li>
 </ul>
 
-    
+	
 
 
 
@@ -1642,11 +1557,11 @@
             
 <div style="margin: 30px 0px">
   <a id="previousLink" href="javascript:void(0)" style="font-size: 12pt">
-    <i class="fa fa-arrow-left"></i> Page
+    &#8678; Page
   </a>
   <div id="pageTurnSpacer" style="display:inline; margin: 0px 50px"></div>  
   <a id="nextLink" href="javascript:void(0)" style="font-size: 12pt">
-    Page <i class="fa fa-arrow-right"></i>
+    Page &#8680;
   </a>
 </div>
           
@@ -1913,6 +1828,13 @@
     
     
     
+    
+      
+        
+          
+                  
+        
+      
     
       
         
@@ -2401,8 +2323,9 @@
  
 </script>
 
-    <p style="color: #687590;">
-      Last updated January 11, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/spec%5csecurity.md' style="color: #687590;">Improve this page</a>
+
+    <p style="color: #606085;">
+      Last updated January 11, 2024 · <a href='https://github.com/mastodon/documentation/tree/main/content/en/spec%5csecurity.md' style="color: #606085;">Improve this page</a>
 
       
     </p>
@@ -2445,7 +2368,7 @@
   </div>
 
   <p class="legal legal--right">
-    <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><i class='fab fa-mastodon'></i></a>
+    <a href='https://joinmastodon.org'>Join Mastodon</a> · <a href='https://blog.joinmastodon.org'>Blog</a> · <a href='https://mastodon.social/@Mastodon' target='_blank'><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-mastodon" viewBox="0 0 16 16"><path d="M11.19 12.195c2.016-.24 3.77-1.475 3.99-2.603.348-1.778.32-4.339.32-4.339 0-3.47-2.286-4.488-2.286-4.488C12.062.238 10.083.017 8.027 0h-.05C5.92.017 3.942.238 2.79.765c0 0-2.285 1.017-2.285 4.488l-.002.662c-.004.64-.007 1.35.011 2.091.083 3.394.626 6.74 3.78 7.57 1.454.383 2.703.463 3.709.408 1.823-.1 2.847-.647 2.847-.647l-.06-1.317s-1.303.41-2.767.36c-1.45-.05-2.98-.156-3.215-1.928a4 4 0 0 1-.033-.496s1.424.346 3.228.428c1.103.05 2.137-.064 3.188-.189zm1.613-2.47H11.13v-4.08c0-.859-.364-1.295-1.091-1.295-.804 0-1.207.517-1.207 1.541v2.233H7.168V5.89c0-1.024-.403-1.541-1.207-1.541-.727 0-1.091.436-1.091 1.296v4.079H3.197V5.522q0-1.288.66-2.046c.456-.505 1.052-.764 1.793-.764.856 0 1.504.328 1.933.983L8 4.39l.417-.695c.429-.655 1.077-.983 1.934-.983.74 0 1.336.259 1.791.764q.662.757.661 2.046z"/></svg></a>
   </p>
 
   <p class="legal"><a href='https://github.com/mastodon/documentation/tree/main/content/en/spec%5csecurity.md'>View source</a> · <a href='https://creativecommons.org/licenses/by-sa/4.0/'>CC BY-SA 4.0</a> · <a href='https://joinmastodon.org/imprint'>Imprint</a></p>
